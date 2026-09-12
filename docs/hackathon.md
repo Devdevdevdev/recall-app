@@ -11,7 +11,10 @@ This document tracks submission requirements and implementation evidence as Reca
 - [ ] Validate all model responses against a structured JSON schema.
 - [ ] Demonstrate that the model reasons only over recall candidates retrieved from trusted
       sources and cannot invent a recall.
-- [ ] Preserve recall provenance, source URLs, matched identifiers, confidence, and uncertainty.
+- [x] Define persistence for recall provenance, source URLs, matched identifiers, confidence, and
+      uncertainty.
+- [x] Protect user inventory and match results with Row Level Security from the first database
+      migration.
 
 ## Submission requirements
 
@@ -28,6 +31,8 @@ This document tracks submission requirements and implementation evidence as Reca
 
 ## Phase status
 
-Phase 1 provides the mobile shell and documentation only. Nebius, NVIDIA, Supabase, barcode, OCR,
-recall-source, and notification integrations are intentionally deferred so they can be added with
-real credentials, trusted data, and explicit validation in later phases.
+Phase 1 provided the mobile shell and documentation. Phase 2 adds the migration-defined Supabase
+schema, RLS policies, domain types, repository boundaries, and guarded client configuration.
+Authentication UI, live recall ingestion, Nebius/NVIDIA execution, barcode, OCR, and notifications
+remain intentionally deferred so they can be added with real credentials, trusted data, and
+explicit validation in later phases.

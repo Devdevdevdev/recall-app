@@ -36,7 +36,8 @@ Mobile
 7. **Structured match result:** Model output is validated against a versioned JSON schema with a
    confidence score, matched identifiers, rationale, and explicit uncertainty.
 8. **Supabase:** PostgreSQL stores users, inventory, source records, candidate evaluations, and
-   alert state. Storage is reserved for product images only where necessary.
+   alert state. The Phase 2 schema and RLS policies are defined in SQL migrations. Storage is
+   reserved for product images only where necessary.
 9. **Alerts:** A verified source-backed match generates a clear user notification and links to the
    official recall notice.
 
@@ -46,10 +47,15 @@ Mobile
 - `src/features/`: product-oriented screens, hooks, and feature logic
 - `src/components/`: small reusable presentation components
 - `src/design/`: design tokens and navigation theme
-- Future `src/domain/`: framework-independent entities and matching types
-- Future `src/data/`: typed repositories and Supabase data access
-- Future `src/services/`: client-side adapters for backend endpoints and device capabilities
+- `src/domain/`: framework-independent entities and matching types
+- `src/data/`: repository interfaces that keep query syntax out of UI code
+- `src/services/supabase/`: validated public configuration and the optional mobile client
+- Future repository adapters under `src/data/`: Supabase query implementations
+- Future services under `src/services/`: adapters for backend endpoints and device capabilities
 - Future `supabase/functions/`: authenticated server-side orchestration and Nebius calls
+
+No screen imports or queries Supabase directly. Feature code will depend on repository interfaces,
+and concrete adapters will translate between database rows and domain types.
 
 ## Trust and security model
 
@@ -60,11 +66,19 @@ Mobile
   safety claims.
 - `NEBIUS_API_KEY` and Supabase service-role credentials are server-only secrets.
 - The mobile app may receive only public Supabase configuration protected by Row Level Security.
-- Authentication, authorization, input validation, rate limits, audit logs, and retention controls
-  will be designed before backend integration.
+- RLS limits inventory to its owner and derives match ownership through the matched product.
+- Recall sources explicitly approved as authoritative, and their notices and scopes, are readable
+  by authenticated users but have no mobile write privileges or policies.
+- Match and alert creation are server-controlled. The mobile client can only read its matches and
+  update the state fields of its own alerts.
+- Authentication UI, input validation at ingestion boundaries, rate limits, audit logs, and
+  retention controls remain future work.
 
-## Phase 1 scope
+## Phase status
 
-Phase 1 contains only the Expo application foundation, navigation shell, reusable design tokens,
-placeholder states, documentation, and quality tooling. It deliberately contains no Supabase,
-Nebius, NVIDIA, ML Kit, barcode, notification, or recall-source integration.
+Phase 1 established the Expo application shell. Phase 2 adds the Supabase client boundary,
+database schema, domain types, repository contracts, and RLS foundation. It deliberately contains
+no authentication UI, ingestion jobs, Edge Functions, Nebius/NVIDIA calls, ML Kit, barcode,
+notification, or recall-source integration.
+
+The detailed table relationships and policy matrix are in [database.md](database.md).

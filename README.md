@@ -10,17 +10,20 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 1 establishes the mobile foundation:
+Phase 2 adds the Supabase and database foundation while preserving the Phase 1 mobile shell:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
 - Home, Scan, My Products, Alerts, and Settings screens
 - Reusable safety-oriented design tokens and UI components
+- A guarded Supabase client configuration for Android, iOS, and web
+- Framework-independent domain models and repository interfaces
+- A migration-defined PostgreSQL schema with constraints, indexes, privileges, and Row Level
+  Security
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Scanning, authentication, storage, recall retrieval, notifications, and AI matching are
-intentionally not implemented yet. The current screens clearly mark those capabilities as future
-work and contain no fake integrations.
+Authentication UI, scanning, OCR, recall ingestion, notifications, and AI matching execution are
+intentionally not implemented yet. The current screens contain no fake data or integrations.
 
 ## Planned architecture
 
@@ -53,14 +56,21 @@ npm start
 From the Expo terminal, open the project on Android, iOS, or web. You can also run `npm run
 android`, `npm run ios`, or `npm run web` directly.
 
-The example environment file contains names only. Phase 1 does not require any credentials.
+The example environment file contains names only. The application continues to load without
+Supabase configuration during local development. To connect it, set
+`EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` in the ignored `.env.local` file.
+Both variables are public client configuration, not secrets; privacy depends on database grants
+and Row Level Security.
+
+Database changes live in `supabase/migrations/` and must be applied through the normal Supabase
+migration workflow. See [docs/database.md](docs/database.md) for the schema and security model.
 
 ## Security
 
-**Never put `NEBIUS_API_KEY`, a Supabase service-role key, or any other privileged credential in
+**Never put `NEBIUS_API_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, or any other privileged credential in
 the Expo client.** Expo public environment variables are bundled into the app and are readable by
-users. Nebius/NVIDIA requests will be introduced in a later phase through a secure Supabase Edge
-Function or equivalent server-side component.
+users. Nebius/NVIDIA requests and privileged recall writes will be introduced in a later phase
+through a secure Supabase Edge Function or equivalent server-side component.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every
