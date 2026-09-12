@@ -58,6 +58,10 @@ Mobile
   authenticated Supabase user and relies on RLS for every operation.
 - `src/domain/barcode.ts`: framework-independent GTIN normalization/checksum validation and scanned
   barcode model; `src/features/scan/` adapts Expo camera events into it
+- `src/domain/productLabel.ts`: pure explicit-label identifier parsing and a transient evidence type
+  that can later combine barcode and OCR observations
+- `src/services/ocr/`: platform-specific ML Kit adapter, normalized OCR result contract, web
+  fallback, and temporary-image cleanup boundary
 - Future services under `src/services/`: adapters for backend endpoints and device capabilities
 - Future `supabase/functions/`: authenticated server-side orchestration and Nebius calls
 
@@ -93,8 +97,11 @@ Phase 1 established the Expo application shell and Phase 2 added the Supabase cl
 database schema, domain types, repository contracts, and RLS foundation. Phase 3 adds real email/
 password authentication, persisted-session restoration, protected routes, and sign-out. Phase 5
 adds local barcode acquisition only: the Scan screen uses Expo Camera, confirms a validated barcode,
-then reuses the existing product form and repository. No camera frame, external lookup request, or
-Supabase write is made by the scanner. OCR, ingestion jobs, Edge Functions, Nebius/NVIDIA calls,
-notifications, and recall-source integration remain future work.
+then reuses the existing product form and repository. Phase 6 adds still-image Latin OCR through a
+native development build. The image exists only temporarily in app cache, recognition stays on
+device, and the user reviews conservative explicit-label candidates before the same form. OCR is
+perception only; it does not infer brand, product identity, safety, or recall status. Ingestion jobs,
+Edge Functions, Nebius/NVIDIA calls, notifications, and recall-source integration remain future
+work.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

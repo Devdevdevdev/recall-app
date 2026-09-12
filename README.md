@@ -10,7 +10,7 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 5 adds real, confirmation-based barcode acquisition on top of the authenticated inventory:
+Phase 6 adds private on-device product-label OCR alongside the verified barcode scanner:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -23,6 +23,12 @@ Phase 5 adds real, confirmation-based barcode acquisition on top of the authenti
   confirmed deletion
 - Camera barcode acquisition using Expo SDK 57's `expo-camera`, with confirmation before the
   existing product form is prefilled and saved
+- Still-image product-label OCR using pinned `rn-mlkit-ocr@0.3.1` and the Latin-only Google ML Kit
+  model, with conservative model/serial/lot extraction and review before ProductForm
+- Temporary label photos processed only on device and deleted from app cache on best effort; no
+  image is uploaded, persisted, or added to the photo library
+- A custom native development-client configuration because ML Kit OCR is not available in Expo Go,
+  while web retains a safe mobile-only explanation and manual entry
 - GS1 check-digit validation for GTIN-8, GTIN-12, GTIN-13, and GTIN-14 while preserving leading
   zeroes, plus manual entry when camera access is unavailable
 - A Supabase-backed inventory repository that maps database rows to domain objects and derives
@@ -32,10 +38,10 @@ Phase 5 adds real, confirmation-based barcode acquisition on top of the authenti
   Security
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Password recovery, magic links, OAuth/social login, OCR, external product lookup, recall ingestion,
+Password recovery, magic links, OAuth/social login, external product lookup, recall ingestion,
 notifications, and AI matching execution are intentionally not implemented yet. Scanning acquires
-only a barcode; it does not identify a product. Product detail screens do not make safety or recall
-conclusions before authoritative recall data exists.
+only barcode data or visible label text; it does not identify a commercial product. Product detail
+screens do not make safety or recall conclusions before authoritative recall data exists.
 
 ## Planned architecture
 
@@ -54,7 +60,7 @@ Prerequisites:
 
 - Node.js 22.13 or later (required by Expo SDK 57)
 - npm
-- Expo Go or an Android/iOS simulator for device testing
+- Expo Go for barcode-only testing, or native Android/iOS build tools for label OCR testing
 
 Install and validate the project:
 
@@ -68,6 +74,12 @@ npm start
 From the Expo terminal, open the project on Android, iOS, or web. You can also run `npm run
 android`, `npm run ios`, or `npm run web` directly.
 
+Label OCR requires Recall's native development build because it includes ML Kit code. For a local
+Android physical-device build run `npx expo run:android --device`; after installation use `npx expo
+start --dev-client` for JavaScript-only iterations. Expo Go continues to support the barcode flow
+but cannot run `rn-mlkit-ocr`. See [docs/ocr-scanning.md](docs/ocr-scanning.md) for native build,
+privacy, parser, workaround, and physical-device instructions.
+
 The example environment file contains names only. The application continues to load without
 Supabase configuration during local development. To connect it, set
 `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in the ignored `.env.local`
@@ -80,6 +92,8 @@ See [docs/authentication.md](docs/authentication.md) for the authentication arch
 settings, and manual test plan. See [docs/product-inventory.md](docs/product-inventory.md) for the
 inventory data boundary and ownership model. See [docs/barcode-scanning.md](docs/barcode-scanning.md)
 for the Phase 5 scanner permissions, validation, privacy model, and physical-device test plan.
+See [docs/ocr-scanning.md](docs/ocr-scanning.md) for the Phase 6 on-device OCR architecture and
+manual test plan.
 
 ## Security
 

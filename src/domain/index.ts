@@ -21,3 +21,11 @@ export {
   type ProductBarcodeFormat,
   type ScannedBarcode,
 } from './barcode';
+
+export {
+  parseProductLabel,
+  type ProductLabelCandidates,
+  type ProductLabelEvidence,
+  type ProductLabelField,
+  type ProductScanEvidence,
+} from './productLabel';

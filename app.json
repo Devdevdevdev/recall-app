@@ -8,9 +8,15 @@
     "scheme": "recall",
     "userInterfaceStyle": "light",
     "ios": {
+      "deploymentTarget": "15.5",
       "supportsTablet": true
     },
     "android": {
+      "blockedPermissions": [
+        "android.permission.READ_EXTERNAL_STORAGE",
+        "android.permission.WRITE_EXTERNAL_STORAGE",
+        "android.permission.RECORD_AUDIO"
+      ],
       "adaptiveIcon": {
         "backgroundColor": "#E8F1EE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -30,9 +36,17 @@
       [
         "expo-camera",
         {
-          "cameraPermission": "Allow Recall to use your camera to scan product barcodes.",
+          "cameraPermission": "Allow Recall to use your camera to scan barcodes and photograph product labels.",
+          "microphonePermission": false,
           "recordAudioAndroid": false,
           "barcodeScannerEnabled": true
+        }
+      ],
+      [
+        "./plugins/with-rn-mlkit-ocr-latin-fix",
+        {
+          "ocrModels": ["latin"],
+          "ocrUseBundled": true
         }
       ],
       [

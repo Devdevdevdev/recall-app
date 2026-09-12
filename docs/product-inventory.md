@@ -18,9 +18,10 @@ The existing `owned_products` RLS policies remain the authority for list, read, 
 delete operations; no privileged key is present in the app.
 
 Manual products store `identification_method` as `manual`; products created through the confirmed
-Phase 5 scanner handoff store `barcode_scan`. Both keep `identification_confidence` and `image_path`
-as `null`. The form trims text and converts blank optional values to `null` so the database
-represents absence consistently rather than accumulating meaningless empty strings.
+Phase 5 scanner handoff store `barcode_scan`; products created from accepted Phase 6 model, serial,
+or lot OCR suggestions store `ocr_assisted`. Every method keeps `identification_confidence` and
+`image_path` as `null`. The form trims text and converts blank optional values to `null` so the
+database represents absence consistently rather than accumulating meaningless empty strings.
 
 ## Product experience
 
@@ -56,6 +57,9 @@ represents absence consistently rather than accumulating meaningless empty strin
 
 The Phase 5 Scan tab validates and confirms a GTIN before navigating to this same form. The route
 parameter is revalidated on arrival and the form validates again on save. The user must enter a
-product name; the scanner makes no product-identification claim. See
+product name; the scanner makes no product-identification claim. Phase 6 applies the same untrusted
+route validation to model, serial, and lot suggestions. A detected reference remains review-only
+because the existing schema has no `reference_number` column. See
 [barcode-scanning.md](barcode-scanning.md) for the supported formats, camera permissions, privacy,
-and test plan. OCR, external product lookup, image upload, and recall matching remain deferred.
+and test plan, and [ocr-scanning.md](ocr-scanning.md) for label acquisition. External product
+lookup, image upload, and recall matching remain deferred.

@@ -13,6 +13,21 @@ export type ProductFormValues = {
 
 export type ProductFormErrors = Partial<Record<keyof ProductFormValues, string>>;
 
+export type ProductCreationMethod = 'barcode_scan' | 'ocr_assisted';
+
+export type ProductCreationParams = {
+  gtin?: string | string[];
+  lotNumber?: string | string[];
+  modelNumber?: string | string[];
+  serialNumber?: string | string[];
+  source?: string | string[];
+};
+
+export type ProductCreationPrefill = {
+  identificationMethod: ProductCreationMethod | null;
+  values: ProductFormValues;
+};
+
 const maximumLengths: Record<keyof ProductFormValues, number> = {
   productName: 200,
   brand: 120,
@@ -38,6 +53,49 @@ export const emptyProductFormValues: ProductFormValues = {
 function nullableTrimmed(value: string): string | null {
   const trimmed = value.trim();
   return trimmed.length === 0 ? null : trimmed;
+}
+
+function validatedIdentifierParam(value: string | string[] | undefined): string {
+  if (typeof value !== 'string' || /[\u0000-\u001f\u007f]/u.test(value)) {
+    return '';
+  }
+
+  const normalized = value.trim().replace(/\s+/g, ' ');
+  return normalized.length <= maximumLengths.modelNumber ? normalized : '';
+}
+
+/** Revalidates all untrusted product-creation route parameters before they reach ProductForm. */
+export function productCreationPrefillFromParams(
+  params: ProductCreationParams,
+): ProductCreationPrefill {
+  const source = typeof params.source === 'string' ? params.source : null;
+
+  if (source === 'barcode_scan' && typeof params.gtin === 'string') {
+    const gtin = validateGtin(params.gtin);
+    if (gtin.isValid && gtin.normalizedValue) {
+      return {
+        identificationMethod: 'barcode_scan',
+        values: { ...emptyProductFormValues, gtin: gtin.normalizedValue },
+      };
+    }
+  }
+
+  if (source === 'ocr_assisted') {
+    const values = {
+      ...emptyProductFormValues,
+      lotNumber: validatedIdentifierParam(params.lotNumber),
+      modelNumber: validatedIdentifierParam(params.modelNumber),
+      serialNumber: validatedIdentifierParam(params.serialNumber),
+    };
+    const hasIdentifier = Boolean(values.lotNumber || values.modelNumber || values.serialNumber);
+
+    return {
+      identificationMethod: hasIdentifier ? 'ocr_assisted' : null,
+      values,
+    };
+  }
+
+  return { identificationMethod: null, values: emptyProductFormValues };
 }
 
 function isValidDate(value: string): boolean {

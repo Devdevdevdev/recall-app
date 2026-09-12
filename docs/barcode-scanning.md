@@ -51,8 +51,9 @@ Products created through the confirmed scanner route retain `identification_meth
 and `identification_confidence = null`. Manual entries retain `manual`. No database migration is
 needed because the existing text identification field supports both values.
 
-External product lookup, OCR, photo recognition, recall matching, and automatic product identity
-are intentionally not part of Phase 5. They remain future work.
+Phase 6 adds label OCR as a separate Scan mode without changing this barcode state machine. Barcode
+mode remains the default and still takes no photo. External product lookup, recall matching, and
+automatic product identity remain future work. See [ocr-scanning.md](ocr-scanning.md).
 
 ## Physical-device manual test plan
 

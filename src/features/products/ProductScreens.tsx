@@ -8,7 +8,11 @@ import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import type { OwnedProduct, OwnedProductInput } from '@/src/domain';
 
 import { ProductForm } from './ProductForm';
-import { emptyProductFormValues, productFormValuesFromProduct } from './productFormUtils';
+import {
+  productFormValuesFromProduct,
+  type ProductCreationMethod,
+  type ProductFormValues,
+} from './productFormUtils';
 
 function BackButton({
   href = '/products',
@@ -55,13 +59,13 @@ function LoadingOrError({ message, onRetry }: { message: string; onRetry?: () =>
 }
 
 type NewProductScreenProps = {
-  scannedGtin?: string | null;
-  wasScanned?: boolean;
+  identificationMethod?: ProductCreationMethod | null;
+  initialValues?: ProductFormValues;
 };
 
 export function NewProductScreen({
-  scannedGtin = null,
-  wasScanned = false,
+  identificationMethod = null,
+  initialValues,
 }: NewProductScreenProps) {
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -77,7 +81,7 @@ export function NewProductScreen({
       try {
         const product = await ownedProductsRepository.create({
           ...input,
-          ...(wasScanned ? { identificationMethod: 'barcode_scan' as const } : {}),
+          ...(identificationMethod ? { identificationMethod } : {}),
         });
         router.replace(`/products/${product.id}` as Href);
       } catch {
@@ -86,7 +90,7 @@ export function NewProductScreen({
         setIsSaving(false);
       }
     },
-    [isSaving, wasScanned],
+    [identificationMethod, isSaving],
   );
 
   return (
@@ -94,15 +98,17 @@ export function NewProductScreen({
       <BackButton />
       <PageTitle
         description={
-          wasScanned
+          identificationMethod === 'barcode_scan'
             ? 'Your barcode is ready. Add a product name and any details you know.'
-            : 'Add the details you have now. You can update them later.'
+            : identificationMethod === 'ocr_assisted'
+              ? 'Review the label details, then add the product name yourself.'
+              : 'Add the details you have now. You can update them later.'
         }
         title="Add product"
       />
       {error ? <LoadingOrError message={error} /> : null}
       <ProductForm
-        initialValues={scannedGtin ? { ...emptyProductFormValues, gtin: scannedGtin } : undefined}
+        initialValues={initialValues}
         isSubmitting={isSaving}
         onSubmit={createProduct}
         submitLabel="Save product"

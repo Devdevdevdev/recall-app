@@ -22,6 +22,7 @@ This document tracks submission requirements and implementation evidence as Reca
 - [x] **Open-source license:** MIT license included in the repository.
 - [ ] **Working demo/test build:** Publish an installable or reliably reproducible Android/iOS
       build and document test instructions.
+- [x] Add reproducible local development-build instructions for the native on-device OCR demo.
 - [ ] **Maximum 3-minute public YouTube demo:** Publish a public video no longer than three minutes
       and add its URL here.
 - [ ] **Explanation of Nebius/NVIDIA usage:** Document the runtime path, model, prompts/schemas,
@@ -36,7 +37,8 @@ schema, RLS policies, domain types, repository boundaries, and guarded client co
 3 added real Supabase email/password authentication, persisted sessions, protected routes, and
 sign-out. Phase 4 adds authenticated inventory CRUD using the existing `owned_products` RLS
 policies: list, refresh, manually create, view, edit, and confirmed delete. Phase 5 adds private,
-on-device barcode acquisition and confirmation before it reuses that inventory flow; it does not
-perform product lookup. Password recovery, social login, live recall ingestion, Nebius/NVIDIA
-execution, OCR, and notifications remain intentionally deferred so they can be added with real
-credentials, trusted data, and explicit validation in later phases.
+on-device barcode acquisition and confirmation before it reuses that inventory flow. Phase 6 adds
+still-image Latin OCR entirely on device, deletes the temporary cache image on best effort, and asks
+the user to review only conservatively parsed identifiers. It performs no product lookup and makes
+no recall claim. Password recovery, social login, live recall ingestion, Nebius/NVIDIA execution,
+and notifications remain intentionally deferred for later server-side phases.
