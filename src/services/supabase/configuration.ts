@@ -1,13 +1,13 @@
 const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL?.trim();
-const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY?.trim();
+const supabasePublishableKey = process.env.EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY?.trim();
 
-type SupabaseVariableName = 'EXPO_PUBLIC_SUPABASE_URL' | 'EXPO_PUBLIC_SUPABASE_ANON_KEY';
+type SupabaseVariableName = 'EXPO_PUBLIC_SUPABASE_URL' | 'EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY';
 
 export type SupabaseConfiguration =
   | {
       status: 'configured';
       url: string;
-      anonKey: string;
+      publishableKey: string;
     }
   | {
       status: 'unconfigured';
@@ -25,11 +25,11 @@ function readSupabaseConfiguration(): SupabaseConfiguration {
     missingVariables.push('EXPO_PUBLIC_SUPABASE_URL');
   }
 
-  if (!supabaseAnonKey) {
-    missingVariables.push('EXPO_PUBLIC_SUPABASE_ANON_KEY');
+  if (!supabasePublishableKey) {
+    missingVariables.push('EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY');
   }
 
-  if (!supabaseUrl || !supabaseAnonKey) {
+  if (!supabaseUrl || !supabasePublishableKey) {
     return { status: 'unconfigured', missingVariables };
   }
 
@@ -49,7 +49,7 @@ function readSupabaseConfiguration(): SupabaseConfiguration {
     };
   }
 
-  return { status: 'configured', url: supabaseUrl, anonKey: supabaseAnonKey };
+  return { status: 'configured', url: supabaseUrl, publishableKey: supabasePublishableKey };
 }
 
 export const supabaseConfiguration = readSupabaseConfiguration();

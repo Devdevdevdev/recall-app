@@ -117,8 +117,11 @@ The anonymous role receives no table access. Rows from sources not explicitly ap
 authoritative are also hidden from authenticated clients, including dependent notices, scopes,
 matches, and alerts. There are no mobile write policies or grants for recall data or match
 evaluations, and no mobile insert/delete permission for alerts. Future server-side ingestion and
-matching will use privileged execution that is never bundled into the app. The service-role key and
-Nebius credentials are server-only.
+matching will use privileged execution that is never bundled into the app. The mobile client uses
+only a Supabase publishable key, and RLS protects user data. Supabase secret credentials and Nebius
+credentials are server-only and must never enter Expo client code. Future Edge Functions may use
+Supabase's platform-provided publishable/secret key environment configuration when they are
+implemented; none are part of Phase 2.
 
 Global recall data is shared because an official notice and its scope are the same facts for every
 user. Inventory, evaluations, and alerts are private because they reveal ownership and personalized

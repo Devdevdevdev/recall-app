@@ -6,7 +6,7 @@ import { supabaseConfiguration } from './configuration';
 
 export const supabaseClient: SupabaseClient | null =
   supabaseConfiguration.status === 'configured'
-    ? createClient(supabaseConfiguration.url, supabaseConfiguration.anonKey, {
+    ? createClient(supabaseConfiguration.url, supabaseConfiguration.publishableKey, {
         auth: {
           storage: globalThis.localStorage,
           autoRefreshToken: true,

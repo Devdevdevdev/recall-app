@@ -58,19 +58,22 @@ android`, `npm run ios`, or `npm run web` directly.
 
 The example environment file contains names only. The application continues to load without
 Supabase configuration during local development. To connect it, set
-`EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_ANON_KEY` in the ignored `.env.local` file.
-Both variables are public client configuration, not secrets; privacy depends on database grants
-and Row Level Security.
+`EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in the ignored `.env.local`
+file. Both variables are public client configuration, not secrets; privacy depends on database
+grants and Row Level Security.
 
 Database changes live in `supabase/migrations/` and must be applied through the normal Supabase
 migration workflow. See [docs/database.md](docs/database.md) for the schema and security model.
 
 ## Security
 
-**Never put `NEBIUS_API_KEY`, `SUPABASE_SERVICE_ROLE_KEY`, or any other privileged credential in
-the Expo client.** Expo public environment variables are bundled into the app and are readable by
-users. Nebius/NVIDIA requests and privileged recall writes will be introduced in a later phase
-through a secure Supabase Edge Function or equivalent server-side component.
+**Never put `NEBIUS_API_KEY`, a Supabase secret key, or any other privileged credential in the
+Expo client.** Expo public environment variables are bundled into the app and are readable by
+users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
+user data. Nebius/NVIDIA requests and privileged recall writes will be introduced in a later phase
+through a secure Supabase Edge Function or equivalent server-side component. When implemented,
+Edge Functions may use Supabase's platform-provided publishable/secret key environment
+configuration; secret credentials remain server-side only.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every

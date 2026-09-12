@@ -64,8 +64,11 @@ and concrete adapters will translate between database rows and domain types.
 - AI responses are untrusted input and must pass schema validation before storage or display.
 - Low-confidence or contradictory matches require user review and must not trigger definitive
   safety claims.
-- `NEBIUS_API_KEY` and Supabase service-role credentials are server-only secrets.
-- The mobile app may receive only public Supabase configuration protected by Row Level Security.
+- The mobile app uses only Supabase's publishable key. Row Level Security protects user data.
+- `NEBIUS_API_KEY` and Supabase secret credentials are server-only; they must never enter Expo
+  client code.
+- Future Edge Functions may use Supabase's platform-provided publishable/secret key environment
+  configuration. No Edge Function is implemented in Phase 2.
 - RLS limits inventory to its owner and derives match ownership through the matched product.
 - Recall sources explicitly approved as authoritative, and their notices and scopes, are readable
   by authenticated users but have no mobile write privileges or policies.
