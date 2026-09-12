@@ -49,13 +49,17 @@ Mobile
 - `src/design/`: design tokens and navigation theme
 - `src/domain/`: framework-independent entities and matching types
 - `src/data/`: repository interfaces that keep query syntax out of UI code
-- `src/services/supabase/`: validated public configuration and the optional mobile client
+- `src/services/supabase/`: validated public configuration and the one optional mobile client
+- `src/providers/AuthProvider.tsx`: session restoration, auth-state subscription, and app-level
+  authentication state
+- `src/features/auth/`: authentication UI and the only mobile feature service that calls Supabase
 - Future repository adapters under `src/data/`: Supabase query implementations
 - Future services under `src/services/`: adapters for backend endpoints and device capabilities
 - Future `supabase/functions/`: authenticated server-side orchestration and Nebius calls
 
-No screen imports or queries Supabase directly. Feature code will depend on repository interfaces,
-and concrete adapters will translate between database rows and domain types.
+No screen imports or queries Supabase directly. Authentication screens use their typed provider,
+whose service boundary owns Supabase Auth calls. Product feature code will depend on repository
+interfaces, and concrete adapters will translate between database rows and domain types.
 
 ## Trust and security model
 
@@ -74,14 +78,15 @@ and concrete adapters will translate between database rows and domain types.
   by authenticated users but have no mobile write privileges or policies.
 - Match and alert creation are server-controlled. The mobile client can only read its matches and
   update the state fields of its own alerts.
-- Authentication UI, input validation at ingestion boundaries, rate limits, audit logs, and
-  retention controls remain future work.
+- Password recovery, OAuth/social login, input validation at ingestion boundaries, rate limits,
+  audit logs, and retention controls remain future work.
 
 ## Phase status
 
-Phase 1 established the Expo application shell. Phase 2 adds the Supabase client boundary,
-database schema, domain types, repository contracts, and RLS foundation. It deliberately contains
-no authentication UI, ingestion jobs, Edge Functions, Nebius/NVIDIA calls, ML Kit, barcode,
-notification, or recall-source integration.
+Phase 1 established the Expo application shell and Phase 2 added the Supabase client boundary,
+database schema, domain types, repository contracts, and RLS foundation. Phase 3 adds real email/
+password authentication, persisted-session restoration, protected routes, and sign-out. It
+deliberately contains no password recovery, OAuth/social login, ingestion jobs, Edge Functions,
+Nebius/NVIDIA calls, ML Kit, barcode, notification, or recall-source integration.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

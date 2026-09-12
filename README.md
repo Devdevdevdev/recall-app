@@ -10,20 +10,24 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 2 adds the Supabase and database foundation while preserving the Phase 1 mobile shell:
+Phase 3 adds real Supabase email/password authentication while preserving the Phase 1 mobile shell
+and Phase 2 database foundation:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
 - Home, Scan, My Products, Alerts, and Settings screens
 - Reusable safety-oriented design tokens and UI components
 - A guarded Supabase client configuration for Android, iOS, and web
+- Real email/password sign-up, sign-in, persisted sessions, and sign-out
+- Protected Expo Router auth and authenticated route groups
 - Framework-independent domain models and repository interfaces
 - A migration-defined PostgreSQL schema with constraints, indexes, privileges, and Row Level
   Security
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Authentication UI, scanning, OCR, recall ingestion, notifications, and AI matching execution are
-intentionally not implemented yet. The current screens contain no fake data or integrations.
+Password recovery, magic links, OAuth/social login, scanning, OCR, recall ingestion,
+notifications, and AI matching execution are intentionally not implemented yet. The current
+screens contain no fake data or integrations.
 
 ## Planned architecture
 
@@ -64,11 +68,13 @@ grants and Row Level Security.
 
 Database changes live in `supabase/migrations/` and must be applied through the normal Supabase
 migration workflow. See [docs/database.md](docs/database.md) for the schema and security model.
+See [docs/authentication.md](docs/authentication.md) for the authentication architecture, dashboard
+settings, and manual test plan.
 
 ## Security
 
-**Never put `NEBIUS_API_KEY`, a Supabase secret key, or any other privileged credential in the
-Expo client.** Expo public environment variables are bundled into the app and are readable by
+**Never put `NEBIUS_API_KEY`, a Supabase secret/service-role key, or any other privileged
+credential in the Expo client.** Expo public environment variables are bundled into the app and are readable by
 users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
 user data. Nebius/NVIDIA requests and privileged recall writes will be introduced in a later phase
 through a secure Supabase Edge Function or equivalent server-side component. When implemented,

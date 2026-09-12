@@ -31,8 +31,9 @@ This document tracks submission requirements and implementation evidence as Reca
 
 ## Phase status
 
-Phase 1 provided the mobile shell and documentation. Phase 2 adds the migration-defined Supabase
-schema, RLS policies, domain types, repository boundaries, and guarded client configuration.
-Authentication UI, live recall ingestion, Nebius/NVIDIA execution, barcode, OCR, and notifications
-remain intentionally deferred so they can be added with real credentials, trusted data, and
-explicit validation in later phases.
+Phase 1 provided the mobile shell and documentation. Phase 2 added the migration-defined Supabase
+schema, RLS policies, domain types, repository boundaries, and guarded client configuration. Phase
+3 adds real Supabase email/password authentication, persisted sessions, protected routes, and
+sign-out. Password recovery, social login, live recall ingestion, Nebius/NVIDIA execution,
+barcode, OCR, and notifications remain intentionally deferred so they can be added with real
+credentials, trusted data, and explicit validation in later phases.

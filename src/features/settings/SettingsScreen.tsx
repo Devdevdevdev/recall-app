@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { AppIcon } from '@/src/components/ui/AppIcon';
 import { Screen } from '@/src/components/ui/Screen';
 import { ScreenHeader } from '@/src/components/ui/ScreenHeader';
+import { AuthButton } from '@/src/features/auth/components/AuthButton';
+import { useAuth } from '@/src/providers/AuthProvider';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 
 const settings = [
@@ -21,6 +24,29 @@ const settings = [
 ] as const;
 
 export function SettingsScreen() {
+  const { signOut, user } = useAuth();
+  const [isSigningOut, setIsSigningOut] = useState(false);
+  const [signOutError, setSignOutError] = useState<string | null>(null);
+
+  async function handleSignOut() {
+    if (isSigningOut) {
+      return;
+    }
+
+    setSignOutError(null);
+    setIsSigningOut(true);
+    try {
+      const result = await signOut();
+      if (result.status === 'error') {
+        setSignOutError(result.message);
+      }
+    } catch {
+      setSignOutError('Unable to sign out. Please try again.');
+    } finally {
+      setIsSigningOut(false);
+    }
+  }
+
   return (
     <Screen>
       <ScreenHeader
@@ -28,6 +54,15 @@ export function SettingsScreen() {
         description="Manage Recall preferences, notifications, and privacy controls."
       />
       <View style={styles.list}>
+        <View style={styles.accountRow}>
+          <View style={styles.iconContainer}>
+            <AppIcon android="person" color={colors.brand.primary} ios="person.fill" size={22} />
+          </View>
+          <View style={styles.copy}>
+            <Text style={styles.title}>Signed in</Text>
+            <Text style={styles.description}>{user?.email ?? 'Email unavailable'}</Text>
+          </View>
+        </View>
         {settings.map((setting) => (
           <View key={setting.title} style={styles.row}>
             <View style={styles.iconContainer}>
@@ -45,7 +80,20 @@ export function SettingsScreen() {
           </View>
         ))}
       </View>
-      <Text style={styles.version}>Recall · Phase 1 foundation</Text>
+      <View style={styles.signOutSection}>
+        {signOutError ? (
+          <Text accessibilityLiveRegion="polite" style={styles.signOutError}>
+            {signOutError}
+          </Text>
+        ) : null}
+        <AuthButton
+          label="Sign out"
+          loading={isSigningOut}
+          onPress={() => void handleSignOut()}
+          tone="secondary"
+        />
+      </View>
+      <Text style={styles.version}>Recall · Phase 3 authentication</Text>
     </Screen>
   );
 }
@@ -59,6 +107,14 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   row: {
+    alignItems: 'center',
+    borderBottomColor: colors.border.subtle,
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    gap: spacing.md,
+    padding: spacing.md,
+  },
+  accountRow: {
     alignItems: 'center',
     borderBottomColor: colors.border.subtle,
     borderBottomWidth: 1,
@@ -94,5 +150,13 @@ const styles = StyleSheet.create({
     fontSize: typography.size.caption,
     lineHeight: typography.lineHeight.caption,
     textAlign: 'center',
+  },
+  signOutSection: {
+    gap: spacing.sm,
+  },
+  signOutError: {
+    color: colors.semantic.danger,
+    fontSize: typography.size.label,
+    lineHeight: typography.lineHeight.label,
   },
 });
