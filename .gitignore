@@ -30,8 +30,26 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
-.env*.local
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.env
+*.env.*
+!*.env.example
+
+# Credentials and service configuration
+*.pfx
+*.cer
+*.crt
+*.keystore
+service-account*.json
+google-services.json
+GoogleService-Info.plist
+
+# Supabase local development
+supabase/.branches/
+supabase/.temp/
 
 # typescript
 *.tsbuildinfo
