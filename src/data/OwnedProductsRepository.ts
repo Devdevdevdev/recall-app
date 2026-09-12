@@ -1,6 +1,9 @@
-import type { OwnedProduct } from '@/src/domain';
+import type { OwnedProduct, OwnedProductInput } from '@/src/domain';
 
 export interface OwnedProductsRepository {
-  findById(id: string): Promise<OwnedProduct | null>;
+  create(input: OwnedProductInput): Promise<OwnedProduct>;
+  delete(id: string): Promise<void>;
+  getById(id: string): Promise<OwnedProduct | null>;
   listForCurrentUser(): Promise<readonly OwnedProduct[]>;
+  update(id: string, input: OwnedProductInput): Promise<OwnedProduct>;
 }

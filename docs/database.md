@@ -35,6 +35,13 @@ purchase date, and identification metadata are nullable because a useful invento
 incomplete. Identification confidence is constrained to `0..1`. Deleting an auth user cascades to
 their inventory and dependent private records.
 
+Phase 4 uses this existing table without a schema change. The mobile inventory adapter maps its
+snake_case columns to `OwnedProduct`, uses the authenticated Supabase user only for an insert's
+`user_id`, and lets RLS enforce every other operation. Manual entries persist
+`identification_method = 'manual'`, with `identification_confidence` and `image_path` left `null`.
+Blank optional form values are normalized to `null`, preserving a single representation of missing
+metadata.
+
 ### `recall_sources`
 
 Stores the publisher, jurisdiction, base URL, and authoritative flag for a source. New rows default

@@ -5,6 +5,7 @@ export type {
   JsonPrimitive,
   JsonValue,
   OwnedProduct,
+  OwnedProductInput,
   RecallMatch,
   RecallMatchStatus,
   RecallNotice,

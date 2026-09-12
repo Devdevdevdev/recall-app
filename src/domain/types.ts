@@ -26,6 +26,21 @@ export type OwnedProduct = {
   updatedAt: string;
 };
 
+/**
+ * User-editable inventory fields. Ownership and persistence metadata intentionally
+ * do not belong here: the repository derives ownership from the authenticated session.
+ */
+export type OwnedProductInput = {
+  brand: string | null;
+  productName: string;
+  category: string | null;
+  gtin: string | null;
+  modelNumber: string | null;
+  serialNumber: string | null;
+  lotNumber: string | null;
+  purchaseDate: string | null;
+};
+
 export type RecallSource = {
   id: string;
   name: string;

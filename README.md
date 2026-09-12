@@ -10,8 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 3 adds real Supabase email/password authentication while preserving the Phase 1 mobile shell
-and Phase 2 database foundation:
+Phase 4 adds a real authenticated product inventory on top of the Phase 1 mobile shell, Phase 2
+database foundation, and Phase 3 authentication:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -20,14 +20,18 @@ and Phase 2 database foundation:
 - A guarded Supabase client configuration for Android, iOS, and web
 - Real email/password sign-up, sign-in, persisted sessions, and sign-out
 - Protected Expo Router auth and authenticated route groups
+- Real authenticated product list, pull-to-refresh, manual product creation, detail, editing, and
+  confirmed deletion
+- A Supabase-backed inventory repository that maps database rows to domain objects and derives
+  product ownership from the authenticated user
 - Framework-independent domain models and repository interfaces
 - A migration-defined PostgreSQL schema with constraints, indexes, privileges, and Row Level
   Security
 - Strict TypeScript, ESLint, and Prettier configuration
 
 Password recovery, magic links, OAuth/social login, scanning, OCR, recall ingestion,
-notifications, and AI matching execution are intentionally not implemented yet. The current
-screens contain no fake data or integrations.
+notifications, and AI matching execution are intentionally not implemented yet. Product detail
+screens do not make safety or recall conclusions before authoritative recall data exists.
 
 ## Planned architecture
 
@@ -69,7 +73,8 @@ grants and Row Level Security.
 Database changes live in `supabase/migrations/` and must be applied through the normal Supabase
 migration workflow. See [docs/database.md](docs/database.md) for the schema and security model.
 See [docs/authentication.md](docs/authentication.md) for the authentication architecture, dashboard
-settings, and manual test plan.
+settings, and manual test plan. See [docs/product-inventory.md](docs/product-inventory.md) for the
+inventory data boundary, ownership model, and Phase 4 manual test plan.
 
 ## Security
 

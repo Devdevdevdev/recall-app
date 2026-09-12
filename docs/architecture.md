@@ -48,18 +48,22 @@ Mobile
 - `src/components/`: small reusable presentation components
 - `src/design/`: design tokens and navigation theme
 - `src/domain/`: framework-independent entities and matching types
-- `src/data/`: repository interfaces that keep query syntax out of UI code
+- `src/data/`: repository interfaces and the `SupabaseOwnedProductsRepository`, which keeps query
+  syntax out of UI code and maps database records to domain objects
 - `src/services/supabase/`: validated public configuration and the one optional mobile client
 - `src/providers/AuthProvider.tsx`: session restoration, auth-state subscription, and app-level
   authentication state
-- `src/features/auth/`: authentication UI and the only mobile feature service that calls Supabase
-- Future repository adapters under `src/data/`: Supabase query implementations
+- `src/features/auth/`: authentication UI and its typed Supabase Auth service boundary
+- Product screens use the inventory repository only; it derives a create operation's owner from the
+  authenticated Supabase user and relies on RLS for every operation.
 - Future services under `src/services/`: adapters for backend endpoints and device capabilities
 - Future `supabase/functions/`: authenticated server-side orchestration and Nebius calls
 
 No screen imports or queries Supabase directly. Authentication screens use their typed provider,
-whose service boundary owns Supabase Auth calls. Product feature code will depend on repository
-interfaces, and concrete adapters will translate between database rows and domain types.
+whose service boundary owns Supabase Auth calls. Product feature code depends on the inventory
+repository, whose concrete adapter translates database rows and domain types. The product form
+normalizes blank optional text to `null`; it never accepts an owner ID. Manual entries use the
+stable `manual` identification method, with no AI confidence value.
 
 ## Trust and security model
 

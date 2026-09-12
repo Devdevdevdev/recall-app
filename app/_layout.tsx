@@ -41,6 +41,9 @@ function RootNavigator() {
     <Stack screenOptions={{ contentStyle: { backgroundColor: navigationTheme.colors.background } }}>
       <Stack.Protected guard={isAuthenticated}>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="products/new" options={{ headerShown: false }} />
+        <Stack.Screen name="products/[id]" options={{ headerShown: false }} />
+        <Stack.Screen name="products/[id]/edit" options={{ headerShown: false }} />
       </Stack.Protected>
       <Stack.Protected guard={!isAuthenticated}>
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />

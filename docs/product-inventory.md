@@ -1,0 +1,58 @@
+# Product inventory
+
+## Phase 4 scope
+
+Authenticated users can now list, create, view, edit, refresh, and delete their own inventory
+records. Manual entry deliberately covers only known identifying fields; it does not scan,
+recognize, upload, or look up a product.
+
+## Data boundary and ownership
+
+Screens depend on `OwnedProductsRepository`, never the Supabase client. The
+`SupabaseOwnedProductsRepository` is the one mobile adapter that translates database `snake_case`
+rows into `OwnedProduct` domain records and back into explicit write rows.
+
+On creation, the adapter reads the current authenticated user from the normal Supabase mobile
+client and supplies that ID as `user_id`. Forms, routes, and local state never accept an owner ID.
+The existing `owned_products` RLS policies remain the authority for list, read, insert, update, and
+delete operations; no privileged key is present in the app.
+
+Manual products store `identification_method` as `manual`, with `identification_confidence` and
+`image_path` as `null`. The form trims text and converts blank optional values to `null` so the
+database represents absence consistently rather than accumulating meaningless empty strings.
+
+## Product experience
+
+- **My Products** has loading, empty, retryable error, and pull-to-refresh states.
+- **Add product** validates a required name, conservative GTIN formats (8, 12, 13, or 14 digits),
+  a real ISO `YYYY-MM-DD` purchase date, and practical field lengths.
+- **Detail** presents only supplied identifying data and makes no claim about a product's safety.
+  It explicitly states that automated recall monitoring is not active yet.
+- **Edit** reuses the same validated form. **Delete** requires native confirmation and returns to
+  the refreshed inventory list.
+
+## Manual test plan
+
+1. **Empty inventory:** sign in as a user with no products. Confirm that My Products shows “No
+   products yet” and its Add a product action.
+2. **Create:** add `Philips Airfryer`, brand `Philips`, model `HD9252/90`. Confirm it saves and is
+   listed immediately.
+3. **Persistence:** close and reopen Recall. Confirm the product remains present.
+4. **Detail:** open the product. Confirm its stored fields appear and the screen does not claim a
+   recall result or safety status.
+5. **Edit:** change its name or another field, save, and reopen it. Confirm the value persists.
+6. **Delete:** delete it, approve the confirmation dialog, refresh the list, and confirm it remains
+   gone.
+7. **Optional fields:** create a product with only a name. Confirm creation succeeds.
+8. **Validation:** try an impossible date such as `2026-02-30` and an invalid GTIN. Confirm each
+   error is explained and saving is blocked.
+9. **RLS user isolation:** as User A create Product A, sign out, then sign in as User B. Confirm
+   Product A is not listed.
+10. **Direct ownership check:** while signed in as User B, use the normal repository/client to
+    request Product A's known UUID. Expect no accessible row (`null`) because RLS filters it.
+
+## Deferred scanner path
+
+Camera, barcode scanning, OCR, external product lookup, image upload, and recall matching are
+intentionally deferred. A later scanner can populate this same validated input model after the user
+reviews it, while retaining the repository and ownership boundary.
