@@ -12,3 +12,12 @@ export type {
   RecallScope,
   RecallSource,
 } from './types';
+
+export {
+  productBarcodeFormats,
+  toScannedBarcode,
+  validateGtin,
+  type GtinValidationResult,
+  type ProductBarcodeFormat,
+  type ScannedBarcode,
+} from './barcode';

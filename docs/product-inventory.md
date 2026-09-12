@@ -17,9 +17,10 @@ client and supplies that ID as `user_id`. Forms, routes, and local state never a
 The existing `owned_products` RLS policies remain the authority for list, read, insert, update, and
 delete operations; no privileged key is present in the app.
 
-Manual products store `identification_method` as `manual`, with `identification_confidence` and
-`image_path` as `null`. The form trims text and converts blank optional values to `null` so the
-database represents absence consistently rather than accumulating meaningless empty strings.
+Manual products store `identification_method` as `manual`; products created through the confirmed
+Phase 5 scanner handoff store `barcode_scan`. Both keep `identification_confidence` and `image_path`
+as `null`. The form trims text and converts blank optional values to `null` so the database
+represents absence consistently rather than accumulating meaningless empty strings.
 
 ## Product experience
 
@@ -51,8 +52,10 @@ database represents absence consistently rather than accumulating meaningless em
 10. **Direct ownership check:** while signed in as User B, use the normal repository/client to
     request Product A's known UUID. Expect no accessible row (`null`) because RLS filters it.
 
-## Deferred scanner path
+## Barcode scanner handoff
 
-Camera, barcode scanning, OCR, external product lookup, image upload, and recall matching are
-intentionally deferred. A later scanner can populate this same validated input model after the user
-reviews it, while retaining the repository and ownership boundary.
+The Phase 5 Scan tab validates and confirms a GTIN before navigating to this same form. The route
+parameter is revalidated on arrival and the form validates again on save. The user must enter a
+product name; the scanner makes no product-identification claim. See
+[barcode-scanning.md](barcode-scanning.md) for the supported formats, camera permissions, privacy,
+and test plan. OCR, external product lookup, image upload, and recall matching remain deferred.

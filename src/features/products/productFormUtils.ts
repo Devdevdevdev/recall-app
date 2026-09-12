@@ -1,4 +1,4 @@
-import type { OwnedProduct, OwnedProductInput } from '@/src/domain';
+import { validateGtin, type OwnedProduct, type OwnedProductInput } from '@/src/domain';
 
 export type ProductFormValues = {
   brand: string;
@@ -87,9 +87,12 @@ export function validateProductForm(values: ProductFormValues): {
     errors.productName = 'Enter a product name.';
   }
 
-  const gtin = nullableTrimmed(values.gtin);
-  if (gtin && (!/^\d+$/.test(gtin) || ![8, 12, 13, 14].includes(gtin.length))) {
+  const rawGtin = nullableTrimmed(values.gtin);
+  const gtinValidation = rawGtin ? validateGtin(rawGtin) : null;
+  if (gtinValidation && !gtinValidation.isSyntaxValid) {
     errors.gtin = 'Use an 8, 12, 13, or 14 digit GTIN.';
+  } else if (gtinValidation && !gtinValidation.isValid) {
+    errors.gtin = 'This GTIN check digit is not valid.';
   }
 
   const purchaseDate = nullableTrimmed(values.purchaseDate);
@@ -107,7 +110,7 @@ export function validateProductForm(values: ProductFormValues): {
       productName,
       brand: nullableTrimmed(values.brand),
       category: nullableTrimmed(values.category),
-      gtin,
+      gtin: gtinValidation?.normalizedValue ?? null,
       modelNumber: nullableTrimmed(values.modelNumber),
       serialNumber: nullableTrimmed(values.serialNumber),
       lotNumber: nullableTrimmed(values.lotNumber),

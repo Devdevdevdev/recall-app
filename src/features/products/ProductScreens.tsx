@@ -8,7 +8,7 @@ import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import type { OwnedProduct, OwnedProductInput } from '@/src/domain';
 
 import { ProductForm } from './ProductForm';
-import { productFormValuesFromProduct } from './productFormUtils';
+import { emptyProductFormValues, productFormValuesFromProduct } from './productFormUtils';
 
 function BackButton({
   href = '/products',
@@ -54,7 +54,15 @@ function LoadingOrError({ message, onRetry }: { message: string; onRetry?: () =>
   );
 }
 
-export function NewProductScreen() {
+type NewProductScreenProps = {
+  scannedGtin?: string | null;
+  wasScanned?: boolean;
+};
+
+export function NewProductScreen({
+  scannedGtin = null,
+  wasScanned = false,
+}: NewProductScreenProps) {
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -67,7 +75,10 @@ export function NewProductScreen() {
       setIsSaving(true);
       setError(null);
       try {
-        const product = await ownedProductsRepository.create(input);
+        const product = await ownedProductsRepository.create({
+          ...input,
+          ...(wasScanned ? { identificationMethod: 'barcode_scan' as const } : {}),
+        });
         router.replace(`/products/${product.id}` as Href);
       } catch {
         setError('Unable to save this product. Please try again.');
@@ -75,18 +86,27 @@ export function NewProductScreen() {
         setIsSaving(false);
       }
     },
-    [isSaving],
+    [isSaving, wasScanned],
   );
 
   return (
     <Screen contentContainerStyle={styles.screenContent}>
       <BackButton />
       <PageTitle
-        description="Add the details you have now. You can update them later."
+        description={
+          wasScanned
+            ? 'Your barcode is ready. Add a product name and any details you know.'
+            : 'Add the details you have now. You can update them later.'
+        }
         title="Add product"
       />
       {error ? <LoadingOrError message={error} /> : null}
-      <ProductForm isSubmitting={isSaving} onSubmit={createProduct} submitLabel="Save product" />
+      <ProductForm
+        initialValues={scannedGtin ? { ...emptyProductFormValues, gtin: scannedGtin } : undefined}
+        isSubmitting={isSaving}
+        onSubmit={createProduct}
+        submitLabel="Save product"
+      />
     </Screen>
   );
 }

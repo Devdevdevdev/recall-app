@@ -28,6 +28,14 @@
       "expo-router",
       "expo-sqlite",
       [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow Recall to use your camera to scan product barcodes.",
+          "recordAudioAndroid": false,
+          "barcodeScannerEnabled": true
+        }
+      ],
+      [
         "expo-splash-screen",
         {
           "image": "./assets/images/splash-icon.png",

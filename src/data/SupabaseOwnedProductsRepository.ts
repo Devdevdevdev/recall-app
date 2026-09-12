@@ -14,7 +14,7 @@ const ownedProductColumns =
 type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> & {
   user_id: string;
   image_path: null;
-  identification_method: 'manual';
+  identification_method: 'manual' | 'barcode_scan';
   identification_confidence: null;
 };
 
@@ -63,7 +63,8 @@ export class SupabaseOwnedProductsRepository implements OwnedProductsRepository 
       ...toOwnedProductWriteRow(input),
       user_id: userData.user.id,
       image_path: null,
-      identification_method: 'manual',
+      identification_method:
+        input.identificationMethod === 'barcode_scan' ? 'barcode_scan' : 'manual',
       identification_confidence: null,
     };
     const { data, error } = await client

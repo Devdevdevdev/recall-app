@@ -56,6 +56,8 @@ Mobile
 - `src/features/auth/`: authentication UI and its typed Supabase Auth service boundary
 - Product screens use the inventory repository only; it derives a create operation's owner from the
   authenticated Supabase user and relies on RLS for every operation.
+- `src/domain/barcode.ts`: framework-independent GTIN normalization/checksum validation and scanned
+  barcode model; `src/features/scan/` adapts Expo camera events into it
 - Future services under `src/services/`: adapters for backend endpoints and device capabilities
 - Future `supabase/functions/`: authenticated server-side orchestration and Nebius calls
 
@@ -89,8 +91,10 @@ stable `manual` identification method, with no AI confidence value.
 
 Phase 1 established the Expo application shell and Phase 2 added the Supabase client boundary,
 database schema, domain types, repository contracts, and RLS foundation. Phase 3 adds real email/
-password authentication, persisted-session restoration, protected routes, and sign-out. It
-deliberately contains no password recovery, OAuth/social login, ingestion jobs, Edge Functions,
-Nebius/NVIDIA calls, ML Kit, barcode, notification, or recall-source integration.
+password authentication, persisted-session restoration, protected routes, and sign-out. Phase 5
+adds local barcode acquisition only: the Scan screen uses Expo Camera, confirms a validated barcode,
+then reuses the existing product form and repository. No camera frame, external lookup request, or
+Supabase write is made by the scanner. OCR, ingestion jobs, Edge Functions, Nebius/NVIDIA calls,
+notifications, and recall-source integration remain future work.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

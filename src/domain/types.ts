@@ -39,6 +39,8 @@ export type OwnedProductInput = {
   serialNumber: string | null;
   lotNumber: string | null;
   purchaseDate: string | null;
+  /** Set internally by a validated acquisition flow; never chosen in the product form. */
+  identificationMethod?: 'barcode_scan';
 };
 
 export type RecallSource = {

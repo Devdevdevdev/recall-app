@@ -10,8 +10,7 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 4 adds a real authenticated product inventory on top of the Phase 1 mobile shell, Phase 2
-database foundation, and Phase 3 authentication:
+Phase 5 adds real, confirmation-based barcode acquisition on top of the authenticated inventory:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -22,6 +21,10 @@ database foundation, and Phase 3 authentication:
 - Protected Expo Router auth and authenticated route groups
 - Real authenticated product list, pull-to-refresh, manual product creation, detail, editing, and
   confirmed deletion
+- Camera barcode acquisition using Expo SDK 57's `expo-camera`, with confirmation before the
+  existing product form is prefilled and saved
+- GS1 check-digit validation for GTIN-8, GTIN-12, GTIN-13, and GTIN-14 while preserving leading
+  zeroes, plus manual entry when camera access is unavailable
 - A Supabase-backed inventory repository that maps database rows to domain objects and derives
   product ownership from the authenticated user
 - Framework-independent domain models and repository interfaces
@@ -29,9 +32,10 @@ database foundation, and Phase 3 authentication:
   Security
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Password recovery, magic links, OAuth/social login, scanning, OCR, recall ingestion,
-notifications, and AI matching execution are intentionally not implemented yet. Product detail
-screens do not make safety or recall conclusions before authoritative recall data exists.
+Password recovery, magic links, OAuth/social login, OCR, external product lookup, recall ingestion,
+notifications, and AI matching execution are intentionally not implemented yet. Scanning acquires
+only a barcode; it does not identify a product. Product detail screens do not make safety or recall
+conclusions before authoritative recall data exists.
 
 ## Planned architecture
 
@@ -74,7 +78,8 @@ Database changes live in `supabase/migrations/` and must be applied through the 
 migration workflow. See [docs/database.md](docs/database.md) for the schema and security model.
 See [docs/authentication.md](docs/authentication.md) for the authentication architecture, dashboard
 settings, and manual test plan. See [docs/product-inventory.md](docs/product-inventory.md) for the
-inventory data boundary, ownership model, and Phase 4 manual test plan.
+inventory data boundary and ownership model. See [docs/barcode-scanning.md](docs/barcode-scanning.md)
+for the Phase 5 scanner permissions, validation, privacy model, and physical-device test plan.
 
 ## Security
 
