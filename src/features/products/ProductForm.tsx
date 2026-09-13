@@ -11,6 +11,7 @@ import {
 import type { OwnedProductInput } from '@/src/domain';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 
+import { PurchaseDateField } from './PurchaseDateField';
 import {
   emptyProductFormValues,
   validateProductForm,
@@ -166,14 +167,9 @@ export function ProductForm({
         onChangeText={(value) => updateValue('lotNumber', value)}
         value={values.lotNumber}
       />
-      <FormField
-        autoCapitalize="none"
+      <PurchaseDateField
         error={errors.purchaseDate}
-        keyboardType="numbers-and-punctuation"
-        label="Purchase date"
-        maxLength={10}
-        onChangeText={(value) => updateValue('purchaseDate', value)}
-        placeholder="YYYY-MM-DD"
+        onChange={(value) => updateValue('purchaseDate', value)}
         value={values.purchaseDate}
       />
       <Pressable

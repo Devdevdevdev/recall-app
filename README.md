@@ -10,7 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 6 adds private on-device product-label OCR alongside the verified barcode scanner:
+Phase 6.1 adds timezone-safe purchase-date selection and clearer scanner semantics alongside the
+verified Phase 6 OCR flow:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -31,6 +32,11 @@ Phase 6 adds private on-device product-label OCR alongside the verified barcode 
   while web retains a safe mobile-only explanation and manual entry
 - GS1 check-digit validation for GTIN-8, GTIN-12, GTIN-13, and GTIN-14 while preserving leading
   zeroes, plus manual entry when camera access is unavailable
+- Native Android/iOS purchase-date selection through Expo-compatible
+  `@react-native-community/datetimepicker`, with a browser-native web date fallback; dates are
+  stored as date-only `YYYY-MM-DD` values without UTC conversion
+- Clear distinction between a validated GTIN and a meaningful non-GTIN Code 128 product code; the
+  latter can lead into label OCR but is never guessed to be a GTIN, model, serial, or lot number
 - A Supabase-backed inventory repository that maps database rows to domain objects and derives
   product ownership from the authenticated user
 - Framework-independent domain models and repository interfaces
@@ -93,7 +99,8 @@ settings, and manual test plan. See [docs/product-inventory.md](docs/product-inv
 inventory data boundary and ownership model. See [docs/barcode-scanning.md](docs/barcode-scanning.md)
 for the Phase 5 scanner permissions, validation, privacy model, and physical-device test plan.
 See [docs/ocr-scanning.md](docs/ocr-scanning.md) for the Phase 6 on-device OCR architecture and
-manual test plan.
+manual test plan, [docs/product-inventory.md](docs/product-inventory.md) for date handling, and
+[docs/barcode-scanning.md](docs/barcode-scanning.md) for barcode classifications.
 
 ## Security
 

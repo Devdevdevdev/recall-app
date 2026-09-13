@@ -293,6 +293,7 @@ export function ScanScreen() {
     experience = (
       <ConfirmationCard
         barcode={detectedBarcode}
+        onReadProductLabel={() => chooseMode('label')}
         onScanAgain={scanAgain}
         onUseBarcode={useBarcode}
       />
@@ -506,10 +507,12 @@ function StateCard({
 
 function ConfirmationCard({
   barcode,
+  onReadProductLabel,
   onScanAgain,
   onUseBarcode,
 }: {
   barcode: ScannedBarcode;
+  onReadProductLabel: () => void;
   onScanAgain: () => void;
   onUseBarcode: () => void;
 }) {
@@ -518,23 +521,33 @@ function ConfirmationCard({
   return (
     <View style={styles.stateCard}>
       <Text accessibilityRole="header" style={styles.stateTitle}>
-        Barcode detected
+        {barcode.classification === 'valid_gtin'
+          ? 'Product barcode detected'
+          : 'Product code detected'}
       </Text>
       <Text style={styles.format}>{label}</Text>
       <Text selectable style={styles.barcodeValue}>
         {barcode.normalizedValue ?? barcode.rawValue}
       </Text>
-      {barcode.isValidGtin ? (
+      {barcode.classification === 'valid_gtin' ? (
         <>
           <Text style={styles.stateMessage}>
             This barcode has a valid GTIN check digit. Recall has not identified the product yet.
           </Text>
           <ActionButton label="Use this barcode" onPress={onUseBarcode} />
         </>
+      ) : barcode.classification === 'non_gtin_product_code' ? (
+        <>
+          <Text accessibilityLiveRegion="polite" style={styles.stateMessage}>
+            This code is not a standard GTIN. It may be another manufacturer identifier, such as a
+            model, serial, or logistics code.
+          </Text>
+          <ActionButton label="Read product label" onPress={onReadProductLabel} />
+        </>
       ) : (
         <Text accessibilityLiveRegion="polite" style={styles.invalidMessage}>
-          We detected a barcode, but it does not appear to be a valid GTIN. Scan again or enter the
-          product manually.
+          This barcode data is not a supported product identifier. Scan again or enter the product
+          manually.
         </Text>
       )}
       <ActionButton label="Scan again" onPress={onScanAgain} secondary />

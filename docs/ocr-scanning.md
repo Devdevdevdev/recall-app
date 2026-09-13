@@ -54,6 +54,15 @@ a `finally` block after success, failure, or an abandoned operation. Only normal
 blocks remain in memory for review. Recall does not upload the image to Supabase Storage, Google
 Cloud, Nebius, NVIDIA, OpenAI, Gemini, or any other network service.
 
+## Code 128 handoff
+
+Phase 6.1 lets a meaningful non-GTIN Code 128 result deliberately enter this existing label mode.
+The decoded code remains transient scanner evidence; OCR still begins only after the user chooses
+**Read product label** and captures a label. Recall does not combine the barcode and OCR result,
+infer a product identity, or map the code to model, serial, lot, or GTIN. This keeps the verified
+single-camera lifecycle and conservative OCR review unchanged. A later structured-evidence
+product-identification phase may evaluate a user-confirmed barcode code together with label text.
+
 Although `expo-file-system` declares legacy Android external-storage permissions, Recall operates
 only on its private cache URI and explicitly blocks `READ_EXTERNAL_STORAGE` and
 `WRITE_EXTERNAL_STORAGE` from the final manifest. `RECORD_AUDIO` is blocked as an additional
@@ -135,6 +144,9 @@ build. Remove the Doctor exclusion when upstream directory metadata covers the p
 12. **Web:** Open label mode in a web export. Confirm the mobile-only explanation and manual entry;
     verify no native-module crash.
 13. **Authentication:** Sign out and confirm Scan and product routes remain protected.
+14. **Code 128 handoff:** Scan a meaningful non-GTIN Code 128, choose **Read product label**, and
+    confirm the native OCR camera, capture, temporary-image deletion, and review behavior remain
+    functional.
 
 ## Future direction
 

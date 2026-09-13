@@ -40,5 +40,8 @@ policies: list, refresh, manually create, view, edit, and confirmed delete. Phas
 on-device barcode acquisition and confirmation before it reuses that inventory flow. Phase 6 adds
 still-image Latin OCR entirely on device, deletes the temporary cache image on best effort, and asks
 the user to review only conservatively parsed identifiers. It performs no product lookup and makes
-no recall claim. Password recovery, social login, live recall ingestion, Nebius/NVIDIA execution,
-and notifications remain intentionally deferred for later server-side phases.
+no recall claim. Phase 6.1 adds native date-only purchase-date selection without a schema change and
+treats non-GTIN Code 128 scans as transient, unclassified product-code evidence rather than
+incorrectly persisting them as a GTIN, model, serial, or lot. Password recovery, social login, live
+recall ingestion, Nebius/NVIDIA execution, and notifications remain intentionally deferred for
+later server-side phases.

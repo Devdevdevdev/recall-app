@@ -1,5 +1,7 @@
 import { validateGtin, type OwnedProduct, type OwnedProductInput } from '@/src/domain';
 
+import { isFuturePurchaseDate, isValidDateOnly, purchaseDateOrNull } from './purchaseDate';
+
 export type ProductFormValues = {
   brand: string;
   category: string;
@@ -98,23 +100,6 @@ export function productCreationPrefillFromParams(
   return { identificationMethod: null, values: emptyProductFormValues };
 }
 
-function isValidDate(value: string): boolean {
-  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value);
-
-  if (!match) {
-    return false;
-  }
-
-  const year = Number(match[1]);
-  const month = Number(match[2]);
-  const day = Number(match[3]);
-  const date = new Date(Date.UTC(year, month - 1, day));
-
-  return (
-    date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day
-  );
-}
-
 export function productFormValuesFromProduct(product: OwnedProduct): ProductFormValues {
   return {
     productName: product.productName ?? '',
@@ -153,9 +138,11 @@ export function validateProductForm(values: ProductFormValues): {
     errors.gtin = 'This GTIN check digit is not valid.';
   }
 
-  const purchaseDate = nullableTrimmed(values.purchaseDate);
-  if (purchaseDate && !isValidDate(purchaseDate)) {
+  const purchaseDate = purchaseDateOrNull(values.purchaseDate);
+  if (purchaseDate && !isValidDateOnly(purchaseDate)) {
     errors.purchaseDate = 'Use a real date in YYYY-MM-DD format.';
+  } else if (purchaseDate && isFuturePurchaseDate(purchaseDate)) {
+    errors.purchaseDate = 'Purchase date cannot be in the future.';
   }
 
   if (Object.keys(errors).length > 0) {

@@ -16,7 +16,11 @@ export type GtinValidationResult = {
   isValid: boolean;
 };
 
+export type BarcodeClassification =
+  'valid_gtin' | 'non_gtin_product_code' | 'invalid_or_unsupported';
+
 export type ScannedBarcode = {
+  classification: BarcodeClassification;
   rawValue: string;
   normalizedValue: string | null;
   format: ProductBarcodeFormat;
@@ -61,8 +65,18 @@ export function toScannedBarcode(
   valueForNormalization = rawValue,
 ): ScannedBarcode {
   const validation = validateGtin(valueForNormalization);
+  const isUsefulCode128 =
+    format === 'code128' &&
+    validation.normalizedValue !== null &&
+    !/[\u0000-\u001f\u007f]/u.test(validation.normalizedValue);
+  const classification: BarcodeClassification = validation.isValid
+    ? 'valid_gtin'
+    : isUsefulCode128
+      ? 'non_gtin_product_code'
+      : 'invalid_or_unsupported';
 
   return {
+    classification,
     rawValue,
     normalizedValue: validation.normalizedValue,
     format,

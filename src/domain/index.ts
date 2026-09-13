@@ -16,6 +16,7 @@ export type {
 export {
   productBarcodeFormats,
   toScannedBarcode,
+  type BarcodeClassification,
   validateGtin,
   type GtinValidationResult,
   type ProductBarcodeFormat,

@@ -1,6 +1,6 @@
 # Barcode scanning
 
-## Phase 5 scope
+## Phase 5 and 6.1 scope
 
 Recall uses `expo-camera` and Expo SDK 57's `CameraView` to acquire a physical product barcode.
 The scanner accepts `ean13`, `ean8`, `upc_a`, `upc_e`, `itf14`, and `code128` events. QR codes,
@@ -18,7 +18,7 @@ Scan tab → camera permission → live CameraView → barcode confirmation
          → existing Add Product form (prefilled GTIN) → existing repository → Supabase
 ```
 
-Only the accepted GTIN is handed to the existing product form. The camera never writes to Supabase
+Only an accepted GTIN is handed to the existing product form. The camera never writes to Supabase
 and never creates a product itself. The form validates the untrusted route parameter again before
 save; it also requires a product name because barcode scanning does not identify a product, brand,
 model, or category.
@@ -37,6 +37,26 @@ lengths, and internal whitespace are invalid too.
 After the first supported event, a synchronous scanner lock and explicit `detected` state unmount
 the preview and prevent repeated callbacks, navigation, or product creation. “Scan again” clears
 that state and reactivates scanning. The preview is rendered only while the Scan tab is focused.
+
+### GTIN and non-GTIN classifications
+
+The pure barcode domain model classifies each supported scanner result as `valid_gtin`,
+`non_gtin_product_code`, or `invalid_or_unsupported`. GTIN checksum validation remains strict;
+only valid GTIN-8, GTIN-12, GTIN-13, and GTIN-14 values receive the existing **Product barcode
+detected** confirmation and **Use this barcode** handoff with `identification_method =
+barcode_scan`.
+
+A non-empty Code 128 payload without control characters is a meaningful decoded product code even
+when it is not a GTIN. For example, `8SSA10M42792C1SG85R0L15` is shown as **Product code
+detected**, labelled Code 128, and explains that it may be another manufacturer identifier. It is
+kept only in current scanner state, never placed into `gtin`, `model_number`, `serial_number`, or
+`lot_number`, and never persisted. The available **Read product label** action moves deliberately
+into the existing OCR mode without running combined barcode/OCR inference. This transient evidence
+can later be supplied to a structured product-identification engine after its purpose is known.
+
+Empty, malformed, control-character, or unsupported results retain invalid/unsupported messaging.
+An invalid-check-digit EAN/UPC/ITF result is likewise not treated as a non-GTIN Code 128 product
+code.
 
 ## Privacy, availability, and limitations
 
@@ -70,3 +90,8 @@ automatic product identity remain future work. See [ocr-scanning.md](ocr-scannin
    additional product. Choose **Scan again** and confirm the preview resumes.
 7. Scan an invalid check digit or exercise `validateGtin` with one. Confirm it cannot be used as a
    confirmed GTIN. Test manual entry, Home → Scan, web fallback, and sign-out route protection.
+8. Scan Code 128 `8SSA10M42792C1SG85R0L15` (or another meaningful non-GTIN code). Confirm it is
+   called a product code, is not placed into GTIN or another identifier field, and offers **Read
+   product label**, **Scan again**, and manual entry.
+9. From that Code 128 result choose **Read product label**. Confirm the existing OCR camera and
+   review flow work normally and no duplicate camera preview is created.

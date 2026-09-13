@@ -3,6 +3,7 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "dependencies": {
+    "@react-native-community/datetimepicker": "9.1.0",
     "@supabase/supabase-js": "^2.116.0",
     "expo": "~57.0.22",
     "expo-camera": "~57.0.5",
@@ -36,15 +37,16 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "lint": "expo lint",
     "test:parser": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-product-label-parser.mjs",
+    "test:phase-6-1": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-phase-6-1.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser"
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1"
   },
   "expo": {
     "doctor": {

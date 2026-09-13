@@ -27,7 +27,8 @@ database represents absence consistently rather than accumulating meaningless em
 
 - **My Products** has loading, empty, retryable error, and pull-to-refresh states.
 - **Add product** validates a required name, conservative GTIN formats (8, 12, 13, or 14 digits),
-  a real ISO `YYYY-MM-DD` purchase date, and practical field lengths.
+  a real non-future purchase date, and practical field lengths. Android and iOS use the platform
+  date selector; web uses the browser's date input. The date remains optional and can be cleared.
 - **Detail** presents only supplied identifying data and makes no claim about a product's safety.
   It explicitly states that automated recall monitoring is not active yet.
 - **Edit** reuses the same validated form. **Delete** requires native confirmation and returns to
@@ -52,6 +53,25 @@ database represents absence consistently rather than accumulating meaningless em
    Product A is not listed.
 10. **Direct ownership check:** while signed in as User B, use the normal repository/client to
     request Product A's known UUID. Expect no accessible row (`null`) because RLS filters it.
+
+## Purchase dates
+
+`purchase_date` remains PostgreSQL's optional `date` field: no migration or timestamp field was
+introduced in Phase 6.1. The form saves only canonical `YYYY-MM-DD` strings, or `null` when the
+user clears the selection. `dateOnlyToLocalDate` constructs a local `new Date(year, month - 1,
+day)` for display and `dateToDateOnly` reads local calendar parts for saving. It deliberately does
+not parse date-only strings as UTC, which could display the prior or following calendar day in some
+time zones. Future dates are rejected in validation and prevented by the picker/browser maximum.
+
+### Purchase-date manual test plan
+
+1. **Create:** add a product, tap **Purchase date**, choose a past date, and save. Confirm the
+   friendly mobile display and persisted `YYYY-MM-DD` database value.
+2. **Edit:** edit an existing product with a purchase date. Confirm it displays on the correct
+   local calendar day, change it, save, and confirm the new value persists.
+3. **Clear:** clear the selected date, save, and confirm `purchase_date` becomes `null`.
+4. **Future date:** attempt to choose tomorrow or a later day. Confirm it cannot be selected and a
+   manually supplied future web value is rejected.
 
 ## Barcode scanner handoff
 

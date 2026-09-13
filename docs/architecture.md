@@ -57,7 +57,10 @@ Mobile
 - Product screens use the inventory repository only; it derives a create operation's owner from the
   authenticated Supabase user and relies on RLS for every operation.
 - `src/domain/barcode.ts`: framework-independent GTIN normalization/checksum validation and scanned
-  barcode model; `src/features/scan/` adapts Expo camera events into it
+  barcode model, including the distinction between valid GTINs, transient non-GTIN Code 128 product
+  codes, and invalid/unsupported payloads; `src/features/scan/` adapts Expo camera events into it
+- `src/features/products/purchaseDate.ts`: timezone-safe local calendar conversion for PostgreSQL
+  date-only values; platform-specific purchase-date fields keep the native picker out of web bundles
 - `src/domain/productLabel.ts`: pure explicit-label identifier parsing and a transient evidence type
   that can later combine barcode and OCR observations
 - `src/services/ocr/`: platform-specific ML Kit adapter, normalized OCR result contract, web
@@ -100,7 +103,9 @@ adds local barcode acquisition only: the Scan screen uses Expo Camera, confirms 
 then reuses the existing product form and repository. Phase 6 adds still-image Latin OCR through a
 native development build. The image exists only temporarily in app cache, recognition stays on
 device, and the user reviews conservative explicit-label candidates before the same form. OCR is
-perception only; it does not infer brand, product identity, safety, or recall status. Ingestion jobs,
+perception only; it does not infer brand, product identity, safety, or recall status. Phase 6.1
+adds native date-only purchase-date selection and preserves non-GTIN Code 128 values only as
+transient scan evidence. Ingestion jobs,
 Edge Functions, Nebius/NVIDIA calls, notifications, and recall-source integration remain future
 work.
 
