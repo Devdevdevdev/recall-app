@@ -1,0 +1,37 @@
+{
+  "phase": "9.1",
+  "frozenAt": "2026-09-14",
+  "development": {
+    "path": "benchmarks/recall-matching/phase-9-1/development.v1.json",
+    "sha256": "1887da996161611c1d48d3fa75fea281d29f49d27befcb52ce818b0728bd81b1",
+    "caseCount": 24,
+    "sourceCount": 8
+  },
+  "holdout": {
+    "path": "benchmarks/recall-matching/phase-9-1/holdout.v1.json",
+    "sha256": "3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608",
+    "caseCount": 36,
+    "sourceCount": 12,
+    "distribution": { "match": 12, "no_match": 12, "needs_review": 12 }
+  },
+  "historicalArtifacts": {
+    "benchmarks/recall-matching/cases.v1.json": "c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8",
+    "benchmarks/recall-matching/results/deterministic-v1.json": "6f5c8bb6c463b31fad78796141cbd0f76dae3986904d547f0e9a498952ee4fb8",
+    "benchmarks/recall-matching/results/nemotron-v1.json": "c977bd1ab959563b3500cb83706459715697a875843b196c9608657d4ed8ee0b",
+    "benchmarks/recall-matching/results/comparison.json": "0d436c98883ee3a3f7e1a27e76fe12ba7b46533daee3ee78a811ab0e4e473549"
+  },
+  "frozenPolicyFiles": {
+    "supabase/functions/_shared/matching/hybridGuardedMatcher.ts": "0dcebd33961169011e3740d8c6fc255d5e124fbd42b0fdf912896c0e21184a1f",
+    "supabase/functions/_shared/matching/guardedNemotronMatcher.ts": "7a1aa58c988d97bd8aa1c86017d7a5d0688abc217848d9ee4bee13b20939b7c0",
+    "supabase/functions/_shared/matching/guardedNemotronPrompt.ts": "f7e4e4a6b5beeadfeb55dfebd305bb12d0485ef679e5e469556e0d63f8d69168",
+    "supabase/functions/_shared/matching/guardedNemotronSchema.ts": "aeddcd44749a15f94e738146ae1e22ec7bd1802b264f9753cd31d86fa6fa7ae3",
+    "supabase/functions/_shared/matching/nemotronSafetyVerifier.ts": "0db1dff8ddd7b15aa55e20e0e0146c0eab4ea3b8bfb9692d05d4e8be6b852af3",
+    "supabase/functions/_shared/matching/deterministicMatcher.ts": "1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb",
+    "supabase/functions/_shared/matching/evidence.ts": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+    "supabase/functions/_shared/matching/normalization.ts": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02"
+  },
+  "model": "nvidia/nemotron-3-super-120b-a12b",
+  "matcher": "hybrid_guarded_v1",
+  "promptVersion": "1.0.0",
+  "holdoutRule": "Any policy, prompt, verifier, threshold, or label change after this freeze invalidates the holdout as independent evidence."
+}

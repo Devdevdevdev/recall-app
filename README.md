@@ -10,8 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 9 adds a measured, server-only Nebius/NVIDIA comparison alongside the deterministic matcher,
-verified CPSC ingestion, and Phase 6.1 mobile flow:
+Phase 9.1 adds an independently held-out, guarded hybrid Nebius/NVIDIA evaluation alongside the
+deterministic matcher, verified CPSC ingestion, and Phase 6.1 mobile flow:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -55,11 +55,18 @@ verified CPSC ingestion, and Phase 6.1 mobile flow:
 - A real one-pass evaluation of `nvidia/nemotron-3-super-120b-a12b`: 70.0% exact accuracy, 90.0%
   strict recall, four false positives, 86.7% structured-output success, and USD 0.0616212 measured
   inference cost on the 30 controlled cases
+- A frozen Phase 9.1 policy that runs `deterministic_v1` first and sends only its abstentions to
+  Nemotron, then requires locally verified, source-addressable identifier evidence before an AI
+  confirmation can become `match`; AI rejection and every unsafe failure remain `needs_review`
+- An independent 36-case holdout from 12 new CPSC recalls, disjoint from the 30-case historical set
+  and 24-case development set. The final guarded hybrid run reached 88.9% exact accuracy, 100.0%
+  MATCH precision and strict recall, zero false positives, 44.4% needs-review, and 55.6% coverage
+  with 20 escalations, 24 requests including four eligible retries, and USD 0.0438057 measured cost
 - Strict TypeScript, ESLint, and Prettier configuration
 
 Password recovery, magic links, OAuth/social login, external product lookup, production match
 orchestration/persistence, notifications, and scheduled ingestion are intentionally not implemented
-yet. Phase 9 AI execution is benchmark-only and read-only. Scanning acquires
+yet. Phase 9 and 9.1 AI execution is benchmark-only and read-only. Scanning acquires
 only barcode data or visible label text; it does not identify a commercial product. Product detail
 screens do not make safety or recall conclusions before authoritative recall data exists.
 
@@ -132,9 +139,10 @@ credential in the Expo client.** Expo public environment variables are bundled i
 users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
 user data. The CPSC ingestion Edge Function performs privileged recall writes only with
 server-side credentials and its own `RECALL_INGESTION_KEY`; no mobile client invokes it.
-Phase 9 Nebius calls remain server/local-process only and benchmark-only. They do not create an
-endpoint, database write, match row, notification, or alert. The measured false positives prohibit
-using `nemotron_v1` as a production automatic-alert policy.
+Phase 9 and 9.1 Nebius calls remain server/local-process only and benchmark-only. They do not create
+an endpoint, database write, match row, notification, or alert. Although the Phase 9.1 guarded
+holdout had zero false positives, this small controlled evaluation is not authorization for a
+production automatic-alert policy.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every

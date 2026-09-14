@@ -51,5 +51,21 @@ creates no matches or alerts and makes no AI calls. Phase 8 adds `deterministic_
 `nvidia/nemotron-3-super-120b-a12b` through Nebius Token Factory. Nemotron raised strict recall from
 70.0% to 90.0% but reduced exact accuracy to 70.0%, introduced four false positives, and produced
 valid structured output on 26/30 cases. It is measured evidence, not a production alert policy.
+Phase 9.1 responds with a frozen guarded hybrid: deterministic decisions bypass AI, only 20/36
+holdout abstentions were sent to the exact Nemotron model, and a local verifier required exact
+source-addressable identifier evidence before confirmation. The independent holdout reached 88.9%
+exact accuracy, 100.0% MATCH precision and recall, zero false positives, and 55.6% decision coverage.
+All 20 escalations ended with valid structured output after four eligible schema-failure retries;
+24 requests used 82,229 tokens and cost USD 0.0438057. This remains read-only benchmark evidence.
 Password recovery, social login, production matching orchestration, notifications, and scheduled
 ingestion remain deferred.
+
+## Devpost-safe Phase 9.1 language
+
+Initial evaluation showed that Nemotron improved recall on complex product-identification cases but
+could introduce unsafe false positives when used alone. Recall therefore runs deterministic
+matching first, escalates only ambiguous cases to Nemotron, and requires machine-verifiable
+authoritative evidence before accepting an AI-derived confirmation. On a separate frozen 36-case
+CPSC-backed holdout, this guarded hybrid improved strict MATCH recall from 66.7% to 100.0% while
+retaining zero false positives; the result is a small controlled evaluation, not a claim of general
+real-world accuracy or production readiness.

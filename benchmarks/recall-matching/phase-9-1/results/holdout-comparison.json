@@ -1,0 +1,312 @@
+{
+  "generatedAt": "2026-09-14T15:46:36.686Z",
+  "datasetSha256": "3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608",
+  "baseline": {
+    "matcherVersion": "deterministic_v1",
+    "metrics": {
+      "totalCases": 36,
+      "exactThreeClassAccuracy": 0.7777777777777778,
+      "match": {
+        "truePositives": 8,
+        "falsePositives": 0,
+        "falseNegatives": 4,
+        "trueNegatives": 24,
+        "precision": 1,
+        "strictRecall": 0.6666666666666666,
+        "falsePositiveRate": 0,
+        "unresolvedPositiveCases": 4
+      },
+      "needsReview": {
+        "predictedCount": 20,
+        "rate": 0.5555555555555556
+      },
+      "decisionCoverage": 0.4444444444444444,
+      "confusionMatrix": {
+        "match": {
+          "match": 8,
+          "no_match": 0,
+          "needs_review": 4
+        },
+        "no_match": {
+          "match": 0,
+          "no_match": 8,
+          "needs_review": 4
+        },
+        "needs_review": {
+          "match": 0,
+          "no_match": 0,
+          "needs_review": 12
+        }
+      }
+    }
+  },
+  "guardedHybrid": {
+    "matcherVersion": "hybrid_guarded_v1",
+    "metrics": {
+      "totalCases": 36,
+      "exactThreeClassAccuracy": 0.8888888888888888,
+      "match": {
+        "truePositives": 12,
+        "falsePositives": 0,
+        "falseNegatives": 0,
+        "trueNegatives": 24,
+        "precision": 1,
+        "strictRecall": 1,
+        "falsePositiveRate": 0,
+        "unresolvedPositiveCases": 0
+      },
+      "needsReview": {
+        "predictedCount": 16,
+        "rate": 0.4444444444444444
+      },
+      "decisionCoverage": 0.5555555555555556,
+      "confusionMatrix": {
+        "match": {
+          "match": 12,
+          "no_match": 0,
+          "needs_review": 0
+        },
+        "no_match": {
+          "match": 0,
+          "no_match": 8,
+          "needs_review": 4
+        },
+        "needs_review": {
+          "match": 0,
+          "no_match": 0,
+          "needs_review": 12
+        }
+      }
+    },
+    "orchestration": {
+      "deterministicResolutions": 16,
+      "nemotronEscalations": 20,
+      "escalationRate": 0.5555555555555556,
+      "nemotronRequestCount": 24,
+      "retryCount": 4
+    },
+    "integrity": {
+      "finalValidStructuredResponses": 20,
+      "finalStructuredOutputSuccessRate": 1,
+      "providerFailureAttempts": 0,
+      "structuredFailureAttempts": 4,
+      "technicalFailureCases": []
+    },
+    "latency": {
+      "overallTotalMs": 135613.21087599994,
+      "overallAverageMs": 3767.0336354444426,
+      "overallP50Ms": 2854.3587499999994,
+      "overallP95Ms": 10342.100542,
+      "nemotronEscalatedTotalMs": 135607.52275,
+      "nemotronEscalatedAverageMs": 6780.3761375,
+      "nemotronEscalatedP50Ms": 6494.408167000001,
+      "nemotronEscalatedP95Ms": 10341.76983400002
+    },
+    "usage": {
+      "inputTokens": 50334,
+      "outputTokens": 31895,
+      "totalTokens": 82229,
+      "reasoningTokens": null,
+      "complete": true
+    },
+    "cost": {
+      "amount": 0.043805699999999996,
+      "pricing": {
+        "source": "Nebius Token Factory GET /models?verbose=true",
+        "observedAt": "2026-09-14T15:44:20.594Z",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "inputRate": 0.3,
+        "outputRate": 0.9
+      },
+      "note": "Calculated from every primary and retry request made for the guarded holdout run."
+    }
+  },
+  "cases": {
+    "improved": [
+      {
+        "caseId": "holdout-10922-merax-match",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10929-sunnyside-match",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10939-xo-poppy-match",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10956-steelite-match",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      }
+    ],
+    "worsened": [],
+    "unchanged": [
+      {
+        "caseId": "holdout-10917-tooybing-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10917-tooybing-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10917-tooybing-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10920-commowner-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10920-commowner-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10920-commowner-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10921-yamazuki-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10921-yamazuki-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10921-yamazuki-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10922-merax-no-match",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10922-merax-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10926-cubershop-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10926-cubershop-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10926-cubershop-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10929-sunnyside-no-match",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10929-sunnyside-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10939-xo-poppy-no-match",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10939-xo-poppy-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10941-alanca-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10941-alanca-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10941-alanca-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10942-gizoon-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10942-gizoon-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10942-gizoon-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10943-skip-hop-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10943-skip-hop-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10943-skip-hop-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10950-squishy-bun-match",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "holdout-10950-squishy-bun-no-match",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "holdout-10950-squishy-bun-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10956-steelite-no-match",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "holdout-10956-steelite-needs-review",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      }
+    ]
+  }
+}

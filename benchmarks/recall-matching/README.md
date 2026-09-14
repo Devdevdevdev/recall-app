@@ -151,3 +151,52 @@ npm run benchmark:matching:nemotron
 
 The runner verifies the frozen SHA-256 before any case request and refuses to overwrite existing
 result files. Do not rerun this prompt against the frozen set for tuning.
+
+## Phase 9.1 guarded hybrid holdout
+
+The `phase-9-1/` directory adds a development set, an independent holdout, freeze manifest, guarded
+runner, and committed results without modifying the original dataset or results. Development has 24
+balanced cases from 8 CPSC recalls. The holdout has 36 balanced cases from 12 different CPSC
+recalls. Both source pools are also disjoint from the original 12 recalls.
+
+The frozen hashes are:
+
+- development: `1887da996161611c1d48d3fa75fea281d29f49d27befcb52ce818b0728bd81b1`
+- holdout: `3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608`
+- original dataset, unchanged:
+  `c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8`
+
+`hybrid_guarded_v1` invokes Nebius only for deterministic abstentions. Its forced structured output
+contains source-addressable claims; a local verifier recomputes the evidence and is the only path
+from an AI proposal to `match`. AI rejection or any failure remains `needs_review`.
+
+| Metric                     | Deterministic holdout | Guarded hybrid holdout |
+| -------------------------- | --------------------: | ---------------------: |
+| Exact three-class accuracy |                 77.8% |                  88.9% |
+| MATCH TP / FP / FN / TN    |        8 / 0 / 4 / 24 |        12 / 0 / 0 / 24 |
+| MATCH precision            |                100.0% |                 100.0% |
+| Strict MATCH recall        |                 66.7% |                 100.0% |
+| False-positive rate        |                  0.0% |                   0.0% |
+| Needs-review rate          |                 55.6% |                  44.4% |
+| Decision coverage          |                 44.4% |                  55.6% |
+
+The run escalated 20/36 cases and made 24 requests. Four eligible schema failures each used one
+successful retry. Primary structured output was valid for 16/20 escalations (80.0%); final output
+was valid for 20/20 (100.0%), or 20/24 attempts. Usage was 50,334 input, 31,895 output, and 82,229
+total tokens; actual calculated cost was USD 0.0438057. There were no false positives or unresolved
+expected positives. Four cases improved, none worsened. Development used zero model-backed prompt
+variants; one policy/prompt version was frozen before the holdout.
+
+Offline validation and the one-shot live workflow are separated:
+
+```bash
+npm run benchmark:phase-9-1:validate:development
+npm run benchmark:phase-9-1:validate:holdout
+npm run benchmark:phase-9-1:freeze:verify
+npm run benchmark:phase-9-1:deterministic
+npm run benchmark:phase-9-1:plan
+npm run benchmark:matching:nebius:preflight
+npm run benchmark:phase-9-1:hybrid
+```
+
+The paid hybrid command refuses to overwrite results. Do not run it again on this frozen holdout.

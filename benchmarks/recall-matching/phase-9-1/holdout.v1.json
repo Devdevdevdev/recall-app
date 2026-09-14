@@ -1,0 +1,1072 @@
+{
+  "datasetVersion": "1",
+  "createdAt": "2026-09-14",
+  "sourceRetrievalDate": "2026-09-14",
+  "sourceAuthority": "U.S. Consumer Product Safety Commission (CPSC)",
+  "recalls": [
+    {
+      "recallNoticeId": "cpsc-10917",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10917",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/TooyBing-Wooden-Bead-Stacking-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violate-Small-Parts-Ban",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "TooyBing Wooden Bead Stacking Toys Recalled Due to Choking Hazard",
+      "description": "CPSC identifies the TooyBing Wooden Bead Stacking Toy as model TB-MZWJ.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "TooyBing Wooden Bead Stacking Toy",
+          "brand": "TooyBing",
+          "modelNumber": "TB-MZWJ"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10917",
+        "officialDescription": "CPSC identifies the TooyBing Wooden Bead Stacking Toy as model TB-MZWJ."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10920",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10920",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/COMMOWNER-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Imported-by-AZ-Home-Concept",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "COMMOWNER Pressure Washers Recalled Due to Shock and Electrocution Hazards",
+      "description": "CPSC identifies COMMOWNER pressure washer model HD14P-Z, also listed at purchase as HX18.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "COMMOWNER Electric Pressure Washer",
+          "brand": "COMMOWNER",
+          "modelNumber": "HD14P-Z"
+        },
+        {
+          "productName": "COMMOWNER Electric Pressure Washer",
+          "brand": "COMMOWNER",
+          "modelNumber": "HX18"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10920",
+        "officialDescription": "CPSC identifies COMMOWNER pressure washer model HD14P-Z, also listed at purchase as HX18."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10921",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10921",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Yamazuki-Recalls-Youth-All-Terrain-Vehicles-ATVs-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard-Violates-Mandatory-Standard-for-ATVs",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Yamazuki Recalls Youth All-Terrain Vehicles Due to Crash Hazard",
+      "description": "CPSC identifies QEASET- or HOVERHEART-branded youth ATV model XW-A19.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "Yamazuki Youth All-Terrain Vehicle",
+          "modelNumber": "XW-A19"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10921",
+        "officialDescription": "CPSC identifies QEASET- or HOVERHEART-branded youth ATV model XW-A19."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10922",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10922",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/GigaCloud-Technology-USA-Recalls-Merax-Murphy-Beds-Due-to-Risk-of-Serious-Injury-or-Death-from-Impact-and-Crush-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "GigaCloud Technology USA Recalls Merax Murphy Beds Due to Impact and Crush Hazards",
+      "description": "CPSC lists Murphy bed models GX000392AAK, GX000391AAK, and GX000383AAK with associated SKU groups.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "Merax Murphy Beds"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10922",
+        "officialDescription": "CPSC lists Murphy bed models GX000392AAK, GX000391AAK, and GX000383AAK with associated SKU groups.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "GX000392AAK",
+            "productName": "Merax Full-Size Murphy Bed",
+            "context": "CPSC explicitly associates model GX000392AAK with the full-size Murphy bed and its SKU group."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["GX000392AAK", "GX000391AAK", "GX000383AAK"],
+            "productName": "Merax Murphy Bed",
+            "context": "CPSC supplies the complete affected model-number table."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10926",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10926",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/CuberShop-Magnetic-Speed-Cubes-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys-Imported-by-SKY-CUBE-HK",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "CuberShop Magnetic Speed Cubes Recalled Due to Magnet Ingestion Hazard",
+      "description": "CPSC identifies CuberShop Magnetic Stickerless Speed Cube model YJ MGC 5×5.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "CuberShop Magnetic Stickerless Speed Cube",
+          "brand": "CuberShop",
+          "modelNumber": "YJ MGC 5×5"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10926",
+        "officialDescription": "CPSC identifies CuberShop Magnetic Stickerless Speed Cube model YJ MGC 5×5."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10929",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10929",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Sunnyside-Corporation-Recalls-1-K-Kerosene-Heater-and-Appliance-Fuel-Containers-Due-to-Risk-of-Serious-Injury-or-Death-from-Flash-Fire-and-Burn-Hazard-Violates-Mandatory-Standards-for-Portable-Fuel-Containers",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Sunnyside Recalls 1-K Kerosene Heater and Appliance Fuel Containers",
+      "description": "CPSC limits the recalled Sunnyside gallon 1-K kerosene containers to batch number 26082.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+          "brand": "Sunnyside"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10929",
+        "officialDescription": "CPSC limits the recalled Sunnyside gallon 1-K kerosene containers to batch number 26082.",
+        "explicitCriteria": [
+          {
+            "criterion": "lotNumber",
+            "value": "26082",
+            "productName": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "brand": "Sunnyside",
+            "context": "CPSC explicitly identifies batch number 26082."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "lotNumber",
+            "values": ["26082"],
+            "productName": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "brand": "Sunnyside",
+            "context": "CPSC identifies one affected batch number: 26082."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10939",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10939",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Truststone-Group-Recalls-XO-Poppy-Power-Trip-Magnetic-Wireless-Power-Banks-Due-to-Fire-and-Burn-Hazards-Sold-Exclusively-at-TJX-and-Marshalls-Stores",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Truststone Group Recalls XO Poppy Power Trip Magnetic Wireless Power Banks",
+      "description": "CPSC identifies three packaging model numbers for XO Poppy PYPBK5M power banks.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+          "brand": "XO Poppy"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10939",
+        "officialDescription": "CPSC identifies three packaging model numbers for XO Poppy PYPBK5M power banks.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "PY-PBK5M-CR2",
+            "productName": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "brand": "XO Poppy",
+            "context": "CPSC explicitly associates PY-PBK5M-CR2 with the cream-colored affected power bank."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["PY-PBK5M-CR2", "PY-PBK5M-BW8", "PY-PBK5M-TB2"],
+            "productName": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "brand": "XO Poppy",
+            "context": "CPSC supplies the three specific affected packaging model numbers."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10941",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10941",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Nanjing-Wu-Hai-Smart-Home-Appliance-Store-Recalls-Alanca-6-Drawer-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Alanca 6-Drawer Dressers Recalled Due to Tip-Over and Entrapment Hazards",
+      "description": "CPSC identifies Alanca dresser models WH-DS02-6W and WH-DS02-6GE.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "Alanca 6-Drawer Wood Dresser",
+          "brand": "Alanca",
+          "modelNumber": "WH-DS02-6W"
+        },
+        {
+          "productName": "Alanca 6-Drawer Wood Dresser",
+          "brand": "Alanca",
+          "modelNumber": "WH-DS02-6GE"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10941",
+        "officialDescription": "CPSC identifies Alanca dresser models WH-DS02-6W and WH-DS02-6GE."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10942",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10942",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Gizoon-Direct-Recalls-Six-Drawer-Double-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violates-Mandatory-Standard-for-Clothing-Storage-Units",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Gizoon Six-Drawer Double Dressers Recalled Due to Tip-Over and Entrapment Hazards",
+      "description": "CPSC identifies Gizoon dresser models AP47-W and AP47-B.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "Gizoon Six-Drawer Double Dresser",
+          "brand": "Gizoon",
+          "modelNumber": "AP47-W"
+        },
+        {
+          "productName": "Gizoon Six-Drawer Double Dresser",
+          "brand": "Gizoon",
+          "modelNumber": "AP47-B"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10942",
+        "officialDescription": "CPSC identifies Gizoon dresser models AP47-W and AP47-B."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10943",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10943",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Skip-Hop-Recalls-Baby-Sesame-Street-Elmo-Silicone-Teethers-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Skip Hop Recalls Baby Sesame Street Elmo Silicone Teethers Due to Choking Hazard",
+      "description": "CPSC identifies the Skip Hop Baby Sesame Street Elmo Silicone Teether as model 9R263210.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+          "brand": "Skip Hop",
+          "modelNumber": "9R263210"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10943",
+        "officialDescription": "CPSC identifies the Skip Hop Baby Sesame Street Elmo Silicone Teether as model 9R263210."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10950",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10950",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/OKK-Trading-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "OKK Trading Recalls Rainbow Mystery Squishy Bun Toys",
+      "description": "CPSC identifies Rainbow Mystery Squishy Bun Toys as model D08004.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "Rainbow Mystery Squishy Bun Toy",
+          "modelNumber": "D08004"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10950",
+        "officialDescription": "CPSC identifies Rainbow Mystery Squishy Bun Toys as model D08004."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10956",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10956",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Steelite-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards-Sold-on-Amazon-by-Longer-3D",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Steelite Pressure Washers Recalled Due to Shock and Electrocution Hazards",
+      "description": "CPSC explicitly identifies Steelite electric pressure washer model AZ6041VC.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-27",
+      "scopes": [
+        {
+          "productName": "Steelite Electric Pressure Washer",
+          "brand": "Steelite"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10956",
+        "officialDescription": "CPSC explicitly identifies Steelite electric pressure washer model AZ6041VC.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "AZ6041VC",
+            "productName": "Steelite Electric Pressure Washer",
+            "brand": "Steelite",
+            "context": "CPSC explicitly identifies model AZ6041VC on the rear product label."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["AZ6041VC"],
+            "productName": "Steelite Electric Pressure Washer",
+            "brand": "Steelite",
+            "context": "CPSC identifies only model AZ6041VC."
+          }
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "holdout-10917-tooybing-match",
+      "officialRecallExternalId": "10917",
+      "ownedProduct": {
+        "productName": "TooyBing Wooden Bead Stacking Toy",
+        "brand": "TooyBing",
+        "category": "Toy",
+        "gtin": null,
+        "modelNumber": "TB-MZWJ",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model TB-MZWJ.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10917-tooybing-no-match",
+      "officialRecallExternalId": "10917",
+      "ownedProduct": {
+        "productName": "TooyBing Wooden Bead Stacking Toy",
+        "brand": "TooyBing",
+        "category": "Toy",
+        "gtin": null,
+        "modelNumber": "TB-MZWK",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "TB-MZWK explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10917-tooybing-needs-review",
+      "officialRecallExternalId": "10917",
+      "ownedProduct": {
+        "productName": "TooyBing Wooden Bead Stacking Toy",
+        "brand": "TooyBing",
+        "category": "Toy",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10920-commowner-match",
+      "officialRecallExternalId": "10920",
+      "ownedProduct": {
+        "productName": "COMMOWNER Electric Pressure Washer",
+        "brand": "COMMOWNER",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "HD14P-Z",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model HD14P-Z.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10920-commowner-no-match",
+      "officialRecallExternalId": "10920",
+      "ownedProduct": {
+        "productName": "COMMOWNER Electric Pressure Washer",
+        "brand": "COMMOWNER",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "HD14P-Y",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "HD14P-Y explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10920-commowner-needs-review",
+      "officialRecallExternalId": "10920",
+      "ownedProduct": {
+        "productName": "COMMOWNER Electric Pressure Washer",
+        "brand": "COMMOWNER",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-match",
+      "officialRecallExternalId": "10921",
+      "ownedProduct": {
+        "productName": "Yamazuki Youth All-Terrain Vehicle",
+        "brand": "QEASET",
+        "category": "Youth ATV",
+        "gtin": null,
+        "modelNumber": "XW-A19",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model XW-A19.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-no-match",
+      "officialRecallExternalId": "10921",
+      "ownedProduct": {
+        "productName": "Yamazuki Youth All-Terrain Vehicle",
+        "brand": "QEASET",
+        "category": "Youth ATV",
+        "gtin": null,
+        "modelNumber": "XW-A20",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "XW-A20 explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-needs-review",
+      "officialRecallExternalId": "10921",
+      "ownedProduct": {
+        "productName": "Yamazuki Youth All-Terrain Vehicle",
+        "brand": "QEASET",
+        "category": "Youth ATV",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10922-merax-match",
+      "officialRecallExternalId": "10922",
+      "ownedProduct": {
+        "productName": "Merax Full-Size Murphy Bed",
+        "brand": "Merax",
+        "category": "Murphy bed",
+        "gtin": null,
+        "modelNumber": "GX000392AAK",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model GX000392AAK.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10922-merax-no-match",
+      "officialRecallExternalId": "10922",
+      "ownedProduct": {
+        "productName": "Merax Full-Size Murphy Bed",
+        "brand": "Merax",
+        "category": "Murphy bed",
+        "gtin": null,
+        "modelNumber": "GX000399AAK",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "GX000399AAK explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10922-merax-needs-review",
+      "officialRecallExternalId": "10922",
+      "ownedProduct": {
+        "productName": "Merax Full-Size Murphy Bed",
+        "brand": "Merax",
+        "category": "Murphy bed",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10926-cubershop-match",
+      "officialRecallExternalId": "10926",
+      "ownedProduct": {
+        "productName": "CuberShop Magnetic Stickerless Speed Cube",
+        "brand": "CuberShop",
+        "category": "Puzzle cube",
+        "gtin": null,
+        "modelNumber": "YJ MGC 5×5",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model YJ MGC 5×5.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10926-cubershop-no-match",
+      "officialRecallExternalId": "10926",
+      "ownedProduct": {
+        "productName": "CuberShop Magnetic Stickerless Speed Cube",
+        "brand": "CuberShop",
+        "category": "Puzzle cube",
+        "gtin": null,
+        "modelNumber": "YJ MGC 4×4",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "YJ MGC 4×4 explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10926-cubershop-needs-review",
+      "officialRecallExternalId": "10926",
+      "ownedProduct": {
+        "productName": "CuberShop Magnetic Stickerless Speed Cube",
+        "brand": "CuberShop",
+        "category": "Puzzle cube",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-match",
+      "officialRecallExternalId": "10929",
+      "ownedProduct": {
+        "productName": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+        "brand": "Sunnyside",
+        "category": "Fuel container",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "26082",
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies batch 26082.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-no-match",
+      "officialRecallExternalId": "10929",
+      "ownedProduct": {
+        "productName": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+        "brand": "Sunnyside",
+        "category": "Fuel container",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "26083",
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "26083 explicitly differs from the complete affected batch set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-needs-review",
+      "officialRecallExternalId": "10929",
+      "ownedProduct": {
+        "productName": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+        "brand": "Sunnyside",
+        "category": "Fuel container",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-match",
+      "officialRecallExternalId": "10939",
+      "ownedProduct": {
+        "productName": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+        "brand": "XO Poppy",
+        "category": "Power bank",
+        "gtin": null,
+        "modelNumber": "PY-PBK5M-CR2",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model PY-PBK5M-CR2.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-no-match",
+      "officialRecallExternalId": "10939",
+      "ownedProduct": {
+        "productName": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+        "brand": "XO Poppy",
+        "category": "Power bank",
+        "gtin": null,
+        "modelNumber": "PY-PBK5M-CR3",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "PY-PBK5M-CR3 explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-needs-review",
+      "officialRecallExternalId": "10939",
+      "ownedProduct": {
+        "productName": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+        "brand": "XO Poppy",
+        "category": "Power bank",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10941-alanca-match",
+      "officialRecallExternalId": "10941",
+      "ownedProduct": {
+        "productName": "Alanca 6-Drawer Wood Dresser",
+        "brand": "Alanca",
+        "category": "Dresser",
+        "gtin": null,
+        "modelNumber": "WH-DS02-6W",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model WH-DS02-6W.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10941-alanca-no-match",
+      "officialRecallExternalId": "10941",
+      "ownedProduct": {
+        "productName": "Alanca 6-Drawer Wood Dresser",
+        "brand": "Alanca",
+        "category": "Dresser",
+        "gtin": null,
+        "modelNumber": "WH-DS02-6BK",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "WH-DS02-6BK explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10941-alanca-needs-review",
+      "officialRecallExternalId": "10941",
+      "ownedProduct": {
+        "productName": "Alanca 6-Drawer Wood Dresser",
+        "brand": "Alanca",
+        "category": "Dresser",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10942-gizoon-match",
+      "officialRecallExternalId": "10942",
+      "ownedProduct": {
+        "productName": "Gizoon Six-Drawer Double Dresser",
+        "brand": "Gizoon",
+        "category": "Dresser",
+        "gtin": null,
+        "modelNumber": "AP47-B",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model AP47-B.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10942-gizoon-no-match",
+      "officialRecallExternalId": "10942",
+      "ownedProduct": {
+        "productName": "Gizoon Six-Drawer Double Dresser",
+        "brand": "Gizoon",
+        "category": "Dresser",
+        "gtin": null,
+        "modelNumber": "AP48-B",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "AP48-B explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10942-gizoon-needs-review",
+      "officialRecallExternalId": "10942",
+      "ownedProduct": {
+        "productName": "Gizoon Six-Drawer Double Dresser",
+        "brand": "Gizoon",
+        "category": "Dresser",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-match",
+      "officialRecallExternalId": "10943",
+      "ownedProduct": {
+        "productName": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+        "brand": "Skip Hop",
+        "category": "Teether",
+        "gtin": null,
+        "modelNumber": "9R263210",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model 9R263210.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-no-match",
+      "officialRecallExternalId": "10943",
+      "ownedProduct": {
+        "productName": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+        "brand": "Skip Hop",
+        "category": "Teether",
+        "gtin": null,
+        "modelNumber": "9R263211",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "9R263211 explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-needs-review",
+      "officialRecallExternalId": "10943",
+      "ownedProduct": {
+        "productName": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+        "brand": "Skip Hop",
+        "category": "Teether",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-match",
+      "officialRecallExternalId": "10950",
+      "ownedProduct": {
+        "productName": "Rainbow Mystery Squishy Bun Toy",
+        "brand": null,
+        "category": "Toy",
+        "gtin": null,
+        "modelNumber": "D08004",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model D08004.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-no-match",
+      "officialRecallExternalId": "10950",
+      "ownedProduct": {
+        "productName": "Rainbow Mystery Squishy Bun Toy",
+        "brand": null,
+        "category": "Toy",
+        "gtin": null,
+        "modelNumber": "D08005",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "D08005 explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-needs-review",
+      "officialRecallExternalId": "10950",
+      "ownedProduct": {
+        "productName": "Rainbow Mystery Squishy Bun Toy",
+        "brand": null,
+        "category": "Toy",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10956-steelite-match",
+      "officialRecallExternalId": "10956",
+      "ownedProduct": {
+        "productName": "Steelite Electric Pressure Washer",
+        "brand": "Steelite",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "AZ6041VC",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model AZ6041VC.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10956-steelite-no-match",
+      "officialRecallExternalId": "10956",
+      "ownedProduct": {
+        "productName": "Steelite Electric Pressure Washer",
+        "brand": "Steelite",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "AZ6041VD",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "AZ6041VD explicitly differs from the complete affected model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "holdout-10956-steelite-needs-review",
+      "officialRecallExternalId": "10956",
+      "ownedProduct": {
+        "productName": "Steelite Electric Pressure Washer",
+        "brand": "Steelite",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity alone does not establish the exact affected model or batch.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    }
+  ]
+}

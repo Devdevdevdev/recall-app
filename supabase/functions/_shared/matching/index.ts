@@ -3,6 +3,38 @@ export { retrieveRecallCandidates } from './candidateRetrieval.ts';
 export { evaluateDeterministicMatch } from './deterministicMatcher.ts';
 export { evaluateRecallScope } from './evidence.ts';
 export {
+  createGuardedNebiusEvaluator,
+  evaluateHybridGuardedMatch,
+  HYBRID_GUARDED_MAX_ORCHESTRATION_RETRIES,
+  type HybridGuardedEvaluation,
+  type HybridGuardedResult,
+  type HybridGuardedTrace,
+} from './hybridGuardedMatcher.ts';
+export {
+  evaluateGuardedNemotronMatch,
+  GUARDED_NEMOTRON_MAX_OUTPUT_TOKENS,
+  GUARDED_NEMOTRON_RESULT_TOOL_NAME,
+  type GuardedNemotronAttempt,
+  type GuardedNemotronFailureKind,
+} from './guardedNemotronMatcher.ts';
+export {
+  buildGuardedNemotronMessages,
+  GUARDED_NEMOTRON_SYSTEM_PROMPT,
+} from './guardedNemotronPrompt.ts';
+export {
+  GUARDED_CLAIM_CRITERIA,
+  GUARDED_NEMOTRON_OUTPUT_SCHEMA,
+  GUARDED_SOURCE_FIELDS,
+  validateGuardedNemotronOutput,
+  type GuardedEvidenceClaim,
+  type GuardedNemotronOutput,
+} from './guardedNemotronSchema.ts';
+export {
+  verifyNemotronConfirmation,
+  type NemotronConfirmationVerification,
+  type VerifiedNemotronEvidence,
+} from './nemotronSafetyVerifier.ts';
+export {
   evaluateNemotronMatch,
   extractNebiusUsage,
   NEMOTRON_MAX_OUTPUT_TOKENS,
@@ -33,6 +65,8 @@ export {
 } from './normalization.ts';
 export {
   DETERMINISTIC_MATCH_METHOD,
+  GUARDED_NEMOTRON_PROMPT_VERSION,
+  HYBRID_GUARDED_MATCH_METHOD,
   MATCH_EVALUATION_SCHEMA_VERSION,
   NEBIUS_AI_PROVIDER,
   NEMOTRON_MATCH_METHOD,

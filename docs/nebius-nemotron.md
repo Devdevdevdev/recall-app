@@ -150,3 +150,66 @@ The measured evidence supports only a bounded statement: Recall evaluated NVIDIA
 `nvidia/nemotron-3-super-120b-a12b` through Nebius Token Factory against a frozen 30-case,
 CPSC-backed internal benchmark using a server-only strict structured-output boundary. It does not
 support a claim of general real-world accuracy, calibrated confidence, or production-safe alerting.
+
+## Phase 9.1 guarded hybrid evaluation
+
+Phase 9.1 does not replace or relabel the historical Phase 8/9 artifacts. It adds a separate
+`hybrid_guarded_v1` policy and independent holdout. The historical dataset remains byte-identical at
+SHA-256 `c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8`.
+
+The hybrid first runs `deterministic_v1`; its 16 definitive holdout decisions bypassed AI. Only 20
+abstentions were projected for Nemotron. The projection omitted labels, provenance, benchmark
+reasons, case IDs, baseline results, metrics, private data, and secrets. It made no search or web
+request. The model used prompt `1.0.0`, temperature 0, a 2,800-token output ceiling, and the forced
+strict `submit_guarded_recall_match_evaluation` tool. Client retries were disabled so the hybrid
+orchestrator was the only retry authority.
+
+The model can propose controlled claims but cannot directly authorize a confirmation. A local
+verifier resolves each claim back to the supplied owned field and official scope/raw-evidence field,
+then checks exact identifiers, safe prefixes/ranges, identity support, source association, criteria,
+and date semantics. Names or brand alone, copied values without a real comparison, ambiguous
+associations, and purchase-date substitution cannot confirm. AI rejection is advisory. Every
+failure or unsafe/unverifiable result returns `needs_review`.
+
+The 24-case development set and 36-case holdout use 8 and 12 separate official CPSC recall records,
+respectively, and are disjoint from each other and the historical 12-source set. No paid model run
+was performed during development: there were zero model-backed prompt variants and one
+policy/prompt version was frozen. After freezing the policy, the holdout SHA-256 was
+`3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608`; the manifest also pins the
+development set, historical artifacts, and policy implementation hashes.
+
+The one authorized holdout run completed on 2026-09-14:
+
+| Metric                     | `deterministic_v1` | `hybrid_guarded_v1` |
+| -------------------------- | -----------------: | ------------------: |
+| Exact three-class accuracy |              77.8% |               88.9% |
+| MATCH TP / FP / FN / TN    |     8 / 0 / 4 / 24 |     12 / 0 / 0 / 24 |
+| MATCH precision            |             100.0% |              100.0% |
+| Strict MATCH recall        |              66.7% |              100.0% |
+| False-positive rate        |               0.0% |                0.0% |
+| Needs-review rate          |              55.6% |               44.4% |
+| Decision coverage          |              44.4% |               55.6% |
+
+The hybrid confusion-matrix rows `[match, no_match, needs_review]` are `[12, 0, 0]`, `[0, 8, 4]`,
+and `[0, 0, 12]`. Four deterministic positive abstentions became locally verified confirmations;
+there were no worsened cases, false positives, or unresolved expected positives.
+
+The 20 escalations used 24 inference requests. Four primary responses had schema violations and
+used their one allowed retry; all four retries succeeded. There were no provider-failure attempts,
+no second retries, and primary structured-output success was 16/20 (80.0%). Final success after
+retry was 20/20 (100.0%), or 20 valid outputs across 24 attempts. Escalated latency was 135.608
+seconds total, 6.780 seconds average, 6.494 seconds p50, and 10.342 seconds p95. Overall hybrid
+latency was 135.613 seconds total, 3.767 seconds average, 2.854 seconds p50, and 10.342 seconds p95.
+Provider usage was 50,334 input tokens plus 31,895 output tokens, 82,229 total. Reasoning-token
+counts were unavailable and remain null. Live metadata reported USD 0.30/M input and USD 0.90/M
+output; actual calculated cost was USD 0.0438057.
+
+Machine-readable Phase 9.1 evidence is stored in:
+
+- `benchmarks/recall-matching/phase-9-1/results/deterministic-holdout-v1.json`
+- `benchmarks/recall-matching/phase-9-1/results/hybrid-holdout-v1.json`
+- `benchmarks/recall-matching/phase-9-1/results/holdout-comparison.json`
+
+The result is evidence for the guarded architecture on this small controlled holdout only. Phase 10
+must still design authenticated production orchestration, persistence, monitoring, and alert policy;
+Phase 9.1 itself adds none of them.

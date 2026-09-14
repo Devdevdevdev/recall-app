@@ -1,0 +1,814 @@
+{
+  "datasetVersion": "1",
+  "createdAt": "2026-09-14",
+  "sourceRetrievalDate": "2026-09-14",
+  "sourceAuthority": "U.S. Consumer Product Safety Commission (CPSC)",
+  "recalls": [
+    {
+      "recallNoticeId": "cpsc-10931",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10931",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/KTM-North-America-Recalls-Off-Road-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "KTM North America Recalls Off-Road Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+      "description": "CPSC lists specified 2021–2024 GASGAS and Husqvarna off-road motorcycle model/year combinations.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-20",
+      "scopes": [
+        {
+          "productName": "GASGAS and Husqvarna Off-Road Motorcycles"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10931",
+        "officialDescription": "CPSC lists specified 2021–2024 GASGAS and Husqvarna off-road motorcycle model/year combinations.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "FE 350",
+            "productName": "Husqvarna FE 350 Off-Road Motorcycle",
+            "brand": "Husqvarna",
+            "context": "CPSC explicitly lists the 2022 FE 350."
+          },
+          {
+            "criterion": "modelNumber",
+            "value": "EC 300",
+            "productName": "GASGAS EC 300 Off-Road Motorcycle",
+            "brand": "GASGAS",
+            "context": "CPSC explicitly lists EC 300 for model years 2021 through 2024."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": [
+              "FE 350",
+              "FE 501",
+              "TE 150i",
+              "TE 250i",
+              "TE 300i",
+              "TE 150",
+              "TE 250",
+              "TE 300",
+              "TE 300 Heritage",
+              "FX 350 Heritage",
+              "FX 350",
+              "FE 450",
+              "FE 450 Heritage",
+              "FX 450",
+              "TX 300",
+              "TX 300 Heritage",
+              "FE 350w",
+              "FE 501w",
+              "EC 300",
+              "EC 250",
+              "EX 250",
+              "EX 250F",
+              "EX 300",
+              "EX 350F",
+              "EX 450F",
+              "MC 125",
+              "MC 250",
+              "MC 250F",
+              "MC 350F",
+              "MC 450F",
+              "EC 450F",
+              "EW 500F"
+            ],
+            "productName": "GASGAS and Husqvarna Off-Road Motorcycles",
+            "context": "CPSC supplies the complete affected model table for this recall."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10933",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10933",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Goal-Zero-Recalls-YETI-3000X-Power-Stations-Due-to-Serious-Risk-of-Injury-from-Fire-and-Burn-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Goal Zero Recalls YETI 3000X Power Stations Due to Serious Risk of Injury from Fire and Burn Hazards",
+      "description": "CPSC identifies Goal Zero YETI 3000X portable power stations.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-20",
+      "scopes": [
+        {
+          "productName": "Goal Zero YETI 3000X Portable Power Stations",
+          "brand": "Goal Zero"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10933",
+        "officialDescription": "CPSC identifies Goal Zero YETI 3000X portable power stations.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "YETI 3000X",
+            "productName": "Goal Zero YETI 3000X Portable Power Station",
+            "brand": "Goal Zero",
+            "context": "CPSC explicitly identifies YETI 3000X on the product nameplate."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["YETI 3000X"],
+            "productName": "Goal Zero YETI 3000X Portable Power Station",
+            "brand": "Goal Zero",
+            "context": "The recall is limited to the YETI 3000X model."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10935",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10935",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Koorlian-Mattresses-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability-Sold-on-Amazon-by-Dream-Bedding-Technology",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Koorlian Mattresses Recalled Due to Risk of Serious Injury or Death from Fire Hazard",
+      "description": "CPSC identifies 10-inch Twin XL Koorlian mattresses and a prototype ID, not a product model field.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-20",
+      "scopes": [
+        {
+          "productName": "Koorlian 10-inch Twin XL Mattresses",
+          "brand": "Koorlian"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10935",
+        "officialDescription": "CPSC identifies 10-inch Twin XL Koorlian mattresses and a prototype ID, not a product model field.",
+        "unmodeledCriteria": "Prototype ID KY15Q290 and manufacture date appear on the sewn-in label; prototype ID is not normalized as a model number."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10936",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10936",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Workbless-Pressure-Washers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Workbless Pressure Washers Recalled Due to Risk of Serious Injury or Death from Shock and Electrocution Hazards",
+      "description": "CPSC explicitly identifies Workbless electric pressure washer models WB0301 and WB0302.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-20",
+      "scopes": [
+        {
+          "productName": "Workbless Electric Pressure Washers",
+          "brand": "Workbless"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10936",
+        "officialDescription": "CPSC explicitly identifies Workbless electric pressure washer models WB0301 and WB0302.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "WB0301",
+            "productName": "Workbless Electric Pressure Washer",
+            "brand": "Workbless",
+            "context": "CPSC explicitly identifies model WB0301."
+          },
+          {
+            "criterion": "modelNumber",
+            "value": "WB0302",
+            "productName": "Workbless Electric Pressure Washer",
+            "brand": "Workbless",
+            "context": "CPSC explicitly identifies model WB0302."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["WB0301", "WB0302"],
+            "productName": "Workbless Electric Pressure Washer",
+            "brand": "Workbless",
+            "context": "CPSC states that the recall involves models WB0301 and WB0302."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10937",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10937",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/CCM-Hockey-US-Recalls-FMHVR-Hybrid-Visors-and-ACCHVR-Replacement-Visor-Accessories-Due-to-Risk-of-Injury-from-Laceration-or-Impact-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "CCM Hockey U.S. Recalls FMHVR Hybrid Visors and ACCHVR Replacement Visor Accessories",
+      "description": "CPSC associates serial prefixes M/L and S/M with FMHVR visors and SR with ACCHVR accessories.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-20",
+      "scopes": [
+        {
+          "productName": "CCM FMHVR Hybrid Visors and ACCHVR Replacement Visor Accessories",
+          "brand": "CCM"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10937",
+        "officialDescription": "CPSC associates serial prefixes M/L and S/M with FMHVR visors and SR with ACCHVR accessories.",
+        "explicitCriteria": [
+          {
+            "criterion": "serialPrefix",
+            "value": "M/L",
+            "productName": "CCM FMHVR Hybrid Visor",
+            "brand": "CCM",
+            "context": "CPSC explicitly states that recalled FMHVR serial numbers begin with M/L."
+          },
+          {
+            "criterion": "serialPrefix",
+            "value": "S/M",
+            "productName": "CCM FMHVR Hybrid Visor",
+            "brand": "CCM",
+            "context": "CPSC explicitly states that recalled FMHVR serial numbers begin with S/M."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "serialPrefix",
+            "values": ["M/L", "S/M"],
+            "productName": "CCM FMHVR Hybrid Visor",
+            "brand": "CCM",
+            "context": "CPSC supplies the complete FMHVR serial-prefix list."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10944",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10944",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Branch-Recalls-Ergonomic-Chairs-Due-to-Fall-Hazard",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Branch Recalls Ergonomic Chairs Due to Fall Hazard",
+      "description": "CPSC limits affected Branch ergonomic chairs by incorrectly installed anchors and manufacture dates from 2025-09-10 through 2026-04-22.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "Branch Ergonomic Chairs",
+          "brand": "Branch",
+          "manufacturedFrom": "2025-09-10",
+          "manufacturedTo": "2026-04-22"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10944",
+        "officialDescription": "CPSC limits affected Branch ergonomic chairs by incorrectly installed anchors and manufacture dates from 2025-09-10 through 2026-04-22.",
+        "unmodeledCriteria": "Incorrect backrest-anchor installation and manufacture date are mandatory recall criteria; purchase date cannot satisfy them."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10949",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10949",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Adult-Portable-Bed-Rails-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Entrapment-and-Asphyxiation-Violate-Mandatory-Standard-for-Adult-Portable-Bed-Rails-Sold-on-Amazon-by-Loyoda-Direct-and-Loyoda",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Loyoda Adult Portable Bed Rails Recalled Due to Entrapment and Asphyxiation Hazards",
+      "description": "CPSC identifies model FBL140202 but limits the recall to rails manufactured before 2025-12-15.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-09-03",
+      "scopes": [
+        {
+          "productName": "Loyoda Adult Portable Bed Rails",
+          "brand": "Loyoda",
+          "manufacturedTo": "2025-12-14"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10949",
+        "officialDescription": "CPSC identifies model FBL140202 but limits the recall to rails manufactured before 2025-12-15.",
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["FBL140202"],
+            "productName": "Loyoda Adult Portable Bed Rail",
+            "brand": "Loyoda",
+            "context": "CPSC identifies only model FBL140202; manufacture date is an additional mandatory condition."
+          }
+        ]
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10955",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10955",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/AudioLineOut-Recalls-Studio-Six-Headphone-Amplifiers-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Hazard",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "AudioLineOut Recalls Studio Six Headphone Amplifiers Due to Electrocution Hazard",
+      "description": "CPSC explicitly identifies Studio Six headphone amplifier model ST6.",
+      "hazard": null,
+      "remedy": null,
+      "recallDate": "2026-08-27",
+      "scopes": [
+        {
+          "productName": "Studio Six Headphone Amplifiers",
+          "brand": "AudioLineOut"
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10955",
+        "officialDescription": "CPSC explicitly identifies Studio Six headphone amplifier model ST6.",
+        "explicitCriteria": [
+          {
+            "criterion": "modelNumber",
+            "value": "ST6",
+            "productName": "Studio Six Headphone Amplifier",
+            "brand": "AudioLineOut",
+            "context": "CPSC explicitly identifies model ST6."
+          }
+        ],
+        "completeCriterionSets": [
+          {
+            "criterion": "modelNumber",
+            "values": ["ST6"],
+            "productName": "Studio Six Headphone Amplifier",
+            "brand": "AudioLineOut",
+            "context": "CPSC identifies only model ST6."
+          }
+        ]
+      }
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "dev-10931-husqvarna-fe350-match",
+      "officialRecallExternalId": "10931",
+      "ownedProduct": {
+        "productName": "Husqvarna FE 350 Off-Road Motorcycle",
+        "brand": "Husqvarna",
+        "category": "Off-road motorcycle",
+        "gtin": null,
+        "modelNumber": "FE 350",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly lists the associated Husqvarna FE 350 model.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10931-gasgas-ec300-match",
+      "officialRecallExternalId": "10931",
+      "ownedProduct": {
+        "productName": "GASGAS EC 300 Off-Road Motorcycle",
+        "brand": "GASGAS",
+        "category": "Off-road motorcycle",
+        "gtin": null,
+        "modelNumber": "EC 300",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly lists the associated GASGAS EC 300 model.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10933-yeti3000x-match",
+      "officialRecallExternalId": "10933",
+      "ownedProduct": {
+        "productName": "Goal Zero YETI 3000X Portable Power Station",
+        "brand": "Goal Zero",
+        "category": "Portable power station",
+        "gtin": null,
+        "modelNumber": "YETI 3000X",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies the YETI 3000X model.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10936-wb0301-match",
+      "officialRecallExternalId": "10936",
+      "ownedProduct": {
+        "productName": "Workbless Electric Pressure Washer",
+        "brand": "Workbless",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "WB0301",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model WB0301.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10936-wb0302-match",
+      "officialRecallExternalId": "10936",
+      "ownedProduct": {
+        "productName": "Workbless Electric Pressure Washer",
+        "brand": "Workbless",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "WB0302",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model WB0302.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10937-ml-prefix-match",
+      "officialRecallExternalId": "10937",
+      "ownedProduct": {
+        "productName": "CCM FMHVR Hybrid Visor",
+        "brand": "CCM",
+        "category": "Hockey visor",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": "M/L-28491",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly associates the M/L serial prefix with FMHVR visors.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10937-sm-prefix-match",
+      "officialRecallExternalId": "10937",
+      "ownedProduct": {
+        "productName": "CCM FMHVR Hybrid Visor",
+        "brand": "CCM",
+        "category": "Hockey visor",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": "S/M-88420",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly associates the S/M serial prefix with FMHVR visors.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10955-st6-match",
+      "officialRecallExternalId": "10955",
+      "ownedProduct": {
+        "productName": "Studio Six Headphone Amplifier",
+        "brand": "AudioLineOut",
+        "category": "Audio amplifier",
+        "gtin": null,
+        "modelNumber": "ST6",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "CPSC explicitly identifies model ST6.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10931-fc500-no-match",
+      "officialRecallExternalId": "10931",
+      "ownedProduct": {
+        "productName": "Husqvarna FC 500 Off-Road Motorcycle",
+        "brand": "Husqvarna",
+        "category": "Off-road motorcycle",
+        "gtin": null,
+        "modelNumber": "FC 500",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "FC 500 is absent from the complete affected model table.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10931-fe250-no-match",
+      "officialRecallExternalId": "10931",
+      "ownedProduct": {
+        "productName": "Husqvarna FE 250 Off-Road Motorcycle",
+        "brand": "Husqvarna",
+        "category": "Off-road motorcycle",
+        "gtin": null,
+        "modelNumber": "FE 250",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "FE 250 is absent from the complete affected model table.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10933-yeti1500x-no-match",
+      "officialRecallExternalId": "10933",
+      "ownedProduct": {
+        "productName": "Goal Zero YETI 1500X Portable Power Station",
+        "brand": "Goal Zero",
+        "category": "Portable power station",
+        "gtin": null,
+        "modelNumber": "YETI 1500X",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The recall is limited to YETI 3000X, not YETI 1500X.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10936-wb0303-no-match",
+      "officialRecallExternalId": "10936",
+      "ownedProduct": {
+        "productName": "Workbless Electric Pressure Washer",
+        "brand": "Workbless",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "WB0303",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "WB0303 is outside the complete WB0301/WB0302 model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10936-wb1301-no-match",
+      "officialRecallExternalId": "10936",
+      "ownedProduct": {
+        "productName": "Workbless Electric Pressure Washer",
+        "brand": "Workbless",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": "WB1301",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "WB1301 is outside the complete WB0301/WB0302 model set.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10937-zz-prefix-no-match",
+      "officialRecallExternalId": "10937",
+      "ownedProduct": {
+        "productName": "CCM FMHVR Hybrid Visor",
+        "brand": "CCM",
+        "category": "Hockey visor",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": "ZZ-28491",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "ZZ does not match either complete affected FMHVR serial prefix.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10949-wrong-model-no-match",
+      "officialRecallExternalId": "10949",
+      "ownedProduct": {
+        "productName": "Loyoda Adult Portable Bed Rail",
+        "brand": "Loyoda",
+        "category": "Adult bed rail",
+        "gtin": null,
+        "modelNumber": "FBL140203",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The supplied model contradicts the only model identified by CPSC.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10955-st7-no-match",
+      "officialRecallExternalId": "10955",
+      "ownedProduct": {
+        "productName": "Studio Six Headphone Amplifier",
+        "brand": "AudioLineOut",
+        "category": "Audio amplifier",
+        "gtin": null,
+        "modelNumber": "ST7",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The recall identifies ST6, not ST7.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10931-name-only-review",
+      "officialRecallExternalId": "10931",
+      "ownedProduct": {
+        "productName": "Husqvarna Off-Road Motorcycle",
+        "brand": "Husqvarna",
+        "category": "Off-road motorcycle",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Name and brand do not identify one of the many affected model/year combinations.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10933-name-only-review",
+      "officialRecallExternalId": "10933",
+      "ownedProduct": {
+        "productName": "Goal Zero YETI Power Station",
+        "brand": "Goal Zero",
+        "category": "Portable power station",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "The YETI family name does not establish model 3000X.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10935-prototype-review",
+      "officialRecallExternalId": "10935",
+      "ownedProduct": {
+        "productName": "Koorlian Twin XL Mattress",
+        "brand": "Koorlian",
+        "category": "Mattress",
+        "gtin": null,
+        "modelNumber": "KY15Q290",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "CPSC calls KY15Q290 a prototype ID, which cannot be silently promoted to modelNumber.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10936-name-only-review",
+      "officialRecallExternalId": "10936",
+      "ownedProduct": {
+        "productName": "Workbless Electric Pressure Washer",
+        "brand": "Workbless",
+        "category": "Pressure washer",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Name and brand do not establish either affected model.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10937-name-only-review",
+      "officialRecallExternalId": "10937",
+      "ownedProduct": {
+        "productName": "CCM FMHVR Hybrid Visor",
+        "brand": "CCM",
+        "category": "Hockey visor",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product identity without an affected serial prefix remains ambiguous.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10944-purchase-date-review",
+      "officialRecallExternalId": "10944",
+      "ownedProduct": {
+        "productName": "Branch Ergonomic Chair",
+        "brand": "Branch",
+        "category": "Office chair",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": "2026-01-12",
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Purchase date cannot satisfy manufacture-date and anchor-installation criteria.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10949-purchase-date-review",
+      "officialRecallExternalId": "10949",
+      "ownedProduct": {
+        "productName": "Loyoda Adult Portable Bed Rail",
+        "brand": "Loyoda",
+        "category": "Adult bed rail",
+        "gtin": null,
+        "modelNumber": "FBL140202",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": "2025-11-01",
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Matching model and purchase date do not prove the required manufacture date.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    },
+    {
+      "caseId": "dev-10955-name-only-review",
+      "officialRecallExternalId": "10955",
+      "ownedProduct": {
+        "productName": "Studio Six Headphone Amplifier",
+        "brand": "AudioLineOut",
+        "category": "Audio amplifier",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_public_fixture"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Name and brand alone do not prove model ST6.",
+      "notes": "Synthetic owned-product evidence; public authoritative recall evidence only."
+    }
+  ]
+}

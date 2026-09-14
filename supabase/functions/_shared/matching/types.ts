@@ -6,6 +6,8 @@ export type JsonObject = { readonly [key: string]: JsonValue };
 
 export const DETERMINISTIC_MATCH_METHOD = 'deterministic_v1';
 export const NEMOTRON_MATCH_METHOD = 'nemotron_v1';
+export const HYBRID_GUARDED_MATCH_METHOD = 'hybrid_guarded_v1';
+export const GUARDED_NEMOTRON_PROMPT_VERSION = '1.0.0';
 export const MATCH_EVALUATION_SCHEMA_VERSION = '1.0.0';
 export const NEMOTRON_PROMPT_VERSION = '1.0.0';
 export const NEBIUS_AI_PROVIDER = 'nebius';

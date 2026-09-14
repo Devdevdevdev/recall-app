@@ -121,3 +121,50 @@ exact accuracy, 69.2% MATCH precision, 90.0% strict MATCH recall, a 20.0% false-
 positives but introduced four false positives. Structured-output success was 26/30. These results
 do not justify production alerts or a claim of general accuracy. See [nebius-nemotron.md](nebius-nemotron.md)
 for full methodology, latency, token usage, cost, limitations, and the read-only hybrid simulation.
+
+## Phase 9.1 guarded hybrid policy and independent holdout
+
+`hybrid_guarded_v1` always executes `deterministic_v1` first. Deterministic `confirmed` and
+`rejected` results return without a model call; only `needs_review` is eligible for Nebius. The
+model receives a label-free projection and must use the forced
+`submit_guarded_recall_match_evaluation` function. Its controlled claims address an owned field and
+an authoritative scope or raw-evidence field by index. The local verifier, not the model, performs
+the final comparison.
+
+A guarded confirmation requires exact GTIN, model, serial/prefix, or lot/range evidence that can be
+recomputed locally, has compatible product identity, is unambiguous across source associations,
+and is not blocked by additional criteria or manufacture/sale windows. Names and brands alone
+cannot confirm. Purchase date cannot satisfy a manufacture or sale date. AI `rejected` is advisory
+and remains `needs_review`. Invalid output, provider failure, timeout, or an unverifiable claim also
+fails closed to `needs_review`.
+
+The policy and prompt were frozen after offline work on `development.v1.json` (24 cases: 8 per
+class, 8 official CPSC sources; SHA-256
+`1887da996161611c1d48d3fa75fea281d29f49d27befcb52ce818b0728bd81b1`). No paid development
+inference was used: there were zero model-backed prompt variants and one policy/prompt version was
+frozen. The independent `holdout.v1.json` contains 36 cases (12 per class) from 12
+additional CPSC recalls that overlap neither development nor the historical 30-case dataset. Its
+frozen SHA-256 is `3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608`.
+
+| Metric                     | Deterministic holdout | Guarded hybrid holdout |
+| -------------------------- | --------------------: | ---------------------: |
+| Exact three-class accuracy |                 77.8% |                  88.9% |
+| MATCH TP / FP / FN / TN    |        8 / 0 / 4 / 24 |        12 / 0 / 0 / 24 |
+| MATCH precision            |                100.0% |                 100.0% |
+| Strict MATCH recall        |                 66.7% |                 100.0% |
+| False-positive rate        |                  0.0% |                   0.0% |
+| Needs-review rate          |                 55.6% |                  44.4% |
+| Decision coverage          |                 44.4% |                  55.6% |
+
+The deterministic baseline resolved 16 cases and escalated 20. Those 20 escalations made 24 total
+requests: four first responses violated the structured schema and each succeeded on its single
+eligible retry. Primary structured-output success was 16/20 (80.0%); final structured-output
+success after the bounded retries was 20/20 (100.0%), or 20 valid outputs across 24 attempts. There
+were no provider failures, and no expected positive remained unresolved. The hybrid improved four
+cases, worsened none, and left 32 unchanged. It produced no false-positive case to list.
+
+Escalated inference latency was 135.608 seconds total, 6.780 seconds average, 6.494 seconds p50, and
+10.342 seconds p95. Nebius reported 50,334 input and 31,895 output tokens, 82,229 total; separate
+reasoning-token usage was unavailable. At the live rates of USD 0.30/M input and USD 0.90/M output,
+the calculated cost was USD 0.0438057. The benchmark remains read-only and adds no endpoint,
+migration, persistence, alert, notification, or production policy.

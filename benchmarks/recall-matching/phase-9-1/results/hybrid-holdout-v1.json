@@ -1,0 +1,3087 @@
+{
+  "generatedAt": "2026-09-14T15:46:36.686Z",
+  "dataset": {
+    "name": "phase_9_1_independent_holdout_v1",
+    "sha256": "3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608",
+    "caseCount": 36,
+    "sourceCount": 12
+  },
+  "matcher": {
+    "version": "hybrid_guarded_v1",
+    "promptVersion": "1.0.0",
+    "schemaVersion": "1.0.0",
+    "outputMethod": "strict_function_tool:submit_guarded_recall_match_evaluation"
+  },
+  "provider": {
+    "name": "nebius",
+    "modelId": "nvidia/nemotron-3-super-120b-a12b",
+    "endpoint": "https://api.tokenfactory.us-central1.nebius.com/v1/chat/completions"
+  },
+  "inference": {
+    "temperature": 0,
+    "maxOutputTokens": 2800,
+    "transportRetries": 0,
+    "maxOrchestrationRetries": 1
+  },
+  "sourceGitCommit": "829c3f4610edb72d4a56c9e846f4f4a6713c790f",
+  "metrics": {
+    "totalCases": 36,
+    "exactThreeClassAccuracy": 0.8888888888888888,
+    "match": {
+      "truePositives": 12,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "trueNegatives": 24,
+      "precision": 1,
+      "strictRecall": 1,
+      "falsePositiveRate": 0,
+      "unresolvedPositiveCases": 0
+    },
+    "needsReview": {
+      "predictedCount": 16,
+      "rate": 0.4444444444444444
+    },
+    "decisionCoverage": 0.5555555555555556,
+    "confusionMatrix": {
+      "match": {
+        "match": 12,
+        "no_match": 0,
+        "needs_review": 0
+      },
+      "no_match": {
+        "match": 0,
+        "no_match": 8,
+        "needs_review": 4
+      },
+      "needs_review": {
+        "match": 0,
+        "no_match": 0,
+        "needs_review": 12
+      }
+    }
+  },
+  "orchestration": {
+    "deterministicResolutions": 16,
+    "nemotronEscalations": 20,
+    "escalationRate": 0.5555555555555556,
+    "nemotronRequestCount": 24,
+    "retryCount": 4
+  },
+  "integrity": {
+    "finalValidStructuredResponses": 20,
+    "finalStructuredOutputSuccessRate": 1,
+    "providerFailureAttempts": 0,
+    "structuredFailureAttempts": 4,
+    "technicalFailureCases": []
+  },
+  "latency": {
+    "overallTotalMs": 135613.21087599994,
+    "overallAverageMs": 3767.0336354444426,
+    "overallP50Ms": 2854.3587499999994,
+    "overallP95Ms": 10342.100542,
+    "nemotronEscalatedTotalMs": 135607.52275,
+    "nemotronEscalatedAverageMs": 6780.3761375,
+    "nemotronEscalatedP50Ms": 6494.408167000001,
+    "nemotronEscalatedP95Ms": 10341.76983400002
+  },
+  "usage": {
+    "inputTokens": 50334,
+    "outputTokens": 31895,
+    "totalTokens": 82229,
+    "reasoningTokens": null,
+    "complete": true
+  },
+  "cost": {
+    "amount": 0.043805699999999996,
+    "pricing": {
+      "source": "Nebius Token Factory GET /models?verbose=true",
+      "observedAt": "2026-09-14T15:44:20.594Z",
+      "currency": "USD",
+      "unit": "per_million_tokens",
+      "inputRate": 0.3,
+      "outputRate": 0.9
+    },
+    "note": "Calculated from every primary and retry request made for the guarded holdout run."
+  },
+  "cases": [
+    {
+      "caseId": "holdout-10917-tooybing-match",
+      "officialRecallExternalId": "10917",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["TB-MZWJ"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "TB-MZWJ",
+            "officialValue": "TB-MZWJ",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TooyBing Wooden Bead Stacking Toy",
+            "officialValue": "TooyBing Wooden Bead Stacking Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TOOYBING",
+            "officialValue": "TOOYBING",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.28112499999997453,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10917-tooybing-no-match",
+      "officialRecallExternalId": "10917",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["TB-MZWK != TB-MZWJ"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "TB-MZWK",
+            "officialValue": "TB-MZWJ",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TooyBing Wooden Bead Stacking Toy",
+            "officialValue": "TooyBing Wooden Bead Stacking Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TOOYBING",
+            "officialValue": "TOOYBING",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.13454200000001038,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10917-tooybing-needs-review",
+      "officialRecallExternalId": "10917",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TooyBing Wooden Bead Stacking Toy",
+            "officialValue": "TooyBing Wooden Bead Stacking Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TOOYBING",
+            "officialValue": "TOOYBING",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall's product name and brand exactly, but lacks a model number, serial number, lot number, and GTIN. Since the recall scope specifies model TB-MZWJ and the owned product provides no model number, a definitive match cannot be confirmed. Brand and product name alone are insufficient for confirmation per policy. Therefore, the evaluation requires review due to incomplete identifier evidence.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 5468.591333,
+          "usage": {
+            "inputTokens": 1996,
+            "outputTokens": 1227,
+            "totalTokens": 3223,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 5469.119708,
+      "nemotronLatencyMs": 5468.591333,
+      "usage": {
+        "inputTokens": 1996,
+        "outputTokens": 1227,
+        "totalTokens": 3223,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10920-commowner-match",
+      "officialRecallExternalId": "10920",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["HD14P-Z"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "HD14P-Z",
+            "officialValue": "HD14P-Z",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "HD14P-Z",
+            "officialValue": "HX18",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.20391700000072888,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10920-commowner-no-match",
+      "officialRecallExternalId": "10920",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["HD14P-Y != HD14P-Z", "HD14P-Y != HX18"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "HD14P-Y",
+            "officialValue": "HD14P-Z",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "HD14P-Y",
+            "officialValue": "HX18",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.07999999999992724,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10920-commowner-needs-review",
+      "officialRecallExternalId": "10920",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.3,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall scope on productName and brand, but lacks modelNumber, serialNumber, lotNumber, and GTIN. The recall scope specifies modelNumber HD14P-Z or HX18, which are not provided in the owned product evidence. Without a matching identifier, a confirmed match cannot be made; however, there is no contradictory evidence. Therefore, the evaluation requires additional evidence to determine if the product falls within the recall.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 7988.811542,
+          "usage": {
+            "inputTokens": 2021,
+            "outputTokens": 1253,
+            "totalTokens": 3274,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 7988.931624999999,
+      "nemotronLatencyMs": 7988.811542,
+      "usage": {
+        "inputTokens": 2021,
+        "outputTokens": 1253,
+        "totalTokens": 3274,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-match",
+      "officialRecallExternalId": "10921",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["XW-A19"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "XW-A19",
+            "officialValue": "XW-A19",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Yamazuki Youth All-Terrain Vehicle",
+            "officialValue": "Yamazuki Youth All-Terrain Vehicle",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.22079200000007404,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-no-match",
+      "officialRecallExternalId": "10921",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["XW-A20 != XW-A19"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "XW-A20",
+            "officialValue": "XW-A19",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Yamazuki Youth All-Terrain Vehicle",
+            "officialValue": "Yamazuki Youth All-Terrain Vehicle",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.297167000000627,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-needs-review",
+      "officialRecallExternalId": "10921",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.3,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Yamazuki Youth All-Terrain Vehicle",
+            "officialValue": "Yamazuki Youth All-Terrain Vehicle",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "Owned product matches product name and brand but lacks model number, GTIN, serial number, or lot number needed for definitive match. Recall scope specifies model XW-A19 which is not provided. Therefore, insufficient evidence to confirm or reject; needs review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 7977.353749999998,
+          "usage": {
+            "inputTokens": 1994,
+            "outputTokens": 1569,
+            "totalTokens": 3563,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 7977.474332999998,
+      "nemotronLatencyMs": 7977.353749999998,
+      "usage": {
+        "inputTokens": 1994,
+        "outputTokens": 1569,
+        "totalTokens": 3563,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10922-merax-match",
+      "officialRecallExternalId": "10922",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "modelNumber": ["GX000392AAK"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Merax Full-Size Murphy Bed",
+            "officialValue": "Merax Murphy Beds",
+            "detail": "Product-name Jaccard token overlap is 0.333."
+          }
+        ],
+        "reasoningSummary": "Nemotron confirmation was accepted only after deterministic verification of authoritative evidence references.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "confirmed",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "Owned product's model number GX000392AAK exactly matches the model number explicitly listed in the recall's explicit criteria, confirming inclusion in the recall.",
+        "nemotronClaimedEvidence": [
+          {
+            "criterion": "modelNumber",
+            "ownedField": "modelNumber",
+            "ownedValue": "GX000392AAK",
+            "claimedOfficialValue": "GX000392AAK",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierConfirmedEvidence": [
+          {
+            "criterion": "modelNumber",
+            "ownedValue": "GX000392AAK",
+            "officialValue": "GX000392AAK",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 2,
+      "orchestrationRetries": 1,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": false,
+          "failureKind": "schema_violation",
+          "latencyMs": 7270.678333,
+          "usage": {
+            "inputTokens": 2157,
+            "outputTokens": 1497,
+            "totalTokens": 3654,
+            "reasoningTokens": null
+          }
+        },
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 3115.013332999999,
+          "usage": {
+            "inputTokens": 2157,
+            "outputTokens": 1124,
+            "totalTokens": 3281,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 10386.218834000003,
+      "nemotronLatencyMs": 10385.691665999999,
+      "usage": {
+        "inputTokens": 4314,
+        "outputTokens": 2621,
+        "totalTokens": 6935,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10922-merax-no-match",
+      "officialRecallExternalId": "10922",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.95,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Merax Full-Size Murphy Bed",
+            "officialValue": "Merax Murphy Beds",
+            "detail": "Product-name Jaccard token overlap is 0.333."
+          }
+        ],
+        "reasoningSummary": "AI rejection is advisory and lacks an independent deterministic contradiction.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "rejected",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product's model number GX000399AAK does not match any of the recalled model numbers (GX000392AAK, GX000391AAK, GX000383AAK) listed in the recall's explicit criteria, indicating no match.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 2,
+      "orchestrationRetries": 1,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": false,
+          "failureKind": "schema_violation",
+          "latencyMs": 5932.843457999999,
+          "usage": {
+            "inputTokens": 2157,
+            "outputTokens": 2262,
+            "totalTokens": 4419,
+            "reasoningTokens": null
+          }
+        },
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 3825.108666,
+          "usage": {
+            "inputTokens": 2157,
+            "outputTokens": 1085,
+            "totalTokens": 3242,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 9758.007625000002,
+      "nemotronLatencyMs": 9757.952124,
+      "usage": {
+        "inputTokens": 4314,
+        "outputTokens": 3347,
+        "totalTokens": 7661,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10922-merax-needs-review",
+      "officialRecallExternalId": "10922",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.1,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Merax Full-Size Murphy Bed",
+            "officialValue": "Merax Murphy Beds",
+            "detail": "Product-name Jaccard token overlap is 0.333."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product lacks any identifier (GTIN, model, serial, lot) that could be matched against the recall's explicit model numbers. While the product name and brand are similar to the recall's description, similarity alone is insufficient to confirm inclusion. Without contradictory evidence, a definitive rejection cannot be made. Therefore, the match status is undetermined and requires review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 7401.278957999995,
+          "usage": {
+            "inputTokens": 2148,
+            "outputTokens": 1678,
+            "totalTokens": 3826,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 7401.3687500000015,
+      "nemotronLatencyMs": 7401.278957999995,
+      "usage": {
+        "inputTokens": 2148,
+        "outputTokens": 1678,
+        "totalTokens": 3826,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10926-cubershop-match",
+      "officialRecallExternalId": "10926",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["YJ MGC 5×5"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "YJ MGC 5×5",
+            "officialValue": "YJ MGC 5×5",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "officialValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CUBERSHOP",
+            "officialValue": "CUBERSHOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.1418749999938882,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10926-cubershop-no-match",
+      "officialRecallExternalId": "10926",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["YJ MGC 4×4 != YJ MGC 5×5"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "YJ MGC 4×4",
+            "officialValue": "YJ MGC 5×5",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "officialValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CUBERSHOP",
+            "officialValue": "CUBERSHOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.1053329999995185,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10926-cubershop-needs-review",
+      "officialRecallExternalId": "10926",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.3,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "officialValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CUBERSHOP",
+            "officialValue": "CUBERSHOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall scope in product name and brand, but lacks essential identifiers (model number, GTIN, serial number, lot number). Without matching identifiers, a confirmed match cannot be made per policy that names and brands alone are insufficient. Therefore, the evaluation requires further review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 6857.1345,
+          "usage": {
+            "inputTokens": 2002,
+            "outputTokens": 1529,
+            "totalTokens": 3531,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 6857.202250000002,
+      "nemotronLatencyMs": 6857.1345,
+      "usage": {
+        "inputTokens": 2002,
+        "outputTokens": 1529,
+        "totalTokens": 3531,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-match",
+      "officialRecallExternalId": "10929",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "lotNumber": ["26082"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "officialValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SUNNYSIDE",
+            "officialValue": "SUNNYSIDE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "Nemotron confirmation was accepted only after deterministic verification of authoritative evidence references.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "confirmed",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "Owned product lot number 26082 exactly matches the recall's explicit lot number criterion for the specified product and brand.",
+        "nemotronClaimedEvidence": [
+          {
+            "criterion": "lotNumber",
+            "ownedField": "lotNumber",
+            "ownedValue": "26082",
+            "claimedOfficialValue": "26082",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierConfirmedEvidence": [
+          {
+            "criterion": "lotNumber",
+            "ownedValue": "26082",
+            "officialValue": "26082",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 2,
+      "orchestrationRetries": 1,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": false,
+          "failureKind": "schema_violation",
+          "latencyMs": 5323.438541999996,
+          "usage": {
+            "inputTokens": 2160,
+            "outputTokens": 1355,
+            "totalTokens": 3515,
+            "reasoningTokens": null
+          }
+        },
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 3194.767541000001,
+          "usage": {
+            "inputTokens": 2160,
+            "outputTokens": 956,
+            "totalTokens": 3116,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 8518.562458,
+      "nemotronLatencyMs": 8518.206082999997,
+      "usage": {
+        "inputTokens": 4320,
+        "outputTokens": 2311,
+        "totalTokens": 6631,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-no-match",
+      "officialRecallExternalId": "10929",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.99,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "officialValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SUNNYSIDE",
+            "officialValue": "SUNNYSIDE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI rejection is advisory and lacks an independent deterministic contradiction.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "rejected",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The official recall explicitly limits the affected Sunnyside 1-K kerosene containers to batch number 26082. The owned product bears lotNumber 26083, which does not match the recalled lotNumber. Therefore, the product is not within the scope of the recall.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 2804.6411249999946,
+          "usage": {
+            "inputTokens": 2160,
+            "outputTokens": 874,
+            "totalTokens": 3034,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 2804.7577500000043,
+      "nemotronLatencyMs": 2804.6411249999946,
+      "usage": {
+        "inputTokens": 2160,
+        "outputTokens": 874,
+        "totalTokens": 3034,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-needs-review",
+      "officialRecallExternalId": "10929",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "officialValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SUNNYSIDE",
+            "officialValue": "SUNNYSIDE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall's product name and brand exactly, but lacks any identifier (GTIN, model, serial, lot number). The recall explicitly limits the affected units to lot number 26082, which is unknown for the owned product. Without matching identifiers, a confirmed match cannot be made; thus the evaluation needs review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 5570.571916999994,
+          "usage": {
+            "inputTokens": 2156,
+            "outputTokens": 1374,
+            "totalTokens": 3530,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 5570.739208999992,
+      "nemotronLatencyMs": 5570.571916999994,
+      "usage": {
+        "inputTokens": 2156,
+        "outputTokens": 1374,
+        "totalTokens": 3530,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-match",
+      "officialRecallExternalId": "10939",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "modelNumber": ["PY-PBK5M-CR2"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "officialValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO POPPY",
+            "officialValue": "XO POPPY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "Nemotron confirmation was accepted only after deterministic verification of authoritative evidence references.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "confirmed",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product's model number PY-PBK5M-CR2 exactly matches the explicit criterion in the recall's rawEvidence, confirming inclusion in the recalled set. Product name and brand also match the recall scope.",
+        "nemotronClaimedEvidence": [
+          {
+            "criterion": "modelNumber",
+            "ownedField": "modelNumber",
+            "ownedValue": "PY-PBK5M-CR2",
+            "claimedOfficialValue": "PY-PBK5M-CR2",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierConfirmedEvidence": [
+          {
+            "criterion": "modelNumber",
+            "ownedValue": "PY-PBK5M-CR2",
+            "officialValue": "PY-PBK5M-CR2",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 2,
+      "orchestrationRetries": 1,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": false,
+          "failureKind": "schema_violation",
+          "latencyMs": 4097.499250000008,
+          "usage": {
+            "inputTokens": 2143,
+            "outputTokens": 1079,
+            "totalTokens": 3222,
+            "reasoningTokens": null
+          }
+        },
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 6244.270584000013,
+          "usage": {
+            "inputTokens": 2143,
+            "outputTokens": 1068,
+            "totalTokens": 3211,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 10342.100542,
+      "nemotronLatencyMs": 10341.76983400002,
+      "usage": {
+        "inputTokens": 4286,
+        "outputTokens": 2147,
+        "totalTokens": 6433,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-no-match",
+      "officialRecallExternalId": "10939",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.95,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "officialValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO POPPY",
+            "officialValue": "XO POPPY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI rejection is advisory and lacks an independent deterministic contradiction.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "rejected",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall's product name and brand, but its model number PY-PBK5M-CR3 is not among the explicitly recalled model numbers (PY-PBK5M-CR2, PY-PBK5M-BW8, PY-PBK5M-TB2) listed in the recall's explicit criteria and complete criterion sets. Therefore, the product is not subject to this recall.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 5732.868584000011,
+          "usage": {
+            "inputTokens": 2143,
+            "outputTokens": 1484,
+            "totalTokens": 3627,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 5733.118082999994,
+      "nemotronLatencyMs": 5732.868584000011,
+      "usage": {
+        "inputTokens": 2143,
+        "outputTokens": 1484,
+        "totalTokens": 3627,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-needs-review",
+      "officialRecallExternalId": "10939",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "officialValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO POPPY",
+            "officialValue": "XO POPPY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall scope in product name and brand, but lacks identifiers such as model number, GTIN, serial number, or lot number. The recall explicitly identifies affected units by three specific model numbers (PY-PBK5M-CR2, PY-PBK5M-BW8, PY-PBK5M-TB2). Without these identifiers, a definitive match cannot be established, necessitating further review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 5839.013208999997,
+          "usage": {
+            "inputTokens": 2135,
+            "outputTokens": 1005,
+            "totalTokens": 3140,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 5839.094417,
+      "nemotronLatencyMs": 5839.013208999997,
+      "usage": {
+        "inputTokens": 2135,
+        "outputTokens": 1005,
+        "totalTokens": 3140,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10941-alanca-match",
+      "officialRecallExternalId": "10941",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["WH-DS02-6W"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6W",
+            "officialValue": "WH-DS02-6W",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6W",
+            "officialValue": "WH-DS02-6GE",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.13233299998682924,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10941-alanca-no-match",
+      "officialRecallExternalId": "10941",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["WH-DS02-6BK != WH-DS02-6W", "WH-DS02-6BK != WH-DS02-6GE"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6BK",
+            "officialValue": "WH-DS02-6W",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6BK",
+            "officialValue": "WH-DS02-6GE",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.18166699999710545,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10941-alanca-needs-review",
+      "officialRecallExternalId": "10941",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the product name and brand of the recall scopes, but lacks model number, serial number, lot number, and GTIN. Since the recall scopes are defined by specific model numbers (WH-DS02-6W and WH-DS02-6GE), the absence of this identifier prevents a confirmed match. Therefore, the evaluation requires review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 6494.408167000001,
+          "usage": {
+            "inputTokens": 2057,
+            "outputTokens": 1897,
+            "totalTokens": 3954,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 6494.471250000002,
+      "nemotronLatencyMs": 6494.408167000001,
+      "usage": {
+        "inputTokens": 2057,
+        "outputTokens": 1897,
+        "totalTokens": 3954,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10942-gizoon-match",
+      "officialRecallExternalId": "10942",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["AP47-B"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "AP47-B",
+            "officialValue": "AP47-W",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "AP47-B",
+            "officialValue": "AP47-B",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.08604100000229664,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10942-gizoon-no-match",
+      "officialRecallExternalId": "10942",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["AP48-B != AP47-W", "AP48-B != AP47-B"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "AP48-B",
+            "officialValue": "AP47-W",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "AP48-B",
+            "officialValue": "AP47-B",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.030375000002095476,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10942-gizoon-needs-review",
+      "officialRecallExternalId": "10942",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "Owned product matches brand and product name but lacks model number, serial number, lot number, or GTIN needed to confirm inclusion in recall scopes which specify model numbers AP47-W and AP47-B.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 4881.414707999997,
+          "usage": {
+            "inputTokens": 2029,
+            "outputTokens": 1077,
+            "totalTokens": 3106,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 4881.448290999993,
+      "nemotronLatencyMs": 4881.414707999997,
+      "usage": {
+        "inputTokens": 2029,
+        "outputTokens": 1077,
+        "totalTokens": 3106,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-match",
+      "officialRecallExternalId": "10943",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["9R263210"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "9R263210",
+            "officialValue": "9R263210",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "officialValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SKIP HOP",
+            "officialValue": "SKIP HOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.08233299999847077,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-no-match",
+      "officialRecallExternalId": "10943",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["9R263211 != 9R263210"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9R263211",
+            "officialValue": "9R263210",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "officialValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SKIP HOP",
+            "officialValue": "SKIP HOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.023709000000962988,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-needs-review",
+      "officialRecallExternalId": "10943",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "officialValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SKIP HOP",
+            "officialValue": "SKIP HOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recalled product name and brand exactly, but the model number is missing from the owned product evidence. Since brand and name alone are insufficient to confirm a recall match, and the critical model number identifier is not provided, the evidence is incomplete.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 2854.330833,
+          "usage": {
+            "inputTokens": 2009,
+            "outputTokens": 801,
+            "totalTokens": 2810,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 2854.3587499999994,
+      "nemotronLatencyMs": 2854.330833,
+      "usage": {
+        "inputTokens": 2009,
+        "outputTokens": 801,
+        "totalTokens": 2810,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-match",
+      "officialRecallExternalId": "10950",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["D08004"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "D08004",
+            "officialValue": "D08004",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rainbow Mystery Squishy Bun Toy",
+            "officialValue": "Rainbow Mystery Squishy Bun Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "confirmed",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.1033329999918351,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-no-match",
+      "officialRecallExternalId": "10950",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["D08005 != D08004"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "D08005",
+            "officialValue": "D08004",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rainbow Mystery Squishy Bun Toy",
+            "officialValue": "Rainbow Mystery Squishy Bun Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "rejected",
+        "deterministicEscalationReason": null,
+        "aiEscalated": false,
+        "aiModel": null,
+        "aiProvider": null,
+        "promptVersion": null,
+        "aiDecision": null,
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": null,
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 0,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": null,
+      "attemptHistory": [],
+      "latencyMs": 0.04287499999918509,
+      "nemotronLatencyMs": 0,
+      "usage": {
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "totalTokens": 0,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-needs-review",
+      "officialRecallExternalId": "10950",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rainbow Mystery Squishy Bun Toy",
+            "officialValue": "Rainbow Mystery Squishy Bun Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall scope productName exactly but lacks any identifier (modelNumber, GTIN, serialNumber, lotNumber) required for confirmation. Without a matching identifier, the evidence is insufficient to confirm inclusion in the recall. There is no conflicting identifier to support rejection. Therefore, the assessment needs review due to incomplete evidence.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 5435.605209000001,
+          "usage": {
+            "inputTokens": 1982,
+            "outputTokens": 1348,
+            "totalTokens": 3330,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 5435.653833999997,
+      "nemotronLatencyMs": 5435.605209000001,
+      "usage": {
+        "inputTokens": 1982,
+        "outputTokens": 1348,
+        "totalTokens": 3330,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10956-steelite-match",
+      "officialRecallExternalId": "10956",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "modelNumber": ["AZ6041VC"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Steelite Electric Pressure Washer",
+            "officialValue": "Steelite Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "STEELITE",
+            "officialValue": "STEELITE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "Nemotron confirmation was accepted only after deterministic verification of authoritative evidence references.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "confirmed",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product's model number AZ6041VC exactly matches the explicit criterion in the recall's raw evidence. The product name and brand also match the recall's scope. Therefore, the product falls within the recall.",
+        "nemotronClaimedEvidence": [
+          {
+            "criterion": "modelNumber",
+            "ownedField": "modelNumber",
+            "ownedValue": "AZ6041VC",
+            "claimedOfficialValue": "AZ6041VC",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierConfirmedEvidence": [
+          {
+            "criterion": "modelNumber",
+            "ownedValue": "AZ6041VC",
+            "officialValue": "AZ6041VC",
+            "sourceKind": "rawEvidence",
+            "scopeIndex": null,
+            "sourceField": "explicitCriteria",
+            "sourceIndex": 0
+          }
+        ],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 6752.622500000012,
+          "usage": {
+            "inputTokens": 2091,
+            "outputTokens": 1856,
+            "totalTokens": 3947,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 6752.792042000001,
+      "nemotronLatencyMs": 6752.622500000012,
+      "usage": {
+        "inputTokens": 2091,
+        "outputTokens": 1856,
+        "totalTokens": 3947,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10956-steelite-no-match",
+      "officialRecallExternalId": "10956",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.95,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Steelite Electric Pressure Washer",
+            "officialValue": "Steelite Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "STEELITE",
+            "officialValue": "STEELITE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI rejection is advisory and lacks an independent deterministic contradiction.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "rejected",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product's model number AZ6041VD conflicts with the recall's explicitly identified model number AZ6041VC. While product name and brand match, identifiers alone determine inclusion, and the model number mismatch indicates the product is not part of the recall.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 5325.272625000012,
+          "usage": {
+            "inputTokens": 2091,
+            "outputTokens": 1365,
+            "totalTokens": 3456,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 5325.323833000002,
+      "nemotronLatencyMs": 5325.272625000012,
+      "usage": {
+        "inputTokens": 2091,
+        "outputTokens": 1365,
+        "totalTokens": 3456,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    },
+    {
+      "caseId": "holdout-10956-steelite-needs-review",
+      "officialRecallExternalId": "10956",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Steelite Electric Pressure Washer",
+            "officialValue": "Steelite Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "STEELITE",
+            "officialValue": "STEELITE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "AI escalation remained unresolved; human review is required.",
+        "matchMethod": "hybrid_guarded_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "trace": {
+        "deterministicDecision": "needs_review",
+        "deterministicEscalationReason": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "aiEscalated": true,
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "aiProvider": "nebius",
+        "promptVersion": "1.0.0",
+        "aiDecision": "needs_review",
+        "aiTechnicalFailure": null,
+        "nemotronReasoningSummary": "The owned product matches the recall's product name and brand exactly, but the recall explicitly identifies model number AZ6041VC as the affected model. The owned product provides no model number, serial number, lot number, or GTIN. Without a matching model number or other identifier, we cannot confirm that the owned product falls within the recall. Therefore, the evaluation needs review.",
+        "nemotronClaimedEvidence": [],
+        "verifierConfirmedEvidence": [],
+        "verifierRejectionReasons": []
+      },
+      "nemotronRequestCount": 1,
+      "orchestrationRetries": 0,
+      "transportRetries": 0,
+      "structuredOutputValid": true,
+      "attemptHistory": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": true,
+          "failureKind": null,
+          "latencyMs": 9219.984082999988,
+          "usage": {
+            "inputTokens": 2086,
+            "outputTokens": 1132,
+            "totalTokens": 3218,
+            "reasoningTokens": null
+          }
+        }
+      ],
+      "latencyMs": 9220.319874999986,
+      "nemotronLatencyMs": 9219.984082999988,
+      "usage": {
+        "inputTokens": 2086,
+        "outputTokens": 1132,
+        "totalTokens": 3218,
+        "reasoningTokens": null
+      },
+      "usageComplete": true
+    }
+  ]
+}

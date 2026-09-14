@@ -1,0 +1,1669 @@
+{
+  "generatedAt": "2026-09-14T15:20:56.878Z",
+  "dataset": {
+    "name": "phase_9_1_independent_holdout_v1",
+    "sha256": "3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608",
+    "caseCount": 36,
+    "sourceCount": 12
+  },
+  "matcher": {
+    "version": "deterministic_v1",
+    "schemaVersion": "1.0.0"
+  },
+  "sourceGitCommit": "829c3f4610edb72d4a56c9e846f4f4a6713c790f",
+  "metrics": {
+    "totalCases": 36,
+    "exactThreeClassAccuracy": 0.7777777777777778,
+    "match": {
+      "truePositives": 8,
+      "falsePositives": 0,
+      "falseNegatives": 4,
+      "trueNegatives": 24,
+      "precision": 1,
+      "strictRecall": 0.6666666666666666,
+      "falsePositiveRate": 0,
+      "unresolvedPositiveCases": 4
+    },
+    "needsReview": {
+      "predictedCount": 20,
+      "rate": 0.5555555555555556
+    },
+    "decisionCoverage": 0.4444444444444444,
+    "confusionMatrix": {
+      "match": {
+        "match": 8,
+        "no_match": 0,
+        "needs_review": 4
+      },
+      "no_match": {
+        "match": 0,
+        "no_match": 8,
+        "needs_review": 4
+      },
+      "needs_review": {
+        "match": 0,
+        "no_match": 0,
+        "needs_review": 12
+      }
+    }
+  },
+  "orchestration": {
+    "deterministicResolutions": 16,
+    "nemotronEscalations": 0
+  },
+  "latency": {
+    "totalMs": 10.720083000000002,
+    "averageMs": 0.015142416666666887,
+    "p50Ms": 0.013625000000004661,
+    "p95Ms": 0.025249999999999773
+  },
+  "cases": [
+    {
+      "caseId": "holdout-10917-tooybing-match",
+      "officialRecallExternalId": "10917",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["TB-MZWJ"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "TB-MZWJ",
+            "officialValue": "TB-MZWJ",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TooyBing Wooden Bead Stacking Toy",
+            "officialValue": "TooyBing Wooden Bead Stacking Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TOOYBING",
+            "officialValue": "TOOYBING",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.033125000000012506
+    },
+    {
+      "caseId": "holdout-10917-tooybing-no-match",
+      "officialRecallExternalId": "10917",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["TB-MZWK != TB-MZWJ"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "TB-MZWK",
+            "officialValue": "TB-MZWJ",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TooyBing Wooden Bead Stacking Toy",
+            "officialValue": "TooyBing Wooden Bead Stacking Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TOOYBING",
+            "officialValue": "TOOYBING",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.015250000000008868
+    },
+    {
+      "caseId": "holdout-10917-tooybing-needs-review",
+      "officialRecallExternalId": "10917",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TooyBing Wooden Bead Stacking Toy",
+            "officialValue": "TooyBing Wooden Bead Stacking Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "TOOYBING",
+            "officialValue": "TOOYBING",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.011332999999993376
+    },
+    {
+      "caseId": "holdout-10920-commowner-match",
+      "officialRecallExternalId": "10920",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["HD14P-Z"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "HD14P-Z",
+            "officialValue": "HD14P-Z",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "HD14P-Z",
+            "officialValue": "HX18",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.020458000000004972
+    },
+    {
+      "caseId": "holdout-10920-commowner-no-match",
+      "officialRecallExternalId": "10920",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["HD14P-Y != HD14P-Z", "HD14P-Y != HX18"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "HD14P-Y",
+            "officialValue": "HD14P-Z",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "HD14P-Y",
+            "officialValue": "HX18",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.019707999999994286
+    },
+    {
+      "caseId": "holdout-10920-commowner-needs-review",
+      "officialRecallExternalId": "10920",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER Electric Pressure Washer",
+            "officialValue": "COMMOWNER Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "COMMOWNER",
+            "officialValue": "COMMOWNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.018000000000000682
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-match",
+      "officialRecallExternalId": "10921",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["XW-A19"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "XW-A19",
+            "officialValue": "XW-A19",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Yamazuki Youth All-Terrain Vehicle",
+            "officialValue": "Yamazuki Youth All-Terrain Vehicle",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.012624999999999886
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-no-match",
+      "officialRecallExternalId": "10921",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["XW-A20 != XW-A19"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "XW-A20",
+            "officialValue": "XW-A19",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Yamazuki Youth All-Terrain Vehicle",
+            "officialValue": "Yamazuki Youth All-Terrain Vehicle",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.011541999999991504
+    },
+    {
+      "caseId": "holdout-10921-yamazuki-needs-review",
+      "officialRecallExternalId": "10921",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Yamazuki Youth All-Terrain Vehicle",
+            "officialValue": "Yamazuki Youth All-Terrain Vehicle",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.01054200000000094
+    },
+    {
+      "caseId": "holdout-10922-merax-match",
+      "officialRecallExternalId": "10922",
+      "expected": "match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.44999999999999996,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Merax Full-Size Murphy Bed",
+            "officialValue": "Merax Murphy Beds",
+            "detail": "Product-name Jaccard token overlap is 0.333."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.014917000000011171
+    },
+    {
+      "caseId": "holdout-10922-merax-no-match",
+      "officialRecallExternalId": "10922",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.44999999999999996,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Merax Full-Size Murphy Bed",
+            "officialValue": "Merax Murphy Beds",
+            "detail": "Product-name Jaccard token overlap is 0.333."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.014833999999993353
+    },
+    {
+      "caseId": "holdout-10922-merax-needs-review",
+      "officialRecallExternalId": "10922",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.44999999999999996,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Merax Full-Size Murphy Bed",
+            "officialValue": "Merax Murphy Beds",
+            "detail": "Product-name Jaccard token overlap is 0.333."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.009375000000005684
+    },
+    {
+      "caseId": "holdout-10926-cubershop-match",
+      "officialRecallExternalId": "10926",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["YJ MGC 5×5"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "YJ MGC 5×5",
+            "officialValue": "YJ MGC 5×5",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "officialValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CUBERSHOP",
+            "officialValue": "CUBERSHOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.014207999999996446
+    },
+    {
+      "caseId": "holdout-10926-cubershop-no-match",
+      "officialRecallExternalId": "10926",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["YJ MGC 4×4 != YJ MGC 5×5"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "YJ MGC 4×4",
+            "officialValue": "YJ MGC 5×5",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "officialValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CUBERSHOP",
+            "officialValue": "CUBERSHOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.01216600000000767
+    },
+    {
+      "caseId": "holdout-10926-cubershop-needs-review",
+      "officialRecallExternalId": "10926",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "officialValue": "CuberShop Magnetic Stickerless Speed Cube",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CUBERSHOP",
+            "officialValue": "CUBERSHOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.009957999999997469
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-match",
+      "officialRecallExternalId": "10929",
+      "expected": "match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "officialValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SUNNYSIDE",
+            "officialValue": "SUNNYSIDE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.016625000000004775
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-no-match",
+      "officialRecallExternalId": "10929",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "officialValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SUNNYSIDE",
+            "officialValue": "SUNNYSIDE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.013500000000007617
+    },
+    {
+      "caseId": "holdout-10929-sunnyside-needs-review",
+      "officialRecallExternalId": "10929",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "officialValue": "Sunnyside 1-K Kerosene Heater and Appliance Fuel Container",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SUNNYSIDE",
+            "officialValue": "SUNNYSIDE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.011167000000000371
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-match",
+      "officialRecallExternalId": "10939",
+      "expected": "match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "officialValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO POPPY",
+            "officialValue": "XO POPPY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.014125000000007049
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-no-match",
+      "officialRecallExternalId": "10939",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "officialValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO POPPY",
+            "officialValue": "XO POPPY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.01229199999998798
+    },
+    {
+      "caseId": "holdout-10939-xo-poppy-needs-review",
+      "officialRecallExternalId": "10939",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "officialValue": "XO Poppy Power Trip Magnetic Wireless Power Bank",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "XO POPPY",
+            "officialValue": "XO POPPY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.01070899999999142
+    },
+    {
+      "caseId": "holdout-10941-alanca-match",
+      "officialRecallExternalId": "10941",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["WH-DS02-6W"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6W",
+            "officialValue": "WH-DS02-6W",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6W",
+            "officialValue": "WH-DS02-6GE",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.022458999999997786
+    },
+    {
+      "caseId": "holdout-10941-alanca-no-match",
+      "officialRecallExternalId": "10941",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["WH-DS02-6BK != WH-DS02-6W", "WH-DS02-6BK != WH-DS02-6GE"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6BK",
+            "officialValue": "WH-DS02-6W",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "WH-DS02-6BK",
+            "officialValue": "WH-DS02-6GE",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.025249999999999773
+    },
+    {
+      "caseId": "holdout-10941-alanca-needs-review",
+      "officialRecallExternalId": "10941",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Alanca 6-Drawer Wood Dresser",
+            "officialValue": "Alanca 6-Drawer Wood Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ALANCA",
+            "officialValue": "ALANCA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.019790999999997894
+    },
+    {
+      "caseId": "holdout-10942-gizoon-match",
+      "officialRecallExternalId": "10942",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["AP47-B"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "AP47-B",
+            "officialValue": "AP47-W",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "AP47-B",
+            "officialValue": "AP47-B",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.02224999999999966
+    },
+    {
+      "caseId": "holdout-10942-gizoon-no-match",
+      "officialRecallExternalId": "10942",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["AP48-B != AP47-W", "AP48-B != AP47-B"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "AP48-B",
+            "officialValue": "AP47-W",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "AP48-B",
+            "officialValue": "AP47-B",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.02224999999999966
+    },
+    {
+      "caseId": "holdout-10942-gizoon-needs-review",
+      "officialRecallExternalId": "10942",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Gizoon Six-Drawer Double Dresser",
+            "officialValue": "Gizoon Six-Drawer Double Dresser",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GIZOON",
+            "officialValue": "GIZOON",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.020167000000000712
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-match",
+      "officialRecallExternalId": "10943",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["9R263210"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "9R263210",
+            "officialValue": "9R263210",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "officialValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SKIP HOP",
+            "officialValue": "SKIP HOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.014666999999988661
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-no-match",
+      "officialRecallExternalId": "10943",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["9R263211 != 9R263210"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9R263211",
+            "officialValue": "9R263210",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "officialValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SKIP HOP",
+            "officialValue": "SKIP HOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.012291000000004715
+    },
+    {
+      "caseId": "holdout-10943-skip-hop-needs-review",
+      "officialRecallExternalId": "10943",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "officialValue": "Skip Hop Baby Sesame Street Elmo Silicone Teether",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SKIP HOP",
+            "officialValue": "SKIP HOP",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.01141699999999446
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-match",
+      "officialRecallExternalId": "10950",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["D08004"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "D08004",
+            "officialValue": "D08004",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rainbow Mystery Squishy Bun Toy",
+            "officialValue": "Rainbow Mystery Squishy Bun Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.015375000000005912
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-no-match",
+      "officialRecallExternalId": "10950",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["D08005 != D08004"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "D08005",
+            "officialValue": "D08004",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rainbow Mystery Squishy Bun Toy",
+            "officialValue": "Rainbow Mystery Squishy Bun Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.010166999999995596
+    },
+    {
+      "caseId": "holdout-10950-squishy-bun-needs-review",
+      "officialRecallExternalId": "10950",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rainbow Mystery Squishy Bun Toy",
+            "officialValue": "Rainbow Mystery Squishy Bun Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.010459000000011542
+    },
+    {
+      "caseId": "holdout-10956-steelite-match",
+      "officialRecallExternalId": "10956",
+      "expected": "match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Steelite Electric Pressure Washer",
+            "officialValue": "Steelite Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "STEELITE",
+            "officialValue": "STEELITE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.009749999999996817
+    },
+    {
+      "caseId": "holdout-10956-steelite-no-match",
+      "officialRecallExternalId": "10956",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Steelite Electric Pressure Washer",
+            "officialValue": "Steelite Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "STEELITE",
+            "officialValue": "STEELITE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.013625000000004661
+    },
+    {
+      "caseId": "holdout-10956-steelite-needs-review",
+      "officialRecallExternalId": "10956",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Steelite Electric Pressure Washer",
+            "officialValue": "Steelite Electric Pressure Washer",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "STEELITE",
+            "officialValue": "STEELITE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      },
+      "latencyMs": 0.008749999999992042
+    }
+  ]
+}
