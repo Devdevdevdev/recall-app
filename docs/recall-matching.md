@@ -1,7 +1,8 @@
 # Deterministic recall matching
 
-Phase 8 establishes Recall's server-safe, non-AI reference matcher and offline benchmark. It does
-not write match rows, generate alerts, call an LLM, or change the database.
+Phase 8 establishes Recall's server-safe, non-AI reference matcher and offline benchmark. Phase 10
+reuses that exact matcher inside the production orchestration path; the historical Phase 8
+benchmark itself remains read-only and unchanged.
 
 ## Separation of responsibilities
 
@@ -15,7 +16,7 @@ not write match rows, generate alerts, call an LLM, or change the database.
 
 All production matching logic lives under `supabase/functions/_shared/matching/`, outside React
 Native screens. The modules import no Supabase client, Deno runtime, network adapter, or mobile
-code, so Node tests and a future privileged Edge Function can share them.
+code, so Node tests and the privileged Phase 10 Edge Function can share them.
 
 ## Common contract
 
@@ -34,8 +35,8 @@ title/safety fields, recall date, normalized scopes, and preserved raw evidence.
 - explicit schema version
 
 Confidence ranks deterministic evidence strength. It is not a calibrated probability and must not
-be shown as “percent probability recalled.” The contract is JSON-shaped so a future Nemotron result
-can be schema-validated against the same concepts.
+be shown as “percent probability recalled.” The contract is JSON-shaped so a Nemotron result can be
+schema-validated against the same concepts.
 
 ## Normalization
 
@@ -82,12 +83,12 @@ The pure retriever ranks exact valid GTIN highest, then exact serial/lot/model, 
 overlap. A low name threshold favors recall over precision because candidate retrieval is not the
 final decision. Manufacturer text may retain a candidate at very low weight but cannot confirm it.
 
-At production scale, a server repository should use existing raw GTIN/model indexes for initial
-exact queries, perform bounded text retrieval, then call the pure retriever and matcher. The current
-schema has no normalized model/name index, so Phase 8 deliberately does not claim a complete
-database query plan.
+Phase 10's server repository uses normalized exact-expression indexes and a simple-language
+full-text product-name index for initial bounded SQL retrieval, then calls this pure retriever and
+matcher. Candidate pages use a composite rank/product cursor. Serial/lot range notices include
+products with that identifier conservatively so SQL never decides unsafe range semantics.
 
-## Security and integration status
+## Phase 8 security boundary
 
 Phase 8 adds no endpoint. That avoids exposing a new privileged write surface before a production
 orchestrator is required. It also adds no migration because the existing `recall_matches` table can
@@ -95,11 +96,11 @@ represent the core deterministic result. Full `evidenceUsed` and `conflictingIde
 the common evaluation contract; persistence design is deferred rather than overloading existing
 columns.
 
-A later server-only integration may persist `match_method = deterministic_v1`, `ai_provider = null`,
-`ai_model = null`, and schema version `1.0.0` using service credentials. It must fail closed and may
-not create alerts until the deterministic/Nemotron comparison and alerting policy are approved.
+Phase 10's later server-only integration persists `match_method = deterministic_v1`, null AI
+provenance, and schema version `1.0.0` using service credentials. It retains the rich evidence only
+in the evaluation boundary rather than overloading the database's matched-identifier JSON.
 
-The authoritative source establishes the recall. Deterministic and future Nemotron matching only
+The authoritative source establishes the recall. Deterministic and Nemotron matching only
 establish whether an owned product appears to fit that recall. Neither may invent one.
 
 ## Phase 9 measured Nemotron comparison
@@ -168,3 +169,21 @@ Escalated inference latency was 135.608 seconds total, 6.780 seconds average, 6.
 reasoning-token usage was unavailable. At the live rates of USD 0.30/M input and USD 0.90/M output,
 the calculated cost was USD 0.0438057. The benchmark remains read-only and adds no endpoint,
 migration, persistence, alert, notification, or production policy.
+
+## Phase 10 production integration
+
+The production orchestrator preserves `hybrid_guarded_v1` without relaxing any verifier rule. It
+runs `deterministic_v1` first and lazily initializes the pinned Nebius client only for abstentions
+within the explicit run budget. Its projection contains normalized authoritative notice/scopes and
+sets `rawEvidence` to `null`; Phase 10 does not expose arbitrary raw payload content to the model.
+The provider transport has zero retries so the existing guarded orchestration remains the sole
+single-retry authority.
+
+Canonical evidence fingerprints include matching-policy versions and canonical evidence, but not
+database row IDs, retrieval timestamps, update timestamps, or scope insertion order. Private
+expiring leases and revision checks prevent duplicate concurrent or stale finalization. Confirmed
+results create one transactional in-app alert; all provider, schema, budget, and verification
+failures remain `needs_review` and create none.
+
+The production path, database RPCs, limits, deployment, deterministic E2E, and paid-inference
+approval gate are documented in [automatic-recall-loop.md](automatic-recall-loop.md).

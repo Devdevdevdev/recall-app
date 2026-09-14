@@ -9,6 +9,10 @@ project_id = "RECALL"
 [functions.ingest-cpsc-recalls]
 verify_jwt = false
 
+# This privileged service-to-service endpoint also requires RECALL_MATCHING_KEY in its handler.
+[functions.process-recall-matches]
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.

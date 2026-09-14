@@ -10,8 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 9.1 adds an independently held-out, guarded hybrid Nebius/NVIDIA evaluation alongside the
-deterministic matcher, verified CPSC ingestion, and Phase 6.1 mobile flow:
+Phase 10 connects the independently evaluated Phase 9.1 guarded hybrid policy to bounded,
+server-only production orchestration, transactional persistence, and authenticated in-app alerts:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -62,27 +62,36 @@ deterministic matcher, verified CPSC ingestion, and Phase 6.1 mobile flow:
   and 24-case development set. The final guarded hybrid run reached 88.9% exact accuracy, 100.0%
   MATCH precision and strict recall, zero false positives, 44.4% needs-review, and 55.6% coverage
   with 20 escalations, 24 requests including four eligible retries, and USD 0.0438057 measured cost
+- A secret-protected, POST-only recall-matching Edge Function with bounded recall, candidate-pair,
+  and Nebius-call budgets; deterministic decisions always run first and only abstentions may reach
+  the unchanged Phase 9.1 guarded hybrid policy
+- Canonical evidence fingerprints that exclude retrieval timestamps, database row IDs, and scope
+  insertion order, plus private expiring leases that prevent concurrent duplicate evaluation
+- Transactional match persistence and alert creation for confirmed results, with confirmation
+  reversals retained visibly rather than deleting alert history
+- A real RLS-protected Alerts list and detail flow containing only consumer-safe product, recall,
+  match-method, reason, and official-source fields
 - Strict TypeScript, ESLint, and Prettier configuration
 
 Password recovery, magic links, OAuth/social login, external product lookup, production match
-orchestration/persistence, notifications, and scheduled ingestion are intentionally not implemented
-yet. Phase 9 and 9.1 AI execution is benchmark-only and read-only. Scanning acquires
-only barcode data or visible label text; it does not identify a commercial product. Product detail
-screens do not make safety or recall conclusions before authoritative recall data exists.
+notifications, automatic scheduling, and scheduled ingestion are intentionally not implemented
+yet. Phase 10 does not broaden Nemotron input beyond normalized authoritative evidence and has not
+performed a paid production E2E inference. Scanning acquires only barcode data or visible label
+text; it does not identify a commercial product. Product detail screens do not make safety or
+recall conclusions before authoritative recall data exists.
 
-## Planned architecture
+## Architecture
 
-The mobile app will capture product identifiers through barcode scanning, images, and on-device
-OCR. A secure backend will retrieve candidate notices from trusted recall sources. Nebius Token
-Factory will run an NVIDIA open-source Nemotron model to normalize noisy product metadata and
-reason about exact model, reference, lot, and date-range matches. Structured results and source
-provenance will be stored in Supabase and used to deliver alerts.
+The mobile app captures product identifiers through barcode scanning, images, and on-device OCR.
+A secure backend retrieves bounded candidates from authoritative recall records, runs the
+deterministic matcher, and escalates only abstentions to NVIDIA Nemotron through Nebius Token
+Factory. Locally verified structured results and source provenance are stored transactionally in
+Supabase and exposed as authenticated in-app alerts.
 
 The deterministic baseline is deliberately conservative: exact structured identifiers dominate,
 product-name similarity alone cannot confirm, and ambiguity becomes `needs_review`. Its confidence
-is an evidence-strength heuristic, not a probability. AI may later assist with matching; it will
-never be treated as the authority that a recall exists. See
-[docs/architecture.md](docs/architecture.md) for the complete planned flow.
+is an evidence-strength heuristic, not a probability. AI is never treated as the authority that a
+recall exists. See [docs/architecture.md](docs/architecture.md) for the complete flow.
 
 ## Local setup
 
@@ -130,19 +139,21 @@ deployment steps, [docs/recall-matching.md](docs/recall-matching.md) for determi
 rules and the integration boundary, and
 [benchmarks/recall-matching/README.md](benchmarks/recall-matching/README.md) for the executable
 evaluations, and [docs/nebius-nemotron.md](docs/nebius-nemotron.md) for the Phase 9 provider
-boundary, measured results, costs, and limitations.
+boundary, measured results, costs, and limitations. See
+[docs/automatic-recall-loop.md](docs/automatic-recall-loop.md) for Phase 10 operation, budgets,
+idempotency, deployment, and manual verification.
 
 ## Security
 
 **Never put `NEBIUS_API_KEY`, a Supabase secret/service-role key, or any other privileged
 credential in the Expo client.** Expo public environment variables are bundled into the app and are readable by
 users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
-user data. The CPSC ingestion Edge Function performs privileged recall writes only with
-server-side credentials and its own `RECALL_INGESTION_KEY`; no mobile client invokes it.
-Phase 9 and 9.1 Nebius calls remain server/local-process only and benchmark-only. They do not create
-an endpoint, database write, match row, notification, or alert. Although the Phase 9.1 guarded
-holdout had zero false positives, this small controlled evaluation is not authorization for a
-production automatic-alert policy.
+user data. The CPSC ingestion and recall-matching Edge Functions perform privileged work only with
+server-side credentials and separate administrative secrets; no mobile client invokes them.
+Phase 10 preserves the Phase 9.1 guard: only deterministic abstentions can reach Nemotron, and a
+model confirmation must still pass local, source-addressable evidence verification before an alert
+can be created. The controlled holdout and implementation tests do not establish general-world
+accuracy; production operation must remain monitored and bounded.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every

@@ -112,3 +112,41 @@ export type Alert = {
   readAt: string | null;
   dismissedAt: string | null;
 };
+
+export type RecallAlertProduct = {
+  id: string;
+  brand: string | null;
+  productName: string | null;
+  gtin: string | null;
+  modelNumber: string | null;
+  serialNumber: string | null;
+  lotNumber: string | null;
+};
+
+export type RecallAlertNotice = {
+  id: string;
+  title: string;
+  hazard: string | null;
+  remedy: string | null;
+  recallDate: string;
+  officialUrl: string;
+};
+
+export type RecallAlertMatch = {
+  id: string;
+  status: RecallMatchStatus;
+  confidence: number;
+  method: string;
+  reasoningSummary: string;
+  evaluatedAt: string;
+};
+
+/**
+ * Consumer-safe alert projection. It intentionally excludes raw recall payloads,
+ * model prompts/responses, provider details, fingerprints, and orchestration state.
+ */
+export type RecallAlert = Alert & {
+  match: RecallAlertMatch;
+  product: RecallAlertProduct;
+  notice: RecallAlertNotice;
+};

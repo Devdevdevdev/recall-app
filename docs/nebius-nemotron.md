@@ -1,8 +1,9 @@
 # Nebius Token Factory and NVIDIA Nemotron
 
 Phase 9 adds a server-only `nemotron_v1` evaluation path and measures it against the exact frozen
-Phase 8 dataset. It does not create a production endpoint, write database rows, generate alerts, or
-change recall-source data.
+Phase 8 dataset. Phase 9 itself does not create a production endpoint, write database rows,
+generate alerts, or change recall-source data; Phase 10 later reuses only the frozen guarded Phase
+9.1 policy in production.
 
 ## Provider boundary and secrets
 
@@ -210,6 +211,29 @@ Machine-readable Phase 9.1 evidence is stored in:
 - `benchmarks/recall-matching/phase-9-1/results/hybrid-holdout-v1.json`
 - `benchmarks/recall-matching/phase-9-1/results/holdout-comparison.json`
 
-The result is evidence for the guarded architecture on this small controlled holdout only. Phase 10
-must still design authenticated production orchestration, persistence, monitoring, and alert policy;
-Phase 9.1 itself adds none of them.
+The result is evidence for the guarded architecture on this small controlled holdout only. Phase
+9.1 itself adds no production endpoint, persistence, monitoring, or alert policy.
+
+## Phase 10 production boundary
+
+Phase 10 provides a POST-only administrative Edge Function protected by `RECALL_MATCHING_KEY`. The
+Expo app contains no provider dependency or call path. The function pins the same model identifier
+and exact `https://api.tokenfactory.us-central1.nebius.com/v1/` base URL, reads the API key only from
+server secrets, and configures the transport with `maxRetries: 0`.
+
+The production orchestrator always runs `deterministic_v1` first. Definitive deterministic results
+do not initialize a provider client. Only `needs_review` enters `hybrid_guarded_v1`, subject to a
+per-run attempt budget. The existing one eligible structured-output retry remains inside that
+budget. Missing configuration, provider errors, invalid output, unverifiable evidence, and budget
+exhaustion fail to `needs_review` and cannot create an alert.
+
+Phase 10 deliberately narrows the production model projection to owned-product fields and
+normalized authoritative notice/scopes. It sets `rawEvidence` to `null`, so preserved raw CPSC
+payloads are used for provenance and canonical change detection but not sent as new model evidence.
+This means some cases that depended on Phase 9.1 benchmark-only raw-evidence claims will remain for
+review; the production implementation does not weaken the verifier to gain coverage.
+
+No paid production E2E inference was sent during Phase 10 implementation. The deterministic path
+can be verified with `maxNebiusCalls: 0`. Any future E2E that may call Nebius must stop first,
+disclose the targeted candidate/attempt limits, estimate the cost from current provider pricing,
+and obtain explicit approval. See [automatic-recall-loop.md](automatic-recall-loop.md).

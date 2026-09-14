@@ -1,4 +1,6 @@
 export type { OwnedProductsRepository } from './OwnedProductsRepository';
+export type { AlertsRepository } from './AlertsRepository';
+export { alertsRepository, SupabaseAlertsRepository } from './SupabaseAlertsRepository';
 export {
   ownedProductsRepository,
   SupabaseOwnedProductsRepository,

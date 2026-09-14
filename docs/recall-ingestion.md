@@ -1,7 +1,8 @@
 # Authoritative CPSC recall ingestion
 
 Phase 7 adds Recall's first real recall-data source: the U.S. Consumer Product Safety Commission
-(CPSC). It does not match products, create alerts, schedule polling, or call an AI provider.
+(CPSC). Ingestion itself does not match products, create alerts, schedule polling, or call an AI
+provider. Phase 10 consumes its normalized output through a separate administrative function.
 
 ## Source and query strategy
 
@@ -88,9 +89,9 @@ For a small real write, use the same header against the deployed function and se
 `raw_payload` in Supabase. Re-run exactly the same request: it should report `unchanged` unless
 CPSC changed a record, and never create duplicate `(source_id, external_id)` rows.
 
-Scheduled ingestion, persisted matching, Nemotron, alerts, notifications, other sources, and
-product search are outside Phase 7. CPSC establishes recall facts; a matcher may only evaluate
-owned products against this stored evidence.
+Scheduled ingestion, Nemotron execution inside ingestion, notifications, other sources, and product
+search are outside Phase 7. CPSC establishes recall facts; the separate Phase 10 matcher may only
+evaluate owned products against this stored evidence.
 
 ## Phase 8 handoff
 
@@ -104,3 +105,20 @@ important, it returns `needs_review` for later evaluation.
 Candidate retrieval, pairwise scope matching, multi-scope aggregation, and benchmarking are
 documented separately in [recall-matching.md](recall-matching.md). Phase 8 adds no ingestion calls,
 database writes, alerts, or AI requests.
+
+## Phase 10 handoff
+
+Phase 10 remains deliberately decoupled from ingestion. A successful write-mode ingestion can be
+followed by a separate targeted or cursor-based call to `process-recall-matches`, but ingestion does
+not invoke it automatically. This keeps source normalization failures, matching budgets, Nebius
+cost, and match persistence independently observable and retryable.
+
+The matcher reads only authoritative notices and the normalized scopes produced here. The raw CPSC
+payload remains part of canonical change detection and durable provenance, but Phase 10 sets the
+production matcher's `rawEvidence` projection to `null`; it does not broaden the Nemotron prompt to
+arbitrary source prose. Retrieval timestamps do not affect the evidence fingerprint, while a real
+canonical payload or normalized evidence change does.
+
+Scheduling both stages remains future work. A scheduler should complete ingestion first, then call
+matching with explicit limits and without overlapping a still-running matching invocation. See
+[automatic-recall-loop.md](automatic-recall-loop.md) for the operational boundary.

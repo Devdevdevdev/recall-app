@@ -7,7 +7,7 @@ secure commercial development. The mobile client owns capture and confirmation U
 retrieval, privileged credentials, AI calls, matching decisions, and persistence belong on the
 server.
 
-## Planned end-to-end flow
+## End-to-end flow
 
 ```text
 Mobile
@@ -37,24 +37,24 @@ Mobile
    abstentions. Phase 9.1 accepts an AI confirmation only when a local verifier can reconstruct an
    exact, unambiguous identifier comparison from controlled owned-product and authoritative-source
    fields. AI rejection, unverifiable evidence, and technical failure remain `needs_review`.
-7. **Structured match result:** Deterministic and future model output share a versioned contract
+7. **Structured match result:** Deterministic and model-assisted output share a versioned contract
    with heuristic confidence, matched/conflicting identifiers, evidence, rationale, and explicit
    uncertainty.
 8. **Supabase:** PostgreSQL stores users, inventory, source records, candidate evaluations, and
    alert state. The Phase 2 schema and RLS policies are defined in SQL migrations. Storage is
    reserved for product images only where necessary.
-9. **Alerts:** A verified source-backed match generates a clear user notification and links to the
-   official recall notice.
+9. **Alerts:** A verified source-backed confirmation creates an in-app alert and links to the
+   official recall notice. Push delivery remains separate future work.
 
-## Planned code boundaries
+## Code boundaries
 
 - `app/`: thin Expo Router route modules and navigation layouts
 - `src/features/`: product-oriented screens, hooks, and feature logic
 - `src/components/`: small reusable presentation components
 - `src/design/`: design tokens and navigation theme
 - `src/domain/`: framework-independent entities and matching types
-- `src/data/`: repository interfaces and the `SupabaseOwnedProductsRepository`, which keeps query
-  syntax out of UI code and maps database records to domain objects
+- `src/data/`: inventory and alerts repository interfaces and Supabase adapters, which keep query
+  syntax out of UI code and map database records to consumer-safe domain objects
 - `src/services/supabase/`: validated public configuration and the one optional mobile client
 - `src/providers/AuthProvider.tsx`: session restoration, auth-state subscription, and app-level
   authentication state
@@ -70,14 +70,17 @@ Mobile
   that can later combine barcode and OCR observations
 - `src/services/ocr/`: platform-specific ML Kit adapter, normalized OCR result contract, web
   fallback, and temporary-image cleanup boundary
-- Future services under `src/services/`: adapters for backend endpoints and device capabilities
+- Future services under `src/services/`: adapters for scheduled triggers, push delivery, and other
+  device capabilities
 - `supabase/functions/_shared/matching/`: pure common contract, normalization, candidate retrieval,
   per-scope evidence, deterministic matching, multi-scope aggregation, the versioned Nemotron
   prompt/schema, strict local output validation, and the guarded evidence verifier
 - `supabase/functions/_shared/nebius/`: server-only configuration, redacted errors, and the
   standards-based Token Factory HTTP client
-- Future `supabase/functions/`: authenticated production orchestration; Phases 9 and 9.1 add only shared
-  Nebius modules and a local benchmark, not a callable endpoint
+- `supabase/functions/_shared/recallMatching/`: authoritative evidence projection, canonical
+  fingerprints, request limits, and the bounded production orchestrator
+- `supabase/functions/process-recall-matches/`: secret-protected administrative endpoint and the
+  service-role RPC adapter; it is never imported or invoked by the mobile client
 - `benchmarks/recall-matching/`: offline CPSC-backed dataset, validator, metrics, and runner; this
   layer never owns production matching decisions or persistence
 
@@ -99,13 +102,17 @@ stable `manual` identification method, with no AI confidence value.
 - The mobile app uses only Supabase's publishable key. Row Level Security protects user data.
 - `NEBIUS_API_KEY` and Supabase secret credentials are server-only; they must never enter Expo
   client code.
-- Future Edge Functions may use Supabase's platform-provided publishable/secret key environment
-  configuration. No Edge Function is implemented in Phase 2.
+- Edge Functions use Supabase's platform-provided server credentials only on the server. The
+  matching endpoint additionally requires `RECALL_MATCHING_KEY` and accepts POST only.
 - RLS limits inventory to its owner and derives match ownership through the matched product.
 - Recall sources explicitly approved as authoritative, and their notices and scopes, are readable
   by authenticated users but have no mobile write privileges or policies.
 - Match and alert creation are server-controlled. The mobile client can only read its matches and
   update the state fields of its own alerts.
+- The `private.recall_matching_leases` table has no grants for `PUBLIC`, `anon`, `authenticated`, or
+  `service_role`; only fixed-signature, `SECURITY DEFINER` RPCs mediate claims and finalization.
+- Evidence fingerprints are canonical across retrieval timestamps, database row identifiers, and
+  scope insertion order. Product/recall revisions are checked both when claiming and finalizing.
 - Password recovery, OAuth/social login, input validation at ingestion boundaries, rate limits,
   audit logs, and retention controls remain future work.
 
@@ -127,7 +134,10 @@ offline benchmark. Phase 9 adds one real Nebius/NVIDIA evaluation on that frozen
 strict server-only model boundary. Phase 9.1 freezes a locally verified hybrid policy, develops it
 on a separate 24-case set, and evaluates it once on a 36-case independent holdout. The hybrid
 resolved all four deterministic positive abstentions with zero false positives, while retaining 16
-ambiguous/negative cases for review. This is promising controlled evidence, not a production alert
-authorization. Neither phase adds an endpoint, database writes, migration, alerts, or notifications.
+ambiguous/negative cases for review. Phase 10 adds the bounded administrative endpoint, canonical
+idempotency/concurrency controls, atomic match/alert persistence, and the RLS-backed mobile alerts
+read model. It preserves the frozen guarded policy and projects only normalized authoritative
+evidence to Nemotron. Scheduled execution, push notifications, and a paid production E2E remain
+outside this phase.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

@@ -91,12 +91,12 @@ GTIN, model, serial, and lot identifiers remain nullable and textual. Text prese
 prefixes, separators, and manufacturer-specific formats. The schema does not assume every item has
 a barcode and does not pretend that every lot or serial range can be ordered lexically.
 
-Candidate lookup starts with indexed exact attributes such as GTIN, model number, and brand.
-Phase 8's server-safe retriever and matcher normalize and refine bounded candidates outside the
-mobile application. The current raw indexes support exact GTIN/model lookup; normalized model and
-name lookup at production scale may require a separately reviewed future query/index design.
-Ambiguous cases may later be evaluated by NVIDIA Nemotron, but only against existing authoritative
-notices and the same versioned match contract.
+Candidate lookup starts with indexed exact attributes such as GTIN, model, serial, and lot. Phase
+10 adds expression indexes for the matcher's normalized exact values and a simple-language
+full-text product-name index. The server-safe retriever and matcher still refine every bounded SQL
+candidate; SQL retrieval alone never confirms a match. Ambiguous cases may be evaluated by NVIDIA
+Nemotron only against normalized evidence from existing authoritative notices and the same
+versioned match contract.
 
 ## Provenance strategy
 
@@ -122,15 +122,13 @@ allow an operation.
 | `recall_matches` | Select only                           | Owned product and authoritative source       |
 | `alerts`         | Select; update status/timestamps only | Owner and authoritative source must agree    |
 
-The anonymous role receives no table access. Rows from sources not explicitly approved as
+The anonymous role receives no application-table access. Rows from sources not explicitly approved as
 authoritative are also hidden from authenticated clients, including dependent notices, scopes,
 matches, and alerts. There are no mobile write policies or grants for recall data or match
-evaluations, and no mobile insert/delete permission for alerts. Future server-side ingestion and
-matching will use privileged execution that is never bundled into the app. The mobile client uses
+evaluations, and no mobile insert/delete permission for alerts. Server-side ingestion and matching
+use privileged execution that is never bundled into the app. The mobile client uses
 only a Supabase publishable key, and RLS protects user data. Supabase secret credentials and Nebius
-credentials are server-only and must never enter Expo client code. Future Edge Functions may use
-Supabase's platform-provided publishable/secret key environment configuration when they are
-implemented; none are part of Phase 2.
+credentials are server-only and must never enter Expo client code.
 
 Global recall data is shared because an official notice and its scope are the same facts for every
 user. Inventory, evaluations, and alerts are private because they reveal ownership and personalized
@@ -149,7 +147,7 @@ safety results.
 - Source identity is immutable, while match and alert creation require current source approval.
 - Notice URLs are constrained to HTTP(S) and the approved source host.
 
-## Planned ingestion flow
+## Ingestion and matching flow
 
 1. A privileged server process retrieves a notice from a pre-approved authoritative source.
 2. It stores or updates the source and deduplicated notice while preserving the raw response and
@@ -158,9 +156,10 @@ safety results.
 3. It parses one or more deterministic scopes from that notice.
 4. Indexed identifiers and conservative text evidence select candidates.
 5. `deterministic_v1` evaluates scopes and aggregates confirmed/rejected/needs-review evidence.
-6. A future privileged orchestrator may persist a schema-validated evaluation.
-7. Alert creation remains disabled until baseline/Nemotron comparison and alert policy are
-   complete.
+6. The privileged Phase 10 orchestrator claims the pair, persists a schema-validated evaluation,
+   and releases the lease transactionally.
+7. A confirmed evaluation creates or reuses one alert; other decisions create none, and a later
+   reversal retains the existing alert as visible history.
 
 ## Phase 7 CPSC ingestion
 
@@ -172,7 +171,8 @@ notice-host trigger still requires `www.cpsc.gov` official URLs.
 
 No authenticated mobile grants, policies, or client write paths were added for recall sources,
 notices, scopes, matches, or alerts. The RPCs are executable only by `service_role`, from the
-server-side Edge Function. Matching, alerts, and notifications remain future work.
+server-side Edge Function. Phase 10 later adds matching and in-app alerts without changing that
+mobile write boundary; push notifications remain future work.
 
 ## Phase 8 matching
 
@@ -180,8 +180,38 @@ Phase 8 requires no migration. The pure matcher and benchmark do not connect to 
 `recall_matches`, or create alerts. This keeps benchmark execution read-only and avoids overloading
 `matched_identifiers` with the richer common contract's conflicting/evidence fields.
 
-If a later server orchestrator persists the baseline, the existing table can store status,
-heuristic confidence, `match_method = 'deterministic_v1'`, matched identifiers, reasoning,
-`ai_provider = null`, `ai_model = null`, and schema version `1.0.0`. That write must remain
-privileged and source-backed. Any decision to persist the richer evidence contract requires a new
-migration rather than modifying either applied migration.
+Phase 10 persists the baseline with status, heuristic confidence,
+`match_method = 'deterministic_v1'`, matched identifiers, reasoning, null AI provenance, and schema
+version `1.0.0`. The write remains privileged and source-backed. The richer in-memory evidence
+contract is not overloaded into existing columns.
+
+## Phase 10 matching orchestration
+
+`supabase/migrations/20260914100000_phase_10_recall_matching.sql` adds a nullable,
+lowercase-SHA-256-constrained `recall_matches.evidence_fingerprint`, normalized candidate indexes,
+and `private.recall_matching_leases`. The lease table has RLS enabled and all direct privileges are
+revoked from `PUBLIC`, `anon`, `authenticated`, and `service_role`. It is intentionally absent from
+the mobile API surface.
+
+Four fixed-signature `SECURITY DEFINER` RPCs use an empty `search_path`; their execute privilege is
+revoked from public/mobile roles and granted only to `service_role`:
+
+- `get_recall_matching_batch` pages authoritative notices by UUID and supports an optional targeted
+  UUID list. It aggregates normalized scopes in stable canonical order.
+- `get_recall_candidates` returns a bounded, ranked product page using a composite
+  `(exact_rank, owned_product_id)` cursor.
+- `claim_recall_match_evaluation` compares the canonical evidence fingerprint and current
+  product/notice revisions, then acquires or rejects an expiring per-pair lease.
+- `finalize_recall_match_evaluation` validates the live lease, authority, revisions, allowed status,
+  matching method, and AI provenance before atomically upserting the match and conditionally
+  creating an alert.
+
+The unique product/notice match constraint and unique match/alert constraint remain the final
+database idempotency guards. Repeated identical evidence is skipped before inference. Concurrent
+runs cannot both finalize the same claimed input. A stale worker cannot persist after product or
+notice changes. Alert creation is in the same transaction as a confirmed match, so a committed
+confirmation cannot exist without its in-app alert.
+
+The mobile Alerts repository reads the existing RLS-protected relationships. It receives no access
+to fingerprints, raw notice payloads, leases, claims, or finalization RPCs. See
+[automatic-recall-loop.md](automatic-recall-loop.md) for the runtime and verification procedure.

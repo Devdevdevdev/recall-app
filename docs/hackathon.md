@@ -4,8 +4,10 @@ This document tracks submission requirements and implementation evidence as Reca
 
 ## Technical requirements
 
-- [ ] **Nebius Token Factory runtime usage:** Route real product-normalization and recall-matching
-      requests through Nebius Token Factory from a secure server-side function.
+- [x] **Nebius Token Factory runtime integration:** The production matching function routes only
+      deterministic abstentions through the pinned Nemotron model using the server-only client.
+- [ ] **Paid production E2E evidence:** Run one explicitly approved, bounded production-path
+      inference and record its redacted counters and cost. Phase 10 implementation sends none.
 - [x] **NVIDIA open-source model usage:** Run NVIDIA Nemotron as the matching/reasoning model and
       record the exact open-source model identifier and license.
 - [x] Validate all model responses against a structured JSON schema.
@@ -56,9 +58,13 @@ holdout abstentions were sent to the exact Nemotron model, and a local verifier 
 source-addressable identifier evidence before confirmation. The independent holdout reached 88.9%
 exact accuracy, 100.0% MATCH precision and recall, zero false positives, and 55.6% decision coverage.
 All 20 escalations ended with valid structured output after four eligible schema-failure retries;
-24 requests used 82,229 tokens and cost USD 0.0438057. This remains read-only benchmark evidence.
-Password recovery, social login, production matching orchestration, notifications, and scheduled
-ingestion remain deferred.
+24 requests used 82,229 tokens and cost USD 0.0438057. Phase 10 connects that unchanged guarded
+policy to a secret-protected bounded Edge Function, canonical evidence fingerprints, private
+expiring pair leases, transactional match/alert persistence, and RLS-backed in-app alert list/detail
+screens. Its production projection is limited to normalized authoritative evidence. The
+deterministic production path is covered without paid inference; no paid production E2E was sent.
+Password recovery, social login, scheduled execution/ingestion, push notifications, and public
+build/demo publication remain deferred.
 
 ## Devpost-safe Phase 9.1 language
 
