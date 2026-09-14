@@ -38,8 +38,8 @@ The 30 cases are balanced by expected decision:
 | `needs_review` |    10 | `source_ambiguity`          |
 
 Seven positive controls use exact valid GTINs explicitly supplied by CPSC. Three more use exact
-official model plus required lot/serial-prefix evidence that remains in CPSC source prose after
-Phase 7 normalization. Those three are deliberately valid expected matches that
+official model/lot or product/serial-prefix evidence that remains in CPSC source prose after Phase
+7 normalization. Those three are deliberately valid expected matches that
 `deterministic_v1` must abstain on, giving Phase 9 a measurable, traceable improvement target.
 Negative controls pair public product-style evidence from one recall with a different, unrelated
 CPSC recall whose explicit valid GTIN scopes contradict it; disjoint product names ensure a broad

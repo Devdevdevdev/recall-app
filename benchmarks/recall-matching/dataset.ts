@@ -212,8 +212,12 @@ function hasExactOfficialSourceEvidence(
       ? normalizeIdentifier(ownedProduct.modelNumber)
       : null;
   const models = stringArray(rawEvidence.explicitModelNumbers).map(normalizeIdentifier);
-  if (!ownedModel || !models.includes(ownedModel)) {
-    return false;
+  let matchedExactCriterion = false;
+  if (models.length) {
+    if (!ownedModel || !models.includes(ownedModel)) {
+      return false;
+    }
+    matchedExactCriterion = true;
   }
 
   const lots = stringArray(rawEvidence.explicitLotNumbers).map(normalizeIdentifier);
@@ -222,6 +226,7 @@ function hasExactOfficialSourceEvidence(
   if (lots.length && (!ownedLot || !lots.includes(ownedLot))) {
     return false;
   }
+  matchedExactCriterion ||= lots.length > 0;
 
   const serialPrefixes = stringArray(rawEvidence.explicitSerialPrefixes).map(normalizeIdentifier);
   const ownedSerial =
@@ -234,8 +239,9 @@ function hasExactOfficialSourceEvidence(
   ) {
     return false;
   }
+  matchedExactCriterion ||= serialPrefixes.length > 0;
 
-  return true;
+  return matchedExactCriterion;
 }
 
 export function validateBenchmarkDataset(value: unknown, schema: unknown): string[] {

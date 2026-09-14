@@ -40,6 +40,21 @@ test('dataset v1 is valid, controlled, and balanced', () => {
     dataset.cases.some((benchmarkCase) => benchmarkCase.labelProvenance === 'human_reviewed'),
     false,
   );
+  assert.equal(JSON.stringify(dataset).includes('C0001-NB 130-LCUS'), false);
+
+  const arizerRecall = dataset.recalls.find((recall) => recall.source.externalId === '10826');
+  const arizerPositive = dataset.cases.find(
+    (benchmarkCase) => benchmarkCase.caseId === 'cpsc-10826-serial-prefix-positive',
+  );
+  assert.ok(arizerRecall);
+  assert.ok(arizerPositive);
+  assert.equal(arizerPositive.ownedProduct.modelNumber, null);
+  assert.equal(arizerPositive.ownedProduct.gtin, null);
+  assert.ok(
+    arizerRecall.rawEvidence.explicitSerialPrefixes.some((prefix) =>
+      arizerPositive.ownedProduct.serialNumber.startsWith(prefix),
+    ),
+  );
 });
 
 test('dataset validator rejects false human-review claims and private identifiers', () => {

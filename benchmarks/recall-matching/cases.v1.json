@@ -135,7 +135,7 @@
         "retrievedAt": "2026-09-14"
       },
       "title": "Arizer Solo III Portable Vaporizers Recalled Due to Fire and Burn Hazards",
-      "description": "CPSC identifies model C0001-NB 130-LCUS and eight included serial prefixes in prose.",
+      "description": "CPSC identifies the Arizer Solo III Intergalactic (Black), UPC 628078802274, and eight included serial prefixes in prose.",
       "hazard": "Fire and burn hazards.",
       "remedy": null,
       "recallDate": "2026-06-18",
@@ -147,7 +147,6 @@
       ],
       "rawEvidence": {
         "cpscRecallId": "10826",
-        "explicitModelNumbers": ["C0001-NB 130-LCUS"],
         "explicitSerialPrefixes": [
           "M3B1G5",
           "M3F4G6",
@@ -158,7 +157,7 @@
           "M3G576",
           "M3C121"
         ],
-        "unmodeledCriteria": "Model C0001-NB 130-LCUS and included serial prefixes M3B1G5, M3F4G6, M35C43, M3PN54, M3SR42, M38G53, M3G576, and M3C121 remain source prose."
+        "unmodeledCriteria": "Included serial prefixes M3B1G5, M3F4G6, M35C43, M3PN54, M3SR42, M38G53, M3G576, and M3C121 remain source prose."
       }
     },
     {
@@ -420,14 +419,14 @@
       "notes": "Lot association remains source prose and is not needed for this exact-GTIN control."
     },
     {
-      "caseId": "cpsc-10826-model-serial-positive",
+      "caseId": "cpsc-10826-serial-prefix-positive",
       "officialRecallExternalId": "10826",
       "ownedProduct": {
-        "productName": "Arizer Solo III vaporizer",
+        "productName": "Arizer Solo III Intergalactic (Black) portable electronic vaporizer",
         "brand": "Arizer",
         "category": "Vaporizer",
         "gtin": null,
-        "modelNumber": "C0001-NB 130-LCUS",
+        "modelNumber": null,
         "serialNumber": "M3B1G5A123",
         "lotNumber": null,
         "purchaseDate": null,
@@ -435,8 +434,8 @@
       },
       "expected": "match",
       "labelProvenance": "official_exact_evidence",
-      "reason": "Owned model exactly equals the CPSC model and its serial begins with an explicitly included CPSC prefix.",
-      "notes": "Official exact/prefix evidence establishes the label; deterministic_v1 deliberately abstains on source prose."
+      "reason": "The owned product corresponds to the recalled Arizer Solo III Intergalactic (Black), and its serial begins with an explicitly included CPSC prefix.",
+      "notes": "Official product and serial-prefix evidence establish the label; UPC 628078802274 is documented by CPSC but is unavailable for this owned-product case, so deterministic_v1 deliberately abstains on source prose."
     },
     {
       "caseId": "cpsc-10803-gtin-positive",
@@ -618,7 +617,7 @@
         "brand": "Arizer",
         "category": "Vaporizer",
         "gtin": "628078802274",
-        "modelNumber": "C0001-NB 130-LCUS",
+        "modelNumber": null,
         "serialNumber": "M3B1G5A123",
         "lotNumber": null,
         "purchaseDate": null,
@@ -771,7 +770,7 @@
         "brand": "Arizer",
         "category": "Vaporizer",
         "gtin": null,
-        "modelNumber": "C0001-NB 130-LCUS",
+        "modelNumber": null,
         "serialNumber": null,
         "lotNumber": null,
         "purchaseDate": null,
@@ -779,7 +778,7 @@
       },
       "expected": "needs_review",
       "labelProvenance": "source_ambiguity",
-      "reason": "The model is plausible, but the owned serial is missing and CPSC limits the recall to explicit serial prefixes in prose.",
+      "reason": "The product is plausible, but the owned serial is missing and CPSC limits the recall to explicit serial prefixes in prose.",
       "notes": "No human review is claimed."
     },
     {
