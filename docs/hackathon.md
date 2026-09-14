@@ -15,6 +15,8 @@ This document tracks submission requirements and implementation evidence as Reca
       uncertainty.
 - [x] Protect user inventory and match results with Row Level Security from the first database
       migration.
+- [x] Establish an executable deterministic baseline with a common structured contract, explicit
+      abstention, false-positive metrics, latency, and zero AI cost.
 
 ## Submission requirements
 
@@ -44,5 +46,8 @@ no recall claim. Phase 6.1 adds native date-only purchase-date selection without
 treats non-GTIN Code 128 scans as transient, unclassified product-code evidence rather than
 incorrectly persisting them as a GTIN, model, serial, or lot. Phase 7 adds server-only,
 date-bounded CPSC ingestion with raw-payload provenance and conservative scopes, but deliberately
-creates no matches or alerts and makes no AI calls. Password recovery, social login, matching,
-Nebius/NVIDIA execution, notifications, and scheduled ingestion remain deferred.
+creates no matches or alerts and makes no AI calls. Phase 8 adds `deterministic_v1` and a frozen
+30-case CPSC-backed evaluation set. The baseline reports explicit false-positive, strict-recall,
+abstention, coverage, latency, and zero-cost metrics without persisting matches or activating
+alerts. Password recovery, social login, production matching orchestration, Nebius/NVIDIA
+execution, notifications, and scheduled ingestion remain deferred.

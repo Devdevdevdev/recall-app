@@ -92,9 +92,11 @@ prefixes, separators, and manufacturer-specific formats. The schema does not ass
 a barcode and does not pretend that every lot or serial range can be ordered lexically.
 
 Candidate lookup starts with indexed exact attributes such as GTIN, model number, and brand.
-Application-side normalization and later trusted matching logic can refine candidates. Ambiguous
-cases may later be evaluated by NVIDIA Nemotron, but only after deterministic filtering against
-stored recall scopes.
+Phase 8's server-safe retriever and matcher normalize and refine bounded candidates outside the
+mobile application. The current raw indexes support exact GTIN/model lookup; normalized model and
+name lookup at production scale may require a separately reviewed future query/index design.
+Ambiguous cases may later be evaluated by NVIDIA Nemotron, but only against existing authoritative
+notices and the same versioned match contract.
 
 ## Provenance strategy
 
@@ -154,10 +156,11 @@ safety results.
    official URL. The database requires that URL to use the approved source host; the ingestion
    boundary must still validate the expected path and notice identity.
 3. It parses one or more deterministic scopes from that notice.
-4. Indexed identifiers select potentially affected owned products.
-5. Deterministic logic, and later schema-validated AI reasoning where necessary, creates or updates
-   a match evaluation.
-6. A confirmed source-backed match creates an alert for the product owner.
+4. Indexed identifiers and conservative text evidence select candidates.
+5. `deterministic_v1` evaluates scopes and aggregates confirmed/rejected/needs-review evidence.
+6. A future privileged orchestrator may persist a schema-validated evaluation.
+7. Alert creation remains disabled until baseline/Nemotron comparison and alert policy are
+   complete.
 
 ## Phase 7 CPSC ingestion
 
@@ -170,3 +173,15 @@ notice-host trigger still requires `www.cpsc.gov` official URLs.
 No authenticated mobile grants, policies, or client write paths were added for recall sources,
 notices, scopes, matches, or alerts. The RPCs are executable only by `service_role`, from the
 server-side Edge Function. Matching, alerts, and notifications remain future work.
+
+## Phase 8 matching
+
+Phase 8 requires no migration. The pure matcher and benchmark do not connect to Supabase, write
+`recall_matches`, or create alerts. This keeps benchmark execution read-only and avoids overloading
+`matched_identifiers` with the richer common contract's conflicting/evidence fields.
+
+If a later server orchestrator persists the baseline, the existing table can store status,
+heuristic confidence, `match_method = 'deterministic_v1'`, matched identifiers, reasoning,
+`ai_provider = null`, `ai_model = null`, and schema version `1.0.0`. That write must remain
+privileged and source-backed. Any decision to persist the richer evidence contract requires a new
+migration rather than modifying either applied migration.

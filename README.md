@@ -10,7 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 7 adds authoritative CPSC recall ingestion alongside the verified Phase 6.1 mobile flow:
+Phase 8 adds a deterministic recall matcher and executable CPSC benchmark alongside the verified
+Phase 7 ingestion and Phase 6.1 mobile flow:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -43,11 +44,15 @@ Phase 7 adds authoritative CPSC recall ingestion alongside the verified Phase 6.
   Security
 - A server-only Supabase Edge Function that retrieves date-bounded JSON recall records from the
   official CPSC Retrieval API, preserves raw CPSC payloads, and safely upserts notices/scopes
+- Pure server-safe `deterministic_v1` candidate retrieval, per-scope evidence evaluation, and
+  multi-scope aggregation with a versioned common match contract
+- A frozen 30-case public-CPSC benchmark with explicit label provenance, privacy validation,
+  three-class metrics, false-positive reporting, decision coverage, latency, and zero AI cost
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Password recovery, magic links, OAuth/social login, external product lookup, recall matching,
-notifications, scheduled ingestion, and AI matching execution are intentionally not implemented
-yet. Scanning acquires
+Password recovery, magic links, OAuth/social login, external product lookup, production match
+orchestration/persistence, notifications, scheduled ingestion, and AI matching execution are
+intentionally not implemented yet. Scanning acquires
 only barcode data or visible label text; it does not identify a commercial product. Product detail
 screens do not make safety or recall conclusions before authoritative recall data exists.
 
@@ -59,7 +64,10 @@ Factory will run an NVIDIA open-source Nemotron model to normalize noisy product
 reason about exact model, reference, lot, and date-range matches. Structured results and source
 provenance will be stored in Supabase and used to deliver alerts.
 
-AI will assist with matching; it will never be treated as the authority that a recall exists. See
+The deterministic baseline is deliberately conservative: exact structured identifiers dominate,
+product-name similarity alone cannot confirm, and ambiguity becomes `needs_review`. Its confidence
+is an evidence-strength heuristic, not a probability. AI may later assist with matching; it will
+never be treated as the authority that a recall exists. See
 [docs/architecture.md](docs/architecture.md) for the complete planned flow.
 
 ## Local setup
@@ -104,8 +112,10 @@ See [docs/ocr-scanning.md](docs/ocr-scanning.md) for the Phase 6 on-device OCR a
 manual test plan, [docs/product-inventory.md](docs/product-inventory.md) for date handling, and
 [docs/barcode-scanning.md](docs/barcode-scanning.md) for barcode classifications.
 See [docs/recall-ingestion.md](docs/recall-ingestion.md) for CPSC provenance, dry-run, and
-deployment steps, and [benchmarks/recall-matching/README.md](benchmarks/recall-matching/README.md)
-for the future matching evaluation contract.
+deployment steps, [docs/recall-matching.md](docs/recall-matching.md) for deterministic matching
+rules and the integration boundary, and
+[benchmarks/recall-matching/README.md](benchmarks/recall-matching/README.md) for the executable
+baseline evaluation.
 
 ## Security
 
@@ -114,7 +124,8 @@ credential in the Expo client.** Expo public environment variables are bundled i
 users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
 user data. The CPSC ingestion Edge Function performs privileged recall writes only with
 server-side credentials and its own `RECALL_INGESTION_KEY`; no mobile client invokes it.
-Nebius/NVIDIA requests remain a later, server-side phase.
+Phase 8 matching is pure and read-only: it has no endpoint, database write, alert path, or model
+call. Nebius/NVIDIA requests remain a later, server-side phase.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every

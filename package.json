@@ -45,9 +45,12 @@
     "test:parser": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-product-label-parser.mjs",
     "test:phase-6-1": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-phase-6-1.mjs",
     "test:cpsc-ingestion": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-cpsc-ingestion.mjs",
+    "test:matching": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/recall-matching.test.mjs tests/recall-matching-benchmark.test.mjs",
+    "benchmark:matching:validate": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/validate.mjs",
+    "benchmark:matching": "npm run benchmark:matching:validate && node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/run.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion"
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion && npm run test:matching && npm run benchmark:matching:validate"
   },
   "expo": {
     "doctor": {

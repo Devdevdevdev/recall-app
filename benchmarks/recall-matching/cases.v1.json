@@ -1,0 +1,900 @@
+{
+  "datasetVersion": "1",
+  "createdAt": "2026-09-14",
+  "sourceRetrievalDate": "2026-09-14",
+  "sourceAuthority": "U.S. Consumer Product Safety Commission (CPSC)",
+  "recalls": [
+    {
+      "recallNoticeId": "cpsc-8877",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "8877",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Thule Recalls Strollers Due to Injury Hazard",
+      "description": "This recall involves Thule Sleek strollers. Product numbers, manufacture-date criteria, a QC2020 sticker exclusion, and UPCs are described by CPSC.",
+      "hazard": "The stroller's handlebar can detach, posing an injury hazard to children.",
+      "remedy": "Replacement",
+      "recallDate": "2020-08-12",
+      "scopes": [
+        { "productName": "Thule Sleek strollers" },
+        { "gtin": "091021037090" },
+        { "gtin": "091021070585" },
+        { "gtin": "091021079779" },
+        { "gtin": "091021091900" },
+        { "gtin": "091021190214" },
+        { "gtin": "091021349001" },
+        { "gtin": "091021433137" },
+        { "gtin": "091021460256" },
+        { "gtin": "091021514386" },
+        { "gtin": "091021648937" },
+        { "gtin": "091021761773" },
+        { "gtin": "091021883703" },
+        { "gtin": "091021978485" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "8877",
+        "unmodeledCriteria": "Only strollers without a QC2020 sticker and within an official manufacture-date window are included; product numbers are listed in CPSC prose."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10664",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10664",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Lifetime-Brands-Recalls-BUILT-LUUM-Light-Up-Tumblers-Due-to-Risk-of-Choking-and-Battery-Ingestion-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Lifetime Brands Recalls BUILT LUUM Light Up Tumblers Due to Risk of Choking and Battery Ingestion Hazards",
+      "description": "This recall involves the LUUM collection of BUILT-branded light-up tumblers with item numbers and UPCs printed on labels or hangtags.",
+      "hazard": "Choking and battery ingestion hazards.",
+      "remedy": null,
+      "recallDate": "2026-03-19",
+      "scopes": [
+        { "productName": "BUILT LUUM Tumblers" },
+        { "gtin": "843461115513" },
+        { "gtin": "843461115551" },
+        { "gtin": "843461115520" },
+        { "gtin": "843461115537" },
+        { "gtin": "843461115544" },
+        { "gtin": "843461115568" },
+        { "gtin": "843461121002" },
+        { "gtin": "843461121019" },
+        { "gtin": "843461121026" },
+        { "gtin": "843461121033" },
+        { "gtin": "843461121040" },
+        { "gtin": "843461121057" },
+        { "gtin": "843461116374" },
+        { "gtin": "843461116381" },
+        { "gtin": "843461116398" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10664",
+        "unmodeledCriteria": "Theme, capacity, and item-number-to-UPC associations remain in the CPSC description."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10588",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10588",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Bazic-Products-Recalls-Bazic-Silicone-Glue-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-Violates-Mandatory-Standard-for-Child-Resistant-Packaging-and-FHSA-Labeling-Requirements",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Bazic Products Recalls Bazic Silicone Glue Due to Risk of Serious Injury or Death from Child Poisoning",
+      "description": "The CPSC description identifies model 2030 and limits the recall to batch code V01233-031725-70004523.",
+      "hazard": "Child poisoning risk.",
+      "remedy": null,
+      "recallDate": "2026-01-29",
+      "scopes": [{ "productName": "Bazic Silicone Glue" }, { "gtin": "764608020302" }],
+      "rawEvidence": {
+        "cpscRecallId": "10588",
+        "explicitModelNumbers": ["2030"],
+        "explicitLotNumbers": ["V01233-031725-70004523"],
+        "unmodeledCriteria": "Model 2030 and batch V01233-031725-70004523 are explicit only in source prose after Phase 7 normalization."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10581",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10581",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Mindbodygreen-Recalls-Ultimate-Multivitamin-Dietary-Supplement-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-Violates-Mandatory-Standard-for-Child-Resistant-Packaging",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Mindbodygreen Recalls Ultimate Multivitamin+ Dietary Supplement Bottles Due to Risk of Serious Injury or Death from Child Poisoning",
+      "description": "The CPSC description associates two UPCs with multiple lot numbers and manufacturing dates.",
+      "hazard": "Child poisoning risk.",
+      "remedy": null,
+      "recallDate": "2026-01-29",
+      "scopes": [
+        {
+          "productName": "Ultimate Multivitamin+ Dietary Supplement Bottles",
+          "additionalCriteria": {
+            "manufacturer_names": [
+              "Arizona Nutritional Supplements, of Chandler, Arizona",
+              "VitaQuest, of Caldwell, New Jersey"
+            ]
+          }
+        },
+        { "gtin": "850027975177" },
+        { "gtin": "850027975429" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10581",
+        "unmodeledCriteria": "UPC-to-lot and manufacture-date associations are tabular source prose and were not inferred into scopes."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10826",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10826",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Arizer-Solo-III-Portable-Vaporizers-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-or-Death-Imported-by-7111495-Canada",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Arizer Solo III Portable Vaporizers Recalled Due to Fire and Burn Hazards",
+      "description": "CPSC identifies model C0001-NB 130-LCUS and eight included serial prefixes in prose.",
+      "hazard": "Fire and burn hazards.",
+      "remedy": null,
+      "recallDate": "2026-06-18",
+      "scopes": [
+        {
+          "productName": "Arizer Solo III portable electronic vaporizers (Intergalactic/Black color only)"
+        },
+        { "gtin": "628078802274" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10826",
+        "explicitModelNumbers": ["C0001-NB 130-LCUS"],
+        "explicitSerialPrefixes": [
+          "M3B1G5",
+          "M3F4G6",
+          "M35C43",
+          "M3PN54",
+          "M3SR42",
+          "M38G53",
+          "M3G576",
+          "M3C121"
+        ],
+        "unmodeledCriteria": "Model C0001-NB 130-LCUS and included serial prefixes M3B1G5, M3F4G6, M35C43, M3PN54, M3SR42, M38G53, M3G576, and M3C121 remain source prose."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10803",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10803",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/TOMY-Recalls-Boon-NURSH-8-oz-Reusable-Baby-Bottles-Due-to-Choking-Hazard-Sold-at-Walmart",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "TOMY Recalls Boon NURSH 8 oz Reusable Baby Bottles Due to Choking Hazard",
+      "description": "CPSC identifies pink tie-dye three-packs and item number B11654 in its description.",
+      "hazard": "Choking hazard.",
+      "remedy": null,
+      "recallDate": "2026-06-04",
+      "scopes": [
+        { "productName": "Boon NURSH 8 oz Reusable Baby Bottles" },
+        { "gtin": "669028116546" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10803",
+        "unmodeledCriteria": "Pink tie-dye three-pack and item number B11654 remain source prose."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10806",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10806",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Joyin-Recalls-Sloosh-Dive-Sticks-Due-to-Risk-of-Serious-Injury-from-Impalement-Violate-Federal-Dive-Sticks-Ban",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Joyin Recalls Sloosh Dive Sticks Due to Risk of Serious Injury from Impalement",
+      "description": "CPSC limits the recall to model 40041 contained in Sloosh water toys sold before October 23, 2025.",
+      "hazard": "Impalement hazard.",
+      "remedy": null,
+      "recallDate": "2026-06-11",
+      "scopes": [{ "productName": "Sloosh Dive Sticks" }, { "gtin": "812355036227" }],
+      "rawEvidence": {
+        "cpscRecallId": "10806",
+        "unmodeledCriteria": "Model 40041 and sale-date condition remain source prose."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10930",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10930",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Hampton-Bay-Halwin-52-Inch-Ceiling-Fans-Recalled-Due-to-Impact-and-Injury-Hazards-Manufactured-by-Youngo-Limited",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Hampton Bay Halwin 52-Inch Ceiling Fans Recalled Due to Impact and Injury Hazards",
+      "description": "CPSC identifies models AK396H-MBK and AK396H-BN in prose.",
+      "hazard": "Impact and injury hazards.",
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        {
+          "productName": "Hampton Bay Halwin 52-inch Indoor/Outdoor Ceiling Fans",
+          "additionalCriteria": { "manufacturer_names": ["Youngo Limited, of Huizhou, China"] }
+        },
+        { "gtin": "840059614922" },
+        { "gtin": "840059615370" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10930",
+        "explicitModelNumbers": ["AK396H-MBK", "AK396H-BN"],
+        "unmodeledCriteria": "Models AK396H-MBK and AK396H-BN remain source prose."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10915",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10915",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Southern-Telecom-Recalls-Brookstone-Branded-Tabletop-Fire-Pits-Due-to-Risk-of-Serious-Burn-Injury-or-Death-from-Flame-Jetting-and-Fire-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Southern Telecom Recalls Brookstone-Branded Tabletop Fire Pits Due to Risk of Serious Burn Injury or Death",
+      "description": "CPSC associates three model numbers with three UPCs in its description.",
+      "hazard": "Flame jetting and fire hazards.",
+      "remedy": null,
+      "recallDate": "2026-08-13",
+      "scopes": [
+        { "productName": "Brookstone-branded Tabletop Fire Pits" },
+        { "gtin": "680079015930" },
+        { "gtin": "680079015947" },
+        { "gtin": "680079015954" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10915",
+        "unmodeledCriteria": "Models BSFIREPIT01, BSFIREPIT02, and BSFIREPIT03 and their UPC associations remain source prose."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10687",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10687",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/E-Mishan-Recalls-Granitestone-Diamond-Pro-Blue-Stainless-Saute-Pans-Due-to-Impact-and-Burn-Hazards",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "E Mishan Recalls Granitestone Diamond Pro Blue Stainless Sauté Pans Due to Impact and Burn Hazards",
+      "description": "This recall involves a two-piece set of 10-inch and 11.5-inch sauté pans.",
+      "hazard": "Impact and burn hazards.",
+      "remedy": null,
+      "recallDate": "2026-04-02",
+      "scopes": [
+        { "productName": "Granitestone Diamond Pro Blue Sauté Pans" },
+        { "gtin": "080313081316" }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10687",
+        "unmodeledCriteria": "The official description identifies the two pan sizes as a set."
+      }
+    },
+    {
+      "recallNoticeId": "cpsc-10880",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10880",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Peony-Design-Recalls-Personalized-Baby-Bibs-and-Stroller-Bags-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Peony Design Recalls Personalized Baby Bibs and Stroller Bags Due to Risk of Serious Injury or Death from Choking Hazard",
+      "description": "This recall involves Peony Design personalized handmade baby bibs and stroller bags.",
+      "hazard": "A snap can detach, posing a choking hazard.",
+      "remedy": "Refund",
+      "recallDate": "2026-07-23",
+      "scopes": [
+        {
+          "productName": "Personalized Baby Bibs and Stroller Bags",
+          "additionalCriteria": { "manufacturer_names": ["Peony Design Co., of Howell, MI"] }
+        }
+      ],
+      "rawEvidence": { "cpscRecallId": "10880" }
+    },
+    {
+      "recallNoticeId": "cpsc-10720",
+      "source": {
+        "authority": "CPSC",
+        "externalId": "10720",
+        "officialUrl": "https://www.cpsc.gov/Recalls/2026/Free-Standing-Professional-Gas-Ranges-Recalled-Due-to-Risk-of-Burn-Hazard-Manufactured-by-Fisher-and-Paykel",
+        "retrievedAt": "2026-09-14"
+      },
+      "title": "Free-Standing Professional Gas Ranges Recalled Due to Risk of Burn Hazard",
+      "description": "CPSC lists RGV3 model numbers, serial prefixes, date codes, and UPCs in source prose.",
+      "hazard": "Burn hazard.",
+      "remedy": null,
+      "recallDate": "2026-04-16",
+      "scopes": [
+        {
+          "productName": "Fisher & Paykel Gas Ranges",
+          "additionalCriteria": {
+            "manufacturer_names": ["Fisher & Paykel Appliances (Thailand) Co., Ltd, of Thailand"]
+          }
+        }
+      ],
+      "rawEvidence": {
+        "cpscRecallId": "10720",
+        "unmodeledCriteria": "Model, serial-prefix, date-code, and UPC associations remain complex source prose in this benchmark case."
+      }
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "cpsc-8877-gtin-positive",
+      "officialRecallExternalId": "8877",
+      "ownedProduct": {
+        "productName": "Thule Sleek stroller",
+        "brand": "Thule",
+        "category": "Stroller",
+        "gtin": "091021037090",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals a valid UPC explicitly listed by CPSC.",
+      "notes": "Controlled public-evidence product; not user inventory."
+    },
+    {
+      "caseId": "cpsc-10664-gtin-positive-1",
+      "officialRecallExternalId": "10664",
+      "ownedProduct": {
+        "productName": "BUILT LUUM Festive Forest tumbler",
+        "brand": "BUILT",
+        "category": "Drinkware",
+        "gtin": "843461115513",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals an explicit CPSC UPC.",
+      "notes": "Official theme-to-UPC detail remains traceable in CPSC source evidence."
+    },
+    {
+      "caseId": "cpsc-10664-gtin-positive-2",
+      "officialRecallExternalId": "10664",
+      "ownedProduct": {
+        "productName": "BUILT LUUM Merry Glow tumbler",
+        "brand": "BUILT",
+        "category": "Drinkware",
+        "gtin": "843461115551",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals a second explicit CPSC UPC for this recall.",
+      "notes": "Tests multiple valid GTIN scopes on one notice."
+    },
+    {
+      "caseId": "cpsc-10588-model-lot-positive",
+      "officialRecallExternalId": "10588",
+      "ownedProduct": {
+        "productName": "Bazic Silicone Glue",
+        "brand": "Bazic",
+        "category": "Adhesive",
+        "gtin": null,
+        "modelNumber": "2030",
+        "serialNumber": null,
+        "lotNumber": "V01233-031725-70004523",
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned model and lot exactly equal the model and sole included batch explicitly stated by CPSC.",
+      "notes": "Official exact evidence establishes the label; deterministic_v1 deliberately abstains because Phase 7 did not parse it from prose."
+    },
+    {
+      "caseId": "cpsc-10581-gtin-positive",
+      "officialRecallExternalId": "10581",
+      "ownedProduct": {
+        "productName": "Ultimate Multivitamin+",
+        "brand": "Mindbodygreen",
+        "category": "Supplement",
+        "gtin": "850027975177",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "0515I1",
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals an explicit CPSC UPC.",
+      "notes": "Lot association remains source prose and is not needed for this exact-GTIN control."
+    },
+    {
+      "caseId": "cpsc-10826-model-serial-positive",
+      "officialRecallExternalId": "10826",
+      "ownedProduct": {
+        "productName": "Arizer Solo III vaporizer",
+        "brand": "Arizer",
+        "category": "Vaporizer",
+        "gtin": null,
+        "modelNumber": "C0001-NB 130-LCUS",
+        "serialNumber": "M3B1G5A123",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned model exactly equals the CPSC model and its serial begins with an explicitly included CPSC prefix.",
+      "notes": "Official exact/prefix evidence establishes the label; deterministic_v1 deliberately abstains on source prose."
+    },
+    {
+      "caseId": "cpsc-10803-gtin-positive",
+      "officialRecallExternalId": "10803",
+      "ownedProduct": {
+        "productName": "Boon NURSH 8 oz reusable baby bottles",
+        "brand": "Boon",
+        "category": "Baby bottle",
+        "gtin": "669028116546",
+        "modelNumber": "B11654",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals the explicit CPSC UPC.",
+      "notes": "Item number is retained only as controlled owned evidence."
+    },
+    {
+      "caseId": "cpsc-10806-gtin-positive",
+      "officialRecallExternalId": "10806",
+      "ownedProduct": {
+        "productName": "Sloosh Dive Sticks",
+        "brand": "Sloosh",
+        "category": "Pool toy",
+        "gtin": "812355036227",
+        "modelNumber": "40041",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals the explicit CPSC UPC.",
+      "notes": "The source's sale-date condition is not inferred by the matcher."
+    },
+    {
+      "caseId": "cpsc-10930-model-positive",
+      "officialRecallExternalId": "10930",
+      "ownedProduct": {
+        "productName": "Hampton Bay Halwin 52-inch ceiling fan",
+        "brand": "Hampton Bay",
+        "category": "Ceiling fan",
+        "gtin": null,
+        "modelNumber": "AK396H-MBK",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned model exactly equals one of the two ceiling-fan models explicitly identified by CPSC.",
+      "notes": "Official exact model evidence establishes the label; deterministic_v1 abstains because the model remains source prose."
+    },
+    {
+      "caseId": "cpsc-10915-gtin-positive",
+      "officialRecallExternalId": "10915",
+      "ownedProduct": {
+        "productName": "Brookstone tabletop fire pit",
+        "brand": "Brookstone",
+        "category": "Fire pit",
+        "gtin": "680079015930",
+        "modelNumber": "BSFIREPIT01",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "match",
+      "labelProvenance": "official_exact_evidence",
+      "reason": "Owned GTIN exactly equals an explicit CPSC UPC.",
+      "notes": "Model-to-UPC association remains source prose."
+    },
+
+    {
+      "caseId": "counterfactual-thule-vs-luum",
+      "officialRecallExternalId": "10664",
+      "ownedProduct": {
+        "productName": "Thule Sleek stroller",
+        "brand": "Thule",
+        "category": "Stroller",
+        "gtin": "091021037090",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real Thule GTIN differs from every explicit BUILT LUUM GTIN and product names are disjoint.",
+      "notes": "Pairs public evidence from two unrelated official recalls."
+    },
+    {
+      "caseId": "counterfactual-luum-vs-bazic",
+      "officialRecallExternalId": "10588",
+      "ownedProduct": {
+        "productName": "BUILT LUUM Festive Forest tumbler",
+        "brand": "BUILT",
+        "category": "Drinkware",
+        "gtin": "843461115513",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real LUUM GTIN explicitly differs from the Bazic recall GTIN and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-luum-vs-multivitamin",
+      "officialRecallExternalId": "10581",
+      "ownedProduct": {
+        "productName": "BUILT LUUM Merry Glow tumbler",
+        "brand": "BUILT",
+        "category": "Drinkware",
+        "gtin": "843461115551",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real LUUM GTIN differs from both explicit multivitamin GTINs and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-bazic-vs-arizer",
+      "officialRecallExternalId": "10826",
+      "ownedProduct": {
+        "productName": "Bazic Silicone Glue",
+        "brand": "Bazic",
+        "category": "Adhesive",
+        "gtin": "764608020302",
+        "modelNumber": "2030",
+        "serialNumber": null,
+        "lotNumber": "V01233-031725-70004523",
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real Bazic GTIN differs from the explicit Arizer GTIN and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-multivitamin-vs-bottles",
+      "officialRecallExternalId": "10803",
+      "ownedProduct": {
+        "productName": "Ultimate Multivitamin+",
+        "brand": "Mindbodygreen",
+        "category": "Supplement",
+        "gtin": "850027975177",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "0515I1",
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real supplement GTIN differs from the explicit baby-bottle GTIN and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-arizer-vs-dive-sticks",
+      "officialRecallExternalId": "10806",
+      "ownedProduct": {
+        "productName": "Arizer Solo III vaporizer",
+        "brand": "Arizer",
+        "category": "Vaporizer",
+        "gtin": "628078802274",
+        "modelNumber": "C0001-NB 130-LCUS",
+        "serialNumber": "M3B1G5A123",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real Arizer GTIN differs from the explicit dive-stick GTIN and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-bottles-vs-fan",
+      "officialRecallExternalId": "10930",
+      "ownedProduct": {
+        "productName": "Boon NURSH 8 oz reusable baby bottles",
+        "brand": "Boon",
+        "category": "Baby bottle",
+        "gtin": "669028116546",
+        "modelNumber": "B11654",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real baby-bottle GTIN differs from both explicit ceiling-fan GTINs and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-dive-sticks-vs-fire-pit",
+      "officialRecallExternalId": "10915",
+      "ownedProduct": {
+        "productName": "Sloosh Dive Sticks",
+        "brand": "Sloosh",
+        "category": "Pool toy",
+        "gtin": "812355036227",
+        "modelNumber": "40041",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real dive-stick GTIN differs from all explicit fire-pit GTINs and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-fan-vs-thule",
+      "officialRecallExternalId": "8877",
+      "ownedProduct": {
+        "productName": "Hampton Bay Halwin 52-inch ceiling fan",
+        "brand": "Hampton Bay",
+        "category": "Ceiling fan",
+        "gtin": "840059614922",
+        "modelNumber": "AK396H-MBK",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real fan GTIN differs from every explicit Thule GTIN and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+    {
+      "caseId": "counterfactual-fire-pit-vs-pan",
+      "officialRecallExternalId": "10687",
+      "ownedProduct": {
+        "productName": "Brookstone tabletop fire pit",
+        "brand": "Brookstone",
+        "category": "Fire pit",
+        "gtin": "680079015930",
+        "modelNumber": "BSFIREPIT01",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "no_match",
+      "labelProvenance": "controlled_counterfactual",
+      "reason": "The real fire-pit GTIN differs from the explicit sauté-pan GTIN and product names are disjoint.",
+      "notes": "Controlled counterfactual."
+    },
+
+    {
+      "caseId": "ambiguous-peony-name-only",
+      "officialRecallExternalId": "10880",
+      "ownedProduct": {
+        "productName": "Personalized baby bib",
+        "brand": "Peony Design",
+        "category": "Baby accessory",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Only overlapping product-name and manufacturer context are normalized; no exact identifier resolves this item.",
+      "notes": "No human review is claimed."
+    },
+    {
+      "caseId": "ambiguous-bazic-model-batch-in-prose",
+      "officialRecallExternalId": "10588",
+      "ownedProduct": {
+        "productName": "Bazic Silicone Glue",
+        "brand": "Bazic",
+        "category": "Adhesive",
+        "gtin": null,
+        "modelNumber": "2030",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "The model is plausible, but the owned lot is missing and CPSC limits the recall to one batch in source prose.",
+      "notes": "A future reasoning layer may interpret the preserved source evidence."
+    },
+    {
+      "caseId": "ambiguous-multivitamin-lot-association",
+      "officialRecallExternalId": "10581",
+      "ownedProduct": {
+        "productName": "Ultimate Multivitamin+ dietary supplement",
+        "brand": "Mindbodygreen",
+        "category": "Supplement",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "0515I1",
+        "purchaseDate": "2025-04-01",
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "The lot and UPC association is only in tabular recall prose and purchase date cannot substitute for manufacture date.",
+      "notes": "No human review is claimed."
+    },
+    {
+      "caseId": "ambiguous-arizer-serial-prefix",
+      "officialRecallExternalId": "10826",
+      "ownedProduct": {
+        "productName": "Arizer Solo III portable vaporizer",
+        "brand": "Arizer",
+        "category": "Vaporizer",
+        "gtin": null,
+        "modelNumber": "C0001-NB 130-LCUS",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "The model is plausible, but the owned serial is missing and CPSC limits the recall to explicit serial prefixes in prose.",
+      "notes": "No human review is claimed."
+    },
+    {
+      "caseId": "ambiguous-bottle-item-number",
+      "officialRecallExternalId": "10803",
+      "ownedProduct": {
+        "productName": "Boon NURSH 8 oz reusable baby bottle",
+        "brand": "Boon",
+        "category": "Baby bottle",
+        "gtin": null,
+        "modelNumber": "B11654",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "The item number and color/package restriction are not normalized identifiers.",
+      "notes": "Name overlap can retrieve and support, never confirm."
+    },
+    {
+      "caseId": "ambiguous-dive-stick-model-sale-date",
+      "officialRecallExternalId": "10806",
+      "ownedProduct": {
+        "productName": "Sloosh dive sticks",
+        "brand": "Sloosh",
+        "category": "Pool toy",
+        "gtin": null,
+        "modelNumber": "40041",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": "2025-10-01",
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Model and sale-date criteria are source prose; purchase date is contextual and cannot prove sale or manufacture conditions.",
+      "notes": "No human review is claimed."
+    },
+    {
+      "caseId": "ambiguous-fan-model-in-prose",
+      "officialRecallExternalId": "10930",
+      "ownedProduct": {
+        "productName": "Hampton Bay Halwin 52 inch ceiling fan",
+        "brand": "Hampton Bay",
+        "category": "Ceiling fan",
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Only the product name is available; CPSC limits the recall to two models in source prose.",
+      "notes": "Manufacturer Youngo is not converted to brand."
+    },
+    {
+      "caseId": "ambiguous-fire-pit-model-association",
+      "officialRecallExternalId": "10915",
+      "ownedProduct": {
+        "productName": "Brookstone tabletop fire pit",
+        "brand": "Brookstone",
+        "category": "Fire pit",
+        "gtin": null,
+        "modelNumber": "BSFIREPIT02",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "The model-to-UPC association remains source prose, so name overlap alone cannot confirm.",
+      "notes": "No human review is claimed."
+    },
+    {
+      "caseId": "ambiguous-thule-product-number-and-date",
+      "officialRecallExternalId": "8877",
+      "ownedProduct": {
+        "productName": "Thule Sleek stroller",
+        "brand": "Thule",
+        "category": "Stroller",
+        "gtin": null,
+        "modelNumber": "11000017",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": "2019-08-15",
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Product numbers, QC-sticker exclusion, and manufacture-date rules remain source prose; purchase date is not manufacture date.",
+      "notes": "No human review is claimed."
+    },
+    {
+      "caseId": "ambiguous-gas-range-model-serial-prefix",
+      "officialRecallExternalId": "10720",
+      "ownedProduct": {
+        "productName": "Fisher & Paykel professional gas range",
+        "brand": "Fisher & Paykel",
+        "category": "Gas range",
+        "gtin": null,
+        "modelNumber": "RGV3-305-N",
+        "serialNumber": "EEV123456",
+        "lotNumber": null,
+        "purchaseDate": "2025-11-01",
+        "identificationMethod": "benchmark_control"
+      },
+      "expected": "needs_review",
+      "labelProvenance": "source_ambiguity",
+      "reason": "Model, serial-prefix, and date-code associations remain complex CPSC prose and purchase date cannot resolve them.",
+      "notes": "No human review is claimed."
+    }
+  ]
+}

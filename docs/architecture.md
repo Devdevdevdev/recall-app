@@ -14,8 +14,9 @@ Mobile
   → on-device scan / OCR
   → secure backend
   → trusted recall candidate retrieval
-  → Nebius Token Factory
-  → NVIDIA Nemotron matching / reasoning
+  → deterministic_v1 evidence evaluation
+  → confirmed / rejected / needs-review
+  → later Nemotron comparison for difficult cases
   → structured match result
   → Supabase
   → alerts
@@ -29,12 +30,14 @@ Mobile
    coordinates downstream work.
 4. **Trusted recall candidate retrieval:** Recall adapters query authoritative recall sources and
    preserve the source URL, publisher, retrieval time, and original identifiers.
-5. **Nebius Token Factory:** The backend submits only relevant product metadata and trusted recall
-   candidates to the hosted model runtime.
-6. **NVIDIA Nemotron:** Nemotron normalizes noisy metadata and reasons about model, reference, lot,
-   and date-range compatibility. It cannot create or independently assert a recall.
-7. **Structured match result:** Model output is validated against a versioned JSON schema with a
-   confidence score, matched identifiers, rationale, and explicit uncertainty.
+5. **Deterministic baseline:** Pure server-safe logic evaluates exact identifiers, safe ranges, and
+   transparent supporting text for every recall scope, then returns confirmed, rejected, or
+   needs-review.
+6. **Later Nemotron comparison:** A future server integration will evaluate difficult cases against
+   the same common contract and benchmark. It cannot create or independently assert a recall.
+7. **Structured match result:** Deterministic and future model output share a versioned contract
+   with heuristic confidence, matched/conflicting identifiers, evidence, rationale, and explicit
+   uncertainty.
 8. **Supabase:** PostgreSQL stores users, inventory, source records, candidate evaluations, and
    alert state. The Phase 2 schema and RLS policies are defined in SQL migrations. Storage is
    reserved for product images only where necessary.
@@ -66,7 +69,11 @@ Mobile
 - `src/services/ocr/`: platform-specific ML Kit adapter, normalized OCR result contract, web
   fallback, and temporary-image cleanup boundary
 - Future services under `src/services/`: adapters for backend endpoints and device capabilities
-- Future `supabase/functions/`: authenticated server-side orchestration and Nebius calls
+- `supabase/functions/_shared/matching/`: pure common contract, normalization, candidate retrieval,
+  per-scope evidence, deterministic matching, and multi-scope aggregation
+- Future `supabase/functions/`: authenticated server-side orchestration and later Nebius calls
+- `benchmarks/recall-matching/`: offline CPSC-backed dataset, validator, metrics, and runner; this
+  layer never owns production matching decisions or persistence
 
 No screen imports or queries Supabase directly. Authentication screens use their typed provider,
 whose service boundary owns Supabase Auth calls. Product feature code depends on the inventory
@@ -81,6 +88,8 @@ stable `manual` identification method, with no AI confidence value.
 - AI responses are untrusted input and must pass schema validation before storage or display.
 - Low-confidence or contradictory matches require user review and must not trigger definitive
   safety claims.
+- Matching confidence is a heuristic evidence-strength score, never a calibrated recall
+  probability.
 - The mobile app uses only Supabase's publishable key. Row Level Security protects user data.
 - `NEBIUS_API_KEY` and Supabase secret credentials are server-only; they must never enter Expo
   client code.
@@ -107,7 +116,8 @@ perception only; it does not infer brand, product identity, safety, or recall st
 adds native date-only purchase-date selection and preserves non-GTIN Code 128 values only as
 transient scan evidence. Phase 7 adds the first recall-source integration: a server-only CPSC Edge
 Function retrieves date-bounded JSON records, preserves complete official payloads, and writes only
-conservative notice/scope evidence. It does not create matches or alerts. Scheduled ingestion,
-Nebius/NVIDIA calls, matching, and notifications remain future work.
+conservative notice/scope evidence. Phase 8 adds pure `deterministic_v1` matching and a 30-case
+offline benchmark. It adds no endpoint, database writes, migration, alerts, or AI calls. Production
+orchestration, scheduled ingestion, Nemotron execution, and notifications remain future work.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

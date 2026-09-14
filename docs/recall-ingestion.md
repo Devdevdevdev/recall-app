@@ -88,6 +88,19 @@ For a small real write, use the same header against the deployed function and se
 `raw_payload` in Supabase. Re-run exactly the same request: it should report `unchanged` unless
 CPSC changed a record, and never create duplicate `(source_id, external_id)` rows.
 
-Scheduled ingestion, matching, Nemotron, `recall_matches`, alerts, notifications, other sources,
-and product search are outside Phase 7. CPSC establishes recall facts; future AI may only evaluate
+Scheduled ingestion, persisted matching, Nemotron, alerts, notifications, other sources, and
+product search are outside Phase 7. CPSC establishes recall facts; a matcher may only evaluate
 owned products against this stored evidence.
+
+## Phase 8 handoff
+
+Phase 8 consumes the Phase 7 evidence without changing this ingestion path or either migration.
+`ProductUPCs` remain independent recall-level GTIN scopes, manufacturer names remain contextual
+`additional_criteria` rather than brand, and full `raw_payload` remains authoritative provenance.
+The deterministic baseline does not reinterpret arbitrary raw prose into model, lot, serial, or
+date criteria. When normalized scopes are insufficient but preserved source evidence appears
+important, it returns `needs_review` for later evaluation.
+
+Candidate retrieval, pairwise scope matching, multi-scope aggregation, and benchmarking are
+documented separately in [recall-matching.md](recall-matching.md). Phase 8 adds no ingestion calls,
+database writes, alerts, or AI requests.

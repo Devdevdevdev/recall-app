@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://recall.example/benchmarks/recall-matching/v1.schema.json",
+  "title": "Recall matching benchmark dataset v1",
+  "type": "object",
+  "required": [
+    "datasetVersion",
+    "createdAt",
+    "sourceRetrievalDate",
+    "sourceAuthority",
+    "recalls",
+    "cases"
+  ],
+  "properties": {
+    "datasetVersion": { "const": "1" },
+    "createdAt": { "type": "string", "format": "date" },
+    "sourceRetrievalDate": { "type": "string", "format": "date" },
+    "sourceAuthority": { "type": "string", "minLength": 1 },
+    "recalls": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/officialRecall" }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 50,
+      "items": { "$ref": "#/$defs/case" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "source": {
+      "type": "object",
+      "required": ["authority", "externalId", "officialUrl", "retrievedAt"],
+      "properties": {
+        "authority": { "const": "CPSC" },
+        "externalId": { "type": "string", "minLength": 1 },
+        "officialUrl": {
+          "type": "string",
+          "pattern": "^https://www\\.cpsc\\.gov/Recalls/"
+        },
+        "retrievedAt": { "type": "string", "format": "date" }
+      },
+      "additionalProperties": false
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "brand": { "$ref": "#/$defs/nullableString" },
+        "productName": { "$ref": "#/$defs/nullableString" },
+        "gtin": { "$ref": "#/$defs/nullableString" },
+        "modelNumber": { "$ref": "#/$defs/nullableString" },
+        "serialNumber": { "$ref": "#/$defs/nullableString" },
+        "lotNumber": { "$ref": "#/$defs/nullableString" },
+        "serialFrom": { "$ref": "#/$defs/nullableString" },
+        "serialTo": { "$ref": "#/$defs/nullableString" },
+        "lotFrom": { "$ref": "#/$defs/nullableString" },
+        "lotTo": { "$ref": "#/$defs/nullableString" },
+        "manufacturedFrom": { "$ref": "#/$defs/nullableString" },
+        "manufacturedTo": { "$ref": "#/$defs/nullableString" },
+        "additionalCriteria": { "type": ["object", "null"] }
+      },
+      "minProperties": 1,
+      "additionalProperties": false
+    },
+    "officialRecall": {
+      "type": "object",
+      "required": [
+        "recallNoticeId",
+        "source",
+        "title",
+        "description",
+        "hazard",
+        "remedy",
+        "recallDate",
+        "scopes",
+        "rawEvidence"
+      ],
+      "properties": {
+        "recallNoticeId": { "type": "string", "minLength": 1 },
+        "source": { "$ref": "#/$defs/source" },
+        "title": { "type": "string", "minLength": 1 },
+        "description": { "$ref": "#/$defs/nullableString" },
+        "hazard": { "$ref": "#/$defs/nullableString" },
+        "remedy": { "$ref": "#/$defs/nullableString" },
+        "recallDate": { "type": "string", "format": "date" },
+        "scopes": { "type": "array", "items": { "$ref": "#/$defs/scope" } },
+        "rawEvidence": { "type": ["object", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "ownedProduct": {
+      "type": "object",
+      "required": [
+        "productName",
+        "brand",
+        "category",
+        "gtin",
+        "modelNumber",
+        "serialNumber",
+        "lotNumber",
+        "purchaseDate",
+        "identificationMethod"
+      ],
+      "properties": {
+        "productName": { "$ref": "#/$defs/nullableString" },
+        "brand": { "$ref": "#/$defs/nullableString" },
+        "category": { "$ref": "#/$defs/nullableString" },
+        "gtin": { "$ref": "#/$defs/nullableString" },
+        "modelNumber": { "$ref": "#/$defs/nullableString" },
+        "serialNumber": { "$ref": "#/$defs/nullableString" },
+        "lotNumber": { "$ref": "#/$defs/nullableString" },
+        "purchaseDate": { "$ref": "#/$defs/nullableString" },
+        "identificationMethod": { "$ref": "#/$defs/nullableString" }
+      },
+      "additionalProperties": false
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "caseId",
+        "officialRecallExternalId",
+        "ownedProduct",
+        "expected",
+        "labelProvenance",
+        "reason",
+        "notes"
+      ],
+      "properties": {
+        "caseId": { "type": "string", "minLength": 1 },
+        "officialRecallExternalId": { "type": "string", "minLength": 1 },
+        "ownedProduct": { "$ref": "#/$defs/ownedProduct" },
+        "expected": { "enum": ["match", "no_match", "needs_review"] },
+        "labelProvenance": {
+          "enum": [
+            "official_exact_evidence",
+            "controlled_counterfactual",
+            "source_ambiguity",
+            "human_reviewed"
+          ]
+        },
+        "reason": { "type": "string", "minLength": 1 },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  }
+}
