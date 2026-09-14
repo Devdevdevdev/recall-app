@@ -4,6 +4,11 @@
 # working directory name when running `supabase init`.
 project_id = "RECALL"
 
+# This is a service-to-service endpoint. The handler rejects every request without the separate
+# RECALL_INGESTION_KEY secret, rather than accepting mobile-user JWTs.
+[functions.ingest-cpsc-recalls]
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.

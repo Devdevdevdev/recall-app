@@ -1,0 +1,73 @@
+[
+  {
+    "RecallID": 10880,
+    "RecallNumber": "26639",
+    "RecallDate": "2026-07-23T00:00:00",
+    "Description": "This recall involves Peony Design personalized handmade baby bibs and stroller bags.",
+    "URL": "https://www.cpsc.gov/Recalls/2026/Peony-Design-Recalls-Personalized-Baby-Bibs-and-Stroller-Bags-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+    "Title": "Peony Design Recalls Personalized Baby Bibs and Stroller Bags Due to Risk of Serious Injury or Death from Choking Hazard",
+    "ConsumerContact": "Peony Design by email at peonydesigncoshoppe@gmail.com for more information.",
+    "LastPublishDate": "2026-07-24T00:00:00",
+    "Products": [
+      {
+        "Name": "Personalized Baby Bibs and Stroller Bags",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": "About 52"
+      }
+    ],
+    "Manufacturers": [{ "Name": "Peony Design Co., of Howell, MI", "CompanyID": "" }],
+    "ProductUPCs": [],
+    "Hazards": [
+      {
+        "Name": "The snap can detach from the recalled bibs and stroller bags, posing a choking hazard.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should stop using the recalled products and contact Peony Design for a refund."
+      }
+    ],
+    "RemedyOptions": [{ "Option": "Refund" }]
+  },
+  {
+    "RecallID": 8877,
+    "RecallNumber": "20164",
+    "RecallDate": "2020-08-12T00:00:00",
+    "Description": "This recall involves Thule Sleek strollers.",
+    "URL": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+    "Title": "Thule Recalls Strollers Due to Injury Hazard",
+    "ConsumerContact": "Thule Group toll-free at 855-929-3531.",
+    "LastPublishDate": "2020-08-12T00:00:00",
+    "Products": [
+      {
+        "Name": "Thule Sleek strollers",
+        "Description": "",
+        "Model": "",
+        "Type": "",
+        "CategoryID": "",
+        "NumberOfUnits": "About 4,000"
+      }
+    ],
+    "Manufacturers": [],
+    "Importers": [{ "Name": "Thule Group, of Sweden", "CompanyID": "" }],
+    "ProductUPCs": [{ "UPC": "091021037090" }, { "UPC": "091021070585" }],
+    "Hazards": [
+      {
+        "Name": "The stroller's handlebar can detach, posing an injury hazard to children.",
+        "HazardType": "",
+        "HazardTypeID": ""
+      }
+    ],
+    "Remedies": [
+      {
+        "Name": "Consumers should immediately stop using the recalled strollers and contact Thule Group for a replacement."
+      }
+    ],
+    "RemedyOptions": [{ "Option": "Replace" }]
+  }
+]

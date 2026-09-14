@@ -42,6 +42,7 @@ still-image Latin OCR entirely on device, deletes the temporary cache image on b
 the user to review only conservatively parsed identifiers. It performs no product lookup and makes
 no recall claim. Phase 6.1 adds native date-only purchase-date selection without a schema change and
 treats non-GTIN Code 128 scans as transient, unclassified product-code evidence rather than
-incorrectly persisting them as a GTIN, model, serial, or lot. Password recovery, social login, live
-recall ingestion, Nebius/NVIDIA execution, and notifications remain intentionally deferred for
-later server-side phases.
+incorrectly persisting them as a GTIN, model, serial, or lot. Phase 7 adds server-only,
+date-bounded CPSC ingestion with raw-payload provenance and conservative scopes, but deliberately
+creates no matches or alerts and makes no AI calls. Password recovery, social login, matching,
+Nebius/NVIDIA execution, notifications, and scheduled ingestion remain deferred.

@@ -159,5 +159,14 @@ safety results.
    a match evaluation.
 6. A confirmed source-backed match creates an alert for the product owner.
 
-Ingestion, matching execution, Edge Functions, authentication UI, and notifications are not part of
-Phase 2.
+## Phase 7 CPSC ingestion
+
+The Phase 7 migration adds two service-role-only RPCs without changing the Phase 2 schema or RLS
+policies. `ensure_cpsc_recall_source()` serializes registration of the authoritative CPSC source.
+`ingest_cpsc_recall(...)` upserts a notice by the existing `(source_id, external_id)` constraint and
+replaces that notice's scopes in the same transaction only when official data changed. The existing
+notice-host trigger still requires `www.cpsc.gov` official URLs.
+
+No authenticated mobile grants, policies, or client write paths were added for recall sources,
+notices, scopes, matches, or alerts. The RPCs are executable only by `service_role`, from the
+server-side Edge Function. Matching, alerts, and notifications remain future work.

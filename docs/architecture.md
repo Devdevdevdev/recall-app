@@ -105,8 +105,9 @@ native development build. The image exists only temporarily in app cache, recogn
 device, and the user reviews conservative explicit-label candidates before the same form. OCR is
 perception only; it does not infer brand, product identity, safety, or recall status. Phase 6.1
 adds native date-only purchase-date selection and preserves non-GTIN Code 128 values only as
-transient scan evidence. Ingestion jobs,
-Edge Functions, Nebius/NVIDIA calls, notifications, and recall-source integration remain future
-work.
+transient scan evidence. Phase 7 adds the first recall-source integration: a server-only CPSC Edge
+Function retrieves date-bounded JSON records, preserves complete official payloads, and writes only
+conservative notice/scope evidence. It does not create matches or alerts. Scheduled ingestion,
+Nebius/NVIDIA calls, matching, and notifications remain future work.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

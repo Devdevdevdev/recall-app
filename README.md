@@ -10,8 +10,7 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 6.1 adds timezone-safe purchase-date selection and clearer scanner semantics alongside the
-verified Phase 6 OCR flow:
+Phase 7 adds authoritative CPSC recall ingestion alongside the verified Phase 6.1 mobile flow:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -42,10 +41,13 @@ verified Phase 6 OCR flow:
 - Framework-independent domain models and repository interfaces
 - A migration-defined PostgreSQL schema with constraints, indexes, privileges, and Row Level
   Security
+- A server-only Supabase Edge Function that retrieves date-bounded JSON recall records from the
+  official CPSC Retrieval API, preserves raw CPSC payloads, and safely upserts notices/scopes
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Password recovery, magic links, OAuth/social login, external product lookup, recall ingestion,
-notifications, and AI matching execution are intentionally not implemented yet. Scanning acquires
+Password recovery, magic links, OAuth/social login, external product lookup, recall matching,
+notifications, scheduled ingestion, and AI matching execution are intentionally not implemented
+yet. Scanning acquires
 only barcode data or visible label text; it does not identify a commercial product. Product detail
 screens do not make safety or recall conclusions before authoritative recall data exists.
 
@@ -101,16 +103,18 @@ for the Phase 5 scanner permissions, validation, privacy model, and physical-dev
 See [docs/ocr-scanning.md](docs/ocr-scanning.md) for the Phase 6 on-device OCR architecture and
 manual test plan, [docs/product-inventory.md](docs/product-inventory.md) for date handling, and
 [docs/barcode-scanning.md](docs/barcode-scanning.md) for barcode classifications.
+See [docs/recall-ingestion.md](docs/recall-ingestion.md) for CPSC provenance, dry-run, and
+deployment steps, and [benchmarks/recall-matching/README.md](benchmarks/recall-matching/README.md)
+for the future matching evaluation contract.
 
 ## Security
 
 **Never put `NEBIUS_API_KEY`, a Supabase secret/service-role key, or any other privileged
 credential in the Expo client.** Expo public environment variables are bundled into the app and are readable by
 users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
-user data. Nebius/NVIDIA requests and privileged recall writes will be introduced in a later phase
-through a secure Supabase Edge Function or equivalent server-side component. When implemented,
-Edge Functions may use Supabase's platform-provided publishable/secret key environment
-configuration; secret credentials remain server-side only.
+user data. The CPSC ingestion Edge Function performs privileged recall writes only with
+server-side credentials and its own `RECALL_INGESTION_KEY`; no mobile client invokes it.
+Nebius/NVIDIA requests remain a later, server-side phase.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every

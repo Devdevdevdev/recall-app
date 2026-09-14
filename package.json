@@ -44,9 +44,10 @@
     "lint": "expo lint",
     "test:parser": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-product-label-parser.mjs",
     "test:phase-6-1": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-phase-6-1.mjs",
+    "test:cpsc-ingestion": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types scripts/validate-cpsc-ingestion.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1"
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion"
   },
   "expo": {
     "doctor": {
