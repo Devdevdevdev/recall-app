@@ -1,0 +1,310 @@
+{
+  "generatedAt": "2026-09-14T14:37:38.402Z",
+  "datasetSha256": "c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8",
+  "caseCount": 30,
+  "baseline": {
+    "matcherVersion": "deterministic_v1",
+    "metrics": {
+      "totalCases": 30,
+      "exactThreeClassAccuracy": 0.9,
+      "match": {
+        "truePositives": 7,
+        "falsePositives": 0,
+        "falseNegatives": 3,
+        "trueNegatives": 20,
+        "precision": 1,
+        "strictRecall": 0.7,
+        "falsePositiveRate": 0,
+        "unresolvedPositiveCases": 3
+      },
+      "needsReview": {
+        "predictedCount": 13,
+        "rate": 0.43333333333333335
+      },
+      "decisionCoverage": 0.5666666666666667,
+      "confusionMatrix": {
+        "match": {
+          "match": 7,
+          "no_match": 0,
+          "needs_review": 3
+        },
+        "no_match": {
+          "match": 0,
+          "no_match": 10,
+          "needs_review": 0
+        },
+        "needs_review": {
+          "match": 0,
+          "no_match": 0,
+          "needs_review": 10
+        }
+      }
+    }
+  },
+  "nemotron": {
+    "matcherVersion": "nemotron_v1",
+    "metrics": {
+      "totalCases": 30,
+      "exactThreeClassAccuracy": 0.7,
+      "match": {
+        "truePositives": 9,
+        "falsePositives": 4,
+        "falseNegatives": 1,
+        "trueNegatives": 16,
+        "precision": 0.6923076923076923,
+        "strictRecall": 0.9,
+        "falsePositiveRate": 0.2,
+        "unresolvedPositiveCases": 1
+      },
+      "needsReview": {
+        "predictedCount": 10,
+        "rate": 0.3333333333333333
+      },
+      "decisionCoverage": 0.6666666666666666,
+      "confusionMatrix": {
+        "match": {
+          "match": 9,
+          "no_match": 0,
+          "needs_review": 1
+        },
+        "no_match": {
+          "match": 0,
+          "no_match": 7,
+          "needs_review": 3
+        },
+        "needs_review": {
+          "match": 4,
+          "no_match": 0,
+          "needs_review": 6
+        }
+      }
+    },
+    "structuredOutputSuccessRate": 0.8666666666666667,
+    "apiFailureCount": 0,
+    "retryCount": 0,
+    "latency": {
+      "totalDurationMs": 141928.04083100002,
+      "averageMs": 4730.934694366667,
+      "p50Ms": 4303.435540999999,
+      "p95Ms": 9832.149750000011
+    },
+    "usage": {
+      "inputTokens": 53046,
+      "outputTokens": 50786,
+      "totalTokens": 103832,
+      "reasoningTokens": null,
+      "responsesWithUsage": 30,
+      "responsesWithReasoningUsage": 0
+    },
+    "cost": {
+      "amount": 0.0616212,
+      "pricing": {
+        "source": "Nebius Token Factory GET /models?verbose=true",
+        "observedAt": "2026-09-14T14:37:38.402Z",
+        "currency": "USD",
+        "unit": "per_million_tokens",
+        "inputRate": 0.3,
+        "outputRate": 0.9
+      },
+      "note": "Calculated from provider-reported token usage and live Nebius per-million-token rates."
+    }
+  },
+  "cases": {
+    "improved": [
+      {
+        "caseId": "cpsc-10588-model-lot-positive",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10826-serial-prefix-positive",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10930-model-positive",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      }
+    ],
+    "worsened": [
+      {
+        "caseId": "cpsc-10806-gtin-positive",
+        "deterministic": "match",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "counterfactual-luum-vs-bazic",
+        "deterministic": "no_match",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "counterfactual-arizer-vs-dive-sticks",
+        "deterministic": "no_match",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "counterfactual-bottles-vs-fan",
+        "deterministic": "no_match",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "ambiguous-peony-name-only",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "ambiguous-bazic-model-batch-in-prose",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "ambiguous-bottle-item-number",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "ambiguous-dive-stick-model-sale-date",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "ambiguous-fire-pit-model-association",
+        "deterministic": "needs_review",
+        "nemotron": "match"
+      }
+    ],
+    "unchanged": [
+      {
+        "caseId": "cpsc-8877-gtin-positive",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10664-gtin-positive-1",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10664-gtin-positive-2",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10581-gtin-positive",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10803-gtin-positive",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "cpsc-10915-gtin-positive",
+        "deterministic": "match",
+        "nemotron": "match"
+      },
+      {
+        "caseId": "counterfactual-thule-vs-luum",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "counterfactual-luum-vs-multivitamin",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "counterfactual-bazic-vs-arizer",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "counterfactual-multivitamin-vs-bottles",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "counterfactual-dive-sticks-vs-fire-pit",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "counterfactual-fan-vs-thule",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "counterfactual-fire-pit-vs-pan",
+        "deterministic": "no_match",
+        "nemotron": "no_match"
+      },
+      {
+        "caseId": "ambiguous-multivitamin-lot-association",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "ambiguous-arizer-serial-prefix",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "ambiguous-fan-model-in-prose",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "ambiguous-thule-product-number-and-date",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      },
+      {
+        "caseId": "ambiguous-gas-range-model-serial-prefix",
+        "deterministic": "needs_review",
+        "nemotron": "needs_review"
+      }
+    ]
+  },
+  "hybridSimulation": {
+    "name": "hybrid_simulation_v1",
+    "policy": "Use deterministic_v1 when it confirms or rejects; otherwise reuse the primary nemotron_v1 evaluation.",
+    "metrics": {
+      "totalCases": 30,
+      "exactThreeClassAccuracy": 0.8333333333333334,
+      "match": {
+        "truePositives": 10,
+        "falsePositives": 4,
+        "falseNegatives": 0,
+        "trueNegatives": 16,
+        "precision": 0.7142857142857143,
+        "strictRecall": 1,
+        "falsePositiveRate": 0.2,
+        "unresolvedPositiveCases": 0
+      },
+      "needsReview": {
+        "predictedCount": 6,
+        "rate": 0.2
+      },
+      "decisionCoverage": 0.8,
+      "confusionMatrix": {
+        "match": {
+          "match": 10,
+          "no_match": 0,
+          "needs_review": 0
+        },
+        "no_match": {
+          "match": 0,
+          "no_match": 10,
+          "needs_review": 0
+        },
+        "needs_review": {
+          "match": 4,
+          "no_match": 0,
+          "needs_review": 6
+        }
+      }
+    }
+  }
+}

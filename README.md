@@ -10,8 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 8 adds a deterministic recall matcher and executable CPSC benchmark alongside the verified
-Phase 7 ingestion and Phase 6.1 mobile flow:
+Phase 9 adds a measured, server-only Nebius/NVIDIA comparison alongside the deterministic matcher,
+verified CPSC ingestion, and Phase 6.1 mobile flow:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -48,11 +48,18 @@ Phase 7 ingestion and Phase 6.1 mobile flow:
   multi-scope aggregation with a versioned common match contract
 - A frozen 30-case public-CPSC benchmark with explicit label provenance, privacy validation,
   three-class metrics, false-positive reporting, decision coverage, latency, and zero AI cost
+- A dependency-free Nebius Token Factory client with destination validation, bounded timeouts and
+  retries, redacted errors, and no React Native import path
+- A fixed `nemotron_v1` prompt, forced strict function-tool schema, local output validation, and an
+  explicit benchmark projection that excludes expected labels and evaluation metadata
+- A real one-pass evaluation of `nvidia/nemotron-3-super-120b-a12b`: 70.0% exact accuracy, 90.0%
+  strict recall, four false positives, 86.7% structured-output success, and USD 0.0616212 measured
+  inference cost on the 30 controlled cases
 - Strict TypeScript, ESLint, and Prettier configuration
 
 Password recovery, magic links, OAuth/social login, external product lookup, production match
-orchestration/persistence, notifications, scheduled ingestion, and AI matching execution are
-intentionally not implemented yet. Scanning acquires
+orchestration/persistence, notifications, and scheduled ingestion are intentionally not implemented
+yet. Phase 9 AI execution is benchmark-only and read-only. Scanning acquires
 only barcode data or visible label text; it does not identify a commercial product. Product detail
 screens do not make safety or recall conclusions before authoritative recall data exists.
 
@@ -115,7 +122,8 @@ See [docs/recall-ingestion.md](docs/recall-ingestion.md) for CPSC provenance, dr
 deployment steps, [docs/recall-matching.md](docs/recall-matching.md) for deterministic matching
 rules and the integration boundary, and
 [benchmarks/recall-matching/README.md](benchmarks/recall-matching/README.md) for the executable
-baseline evaluation.
+evaluations, and [docs/nebius-nemotron.md](docs/nebius-nemotron.md) for the Phase 9 provider
+boundary, measured results, costs, and limitations.
 
 ## Security
 
@@ -124,8 +132,9 @@ credential in the Expo client.** Expo public environment variables are bundled i
 users. The mobile client uses only the Supabase publishable key, and Row Level Security protects
 user data. The CPSC ingestion Edge Function performs privileged recall writes only with
 server-side credentials and its own `RECALL_INGESTION_KEY`; no mobile client invokes it.
-Phase 8 matching is pure and read-only: it has no endpoint, database write, alert path, or model
-call. Nebius/NVIDIA requests remain a later, server-side phase.
+Phase 9 Nebius calls remain server/local-process only and benchmark-only. They do not create an
+endpoint, database write, match row, notification, or alert. The measured false positives prohibit
+using `nemotron_v1` as a production automatic-alert policy.
 
 Do not commit `.env` files, credentials, service-account files, private keys, or generated native
 configuration containing secrets. The repository includes defensive ignore rules, but every

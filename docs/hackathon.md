@@ -6,10 +6,10 @@ This document tracks submission requirements and implementation evidence as Reca
 
 - [ ] **Nebius Token Factory runtime usage:** Route real product-normalization and recall-matching
       requests through Nebius Token Factory from a secure server-side function.
-- [ ] **NVIDIA open-source model usage:** Run NVIDIA Nemotron as the matching/reasoning model and
+- [x] **NVIDIA open-source model usage:** Run NVIDIA Nemotron as the matching/reasoning model and
       record the exact open-source model identifier and license.
-- [ ] Validate all model responses against a structured JSON schema.
-- [ ] Demonstrate that the model reasons only over recall candidates retrieved from trusted
+- [x] Validate all model responses against a structured JSON schema.
+- [x] Demonstrate that the model reasons only over recall candidates retrieved from trusted
       sources and cannot invent a recall.
 - [x] Define persistence for recall provenance, source URLs, matched identifiers, confidence, and
       uncertainty.
@@ -27,7 +27,7 @@ This document tracks submission requirements and implementation evidence as Reca
 - [x] Add reproducible local development-build instructions for the native on-device OCR demo.
 - [ ] **Maximum 3-minute public YouTube demo:** Publish a public video no longer than three minutes
       and add its URL here.
-- [ ] **Explanation of Nebius/NVIDIA usage:** Document the runtime path, model, prompts/schemas,
+- [x] **Explanation of Nebius/NVIDIA usage:** Document the runtime path, model, prompts/schemas,
       security boundary, and why the integration is material to Recall.
 - [ ] **Project feedback requirement:** Complete the organizer's required product or platform
       feedback and retain submission evidence.
@@ -47,7 +47,9 @@ treats non-GTIN Code 128 scans as transient, unclassified product-code evidence 
 incorrectly persisting them as a GTIN, model, serial, or lot. Phase 7 adds server-only,
 date-bounded CPSC ingestion with raw-payload provenance and conservative scopes, but deliberately
 creates no matches or alerts and makes no AI calls. Phase 8 adds `deterministic_v1` and a frozen
-30-case CPSC-backed evaluation set. The baseline reports explicit false-positive, strict-recall,
-abstention, coverage, latency, and zero-cost metrics without persisting matches or activating
-alerts. Password recovery, social login, production matching orchestration, Nebius/NVIDIA
-execution, notifications, and scheduled ingestion remain deferred.
+30-case CPSC-backed evaluation set. Phase 9 evaluates the exact same evidence once with
+`nvidia/nemotron-3-super-120b-a12b` through Nebius Token Factory. Nemotron raised strict recall from
+70.0% to 90.0% but reduced exact accuracy to 70.0%, introduced four false positives, and produced
+valid structured output on 26/30 cases. It is measured evidence, not a production alert policy.
+Password recovery, social login, production matching orchestration, notifications, and scheduled
+ingestion remain deferred.

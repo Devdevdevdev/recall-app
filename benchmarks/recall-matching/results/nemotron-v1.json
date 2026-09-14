@@ -1,0 +1,2009 @@
+{
+  "generatedAt": "2026-09-14T14:37:38.402Z",
+  "dataset": {
+    "version": "1",
+    "sha256": "c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8",
+    "expectedSha256": "c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8",
+    "frozenAuditCommit": "50203c175be76e0cfc9dfcba845ad0bd5f20c503",
+    "caseCount": 30
+  },
+  "matcher": {
+    "version": "nemotron_v1",
+    "promptVersion": "1.0.0",
+    "schemaVersion": "1.0.0",
+    "structuredOutputMethod": "strict_function_tool"
+  },
+  "provider": {
+    "name": "nebius",
+    "modelId": "nvidia/nemotron-3-super-120b-a12b",
+    "endpoint": "https://api.tokenfactory.us-central1.nebius.com/v1/chat/completions"
+  },
+  "inference": {
+    "temperature": 0,
+    "maxOutputTokens": 2400,
+    "requestTimeoutMs": 120000,
+    "maxRetriesPerCase": 2,
+    "stream": false,
+    "primaryEvaluationsPerCase": 1
+  },
+  "runtime": {
+    "node": "v22.18.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "sourceGitCommit": "50203c175be76e0cfc9dfcba845ad0bd5f20c503",
+  "metrics": {
+    "totalCases": 30,
+    "exactThreeClassAccuracy": 0.7,
+    "match": {
+      "truePositives": 9,
+      "falsePositives": 4,
+      "falseNegatives": 1,
+      "trueNegatives": 16,
+      "precision": 0.6923076923076923,
+      "strictRecall": 0.9,
+      "falsePositiveRate": 0.2,
+      "unresolvedPositiveCases": 1
+    },
+    "needsReview": {
+      "predictedCount": 10,
+      "rate": 0.3333333333333333
+    },
+    "decisionCoverage": 0.6666666666666666,
+    "confusionMatrix": {
+      "match": {
+        "match": 9,
+        "no_match": 0,
+        "needs_review": 1
+      },
+      "no_match": {
+        "match": 0,
+        "no_match": 7,
+        "needs_review": 3
+      },
+      "needs_review": {
+        "match": 4,
+        "no_match": 0,
+        "needs_review": 6
+      }
+    }
+  },
+  "integrity": {
+    "attemptedCases": 30,
+    "validStructuredResponses": 26,
+    "structuredOutputSuccessRate": 0.8666666666666667,
+    "apiFailureCount": 0,
+    "retryCount": 0,
+    "technicalFailureCases": [
+      {
+        "caseId": "counterfactual-luum-vs-bazic",
+        "failureKind": "empty_output"
+      },
+      {
+        "caseId": "counterfactual-arizer-vs-dive-sticks",
+        "failureKind": "invalid_json"
+      },
+      {
+        "caseId": "counterfactual-bottles-vs-fan",
+        "failureKind": "empty_output"
+      },
+      {
+        "caseId": "ambiguous-bazic-model-batch-in-prose",
+        "failureKind": "empty_output"
+      }
+    ]
+  },
+  "latency": {
+    "totalDurationMs": 141928.04083100002,
+    "averageMs": 4730.934694366667,
+    "p50Ms": 4303.435540999999,
+    "p95Ms": 9832.149750000011
+  },
+  "usage": {
+    "inputTokens": 53046,
+    "outputTokens": 50786,
+    "totalTokens": 103832,
+    "reasoningTokens": null,
+    "responsesWithUsage": 30,
+    "responsesWithReasoningUsage": 0
+  },
+  "cost": {
+    "amount": 0.0616212,
+    "pricing": {
+      "source": "Nebius Token Factory GET /models?verbose=true",
+      "observedAt": "2026-09-14T14:37:38.402Z",
+      "currency": "USD",
+      "unit": "per_million_tokens",
+      "inputRate": 0.3,
+      "outputRate": 0.9
+    },
+    "note": "Calculated from provider-reported token usage and live Nebius per-million-token rates."
+  },
+  "falsePositives": [
+    {
+      "caseId": "ambiguous-peony-name-only",
+      "officialRecallExternalId": "10880",
+      "reasoningSummary": "The owned product is a personalized baby bib from Peony Design. The recall scope covers personalized baby bibs and stroller bags from Peony Design Co., of Howell, MI. The product name and brand/manufacturer match the recall scope, with no conflicting evidence. Therefore, the product falls within the recall.",
+      "matchedIdentifiers": {
+        "gtin": [],
+        "modelNumber": [],
+        "serialNumber": [],
+        "lotNumber": []
+      },
+      "conflictingIdentifiers": {
+        "gtin": [],
+        "modelNumber": [],
+        "serialNumber": [],
+        "lotNumber": []
+      }
+    },
+    {
+      "caseId": "ambiguous-bottle-item-number",
+      "officialRecallExternalId": "10803",
+      "reasoningSummary": "The owned product's modelNumber B11654 exactly matches the item number B11654 cited in the recall description. The product name and brand also match the recall's product name and implied brand. No conflicting identifiers are present. Therefore, the product falls within the recall scope.",
+      "matchedIdentifiers": {
+        "gtin": [],
+        "modelNumber": ["B11654"],
+        "serialNumber": [],
+        "lotNumber": []
+      },
+      "conflictingIdentifiers": {
+        "gtin": [],
+        "modelNumber": [],
+        "serialNumber": [],
+        "lotNumber": []
+      }
+    },
+    {
+      "caseId": "ambiguous-dive-stick-model-sale-date",
+      "officialRecallExternalId": "10806",
+      "reasoningSummary": "The owned product matches the recall's product name (ignoring case), model number exactly, and purchase date falls before the recall's sale-date cutoff. No conflicting identifiers are present. Therefore, the product is within the recall scope.",
+      "matchedIdentifiers": {
+        "gtin": [],
+        "modelNumber": ["40041"],
+        "serialNumber": [],
+        "lotNumber": []
+      },
+      "conflictingIdentifiers": {
+        "gtin": [],
+        "modelNumber": [],
+        "serialNumber": [],
+        "lotNumber": []
+      }
+    },
+    {
+      "caseId": "ambiguous-fire-pit-model-association",
+      "officialRecallExternalId": "10915",
+      "reasoningSummary": "The owned product's brand and descriptive product name align with the recall's product name scope. The model number BSFIREPIT02 is explicitly mentioned in the recall's raw evidence as one of the affected models. No conflicting identifiers are present. Therefore, the product falls within the recall scope.",
+      "matchedIdentifiers": {
+        "gtin": [],
+        "modelNumber": ["BSFIREPIT02"],
+        "serialNumber": [],
+        "lotNumber": []
+      },
+      "conflictingIdentifiers": {
+        "gtin": [],
+        "modelNumber": [],
+        "serialNumber": [],
+        "lotNumber": []
+      }
+    }
+  ],
+  "focusCases": {
+    "10588": {
+      "caseId": "cpsc-10588-model-lot-positive",
+      "prediction": "match",
+      "decision": "confirmed",
+      "structuredOutputValid": true
+    },
+    "10826": {
+      "caseId": "cpsc-10826-serial-prefix-positive",
+      "prediction": "match",
+      "decision": "confirmed",
+      "structuredOutputValid": true
+    },
+    "10930": {
+      "caseId": "cpsc-10930-model-positive",
+      "prediction": "match",
+      "decision": "confirmed",
+      "structuredOutputValid": true
+    }
+  },
+  "cases": [
+    {
+      "caseId": "cpsc-8877-gtin-positive",
+      "officialRecallExternalId": "8877",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": ["091021037090"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "091021037090",
+            "officialValue": "091021037090",
+            "detail": "Exact GTIN match to recall scope"
+          },
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Thule Sleek stroller",
+            "officialValue": "Thule Sleek strollers",
+            "detail": "Product name matches recall scope"
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN exactly matches one of the recall's GTIN scopes (scope index 1). The product name also matches the recall's productName scope (scope index 0). No conflicting identifiers are present. Therefore, the product is confirmed to be within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 2460.196375,
+      "usage": {
+        "inputTokens": 1872,
+        "outputTokens": 879,
+        "totalTokens": 2751,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10664-gtin-positive-1",
+      "officialRecallExternalId": "10664",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": ["843461115513"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "843461115513",
+            "officialValue": "843461115513",
+            "detail": "Owned product GTIN exactly matches recall scope GTIN at index 1."
+          },
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "BUILT LUUM Festive Forest tumbler",
+            "officialValue": "BUILT LUUM Tumblers",
+            "detail": "Owned product name is a specific variant of the recall scope product name, indicating it falls within the recalled product line."
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN (843461115513) exactly matches a recall scope GTIN, providing strong evidence of inclusion. The product name is a specific variant of the recalled product line, offering supporting evidence. No conflicting identifiers are present. Therefore, the product is confirmed to be within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 2546.928542,
+      "usage": {
+        "inputTokens": 1928,
+        "outputTokens": 1031,
+        "totalTokens": 2959,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10664-gtin-positive-2",
+      "officialRecallExternalId": "10664",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": ["843461115551"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 2,
+            "ownedValue": "843461115551",
+            "officialValue": "843461115551",
+            "detail": "GTIN exactly matches recall scope."
+          },
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "BUILT LUUM Merry Glow tumbler",
+            "officialValue": "BUILT LUUM Tumblers",
+            "detail": "Product name includes recalled brand and collection; specific variant 'Merry Glow' falls under recalled tumblers."
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN exactly matches a recall scope (index 2). The product name aligns with the recalled product family, supporting the match. No conflicting evidence.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 2767.3677500000003,
+      "usage": {
+        "inputTokens": 1928,
+        "outputTokens": 987,
+        "totalTokens": 2915,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10588-model-lot-positive",
+      "officialRecallExternalId": "10588",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": ["2030"],
+          "serialNumber": [],
+          "lotNumber": ["V01233-031725-70004523"]
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Bazic Silicone Glue",
+            "officialValue": "Bazic Silicone Glue",
+            "detail": "Product name matches recall scope productName."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "2030",
+            "officialValue": "2030",
+            "detail": "Model number matches explicit recall model number from raw evidence."
+          },
+          {
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "V01233-031725-70004523",
+            "officialValue": "V01233-031725-70004523",
+            "detail": "Lot number matches explicit recall batch code from raw evidence."
+          }
+        ],
+        "reasoningSummary": "The owned product matches the recall on product name, model number (2030), and lot number (V01233-031725-70004523), which are explicit recall criteria. No conflicting evidence is present. Therefore the product is confirmed to be within the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4197.864916,
+      "usage": {
+        "inputTokens": 1803,
+        "outputTokens": 1855,
+        "totalTokens": 3658,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10581-gtin-positive",
+      "officialRecallExternalId": "10581",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": ["850027975177"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "850027975177",
+            "officialValue": "850027975177",
+            "detail": "GTIN exactly matches scope 1."
+          },
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "Ultimate Multivitamin+",
+            "officialValue": "Ultimate Multivitamin+ Dietary Supplement Bottles",
+            "detail": "Product name matches core name but missing suffix 'Dietary Supplement Bottles'."
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN exactly matches the GTIN listed in scope 1 of the recall, providing a strong, specific match. The product name also aligns with the recall's product name (supporting evidence). No conflicting identifiers were found. Therefore, the product is confirmed to be within the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 2567.788708,
+      "usage": {
+        "inputTokens": 1754,
+        "outputTokens": 1071,
+        "totalTokens": 2825,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10826-serial-prefix-positive",
+      "officialRecallExternalId": "10826",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": ["M3B1G5A123"],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Arizer Solo III Intergalactic (Black) portable electronic vaporizer",
+            "officialValue": "Arizer Solo III portable electronic vaporizers (Intergalactic/Black color only)",
+            "detail": "Owned product name matches recall scope product name for Intergalactic/Black variant."
+          },
+          {
+            "kind": "serialNumber",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "M3B1G5A123",
+            "officialValue": "M3B1G5",
+            "detail": "Owned serial number begins with recall explicit serial prefix M3B1G5."
+          }
+        ],
+        "reasoningSummary": "The owned product's product name matches the recall's product name scope (Intergalactic/Black). Its serial number M3B1G5A123 starts with the recall's explicit serial prefix M3B1G5, confirming inclusion in the recalled serial prefix set. No conflicting identifiers are present.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 3800.8025830000024,
+      "usage": {
+        "inputTokens": 1819,
+        "outputTokens": 1615,
+        "totalTokens": 3434,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10803-gtin-positive",
+      "officialRecallExternalId": "10803",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": ["669028116546"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "669028116546",
+            "officialValue": "669028116546",
+            "detail": "GTIN matches recall scope exactly."
+          },
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Boon NURSH 8 oz reusable baby bottles",
+            "officialValue": "Boon NURSH 8 oz Reusable Baby Bottles",
+            "detail": "Product name matches recall scope (minor capitalization difference)."
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN (669028116546) and product name (Boon NURSH 8 oz reusable baby bottles) exactly match the two recall scopes (GTIN scope and product name scope). No conflicting evidence is present. The recall's additional prose referencing item number B11654 further supports the match but is not required for confirmation. Therefore, the product is confirmed to be within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4140.108124999999,
+      "usage": {
+        "inputTokens": 1682,
+        "outputTokens": 1389,
+        "totalTokens": 3071,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10806-gtin-positive",
+      "officialRecallExternalId": "10806",
+      "expected": "match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.7,
+        "matchedIdentifiers": {
+          "gtin": ["812355036227"],
+          "modelNumber": ["40041"],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "812355036227",
+            "officialValue": "812355036227",
+            "detail": "GTIN matches recall scope gtin."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "40041",
+            "officialValue": "40041",
+            "detail": "Model number matches recall description (unmodeledCriteria)."
+          },
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Sloosh Dive Sticks",
+            "officialValue": "Sloosh Dive Sticks",
+            "detail": "Product name matches recall scope productName."
+          },
+          {
+            "kind": "brand",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Sloosh",
+            "detail": "Brand matches product name context."
+          },
+          {
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "detail": "Recall includes sale-date condition (sold before October 23, 2025); purchase date not provided."
+          }
+        ],
+        "reasoningSummary": "The owned product matches the recall on GTIN, model number, product name, and brand. However, the recall is limited to units sold before October 23, 2025, and the purchase date is unknown. Without purchase date evidence, we cannot confirm the sale-date condition, resulting in an unresolved additional criterion. Therefore, the match needs review.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 5781.5298330000005,
+      "usage": {
+        "inputTokens": 1682,
+        "outputTokens": 2295,
+        "totalTokens": 3977,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10930-model-positive",
+      "officialRecallExternalId": "10930",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": ["AK396H-MBK"],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Hampton Bay Halwin 52-inch ceiling fan",
+            "officialValue": "Hampton Bay Halwin 52-inch Indoor/Outdoor Ceiling Fans",
+            "detail": "Owned product name matches recall scope product name with minor wording difference."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "AK396H-MBK",
+            "officialValue": "AK396H-MBK",
+            "detail": "Owned model number matches explicit model number listed in recall raw evidence."
+          }
+        ],
+        "reasoningSummary": "The owned product's model number AK396H-MBK exactly matches one of the explicit model numbers (AK396H-MBK, AK396H-BN) cited in the recall's raw evidence. Additionally, the product name closely matches the recall scope's product name. No conflicting identifiers are present. Therefore, the product falls within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 5820.716791999999,
+      "usage": {
+        "inputTokens": 1745,
+        "outputTokens": 2007,
+        "totalTokens": 3752,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "cpsc-10915-gtin-positive",
+      "officialRecallExternalId": "10915",
+      "expected": "match",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": ["680079015930"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "680079015930",
+            "officialValue": "680079015930",
+            "detail": "Exact GTIN match to recall scope."
+          },
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "Brookstone tabletop fire pit",
+            "officialValue": "Brookstone-branded Tabletop Fire Pits",
+            "detail": "Product name matches generic description albeit missing 'branded' and plural."
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN exactly matches recall scope index 1 (GTIN 680079015930). The product name is supportive of the recall's productName scope. No conflicting identifiers are present. This provides sufficient specific authoritative evidence to confirm the product is within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4921.094374999993,
+      "usage": {
+        "inputTokens": 1742,
+        "outputTokens": 1609,
+        "totalTokens": 3351,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-thule-vs-luum",
+      "officialRecallExternalId": "10664",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["091021037090"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Thule Sleek stroller",
+            "officialValue": "BUILT LUUM Tumblers",
+            "detail": "Product name does not match recall product name."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "091021037090",
+            "officialValue": "843461115513",
+            "detail": "Owned GTIN not in recall GTIN list."
+          },
+          {
+            "kind": "brand",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Thule",
+            "officialValue": "BUILT",
+            "detail": "Brand mismatch; recall involves BUILT-branded tumblers."
+          }
+        ],
+        "reasoningSummary": "The owned product is a Thule Sleek stroller with GTIN 091021037090, while the recall concerns BUILT LUUM light-up tumblers with various GTINs starting with 8434611. There is no overlap in product name, brand, or GTIN, confirming the product is outside the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4303.435540999999,
+      "usage": {
+        "inputTokens": 1922,
+        "outputTokens": 1397,
+        "totalTokens": 3319,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-luum-vs-bazic",
+      "officialRecallExternalId": "10588",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [],
+        "reasoningSummary": "The model returned no structured tool evaluation; human review is required.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": false,
+      "apiSucceeded": true,
+      "failureKind": "empty_output",
+      "retries": 0,
+      "latencyMs": 10554.009000000005,
+      "usage": {
+        "inputTokens": 1792,
+        "outputTokens": 2400,
+        "totalTokens": 4192,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-luum-vs-multivitamin",
+      "officialRecallExternalId": "10581",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["843461115551"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "BUILT LUUM Merry Glow tumbler",
+            "officialValue": "Ultimate Multivitamin+ Dietary Supplement Bottles",
+            "detail": "Product name does not match recall scope product name."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "843461115551",
+            "officialValue": "850027975177",
+            "detail": "Owned GTIN does not match recall scope GTIN."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 2,
+            "ownedValue": "843461115551",
+            "officialValue": "850027975429",
+            "detail": "Owned GTIN does not match recall scope GTIN."
+          }
+        ],
+        "reasoningSummary": "The owned product (BUILT LUUM Merry Glow tumbler, GTIN 843461115551) differs in product name, brand, and GTIN from all recall scopes (Ultimate Multivitamin+ Dietary Supplement Bottles with GTINs 850027975177 and 850027975429). No identifiers match; all are conflicting. Therefore, the product is outside the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4332.540084,
+      "usage": {
+        "inputTokens": 1754,
+        "outputTokens": 1337,
+        "totalTokens": 3091,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-bazic-vs-arizer",
+      "officialRecallExternalId": "10826",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["764608020302"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "764608020302",
+            "officialValue": "628078802274",
+            "detail": "Owned GTIN differs from recall GTIN."
+          },
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Bazic Silicone Glue",
+            "officialValue": "Arizer Solo III portable electronic vaporizers (Intergalactic/Black color only)",
+            "detail": "Product names differ."
+          }
+        ],
+        "reasoningSummary": "The owned product is Bazic Silicone Glue (GTIN 764608020302, productName Bazic Silicone Glue). The recall concerns Arizer Solo III portable vaporizers (GTIN 628078802274, productName Arizer Solo III portable electronic vaporizers (Intergalactic/Black color only)). No identifiers match; GTIN and productName are clearly different, placing the product outside the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 3645.964958000004,
+      "usage": {
+        "inputTokens": 1838,
+        "outputTokens": 1577,
+        "totalTokens": 3415,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-multivitamin-vs-bottles",
+      "officialRecallExternalId": "10803",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["850027975177"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "850027975177",
+            "officialValue": "669028116546",
+            "detail": "Owned GTIN does not match recall GTIN."
+          },
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Ultimate Multivitamin+",
+            "officialValue": "Boon NURSH 8 oz Reusable Baby Bottles",
+            "detail": "Product name does not match recall product name."
+          },
+          {
+            "kind": "lotNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "0515I1",
+            "detail": "Recall does not specify lot number; owned lot number 0515I1 cannot be evaluated against recall."
+          },
+          {
+            "kind": "brand",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "Mindbodygreen",
+            "detail": "Recall does not specify brand; owned brand Mindbodygreen cannot be evaluated against recall."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "detail": "No model number provided for owned product or recall."
+          },
+          {
+            "kind": "serialNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "detail": "No serial number provided for owned product or recall."
+          }
+        ],
+        "reasoningSummary": "The owned product is a multivitamin supplement with GTIN 850027975177 and lot number 0515I1. The recall concerns Boon NURSH 8 oz reusable baby bottles with GTIN 669028116546. The GTIN and product name are directly conflicting, indicating the product is outside the recall scope. No other identifiers match recall criteria. Therefore, the product is rejected as being within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 5829.196874999994,
+      "usage": {
+        "inputTokens": 1678,
+        "outputTokens": 1736,
+        "totalTokens": 3414,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-arizer-vs-dive-sticks",
+      "officialRecallExternalId": "10806",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [],
+        "reasoningSummary": "The model returned invalid JSON; human review is required.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": false,
+      "apiSucceeded": true,
+      "failureKind": "invalid_json",
+      "retries": 0,
+      "latencyMs": 5429.375749999992,
+      "usage": {
+        "inputTokens": 1688,
+        "outputTokens": 2400,
+        "totalTokens": 4088,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-bottles-vs-fan",
+      "officialRecallExternalId": "10930",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [],
+        "reasoningSummary": "The model returned no structured tool evaluation; human review is required.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": false,
+      "apiSucceeded": true,
+      "failureKind": "empty_output",
+      "retries": 0,
+      "latencyMs": 9832.149750000011,
+      "usage": {
+        "inputTokens": 1753,
+        "outputTokens": 2400,
+        "totalTokens": 4153,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-dive-sticks-vs-fire-pit",
+      "officialRecallExternalId": "10915",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["812355036227"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Sloosh Dive Sticks",
+            "officialValue": "Brookstone-branded Tabletop Fire Pits",
+            "detail": "Owned product name does not match recall product name scope."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "812355036227",
+            "officialValue": "680079015930",
+            "detail": "Owned GTIN does not match recall GTIN scope."
+          }
+        ],
+        "reasoningSummary": "The owned product (Sloosh Dive Sticks, GTIN 812355036227, model 40041) does not match any recall scope: product name differs, GTIN does not match any of the three recall GTINs, and model number does not match the recalled models (BSFIREPIT01-03). Therefore, the product is outside the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4297.789582999991,
+      "usage": {
+        "inputTokens": 1740,
+        "outputTokens": 1603,
+        "totalTokens": 3343,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-fan-vs-thule",
+      "officialRecallExternalId": "8877",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.99,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["840059614922"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Hampton Bay Halwin 52-inch ceiling fan",
+            "officialValue": "Thule Sleek strollers",
+            "detail": "Product names do not match; recall is for strollers, owned product is a ceiling fan."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 1,
+            "ownedValue": "840059614922",
+            "officialValue": "091021037090",
+            "detail": "Owned product GTIN does not match the recall GTIN at index 1."
+          }
+        ],
+        "reasoningSummary": "The owned product is a Hampton Bay ceiling fan with GTIN 840059614922, while the recall concerns Thule Sleek strollers with specific GTINs. No identifiers match; product name and GTIN are conflicting, placing the product outside the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4419.48937499999,
+      "usage": {
+        "inputTokens": 1885,
+        "outputTokens": 1928,
+        "totalTokens": 3813,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "counterfactual-fire-pit-vs-pan",
+      "officialRecallExternalId": "10687",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": ["680079015930"],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "680079015930",
+            "officialValue": "080313081316",
+            "detail": "GTIN does not match recall GTIN."
+          },
+          {
+            "kind": "productName",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Brookstone tabletop fire pit",
+            "officialValue": "Granitestone Diamond Pro Blue Sauté Pans",
+            "detail": "Product name does not match recall product name."
+          }
+        ],
+        "reasoningSummary": "The owned product's GTIN and product name conflict with the recall's GTIN and product name. No other identifiers match. Therefore, the product is not within the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 3872.6882919999916,
+      "usage": {
+        "inputTokens": 1675,
+        "outputTokens": 1252,
+        "totalTokens": 2927,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-peony-name-only",
+      "officialRecallExternalId": "10880",
+      "expected": "needs_review",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.85,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Personalized baby bib",
+            "officialValue": "Personalized Baby Bibs and Stroller Bags",
+            "detail": "Owned product name matches recall scope product name (bib is within bibs and stroller bags)"
+          },
+          {
+            "kind": "manufacturerContext",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Peony Design",
+            "officialValue": "Peony Design Co., of Howell, MI",
+            "detail": "Brand matches manufacturer name in recall scope"
+          }
+        ],
+        "reasoningSummary": "The owned product is a personalized baby bib from Peony Design. The recall scope covers personalized baby bibs and stroller bags from Peony Design Co., of Howell, MI. The product name and brand/manufacturer match the recall scope, with no conflicting evidence. Therefore, the product falls within the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 5016.891499999998,
+      "usage": {
+        "inputTokens": 1648,
+        "outputTokens": 1072,
+        "totalTokens": 2720,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-bazic-model-batch-in-prose",
+      "officialRecallExternalId": "10588",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [],
+        "reasoningSummary": "The model returned no structured tool evaluation; human review is required.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": false,
+      "apiSucceeded": true,
+      "failureKind": "empty_output",
+      "retries": 0,
+      "latencyMs": 6963.335292000003,
+      "usage": {
+        "inputTokens": 1782,
+        "outputTokens": 2400,
+        "totalTokens": 4182,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-multivitamin-lot-association",
+      "officialRecallExternalId": "10581",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.35,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Ultimate Multivitamin+ dietary supplement",
+            "officialValue": "Ultimate Multivitamin+ Dietary Supplement Bottles",
+            "detail": "Owned product name matches recall product name except for missing word 'Bottles' and minor capitalization differences; descriptive similarity supports potential match but is not an exact identifier."
+          },
+          {
+            "kind": "lotNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "0515I1",
+            "detail": "Recall scopes do not specify lot numbers; owned lot number cannot be confirmed as within or outside recall based on provided scopes."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 1,
+            "officialValue": "850027975177",
+            "detail": "Owned product lacks a GTIN; recall scope includes GTIN 850027975177, but absence of owned GTIN prevents confirmation or conflict."
+          }
+        ],
+        "reasoningSummary": "The owned product shares a highly similar product name with the recalled item, but lacks exact identifier matches (GTIN, model, serial). The lot number provided is not referenced in any recall scope, and no GTIN is present on the owned product to compare against the recall's GTIN scopes. Without definitive identifier overlap, the evidence is insufficient to confirm or reject inclusion; thus a needs_review determination is appropriate.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4507.092000000004,
+      "usage": {
+        "inputTokens": 1754,
+        "outputTokens": 1807,
+        "totalTokens": 3561,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-arizer-serial-prefix",
+      "officialRecallExternalId": "10826",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.2,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "Arizer Solo III portable vaporizer",
+            "officialValue": "Arizer Solo III portable electronic vaporizers (Intergalactic/Black color only)",
+            "detail": "Product name matches generic description but lacks color specification Intergalactic/Black only."
+          },
+          {
+            "kind": "gtin",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 1,
+            "officialValue": "628078802274",
+            "detail": "No GTIN provided on owned product to compare against recall GTIN."
+          }
+        ],
+        "reasoningSummary": "The owned product only provides a generic product name matching the recall's generic description but lacks the specific color limitation (Intergalactic/Black) and has no GTIN, serial number, lot number, or model number to match the recall's specific identifiers. Without sufficient specific evidence, the product cannot be confirmed as within the recall, nor is there evidence placing it outside the recall.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4011.8211249999877,
+      "usage": {
+        "inputTokens": 1803,
+        "outputTokens": 1678,
+        "totalTokens": 3481,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-bottle-item-number",
+      "officialRecallExternalId": "10803",
+      "expected": "needs_review",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": ["B11654"],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "B11654",
+            "officialValue": "B11654",
+            "detail": "Owned product modelNumber B11654 matches item number B11654 cited in recall description."
+          },
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Boon NURSH 8 oz reusable baby bottle",
+            "officialValue": "Boon NURSH 8 oz Reusable Baby Bottles",
+            "detail": "Product names match ignoring case and pluralization."
+          },
+          {
+            "kind": "brand",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Boon",
+            "officialValue": "Boon",
+            "detail": "Brand matches recall brand."
+          }
+        ],
+        "reasoningSummary": "The owned product's modelNumber B11654 exactly matches the item number B11654 cited in the recall description. The product name and brand also match the recall's product name and implied brand. No conflicting identifiers are present. Therefore, the product falls within the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 3688.067167000001,
+      "usage": {
+        "inputTokens": 1671,
+        "outputTokens": 1680,
+        "totalTokens": 3351,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-dive-stick-model-sale-date",
+      "officialRecallExternalId": "10806",
+      "expected": "needs_review",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.95,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": ["40041"],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "Sloosh dive sticks",
+            "officialValue": "Sloosh Dive Sticks",
+            "detail": "Product name matches ignoring case."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "scopeIndex": 0,
+            "ownedValue": "40041",
+            "officialValue": "40041",
+            "detail": "Model number matches exactly."
+          },
+          {
+            "kind": "purchaseDateContext",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "2025-10-01",
+            "officialValue": "before October 23, 2025",
+            "detail": "Purchase date 2025-10-01 is before the recall cutoff of October 23, 2025."
+          }
+        ],
+        "reasoningSummary": "The owned product matches the recall's product name (ignoring case), model number exactly, and purchase date falls before the recall's sale-date cutoff. No conflicting identifiers are present. Therefore, the product is within the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 5124.335791000005,
+      "usage": {
+        "inputTokens": 1678,
+        "outputTokens": 2321,
+        "totalTokens": 3999,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-fan-model-in-prose",
+      "officialRecallExternalId": "10930",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.4,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Hampton Bay Halwin 52 inch ceiling fan",
+            "officialValue": "Hampton Bay Halwin 52-inch Indoor/Outdoor Ceiling Fans",
+            "detail": "Product name matches recall scope product name with minor wording difference (missing 'Indoor/Outdoor')."
+          },
+          {
+            "kind": "brand",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Hampton Bay",
+            "officialValue": "Hampton Bay",
+            "detail": "Brand matches recall brand as indicated in recall title."
+          },
+          {
+            "kind": "manufacturerContext",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "officialValue": "Youngo Limited, of Huizhou, China",
+            "detail": "No manufacturer information provided for owned product; recall scope specifies manufacturer Youngo Limited."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "officialValue": "AK396H-MBK, AK396H-BN",
+            "detail": "Owned product lacks model number; recall identifies specific models AK396H-MBK and AK396H-BN in prose."
+          },
+          {
+            "kind": "lotNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "detail": "No lot number information available for owned product or recall."
+          }
+        ],
+        "reasoningSummary": "The owned product matches the recall's product name and brand but lacks specific identifiers (model number, lot number) and manufacturer context needed to confirm it falls within the recalled models (AK396H-MBK, AK396H-BN). Without model number or manufacturer evidence, a definitive match cannot be established, necessitating review.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4694.664333000008,
+      "usage": {
+        "inputTokens": 1739,
+        "outputTokens": 1943,
+        "totalTokens": 3682,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-fire-pit-model-association",
+      "officialRecallExternalId": "10915",
+      "expected": "needs_review",
+      "predicted": "match",
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.85,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": ["BSFIREPIT02"],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Brookstone tabletop fire pit",
+            "officialValue": "Brookstone-branded Tabletop Fire Pits",
+            "detail": "Owned product name matches the recall's product name scope descriptively (missing 'branded' but same core)."
+          },
+          {
+            "kind": "brand",
+            "outcome": "matched",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "Brookstone",
+            "detail": "Brand matches the brand implied in the recall's product name scope."
+          },
+          {
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "BSFIREPIT02",
+            "detail": "Recall description explicitly lists model BSFIREPIT02 among the affected models."
+          }
+        ],
+        "reasoningSummary": "The owned product's brand and descriptive product name align with the recall's product name scope. The model number BSFIREPIT02 is explicitly mentioned in the recall's raw evidence as one of the affected models. No conflicting identifiers are present. Therefore, the product falls within the recall scope.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 5199.825375000015,
+      "usage": {
+        "inputTokens": 1731,
+        "outputTokens": 1848,
+        "totalTokens": 3579,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-thule-product-number-and-date",
+      "officialRecallExternalId": "8877",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.35,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "Thule Sleek stroller",
+            "officialValue": "Thule Sleek strollers",
+            "detail": "Product name matches except for singular/plural difference."
+          }
+        ],
+        "reasoningSummary": "The owned product matches the recall's product name descriptor (Thule Sleek stroller vs Thule Sleek strollers) but lacks specific identifiers (GTIN, model number, serial, lot) that define the recall scope. Purchase date does not align with manufacture-date criteria. Insufficient evidence to confirm or reject.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 2994.81808300002,
+      "usage": {
+        "inputTokens": 1877,
+        "outputTokens": 1341,
+        "totalTokens": 3218,
+        "reasoningTokens": null
+      }
+    },
+    {
+      "caseId": "ambiguous-gas-range-model-serial-prefix",
+      "officialRecallExternalId": "10720",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.4,
+        "matchedIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "conflictingIdentifiers": {
+          "gtin": [],
+          "modelNumber": [],
+          "serialNumber": [],
+          "lotNumber": []
+        },
+        "evidenceUsed": [
+          {
+            "kind": "modelNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "RGV3-305-N",
+            "detail": "Recall scope includes RGV3 model numbers but specific model list not provided; cannot confirm if RGV3-305-N is included."
+          },
+          {
+            "kind": "serialNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "scopeIndex": 0,
+            "ownedValue": "EEV123456",
+            "detail": "Recall scope includes serial prefixes but specific prefixes not provided; cannot confirm if EEV prefix is included."
+          },
+          {
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Fisher & Paykel professional gas range",
+            "officialValue": "Fisher & Paykel Gas Ranges",
+            "detail": "Product name matches recall product name generic term; supports potential match."
+          },
+          {
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "scopeIndex": 0,
+            "ownedValue": "Fisher & Paykel",
+            "detail": "Brand matches manufacturer context in recall; supports potential match."
+          }
+        ],
+        "reasoningSummary": "The owned product's model number matches the RGV3 prefix referenced in the recall, but the recall specifies particular RGV3 model numbers, serial prefixes, date codes, and UPCs that are not detailed in the supplied evidence. Without confirmation that the specific model number RGV3-305-N and serial number EEV123456 fall within the recalled subsets, a definitive match cannot be established. Supporting evidence includes product name and brand alignment with the recall's manufacturer context. Therefore, the outcome is needs_review.",
+        "matchMethod": "nemotron_v1",
+        "schemaVersion": "1.0.0",
+        "aiProvider": "nebius",
+        "aiModel": "nvidia/nemotron-3-super-120b-a12b",
+        "promptVersion": "1.0.0"
+      },
+      "structuredOutputValid": true,
+      "apiSucceeded": true,
+      "failureKind": null,
+      "retries": 0,
+      "latencyMs": 4206.152958000021,
+      "usage": {
+        "inputTokens": 1683,
+        "outputTokens": 1928,
+        "totalTokens": 3611,
+        "reasoningTokens": null
+      }
+    }
+  ]
+}

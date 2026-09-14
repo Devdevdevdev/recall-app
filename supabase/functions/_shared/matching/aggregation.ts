@@ -2,18 +2,18 @@ import { mergeIdentifierEvidence } from './evidence.ts';
 import {
   DETERMINISTIC_MATCH_METHOD,
   MATCH_EVALUATION_SCHEMA_VERSION,
-  type MatchEvaluation,
+  type DeterministicMatchEvaluation,
   type ScopeEvaluation,
 } from './types.ts';
 
 export function aggregateScopeEvaluations(
   evaluations: readonly ScopeEvaluation[],
-): MatchEvaluation {
+): DeterministicMatchEvaluation {
   const relevant = evaluations.filter((evaluation) => evaluation.relevant);
   const confirmed = relevant.filter((evaluation) => evaluation.decision === 'confirmed');
   const unresolved = relevant.filter((evaluation) => evaluation.decision === 'needs_review');
 
-  let decision: MatchEvaluation['decision'];
+  let decision: DeterministicMatchEvaluation['decision'];
   let confidence: number;
   let reasoningSummary: string;
 

@@ -1,4 +1,5 @@
 import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, resolve } from 'node:path';
 import { performance } from 'node:perf_hooks';
@@ -13,7 +14,9 @@ import { calculateBenchmarkMetrics, decisionToExpected, percentile } from './met
 
 const datasetUrl = new URL('./cases.v1.json', import.meta.url);
 const schemaUrl = new URL('./benchmark.schema.json', import.meta.url);
-const rawDataset = JSON.parse(await readFile(datasetUrl, 'utf8'));
+const datasetText = await readFile(datasetUrl, 'utf8');
+const datasetSha256 = createHash('sha256').update(datasetText).digest('hex');
+const rawDataset = JSON.parse(datasetText);
 const schema = JSON.parse(await readFile(schemaUrl, 'utf8'));
 const dataset = asBenchmarkDataset(rawDataset, schema);
 const startedAt = performance.now();
@@ -60,6 +63,7 @@ try {
 const result = {
   generatedAt: new Date().toISOString(),
   datasetVersion: dataset.datasetVersion,
+  datasetSha256,
   sourceRetrievalDate: dataset.sourceRetrievalDate,
   matcherVersion: DETERMINISTIC_MATCH_METHOD,
   schemaVersion: MATCH_EVALUATION_SCHEMA_VERSION,

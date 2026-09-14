@@ -110,12 +110,44 @@ dataset/matcher/schema versions, runtime, case count, and Git commit when availa
 
 ## Phase 9 comparison and limitations
 
-Nemotron will later receive the same hydrated `OwnedProductEvidence` and
-`OfficialRecallEvidence`, produce the same schema-validated `MatchEvaluation`, and be scored by the
-same metric code on exactly these cases. Phase 8 contains no prompt, model choice, API key, model
-call, or AI result.
+Phase 9 sends the same hydrated `OwnedProductEvidence` and `OfficialRecallEvidence` through an
+explicit label-free projection, produces the same schema-validated evaluation core, and uses the
+same metric code. The model never receives expected labels, label provenance, benchmark reasons,
+baseline output, or metrics. Phase 8 itself still contains no model call.
 
 This small control set emphasizes explicit identifiers and known ambiguity boundaries. It does not
 measure prevalence, calibration, multilingual text, every manufacturer numbering scheme, or live
 candidate-database query performance. It should grow only with traceable labels and explicit
 versioning.
+
+The primary `nemotron_v1` run used prompt `1.0.0` and
+`nvidia/nemotron-3-super-120b-a12b`. It was one sequential inference per case with zero retries:
+
+| Metric                     | `deterministic_v1` |  `nemotron_v1` |
+| -------------------------- | -----------------: | -------------: |
+| Exact three-class accuracy |              90.0% |          70.0% |
+| MATCH TP / FP / FN / TN    |     7 / 0 / 3 / 20 | 9 / 4 / 1 / 16 |
+| MATCH precision            |             100.0% |          69.2% |
+| Strict MATCH recall        |              70.0% |          90.0% |
+| False-positive rate        |               0.0% |          20.0% |
+| Needs-review rate          |              43.3% |          33.3% |
+| Decision coverage          |              56.7% |          66.7% |
+
+Valid structured output was 26/30. Four technical fallbacks are disclosed and cannot count as
+correct expected abstentions. The four false positives mean the higher recall is not a safe overall
+improvement and must not drive production alerts.
+
+Committed machine-readable artifacts are under `results/`: `deterministic-v1.json`,
+`nemotron-v1.json`, and `comparison.json`. The latter also contains improved/worsened/unchanged case
+lists and `hybrid_simulation_v1`. See `docs/nebius-nemotron.md` for the complete report.
+
+Live commands require deliberate external-data and cost authorization:
+
+```bash
+npm run benchmark:matching:nebius:preflight
+npm run benchmark:matching:nemotron:smoke
+npm run benchmark:matching:nemotron
+```
+
+The runner verifies the frozen SHA-256 before any case request and refuses to overwrite existing
+result files. Do not rerun this prompt against the frozen set for tuning.

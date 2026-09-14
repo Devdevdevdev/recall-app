@@ -105,6 +105,17 @@ test('baseline metrics count abstentions as strict match false negatives', () =>
   assert.equal(metrics.decisionCoverage, 0.5);
 });
 
+test('the audited dataset fingerprint remains frozen', async () => {
+  const { createHash } = await import('node:crypto');
+  const bytes = await readFile(
+    new URL('../benchmarks/recall-matching/cases.v1.json', import.meta.url),
+  );
+  assert.equal(
+    createHash('sha256').update(bytes).digest('hex'),
+    'c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8',
+  );
+});
+
 test('deterministic_v1 evaluates every frozen benchmark case', () => {
   const dataset = asBenchmarkDataset(rawDataset, benchmarkSchema);
   const predictions = dataset.cases.map((benchmarkCase) => {

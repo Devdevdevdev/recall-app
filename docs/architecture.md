@@ -16,7 +16,7 @@ Mobile
   → trusted recall candidate retrieval
   → deterministic_v1 evidence evaluation
   → confirmed / rejected / needs-review
-  → later Nemotron comparison for difficult cases
+  → measured Nemotron comparison for difficult cases
   → structured match result
   → Supabase
   → alerts
@@ -33,8 +33,9 @@ Mobile
 5. **Deterministic baseline:** Pure server-safe logic evaluates exact identifiers, safe ranges, and
    transparent supporting text for every recall scope, then returns confirmed, rejected, or
    needs-review.
-6. **Later Nemotron comparison:** A future server integration will evaluate difficult cases against
-   the same common contract and benchmark. It cannot create or independently assert a recall.
+6. **Nemotron comparison:** A server-only Nebius adapter can evaluate the same evidence against the
+   common contract. Phase 9 measured it only in a read-only benchmark; it cannot create or
+   independently assert a recall.
 7. **Structured match result:** Deterministic and future model output share a versioned contract
    with heuristic confidence, matched/conflicting identifiers, evidence, rationale, and explicit
    uncertainty.
@@ -70,8 +71,12 @@ Mobile
   fallback, and temporary-image cleanup boundary
 - Future services under `src/services/`: adapters for backend endpoints and device capabilities
 - `supabase/functions/_shared/matching/`: pure common contract, normalization, candidate retrieval,
-  per-scope evidence, deterministic matching, and multi-scope aggregation
-- Future `supabase/functions/`: authenticated server-side orchestration and later Nebius calls
+  per-scope evidence, deterministic matching, multi-scope aggregation, the versioned Nemotron
+  prompt/schema, and local model-output validation
+- `supabase/functions/_shared/nebius/`: server-only configuration, redacted errors, and the
+  standards-based Token Factory HTTP client
+- Future `supabase/functions/`: authenticated production orchestration; Phase 9 adds only shared
+  Nebius modules and a local benchmark, not a callable endpoint
 - `benchmarks/recall-matching/`: offline CPSC-backed dataset, validator, metrics, and runner; this
   layer never owns production matching decisions or persistence
 
@@ -117,7 +122,9 @@ adds native date-only purchase-date selection and preserves non-GTIN Code 128 va
 transient scan evidence. Phase 7 adds the first recall-source integration: a server-only CPSC Edge
 Function retrieves date-bounded JSON records, preserves complete official payloads, and writes only
 conservative notice/scope evidence. Phase 8 adds pure `deterministic_v1` matching and a 30-case
-offline benchmark. It adds no endpoint, database writes, migration, alerts, or AI calls. Production
-orchestration, scheduled ingestion, Nemotron execution, and notifications remain future work.
+offline benchmark. Phase 9 adds one real Nebius/NVIDIA evaluation on that frozen evidence plus a
+strict server-only model boundary. Nemotron improved strict recall but introduced four false
+positives and four structured-output failures, so production orchestration remains deferred.
+Neither phase adds an endpoint, database writes, migration, alerts, or notifications.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

@@ -5,7 +5,10 @@ export type JsonValue = JsonPrimitive | JsonObject | JsonValue[];
 export type JsonObject = { readonly [key: string]: JsonValue };
 
 export const DETERMINISTIC_MATCH_METHOD = 'deterministic_v1';
+export const NEMOTRON_MATCH_METHOD = 'nemotron_v1';
 export const MATCH_EVALUATION_SCHEMA_VERSION = '1.0.0';
+export const NEMOTRON_PROMPT_VERSION = '1.0.0';
+export const NEBIUS_AI_PROVIDER = 'nebius';
 
 export type MatchDecision = 'confirmed' | 'rejected' | 'needs_review';
 
@@ -78,7 +81,7 @@ export type MatchEvidence = {
 
 export type IdentifierEvidence = Partial<Record<IdentifierKind, readonly string[]>>;
 
-export type MatchEvaluation = {
+export type MatchEvaluationCore = {
   decision: MatchDecision;
   /** Heuristic evidence-strength score, not a calibrated probability. */
   confidence: number;
@@ -86,9 +89,22 @@ export type MatchEvaluation = {
   conflictingIdentifiers: IdentifierEvidence;
   evidenceUsed: readonly MatchEvidence[];
   reasoningSummary: string;
+};
+
+export type DeterministicMatchEvaluation = MatchEvaluationCore & {
   matchMethod: typeof DETERMINISTIC_MATCH_METHOD;
   schemaVersion: typeof MATCH_EVALUATION_SCHEMA_VERSION;
 };
+
+export type NemotronMatchEvaluation = MatchEvaluationCore & {
+  matchMethod: typeof NEMOTRON_MATCH_METHOD;
+  schemaVersion: typeof MATCH_EVALUATION_SCHEMA_VERSION;
+  aiProvider: typeof NEBIUS_AI_PROVIDER;
+  aiModel: string;
+  promptVersion: typeof NEMOTRON_PROMPT_VERSION;
+};
+
+export type MatchEvaluation = DeterministicMatchEvaluation | NemotronMatchEvaluation;
 
 export type ScopeEvaluation = {
   scopeIndex: number;

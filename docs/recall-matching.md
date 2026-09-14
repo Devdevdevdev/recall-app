@@ -101,3 +101,23 @@ not create alerts until the deterministic/Nemotron comparison and alerting polic
 
 The authoritative source establishes the recall. Deterministic and future Nemotron matching only
 establish whether an owned product appears to fit that recall. Neither may invent one.
+
+## Phase 9 measured Nemotron comparison
+
+Phase 9 preserves this contract while adding `nemotron_v1` through the server-only Nebius Token
+Factory boundary. The exact frozen dataset SHA-256 is
+`c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8`. An explicit projection
+passes only the owned-product and authoritative-recall evidence to the model; automated tests prove
+that labels, provenance, reasons, case metadata, deterministic output, and metrics are absent.
+
+The fixed prompt version is `1.0.0`. The target model supports strict function tools but did not
+advertise JSON-schema response format, so it returns a forced `submit_recall_match_evaluation` tool
+call whose arguments use the strict local schema. Provider/model metadata is attached only after
+validation. Any invalid output safely abstains and is separately counted as a technical failure.
+
+On the one-pass 30-case run, `nvidia/nemotron-3-super-120b-a12b` produced 70.0% integrity-adjusted
+exact accuracy, 69.2% MATCH precision, 90.0% strict MATCH recall, a 20.0% false-positive rate,
+33.3% needs-review rate, and 66.7% decision coverage. It confirmed all three baseline unresolved
+positives but introduced four false positives. Structured-output success was 26/30. These results
+do not justify production alerts or a claim of general accuracy. See [nebius-nemotron.md](nebius-nemotron.md)
+for full methodology, latency, token usage, cost, limitations, and the read-only hybrid simulation.

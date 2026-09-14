@@ -1,0 +1,211 @@
+{
+  "generatedAt": "2026-09-14T14:41:16.184Z",
+  "datasetVersion": "1",
+  "datasetSha256": "c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8",
+  "sourceRetrievalDate": "2026-09-14",
+  "matcherVersion": "deterministic_v1",
+  "schemaVersion": "1.0.0",
+  "gitCommit": "50203c1",
+  "runtime": {
+    "node": "v22.18.0",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "ai": {
+    "calls": 0,
+    "cost": 0,
+    "currency": "USD"
+  },
+  "metrics": {
+    "totalCases": 30,
+    "exactThreeClassAccuracy": 0.9,
+    "match": {
+      "truePositives": 7,
+      "falsePositives": 0,
+      "falseNegatives": 3,
+      "trueNegatives": 20,
+      "precision": 1,
+      "strictRecall": 0.7,
+      "falsePositiveRate": 0,
+      "unresolvedPositiveCases": 3
+    },
+    "needsReview": {
+      "predictedCount": 13,
+      "rate": 0.43333333333333335
+    },
+    "decisionCoverage": 0.5666666666666667,
+    "confusionMatrix": {
+      "match": {
+        "match": 7,
+        "no_match": 0,
+        "needs_review": 3
+      },
+      "no_match": {
+        "match": 0,
+        "no_match": 10,
+        "needs_review": 0
+      },
+      "needs_review": {
+        "match": 0,
+        "no_match": 0,
+        "needs_review": 10
+      }
+    }
+  },
+  "latency": {
+    "totalBenchmarkDurationMs": 2.3170420000000007,
+    "averageEvaluationMs": 0.0246494170000003,
+    "p50EvaluationMs": 0.015250000000008868,
+    "p95EvaluationMs": 0.06645900000000893,
+    "sampleCount": 6000,
+    "timer": "performance.now; sub-millisecond values are environment-dependent"
+  },
+  "failures": [
+    {
+      "caseId": "cpsc-10588-model-lot-positive",
+      "expected": "match",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "cpsc-10826-serial-prefix-positive",
+      "expected": "match",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "cpsc-10930-model-positive",
+      "expected": "match",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    }
+  ],
+  "abstentions": [
+    {
+      "caseId": "cpsc-10588-model-lot-positive",
+      "expected": "match",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "cpsc-10826-serial-prefix-positive",
+      "expected": "match",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "cpsc-10930-model-positive",
+      "expected": "match",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-peony-name-only",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-bazic-model-batch-in-prose",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-multivitamin-lot-association",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-arizer-serial-prefix",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-bottle-item-number",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-dive-stick-model-sale-date",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-fan-model-in-prose",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-fire-pit-model-association",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-thule-product-number-and-date",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    },
+    {
+      "caseId": "ambiguous-gas-range-model-serial-prefix",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "decision": "needs_review",
+      "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+      "matchedIdentifiers": {},
+      "conflictingIdentifiers": {}
+    }
+  ]
+}

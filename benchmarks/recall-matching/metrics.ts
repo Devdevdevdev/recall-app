@@ -12,6 +12,7 @@ export type BenchmarkPrediction = {
   reasoningSummary: string;
   matchedIdentifiers: IdentifierEvidence;
   conflictingIdentifiers: IdentifierEvidence;
+  technicalFailure?: boolean;
 };
 
 export type ConfusionMatrix = Record<BenchmarkExpected, Record<BenchmarkExpected, number>>;
@@ -85,7 +86,7 @@ export function calculateBenchmarkMetrics(
     (prediction) => prediction.predicted === 'needs_review',
   ).length;
   const exact = predictions.filter(
-    (prediction) => prediction.expected === prediction.predicted,
+    (prediction) => !prediction.technicalFailure && prediction.expected === prediction.predicted,
   ).length;
   const decided = predictions.filter(
     (prediction) => prediction.predicted !== 'needs_review',
