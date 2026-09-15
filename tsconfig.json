@@ -16,6 +16,8 @@
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
   "exclude": [
     "supabase/functions/ingest-cpsc-recalls/**",
-    "supabase/functions/process-recall-matches/**"
+    "supabase/functions/process-recall-matches/**",
+    "supabase/functions/send-recall-notifications/**",
+    "supabase/functions/_shared/push/store.ts"
   ]
 }

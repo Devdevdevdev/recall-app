@@ -2,8 +2,9 @@
 
 Phase 10 turns the frozen Phase 9.1 guarded hybrid policy into a bounded production workflow. It
 selects authoritative recalls, retrieves owned-product candidates, evaluates each pair, persists a
-current result, and creates an in-app alert only for a confirmed match. It does not schedule itself,
-send push notifications, or broaden the evidence supplied to Nemotron.
+current result, and creates an in-app alert only for a confirmed match. Phase 11 adds a separate
+best-effort push stage after persistence; it still does not schedule recall polling or broaden the
+evidence supplied to Nemotron.
 
 ## Runtime flow
 
@@ -18,6 +19,7 @@ administrative caller
        -> confirmed/rejected: persist without AI
        -> needs_review: optional hybrid_guarded_v1 within Nebius budget
   -> atomic revision check, match upsert, and confirmed-alert creation
+  -> best-effort bounded Expo push delivery for newly queued alerts
   -> aggregate secret-free counters
 ```
 
@@ -119,6 +121,11 @@ Repeated confirmation reuses the existing alert. If a later evidence change reve
 confirmation, the alert is retained as history and the app displays that the evaluation is no
 longer confirmed. This avoids silently erasing a safety message the user may already have seen.
 
+Push success is not part of finalization. The alert insert triggers a private eligibility row, and
+only future confirmed alerts are queued. After the matching run commits its work, the Edge Function
+attempts a bounded push batch and catches any failure independently. Existing alerts are never
+backfilled automatically. See [push-notifications.md](push-notifications.md).
+
 ## Mobile read model
 
 Authenticated users read alerts through `SupabaseAlertsRepository`. Its nested query relies on the
@@ -142,6 +149,8 @@ npx supabase secrets set RECALL_MATCHING_KEY='replace-with-a-long-random-value'
 npx supabase secrets set NEBIUS_API_KEY='replace-with-the-provider-key'
 npx supabase secrets set NEBIUS_MODEL_ID='nvidia/nemotron-3-super-120b-a12b'
 npx supabase secrets set NEBIUS_BASE_URL='https://api.tokenfactory.us-central1.nebius.com/v1/'
+npx supabase secrets set RECALL_PUSH_DELIVERY_KEY
+npx supabase functions deploy send-recall-notifications --no-verify-jwt
 npx supabase functions deploy process-recall-matches --no-verify-jwt
 ```
 

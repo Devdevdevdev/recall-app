@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { useCallback, useState } from 'react';
+import { Linking, StyleSheet, Text, View } from 'react-native';
+import { useFocusEffect } from 'expo-router';
 
 import { AppIcon } from '@/src/components/ui/AppIcon';
 import { Screen } from '@/src/components/ui/Screen';
@@ -7,14 +8,14 @@ import { ScreenHeader } from '@/src/components/ui/ScreenHeader';
 import { AuthButton } from '@/src/features/auth/components/AuthButton';
 import { useAuth } from '@/src/providers/AuthProvider';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
+import {
+  disableRecallPushNotifications,
+  enableRecallPushNotifications,
+  getRecallPushNotificationStatus,
+  type PushNotificationStatus,
+} from '@/src/services/pushNotifications';
 
 const settings = [
-  {
-    title: 'Notifications',
-    description: 'Alert preferences will be available after notifications are connected.',
-    ios: 'bell.fill',
-    android: 'notifications',
-  },
   {
     title: 'Data & privacy',
     description: 'Inventory and account controls will arrive with secure authentication.',
@@ -27,6 +28,32 @@ export function SettingsScreen() {
   const { signOut, user } = useAuth();
   const [isSigningOut, setIsSigningOut] = useState(false);
   const [signOutError, setSignOutError] = useState<string | null>(null);
+  const [pushStatus, setPushStatus] = useState<PushNotificationStatus | null>(null);
+  const [isUpdatingPush, setIsUpdatingPush] = useState(false);
+
+  const refreshPushStatus = useCallback(async () => {
+    try {
+      setPushStatus(await getRecallPushNotificationStatus());
+    } catch {
+      setPushStatus({ status: 'error', message: 'Unable to check notification settings.' });
+    }
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      void refreshPushStatus();
+    }, [refreshPushStatus]),
+  );
+
+  async function updatePush(enabled: boolean) {
+    if (isUpdatingPush) return;
+    setIsUpdatingPush(true);
+    const status = enabled
+      ? await enableRecallPushNotifications()
+      : await disableRecallPushNotifications();
+    setPushStatus(status);
+    setIsUpdatingPush(false);
+  }
 
   async function handleSignOut() {
     if (isSigningOut) {
@@ -63,6 +90,51 @@ export function SettingsScreen() {
             <Text style={styles.description}>{user?.email ?? 'Email unavailable'}</Text>
           </View>
         </View>
+        <View style={styles.notificationRow}>
+          <View style={styles.iconContainer}>
+            <AppIcon
+              android="notifications"
+              color={colors.brand.primary}
+              ios="bell.fill"
+              size={22}
+            />
+          </View>
+          <View style={styles.notificationCopy}>
+            <Text style={styles.title}>Recall notifications</Text>
+            <Text style={styles.description}>
+              Receive an alert when one of your saved products is affected by an official recall.
+            </Text>
+            {pushStatus ? (
+              <Text
+                accessibilityLiveRegion="polite"
+                style={pushStatus.status === 'error' ? styles.pushError : styles.pushStatus}>
+                {pushStatus.message}
+              </Text>
+            ) : null}
+            {pushStatus?.status === 'enabled' ? (
+              <AuthButton
+                label="Disable notifications"
+                loading={isUpdatingPush}
+                onPress={() => void updatePush(false)}
+                tone="secondary"
+              />
+            ) : pushStatus?.status === 'unsupported' ? null : pushStatus?.status === 'denied' &&
+              !pushStatus.canAskAgain ? (
+              <AuthButton
+                label="Open system settings"
+                loading={isUpdatingPush}
+                onPress={() => void Linking.openSettings()}
+                tone="secondary"
+              />
+            ) : (
+              <AuthButton
+                label="Enable notifications"
+                loading={isUpdatingPush}
+                onPress={() => void updatePush(true)}
+              />
+            )}
+          </View>
+        </View>
         {settings.map((setting) => (
           <View key={setting.title} style={styles.row}>
             <View style={styles.iconContainer}>
@@ -93,7 +165,7 @@ export function SettingsScreen() {
           tone="secondary"
         />
       </View>
-      <Text style={styles.version}>Recall · Phase 3 authentication</Text>
+      <Text style={styles.version}>Recall · Phase 11 push notifications</Text>
     </Screen>
   );
 }
@@ -122,6 +194,18 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     padding: spacing.md,
   },
+  notificationRow: {
+    alignItems: 'flex-start',
+    borderBottomColor: colors.border.subtle,
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    gap: spacing.md,
+    padding: spacing.md,
+  },
+  notificationCopy: {
+    flex: 1,
+    gap: spacing.sm,
+  },
   iconContainer: {
     alignItems: 'center',
     backgroundColor: colors.brand.soft,
@@ -142,6 +226,17 @@ const styles = StyleSheet.create({
   },
   description: {
     color: colors.text.secondary,
+    fontSize: typography.size.label,
+    lineHeight: typography.lineHeight.label,
+  },
+  pushStatus: {
+    color: colors.text.secondary,
+    fontSize: typography.size.label,
+    fontWeight: typography.weight.semibold,
+    lineHeight: typography.lineHeight.label,
+  },
+  pushError: {
+    color: colors.semantic.danger,
     fontSize: typography.size.label,
     lineHeight: typography.lineHeight.label,
   },

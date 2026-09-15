@@ -20,6 +20,7 @@ import {
   supabaseConfiguration,
   type SupabaseConfiguration,
 } from '@/src/services/supabase';
+import { unregisterRecallPushBeforeSignOut } from '@/src/services/pushNotifications';
 
 type AuthContextValue = {
   configuration: AuthConfigurationState;
@@ -42,7 +43,7 @@ function toAuthSession(session: Session | null): AuthSession | null {
     return null;
   }
 
-  return { user: { email: session.user.email ?? null } };
+  return { user: { id: session.user.id, email: session.user.email ?? null } };
 }
 
 function toAuthConfigurationState(configuration: SupabaseConfiguration): AuthConfigurationState {
@@ -95,7 +96,10 @@ export function AuthProvider({ children }: PropsWithChildren) {
     (email: string, password: string) => signUpWithEmail(email, password),
     [],
   );
-  const signOut = useCallback(() => signOutCurrentUser(), []);
+  const signOut = useCallback(async () => {
+    await unregisterRecallPushBeforeSignOut();
+    return signOutCurrentUser();
+  }, []);
 
   const value = useMemo<AuthContextValue>(
     () => ({

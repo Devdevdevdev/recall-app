@@ -10,8 +10,8 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 10 connects the independently evaluated Phase 9.1 guarded hybrid policy to bounded,
-server-only production orchestration, transactional persistence, and authenticated in-app alerts:
+Phase 11 adds real, opt-in operating-system push delivery downstream of Phase 10's confirmed,
+authenticated in-app alerts:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -71,11 +71,17 @@ server-only production orchestration, transactional persistence, and authenticat
   reversals retained visibly rather than deleting alert history
 - A real RLS-protected Alerts list and detail flow containing only consumer-safe product, recall,
   match-method, reason, and official-source fields
+- Explicit Settings-based Android/iOS notification permission, a dedicated high-importance Android
+  `recall-alerts` channel, and Expo token acquisition tied to the verified EAS project ID
+- Private push-device and delivery persistence with account reassignment, sign-out cleanup,
+  confirmed-only eligibility, logical delivery uniqueness, bounded retries, and receipt checks
+- Server-only Expo Push Service delivery with generic lock-screen content and protected alert-detail
+  navigation from foreground, background, or cold-start notification taps
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Password recovery, magic links, OAuth/social login, external product lookup, production match
-notifications, automatic scheduling, and scheduled ingestion are intentionally not implemented
-yet. Phase 10 does not broaden Nemotron input beyond normalized authoritative evidence and has not
+Password recovery, magic links, OAuth/social login, external product lookup, automatic scheduling,
+and scheduled ingestion are intentionally not implemented yet. Phase 11 does not broaden Nemotron
+input beyond normalized authoritative evidence and has not
 performed a paid production E2E inference. Scanning acquires only barcode data or visible label
 text; it does not identify a commercial product. Product detail screens do not make safety or
 recall conclusions before authoritative recall data exists.
@@ -119,6 +125,13 @@ start --dev-client` for JavaScript-only iterations. Expo Go continues to support
 but cannot run `rn-mlkit-ocr`. See [docs/ocr-scanning.md](docs/ocr-scanning.md) for native build,
 privacy, parser, workaround, and physical-device instructions.
 
+Remote push also requires the custom development build. For EAS Android builds, keep the local
+`google-services.json` ignored and provide it through the secret FILE variable
+`GOOGLE_SERVICES_JSON`; `app.config.js` preserves `./google-services.json` as the local fallback.
+Build with `npx eas build --profile development --platform android`. See
+[docs/push-notifications.md](docs/push-notifications.md) for credentials, privacy, delivery, and the
+first-push approval procedure.
+
 The example environment file contains names only. The application continues to load without
 Supabase configuration during local development. To connect it, set
 `EXPO_PUBLIC_SUPABASE_URL` and `EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY` in the ignored `.env.local`
@@ -142,6 +155,8 @@ evaluations, and [docs/nebius-nemotron.md](docs/nebius-nemotron.md) for the Phas
 boundary, measured results, costs, and limitations. See
 [docs/automatic-recall-loop.md](docs/automatic-recall-loop.md) for Phase 10 operation, budgets,
 idempotency, deployment, and manual verification.
+See [docs/push-notifications.md](docs/push-notifications.md) for Phase 11 device registration,
+delivery security, retry semantics, and Android verification.
 
 ## Security
 

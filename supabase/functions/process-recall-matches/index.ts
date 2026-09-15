@@ -8,6 +8,12 @@ import {
   processRecallMatches,
   safeMatchingSummary,
 } from '../_shared/recallMatching/index.ts';
+import {
+  deliverQueuedRecallNotifications,
+  ExpoPushClient,
+  SupabasePushDeliveryStore,
+  type PushDeliverySummary,
+} from '../_shared/push/index.ts';
 import { SupabaseRecallMatchingStore } from './store.ts';
 
 const jsonHeaders = { 'content-type': 'application/json; charset=utf-8' };
@@ -88,8 +94,9 @@ Deno.serve(async (request) => {
   }
 
   try {
+    const database = privilegedClient();
     const result = await processRecallMatches(input, {
-      store: new SupabaseRecallMatchingStore(privilegedClient()),
+      store: new SupabaseRecallMatchingStore(database),
       modelId: expectedNebiusModel,
       createNemotronEvaluator: createProductionEvaluator,
       logger: {
@@ -101,6 +108,21 @@ Deno.serve(async (request) => {
         },
       },
     });
+    let pushDelivery: PushDeliverySummary | { failed: true } | null = null;
+    if (result.alertsCreated > 0 && Deno.env.get('RECALL_PUSH_DELIVERY_ENABLED') === 'true') {
+      try {
+        pushDelivery = await deliverQueuedRecallNotifications(
+          { alertIds: null, batchSize: 25, checkReceipts: true },
+          {
+            store: new SupabasePushDeliveryStore(database),
+            provider: new ExpoPushClient({ accessToken: Deno.env.get('EXPO_ACCESS_TOKEN') }),
+          },
+        );
+      } catch {
+        pushDelivery = { failed: true };
+        console.error('recall_push_delivery_failed');
+      }
+    }
     return json(200, {
       ...safeMatchingSummary(result),
       unchangedSkipped: result.unchangedSkipped,
@@ -109,6 +131,7 @@ Deno.serve(async (request) => {
       providerFailures: result.providerFailures,
       limitsReached: result.limitsReached,
       usage: result.usage,
+      pushDelivery,
     });
   } catch {
     return json(500, { error: 'Recall matching orchestration failed.' });

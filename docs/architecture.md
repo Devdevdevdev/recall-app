@@ -20,6 +20,9 @@ Mobile
   → structured match result
   → Supabase
   → alerts
+  → private push queue and delivery claim
+  → Expo Push Service
+  → protected alert detail on notification tap
 ```
 
 1. **Mobile:** The React Native app captures a barcode or image and lets the user confirm product
@@ -44,7 +47,10 @@ Mobile
    alert state. The Phase 2 schema and RLS policies are defined in SQL migrations. Storage is
    reserved for product images only where necessary.
 9. **Alerts:** A verified source-backed confirmation creates an in-app alert and links to the
-   official recall notice. Push delivery remains separate future work.
+   official recall notice.
+10. **Push delivery:** Future confirmed alerts enter a private insert-only eligibility queue. A
+    bounded server worker sends a generic notification through Expo Push Service; delivery failure
+    never changes the database alert.
 
 ## Code boundaries
 
@@ -70,8 +76,10 @@ Mobile
   that can later combine barcode and OCR observations
 - `src/services/ocr/`: platform-specific ML Kit adapter, normalized OCR result contract, web
   fallback, and temporary-image cleanup boundary
-- Future services under `src/services/`: adapters for scheduled triggers, push delivery, and other
-  device capabilities
+- `src/services/pushNotifications/`: platform-specific permission, Expo token registration, local
+  preference, and payload validation; web remains an explicit unsupported fallback
+- `src/providers/PushNotificationCoordinator*`: authenticated token reconciliation and protected
+  foreground/background/cold-start tap routing
 - `supabase/functions/_shared/matching/`: pure common contract, normalization, candidate retrieval,
   per-scope evidence, deterministic matching, multi-scope aggregation, the versioned Nemotron
   prompt/schema, strict local output validation, and the guarded evidence verifier
@@ -81,6 +89,9 @@ Mobile
   fingerprints, request limits, and the bounded production orchestrator
 - `supabase/functions/process-recall-matches/`: secret-protected administrative endpoint and the
   service-role RPC adapter; it is never imported or invoked by the mobile client
+- `supabase/functions/_shared/push/`: generic payload construction, Expo HTTPS validation, bounded
+  delivery/receipt orchestration, and the service-role database adapter
+- `supabase/functions/send-recall-notifications/`: independently invokable privileged push worker
 - `benchmarks/recall-matching/`: offline CPSC-backed dataset, validator, metrics, and runner; this
   layer never owns production matching decisions or persistence
 
@@ -109,6 +120,10 @@ stable `manual` identification method, with no AI confidence value.
   by authenticated users but have no mobile write privileges or policies.
 - Match and alert creation are server-controlled. The mobile client can only read its matches and
   update the state fields of its own alerts.
+- Push tokens and delivery history are private and have no direct table grants. Authenticated
+  registration RPCs derive ownership from `auth.uid()`; delivery RPCs are service-role-only.
+- Notification payloads contain only a generic safety message and an opaque alert UUID. Alert
+  details remain protected by the existing RLS query.
 - The `private.recall_matching_leases` table has no grants for `PUBLIC`, `anon`, `authenticated`, or
   `service_role`; only fixed-signature, `SECURITY DEFINER` RPCs mediate claims and finalization.
 - Evidence fingerprints are canonical across retrieval timestamps, database row identifiers, and
@@ -136,8 +151,9 @@ on a separate 24-case set, and evaluates it once on a 36-case independent holdou
 resolved all four deterministic positive abstentions with zero false positives, while retaining 16
 ambiguous/negative cases for review. Phase 10 adds the bounded administrative endpoint, canonical
 idempotency/concurrency controls, atomic match/alert persistence, and the RLS-backed mobile alerts
-read model. It preserves the frozen guarded policy and projects only normalized authoritative
-evidence to Nemotron. Scheduled execution, push notifications, and a paid production E2E remain
-outside this phase.
+read model. Phase 11 adds explicit notification opt-in, private token storage, Expo Push Service
+delivery, receipts, bounded retry, account-switch protection, and protected alert-detail routing.
+It does not alter matching or schedule recall polling. A real first push still requires explicit
+operator approval.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

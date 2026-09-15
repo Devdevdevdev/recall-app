@@ -59,10 +59,24 @@
           "backgroundColor": "#F3F6F5"
         }
       ],
+      [
+        "expo-notifications",
+        {
+          "color": "#075B4C",
+          "defaultChannel": "recall-alerts"
+        }
+      ],
       "@react-native-community/datetimepicker"
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e7b1d5e3-952c-4e6a-9222-9129fb6f3d56"
+      }
+    },
+    "owner": "silversys"
   }
 }

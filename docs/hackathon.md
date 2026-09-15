@@ -27,6 +27,7 @@ This document tracks submission requirements and implementation evidence as Reca
 - [ ] **Working demo/test build:** Publish an installable or reliably reproducible Android/iOS
       build and document test instructions.
 - [x] Add reproducible local development-build instructions for the native on-device OCR demo.
+- [x] Add an Android development-build path for Expo Push Service notifications using FCM v1.
 - [ ] **Maximum 3-minute public YouTube demo:** Publish a public video no longer than three minutes
       and add its URL here.
 - [x] **Explanation of Nebius/NVIDIA usage:** Document the runtime path, model, prompts/schemas,
@@ -63,8 +64,11 @@ policy to a secret-protected bounded Edge Function, canonical evidence fingerpri
 expiring pair leases, transactional match/alert persistence, and RLS-backed in-app alert list/detail
 screens. Its production projection is limited to normalized authoritative evidence. The
 deterministic production path is covered without paid inference; no paid production E2E was sent.
-Password recovery, social login, scheduled execution/ingestion, push notifications, and public
-build/demo publication remain deferred.
+Phase 11 adds explicit mobile notification opt-in, Expo token registration, private/RLS-isolated
+device and delivery state, server-side Expo Push Service delivery, bounded receipts/retries, and
+protected notification-tap routing. It preserves the alert as source of truth and requires explicit
+approval before the first real push. Password recovery, social login, scheduled execution/
+ingestion, and public build/demo publication remain deferred.
 
 ## Devpost-safe Phase 9.1 language
 

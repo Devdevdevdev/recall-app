@@ -16,6 +16,12 @@ auth.users
                   │                    └──< recall_scopes
                   │
                   └── alerts >── auth.users
+
+auth.users
+  └──< private.push_devices
+alerts
+  ├── private.push_alert_queue
+  └──< private.push_deliveries >── private.push_devices
 ```
 
 - A user owns many inventory records.
@@ -85,6 +91,14 @@ dismissal timestamps. `user_id` makes owner filtering and delivery efficient, wh
 trigger prevents it from disagreeing with the matched product owner or referring to an unapproved
 source. Product ownership itself is immutable, so that relationship cannot become stale later.
 
+### Private push tables
+
+`private.push_devices` stores one globally unique Expo token, its authenticated owner, platform,
+enabled state, and registration timestamps. `private.push_alert_queue` contains only confirmed
+alerts inserted after the Phase 11 migration; the migration performs no historical backfill.
+`private.push_deliveries` stores one logical attempt stream per alert/device, Expo ticket IDs,
+normalized result codes, bounded attempt counters, leases, and ticket/receipt timestamps.
+
 ## Identifier strategy
 
 GTIN, model, serial, and lot identifiers remain nullable and textual. Text preserves leading zeros,
@@ -121,6 +135,10 @@ allow an operation.
 | `recall_scopes`  | Select only                           | Notice source must be authoritative          |
 | `recall_matches` | Select only                           | Owned product and authoritative source       |
 | `alerts`         | Select; update status/timestamps only | Owner and authoritative source must agree    |
+
+All three private push tables have RLS enabled and no direct grants, including to `service_role`.
+Authenticated users can only register or unregister a token through fixed-signature,
+owner-derived RPCs. Service delivery and receipt RPCs are executable only by `service_role`.
 
 The anonymous role receives no application-table access. Rows from sources not explicitly approved as
 authoritative are also hidden from authenticated clients, including dependent notices, scopes,
@@ -160,6 +178,9 @@ safety results.
    and releases the lease transactionally.
 7. A confirmed evaluation creates or reuses one alert; other decisions create none, and a later
    reversal retains the existing alert as visible history.
+8. A new confirmed alert is queued by an insert trigger. A later bounded claim creates unique
+   alert/device deliveries only where the enabled device owner still equals the alert owner and
+   the match is still confirmed.
 
 ## Phase 7 CPSC ingestion
 
@@ -172,7 +193,8 @@ notice-host trigger still requires `www.cpsc.gov` official URLs.
 No authenticated mobile grants, policies, or client write paths were added for recall sources,
 notices, scopes, matches, or alerts. The RPCs are executable only by `service_role`, from the
 server-side Edge Function. Phase 10 later adds matching and in-app alerts without changing that
-mobile write boundary; push notifications remain future work.
+mobile write boundary. Phase 11 adds push registration only through narrow authenticated RPCs; raw
+tokens remain outside the mobile-readable schema.
 
 ## Phase 8 matching
 
@@ -215,3 +237,12 @@ confirmation cannot exist without its in-app alert.
 The mobile Alerts repository reads the existing RLS-protected relationships. It receives no access
 to fingerprints, raw notice payloads, leases, claims, or finalization RPCs. See
 [automatic-recall-loop.md](automatic-recall-loop.md) for the runtime and verification procedure.
+
+## Phase 11 push delivery
+
+`supabase/migrations/20260915100000_phase_11_push_notifications.sql` adds the private push tables,
+future-alert trigger, two authenticated device RPCs, and four service delivery/receipt RPCs.
+Delivery uses expiring leases and `FOR UPDATE SKIP LOCKED`; unique `(alert_id, push_device_id)` rows
+prevent duplicate logical fan-out. Transient sends retry at most three times, permanent failures do
+not retry, and `DeviceNotRegistered` disables the device. See
+[push-notifications.md](push-notifications.md) for the runtime and security model.
