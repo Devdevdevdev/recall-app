@@ -10,9 +10,9 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 12 adds a production-ready scheduled monitoring architecture downstream of the verified
-Phase 11 push flow. It remains deliberately inactive until its separate automation, AI, Cron, and
-push approval gates are completed:
+Phase 12 adds recurring production monitoring downstream of the verified Phase 11 push flow. Its
+separate automation, AI, Cron, and push approval gates have been completed, and the bounded
+Vault-backed schedule is active:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -83,16 +83,16 @@ push approval gates are completed:
 - A private kill switch, aggregate run history, recoverable singleton lease, successful-ingestion
   watermark, 48-hour overlap, seven-day bootstrap/catch-up windows, and persistent affected-recall
   retry queue
-- A Vault-backed `pg_cron`/`pg_net` installer for `recall-automation-every-6h` at `17 */6 * * *`
-  UTC; the installer leaves the job inactive and every processing control defaults to false
+- An active Vault-backed `pg_cron`/`pg_net` job named `recall-automation-every-6h` at
+  `17 */6 * * *` UTC; migrations install it inactive by default and independent automation, AI,
+  and push controls remain available as production kill switches
 - Strict TypeScript, ESLint, and Prettier configuration
 
-Password recovery, magic links, OAuth/social login, external product lookup, automatic scheduling,
-and scheduled ingestion are intentionally not implemented yet. Phase 11 does not broaden Nemotron
-input beyond normalized authoritative evidence and has not
-performed a paid production E2E inference. Scanning acquires only barcode data or visible label
-text; it does not identify a commercial product. Product detail screens do not make safety or
-recall conclusions before authoritative recall data exists.
+Password recovery, magic links, OAuth/social login, and external product lookup are intentionally
+not implemented yet. Phase 12 does not broaden Nemotron input beyond normalized authoritative
+evidence and activation required no paid production inference or additional push. Scanning acquires
+only barcode data or visible label text; it does not identify a commercial product. Product detail
+screens do not make safety or recall conclusions before authoritative recall data exists.
 
 ## Architecture
 

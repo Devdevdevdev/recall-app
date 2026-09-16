@@ -161,7 +161,8 @@ read model. Phase 11 adds explicit notification opt-in, private token storage, E
 delivery, receipts, bounded retry, account-switch protection, and protected alert-detail routing.
 Phase 12 adds backend-only Cron/Vault orchestration, a watermark and bounded catch-up, a run lease,
 a hard autonomous AI cap, and aggregate operational history. It does not alter the matcher or push
-provider and remains inactive until explicit production approvals. See
+provider. Production activation followed separate automation, AI, and push approvals plus a
+zero-AI/zero-push verification; the independent controls remain immediate kill switches. See
 [autonomous-monitoring.md](autonomous-monitoring.md).
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

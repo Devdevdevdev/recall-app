@@ -70,16 +70,16 @@ protected notification-tap routing. It preserves the alert as source of truth an
 approval before the first real push. Phase 12 adds a production-ready scheduled monitoring
 architecture with Vault-backed Cron authentication, a bounded CPSC watermark/catch-up window,
 private run/lease controls, a five-call autonomous AI cap, and reuse of the existing push worker.
-The controls and Cron job remain inactive pending explicit approval, so the submission must not yet
-claim that recurring production monitoring is active. Password recovery, social login, production
-automation activation, and public build/demo publication remain deferred.
+After separate production approvals and a zero-AI/zero-push verification, the controls and Cron job
+are active at the bounded six-hour cadence. Password recovery, social login, and public build/demo
+publication remain deferred.
 
 ## Devpost-safe Phase 12 language
 
-Recall supports a production-ready scheduled monitoring architecture for official CPSC recall data.
-Recurring processing, automatic Nebius escalation, and automatic push delivery remain gated and
-must not be described as active until their production controls and Cron job are explicitly enabled
-and verified.
+Recall automatically checks official CPSC recall data on a recurring bounded schedule and processes
+affected inventory without user intervention. Matching remains deterministic-first; only ambiguous
+candidates may reach guarded Nebius verification, and only confirmed persisted alerts are eligible
+for push delivery.
 
 ## Devpost-safe Phase 9.1 language
 

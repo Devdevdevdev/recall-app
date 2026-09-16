@@ -1,10 +1,11 @@
 # Autonomous recall monitoring
 
-Phase 12 adds a production-ready scheduled monitoring architecture. It is deliberately shipped
-inactive: `private.recall_automation_control.enabled`, `ai_enabled`, and `push_enabled` all default
-to `false`, the Phase 11 `RECALL_PUSH_DELIVERY_ENABLED` gate remains independent, and the Cron
-installer creates its job with `active = false`. Recurring production monitoring must not be
-claimed until an operator explicitly completes the activation gates.
+Phase 12 adds recurring production monitoring. Its migrations deliberately ship inactive:
+`private.recall_automation_control.enabled`, `ai_enabled`, and `push_enabled` all default to
+`false`, the Phase 11 `RECALL_PUSH_DELIVERY_ENABLED` gate remains independent, and the Cron
+installer creates its job with `active = false`. Production activation was completed only after
+the separate automation, AI, and push approvals and a zero-AI/zero-push verification. Those
+independent controls remain the production kill switches.
 
 ## Architecture and schedule
 
