@@ -1,13 +1,16 @@
 import { useCallback, useState } from 'react';
-import { Linking, StyleSheet, Text, View } from 'react-native';
-import { useFocusEffect } from 'expo-router';
+import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
+import { router, useFocusEffect, type Href } from 'expo-router';
 
 import { AppIcon } from '@/src/components/ui/AppIcon';
 import { Screen } from '@/src/components/ui/Screen';
 import { ScreenHeader } from '@/src/components/ui/ScreenHeader';
 import { AuthButton } from '@/src/features/auth/components/AuthButton';
+import { CountrySelector } from '@/src/features/products/CountrySelector';
 import { useAuth } from '@/src/providers/AuthProvider';
+import { userPreferencesRepository } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
+import type { CountryCode } from '@/src/domain';
 import {
   disableRecallPushNotifications,
   enableRecallPushNotifications,
@@ -18,7 +21,7 @@ import {
 const settings = [
   {
     title: 'Data & privacy',
-    description: 'Inventory and account controls will arrive with secure authentication.',
+    description: 'Your inventory and preferences are protected by account-level access controls.',
     ios: 'lock.shield.fill',
     android: 'security',
   },
@@ -30,6 +33,9 @@ export function SettingsScreen() {
   const [signOutError, setSignOutError] = useState<string | null>(null);
   const [pushStatus, setPushStatus] = useState<PushNotificationStatus | null>(null);
   const [isUpdatingPush, setIsUpdatingPush] = useState(false);
+  const [defaultCountry, setDefaultCountry] = useState<CountryCode | ''>('');
+  const [preferenceError, setPreferenceError] = useState<string | null>(null);
+  const [isSavingPreference, setIsSavingPreference] = useState(false);
 
   const refreshPushStatus = useCallback(async () => {
     try {
@@ -39,11 +45,38 @@ export function SettingsScreen() {
     }
   }, []);
 
+  const refreshPreference = useCallback(async () => {
+    try {
+      const country = await userPreferencesRepository.getDefaultPurchaseCountryCode();
+      setDefaultCountry(country ?? '');
+      setPreferenceError(null);
+    } catch {
+      setPreferenceError('Unable to load your default country. Please try again.');
+    }
+  }, []);
+
   useFocusEffect(
     useCallback(() => {
       void refreshPushStatus();
-    }, [refreshPushStatus]),
+      void refreshPreference();
+    }, [refreshPreference, refreshPushStatus]),
   );
+
+  async function updateDefaultCountry(value: CountryCode | '') {
+    if (isSavingPreference) return;
+    const previous = defaultCountry;
+    setDefaultCountry(value);
+    setPreferenceError(null);
+    setIsSavingPreference(true);
+    try {
+      await userPreferencesRepository.setDefaultPurchaseCountryCode(value || null);
+    } catch {
+      setDefaultCountry(previous);
+      setPreferenceError('Unable to save your default country. Please try again.');
+    } finally {
+      setIsSavingPreference(false);
+    }
+  }
 
   async function updatePush(enabled: boolean) {
     if (isUpdatingPush) return;
@@ -135,6 +168,55 @@ export function SettingsScreen() {
             )}
           </View>
         </View>
+        <View style={styles.preferenceRow}>
+          <CountrySelector
+            label="Default country of purchase"
+            onChange={(value) => void updateDefaultCountry(value)}
+            value={defaultCountry}
+          />
+          <Text style={styles.description}>
+            New products start with this country. Existing products are never changed.
+          </Text>
+          {isSavingPreference ? (
+            <Text accessibilityLiveRegion="polite" style={styles.pushStatus}>
+              Saving preference…
+            </Text>
+          ) : null}
+          {preferenceError ? (
+            <View style={styles.preferenceErrorBlock}>
+              <Text
+                accessibilityLiveRegion="polite"
+                accessibilityRole="alert"
+                style={styles.pushError}>
+                {preferenceError}
+              </Text>
+              <Pressable
+                accessibilityRole="button"
+                onPress={() => void refreshPreference()}
+                style={styles.retryButton}>
+                <Text style={styles.retryLabel}>Retry</Text>
+              </Pressable>
+            </View>
+          ) : null}
+        </View>
+        <Pressable
+          accessibilityHint="Shows current official recall source coverage"
+          accessibilityRole="button"
+          onPress={() => router.push('/coverage' as Href)}
+          style={({ pressed }) => [styles.row, pressed && styles.rowPressed]}>
+          <View style={styles.iconContainer}>
+            <AppIcon android="public" color={colors.brand.primary} ios="globe" size={22} />
+          </View>
+          <View style={styles.copy}>
+            <Text style={styles.title}>Coverage</Text>
+            <Text style={styles.description}>
+              See which official sources Recall monitors today.
+            </Text>
+          </View>
+          <Text accessibilityElementsHidden style={styles.chevron}>
+            ›
+          </Text>
+        </Pressable>
         {settings.map((setting) => (
           <View key={setting.title} style={styles.row}>
             <View style={styles.iconContainer}>
@@ -165,7 +247,7 @@ export function SettingsScreen() {
           tone="secondary"
         />
       </View>
-      <Text style={styles.version}>Recall · Phase 11 push notifications</Text>
+      <Text style={styles.version}>Recall · Global-ready product model</Text>
     </Screen>
   );
 }
@@ -202,6 +284,21 @@ const styles = StyleSheet.create({
     gap: spacing.md,
     padding: spacing.md,
   },
+  preferenceRow: {
+    borderBottomColor: colors.border.subtle,
+    borderBottomWidth: 1,
+    gap: spacing.sm,
+    padding: spacing.md,
+  },
+  preferenceErrorBlock: { alignItems: 'flex-start', gap: spacing.xs },
+  retryButton: { minHeight: 44, justifyContent: 'center' },
+  retryLabel: {
+    color: colors.brand.primary,
+    fontSize: typography.size.label,
+    fontWeight: typography.weight.bold,
+  },
+  rowPressed: { backgroundColor: colors.brand.soft },
+  chevron: { color: colors.text.muted, fontSize: 28, lineHeight: 28 },
   notificationCopy: {
     flex: 1,
     gap: spacing.sm,

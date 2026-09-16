@@ -10,9 +10,11 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 12 adds recurring production monitoring downstream of the verified Phase 11 push flow. Its
-separate automation, AI, Cron, and push approval gates have been completed, and the bounded
-Vault-backed schedule is active:
+Phase 13 makes the product model ready for future multi-jurisdiction coverage and gives the mobile
+experience a clearer, consumer-facing explanation of what Recall does. Live automatic coverage is
+still limited to official U.S. Consumer Product Safety Commission (CPSC) notices. The Phase 12
+bounded Vault-backed schedule remains active with its existing automation, AI, Cron, and push
+controls unchanged:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -23,6 +25,8 @@ Vault-backed schedule is active:
 - Protected Expo Router auth and authenticated route groups
 - Real authenticated product list, pull-to-refresh, manual product creation, detail, editing, and
   confirmed deletion
+- An optional, canonical ISO 3166-1 alpha-2 country-of-purchase field, a searchable English country
+  selector, and an owner-isolated default-country preference for new products
 - Camera barcode acquisition using Expo SDK 57's `expo-camera`, with confirmation before the
   existing product form is prefilled and saved
 - Still-image product-label OCR using pinned `rn-mlkit-ocr@0.3.1` and the Latin-only Google ML Kit
@@ -43,6 +47,8 @@ Vault-backed schedule is active:
 - Framework-independent domain models and repository interfaces
 - A migration-defined PostgreSQL schema with constraints, indexes, privileges, and Row Level
   Security
+- Normalized recall-notice jurisdictions and source-language metadata that prepare the data model
+  for Phase 14 adapters without changing the current matcher or authoritative notice text
 - A server-only Supabase Edge Function that retrieves date-bounded JSON recall records from the
   official CPSC Retrieval API, preserves raw CPSC payloads, and safely upserts notices/scopes
 - Pure server-safe `deterministic_v1` candidate retrieval, per-scope evidence evaluation, and
@@ -86,11 +92,15 @@ Vault-backed schedule is active:
 - An active Vault-backed `pg_cron`/`pg_net` job named `recall-automation-every-6h` at
   `17 */6 * * *` UTC; migrations install it inactive by default and independent automation, AI,
   and push controls remain available as production kill switches
+- A user-facing Coverage view and a narrow authenticated monitoring projection that expose only
+  current active authorities and safe aggregate status, never private automation records, Cron
+  administration, secrets, tokens, prompts, or run errors
 - Strict TypeScript, ESLint, and Prettier configuration
 
 Password recovery, magic links, OAuth/social login, and external product lookup are intentionally
-not implemented yet. Phase 12 does not broaden Nemotron input beyond normalized authoritative
-evidence and activation required no paid production inference or additional push. Scanning acquires
+not implemented yet. Phase 13 does not add a recall authority, translate source material, or use
+country of purchase as a matching filter. It does not broaden Nemotron input beyond normalized
+authoritative evidence. Scanning acquires
 only barcode data or visible label text; it does not identify a commercial product. Product detail
 screens do not make safety or recall conclusions before authoritative recall data exists.
 
@@ -100,7 +110,8 @@ The mobile app captures product identifiers through barcode scanning, images, an
 A secure backend retrieves bounded candidates from authoritative recall records, runs the
 deterministic matcher, and escalates only abstentions to NVIDIA Nemotron through Nebius Token
 Factory. Locally verified structured results and source provenance are stored transactionally in
-Supabase and exposed as authenticated in-app alerts.
+Supabase and exposed as authenticated in-app alerts. The official authority establishes that a
+recall exists; Recall and Nemotron only assess whether an owned product fits the official scope.
 
 The deterministic baseline is deliberately conservative: exact structured identifiers dominate,
 product-name similarity alone cannot confirm, and ambiguity becomes `needs_review`. Its confidence
@@ -165,6 +176,10 @@ boundary, measured results, costs, and limitations. See
 idempotency, deployment, and manual verification.
 See [docs/push-notifications.md](docs/push-notifications.md) for Phase 11 device registration,
 delivery security, retry semantics, and Android verification.
+See [docs/autonomous-monitoring.md](docs/autonomous-monitoring.md) for the unchanged Phase 12
+schedule, controls, and safe status projection, and [docs/global-coverage.md](docs/global-coverage.md)
+for current CPSC/United States coverage, Phase 13 market and jurisdiction semantics, and the Phase 14
+multi-authority adapter direction.
 
 ## Security
 

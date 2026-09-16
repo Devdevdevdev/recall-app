@@ -34,3 +34,12 @@ export {
   type ProductLabelField,
   type ProductScanEvidence,
 } from './productLabel';
+
+export {
+  COUNTRY_CATALOG,
+  getCountryName,
+  isSupportedCountryCode,
+  searchCountries,
+  type Country,
+  type CountryCode,
+} from './countries';

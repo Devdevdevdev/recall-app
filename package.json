@@ -64,10 +64,11 @@
     "test:phase-10": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-10-orchestration.test.mjs tests/phase-10-database.test.mjs tests/phase-10-edge-function.test.mjs tests/alerts-read-model.test.mjs",
     "test:phase-11": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-11-push.test.mjs tests/phase-11-database.test.mjs",
     "test:phase-12": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-12-automation.test.mjs tests/phase-12-database.test.mjs",
+    "test:phase-13": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-13-product-experience.test.mjs tests/phase-13-database.test.mjs",
     "test:database": "npx supabase test db",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion && npm run test:matching && npm run test:nemotron && npm run test:hybrid-guarded && npm run test:phase-9-1-datasets && npm run test:phase-10 && npm run test:phase-11 && npm run test:phase-12 && npm run benchmark:matching:validate && npm run benchmark:phase-9-1:validate:development && npm run benchmark:phase-9-1:validate:holdout && npm run benchmark:phase-9-1:freeze:verify"
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion && npm run test:matching && npm run test:nemotron && npm run test:hybrid-guarded && npm run test:phase-9-1-datasets && npm run test:phase-10 && npm run test:phase-11 && npm run test:phase-12 && npm run test:phase-13 && npm run benchmark:matching:validate && npm run benchmark:phase-9-1:validate:development && npm run benchmark:phase-9-1:validate:holdout && npm run benchmark:phase-9-1:freeze:verify"
   },
   "expo": {
     "doctor": {

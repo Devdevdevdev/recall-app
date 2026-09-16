@@ -119,6 +119,7 @@ production matcher's `rawEvidence` projection to `null`; it does not broaden the
 arbitrary source prose. Retrieval timestamps do not affect the evidence fingerprint, while a real
 canonical payload or normalized evidence change does.
 
-Scheduling both stages remains future work. A scheduler should complete ingestion first, then call
-matching with explicit limits and without overlapping a still-running matching invocation. See
+Phase 12 schedules both stages: bounded CPSC ingestion completes first, then the automation
+orchestrator calls matching with explicit limits and overlap protection. Phase 13 adds source
+language and notice jurisdiction metadata without changing that sequence. See
 [automatic-recall-loop.md](automatic-recall-loop.md) for the operational boundary.

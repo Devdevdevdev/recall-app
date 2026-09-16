@@ -7,6 +7,10 @@ best-effort push stage after persistence. Phase 12 schedules those already verif
 through an orchestration-only endpoint; it does not broaden evidence supplied to Nemotron. See
 [autonomous-monitoring.md](autonomous-monitoring.md) for scheduling and operations.
 
+Phase 13 adds product market context and authoritative source metadata without changing this loop.
+Country of purchase is captured and displayed, but it is not a candidate filter or matching input.
+Current automatic source coverage remains CPSC/United States only.
+
 ## Runtime flow
 
 ```text
@@ -79,6 +83,12 @@ timestamps, and scope insertion order do not affect the fingerprint. A real evid
 change does. Product and recall revision timestamps are checked separately to prevent a stale
 worker from persisting a result after inputs change.
 
+Phase 13's `purchase_country_code`, notice-jurisdiction rows, and source-language metadata are not
+part of this projection or fingerprint. They do not change the Phase 10 matching contract, so
+capturing a product country or backfilling CPSC as United States/English does not by itself trigger
+reevaluation. Phase 14 must explicitly version and review any future jurisdiction-aware retrieval
+or matching policy.
+
 ## Matching safety policy
 
 `deterministic_v1` always runs first. Its `confirmed` and `rejected` results never initialize the
@@ -132,12 +142,15 @@ backfilled automatically. See [push-notifications.md](push-notifications.md).
 Authenticated users read alerts through `SupabaseAlertsRepository`. Its nested query relies on the
 existing RLS chain from alert to match to owned product and authoritative notice. The adapter maps
 only consumer-safe fields: alert state, product name/brand/identifiers, notice title/hazard/remedy/
-date/official URL, current match status/method, and reasoning summary. Raw source payloads, evidence
-fingerprints, AI prompts, lease data, user IDs, and server credentials are not part of the mobile
-domain type.
+date/official URL, official authority, friendly jurisdiction, current match status/method, and
+reasoning summary. Raw source payloads, evidence fingerprints, AI prompts, lease data, user IDs, and
+server credentials are not part of the mobile domain type.
 
 The Alerts tab supports initial loading, retry, pull-to-refresh, an empty state, and navigation to a
 protected detail route. Detail links open the stored official HTTPS recall URL through Expo Linking.
+The detail view separates official recall information from Recall's match assessment: the authority
+establishes that the notice exists, while the matcher explains why the owned product appears to fit
+its scope.
 
 ## Deployment
 

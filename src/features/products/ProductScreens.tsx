@@ -1,16 +1,17 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { router, useFocusEffect, type Href } from 'expo-router';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/src/components/ui/Screen';
-import { ownedProductsRepository } from '@/src/data';
+import { ownedProductsRepository, userPreferencesRepository } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
-import type { OwnedProduct, OwnedProductInput } from '@/src/domain';
+import { getCountryName, type OwnedProduct, type OwnedProductInput } from '@/src/domain';
 
 import { ProductForm } from './ProductForm';
 import {
   productFormValuesFromProduct,
-  type ProductCreationMethod,
+  productCreationPrefillFromParams,
+  type ProductCreationParams,
   type ProductFormValues,
 } from './productFormUtils';
 
@@ -59,16 +60,39 @@ function LoadingOrError({ message, onRetry }: { message: string; onRetry?: () =>
 }
 
 type NewProductScreenProps = {
-  identificationMethod?: ProductCreationMethod | null;
-  initialValues?: ProductFormValues;
+  creationParams?: ProductCreationParams;
 };
 
-export function NewProductScreen({
-  identificationMethod = null,
-  initialValues,
-}: NewProductScreenProps) {
+export function NewProductScreen({ creationParams = {} }: NewProductScreenProps) {
+  const { gtin, lotNumber, modelNumber, serialNumber, source } = creationParams;
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [prefill, setPrefill] = useState<{
+    identificationMethod: 'barcode_scan' | 'ocr_assisted' | null;
+    values: ProductFormValues;
+  }>(() => productCreationPrefillFromParams(creationParams));
+
+  useEffect(() => {
+    let active = true;
+    const currentParams = { gtin, lotNumber, modelNumber, serialNumber, source };
+    void (async () => {
+      try {
+        const defaultCountry = await userPreferencesRepository.getDefaultPurchaseCountryCode();
+        if (active) {
+          setPrefill(productCreationPrefillFromParams(currentParams, defaultCountry));
+        }
+      } catch {
+        if (active) {
+          setError('Your default country could not be loaded. You can still choose one below.');
+        }
+      }
+    })();
+    return () => {
+      active = false;
+    };
+  }, [gtin, lotNumber, modelNumber, serialNumber, source]);
+
+  const identificationMethod = prefill.identificationMethod;
 
   const createProduct = useCallback(
     async (input: OwnedProductInput) => {
@@ -108,7 +132,7 @@ export function NewProductScreen({
       />
       {error ? <LoadingOrError message={error} /> : null}
       <ProductForm
-        initialValues={initialValues}
+        initialValues={prefill.values}
         isSubmitting={isSaving}
         onSubmit={createProduct}
         submitLabel="Save product"
@@ -132,6 +156,13 @@ function DetailRow({ label, value }: DetailRowProps) {
       </Text>
     </View>
   );
+}
+
+function identificationMethodLabel(value: string | null): string | null {
+  if (value === 'barcode_scan') return 'Barcode scan';
+  if (value === 'ocr_assisted') return 'Label scan, reviewed by you';
+  if (value === 'manual') return 'Entered manually';
+  return value;
 }
 
 type ProductDetailScreenProps = { id: string };
@@ -217,17 +248,28 @@ export function ProductDetailScreen({ id }: ProductDetailScreenProps) {
           {error ? <LoadingOrError message={error} onRetry={() => void loadProduct()} /> : null}
           <View style={styles.detailCard}>
             <DetailRow label="Brand" value={product.brand} />
+            <DetailRow
+              label="Country of purchase"
+              value={
+                product.purchaseCountryCode ? getCountryName(product.purchaseCountryCode) : null
+              }
+            />
             <DetailRow label="Category" value={product.category} />
             <DetailRow label="GTIN / barcode" value={product.gtin} />
             <DetailRow label="Model number" value={product.modelNumber} />
             <DetailRow label="Serial number" value={product.serialNumber} />
             <DetailRow label="Lot / batch number" value={product.lotNumber} />
             <DetailRow label="Purchase date" value={product.purchaseDate} />
+            <DetailRow
+              label="Identification method"
+              value={identificationMethodLabel(product.identificationMethod)}
+            />
           </View>
           <View style={styles.monitoringCard}>
-            <Text style={styles.monitoringTitle}>Recall monitoring is not active yet</Text>
+            <Text style={styles.monitoringTitle}>Automatic recall checks</Text>
             <Text style={styles.monitoringText}>
-              Automated recall monitoring will be enabled in a later development phase.
+              When account monitoring is available, Recall checks the current official U.S. CPSC
+              source. Country of purchase is saved as context and does not limit matching yet.
             </Text>
           </View>
           <View style={styles.actions}>
@@ -405,8 +447,8 @@ const styles = StyleSheet.create({
     lineHeight: typography.lineHeight.body,
   },
   monitoringCard: {
-    backgroundColor: colors.semantic.warningSoft,
-    borderColor: colors.semantic.warning,
+    backgroundColor: colors.semantic.safeSoft,
+    borderColor: colors.semantic.safe,
     borderRadius: radius.lg,
     borderWidth: 1,
     gap: spacing.xs,

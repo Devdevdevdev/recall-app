@@ -34,13 +34,32 @@ const alertColumns = `
       hazard,
       remedy,
       recall_date,
-      official_url
+      official_url,
+      recall_source:recall_sources!inner(
+        name,
+        source_language_code
+      ),
+      jurisdictions:recall_notice_jurisdictions(
+        jurisdiction_type,
+        jurisdiction_code
+      )
     )
   )
 `;
 
 /** Read-only mobile adapter. Authentication and ownership are enforced by database RLS. */
 export class SupabaseAlertsRepository implements AlertsRepository {
+  async getActiveCount(): Promise<number> {
+    const { count, error } = await requireSupabaseClient()
+      .from('alerts')
+      .select('id, recall_match:recall_matches!inner(status)', { count: 'exact', head: true })
+      .neq('status', 'dismissed')
+      .eq('recall_match.status', 'confirmed');
+
+    if (error) throw error;
+    return count ?? 0;
+  }
+
   async listForCurrentUser(): Promise<readonly RecallAlert[]> {
     const { data, error } = await requireSupabaseClient()
       .from('alerts')

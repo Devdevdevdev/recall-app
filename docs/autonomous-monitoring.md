@@ -7,6 +7,11 @@ installer creates its job with `active = false`. Production activation was compl
 the separate automation, AI, and push approvals and a zero-AI/zero-push verification. Those
 independent controls remain the production kill switches.
 
+Phase 13 does not change the schedule, activation state, controls, limits, watermark, leases,
+Nemotron policy, or push gates. It adds a read-only, minimal authenticated projection so the app can
+truthfully present monitoring state without exposing private operations data. Live automatic source
+coverage remains CPSC/United States only.
+
 ## Architecture and schedule
 
 ```text
@@ -138,6 +143,20 @@ limit 20;
 ```
 
 Neither `cron` administration nor Recall automation tables are exposed to mobile roles.
+
+### Authenticated status projection
+
+The Phase 13 mobile projection exposes only:
+
+- `monitoringEnabled`: whether the existing global automation control is enabled;
+- `lastSuccessfulCheckAt`: the completion time of the most recent successful run, or `null`; and
+- `activeSourceCount`: the number of currently authoritative sources.
+
+This is intentionally a status summary, not an operations API. Authenticated callers cannot use it
+to change controls or inspect schedules, run rows, watermarks, leases, pending notices, configured
+limits, error payloads, Vault values, service credentials, AI metadata, prompts, push tokens, or
+Cron administration. The app formats `null` as “No successful check recorded yet” and offers a
+recoverable unavailable state rather than inventing a timestamp.
 
 ## Safe verification and incident recovery
 

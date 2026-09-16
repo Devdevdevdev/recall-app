@@ -1,3 +1,5 @@
+import type { CountryCode } from './countries.ts';
+
 export type JsonPrimitive = boolean | number | string | null;
 
 export type JsonObject = { [key: string]: JsonValue };
@@ -19,6 +21,7 @@ export type OwnedProduct = {
   serialNumber: string | null;
   lotNumber: string | null;
   purchaseDate: string | null;
+  purchaseCountryCode: CountryCode | null;
   imagePath: string | null;
   identificationMethod: string | null;
   identificationConfidence: number | null;
@@ -39,6 +42,7 @@ export type OwnedProductInput = {
   serialNumber: string | null;
   lotNumber: string | null;
   purchaseDate: string | null;
+  purchaseCountryCode: CountryCode | null;
   /** Set internally by a validated acquisition flow; never chosen in the product form. */
   identificationMethod?: 'barcode_scan' | 'ocr_assisted';
 };
@@ -125,11 +129,17 @@ export type RecallAlertProduct = {
 
 export type RecallAlertNotice = {
   id: string;
+  authority: string;
   title: string;
   hazard: string | null;
   remedy: string | null;
   recallDate: string;
   officialUrl: string;
+  sourceLanguageCode: string | null;
+  jurisdictions: readonly {
+    type: 'country' | 'global' | 'region';
+    code: string;
+  }[];
 };
 
 export type RecallAlertMatch = {

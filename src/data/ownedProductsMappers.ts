@@ -1,4 +1,5 @@
-import type { OwnedProduct, OwnedProductInput } from '@/src/domain';
+import { isSupportedCountryCode } from '../domain/countries.ts';
+import type { OwnedProduct, OwnedProductInput } from '../domain/types.ts';
 
 export type OwnedProductRow = {
   id: string;
@@ -11,6 +12,7 @@ export type OwnedProductRow = {
   serial_number: string | null;
   lot_number: string | null;
   purchase_date: string | null;
+  purchase_country_code: string | null;
   image_path: string | null;
   identification_method: string | null;
   identification_confidence: number | string | null;
@@ -27,9 +29,14 @@ export type OwnedProductWriteRow = {
   serial_number: string | null;
   lot_number: string | null;
   purchase_date: string | null;
+  purchase_country_code: string | null;
 };
 
 export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
+  if (row.purchase_country_code !== null && !isSupportedCountryCode(row.purchase_country_code)) {
+    throw new Error('Owned product has an unsupported purchase country code.');
+  }
+
   return {
     id: row.id,
     userId: row.user_id,
@@ -41,6 +48,7 @@ export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
     serialNumber: row.serial_number,
     lotNumber: row.lot_number,
     purchaseDate: row.purchase_date,
+    purchaseCountryCode: row.purchase_country_code,
     imagePath: row.image_path,
     identificationMethod: row.identification_method,
     identificationConfidence:
@@ -60,5 +68,6 @@ export function toOwnedProductWriteRow(input: OwnedProductInput): OwnedProductWr
     serial_number: input.serialNumber,
     lot_number: input.lotNumber,
     purchase_date: input.purchaseDate,
+    purchase_country_code: input.purchaseCountryCode,
   };
 }

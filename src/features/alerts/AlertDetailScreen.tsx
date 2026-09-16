@@ -7,6 +7,11 @@ import { Screen } from '@/src/components/ui/Screen';
 import { alertsRepository } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import type { RecallAlert } from '@/src/domain';
+import {
+  getAuthorityDisplayName,
+  getJurisdictionDisplayName,
+  getSourceLanguageDisplayName,
+} from '@/src/features/coverage/coveragePresentation';
 
 import {
   formatRecallDate,
@@ -114,6 +119,11 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
 
   const presentation = alert ? getAlertMatchPresentation(alert.match.status) : null;
   const productTitle = alert?.product.productName ?? alert?.product.brand ?? 'Your product';
+  const jurisdictionLabel = alert
+    ? alert.notice.jurisdictions
+        .map(({ type, code }) => getJurisdictionDisplayName(type, code))
+        .join(', ')
+    : '';
 
   return (
     <Screen contentContainerStyle={styles.content}>
@@ -156,7 +166,7 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
             <Text style={styles.statusTitle}>{presentation.statusLabel}</Text>
             <Text style={styles.statusCopy}>
               {presentation.isConfirmed
-                ? 'Review the hazard and remedy below, and follow the official CPSC instructions.'
+                ? 'Review the hazard and remedy below, and follow the official authority’s instructions.'
                 : 'This alert was raised by an earlier confirmed evaluation. The latest evaluation no longer confirms the match; the alert is retained for transparency.'}
             </Text>
           </View>
@@ -176,6 +186,19 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Official safety notice</Text>
             <View style={styles.detailCard}>
+              <DetailRow
+                label="Official authority"
+                value={getAuthorityDisplayName(alert.notice.authority)}
+              />
+              <DetailRow label="Jurisdiction" value={jurisdictionLabel || null} />
+              <DetailRow
+                label="Source language"
+                value={
+                  alert.notice.sourceLanguageCode
+                    ? getSourceLanguageDisplayName(alert.notice.sourceLanguageCode)
+                    : null
+                }
+              />
               <DetailRow label="Recall date" value={formatRecallDate(alert.notice.recallDate)} />
               <DetailRow label="Hazard" value={alert.notice.hazard ?? 'See the official notice.'} />
               <DetailRow label="Remedy" value={alert.notice.remedy ?? 'See the official notice.'} />
@@ -183,7 +206,7 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
           </View>
 
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Why you received this alert</Text>
+            <Text style={styles.sectionTitle}>Recall&apos;s match assessment</Text>
             <View style={styles.detailCard}>
               <DetailRow label="Current status" value={presentation.statusLabel} />
               <DetailRow label="Matching method" value={getMatchMethodLabel(alert.match.method)} />
@@ -193,16 +216,16 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
 
           {linkError ? <MessageCard message={linkError} /> : null}
           <Pressable
-            accessibilityHint="Opens the recall on the CPSC website"
+            accessibilityHint="Opens this recall on the official authority website"
             accessibilityRole="link"
             onPress={() => void openOfficialRecall()}
             style={({ pressed }) => [styles.officialButton, pressed && styles.officialPressed]}>
-            <Text style={styles.officialLabel}>Open official CPSC recall</Text>
+            <Text style={styles.officialLabel}>Open official recall notice</Text>
           </Pressable>
 
           <Text style={styles.disclaimer}>
-            Recall only reports safety notices from authoritative sources. Always follow the
-            instructions on the official recall page.
+            The official authority establishes whether a recall exists. Recall assesses whether your
+            saved product may be in scope. Always follow the official notice.
           </Text>
         </>
       ) : null}

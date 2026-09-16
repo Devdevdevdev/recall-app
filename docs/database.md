@@ -10,10 +10,12 @@ Phase 2 intentionally creates no fake users or recall data.
 
 ```text
 auth.users
+  ├──── user_preferences
   └──< owned_products
          └──< recall_matches >── recall_notices >── recall_sources
                   │                    │
-                  │                    └──< recall_scopes
+                  │                    ├──< recall_scopes
+                  │                    └──< recall_notice_jurisdictions
                   │
                   └── alerts >── auth.users
 
@@ -29,12 +31,18 @@ private.recall_automation_runs
 private.recall_automation_lease (singleton active claim)
 public.recall_notices
   └── private.recall_automation_pending_recalls
+public.country_codes
+  ├──< owned_products
+  ├──< user_preferences
+  └──< recall_notice_jurisdictions (country rows only)
 ```
 
 - A user owns many inventory records.
+- A user has at most one minimal preferences row.
 - A recall source publishes many notices; `(source_id, external_id)` uniquely identifies a notice.
 - A notice has one or more structured scopes in normal ingestion, though the database permits a
   notice to exist before its scopes are parsed.
+- A notice can have multiple normalized country, region, or global jurisdiction rows.
 - A product/notice pair has at most one current match evaluation.
 - A match has at most one user alert. A trigger guarantees that the alert user owns the matched
   product.
@@ -44,9 +52,9 @@ public.recall_notices
 ### `owned_products`
 
 Stores a particular item owned by a user. Brand, name, category, GTIN, model, serial, lot, image,
-purchase date, and identification metadata are nullable because a useful inventory record can be
-incomplete. Identification confidence is constrained to `0..1`. Deleting an auth user cascades to
-their inventory and dependent private records.
+purchase date, country of purchase, and identification metadata are nullable because a useful
+inventory record can be incomplete. Identification confidence is constrained to `0..1`. Deleting
+an auth user cascades to their inventory and dependent private records.
 
 Phase 4 uses this existing table without a schema change. The mobile inventory adapter maps its
 snake_case columns to `OwnedProduct`, uses the authenticated Supabase user only for an insert's
@@ -55,12 +63,27 @@ snake_case columns to `OwnedProduct`, uses the authenticated Supabase user only 
 Blank optional form values are normalized to `null`, preserving a single representation of missing
 metadata.
 
+Phase 13 adds nullable `purchase_country_code`. The database rejects malformed or unsupported
+values through the protected 249-entry `country_codes` catalog; the application uses the same ISO
+3166-1 alpha-2 catalog and displays English names. Existing rows remain `NULL`. This field is
+user-supplied market context, not GPS, nationality, manufacturer origin, or recall jurisdiction.
+
+### `user_preferences`
+
+Stores one optional `default_purchase_country_code` per authenticated user and no broader profile
+data. Its primary key is the owning `user_id`; deletion of the auth user cascades to the preference.
+RLS allows a user to select, insert, update, or delete only their own row. The default initializes
+new manual, barcode, or OCR-assisted forms but never modifies existing products.
+
 ### `recall_sources`
 
-Stores the publisher, jurisdiction, base URL, and authoritative flag for a source. New rows default
-to non-authoritative so a source must be deliberately approved by privileged ingestion code.
+Stores the publisher, legacy source jurisdiction, base URL, authoritative flag, and optional
+`source_language_code`. New rows default to non-authoritative so a source must be deliberately
+approved by privileged ingestion code.
 The name, jurisdiction, and base URL are immutable; corrections or a materially different
 publisher/origin require a new source row so historical provenance cannot be rewritten.
+Phase 13 records CPSC as English (`en`). The code is source metadata only: authoritative text is
+not translated or rewritten.
 
 ### `recall_notices`
 
@@ -77,6 +100,18 @@ bounds, manufacturing dates, and structured additional criteria. At least one no
 criterion is required. Manufacturing dates have an ordered-range check. Lot and serial bounds are
 intentionally stored as text without a SQL ordering constraint because manufacturer numbering
 schemes are not universally comparable. A scope cannot later be moved to a different notice.
+
+### `recall_notice_jurisdictions`
+
+Stores normalized notice jurisdiction metadata independently from owned-product country. Each row
+has a notice, controlled `jurisdiction_type` (`country`, `region`, or `global`), controlled code,
+and creation time. A uniqueness constraint prevents duplicate notice/type/code relationships, and
+rows cascade with their notice. Authenticated users may read jurisdictions only when the related
+source is authoritative; only privileged ingestion can write them.
+
+The Phase 13 migration and CPSC ingestion RPC idempotently associate CPSC notices with country
+`US`. Jurisdiction insertion does not touch the notice's matching revision, raw payload, scopes,
+existing evidence fingerprint, match row, or alert history.
 
 ### `recall_matches`
 
@@ -144,14 +179,16 @@ mobile client, and it is evidence about matching rather than evidence that the r
 RLS is enabled on every application table. Explicit grants are paired with policies; both must
 allow an operation.
 
-| Table            | Authenticated mobile access           | Ownership rule                               |
-| ---------------- | ------------------------------------- | -------------------------------------------- |
-| `owned_products` | Select, insert, update, delete        | `auth.uid() = user_id`                       |
-| `recall_sources` | Select only                           | Global data where `is_authoritative` is true |
-| `recall_notices` | Select only                           | Source must be authoritative                 |
-| `recall_scopes`  | Select only                           | Notice source must be authoritative          |
-| `recall_matches` | Select only                           | Owned product and authoritative source       |
-| `alerts`         | Select; update status/timestamps only | Owner and authoritative source must agree    |
+| Table                         | Authenticated mobile access           | Ownership rule                               |
+| ----------------------------- | ------------------------------------- | -------------------------------------------- |
+| `owned_products`              | Select, insert, update, delete        | `auth.uid() = user_id`                       |
+| `user_preferences`            | Select, insert, update, delete        | `auth.uid() = user_id`                       |
+| `recall_sources`              | Select only                           | Global data where `is_authoritative` is true |
+| `recall_notices`              | Select only                           | Source must be authoritative                 |
+| `recall_scopes`               | Select only                           | Notice source must be authoritative          |
+| `recall_notice_jurisdictions` | Select only                           | Notice source must be authoritative          |
+| `recall_matches`              | Select only                           | Owned product and authoritative source       |
+| `alerts`                      | Select; update status/timestamps only | Owner and authoritative source must agree    |
 
 All three private push tables have RLS enabled and no direct grants, including to `service_role`.
 Authenticated users can only register or unregister a token through fixed-signature,
@@ -176,8 +213,10 @@ safety results.
 ## Indexes and integrity
 
 - Inventory: owner plus partial indexes for non-null GTIN, model, serial, and lot identifiers.
+- Preferences: one row per user, with canonical nullable country code.
 - Notices: source and recall date, plus a unique source/external ID pair.
 - Scopes: notice, GTIN, model, and brand.
+- Jurisdictions: notice lookup plus a unique notice/type/code relationship.
 - Matches: a unique product/notice pair plus notice lookup.
 - Alerts: user lookup plus a unique match relationship.
 - JSON fields that represent structured records are constrained to JSON objects.
@@ -267,3 +306,22 @@ Delivery uses expiring leases and `FOR UPDATE SKIP LOCKED`; unique `(alert_id, p
 prevent duplicate logical fan-out. Transient sends retry at most three times, permanent failures do
 not retry, and `DeviceNotRegistered` disables the device. See
 [push-notifications.md](push-notifications.md) for the runtime and security model.
+
+## Phase 13 global-ready metadata
+
+The forward-only Phase 13 migration adds `owned_products.purchase_country_code`, the minimal
+`user_preferences` table, the protected `country_codes` integrity catalog,
+`recall_sources.source_language_code`, normalized
+`recall_notice_jurisdictions`, and `public.get_monitoring_status()`.
+
+`get_monitoring_status()` is a zero-argument, fixed-search-path `SECURITY DEFINER` function granted
+only to `authenticated` callers. It returns exactly three aggregates:
+`monitoring_enabled`, `last_successful_check_at`, and `active_source_count`. It cannot mutate or
+expose private automation controls, run rows, errors, limits, leases, watermarks, Cron
+administration, Vault values, AI credentials, push tokens, or service-role data.
+
+Country of purchase, notice jurisdictions, and source language are presentation and future-routing
+metadata in Phase 13. They are not selected into the Phase 10 matcher contract or evidence
+fingerprint, so metadata-only changes do not create pointless reevaluation. The Phase 12 Cron
+schedule, activation state, controls, limits, watermarks, leases, AI policy, and push gates remain
+unchanged. See [global-coverage.md](global-coverage.md).

@@ -29,8 +29,9 @@ database represents absence consistently rather than accumulating meaningless em
 - **Add product** validates a required name, conservative GTIN formats (8, 12, 13, or 14 digits),
   a real non-future purchase date, and practical field lengths. Android and iOS use the platform
   date selector; web uses the browser's date input. The date remains optional and can be cleared.
-- **Detail** presents only supplied identifying data and makes no claim about a product's safety.
-  It explicitly states that automated recall monitoring is not active yet.
+- **Detail** presents only supplied identifying data, the country of purchase when known, and a
+  friendly identification method. It explains the current CPSC-only automatic-monitoring context
+  without claiming that the product is safe.
 - **Edit** reuses the same validated form. **Delete** requires native confirmation and returns to
   the refreshed inventory list.
 

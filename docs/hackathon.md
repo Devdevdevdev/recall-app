@@ -71,8 +71,25 @@ approval before the first real push. Phase 12 adds a production-ready scheduled 
 architecture with Vault-backed Cron authentication, a bounded CPSC watermark/catch-up window,
 private run/lease controls, a five-call autonomous AI cap, and reuse of the existing push worker.
 After separate production approvals and a zero-AI/zero-push verification, the controls and Cron job
-are active at the bounded six-hour cadence. Password recovery, social login, and public build/demo
+are active at the bounded six-hour cadence. Phase 13 adds optional country-of-purchase context, an
+owner-isolated default for new products, normalized notice jurisdictions, source-language metadata,
+and clearer product, alert, Coverage, and monitoring presentation. Existing CPSC notices are
+classified as United States/English without altering matcher inputs or fingerprints. Current live
+coverage remains CPSC only; Phase 13 adds no new authority, translation, paid inference, or test
+push. Password recovery, social login, Phase 14 multi-authority ingestion, and public build/demo
 publication remain deferred.
+
+## Devpost-safe Phase 13 language
+
+Recall is architected for multi-jurisdiction recall monitoring and captures the market context of
+owned products. Recall currently monitors the U.S. Consumer Product Safety Commission
+automatically. The official authority establishes that a recall exists; Recall's deterministic-first,
+guarded matching pipeline assesses whether an owned product appears to be in scope.
+
+Do not claim that Recall monitors recalls worldwide or currently covers Europe, Canada, Australia,
+or any authority other than CPSC. Phase 14 multi-authority ingestion is a planned direction, not a
+shipped capability. Controlled benchmark results likewise remain evidence from small frozen CPSC
+datasets, not a general-world accuracy claim.
 
 ## Devpost-safe Phase 12 language
 

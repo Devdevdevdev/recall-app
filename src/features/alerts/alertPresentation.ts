@@ -10,7 +10,7 @@ export function getAlertMatchPresentation(status: RecallMatchStatus): AlertMatch
   if (status === 'confirmed') {
     return {
       isConfirmed: true,
-      listLabel: 'RECALL MATCH',
+      listLabel: 'RECALL ALERT',
       statusLabel: 'Confirmed match',
     };
   }

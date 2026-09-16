@@ -16,6 +16,7 @@ import { ScreenHeader } from '@/src/components/ui/ScreenHeader';
 import { alertsRepository } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import type { RecallAlert } from '@/src/domain';
+import { getAuthorityDisplayName } from '@/src/features/coverage/coveragePresentation';
 
 import { formatRecallDate, getAlertMatchPresentation } from './alertPresentation';
 
@@ -57,7 +58,9 @@ const AlertCard = memo(function AlertCard({ alert }: { alert: RecallAlert }) {
         </Text>
       ) : null}
       <View style={styles.cardFooter}>
-        <Text style={styles.sourceLabel}>Official CPSC recall</Text>
+        <Text style={styles.sourceLabel}>
+          Official · {getAuthorityDisplayName(alert.notice.authority)}
+        </Text>
         <Text accessibilityElementsHidden style={styles.chevron}>
           ›
         </Text>

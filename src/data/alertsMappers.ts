@@ -19,6 +19,16 @@ type AlertNoticeRow = {
   remedy: string | null;
   recall_date: string;
   official_url: string;
+  recall_source: PostgrestRelation<{
+    name: string;
+    source_language_code: string | null;
+  }>;
+  jurisdictions:
+    | {
+        jurisdiction_type: 'country' | 'global' | 'region';
+        jurisdiction_code: string;
+      }[]
+    | null;
 };
 
 type AlertMatchRow = {
@@ -63,6 +73,7 @@ export function toRecallAlert(row: RecallAlertRow): RecallAlert {
   const match = requireSingleRelation(row.recall_match, 'recall match');
   const product = requireSingleRelation(match.owned_product, 'owned product');
   const notice = requireSingleRelation(match.recall_notice, 'recall notice');
+  const source = requireSingleRelation(notice.recall_source, 'recall source');
 
   return {
     id: row.id,
@@ -91,11 +102,17 @@ export function toRecallAlert(row: RecallAlertRow): RecallAlert {
     },
     notice: {
       id: notice.id,
+      authority: source.name,
       title: notice.title,
       hazard: notice.hazard,
       remedy: notice.remedy,
       recallDate: notice.recall_date,
       officialUrl: notice.official_url,
+      sourceLanguageCode: source.source_language_code,
+      jurisdictions: (notice.jurisdictions ?? []).map((jurisdiction) => ({
+        type: jurisdiction.jurisdiction_type,
+        code: jurisdiction.jurisdiction_code,
+      })),
     },
   };
 }

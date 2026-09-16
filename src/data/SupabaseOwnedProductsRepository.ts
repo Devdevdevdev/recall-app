@@ -9,7 +9,7 @@ import {
 } from './ownedProductsMappers';
 
 const ownedProductColumns =
-  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, purchase_date, image_path, identification_method, identification_confidence, created_at, updated_at';
+  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, purchase_date, purchase_country_code, image_path, identification_method, identification_confidence, created_at, updated_at';
 
 type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> & {
   user_id: string;
@@ -20,6 +20,15 @@ type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> & {
 
 /** Mobile adapter. RLS remains the authority for every returned or changed row. */
 export class SupabaseOwnedProductsRepository implements OwnedProductsRepository {
+  async getCurrentUserCount(): Promise<number> {
+    const { count, error } = await requireSupabaseClient()
+      .from('owned_products')
+      .select('id', { count: 'exact', head: true });
+
+    if (error) throw error;
+    return count ?? 0;
+  }
+
   async listForCurrentUser(): Promise<readonly OwnedProduct[]> {
     const { data, error } = await requireSupabaseClient()
       .from('owned_products')

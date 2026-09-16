@@ -32,7 +32,8 @@ Mobile
 3. **Secure backend:** A Supabase Edge Function authenticates the request, validates input, and
    coordinates downstream work.
 4. **Trusted recall candidate retrieval:** Recall adapters query authoritative recall sources and
-   preserve the source URL, publisher, retrieval time, and original identifiers.
+   preserve the source URL, publisher, retrieval time, source language, jurisdictions, and
+   original identifiers. Phase 13 still has one live source integration: CPSC for the United States.
 5. **Deterministic baseline:** Pure server-safe logic evaluates exact identifiers, safe ranges, and
    transparent supporting text for every recall scope, then returns confirmed, rejected, or
    needs-review.
@@ -72,6 +73,10 @@ Mobile
   codes, and invalid/unsupported payloads; `src/features/scan/` adapts Expo camera events into it
 - `src/features/products/purchaseDate.ts`: timezone-safe local calendar conversion for PostgreSQL
   date-only values; platform-specific purchase-date fields keep the native picker out of web bundles
+- The country catalog and country-of-purchase UI use canonical ISO 3166-1 alpha-2 values with
+  English display names. Database foreign keys enforce the same 249 supported codes even for direct
+  API clients. Country is optional, is never inferred from GPS, locale, citizenship, or current
+  recall coverage, and a user's default applies only when initializing a new product.
 - `src/domain/productLabel.ts`: pure explicit-label identifier parsing and a transient evidence type
   that can later combine barcode and OCR observations
 - `src/services/ocr/`: platform-specific ML Kit adapter, normalized OCR result contract, web
@@ -104,10 +109,36 @@ repository, whose concrete adapter translates database rows and domain types. Th
 normalizes blank optional text to `null`; it never accepts an owner ID. Manual entries use the
 stable `manual` identification method, with no AI confidence value.
 
+## Global-ready coverage model
+
+Phase 13 separates three concepts that must not be conflated:
+
+- **Country of purchase** is optional user-owned market context on an owned product. It stores a
+  country code such as `BE` or `US`, never a region code, and does not change an existing product
+  when the user's default changes.
+- **Recall jurisdiction** is normalized authority metadata attached to a notice. It can represent a
+  country, region, or global context independently of where a product was purchased.
+- **Source language** records the language of authoritative source content. Current CPSC content is
+  English (`en`); Phase 13 neither translates nor rewrites it.
+
+The production matcher deliberately ignores country of purchase and the new jurisdiction/language
+metadata in Phase 13. CPSC is the only live source, so excluding products bought outside the United
+States would silently reduce existing coverage. These fields are also excluded from the existing
+matching evidence fingerprint, which prevents metadata-only backfills from re-evaluating matches or
+changing alert history. Phase 14 will define jurisdiction-aware source selection only after real
+additional authorities exist.
+
+A future source adapter should provide stable source identity, authority, source language and
+jurisdictions; retrieve a bounded window; normalize notices, scopes, and jurisdictions; and retain
+the official URL and stable external ID. Phase 13 documents that boundary but does not introduce an
+unused plugin framework or connect any new authority. See [global-coverage.md](global-coverage.md).
+
 ## Trust and security model
 
 - A recall exists only when supplied by a trusted, traceable recall source.
 - Every notice and match retains provenance and a link to the official source.
+- The official authority establishes whether a recall exists. Recall's matcher, including any
+  Nemotron-assisted path, only assesses whether an owned product fits that official notice.
 - AI responses are untrusted input and must pass schema validation before storage or display.
 - Low-confidence or contradictory matches require user review and must not trigger definitive
   safety claims.
@@ -130,6 +161,9 @@ stable `manual` identification method, with no AI confidence value.
 - Automation controls, run history, watermark, pending affected-recall queue, and singleton lease
   are private and service-RPC mediated. Cron authentication is resolved from Vault by name; the
   dedicated `RECALL_AUTOMATION_KEY` never enters a migration or mobile bundle.
+- The authenticated monitoring projection returns only `monitoringEnabled`,
+  `lastSuccessfulCheckAt`, and `activeSourceCount`. It exposes no private run rows, schedules,
+  limits, errors, credentials, tokens, or administrative controls.
 - The `private.recall_matching_leases` table has no grants for `PUBLIC`, `anon`, `authenticated`, or
   `service_role`; only fixed-signature, `SECURITY DEFINER` RPCs mediate claims and finalization.
 - Evidence fingerprints are canonical across retrieval timestamps, database row identifiers, and
@@ -164,5 +198,11 @@ a hard autonomous AI cap, and aggregate operational history. It does not alter t
 provider. Production activation followed separate automation, AI, and push approvals plus a
 zero-AI/zero-push verification; the independent controls remain immediate kill switches. See
 [autonomous-monitoring.md](autonomous-monitoring.md).
+
+Phase 13 adds optional country-of-purchase capture and an owner-scoped default, normalized notice
+jurisdictions, English source-language metadata, consumer-friendly coverage and monitoring views,
+and product/alert polish. Current automatic coverage remains CPSC/United States only; there is no
+new source, translation pipeline, matcher rule, benchmark change, AI call, or deliberate push.
+Phase 14 is planned to add reviewed multi-authority ingestion through the source-adapter boundary.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

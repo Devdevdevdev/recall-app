@@ -38,6 +38,11 @@ const confirmedRow = {
       remedy: 'Stop use and contact Thule.',
       recall_date: '2024-05-30',
       official_url: 'https://www.cpsc.gov/Recalls/2024/example',
+      recall_source: {
+        name: 'U.S. Consumer Product Safety Commission (CPSC)',
+        source_language_code: 'en',
+      },
+      jurisdictions: [{ jurisdiction_type: 'country', jurisdiction_code: 'US' }],
     },
   },
 };
@@ -70,11 +75,14 @@ test('maps an alert and its consumer-safe joined recall data', () => {
     },
     notice: {
       id: confirmedRow.recall_match.recall_notice.id,
+      authority: 'U.S. Consumer Product Safety Commission (CPSC)',
       title: 'Thule Sleek Strollers Recalled',
       hazard: 'The handlebar can detach.',
       remedy: 'Stop use and contact Thule.',
       recallDate: '2024-05-30',
       officialUrl: 'https://www.cpsc.gov/Recalls/2024/example',
+      sourceLanguageCode: 'en',
+      jurisdictions: [{ type: 'country', code: 'US' }],
     },
   });
 });
@@ -101,7 +109,7 @@ test('rejects a row without its required alert relationships', () => {
 test('labels preserved alerts as changed when their current match is no longer confirmed', () => {
   assert.deepEqual(getAlertMatchPresentation('confirmed'), {
     isConfirmed: true,
-    listLabel: 'RECALL MATCH',
+    listLabel: 'RECALL ALERT',
     statusLabel: 'Confirmed match',
   });
   assert.deepEqual(getAlertMatchPresentation('needs_review'), {
