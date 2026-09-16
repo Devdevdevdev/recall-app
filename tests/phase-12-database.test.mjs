@@ -9,6 +9,13 @@ const migration = await readFile(
   ),
   'utf8',
 );
+const cronFixMigration = await readFile(
+  new URL(
+    '../supabase/migrations/20260916110000_phase_12_fix_cron_activation.sql',
+    import.meta.url,
+  ),
+  'utf8',
+);
 
 test('Phase 12 enables only the supported scheduling extensions and preserves Vault', () => {
   assert.match(migration, /create extension if not exists pg_cron/u);
@@ -106,6 +113,9 @@ test('Cron is unique, non-round, Vault-backed, and installed inactive', () => {
   assert.match(migration, /recall_automation_key/u);
   assert.match(migration, /update cron\.job set active = false/u);
   assert.doesNotMatch(migration, /x-recall-automation-key',\s*'[^']+'/u);
+  assert.match(cronFixMigration, /cron\.alter_job\(v_job_id, active := false\)/u);
+  assert.match(cronFixMigration, /cron\.alter_job\(v_job_id, active := p_active\)/u);
+  assert.doesNotMatch(cronFixMigration, /update cron\.job/u);
 });
 
 test('Phase 12 does not weaken Phase 10 or Phase 11 client isolation', () => {
