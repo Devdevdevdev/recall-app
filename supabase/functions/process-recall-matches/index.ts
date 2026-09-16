@@ -87,8 +87,16 @@ Deno.serve(async (request) => {
   if (!authorized(request)) return json(401, { error: 'Unauthorized.' });
 
   let input;
+  let deliverPush = true;
   try {
-    input = parseMatchingRunRequest(await request.json());
+    const body: unknown = await request.json();
+    if (body && typeof body === 'object' && !Array.isArray(body) && 'deliverPush' in body) {
+      if (typeof (body as Record<string, unknown>).deliverPush !== 'boolean') {
+        throw new Error('deliverPush must be a boolean.');
+      }
+      deliverPush = (body as Record<string, unknown>).deliverPush !== false;
+    }
+    input = parseMatchingRunRequest(body);
   } catch (error) {
     return json(400, { error: error instanceof Error ? error.message : 'Invalid request.' });
   }
@@ -109,7 +117,11 @@ Deno.serve(async (request) => {
       },
     });
     let pushDelivery: PushDeliverySummary | { failed: true } | null = null;
-    if (result.alertsCreated > 0 && Deno.env.get('RECALL_PUSH_DELIVERY_ENABLED') === 'true') {
+    if (
+      deliverPush &&
+      result.alertsCreated > 0 &&
+      Deno.env.get('RECALL_PUSH_DELIVERY_ENABLED') === 'true'
+    ) {
       try {
         pushDelivery = await deliverQueuedRecallNotifications(
           { alertIds: null, batchSize: 25, checkReceipts: true },

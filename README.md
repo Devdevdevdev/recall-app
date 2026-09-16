@@ -10,8 +10,9 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 11 adds real, opt-in operating-system push delivery downstream of Phase 10's confirmed,
-authenticated in-app alerts:
+Phase 12 adds a production-ready scheduled monitoring architecture downstream of the verified
+Phase 11 push flow. It remains deliberately inactive until its separate automation, AI, Cron, and
+push approval gates are completed:
 
 - Expo SDK 57, React Native, TypeScript, and Expo Router
 - Android, iOS, and web-compatible navigation shell
@@ -77,6 +78,13 @@ authenticated in-app alerts:
   confirmed-only eligibility, logical delivery uniqueness, bounded retries, and receipt checks
 - Server-only Expo Push Service delivery with generic lock-screen content and protected alert-detail
   navigation from foreground, background, or cold-start notification taps
+- A dedicated, secret-protected automation Edge Function that sequences the existing CPSC
+  ingestion, matching, and push workers without duplicating their safety logic
+- A private kill switch, aggregate run history, recoverable singleton lease, successful-ingestion
+  watermark, 48-hour overlap, seven-day bootstrap/catch-up windows, and persistent affected-recall
+  retry queue
+- A Vault-backed `pg_cron`/`pg_net` installer for `recall-automation-every-6h` at `17 */6 * * *`
+  UTC; the installer leaves the job inactive and every processing control defaults to false
 - Strict TypeScript, ESLint, and Prettier configuration
 
 Password recovery, magic links, OAuth/social login, external product lookup, automatic scheduling,

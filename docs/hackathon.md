@@ -67,8 +67,19 @@ deterministic production path is covered without paid inference; no paid product
 Phase 11 adds explicit mobile notification opt-in, Expo token registration, private/RLS-isolated
 device and delivery state, server-side Expo Push Service delivery, bounded receipts/retries, and
 protected notification-tap routing. It preserves the alert as source of truth and requires explicit
-approval before the first real push. Password recovery, social login, scheduled execution/
-ingestion, and public build/demo publication remain deferred.
+approval before the first real push. Phase 12 adds a production-ready scheduled monitoring
+architecture with Vault-backed Cron authentication, a bounded CPSC watermark/catch-up window,
+private run/lease controls, a five-call autonomous AI cap, and reuse of the existing push worker.
+The controls and Cron job remain inactive pending explicit approval, so the submission must not yet
+claim that recurring production monitoring is active. Password recovery, social login, production
+automation activation, and public build/demo publication remain deferred.
+
+## Devpost-safe Phase 12 language
+
+Recall supports a production-ready scheduled monitoring architecture for official CPSC recall data.
+Recurring processing, automatic Nebius escalation, and automatic push delivery remain gated and
+must not be described as active until their production controls and Cron job are explicitly enabled
+and verified.
 
 ## Devpost-safe Phase 9.1 language
 

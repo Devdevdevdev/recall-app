@@ -82,8 +82,12 @@ Deno.serve(async (request) => {
   } catch (error) {
     return json(502, { error: error instanceof Error ? error.message : 'CPSC retrieval failed.' });
   }
+  if (input.maxRecords !== undefined && records.length > input.maxRecords) {
+    return json(422, { error: 'CPSC response exceeds the bounded automation record limit.' });
+  }
 
   const stats = emptyStats(records.length);
+  const affectedRecallIds: string[] = [];
   let database: SupabaseClient | null = null;
   if (!input.dryRun) {
     try {
@@ -143,6 +147,16 @@ Deno.serve(async (request) => {
       } else {
         stats.unchanged += 1;
       }
+      if (data === 'inserted' || data === 'updated') {
+        const { data: recallNoticeId, error: identityError } = await database.rpc(
+          'get_cpsc_recall_notice_id',
+          { p_external_id: mapped.externalId },
+        );
+        if (identityError || typeof recallNoticeId !== 'string') {
+          throw new Error('affected recall identity lookup failed');
+        }
+        affectedRecallIds.push(recallNoticeId);
+      }
     } catch (error) {
       stats.rejected += 1;
       if (stats.errors.length < maxReportedErrors) {
@@ -154,5 +168,5 @@ Deno.serve(async (request) => {
     }
   }
 
-  return json(200, { dryRun: input.dryRun, window: input, stats });
+  return json(200, { dryRun: input.dryRun, window: input, stats, affectedRecallIds });
 });

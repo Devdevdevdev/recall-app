@@ -22,6 +22,13 @@ auth.users
 alerts
   ├── private.push_alert_queue
   └──< private.push_deliveries >── private.push_devices
+
+private.recall_automation_control (singleton)
+private.recall_automation_state (singleton watermark)
+private.recall_automation_runs
+private.recall_automation_lease (singleton active claim)
+public.recall_notices
+  └── private.recall_automation_pending_recalls
 ```
 
 - A user owns many inventory records.
@@ -99,6 +106,16 @@ alerts inserted after the Phase 11 migration; the migration performs no historic
 `private.push_deliveries` stores one logical attempt stream per alert/device, Expo ticket IDs,
 normalized result codes, bounded attempt counters, leases, and ticket/receipt timestamps.
 
+### Private automation tables
+
+`private.recall_automation_control` contains the processing, AI, and push kill switches plus
+bounded run limits. All switches default to false. `private.recall_automation_state` stores only
+the last successfully covered CPSC `LastPublishDate` UTC date. `private.recall_automation_runs`
+stores aggregate operational counts and normalized errors without user/product identifiers or raw
+provider data. `private.recall_automation_lease` provides one crash-recoverable active run, and
+`private.recall_automation_pending_recalls` preserves inserted/materially updated notice IDs until
+matching completes.
+
 ## Identifier strategy
 
 GTIN, model, serial, and lot identifiers remain nullable and textual. Text preserves leading zeros,
@@ -139,6 +156,10 @@ allow an operation.
 All three private push tables have RLS enabled and no direct grants, including to `service_role`.
 Authenticated users can only register or unregister a token through fixed-signature,
 owner-derived RPCs. Service delivery and receipt RPCs are executable only by `service_role`.
+
+The five private automation tables follow the same isolation pattern. `service_role` can execute
+fixed-signature `SECURITY DEFINER` automation RPCs but has no direct table privilege. `anon` and
+`authenticated` cannot claim leases, change watermarks, inspect run history, or administer Cron.
 
 The anonymous role receives no application-table access. Rows from sources not explicitly approved as
 authoritative are also hidden from authenticated clients, including dependent notices, scopes,

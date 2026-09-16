@@ -3,6 +3,7 @@ import type { CpscIngestionRequest, JsonObject, JsonValue } from './types.ts';
 export const CPSC_API_ROOT = 'https://www.saferproducts.gov/RestWebServices/Recall';
 export const CPSC_OFFICIAL_HOST = 'www.cpsc.gov';
 export const MAX_INGESTION_DAYS = 31;
+export const MAX_INGESTION_RECORDS = 100;
 
 const datePattern = /^\d{4}-\d{2}-\d{2}$/u;
 
@@ -85,7 +86,21 @@ export function parseCpscIngestionRequest(value: unknown): CpscIngestionRequest 
     throw new Error(`The requested window exceeds the ${MAX_INGESTION_DAYS}-day maximum.`);
   }
 
-  return { startDate, endDate, dryRun };
+  let maxRecords: number | undefined;
+  if (value.maxRecords !== undefined) {
+    if (
+      !Number.isInteger(value.maxRecords) ||
+      Number(value.maxRecords) < 1 ||
+      Number(value.maxRecords) > MAX_INGESTION_RECORDS
+    ) {
+      throw new Error(`maxRecords must be an integer between 1 and ${MAX_INGESTION_RECORDS}.`);
+    }
+    maxRecords = Number(value.maxRecords);
+  }
+
+  return maxRecords === undefined
+    ? { startDate, endDate, dryRun }
+    : { startDate, endDate, dryRun, maxRecords };
 }
 
 export function isCpscOfficialUrl(value: string): boolean {

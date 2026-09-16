@@ -174,6 +174,13 @@ Do not put secret values in shell history, documentation, mobile configuration, 
 Keep delivery disabled through migration, deployment, and device registration. Change the switch
 to `true` only after the required first-push review and explicit approval.
 
+Phase 12 adds a second independent database control,
+`private.recall_automation_control.push_enabled`. Recurring delivery occurs only when both that
+control and `RECALL_PUSH_DELIVERY_ENABLED` are true. The automation endpoint reuses this worker; it
+does not add another provider or reset device `enabled_at`, queue timestamps, delivery rows,
+retries, or historical-alert flood protection. See
+[autonomous-monitoring.md](autonomous-monitoring.md).
+
 ## Verification and first-send approval
 
 Automated verification:

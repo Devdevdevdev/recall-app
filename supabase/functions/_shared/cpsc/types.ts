@@ -8,6 +8,7 @@ export type CpscIngestionRequest = {
   startDate: string;
   endDate: string;
   dryRun: boolean;
+  maxRecords?: number;
 };
 
 export type CpscScopeInput = {

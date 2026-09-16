@@ -13,6 +13,11 @@ verify_jwt = false
 [functions.process-recall-matches]
 verify_jwt = false
 
+# Cron and secure manual verification share this endpoint. Its handler requires the dedicated
+# RECALL_AUTOMATION_KEY; mobile JWTs and the Phase 7-11 administrative keys are not substitutes.
+[functions.run-recall-automation]
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.

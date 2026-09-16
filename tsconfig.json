@@ -17,6 +17,7 @@
   "exclude": [
     "supabase/functions/ingest-cpsc-recalls/**",
     "supabase/functions/process-recall-matches/**",
+    "supabase/functions/run-recall-automation/**",
     "supabase/functions/send-recall-notifications/**",
     "supabase/functions/_shared/push/store.ts"
   ]

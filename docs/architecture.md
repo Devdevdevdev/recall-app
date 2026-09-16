@@ -92,6 +92,9 @@ Mobile
 - `supabase/functions/_shared/push/`: generic payload construction, Expo HTTPS validation, bounded
   delivery/receipt orchestration, and the service-role database adapter
 - `supabase/functions/send-recall-notifications/`: independently invokable privileged push worker
+- `supabase/functions/_shared/automation/`: request bounds and orchestration-only sequencing
+- `supabase/functions/run-recall-automation/`: dedicated automation authentication, service-role
+  state adapter, and calls into the existing Phase 7, 10, and 11 endpoints
 - `benchmarks/recall-matching/`: offline CPSC-backed dataset, validator, metrics, and runner; this
   layer never owns production matching decisions or persistence
 
@@ -124,6 +127,9 @@ stable `manual` identification method, with no AI confidence value.
   registration RPCs derive ownership from `auth.uid()`; delivery RPCs are service-role-only.
 - Notification payloads contain only a generic safety message and an opaque alert UUID. Alert
   details remain protected by the existing RLS query.
+- Automation controls, run history, watermark, pending affected-recall queue, and singleton lease
+  are private and service-RPC mediated. Cron authentication is resolved from Vault by name; the
+  dedicated `RECALL_AUTOMATION_KEY` never enters a migration or mobile bundle.
 - The `private.recall_matching_leases` table has no grants for `PUBLIC`, `anon`, `authenticated`, or
   `service_role`; only fixed-signature, `SECURITY DEFINER` RPCs mediate claims and finalization.
 - Evidence fingerprints are canonical across retrieval timestamps, database row identifiers, and
@@ -153,7 +159,9 @@ ambiguous/negative cases for review. Phase 10 adds the bounded administrative en
 idempotency/concurrency controls, atomic match/alert persistence, and the RLS-backed mobile alerts
 read model. Phase 11 adds explicit notification opt-in, private token storage, Expo Push Service
 delivery, receipts, bounded retry, account-switch protection, and protected alert-detail routing.
-It does not alter matching or schedule recall polling. A real first push still requires explicit
-operator approval.
+Phase 12 adds backend-only Cron/Vault orchestration, a watermark and bounded catch-up, a run lease,
+a hard autonomous AI cap, and aggregate operational history. It does not alter the matcher or push
+provider and remains inactive until explicit production approvals. See
+[autonomous-monitoring.md](autonomous-monitoring.md).
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

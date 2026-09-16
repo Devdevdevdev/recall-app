@@ -3,8 +3,9 @@
 Phase 10 turns the frozen Phase 9.1 guarded hybrid policy into a bounded production workflow. It
 selects authoritative recalls, retrieves owned-product candidates, evaluates each pair, persists a
 current result, and creates an in-app alert only for a confirmed match. Phase 11 adds a separate
-best-effort push stage after persistence; it still does not schedule recall polling or broaden the
-evidence supplied to Nemotron.
+best-effort push stage after persistence. Phase 12 schedules those already verified boundaries
+through an orchestration-only endpoint; it does not broaden evidence supplied to Nemotron. See
+[autonomous-monitoring.md](autonomous-monitoring.md) for scheduling and operations.
 
 ## Runtime flow
 
@@ -155,10 +156,9 @@ npx supabase functions deploy process-recall-matches --no-verify-jwt
 ```
 
 Do not place literal secret values in shell history, documentation, source files, CI logs, or mobile
-configuration; use the deployment environment's secret-input mechanism in real operations. Phase
-10 does not add a cron job. A future scheduler should invoke the same bounded endpoint after a
-successful ingestion run, use narrow limits, avoid overlap, and alert operators on repeated
-failures.
+configuration; use the deployment environment's secret-input mechanism in real operations. The
+Phase 12 scheduler invokes this same endpoint with targeted affected recall IDs, explicitly sets
+`deliverPush=false`, and calls the Phase 11 worker only after a complete matching stage.
 
 ## Verification without paid inference
 
