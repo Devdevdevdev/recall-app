@@ -2,7 +2,7 @@ begin;
 
 create extension if not exists pgtap with schema extensions;
 
-select extensions.plan(56);
+select extensions.plan(57);
 
 select extensions.has_table('private', 'recall_automation_control', 'automation control is private');
 select extensions.has_table('private', 'recall_automation_state', 'automation watermark is private');
@@ -472,8 +472,17 @@ select extensions.is(
     from cron.job
     where jobname = 'recall-automation-every-6h'
   ),
-  0::bigint,
-  'migration does not activate or install the production Cron job'
+  1::bigint,
+  'exactly one production Cron job is installed'
+);
+select extensions.is(
+  (
+    select active
+    from cron.job
+    where jobname = 'recall-automation-every-6h'
+  ),
+  false,
+  'the installed production Cron job remains inactive'
 );
 
 select * from extensions.finish();
