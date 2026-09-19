@@ -70,8 +70,8 @@ export function CoverageScreen() {
           Coverage
         </Text>
         <Text style={styles.description}>
-          Recall currently monitors official United States recall data. Product purchase country is
-          saved for future multi-jurisdiction coverage.
+          Recall monitors the official sources shown as active below. Purchase country provides
+          market context without overriding exact product identifiers.
         </Text>
       </View>
 
@@ -145,8 +145,8 @@ export function CoverageScreen() {
       ) : null}
 
       <Text style={styles.footnote}>
-        More official sources can be added through the global-ready source model. Recall does not
-        claim worldwide coverage today.
+        Coverage is limited to the active authorities listed here. Recall does not claim worldwide
+        coverage.
       </Text>
     </Screen>
   );

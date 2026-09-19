@@ -8,8 +8,8 @@ through an orchestration-only endpoint; it does not broaden evidence supplied to
 [autonomous-monitoring.md](autonomous-monitoring.md) for scheduling and operations.
 
 Phase 13 adds product market context and authoritative source metadata without changing this loop.
-Country of purchase is captured and displayed, but it is not a candidate filter or matching input.
-Current automatic source coverage remains CPSC/United States only.
+Phase 14 adds CPSC and Health Canada adapters behind the same bounded ingestion boundary. Country of
+purchase is captured and displayed, but it is not a candidate filter or matching input.
 
 ## Runtime flow
 
@@ -86,8 +86,8 @@ worker from persisting a result after inputs change.
 Phase 13's `purchase_country_code`, notice-jurisdiction rows, and source-language metadata are not
 part of this projection or fingerprint. They do not change the Phase 10 matching contract, so
 capturing a product country or backfilling CPSC as United States/English does not by itself trigger
-reevaluation. Phase 14 must explicitly version and review any future jurisdiction-aware retrieval
-or matching policy.
+reevaluation. Phase 14 does not add jurisdiction-aware retrieval or matching; any future policy of
+that kind must be explicitly versioned and reviewed.
 
 ## Matching safety policy
 

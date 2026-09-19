@@ -138,8 +138,8 @@ export function HomeScreen() {
           Scan it once. Recall watches it for you.
         </Text>
         <Text style={styles.subtitle}>
-          Save the details that identify a product. Recall automatically checks official CPSC safety
-          notices and explains relevant matches.
+          Save the details that identify a product. Recall automatically checks active official
+          safety sources and explains relevant matches.
         </Text>
         {lastCheckedLabel ? <Text style={styles.lastChecked}>{lastCheckedLabel}</Text> : null}
       </View>

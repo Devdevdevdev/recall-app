@@ -1,5 +1,6 @@
 export type CoverageSourceRecord = {
   id: string;
+  sourceKey: string;
   authority: string;
   jurisdictionType: 'country' | 'global' | 'region';
   jurisdictionCode: string;

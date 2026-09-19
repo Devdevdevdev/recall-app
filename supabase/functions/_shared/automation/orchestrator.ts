@@ -47,6 +47,7 @@ export async function runRecallAutomation(
   let matching = null;
   let push = null;
   let ingestionStep: 'ingestion' | 'persistence' = 'ingestion';
+  let hasSourceFailure = false;
 
   try {
     ingestion = await dependencies.ingest({
@@ -54,6 +55,7 @@ export async function runRecallAutomation(
       endDate: claim.windowEnd,
       maxRecords: claim.maxRecalls,
     });
+    hasSourceFailure = (ingestion.sourceFailures ?? 0) > 0;
     if (
       ingestion.rejected > 0 ||
       ingestion.fetched !== ingestion.inserted + ingestion.updated + ingestion.unchanged ||
@@ -176,6 +178,26 @@ export async function runRecallAutomation(
         errorCode: code,
       };
     }
+  }
+
+  if (hasSourceFailure) {
+    await dependencies.store.completeRun({
+      runId: claim.runId,
+      leaseToken: claim.leaseToken,
+      status: 'partial_success',
+      push: null,
+      errorStep: 'ingestion',
+      errorCode: 'source_partial_failure',
+    });
+    return {
+      ...base,
+      status: 'partial_success',
+      ingestion,
+      matching,
+      push: null,
+      errorStep: 'ingestion',
+      errorCode: 'source_partial_failure',
+    };
   }
 
   if (claim.pushEnabled && dependencies.pushDeliveryGateEnabled) {

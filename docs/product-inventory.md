@@ -1,5 +1,20 @@
 # Product inventory
 
+## Primary identity
+
+The inventory's primary user-facing identity is `product_name`, `brand`, `scan_date`, and `gtin`.
+`scan_date` is a PostgreSQL `date` transported as `YYYY-MM-DD`. Current clients set it from the
+user's local calendar and let the user edit it with a platform-appropriate date field. Display uses
+an unambiguous English form such as `17 Sep 2026`.
+
+Legacy rows are backfilled from the UTC calendar date of `created_at`, because the original local
+timezone was never recorded. `created_at` remains an immutable database-generated audit timestamp.
+Changing `scan_date` does not change `created_at`, matching evidence, candidate retrieval, matching
+fingerprints, or recall reevaluation.
+
+Model, serial, lot, purchase date, purchase country, category and identification method remain
+secondary safety-critical fields and are preserved in product detail.
+
 ## Phase 4 scope
 
 Authenticated users can now list, create, view, edit, refresh, and delete their own inventory
@@ -30,8 +45,8 @@ database represents absence consistently rather than accumulating meaningless em
   a real non-future purchase date, and practical field lengths. Android and iOS use the platform
   date selector; web uses the browser's date input. The date remains optional and can be cleared.
 - **Detail** presents only supplied identifying data, the country of purchase when known, and a
-  friendly identification method. It explains the current CPSC-only automatic-monitoring context
-  without claiming that the product is safe.
+  friendly identification method. It explains the current active-source automatic-monitoring
+  context without claiming that the product is safe.
 - **Edit** reuses the same validated form. **Delete** requires native confirmation and returns to
   the refreshed inventory list.
 

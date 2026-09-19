@@ -4,6 +4,7 @@ export type JurisdictionType = 'country' | 'global' | 'region';
 
 export type CoverageSourceProjection = {
   id: string;
+  sourceKey: string;
   authority: string;
   jurisdictionType: JurisdictionType;
   jurisdictionCode: string;
@@ -32,9 +33,15 @@ export type MonitoringStatusPresentation = {
   activeSourcesLabel: string;
 };
 
-const authorityDisplayNames: Readonly<Record<string, string>> = {
+const authorityDisplayNamesBySourceKey: Readonly<Record<string, string>> = {
+  cpsc: 'U.S. Consumer Product Safety Commission',
+  health_canada: 'Health Canada',
+};
+
+const legacyAuthorityDisplayNames: Readonly<Record<string, string>> = {
   CPSC: 'U.S. Consumer Product Safety Commission',
   'U.S. Consumer Product Safety Commission (CPSC)': 'U.S. Consumer Product Safety Commission',
+  'Health Canada Recalls and Safety Alerts': 'Health Canada',
 };
 
 const regionDisplayNames: Readonly<Record<string, string>> = {
@@ -46,8 +53,12 @@ const languageDisplayNames: Readonly<Record<string, string>> = {
   en: 'English',
 };
 
-export function getAuthorityDisplayName(authority: string): string {
-  return authorityDisplayNames[authority] ?? authority;
+export function getAuthorityDisplayName(authority: string, sourceKey?: string): string {
+  return (
+    (sourceKey ? authorityDisplayNamesBySourceKey[sourceKey] : undefined) ??
+    legacyAuthorityDisplayNames[authority] ??
+    authority
+  );
 }
 
 export function getJurisdictionDisplayName(
@@ -79,7 +90,7 @@ export function getSourceLanguageDisplayName(sourceLanguageCode: string | null):
 export function toCoverageSource(source: CoverageSourceProjection): CoverageSource {
   return {
     id: source.id,
-    authority: getAuthorityDisplayName(source.authority),
+    authority: getAuthorityDisplayName(source.authority, source.sourceKey),
     jurisdiction: getJurisdictionDisplayName(source.jurisdictionType, source.jurisdictionCode),
     sourceLanguage: getSourceLanguageDisplayName(source.sourceLanguageCode),
     status: source.isActive ? 'Active' : 'Inactive',

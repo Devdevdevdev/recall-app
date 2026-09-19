@@ -1,7 +1,8 @@
 import type { CpscIngestionRequest, JsonObject, JsonValue } from './types.ts';
 
 export const CPSC_API_ROOT = 'https://www.saferproducts.gov/RestWebServices/Recall';
-export const CPSC_OFFICIAL_HOST = 'www.cpsc.gov';
+export const CPSC_OFFICIAL_HOSTS = new Set(['cpsc.gov', 'www.cpsc.gov']);
+const CPSC_OFFICIAL_URL_AUTHORITY = /^https:\/\/(?:www\.)?cpsc\.gov(?:[/?#]|$)/iu;
 export const MAX_INGESTION_DAYS = 31;
 export const MAX_INGESTION_RECORDS = 100;
 
@@ -105,10 +106,11 @@ export function parseCpscIngestionRequest(value: unknown): CpscIngestionRequest 
 
 export function isCpscOfficialUrl(value: string): boolean {
   try {
+    if (!CPSC_OFFICIAL_URL_AUTHORITY.test(value)) return false;
     const url = new URL(value);
     return (
       url.protocol === 'https:' &&
-      url.hostname.toLowerCase() === CPSC_OFFICIAL_HOST &&
+      CPSC_OFFICIAL_HOSTS.has(url.hostname.toLowerCase()) &&
       !url.username &&
       !url.password
     );

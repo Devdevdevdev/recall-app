@@ -10,23 +10,37 @@ type PurchaseDateFieldProps = {
   value: string;
 };
 
-/** Browser-native date input kept separate so the mobile native module is never bundled for web. */
-export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldProps) {
+type CalendarDateFieldProps = PurchaseDateFieldProps & {
+  allowClear: boolean;
+  id: string;
+  label: string;
+};
+
+function CalendarDateField({
+  allowClear,
+  error,
+  id,
+  label,
+  onChange,
+  value,
+}: CalendarDateFieldProps) {
+  const errorId = `${id}-error`;
+  const labelId = `${id}-label`;
   return (
     <View style={styles.field}>
-      <Text nativeID="purchase-date-label" style={styles.label}>
-        Purchase date
+      <Text nativeID={labelId} style={styles.label}>
+        {label}
       </Text>
       <input
-        aria-describedby={error ? 'purchase-date-error' : undefined}
-        aria-labelledby="purchase-date-label"
+        aria-describedby={error ? errorId : undefined}
+        aria-labelledby={labelId}
         max={todayDateOnly()}
         onChange={(event) => onChange(event.currentTarget.value)}
         style={{ ...styles.input, ...(error ? styles.inputError : {}) }}
         type="date"
         value={value}
       />
-      {value ? (
+      {allowClear && value ? (
         <Pressable
           accessibilityRole="button"
           onPress={() => onChange('')}
@@ -35,12 +49,21 @@ export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldP
         </Pressable>
       ) : null}
       {error ? (
-        <Text accessibilityLiveRegion="polite" nativeID="purchase-date-error" style={styles.error}>
+        <Text accessibilityLiveRegion="polite" nativeID={errorId} style={styles.error}>
           {error}
         </Text>
       ) : null}
     </View>
   );
+}
+
+/** Browser-native date inputs stay separate so the native picker is never bundled for web. */
+export function PurchaseDateField(props: PurchaseDateFieldProps) {
+  return <CalendarDateField {...props} allowClear id="purchase-date" label="Purchase date" />;
+}
+
+export function ScanDateField(props: PurchaseDateFieldProps) {
+  return <CalendarDateField {...props} allowClear={false} id="scan-date" label="Scan date" />;
 }
 
 const styles = StyleSheet.create({

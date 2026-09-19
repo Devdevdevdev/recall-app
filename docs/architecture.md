@@ -33,7 +33,8 @@ Mobile
    coordinates downstream work.
 4. **Trusted recall candidate retrieval:** Recall adapters query authoritative recall sources and
    preserve the source URL, publisher, retrieval time, source language, jurisdictions, and
-   original identifiers. Phase 13 still has one live source integration: CPSC for the United States.
+   original identifiers. Phase 14 has two active integrations: CPSC for the United States and
+   Health Canada for Canada.
 5. **Deterministic baseline:** Pure server-safe logic evaluates exact identifiers, safe ranges, and
    transparent supporting text for every recall scope, then returns confirmed, rejected, or
    needs-review.
@@ -121,17 +122,15 @@ Phase 13 separates three concepts that must not be conflated:
 - **Source language** records the language of authoritative source content. Current CPSC content is
   English (`en`); Phase 13 neither translates nor rewrites it.
 
-The production matcher deliberately ignores country of purchase and the new jurisdiction/language
-metadata in Phase 13. CPSC is the only live source, so excluding products bought outside the United
-States would silently reduce existing coverage. These fields are also excluded from the existing
-matching evidence fingerprint, which prevents metadata-only backfills from re-evaluating matches or
-changing alert history. Phase 14 will define jurisdiction-aware source selection only after real
-additional authorities exist.
+The production matcher deliberately ignores country of purchase and jurisdiction/language metadata.
+Excluding products by purchase country would silently reduce valid coverage. These fields are also
+excluded from the existing matching evidence fingerprint, which prevents metadata-only backfills
+from re-evaluating matches or changing alert history.
 
-A future source adapter should provide stable source identity, authority, source language and
-jurisdictions; retrieve a bounded window; normalize notices, scopes, and jurisdictions; and retain
-the official URL and stable external ID. Phase 13 documents that boundary but does not introduce an
-unused plugin framework or connect any new authority. See [global-coverage.md](global-coverage.md).
+The Phase 14 source adapter contract provides stable source identity, authority, source language
+and jurisdictions; retrieves a bounded window; normalizes notices, scopes, and jurisdictions; and
+retains the official URL and stable external ID. CPSC and Health Canada implement that contract.
+See [global-coverage.md](global-coverage.md).
 
 ## Trust and security model
 
@@ -201,8 +200,8 @@ zero-AI/zero-push verification; the independent controls remain immediate kill s
 
 Phase 13 adds optional country-of-purchase capture and an owner-scoped default, normalized notice
 jurisdictions, English source-language metadata, consumer-friendly coverage and monitoring views,
-and product/alert polish. Current automatic coverage remains CPSC/United States only; there is no
-new source, translation pipeline, matcher rule, benchmark change, AI call, or deliberate push.
-Phase 14 is planned to add reviewed multi-authority ingestion through the source-adapter boundary.
+and product/alert polish. Phase 14 adds reviewed multi-authority ingestion through the source-adapter
+boundary and activates CPSC/United States plus Health Canada/Canada. It does not add a translation
+pipeline, matcher rule, benchmark change, AI call, or deliberate push.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).

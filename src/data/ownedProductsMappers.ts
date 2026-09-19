@@ -11,6 +11,7 @@ export type OwnedProductRow = {
   model_number: string | null;
   serial_number: string | null;
   lot_number: string | null;
+  scan_date: string;
   purchase_date: string | null;
   purchase_country_code: string | null;
   image_path: string | null;
@@ -28,6 +29,7 @@ export type OwnedProductWriteRow = {
   model_number: string | null;
   serial_number: string | null;
   lot_number: string | null;
+  scan_date: string;
   purchase_date: string | null;
   purchase_country_code: string | null;
 };
@@ -47,6 +49,7 @@ export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
     modelNumber: row.model_number,
     serialNumber: row.serial_number,
     lotNumber: row.lot_number,
+    scanDate: row.scan_date,
     purchaseDate: row.purchase_date,
     purchaseCountryCode: row.purchase_country_code,
     imagePath: row.image_path,
@@ -67,6 +70,7 @@ export function toOwnedProductWriteRow(input: OwnedProductInput): OwnedProductWr
     model_number: input.modelNumber,
     serial_number: input.serialNumber,
     lot_number: input.lotNumber,
+    scan_date: input.scanDate,
     purchase_date: input.purchaseDate,
     purchase_country_code: input.purchaseCountryCode,
   };

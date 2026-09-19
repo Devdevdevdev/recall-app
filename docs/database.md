@@ -68,6 +68,11 @@ values through the protected 249-entry `country_codes` catalog; the application 
 3166-1 alpha-2 catalog and displays English names. Existing rows remain `NULL`. This field is
 user-supplied market context, not GPS, nationality, manufacturer origin, or recall jurisdiction.
 
+Phase 14 adds required `scan_date` as a PostgreSQL `date`. Legacy rows use the UTC calendar date of
+their immutable `created_at`; the backfill preserves `updated_at` so existing inventory order does
+not change. Current clients write the user's local calendar date and may edit it without changing
+matching evidence or `created_at`.
+
 ### `user_preferences`
 
 Stores one optional `default_purchase_country_code` per authenticated user and no broader profile
@@ -77,10 +82,10 @@ new manual, barcode, or OCR-assisted forms but never modifies existing products.
 
 ### `recall_sources`
 
-Stores the publisher, legacy source jurisdiction, base URL, authoritative flag, and optional
-`source_language_code`. New rows default to non-authoritative so a source must be deliberately
-approved by privileged ingestion code.
-The name, jurisdiction, and base URL are immutable; corrections or a materially different
+Stores the publisher, stable `source_key`, legacy source jurisdiction, base URL, authoritative flag,
+explicit activation flag, and optional `source_language_code`. New rows default inactive so an
+authority must be deliberately enabled after verification.
+The source key, name, jurisdiction, and base URL are immutable; corrections or a materially different
 publisher/origin require a new source row so historical provenance cannot be rewritten.
 Phase 13 records CPSC as English (`en`). The code is source metadata only: authoritative text is
 not translated or rewritten.
@@ -150,6 +155,11 @@ stores aggregate operational counts and normalized errors without user/product i
 provider data. `private.recall_automation_lease` provides one crash-recoverable active run, and
 `private.recall_automation_pending_recalls` preserves inserted/materially updated notice IDs until
 matching completes.
+
+Phase 14 adds `private.recall_source_sync_state`, keyed by source ID. It stores only that authority's
+watermark, attempt/success times, status, normalized error code, and aggregate metrics. Direct table
+access is revoked; bounded service-role RPCs own reads and updates. Failed syncs never replace the
+last successful watermark.
 
 ## Identifier strategy
 
@@ -247,8 +257,9 @@ safety results.
 The Phase 7 migration adds two service-role-only RPCs without changing the Phase 2 schema or RLS
 policies. `ensure_cpsc_recall_source()` serializes registration of the authoritative CPSC source.
 `ingest_cpsc_recall(...)` upserts a notice by the existing `(source_id, external_id)` constraint and
-replaces that notice's scopes in the same transaction only when official data changed. The existing
-notice-host trigger still requires `www.cpsc.gov` official URLs.
+replaces that notice's scopes in the same transaction only when official data changed. The
+notice-host trigger accepts only the exact HTTPS CPSC hosts `cpsc.gov` and `www.cpsc.gov`,
+preserving the authoritative URL while rejecting subdomains, lookalikes, userinfo, and HTTP.
 
 No authenticated mobile grants, policies, or client write paths were added for recall sources,
 notices, scopes, matches, or alerts. The RPCs are executable only by `service_role`, from the
@@ -325,3 +336,11 @@ metadata in Phase 13. They are not selected into the Phase 10 matcher contract o
 fingerprint, so metadata-only changes do not create pointless reevaluation. The Phase 12 Cron
 schedule, activation state, controls, limits, watermarks, leases, AI policy, and push gates remain
 unchanged. See [global-coverage.md](global-coverage.md).
+
+## Phase 14 global recall network
+
+`supabase/migrations/20260918100000_phase_14_global_recall_network.sql` adds `scan_date`, immutable
+source adapter keys, explicit source activation, private per-source sync state, and service-only
+generic ingestion RPCs. CPSC remains active and its legacy RPC remains compatible. Health Canada is
+registered as authoritative but inactive. `get_monitoring_status()` keeps its three-field public
+contract while counting and timestamping only active authoritative sources.

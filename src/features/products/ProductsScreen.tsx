@@ -9,11 +9,9 @@ import { ownedProductsRepository } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import type { OwnedProduct } from '@/src/domain';
 
-function ProductCard({ product }: { product: OwnedProduct }) {
-  const details = [product.brand, product.modelNumber, product.category].filter(
-    (value): value is string => Boolean(value),
-  );
+import { formatScanDate } from './purchaseDate';
 
+function ProductCard({ product }: { product: OwnedProduct }) {
   return (
     <Pressable
       accessibilityHint="Opens this product's details"
@@ -25,11 +23,9 @@ function ProductCard({ product }: { product: OwnedProduct }) {
         <Text numberOfLines={2} style={styles.productName}>
           {product.productName ?? 'Unnamed product'}
         </Text>
-        {details.length > 0 ? (
-          <Text numberOfLines={2} style={styles.productDetails}>
-            {details.join(' · ')}
-          </Text>
-        ) : null}
+        {product.brand ? <Text style={styles.brand}>{product.brand}</Text> : null}
+        <Text style={styles.productDetails}>Scanned on {formatScanDate(product.scanDate)}</Text>
+        {product.gtin ? <Text style={styles.gtin}>GTIN: {product.gtin}</Text> : null}
       </View>
       <Text accessibilityElementsHidden style={styles.chevron}>
         ›
@@ -242,6 +238,17 @@ const styles = StyleSheet.create({
     color: colors.text.secondary,
     fontSize: typography.size.label,
     lineHeight: typography.lineHeight.label,
+  },
+  brand: {
+    color: colors.text.secondary,
+    fontSize: typography.size.label,
+    fontWeight: typography.weight.semibold,
+    lineHeight: typography.lineHeight.label,
+  },
+  gtin: {
+    color: colors.text.muted,
+    fontSize: typography.size.caption,
+    lineHeight: typography.lineHeight.caption,
   },
   chevron: { color: colors.text.muted, fontSize: 32, lineHeight: 32 },
 });

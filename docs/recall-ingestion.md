@@ -1,4 +1,20 @@
-# Authoritative CPSC recall ingestion
+# Authoritative recall ingestion
+
+## Phase 14 multi-source boundary
+
+Phase 14 retains the CPSC endpoint below for backward compatibility and places CPSC behind the same
+minimal adapter contract as new authorities. `ingest-recall-sources` discovers only active,
+authoritative source keys, derives a bounded window from each source's private watermark, subdivides
+the existing 100-notice run cap, and invokes `ingest-recall-source` separately for each authority.
+
+The generic endpoint refuses production writes for inactive sources. A successful empty window
+advances its date watermark through the verified end date; a retrieval or normalization failure
+preserves the previous watermark. Source failures are reported separately, successful source writes
+remain durable, the automation run becomes `partial_success`, and push is suppressed. Health Canada
+is active against its official English JSON dataset after a bounded zero-AI, zero-push production
+canary.
+
+## CPSC compatibility
 
 Phase 7 adds Recall's first real recall-data source: the U.S. Consumer Product Safety Commission
 (CPSC). Ingestion itself does not match products, create alerts, schedule polling, or call an AI
@@ -17,8 +33,8 @@ https://www.saferproducts.gov/RestWebServices/Recall
 
 `LastPublishDate` retrieves corrections as well as new notices. Invocations require an inclusive,
 valid `YYYY-MM-DD` window of at most 31 days. The retrieval host is `saferproducts.gov`, but stored
-notice links must be HTTPS links on `www.cpsc.gov`; the original database host trigger remains in
-force.
+notice links must be HTTPS links on the exact `cpsc.gov` or `www.cpsc.gov` host. The authoritative
+URL supplied by CPSC is preserved; subdomains, lookalikes, userinfo, and HTTP links are rejected.
 
 ## Server boundary and security
 
@@ -119,7 +135,7 @@ production matcher's `rawEvidence` projection to `null`; it does not broaden the
 arbitrary source prose. Retrieval timestamps do not affect the evidence fingerprint, while a real
 canonical payload or normalized evidence change does.
 
-Phase 12 schedules both stages: bounded CPSC ingestion completes first, then the automation
-orchestrator calls matching with explicit limits and overlap protection. Phase 13 adds source
-language and notice jurisdiction metadata without changing that sequence. See
+Phase 12 originally scheduled both stages through the CPSC endpoint. Phase 14 changes only the
+ingestion child to the active-source coordinator; the orchestrator still calls matching with the
+same explicit limits and overlap protection. See
 [automatic-recall-loop.md](automatic-recall-loop.md) for the operational boundary.

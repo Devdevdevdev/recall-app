@@ -103,7 +103,7 @@ export function mapCpscRecall(raw: JsonObject): CpscRecallInput {
 
   const officialUrl = optionalText(raw.URL);
   if (!officialUrl || !isCpscOfficialUrl(officialUrl)) {
-    throw new Error('official URL is not an https://www.cpsc.gov URL');
+    throw new Error('official URL is not on an allowed HTTPS CPSC host');
   }
 
   const manufacturerNames = [...new Set(textValues(raw.Manufacturers, 'Name'))];

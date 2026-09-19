@@ -13,7 +13,7 @@ import type { CountryCode } from '@/src/domain/countries';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 
 import { CountrySelector } from './CountrySelector';
-import { PurchaseDateField } from './PurchaseDateField';
+import { PurchaseDateField, ScanDateField } from './PurchaseDateField';
 import {
   emptyProductFormValues,
   mergeOptionalDefaultCountry,
@@ -102,7 +102,9 @@ export function ProductForm({
   onSubmit,
   submitLabel,
 }: ProductFormProps) {
-  const [values, setValues] = useState<ProductFormValues>(initialValues ?? emptyProductFormValues);
+  const [values, setValues] = useState<ProductFormValues>(
+    initialValues ?? emptyProductFormValues(),
+  );
   const [errors, setErrors] = useState<ProductFormErrors>({});
   const [appliedDefaultCountry, setAppliedDefaultCountry] = useState(
     initialValues?.purchaseCountryCode ?? '',
@@ -162,6 +164,11 @@ export function ProductForm({
           onChangeText={(value) => updateValue('brand', value)}
           placeholder="e.g. Philips"
           value={values.brand}
+        />
+        <ScanDateField
+          error={errors.scanDate}
+          onChange={(value) => updateValue('scanDate', value)}
+          value={values.scanDate}
         />
         <FormField
           error={errors.category}

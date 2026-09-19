@@ -1,5 +1,16 @@
 # Autonomous recall monitoring
 
+## Multi-source ingestion
+
+The automation child now invokes the multi-source ingestion coordinator. It discovers only active,
+authoritative source keys, derives each bounded date window from that source's own watermark, and
+subdivides the existing 100-record global cap. Adapter failures are isolated and recorded without
+advancing the failed watermark. Successful notices still reach deterministic matching, while the run
+is finalized as `partial_success` and push is suppressed if any source failed.
+
+The existing ceilings remain 100 recalls, 500 candidate pairs, 5 AI escalations, and 25 push
+deliveries. Verification mode still forces AI to zero and push off.
+
 Phase 12 adds recurring production monitoring. Its migrations deliberately ship inactive:
 `private.recall_automation_control.enabled`, `ai_enabled`, and `push_enabled` all default to
 `false`, the Phase 11 `RECALL_PUSH_DELIVERY_ENABLED` gate remains independent, and the Cron
@@ -7,10 +18,10 @@ installer creates its job with `active = false`. Production activation was compl
 the separate automation, AI, and push approvals and a zero-AI/zero-push verification. Those
 independent controls remain the production kill switches.
 
-Phase 13 does not change the schedule, activation state, controls, limits, watermark, leases,
-Nemotron policy, or push gates. It adds a read-only, minimal authenticated projection so the app can
-truthfully present monitoring state without exposing private operations data. Live automatic source
-coverage remains CPSC/United States only.
+Phase 13 does not change the schedule, controls, limits, leases, Nemotron policy, or push gates. It
+adds a read-only, minimal authenticated projection so the app can truthfully present monitoring
+state without exposing private operations data. Phase 14 keeps those controls unchanged while
+activating the reviewed CPSC/United States and Health Canada/Canada adapters.
 
 ## Architecture and schedule
 
@@ -20,7 +31,8 @@ Supabase Cron (17 */6 * * *, UTC)
   -> Vault lookup: recall_automation_url + recall_automation_key
   -> run-recall-automation
        -> database run claim and expiring singleton lease
-       -> ingest-cpsc-recalls
+       -> ingest-recall-sources
+            -> each active authoritative source adapter with its own watermark
        -> persistent affected-recall queue
        -> process-recall-matches with deliverPush=false
        -> send-recall-notifications only when both push gates allow it
@@ -28,7 +40,7 @@ Supabase Cron (17 */6 * * *, UTC)
 ```
 
 The job name is `recall-automation-every-6h`. Four scheduled opportunities per UTC day occur at
-minute 17. The orchestrator owns sequencing only; CPSC mapping/upsert behavior, `deterministic_v1`,
+minute 17. The orchestrator owns sequencing only; source mapping/upsert behavior, `deterministic_v1`,
 `hybrid_guarded_v1`, the safety verifier, and Expo Push delivery remain in their Phase 7-11
 modules. Cron and secure manual calls use this same endpoint.
 
@@ -54,20 +66,19 @@ switch after approval.
 
 ## Watermark, overlap, and catch-up
 
-The incremental boundary is CPSC `LastPublishDate`, not `RecallDate`. State is stored privately as
-the last successfully covered UTC date. The ingestion child still issues only bounded requests
-using `LastPublishDateStart` and `LastPublishDateEnd`.
+Incremental state is private and per source. CPSC uses `LastPublishDate`, not `RecallDate`; Health
+Canada uses its explicit `Last updated` value. Each adapter receives only a bounded date window.
 
 - No watermark: ingest seven inclusive UTC dates ending at current bounded server date.
 - Existing watermark: start 48 hours before it.
 - Normal operation: end at current UTC date.
 - Long downtime: advance the upper boundary by at most seven uncovered days per run.
 
-The watermark advances only after a complete authoritative ingestion response with zero rejected
-records. A failed or over-limit response does not advance it. The 48-hour overlap is safe because
-Phase 7 upserts by authoritative CPSC identity and compares meaningful content. Inserted or
-materially updated notices are returned as a bounded affected set; unchanged notices are not
-requeued.
+Each source watermark advances only after that source completes authoritative ingestion with zero
+rejected records. A failed or over-limit response does not advance it or another source's state. The
+CPSC 48-hour overlap is safe because Phase 7 upserts by authoritative identity and compares
+meaningful content. Inserted or materially updated notices are returned as a bounded affected set;
+unchanged notices are not requeued.
 
 Affected recall IDs are stored in `private.recall_automation_pending_recalls` before matching.
 This prevents a successful ingestion followed by a matching outage from losing work. Entries are
@@ -173,8 +184,8 @@ A constrained production verification may run while the global control is disabl
 }
 ```
 
-Verification mode always forces AI and push off. It performs real bounded CPSC ingestion and normal
-deterministic matching; it does not simulate recalls. Invoke it only with the automation secret via
+Verification mode always forces AI and push off. It performs real bounded active-source ingestion
+and normal deterministic matching; it does not simulate recalls. Invoke it only with the automation secret via
 a secure environment variable, never a literal shell-history value.
 
 To stop processing immediately, first deactivate the Cron job, then disable all controls:

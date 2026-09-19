@@ -41,6 +41,27 @@ function strings(value: unknown): readonly string[] {
   return value as string[];
 }
 
+function sourceResults(value: unknown): IngestionSummary['sources'] {
+  if (!Array.isArray(value)) throw new ChildFunctionError('invalid_child_response');
+  return value.map((item) => {
+    const row = record(item);
+    const sourceKey = row.sourceKey;
+    const status = row.status;
+    if (
+      typeof sourceKey !== 'string' ||
+      (status !== 'success' && status !== 'failed') ||
+      (row.errorCode !== undefined && typeof row.errorCode !== 'string')
+    ) {
+      throw new ChildFunctionError('invalid_child_response');
+    }
+    return {
+      sourceKey,
+      status,
+      ...(typeof row.errorCode === 'string' ? { errorCode: row.errorCode } : {}),
+    };
+  });
+}
+
 async function invoke(
   url: string,
   headerName: string,
@@ -89,7 +110,7 @@ export class RecallAutomationChildren {
     maxRecords: number;
   }): Promise<IngestionSummary> {
     const response = await invoke(
-      `${this.functionsRoot}/ingest-cpsc-recalls`,
+      `${this.functionsRoot}/ingest-recall-sources`,
       'x-recall-ingestion-key',
       this.secrets.ingestion,
       {
@@ -107,6 +128,9 @@ export class RecallAutomationChildren {
       unchanged: count(stats.unchanged),
       rejected: count(stats.rejected),
       affectedRecallIds: strings(response.affectedRecallIds),
+      sourceFailures: count(response.sourceFailures),
+      successfulSources: count(response.successfulSources),
+      sources: sourceResults(response.sources),
     };
   }
 

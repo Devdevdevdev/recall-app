@@ -2,7 +2,12 @@ import { validateGtin } from '../../domain/barcode.ts';
 import { isSupportedCountryCode } from '../../domain/countries.ts';
 import type { OwnedProduct, OwnedProductInput } from '../../domain/types.ts';
 
-import { isFuturePurchaseDate, isValidDateOnly, purchaseDateOrNull } from './purchaseDate.ts';
+import {
+  isFuturePurchaseDate,
+  isValidDateOnly,
+  purchaseDateOrNull,
+  todayDateOnly,
+} from './purchaseDate.ts';
 
 export type ProductFormValues = {
   brand: string;
@@ -13,6 +18,7 @@ export type ProductFormValues = {
   productName: string;
   purchaseCountryCode: string;
   purchaseDate: string;
+  scanDate: string;
   serialNumber: string;
 };
 
@@ -43,19 +49,23 @@ const maximumLengths: Record<keyof ProductFormValues, number> = {
   lotNumber: 120,
   purchaseCountryCode: 2,
   purchaseDate: 10,
+  scanDate: 10,
 };
 
-export const emptyProductFormValues: ProductFormValues = {
-  productName: '',
-  brand: '',
-  category: '',
-  gtin: '',
-  modelNumber: '',
-  serialNumber: '',
-  lotNumber: '',
-  purchaseCountryCode: '',
-  purchaseDate: '',
-};
+export function emptyProductFormValues(now = new Date()): ProductFormValues {
+  return {
+    productName: '',
+    brand: '',
+    category: '',
+    gtin: '',
+    modelNumber: '',
+    serialNumber: '',
+    lotNumber: '',
+    scanDate: todayDateOnly(now),
+    purchaseCountryCode: '',
+    purchaseDate: '',
+  };
+}
 
 function nullableTrimmed(value: string): string | null {
   const trimmed = value.trim();
@@ -80,7 +90,7 @@ export function productCreationPrefillFromParams(
   const purchaseCountryCode = isSupportedCountryCode(defaultPurchaseCountryCode)
     ? defaultPurchaseCountryCode
     : '';
-  const baseValues = { ...emptyProductFormValues, purchaseCountryCode };
+  const baseValues = { ...emptyProductFormValues(), purchaseCountryCode };
 
   if (source === 'barcode_scan' && typeof params.gtin === 'string') {
     const gtin = validateGtin(params.gtin);
@@ -135,6 +145,7 @@ export function productFormValuesFromProduct(product: OwnedProduct): ProductForm
     modelNumber: product.modelNumber ?? '',
     serialNumber: product.serialNumber ?? '',
     lotNumber: product.lotNumber ?? '',
+    scanDate: product.scanDate,
     purchaseCountryCode: product.purchaseCountryCode ?? '',
     purchaseDate: product.purchaseDate ?? '',
   };
@@ -172,6 +183,13 @@ export function validateProductForm(values: ProductFormValues): {
     errors.purchaseDate = 'Purchase date cannot be in the future.';
   }
 
+  const scanDate = values.scanDate.trim();
+  if (!isValidDateOnly(scanDate)) {
+    errors.scanDate = 'Use a real scan date in YYYY-MM-DD format.';
+  } else if (isFuturePurchaseDate(scanDate)) {
+    errors.scanDate = 'Scan date cannot be in the future.';
+  }
+
   const purchaseCountryCode = nullableTrimmed(values.purchaseCountryCode);
   if (purchaseCountryCode !== null && !isSupportedCountryCode(purchaseCountryCode)) {
     errors.purchaseCountryCode = 'Choose a valid country.';
@@ -194,6 +212,7 @@ export function validateProductForm(values: ProductFormValues): {
       modelNumber: nullableTrimmed(values.modelNumber),
       serialNumber: nullableTrimmed(values.serialNumber),
       lotNumber: nullableTrimmed(values.lotNumber),
+      scanDate,
       purchaseDate,
       purchaseCountryCode: validPurchaseCountryCode,
     },

@@ -32,6 +32,13 @@ export type IngestionSummary = {
   unchanged: number;
   rejected: number;
   affectedRecallIds: readonly string[];
+  sourceFailures?: number;
+  successfulSources?: number;
+  sources?: readonly {
+    sourceKey: string;
+    status: 'success' | 'failed';
+    errorCode?: string;
+  }[];
 };
 
 export type MatchingSummary = {

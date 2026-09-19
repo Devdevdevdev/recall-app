@@ -14,6 +14,7 @@ import {
   type ProductCreationParams,
   type ProductFormValues,
 } from './productFormUtils';
+import { formatPurchaseDate, formatScanDate } from './purchaseDate';
 
 function BackButton({
   href = '/products',
@@ -248,18 +249,22 @@ export function ProductDetailScreen({ id }: ProductDetailScreenProps) {
           {error ? <LoadingOrError message={error} onRetry={() => void loadProduct()} /> : null}
           <View style={styles.detailCard}>
             <DetailRow label="Brand" value={product.brand} />
+            <DetailRow label="Scanned on" value={formatScanDate(product.scanDate)} />
+            <DetailRow label="GTIN" value={product.gtin} />
             <DetailRow
               label="Country of purchase"
               value={
                 product.purchaseCountryCode ? getCountryName(product.purchaseCountryCode) : null
               }
             />
-            <DetailRow label="Category" value={product.category} />
-            <DetailRow label="GTIN / barcode" value={product.gtin} />
             <DetailRow label="Model number" value={product.modelNumber} />
             <DetailRow label="Serial number" value={product.serialNumber} />
             <DetailRow label="Lot / batch number" value={product.lotNumber} />
-            <DetailRow label="Purchase date" value={product.purchaseDate} />
+            <DetailRow
+              label="Purchase date"
+              value={product.purchaseDate ? formatPurchaseDate(product.purchaseDate) : null}
+            />
+            <DetailRow label="Category" value={product.category} />
             <DetailRow
               label="Identification method"
               value={identificationMethodLabel(product.identificationMethod)}
@@ -268,8 +273,8 @@ export function ProductDetailScreen({ id }: ProductDetailScreenProps) {
           <View style={styles.monitoringCard}>
             <Text style={styles.monitoringTitle}>Automatic recall checks</Text>
             <Text style={styles.monitoringText}>
-              When account monitoring is available, Recall checks the current official U.S. CPSC
-              source. Country of purchase is saved as context and does not limit matching yet.
+              Recall checks active official sources automatically. Country of purchase is saved as
+              context and does not override an exact identifier match.
             </Text>
           </View>
           <View style={styles.actions}>

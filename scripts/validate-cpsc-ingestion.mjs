@@ -45,6 +45,25 @@ assert.equal(validateGtin('091021037091'), false);
 assert.equal(sourceIdentifier(peony), '10880');
 assert.equal(sourceIdentifier(peony), mapCpscRecall(peony).externalId);
 assert.equal(isCpscOfficialUrl(mappedPeony.officialUrl), true);
+assert.equal(isCpscOfficialUrl('https://cpsc.gov/Recalls/2026/example'), true);
+assert.equal(isCpscOfficialUrl('https://www.cpsc.gov/Recalls/2026/example'), true);
+assert.equal(
+  mapCpscRecall({ ...peony, URL: 'https://cpsc.gov/Recalls/2026/example' }).officialUrl,
+  'https://cpsc.gov/Recalls/2026/example',
+);
+for (const unsafeUrl of [
+  'http://cpsc.gov/Recalls/2026/example',
+  'https://evilcpsc.gov/Recalls/2026/example',
+  'https://cpsc.gov.evil.example/Recalls/2026/example',
+  'https://foo.cpsc.gov/Recalls/2026/example',
+  'https://example.com/Recalls/2026/example',
+  'https://cpsc.gov@evil.example/Recalls/2026/example',
+  'https://user:pass@cpsc.gov/Recalls/2026/example',
+  'https://cpsc.gov:443/Recalls/2026/example',
+  'https://cpsc.gov:8443/Recalls/2026/example',
+]) {
+  assert.equal(isCpscOfficialUrl(unsafeUrl), false);
+}
 assert.equal(isCpscOfficialUrl('https://saferproducts.gov/RestWebServices/Recall'), false);
 assert.throws(
   () => mapCpscRecall({ ...peony, URL: 'https://example.com/recall' }),
@@ -75,4 +94,4 @@ assert.equal(url.searchParams.get('format'), 'json');
 assert.equal(url.searchParams.get('LastPublishDateStart'), '2026-09-01');
 assert.equal(url.searchParams.get('LastPublishDateEnd'), '2026-09-14');
 
-console.log('CPSC ingestion validation passed (28 assertions).');
+console.log('CPSC ingestion validation passed (40 assertions).');

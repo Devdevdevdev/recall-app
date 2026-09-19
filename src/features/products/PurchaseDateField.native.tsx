@@ -8,6 +8,7 @@ import {
   dateOnlyToLocalDate,
   dateToDateOnly,
   formatPurchaseDate,
+  formatScanDate,
   todayDateOnly,
 } from './purchaseDate';
 
@@ -17,7 +18,24 @@ type PurchaseDateFieldProps = {
   value: string;
 };
 
-export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldProps) {
+type CalendarDateFieldProps = PurchaseDateFieldProps & {
+  allowClear: boolean;
+  accessibilityHint: string;
+  emptyLabel: string;
+  formatValue: (value: string) => string;
+  label: string;
+};
+
+function CalendarDateField({
+  allowClear,
+  accessibilityHint,
+  emptyLabel,
+  error,
+  formatValue,
+  label,
+  onChange,
+  value,
+}: CalendarDateFieldProps) {
   const [pickerVisible, setPickerVisible] = useState(false);
   const selectedDate = dateOnlyToLocalDate(value);
   const pickerDate = selectedDate ?? new Date();
@@ -34,10 +52,10 @@ export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldP
 
   return (
     <View style={styles.field}>
-      <Text style={styles.label}>Purchase date</Text>
+      <Text style={styles.label}>{label}</Text>
       <Pressable
-        accessibilityHint="Opens the native purchase date selector"
-        accessibilityLabel="Purchase date"
+        accessibilityHint={accessibilityHint}
+        accessibilityLabel={label}
         accessibilityRole="button"
         onPress={() => setPickerVisible(true)}
         style={({ pressed }) => [
@@ -46,7 +64,7 @@ export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldP
           pressed && styles.pressed,
         ]}>
         <Text style={[styles.dateValue, !selectedDate && styles.placeholder]}>
-          {selectedDate ? formatPurchaseDate(value) : 'Select purchase date'}
+          {selectedDate ? formatValue(value) : emptyLabel}
         </Text>
       </Pressable>
       {pickerVisible ? (
@@ -68,7 +86,7 @@ export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldP
           ) : null}
         </View>
       ) : null}
-      {selectedDate ? (
+      {allowClear && selectedDate ? (
         <Pressable
           accessibilityRole="button"
           onPress={() => onChange('')}
@@ -82,6 +100,32 @@ export function PurchaseDateField({ error, onChange, value }: PurchaseDateFieldP
         </Text>
       ) : null}
     </View>
+  );
+}
+
+export function PurchaseDateField(props: PurchaseDateFieldProps) {
+  return (
+    <CalendarDateField
+      {...props}
+      accessibilityHint="Opens the native purchase date selector"
+      allowClear
+      emptyLabel="Select purchase date"
+      formatValue={formatPurchaseDate}
+      label="Purchase date"
+    />
+  );
+}
+
+export function ScanDateField(props: PurchaseDateFieldProps) {
+  return (
+    <CalendarDateField
+      {...props}
+      accessibilityHint="Opens the native scan date selector"
+      allowClear={false}
+      emptyLabel="Select scan date"
+      formatValue={formatScanDate}
+      label="Scan date"
+    />
   );
 }
 

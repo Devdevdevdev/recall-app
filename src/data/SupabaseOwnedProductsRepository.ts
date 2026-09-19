@@ -9,7 +9,7 @@ import {
 } from './ownedProductsMappers';
 
 const ownedProductColumns =
-  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, purchase_date, purchase_country_code, image_path, identification_method, identification_confidence, created_at, updated_at';
+  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, scan_date, purchase_date, purchase_country_code, image_path, identification_method, identification_confidence, created_at, updated_at';
 
 type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> & {
   user_id: string;

@@ -62,3 +62,28 @@ export function formatPurchaseDate(value: string): string {
     year: 'numeric',
   }).format(date);
 }
+
+/** Stable English display for Recall's primary, user-facing scan date. */
+export function formatScanDate(value: string): string {
+  const date = dateOnlyToLocalDate(value);
+
+  if (!date) {
+    return value;
+  }
+
+  const months = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ] as const;
+  return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+}

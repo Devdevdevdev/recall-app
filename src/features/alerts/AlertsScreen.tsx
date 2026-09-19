@@ -120,7 +120,7 @@ export function AlertsScreen() {
     <View style={styles.header}>
       <ScreenHeader
         title="Alerts"
-        description="Recall matches for products you own, backed by official CPSC safety notices."
+        description="Recall matches for products you own, backed by official product-safety notices."
       />
       {error ? (
         <View style={styles.errorCard}>

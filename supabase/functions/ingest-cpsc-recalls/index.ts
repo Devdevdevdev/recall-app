@@ -1,7 +1,6 @@
 import { createClient, type SupabaseClient } from 'npm:@supabase/supabase-js@2';
 
-import { fetchCpscRecalls } from '../_shared/cpsc/client.ts';
-import { mapCpscRecall, sourceIdentifier } from '../_shared/cpsc/mapper.ts';
+import { cpscRecallSourceAdapter } from '../_shared/cpsc/adapter.ts';
 import type { CpscIngestionRequest, CpscIngestionStats } from '../_shared/cpsc/types.ts';
 import { isJsonObject, parseCpscIngestionRequest } from '../_shared/cpsc/validation.ts';
 
@@ -78,9 +77,17 @@ Deno.serve(async (request) => {
 
   let records: readonly unknown[];
   try {
-    records = await fetchCpscRecalls(input);
+    records = await cpscRecallSourceAdapter.retrieve({
+      startDate: input.startDate,
+      endDate: input.endDate,
+      maxRecords: input.maxRecords ?? 100,
+    });
   } catch (error) {
-    return json(502, { error: error instanceof Error ? error.message : 'CPSC retrieval failed.' });
+    const message = error instanceof Error ? error.message : 'CPSC retrieval failed.';
+    return json(
+      message === 'CPSC response exceeds the bounded automation record limit.' ? 422 : 502,
+      { error: message },
+    );
   }
   if (input.maxRecords !== undefined && records.length > input.maxRecords) {
     return json(422, { error: 'CPSC response exceeds the bounded automation record limit.' });
@@ -110,8 +117,8 @@ Deno.serve(async (request) => {
       if (!isJsonObject(record)) {
         throw new Error('CPSC record is not a JSON object');
       }
-      stableId = sourceIdentifier(record);
-      const mapped = mapCpscRecall(record);
+      stableId = cpscRecallSourceAdapter.stableExternalId(record);
+      const mapped = cpscRecallSourceAdapter.normalize(record);
       stats.scopeCount += mapped.scopes.length;
       if (stats.examples.length < maxExamples) {
         stats.examples.push({

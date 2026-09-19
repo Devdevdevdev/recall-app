@@ -1,18 +1,34 @@
 # Global coverage model
 
+## Phase 14 source status
+
+Coverage is driven by authoritative sources whose `is_active` flag is true. The reviewed production
+sources are CPSC and Health Canada. The Coverage view and home count derive that state from source
+metadata; inactive or unimplemented authorities are never presented as live.
+
+See [the Phase 14 source audit](./phase-14-source-audit.md) for the current authority decisions.
+
+Source keys are immutable adapter identities. Each source owns a private watermark object and sync
+status. A failed source does not advance its watermark; successful sources can persist independently,
+and the overall automation run reports `partial_success` before any push delivery.
+
+`EU` and `EEA` are explicit regions. Belgium (`BE`) is contained by both applicable region models,
+but geography is only relevance context and cannot override exact identifier evidence.
+
 Recall is architected for multi-jurisdiction recall monitoring and captures the market context of
 owned products. It does **not** yet monitor recalls worldwide.
 
 ## Current live coverage
 
-| Jurisdiction  | Official authority                             | Source language | Status |
-| ------------- | ---------------------------------------------- | --------------- | ------ |
-| United States | U.S. Consumer Product Safety Commission (CPSC) | English         | Active |
+| Jurisdiction  | Official authority                      | Source language | Status |
+| ------------- | --------------------------------------- | --------------- | ------ |
+| United States | U.S. Consumer Product Safety Commission | English         | Active |
+| Canada        | Health Canada                           | English         | Active |
 
-The production Phase 12 schedule automatically checks official CPSC recall data every six hours at
-minute 17 UTC, then runs the existing bounded matching and notification pipeline. No European,
-Canadian, Australian, OECD, FDA, NHTSA, or other authority is active in Phase 13. The Coverage view
-is driven by authoritative source metadata and must not present planned sources as live.
+The production schedule checks all active authoritative adapters every six hours at minute 17 UTC,
+then runs the existing bounded matching and notification pipeline. No European, Australian, OECD,
+FDA, NHTSA, or other authority is active. The Coverage view must not present planned or inactive
+sources as live.
 
 ## Country of purchase
 
@@ -50,23 +66,22 @@ Country-of-purchase and notice-jurisdiction values remain separate even when bot
 
 ## Source language
 
-Source language describes the language of the authoritative material. Current CPSC source content
-is recorded as English (`en`). Phase 13 adds metadata only: the app remains English-only and does
-not translate, summarize into another language, or rewrite authoritative text. Multilingual-source
-normalization and translation policy require a separate Phase 14 design and review.
+Source language describes the language of the authoritative material. CPSC and the selected Health
+Canada feed are English (`en`). The app remains English-only and does not translate, summarize into
+another language, or rewrite authoritative text. Translation remains outside Phase 14 and cannot
+become authoritative matching evidence.
 
-## Matching behavior in Phase 13
+## Matching behavior
 
 Country of purchase is not a hard candidate filter, a matching signal, or an input to
-`deterministic_v1`, `nemotron_v1`, `hybrid_guarded_v1`, or the safety verifier. CPSC is currently the
-only live source; filtering by jurisdiction now would silently remove existing recall coverage for
-products purchased elsewhere.
+`deterministic_v1`, `nemotron_v1`, `hybrid_guarded_v1`, or the safety verifier. Filtering by
+jurisdiction would silently remove valid recall coverage for products purchased elsewhere.
 
 Country, jurisdiction, and source-language metadata are excluded from the existing evidence
-fingerprint in Phase 13. Adding or backfilling that metadata alone therefore does not trigger
-matching reevaluation. The matcher contracts, benchmark datasets, expected labels, and metrics are
-unchanged. Phase 14 will define jurisdiction-aware source selection only when multiple real
-authorities are available.
+fingerprint. Adding or backfilling that metadata alone therefore does not trigger matching
+reevaluation. The matcher contracts, frozen benchmark datasets, expected labels, and metrics are
+unchanged. Phase 14 adds explicit region containment as routing context only; it cannot override
+exact identifier evidence.
 
 ## Authority and assessment
 
@@ -82,9 +97,9 @@ The user interface therefore separates:
 - **Recall's match assessment:** the reason and identifiers used to decide whether the owned item
   appears to be in scope.
 
-## Phase 14 adapter direction
+## Phase 14 adapter boundary
 
-Phase 14 is planned to add reviewed multi-authority ingestion. A source adapter should provide:
+The Phase 14 source adapter provides:
 
 - stable source identity and official authority;
 - declared jurisdictions and source language;
@@ -93,9 +108,9 @@ Phase 14 is planned to add reviewed multi-authority ingestion. A source adapter 
 - the official notice URL; and
 - a stable source-specific external ID.
 
-Each source will require its own provenance, URL validation, rate and window limits, idempotency,
-authority review, fixture coverage, and operational controls. Phase 13 adds no new network source
-and intentionally avoids an unused plugin framework before those requirements are concrete.
+Each source requires its own provenance, URL validation, rate and window limits, idempotency,
+authority review, fixture coverage, and operational controls. Health Canada passed its separate
+production activation gate and remains bounded by its own `last_updated_date` watermark.
 
 ## Safe monitoring status
 

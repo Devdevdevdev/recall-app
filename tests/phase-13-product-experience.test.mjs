@@ -37,6 +37,7 @@ const productRow = {
   model_number: '11000001',
   serial_number: null,
   lot_number: null,
+  scan_date: '2026-09-10',
   purchase_date: '2026-09-10',
   purchase_country_code: 'BE',
   image_path: null,
@@ -56,6 +57,7 @@ const product = {
   modelNumber: productRow.model_number,
   serialNumber: productRow.serial_number,
   lotNumber: productRow.lot_number,
+  scanDate: productRow.scan_date,
   purchaseDate: productRow.purchase_date,
   purchaseCountryCode: productRow.purchase_country_code,
   imagePath: productRow.image_path,
@@ -117,6 +119,7 @@ test('a user can override the default country on one product', () => {
     ...productCreationPrefillFromParams({}, 'BE').values,
     productName: 'Travel cot',
     purchaseCountryCode: 'FR',
+    scanDate: productRow.scan_date,
   };
 
   assert.deepEqual(validateProductForm(values), {
@@ -129,6 +132,7 @@ test('a user can override the default country on one product', () => {
       modelNumber: null,
       serialNumber: null,
       lotNumber: null,
+      scanDate: '2026-09-10',
       purchaseDate: null,
       purchaseCountryCode: 'FR',
     },
@@ -152,6 +156,7 @@ test('owned product serialization maps canonical country codes in both direction
       modelNumber: null,
       serialNumber: null,
       lotNumber: null,
+      scanDate: productRow.scan_date,
       purchaseDate: null,
       purchaseCountryCode: 'FR',
     }),
@@ -163,6 +168,7 @@ test('owned product serialization maps canonical country codes in both direction
       model_number: null,
       serial_number: null,
       lot_number: null,
+      scan_date: '2026-09-10',
       purchase_date: null,
       purchase_country_code: 'FR',
     },
@@ -198,6 +204,7 @@ test('coverage source mapping presents the current authoritative source honestly
   assert.deepEqual(
     toCoverageSource({
       id: '20000000-0000-4000-8000-000000000001',
+      sourceKey: 'cpsc',
       authority: 'CPSC',
       jurisdictionType: 'country',
       jurisdictionCode: 'US',
@@ -212,11 +219,37 @@ test('coverage source mapping presents the current authoritative source honestly
       status: 'Active',
     },
   );
+
+  assert.deepEqual(
+    toCoverageSource({
+      id: '20000000-0000-4000-8000-000000000002',
+      sourceKey: 'health_canada',
+      authority: 'Health Canada Recalls and Safety Alerts',
+      jurisdictionType: 'country',
+      jurisdictionCode: 'CA',
+      sourceLanguageCode: 'en',
+      isActive: true,
+    }),
+    {
+      id: '20000000-0000-4000-8000-000000000002',
+      authority: 'Health Canada',
+      jurisdiction: 'Canada',
+      sourceLanguage: 'English',
+      status: 'Active',
+    },
+  );
 });
 
 test('authority and jurisdiction codes have friendly English labels', () => {
-  assert.equal(getAuthorityDisplayName('CPSC'), 'U.S. Consumer Product Safety Commission');
-  assert.equal(getAuthorityDisplayName('UNKNOWN'), 'UNKNOWN');
+  assert.equal(
+    getAuthorityDisplayName('U.S. Consumer Product Safety Commission (CPSC)', 'cpsc'),
+    'U.S. Consumer Product Safety Commission',
+  );
+  assert.equal(
+    getAuthorityDisplayName('Health Canada Recalls and Safety Alerts', 'health_canada'),
+    'Health Canada',
+  );
+  assert.equal(getAuthorityDisplayName('Unknown authority', 'unknown'), 'Unknown authority');
   assert.equal(getJurisdictionDisplayName('country', 'US'), 'United States');
   assert.equal(getJurisdictionDisplayName('region', 'EU'), 'European Union');
   assert.equal(getJurisdictionDisplayName('global', 'GLOBAL'), 'Global');

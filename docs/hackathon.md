@@ -74,22 +74,23 @@ After separate production approvals and a zero-AI/zero-push verification, the co
 are active at the bounded six-hour cadence. Phase 13 adds optional country-of-purchase context, an
 owner-isolated default for new products, normalized notice jurisdictions, source-language metadata,
 and clearer product, alert, Coverage, and monitoring presentation. Existing CPSC notices are
-classified as United States/English without altering matcher inputs or fingerprints. Current live
-coverage remains CPSC only; Phase 13 adds no new authority, translation, paid inference, or test
-push. Password recovery, social login, Phase 14 multi-authority ingestion, and public build/demo
-publication remain deferred.
+classified as United States/English without altering matcher inputs or fingerprints. Phase 14 adds
+bounded official-source adapters for CPSC and Health Canada without changing the matcher,
+deterministic-first policy, global limits, or historical-push protections. Password recovery,
+social login, additional authorities, translation, and public build/demo publication remain
+deferred.
 
-## Devpost-safe Phase 13 language
+## Devpost-safe current coverage language
 
 Recall is architected for multi-jurisdiction recall monitoring and captures the market context of
-owned products. Recall currently monitors the U.S. Consumer Product Safety Commission
-automatically. The official authority establishes that a recall exists; Recall's deterministic-first,
-guarded matching pipeline assesses whether an owned product appears to be in scope.
+owned products. Recall currently monitors official product-safety recall data from the U.S.
+Consumer Product Safety Commission and Health Canada. The official authority establishes that a
+recall exists; Recall's deterministic-first, guarded matching pipeline assesses whether an owned
+product appears to be in scope.
 
-Do not claim that Recall monitors recalls worldwide or currently covers Europe, Canada, Australia,
-or any authority other than CPSC. Phase 14 multi-authority ingestion is a planned direction, not a
-shipped capability. Controlled benchmark results likewise remain evidence from small frozen CPSC
-datasets, not a general-world accuracy claim.
+Do not claim that Recall monitors recalls worldwide, covers Europe or Australia, or monitors any
+authority beyond the two active sources. Controlled benchmark results remain evidence from small
+frozen CPSC datasets, not a general-world accuracy claim.
 
 ## Devpost-safe Phase 12 language
 

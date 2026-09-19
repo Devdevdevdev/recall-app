@@ -20,6 +20,7 @@ export type OwnedProduct = {
   modelNumber: string | null;
   serialNumber: string | null;
   lotNumber: string | null;
+  scanDate: string;
   purchaseDate: string | null;
   purchaseCountryCode: CountryCode | null;
   imagePath: string | null;
@@ -41,6 +42,7 @@ export type OwnedProductInput = {
   modelNumber: string | null;
   serialNumber: string | null;
   lotNumber: string | null;
+  scanDate: string;
   purchaseDate: string | null;
   purchaseCountryCode: CountryCode | null;
   /** Set internally by a validated acquisition flow; never chosen in the product form. */
