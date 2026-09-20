@@ -1,0 +1,6 @@
+{
+  "complete": true,
+  "outputPath": "benchmarks/recall-matching/phase-15/results/nemotron-v1-paid.json",
+  "requestCount": 200,
+  "actualCostUsd": 0.2600037
+}

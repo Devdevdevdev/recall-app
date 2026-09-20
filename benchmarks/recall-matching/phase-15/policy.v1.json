@@ -1,0 +1,20 @@
+{
+  "benchmarkVersion": "recall_safety_benchmark_v2",
+  "datasetVersion": "2.0.0",
+  "policyVersion": "phase_15_safety_policy_v1",
+  "promptVersions": {
+    "nemotron": "1.0.0",
+    "guardedNemotron": "1.0.0"
+  },
+  "labelContract": {
+    "confirmed": "match",
+    "rejected": "no_match",
+    "needs_review": "needs_review"
+  },
+  "groundTruth": "Labels are derived only from explicit authoritative scope rules or controlled counterfactuals at explicit boundaries. Models never establish labels.",
+  "splitPolicy": "Official recall families are assigned to exactly one split. Reannouncements, expansions, and cross-authority descriptions of one safety event must remain in one family.",
+  "antiTuning": "Development may be used for tuning. Holdout and stress are immutable after freeze and may not be used to tune a system that is then represented as unseen on those same splits.",
+  "technicalFailurePolicy": "Provider, timeout, invalid-output, and exhausted-retry failures are tracked separately and never counted as correct abstentions.",
+  "paidRunGate": "No Nebius or Nemotron inference is authorized until explicit user approval after the offline baseline and run plan are reviewed.",
+  "claimBoundary": "This is a controlled internal safety evaluation, not a representative estimate of all real-world recalls."
+}

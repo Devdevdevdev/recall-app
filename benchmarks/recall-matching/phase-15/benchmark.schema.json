@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://recall.example/benchmarks/recall-safety-v2.schema.json",
+  "title": "Recall safety benchmark v2 split",
+  "type": "object",
+  "required": [
+    "benchmarkVersion",
+    "datasetVersion",
+    "policyVersion",
+    "sourceSnapshotVersion",
+    "split",
+    "createdAt",
+    "cases"
+  ],
+  "properties": {
+    "benchmarkVersion": { "const": "recall_safety_benchmark_v2" },
+    "datasetVersion": { "const": "2.0.0" },
+    "policyVersion": { "const": "phase_15_safety_policy_v1" },
+    "sourceSnapshotVersion": { "const": "2.0.0" },
+    "split": { "enum": ["development", "holdout", "stress"] },
+    "createdAt": { "type": "string", "format": "date" },
+    "cases": {
+      "type": "array",
+      "minItems": 30,
+      "maxItems": 130,
+      "items": { "$ref": "#/$defs/case" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "nullableString": { "type": ["string", "null"] },
+    "ownedProduct": {
+      "type": "object",
+      "required": [
+        "productName",
+        "brand",
+        "category",
+        "gtin",
+        "modelNumber",
+        "serialNumber",
+        "lotNumber",
+        "purchaseDate",
+        "identificationMethod"
+      ],
+      "properties": {
+        "productName": { "$ref": "#/$defs/nullableString" },
+        "brand": { "$ref": "#/$defs/nullableString" },
+        "category": { "$ref": "#/$defs/nullableString" },
+        "gtin": { "$ref": "#/$defs/nullableString" },
+        "modelNumber": { "$ref": "#/$defs/nullableString" },
+        "serialNumber": { "$ref": "#/$defs/nullableString" },
+        "lotNumber": { "$ref": "#/$defs/nullableString" },
+        "purchaseDate": { "$ref": "#/$defs/nullableString" },
+        "identificationMethod": { "const": "controlled_benchmark_fixture" }
+      },
+      "additionalProperties": false
+    },
+    "case": {
+      "type": "object",
+      "required": [
+        "caseId",
+        "authority",
+        "sourceKey",
+        "externalRecallId",
+        "officialUrl",
+        "referenceDate",
+        "recallFamilyId",
+        "split",
+        "expected",
+        "labelProvenance",
+        "evidenceDimensions",
+        "perturbationType",
+        "pairGroupId",
+        "hardNegative",
+        "ownedProduct",
+        "attributes",
+        "reason",
+        "notes"
+      ],
+      "properties": {
+        "caseId": { "type": "string", "minLength": 1 },
+        "authority": { "enum": ["CPSC", "Health Canada"] },
+        "sourceKey": { "type": "string", "minLength": 1 },
+        "externalRecallId": { "type": "string", "minLength": 1 },
+        "officialUrl": { "type": "string", "pattern": "^https://" },
+        "referenceDate": { "type": "string", "format": "date" },
+        "recallFamilyId": { "type": "string", "minLength": 1 },
+        "split": { "enum": ["development", "holdout", "stress"] },
+        "expected": { "enum": ["match", "no_match", "needs_review"] },
+        "labelProvenance": {
+          "enum": [
+            "official_exact_evidence",
+            "official_scope_combination",
+            "controlled_boundary_counterfactual",
+            "controlled_identifier_counterfactual",
+            "source_ambiguity"
+          ]
+        },
+        "evidenceDimensions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "perturbationType": { "$ref": "#/$defs/nullableString" },
+        "pairGroupId": { "$ref": "#/$defs/nullableString" },
+        "hardNegative": { "type": "boolean" },
+        "ownedProduct": { "$ref": "#/$defs/ownedProduct" },
+        "attributes": { "type": "object" },
+        "reason": { "type": "string", "minLength": 1 },
+        "notes": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

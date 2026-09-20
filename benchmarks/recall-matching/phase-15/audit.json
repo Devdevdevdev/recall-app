@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-09-20T18:15:14.521Z",
+  "totalCaseCount": 200,
+  "caseCountBySplit": {
+    "development": 48,
+    "holdout": 120,
+    "stress": 32
+  },
+  "uniqueRecallFamilyCount": 50,
+  "uniqueRecallFamiliesBySplit": {
+    "development": 12,
+    "holdout": 30,
+    "stress": 8
+  },
+  "crossSplitRecallFamilyOverlap": [],
+  "labelDistribution": {
+    "match": 67,
+    "no_match": 67,
+    "needs_review": 66
+  },
+  "evidenceDistribution": {
+    "adversarial": 32,
+    "batch": 4,
+    "capacity": 4,
+    "color": 20,
+    "date": 4,
+    "gtin": 104,
+    "lot": 8,
+    "manufacture_date": 12,
+    "model": 92,
+    "model_family": 8,
+    "multi_condition": 40,
+    "production_date": 4,
+    "serial_range": 8,
+    "size": 8,
+    "variant": 28
+  },
+  "sourceDistribution": {
+    "CPSC": 200
+  },
+  "perturbationDistribution": {
+    "boundary_date": 4,
+    "conflicting_identifiers": 1,
+    "date_just_outside_scope": 2,
+    "lot_near_miss": 1,
+    "missing_required_identifier": 65,
+    "model_family_near_miss": 3,
+    "purchase_date_as_manufacture_date": 1,
+    "serial_just_outside_range": 1,
+    "sibling_model": 12,
+    "single_character_model_mutation": 1,
+    "size_mismatch": 2,
+    "transposed_digits": 2,
+    "valid_gtin_near_miss": 35,
+    "variant_mismatch": 3
+  },
+  "perturbationVisibility": {
+    "developmentSeen": ["missing_required_identifier", "valid_gtin_near_miss"],
+    "stressOnly": [
+      "boundary_date",
+      "conflicting_identifiers",
+      "lot_near_miss",
+      "purchase_date_as_manufacture_date",
+      "serial_just_outside_range",
+      "single_character_model_mutation",
+      "transposed_digits",
+      "variant_mismatch"
+    ]
+  },
+  "provenanceDistribution": {
+    "controlled_boundary_counterfactual": 8,
+    "controlled_identifier_counterfactual": 59,
+    "official_exact_evidence": 54,
+    "official_scope_combination": 13,
+    "source_ambiguity": 66
+  },
+  "hardNegativeCount": 67,
+  "pairCount": 50,
+  "missingProvenanceCount": 0,
+  "duplicateCaseIds": [],
+  "duplicateEvidenceFingerprints": [],
+  "duplicateCaseCount": 0,
+  "duplicateEvidenceFingerprintCount": 0,
+  "unsupportedLabelCount": 0,
+  "unsupportedCaseIds": [],
+  "nearDuplicateLeakageAnalysis": {
+    "method": "Exact recall-family isolation plus normalized controlled-evidence fingerprinting.",
+    "crossSplitFamilyOverlapCount": 0,
+    "duplicateEvidenceFingerprintCount": 0
+  },
+  "historicalRecallOverlap": []
+}

@@ -10,99 +10,58 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-Phase 13 makes the product model ready for future multi-jurisdiction coverage and gives the mobile
-experience a clearer, consumer-facing explanation of what Recall does. Live automatic coverage is
-still limited to official U.S. Consumer Product Safety Commission (CPSC) notices. The Phase 12
-bounded Vault-backed schedule remains active with its existing automation, AI, Cron, and push
-controls unchanged:
+**Phase 14 is released.** Recall now monitors two active official product-safety sources: the U.S.
+Consumer Product Safety Commission (CPSC) and Health Canada. This is multi-source coverage, not
+worldwide coverage.
 
-- Expo SDK 57, React Native, TypeScript, and Expo Router
-- Android, iOS, and web-compatible navigation shell
-- Home, Scan, My Products, Alerts, and Settings screens
-- Reusable safety-oriented design tokens and UI components
-- A guarded Supabase client configuration for Android, iOS, and web
-- Real email/password sign-up, sign-in, persisted sessions, and sign-out
-- Protected Expo Router auth and authenticated route groups
-- Real authenticated product list, pull-to-refresh, manual product creation, detail, editing, and
-  confirmed deletion
-- An optional, canonical ISO 3166-1 alpha-2 country-of-purchase field, a searchable English country
-  selector, and an owner-isolated default-country preference for new products
-- Camera barcode acquisition using Expo SDK 57's `expo-camera`, with confirmation before the
-  existing product form is prefilled and saved
-- Still-image product-label OCR using pinned `rn-mlkit-ocr@0.3.1` and the Latin-only Google ML Kit
-  model, with conservative model/serial/lot extraction and review before ProductForm
-- Temporary label photos processed only on device and deleted from app cache on best effort; no
-  image is uploaded, persisted, or added to the photo library
-- A custom native development-client configuration because ML Kit OCR is not available in Expo Go,
-  while web retains a safe mobile-only explanation and manual entry
-- GS1 check-digit validation for GTIN-8, GTIN-12, GTIN-13, and GTIN-14 while preserving leading
-  zeroes, plus manual entry when camera access is unavailable
-- Native Android/iOS purchase-date selection through Expo-compatible
-  `@react-native-community/datetimepicker`, with a browser-native web date fallback; dates are
-  stored as date-only `YYYY-MM-DD` values without UTC conversion
-- Clear distinction between a validated GTIN and a meaningful non-GTIN Code 128 product code; the
-  latter can lead into label OCR but is never guessed to be a GTIN, model, serial, or lot number
-- A Supabase-backed inventory repository that maps database rows to domain objects and derives
-  product ownership from the authenticated user
-- Framework-independent domain models and repository interfaces
-- A migration-defined PostgreSQL schema with constraints, indexes, privileges, and Row Level
-  Security
-- Normalized recall-notice jurisdictions and source-language metadata that prepare the data model
-  for Phase 14 adapters without changing the current matcher or authoritative notice text
-- A server-only Supabase Edge Function that retrieves date-bounded JSON recall records from the
-  official CPSC Retrieval API, preserves raw CPSC payloads, and safely upserts notices/scopes
-- Pure server-safe `deterministic_v1` candidate retrieval, per-scope evidence evaluation, and
-  multi-scope aggregation with a versioned common match contract
-- A frozen 30-case public-CPSC benchmark with explicit label provenance, privacy validation,
-  three-class metrics, false-positive reporting, decision coverage, latency, and zero AI cost
-- A dependency-free Nebius Token Factory client with destination validation, bounded timeouts and
-  retries, redacted errors, and no React Native import path
-- A fixed `nemotron_v1` prompt, forced strict function-tool schema, local output validation, and an
-  explicit benchmark projection that excludes expected labels and evaluation metadata
-- A real one-pass evaluation of `nvidia/nemotron-3-super-120b-a12b`: 70.0% exact accuracy, 90.0%
-  strict recall, four false positives, 86.7% structured-output success, and USD 0.0616212 measured
-  inference cost on the 30 controlled cases
-- A frozen Phase 9.1 policy that runs `deterministic_v1` first and sends only its abstentions to
-  Nemotron, then requires locally verified, source-addressable identifier evidence before an AI
-  confirmation can become `match`; AI rejection and every unsafe failure remain `needs_review`
-- An independent 36-case holdout from 12 new CPSC recalls, disjoint from the 30-case historical set
-  and 24-case development set. The final guarded hybrid run reached 88.9% exact accuracy, 100.0%
-  MATCH precision and strict recall, zero false positives, 44.4% needs-review, and 55.6% coverage
-  with 20 escalations, 24 requests including four eligible retries, and USD 0.0438057 measured cost
-- A secret-protected, POST-only recall-matching Edge Function with bounded recall, candidate-pair,
-  and Nebius-call budgets; deterministic decisions always run first and only abstentions may reach
-  the unchanged Phase 9.1 guarded hybrid policy
-- Canonical evidence fingerprints that exclude retrieval timestamps, database row IDs, and scope
-  insertion order, plus private expiring leases that prevent concurrent duplicate evaluation
-- Transactional match persistence and alert creation for confirmed results, with confirmation
-  reversals retained visibly rather than deleting alert history
-- A real RLS-protected Alerts list and detail flow containing only consumer-safe product, recall,
-  match-method, reason, and official-source fields
-- Explicit Settings-based Android/iOS notification permission, a dedicated high-importance Android
-  `recall-alerts` channel, and Expo token acquisition tied to the verified EAS project ID
-- Private push-device and delivery persistence with account reassignment, sign-out cleanup,
-  confirmed-only eligibility, logical delivery uniqueness, bounded retries, and receipt checks
-- Server-only Expo Push Service delivery with generic lock-screen content and protected alert-detail
-  navigation from foreground, background, or cold-start notification taps
-- A dedicated, secret-protected automation Edge Function that sequences the existing CPSC
-  ingestion, matching, and push workers without duplicating their safety logic
-- A private kill switch, aggregate run history, recoverable singleton lease, successful-ingestion
-  watermark, 48-hour overlap, seven-day bootstrap/catch-up windows, and persistent affected-recall
-  retry queue
-- An active Vault-backed `pg_cron`/`pg_net` job named `recall-automation-every-6h` at
-  `17 */6 * * *` UTC; migrations install it inactive by default and independent automation, AI,
-  and push controls remain available as production kill switches
-- A user-facing Coverage view and a narrow authenticated monitoring projection that expose only
-  current active authorities and safe aggregate status, never private automation records, Cron
-  administration, secrets, tokens, prompts, or run errors
-- Strict TypeScript, ESLint, and Prettier configuration
+The released product includes:
 
-Password recovery, magic links, OAuth/social login, and external product lookup are intentionally
-not implemented yet. Phase 13 does not add a recall authority, translate source material, or use
-country of purchase as a matching filter. It does not broaden Nemotron input beyond normalized
-authoritative evidence. Scanning acquires
-only barcode data or visible label text; it does not identify a commercial product. Product detail
-screens do not make safety or recall conclusions before authoritative recall data exists.
+- An Expo SDK 57 app for Android and iOS with authenticated inventory, alerts, settings, coverage,
+  barcode scanning, and on-device label OCR.
+- A primary product identity that keeps product name and brand separate from structured identifiers
+  such as GTIN, model, serial, and lot. Every inventory item also records an editable `scan_date` as
+  a date-only value without changing matching evidence.
+- Temporary label images processed only on device and deleted from cache on best effort. Images,
+  private OCR payloads, and personal product history are not sent to the model.
+- Official recall adapters for CPSC and Health Canada. Source URLs, authority identity, notice
+  language, jurisdiction, raw provenance, and normalized scope evidence are preserved.
+- Autonomous monitoring on a bounded six-hour schedule. Each source has isolated retrieval state;
+  one source failure does not erase successful work from the other. Matching, AI, and push each
+  retain independent limits and kill switches.
+- RLS-protected Supabase inventory and alerts, private worker leases, canonical evidence
+  fingerprints, transactional alert creation, and server-only push delivery.
+
+### Nebius Token Factory + NVIDIA Nemotron
+
+Recall uses **Nebius Token Factory** to run
+`nvidia/nemotron-3-super-120b-a12b` for the small subset of candidate matches that deterministic
+rules cannot safely resolve. The API key is server-only, destinations and model identity are pinned,
+requests have bounded timeouts/retries, and outputs must pass strict local schemas.
+
+The production policy is deterministic-first:
+
+1. Exact structured identifiers and safe scope boundaries are evaluated locally.
+2. Confirmed and rejected deterministic decisions bypass AI.
+3. Only `needs_review` cases may reach Nemotron.
+4. A model confirmation is advisory until a local verifier finds source-addressable evidence in the
+   official notice.
+5. AI rejection, invalid output, provider failure, or unverifiable evidence remains
+   `needs_review`—never a silent safety conclusion.
+
+Official authorities establish that a recall exists. Recall and Nemotron answer only whether the
+controlled evidence for an owned product falls inside that official scope.
+
+Phase 15 adds a separate 200-case safety benchmark with development, frozen holdout, and adversarial
+stress splits. On this controlled CPSC-backed set, deterministic v1 measured 86.5% accuracy with
+three unsafe confirmations, standalone Nemotron measured 89.5% with seven, and guarded hybrid
+measured 84.5% with three. Guarded hybrid used 101 requests and USD 0.160123; eleven schema-exhausted
+cases failed closed to `needs_review`. These are internal benchmark measurements, not population
+claims. Historical benchmark artifacts remain immutable.
+
+Known limitations remain explicit: Recall covers only CPSC and Health Canada; it does not identify a
+commercial product from a photo, infer missing identifiers, translate authoritative notices, or
+claim representative real-world accuracy. Password recovery, magic links, social login, and public
+demo-build publication are still incomplete.
 
 ## Architecture
 
@@ -176,10 +135,9 @@ boundary, measured results, costs, and limitations. See
 idempotency, deployment, and manual verification.
 See [docs/push-notifications.md](docs/push-notifications.md) for Phase 11 device registration,
 delivery security, retry semantics, and Android verification.
-See [docs/autonomous-monitoring.md](docs/autonomous-monitoring.md) for the unchanged Phase 12
+See [docs/autonomous-monitoring.md](docs/autonomous-monitoring.md) for the bounded multi-source
 schedule, controls, and safe status projection, and [docs/global-coverage.md](docs/global-coverage.md)
-for current CPSC/United States coverage, Phase 13 market and jurisdiction semantics, and the Phase 14
-multi-authority adapter direction.
+for the released CPSC and Health Canada coverage boundary.
 
 ## Security
 

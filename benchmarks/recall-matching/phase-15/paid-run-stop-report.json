@@ -1,0 +1,5371 @@
+{
+  "generatedAt": "2026-09-20T13:04:13.841Z",
+  "reviewGate": "phase_15_paid_run_stopped_on_guarded_schema_failure",
+  "devpostClaimStatus": "blocked_do_not_publish_phase_15_comparison",
+  "frozenIntegrity": {
+    "phase15Artifacts": {
+      "benchmarks/recall-matching/phase-15/development.v2.json": "07436aa4baccd220e254ef8167d6c604bee32838b40c76caa18753c65c4ee244",
+      "benchmarks/recall-matching/phase-15/holdout.v2.json": "1a25e2a3b31a1ce9f496cfad4b6ce9ea208a59dc7d550796a7822fe607c04cb3",
+      "benchmarks/recall-matching/phase-15/stress.v2.json": "7def9bfe2eb37ca2ddc336f451841f3fc6ad561d74f8f0bb6c6de0cd10849399",
+      "benchmarks/recall-matching/phase-15/sources.normalized.json": "bbb9c08cb47a077f0582ceeda682b91944b25d13d4951dd54f17aecf9fec3b65",
+      "benchmarks/recall-matching/phase-15/benchmark.schema.json": "226d433c3929aab4dc676d7169b250256a90dd58ca67b273ff261296f656abc5",
+      "benchmarks/recall-matching/phase-15/policy.v1.json": "1ab6f90f086fe1fba12956b80ed850dc5a76b7d2e6af02d9d57d0715b1b0dfcf"
+    },
+    "promptPolicyArtifacts": {
+      "supabase/functions/_shared/matching/deterministicMatcher.ts": "1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb",
+      "supabase/functions/_shared/matching/evidence.ts": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+      "supabase/functions/_shared/matching/aggregation.ts": "6a73899f6f07553499ca862855c508258be143b63e5e150b8fb6181c214a4b63",
+      "supabase/functions/_shared/matching/normalization.ts": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02",
+      "supabase/functions/_shared/matching/nemotronMatcher.ts": "8db794f2a5372530bff4e241abd6a62759a7dcc17327741ad679ae4af0634ee0",
+      "supabase/functions/_shared/matching/nemotronPrompt.ts": "6310a6d60acd729f55eaf400210fd7eb2d40d05d0e7a179ef177fa8965ea8e3b",
+      "supabase/functions/_shared/matching/nemotronSchema.ts": "92727064fff97bef7388469bbfc2d2e06d68db2dd4e72a5bd1358c6ba969ab40",
+      "supabase/functions/_shared/matching/guardedNemotronMatcher.ts": "7a1aa58c988d97bd8aa1c86017d7a5d0688abc217848d9ee4bee13b20939b7c0",
+      "supabase/functions/_shared/matching/guardedNemotronPrompt.ts": "f7e4e4a6b5beeadfeb55dfebd305bb12d0485ef679e5e469556e0d63f8d69168",
+      "supabase/functions/_shared/matching/guardedNemotronSchema.ts": "aeddcd44749a15f94e738146ae1e22ec7bd1802b264f9753cd31d86fa6fa7ae3",
+      "supabase/functions/_shared/matching/hybridGuardedMatcher.ts": "0dcebd33961169011e3740d8c6fc255d5e124fbd42b0fdf912896c0e21184a1f",
+      "supabase/functions/_shared/matching/types.ts": "a3e6ac00bf03754fc158204e9e57636d06c391de43503adc8458f3f6b89d01e0"
+    },
+    "historicalArtifactCount": 17
+  },
+  "cost": {
+    "nemotronActualUsd": 0.2600037,
+    "hybridPartialActualUsd": 0.056918399999999994,
+    "combinedObservedUsd": 0.3169221,
+    "absoluteCapUsd": 1.6
+  },
+  "deterministic_v1": {
+    "status": "complete_200_of_200",
+    "metrics": {
+      "totalCases": 200,
+      "exactThreeClassAccuracy": 0.865,
+      "match": {
+        "truePositives": 57,
+        "falsePositives": 3,
+        "falseNegatives": 10,
+        "trueNegatives": 130,
+        "precision": 0.95,
+        "strictRecall": 0.8507462686567164,
+        "falsePositiveRate": 0.022556390977443608,
+        "unresolvedPositiveCases": 10
+      },
+      "needsReview": {
+        "predictedCount": 88,
+        "rate": 0.44
+      },
+      "decisionCoverage": 0.56,
+      "confusionMatrix": {
+        "match": {
+          "match": 57,
+          "no_match": 0,
+          "needs_review": 10
+        },
+        "no_match": {
+          "match": 1,
+          "no_match": 52,
+          "needs_review": 14
+        },
+        "needs_review": {
+          "match": 2,
+          "no_match": 0,
+          "needs_review": 64
+        }
+      },
+      "safety": {
+        "unsafeConfirmations": 3,
+        "unsafeConfirmRate": 0.05,
+        "missedAffectedCount": 10,
+        "missedAffectedRate": 0.14925373134328357,
+        "rejectedTrueMatches": 0,
+        "abstainedTrueMatches": 10,
+        "pairwiseDiscrimination": 0.78,
+        "correctPairs": 39,
+        "totalPairs": 50
+      }
+    },
+    "bySplit": {
+      "development": {
+        "totalCases": 48,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 16,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 32,
+          "precision": 1,
+          "strictRecall": 1,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 0.3333333333333333
+        },
+        "decisionCoverage": 0.6666666666666666,
+        "confusionMatrix": {
+          "match": {
+            "match": 16,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 1,
+          "correctPairs": 12,
+          "totalPairs": 12
+        }
+      },
+      "holdout": {
+        "totalCases": 120,
+        "exactThreeClassAccuracy": 0.9,
+        "match": {
+          "truePositives": 35,
+          "falsePositives": 0,
+          "falseNegatives": 5,
+          "trueNegatives": 80,
+          "precision": 1,
+          "strictRecall": 0.875,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 52,
+          "rate": 0.43333333333333335
+        },
+        "decisionCoverage": 0.5666666666666667,
+        "confusionMatrix": {
+          "match": {
+            "match": 35,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 33,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 40
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.125,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0.8333333333333334,
+          "correctPairs": 25,
+          "totalPairs": 30
+        }
+      },
+      "stress": {
+        "totalCases": 32,
+        "exactThreeClassAccuracy": 0.53125,
+        "match": {
+          "truePositives": 6,
+          "falsePositives": 3,
+          "falseNegatives": 5,
+          "trueNegatives": 18,
+          "precision": 0.6666666666666666,
+          "strictRecall": 0.5454545454545454,
+          "falsePositiveRate": 0.14285714285714285,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 20,
+          "rate": 0.625
+        },
+        "decisionCoverage": 0.375,
+        "confusionMatrix": {
+          "match": {
+            "match": 6,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 3,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 8
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.45454545454545453,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0.25,
+          "correctPairs": 2,
+          "totalPairs": 8
+        }
+      }
+    },
+    "stratified": {
+      "evidenceCategory": {
+        "adversarial": {
+          "totalCases": 32,
+          "exactThreeClassAccuracy": 0.53125,
+          "match": {
+            "truePositives": 6,
+            "falsePositives": 3,
+            "falseNegatives": 5,
+            "trueNegatives": 18,
+            "precision": 0.6666666666666666,
+            "strictRecall": 0.5454545454545454,
+            "falsePositiveRate": 0.14285714285714285,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 20,
+            "rate": 0.625
+          },
+          "decisionCoverage": 0.375,
+          "confusionMatrix": {
+            "match": {
+              "match": 6,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 3,
+              "needs_review": 7
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 8
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.3333333333333333,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.45454545454545453,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.25,
+            "correctPairs": 2,
+            "totalPairs": 8
+          }
+        },
+        "batch": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.5,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 1,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": 0.6666666666666666,
+            "strictRecall": 1,
+            "falsePositiveRate": 0.5,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 0.25
+          },
+          "decisionCoverage": 0.75,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 0.3333333333333333,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "capacity": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "color": {
+          "totalCases": 20,
+          "exactThreeClassAccuracy": 0.7,
+          "match": {
+            "truePositives": 4,
+            "falsePositives": 0,
+            "falseNegatives": 3,
+            "trueNegatives": 13,
+            "precision": 1,
+            "strictRecall": 0.5714285714285714,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 3
+          },
+          "needsReview": {
+            "predictedCount": 13,
+            "rate": 0.65
+          },
+          "decisionCoverage": 0.35,
+          "confusionMatrix": {
+            "match": {
+              "match": 4,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 3,
+              "needs_review": 3
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 7
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 3,
+            "missedAffectedRate": 0.42857142857142855,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 3,
+            "pairwiseDiscrimination": 0.6,
+            "correctPairs": 3,
+            "totalPairs": 5
+          }
+        },
+        "date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 2,
+            "trueNegatives": 2,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "gtin": {
+          "totalCases": 104,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 35,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 69,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 34,
+            "rate": 0.3269230769230769
+          },
+          "decisionCoverage": 0.6730769230769231,
+          "confusionMatrix": {
+            "match": {
+              "match": 35,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 35,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 34
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 26,
+            "totalPairs": 26
+          }
+        },
+        "lot": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 0.375,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 1,
+            "falseNegatives": 2,
+            "trueNegatives": 3,
+            "precision": 0.6666666666666666,
+            "strictRecall": 0.5,
+            "falsePositiveRate": 0.25,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 5,
+            "rate": 0.625
+          },
+          "decisionCoverage": 0.375,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 0.3333333333333333,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.5,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 2
+          }
+        },
+        "manufacture_date": {
+          "totalCases": 12,
+          "exactThreeClassAccuracy": 0.3333333333333333,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 4,
+            "trueNegatives": 8,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 4
+          },
+          "needsReview": {
+            "predictedCount": 12,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 4,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 4,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 3
+          }
+        },
+        "model": {
+          "totalCases": 92,
+          "exactThreeClassAccuracy": 0.7282608695652174,
+          "match": {
+            "truePositives": 22,
+            "falsePositives": 3,
+            "falseNegatives": 9,
+            "trueNegatives": 58,
+            "precision": 0.88,
+            "strictRecall": 0.7096774193548387,
+            "falsePositiveRate": 0.04918032786885246,
+            "unresolvedPositiveCases": 9
+          },
+          "needsReview": {
+            "predictedCount": 50,
+            "rate": 0.5434782608695652
+          },
+          "decisionCoverage": 0.45652173913043476,
+          "confusionMatrix": {
+            "match": {
+              "match": 22,
+              "no_match": 0,
+              "needs_review": 9
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 17,
+              "needs_review": 13
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 28
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.12,
+            "missedAffectedCount": 9,
+            "missedAffectedRate": 0.2903225806451613,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 9,
+            "pairwiseDiscrimination": 0.5652173913043478,
+            "correctPairs": 13,
+            "totalPairs": 23
+          }
+        },
+        "model_family": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 6,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 3,
+            "rate": 0.375
+          },
+          "decisionCoverage": 0.625,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 3,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 2,
+            "totalPairs": 2
+          }
+        },
+        "multi_condition": {
+          "totalCases": 40,
+          "exactThreeClassAccuracy": 0.375,
+          "match": {
+            "truePositives": 4,
+            "falsePositives": 3,
+            "falseNegatives": 9,
+            "trueNegatives": 24,
+            "precision": 0.5714285714285714,
+            "strictRecall": 0.3076923076923077,
+            "falsePositiveRate": 0.1111111111111111,
+            "unresolvedPositiveCases": 9
+          },
+          "needsReview": {
+            "predictedCount": 33,
+            "rate": 0.825
+          },
+          "decisionCoverage": 0.175,
+          "confusionMatrix": {
+            "match": {
+              "match": 4,
+              "no_match": 0,
+              "needs_review": 9
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 13
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 11
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.42857142857142855,
+            "missedAffectedCount": 9,
+            "missedAffectedRate": 0.6923076923076923,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 9,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 10
+          }
+        },
+        "production_date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "serial_range": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 0.625,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 2,
+            "falseNegatives": 0,
+            "trueNegatives": 4,
+            "precision": 0.5,
+            "strictRecall": 1,
+            "falsePositiveRate": 0.3333333333333333,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 0.5
+          },
+          "decisionCoverage": 0.5,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 3
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 2,
+            "unsafeConfirmRate": 0.5,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 2
+          }
+        },
+        "size": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 3,
+            "trueNegatives": 5,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 3
+          },
+          "needsReview": {
+            "predictedCount": 8,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 3,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 3,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 2
+          }
+        },
+        "variant": {
+          "totalCases": 28,
+          "exactThreeClassAccuracy": 0.42857142857142855,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 8,
+            "trueNegatives": 18,
+            "precision": 1,
+            "strictRecall": 0.2,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 8
+          },
+          "needsReview": {
+            "predictedCount": 25,
+            "rate": 0.8928571428571429
+          },
+          "decisionCoverage": 0.10714285714285714,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 8
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 8
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 9
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 8,
+            "missedAffectedRate": 0.8,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 8,
+            "pairwiseDiscrimination": 0.14285714285714285,
+            "correctPairs": 1,
+            "totalPairs": 7
+          }
+        }
+      },
+      "sourceAuthority": {
+        "CPSC": {
+          "totalCases": 200,
+          "exactThreeClassAccuracy": 0.865,
+          "match": {
+            "truePositives": 57,
+            "falsePositives": 3,
+            "falseNegatives": 10,
+            "trueNegatives": 130,
+            "precision": 0.95,
+            "strictRecall": 0.8507462686567164,
+            "falsePositiveRate": 0.022556390977443608,
+            "unresolvedPositiveCases": 10
+          },
+          "needsReview": {
+            "predictedCount": 88,
+            "rate": 0.44
+          },
+          "decisionCoverage": 0.56,
+          "confusionMatrix": {
+            "match": {
+              "match": 57,
+              "no_match": 0,
+              "needs_review": 10
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 52,
+              "needs_review": 14
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 64
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.05,
+            "missedAffectedCount": 10,
+            "missedAffectedRate": 0.14925373134328357,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 10,
+            "pairwiseDiscrimination": 0.78,
+            "correctPairs": 39,
+            "totalPairs": 50
+          }
+        }
+      },
+      "split": {
+        "development": {
+          "totalCases": 48,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 16,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 32,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 16,
+            "rate": 0.3333333333333333
+          },
+          "decisionCoverage": 0.6666666666666666,
+          "confusionMatrix": {
+            "match": {
+              "match": 16,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 16,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 16
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 12,
+            "totalPairs": 12
+          }
+        },
+        "holdout": {
+          "totalCases": 120,
+          "exactThreeClassAccuracy": 0.9,
+          "match": {
+            "truePositives": 35,
+            "falsePositives": 0,
+            "falseNegatives": 5,
+            "trueNegatives": 80,
+            "precision": 1,
+            "strictRecall": 0.875,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 52,
+            "rate": 0.43333333333333335
+          },
+          "decisionCoverage": 0.5666666666666667,
+          "confusionMatrix": {
+            "match": {
+              "match": 35,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 33,
+              "needs_review": 7
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 40
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.125,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.8333333333333334,
+            "correctPairs": 25,
+            "totalPairs": 30
+          }
+        },
+        "stress": {
+          "totalCases": 32,
+          "exactThreeClassAccuracy": 0.53125,
+          "match": {
+            "truePositives": 6,
+            "falsePositives": 3,
+            "falseNegatives": 5,
+            "trueNegatives": 18,
+            "precision": 0.6666666666666666,
+            "strictRecall": 0.5454545454545454,
+            "falsePositiveRate": 0.14285714285714285,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 20,
+            "rate": 0.625
+          },
+          "decisionCoverage": 0.375,
+          "confusionMatrix": {
+            "match": {
+              "match": 6,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 3,
+              "needs_review": 7
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 8
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.3333333333333333,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.45454545454545453,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.25,
+            "correctPairs": 2,
+            "totalPairs": 8
+          }
+        }
+      },
+      "perturbationFamily": {
+        "boundary_date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 4,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "conflicting_identifiers": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "date_just_outside_scope": {
+          "totalCases": 2,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 2,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 2,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "lot_near_miss": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "missing_required_identifier": {
+          "totalCases": 65,
+          "exactThreeClassAccuracy": 0.9692307692307692,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 2,
+            "falseNegatives": 0,
+            "trueNegatives": 63,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 0.03076923076923077,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 63,
+            "rate": 0.9692307692307692
+          },
+          "decisionCoverage": 0.03076923076923077,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 63
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 2,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "model_family_near_miss": {
+          "totalCases": 3,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 3,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "purchase_date_as_manufacture_date": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "serial_just_outside_range": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 1,
+            "falseNegatives": 0,
+            "trueNegatives": 0,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 1,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "sibling_model": {
+          "totalCases": 12,
+          "exactThreeClassAccuracy": 0.9166666666666666,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 12,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 0.08333333333333333
+          },
+          "decisionCoverage": 0.9166666666666666,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 11,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "single_character_model_mutation": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "size_mismatch": {
+          "totalCases": 2,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 2,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 2,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "transposed_digits": {
+          "totalCases": 2,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 2,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 2,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "valid_gtin_near_miss": {
+          "totalCases": 35,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 35,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 35,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "variant_mismatch": {
+          "totalCases": 3,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 3,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        }
+      }
+    },
+    "ai": {
+      "calls": 0,
+      "retries": 0,
+      "inputTokens": 0,
+      "outputTokens": 0,
+      "totalTokens": 0,
+      "costUsd": 0
+    },
+    "technicalFailures": {
+      "providerFailures": 0,
+      "timeouts": 0,
+      "invalidStructuredOutput": 0,
+      "retries": 0,
+      "exhaustedRetries": 0,
+      "safetyVerifierRejections": 0,
+      "fallbacks": 0
+    }
+  },
+  "nemotron_v1": {
+    "status": "complete_200_of_200",
+    "metrics": {
+      "totalCases": 200,
+      "exactThreeClassAccuracy": 0.895,
+      "match": {
+        "truePositives": 61,
+        "falsePositives": 7,
+        "falseNegatives": 6,
+        "trueNegatives": 126,
+        "precision": 0.8970588235294118,
+        "strictRecall": 0.9104477611940298,
+        "falsePositiveRate": 0.05263157894736842,
+        "unresolvedPositiveCases": 6
+      },
+      "needsReview": {
+        "predictedCount": 77,
+        "rate": 0.385
+      },
+      "decisionCoverage": 0.615,
+      "confusionMatrix": {
+        "match": {
+          "match": 61,
+          "no_match": 0,
+          "needs_review": 6
+        },
+        "no_match": {
+          "match": 4,
+          "no_match": 55,
+          "needs_review": 8
+        },
+        "needs_review": {
+          "match": 3,
+          "no_match": 0,
+          "needs_review": 63
+        }
+      },
+      "safety": {
+        "unsafeConfirmations": 7,
+        "unsafeConfirmRate": 0.10294117647058823,
+        "missedAffectedCount": 6,
+        "missedAffectedRate": 0.08955223880597014,
+        "rejectedTrueMatches": 0,
+        "abstainedTrueMatches": 6,
+        "pairwiseDiscrimination": 0.84,
+        "correctPairs": 42,
+        "totalPairs": 50
+      }
+    },
+    "bySplit": {
+      "development": {
+        "totalCases": 48,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 16,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 32,
+          "precision": 1,
+          "strictRecall": 1,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 0.3333333333333333
+        },
+        "decisionCoverage": 0.6666666666666666,
+        "confusionMatrix": {
+          "match": {
+            "match": 16,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 1,
+          "correctPairs": 12,
+          "totalPairs": 12
+        }
+      },
+      "holdout": {
+        "totalCases": 120,
+        "exactThreeClassAccuracy": 0.9083333333333333,
+        "match": {
+          "truePositives": 36,
+          "falsePositives": 4,
+          "falseNegatives": 4,
+          "trueNegatives": 76,
+          "precision": 0.9,
+          "strictRecall": 0.9,
+          "falsePositiveRate": 0.05,
+          "unresolvedPositiveCases": 4
+        },
+        "needsReview": {
+          "predictedCount": 46,
+          "rate": 0.38333333333333336
+        },
+        "decisionCoverage": 0.6166666666666667,
+        "confusionMatrix": {
+          "match": {
+            "match": 36,
+            "no_match": 0,
+            "needs_review": 4
+          },
+          "no_match": {
+            "match": 3,
+            "no_match": 34,
+            "needs_review": 3
+          },
+          "needs_review": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 39
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 4,
+          "unsafeConfirmRate": 0.1,
+          "missedAffectedCount": 4,
+          "missedAffectedRate": 0.1,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 4,
+          "pairwiseDiscrimination": 0.8666666666666667,
+          "correctPairs": 26,
+          "totalPairs": 30
+        }
+      },
+      "stress": {
+        "totalCases": 32,
+        "exactThreeClassAccuracy": 0.6875,
+        "match": {
+          "truePositives": 9,
+          "falsePositives": 3,
+          "falseNegatives": 2,
+          "trueNegatives": 18,
+          "precision": 0.75,
+          "strictRecall": 0.8181818181818182,
+          "falsePositiveRate": 0.14285714285714285,
+          "unresolvedPositiveCases": 2
+        },
+        "needsReview": {
+          "predictedCount": 15,
+          "rate": 0.46875
+        },
+        "decisionCoverage": 0.53125,
+        "confusionMatrix": {
+          "match": {
+            "match": 9,
+            "no_match": 0,
+            "needs_review": 2
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 5,
+            "needs_review": 5
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 8
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.25,
+          "missedAffectedCount": 2,
+          "missedAffectedRate": 0.18181818181818182,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 2,
+          "pairwiseDiscrimination": 0.5,
+          "correctPairs": 4,
+          "totalPairs": 8
+        }
+      }
+    },
+    "stratified": {
+      "evidenceCategory": {
+        "adversarial": {
+          "totalCases": 32,
+          "exactThreeClassAccuracy": 0.6875,
+          "match": {
+            "truePositives": 9,
+            "falsePositives": 3,
+            "falseNegatives": 2,
+            "trueNegatives": 18,
+            "precision": 0.75,
+            "strictRecall": 0.8181818181818182,
+            "falsePositiveRate": 0.14285714285714285,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 15,
+            "rate": 0.46875
+          },
+          "decisionCoverage": 0.53125,
+          "confusionMatrix": {
+            "match": {
+              "match": 9,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 5,
+              "needs_review": 5
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 8
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.25,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.18181818181818182,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.5,
+            "correctPairs": 4,
+            "totalPairs": 8
+          }
+        },
+        "batch": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 2,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 0.25
+          },
+          "decisionCoverage": 0.75,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 1,
+            "totalPairs": 1
+          }
+        },
+        "capacity": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 1,
+            "falsePositives": 3,
+            "falseNegatives": 0,
+            "trueNegatives": 0,
+            "precision": 0.25,
+            "strictRecall": 1,
+            "falsePositiveRate": 1,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.75,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "color": {
+          "totalCases": 20,
+          "exactThreeClassAccuracy": 0.7,
+          "match": {
+            "truePositives": 4,
+            "falsePositives": 1,
+            "falseNegatives": 3,
+            "trueNegatives": 12,
+            "precision": 0.8,
+            "strictRecall": 0.5714285714285714,
+            "falsePositiveRate": 0.07692307692307693,
+            "unresolvedPositiveCases": 3
+          },
+          "needsReview": {
+            "predictedCount": 12,
+            "rate": 0.6
+          },
+          "decisionCoverage": 0.4,
+          "confusionMatrix": {
+            "match": {
+              "match": 4,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 3,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 7
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 0.2,
+            "missedAffectedCount": 3,
+            "missedAffectedRate": 0.42857142857142855,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 3,
+            "pairwiseDiscrimination": 0.6,
+            "correctPairs": 3,
+            "totalPairs": 5
+          }
+        },
+        "date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.5,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 2,
+            "falseNegatives": 0,
+            "trueNegatives": 0,
+            "precision": 0.5,
+            "strictRecall": 1,
+            "falsePositiveRate": 1,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 2,
+            "unsafeConfirmRate": 0.5,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "gtin": {
+          "totalCases": 104,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 35,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 69,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 34,
+            "rate": 0.3269230769230769
+          },
+          "decisionCoverage": 0.6730769230769231,
+          "confusionMatrix": {
+            "match": {
+              "match": 35,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 35,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 34
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 26,
+            "totalPairs": 26
+          }
+        },
+        "lot": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 0.625,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 2,
+            "trueNegatives": 4,
+            "precision": 1,
+            "strictRecall": 0.5,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 5,
+            "rate": 0.625
+          },
+          "decisionCoverage": 0.375,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.5,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.5,
+            "correctPairs": 1,
+            "totalPairs": 2
+          }
+        },
+        "manufacture_date": {
+          "totalCases": 12,
+          "exactThreeClassAccuracy": 0.4166666666666667,
+          "match": {
+            "truePositives": 1,
+            "falsePositives": 0,
+            "falseNegatives": 3,
+            "trueNegatives": 8,
+            "precision": 1,
+            "strictRecall": 0.25,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 3
+          },
+          "needsReview": {
+            "predictedCount": 11,
+            "rate": 0.9166666666666666
+          },
+          "decisionCoverage": 0.08333333333333333,
+          "confusionMatrix": {
+            "match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 3,
+            "missedAffectedRate": 0.75,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 3,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 3
+          }
+        },
+        "model": {
+          "totalCases": 92,
+          "exactThreeClassAccuracy": 0.7934782608695652,
+          "match": {
+            "truePositives": 26,
+            "falsePositives": 7,
+            "falseNegatives": 5,
+            "trueNegatives": 54,
+            "precision": 0.7878787878787878,
+            "strictRecall": 0.8387096774193549,
+            "falsePositiveRate": 0.11475409836065574,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 39,
+            "rate": 0.42391304347826086
+          },
+          "decisionCoverage": 0.5760869565217391,
+          "confusionMatrix": {
+            "match": {
+              "match": 26,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 4,
+              "no_match": 20,
+              "needs_review": 7
+            },
+            "needs_review": {
+              "match": 3,
+              "no_match": 0,
+              "needs_review": 27
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 7,
+            "unsafeConfirmRate": 0.21212121212121213,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.16129032258064516,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.6956521739130435,
+            "correctPairs": 16,
+            "totalPairs": 23
+          }
+        },
+        "model_family": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 6,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 3,
+            "rate": 0.375
+          },
+          "decisionCoverage": 0.625,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 3,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 2,
+            "totalPairs": 2
+          }
+        },
+        "multi_condition": {
+          "totalCases": 40,
+          "exactThreeClassAccuracy": 0.525,
+          "match": {
+            "truePositives": 8,
+            "falsePositives": 7,
+            "falseNegatives": 5,
+            "trueNegatives": 20,
+            "precision": 0.5333333333333333,
+            "strictRecall": 0.6153846153846154,
+            "falsePositiveRate": 0.25925925925925924,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 22,
+            "rate": 0.55
+          },
+          "decisionCoverage": 0.45,
+          "confusionMatrix": {
+            "match": {
+              "match": 8,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 4,
+              "no_match": 3,
+              "needs_review": 7
+            },
+            "needs_review": {
+              "match": 3,
+              "no_match": 0,
+              "needs_review": 10
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 7,
+            "unsafeConfirmRate": 0.4666666666666667,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.38461538461538464,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.3,
+            "correctPairs": 3,
+            "totalPairs": 10
+          }
+        },
+        "production_date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "serial_range": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 6,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 0.5
+          },
+          "decisionCoverage": 0.5,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 2,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 2,
+            "totalPairs": 2
+          }
+        },
+        "size": {
+          "totalCases": 8,
+          "exactThreeClassAccuracy": 0.25,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 1,
+            "falseNegatives": 3,
+            "trueNegatives": 4,
+            "precision": 0,
+            "strictRecall": 0,
+            "falsePositiveRate": 0.2,
+            "unresolvedPositiveCases": 3
+          },
+          "needsReview": {
+            "predictedCount": 7,
+            "rate": 0.875
+          },
+          "decisionCoverage": 0.125,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 3,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 3,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 2
+          }
+        },
+        "variant": {
+          "totalCases": 28,
+          "exactThreeClassAccuracy": 0.42857142857142855,
+          "match": {
+            "truePositives": 5,
+            "falsePositives": 7,
+            "falseNegatives": 5,
+            "trueNegatives": 11,
+            "precision": 0.4166666666666667,
+            "strictRecall": 0.5,
+            "falsePositiveRate": 0.3888888888888889,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 15,
+            "rate": 0.5357142857142857
+          },
+          "decisionCoverage": 0.4642857142857143,
+          "confusionMatrix": {
+            "match": {
+              "match": 5,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 4,
+              "no_match": 1,
+              "needs_review": 4
+            },
+            "needs_review": {
+              "match": 3,
+              "no_match": 0,
+              "needs_review": 6
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 7,
+            "unsafeConfirmRate": 0.5833333333333334,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.5,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.14285714285714285,
+            "correctPairs": 1,
+            "totalPairs": 7
+          }
+        }
+      },
+      "sourceAuthority": {
+        "CPSC": {
+          "totalCases": 200,
+          "exactThreeClassAccuracy": 0.895,
+          "match": {
+            "truePositives": 61,
+            "falsePositives": 7,
+            "falseNegatives": 6,
+            "trueNegatives": 126,
+            "precision": 0.8970588235294118,
+            "strictRecall": 0.9104477611940298,
+            "falsePositiveRate": 0.05263157894736842,
+            "unresolvedPositiveCases": 6
+          },
+          "needsReview": {
+            "predictedCount": 77,
+            "rate": 0.385
+          },
+          "decisionCoverage": 0.615,
+          "confusionMatrix": {
+            "match": {
+              "match": 61,
+              "no_match": 0,
+              "needs_review": 6
+            },
+            "no_match": {
+              "match": 4,
+              "no_match": 55,
+              "needs_review": 8
+            },
+            "needs_review": {
+              "match": 3,
+              "no_match": 0,
+              "needs_review": 63
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 7,
+            "unsafeConfirmRate": 0.10294117647058823,
+            "missedAffectedCount": 6,
+            "missedAffectedRate": 0.08955223880597014,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 6,
+            "pairwiseDiscrimination": 0.84,
+            "correctPairs": 42,
+            "totalPairs": 50
+          }
+        }
+      },
+      "split": {
+        "development": {
+          "totalCases": 48,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 16,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 32,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 16,
+            "rate": 0.3333333333333333
+          },
+          "decisionCoverage": 0.6666666666666666,
+          "confusionMatrix": {
+            "match": {
+              "match": 16,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 16,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 16
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 12,
+            "totalPairs": 12
+          }
+        },
+        "holdout": {
+          "totalCases": 120,
+          "exactThreeClassAccuracy": 0.9083333333333333,
+          "match": {
+            "truePositives": 36,
+            "falsePositives": 4,
+            "falseNegatives": 4,
+            "trueNegatives": 76,
+            "precision": 0.9,
+            "strictRecall": 0.9,
+            "falsePositiveRate": 0.05,
+            "unresolvedPositiveCases": 4
+          },
+          "needsReview": {
+            "predictedCount": 46,
+            "rate": 0.38333333333333336
+          },
+          "decisionCoverage": 0.6166666666666667,
+          "confusionMatrix": {
+            "match": {
+              "match": 36,
+              "no_match": 0,
+              "needs_review": 4
+            },
+            "no_match": {
+              "match": 3,
+              "no_match": 34,
+              "needs_review": 3
+            },
+            "needs_review": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 39
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 4,
+            "unsafeConfirmRate": 0.1,
+            "missedAffectedCount": 4,
+            "missedAffectedRate": 0.1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 4,
+            "pairwiseDiscrimination": 0.8666666666666667,
+            "correctPairs": 26,
+            "totalPairs": 30
+          }
+        },
+        "stress": {
+          "totalCases": 32,
+          "exactThreeClassAccuracy": 0.6875,
+          "match": {
+            "truePositives": 9,
+            "falsePositives": 3,
+            "falseNegatives": 2,
+            "trueNegatives": 18,
+            "precision": 0.75,
+            "strictRecall": 0.8181818181818182,
+            "falsePositiveRate": 0.14285714285714285,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 15,
+            "rate": 0.46875
+          },
+          "decisionCoverage": 0.53125,
+          "confusionMatrix": {
+            "match": {
+              "match": 9,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 5,
+              "needs_review": 5
+            },
+            "needs_review": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 8
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 0.25,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.18181818181818182,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.5,
+            "correctPairs": 4,
+            "totalPairs": 8
+          }
+        }
+      },
+      "perturbationFamily": {
+        "boundary_date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 4,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 4
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "conflicting_identifiers": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 1,
+            "falseNegatives": 0,
+            "trueNegatives": 0,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 1,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "date_just_outside_scope": {
+          "totalCases": 2,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 2,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 2,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "lot_near_miss": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "missing_required_identifier": {
+          "totalCases": 65,
+          "exactThreeClassAccuracy": 0.9538461538461539,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 3,
+            "falseNegatives": 0,
+            "trueNegatives": 62,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 0.046153846153846156,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 62,
+            "rate": 0.9538461538461539
+          },
+          "decisionCoverage": 0.046153846153846156,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 3,
+              "no_match": 0,
+              "needs_review": 62
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 3,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "model_family_near_miss": {
+          "totalCases": 3,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 3,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "purchase_date_as_manufacture_date": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "serial_just_outside_range": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "sibling_model": {
+          "totalCases": 12,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 12,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 12,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "single_character_model_mutation": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "size_mismatch": {
+          "totalCases": 2,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 1,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 0.5,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 0.5
+          },
+          "decisionCoverage": 0.5,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 1,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 1,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "transposed_digits": {
+          "totalCases": 2,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 2,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 2,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "valid_gtin_near_miss": {
+          "totalCases": 35,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 35,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 35,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "variant_mismatch": {
+          "totalCases": 3,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 2,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 0.6666666666666666,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 0.3333333333333333
+          },
+          "decisionCoverage": 0.6666666666666666,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 2,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        }
+      },
+      "hardNegative": {
+        "true": {
+          "totalCases": 67,
+          "exactThreeClassAccuracy": 0.8208955223880597,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 4,
+            "falseNegatives": 0,
+            "trueNegatives": 63,
+            "precision": 0,
+            "strictRecall": null,
+            "falsePositiveRate": 0.05970149253731343,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 8,
+            "rate": 0.11940298507462686
+          },
+          "decisionCoverage": 0.8805970149253731,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 4,
+              "no_match": 55,
+              "needs_review": 8
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 4,
+            "unsafeConfirmRate": 1,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        }
+      },
+      "pairedCases": {
+        "true": {
+          "totalCases": 100,
+          "exactThreeClassAccuracy": 0.87,
+          "match": {
+            "truePositives": 45,
+            "falsePositives": 2,
+            "falseNegatives": 5,
+            "trueNegatives": 48,
+            "precision": 0.9574468085106383,
+            "strictRecall": 0.9,
+            "falsePositiveRate": 0.04,
+            "unresolvedPositiveCases": 5
+          },
+          "needsReview": {
+            "predictedCount": 11,
+            "rate": 0.11
+          },
+          "decisionCoverage": 0.89,
+          "confusionMatrix": {
+            "match": {
+              "match": 45,
+              "no_match": 0,
+              "needs_review": 5
+            },
+            "no_match": {
+              "match": 2,
+              "no_match": 42,
+              "needs_review": 6
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 2,
+            "unsafeConfirmRate": 0.0425531914893617,
+            "missedAffectedCount": 5,
+            "missedAffectedRate": 0.1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 5,
+            "pairwiseDiscrimination": 0.84,
+            "correctPairs": 42,
+            "totalPairs": 50
+          }
+        }
+      }
+    },
+    "requestCount": 200,
+    "structuredOutput": {
+      "successes": 200,
+      "failures": 0,
+      "successRate": 1
+    },
+    "technicalFailures": {
+      "providerFailures": 0,
+      "timeouts": 0,
+      "invalidStructuredOutput": 0,
+      "retries": 0,
+      "exhaustedRetries": 0
+    },
+    "latency": {
+      "wallClockMs": 4371282.7135,
+      "totalMs": 4370335.522133003,
+      "averageMs": 21851.677610665014,
+      "p50Ms": 21574.912541999947,
+      "p95Ms": 27058.69637500029,
+      "sampleCount": 200
+    },
+    "usage": {
+      "inputTokens": 374616,
+      "outputTokens": 164021,
+      "totalTokens": 538637,
+      "reasoningTokens": 30825
+    },
+    "actualCostUsd": 0.2600037,
+    "bySplitOperational": {
+      "development": {
+        "processedCases": 48,
+        "requestCount": 48,
+        "structuredOutputSuccesses": 48,
+        "structuredOutputFailures": 0,
+        "retryCount": 0,
+        "providerFailures": 0,
+        "latency": {
+          "totalMs": 1104380.757003,
+          "averageMs": 23007.9324375625,
+          "p50Ms": 23133.233917000005,
+          "p95Ms": 28415.889375000028,
+          "sampleCount": 48
+        },
+        "usage": {
+          "inputTokens": 87751,
+          "outputTokens": 37143,
+          "totalTokens": 124894,
+          "reasoningTokens": 7541
+        },
+        "actualCostUsd": 0.059754
+      },
+      "holdout": {
+        "processedCases": 120,
+        "requestCount": 120,
+        "structuredOutputSuccesses": 120,
+        "structuredOutputFailures": 0,
+        "retryCount": 0,
+        "providerFailures": 0,
+        "latency": {
+          "totalMs": 2604425.2659180015,
+          "averageMs": 21703.543882650014,
+          "p50Ms": 21426.235832999926,
+          "p95Ms": 27058.69637500029,
+          "sampleCount": 120
+        },
+        "usage": {
+          "inputTokens": 225422,
+          "outputTokens": 101877,
+          "totalTokens": 327299,
+          "reasoningTokens": 17908
+        },
+        "actualCostUsd": 0.15931589999999998
+      },
+      "stress": {
+        "processedCases": 32,
+        "requestCount": 32,
+        "structuredOutputSuccesses": 32,
+        "structuredOutputFailures": 0,
+        "retryCount": 0,
+        "providerFailures": 0,
+        "latency": {
+          "totalMs": 661529.499212001,
+          "averageMs": 20672.79685037503,
+          "p50Ms": 20141.658875000197,
+          "p95Ms": 23913.53454099968,
+          "sampleCount": 32
+        },
+        "usage": {
+          "inputTokens": 61443,
+          "outputTokens": 25001,
+          "totalTokens": 86444,
+          "reasoningTokens": 5376
+        },
+        "actualCostUsd": 0.040933800000000006
+      }
+    },
+    "safetyCases": {
+      "unsafeConfirmations": [
+        {
+          "caseId": "p15-hol-29-4",
+          "recallFamily": "cpsc-family-10978",
+          "split": "holdout",
+          "expected": "no_match",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "HT-10",
+              "officialValue": "HT-10",
+              "detail": "Exact match of model number HT-10"
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Basecamp",
+              "officialValue": "Basecamp",
+              "detail": "Brand matches recall"
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Basecamp Bike Helmets — label transcription",
+              "officialValue": "Basecamp Bike Helmets",
+              "detail": "Product name contains the recalled product name"
+            }
+          ],
+          "modelReasoning": "The owned product's model number HT-10 exactly matches the recall scope's model number. Brand and product name also match. No conflicting identifiers. Although size and color attributes are not provided, the specific model number match is sufficient to confirm the product falls within the recall.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute carrying the contradiction; the model confirmed from the visible identifier alone."
+        },
+        {
+          "caseId": "p15-hol-38-2",
+          "recallFamily": "cpsc-family-10859",
+          "split": "holdout",
+          "expected": "no_match",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "KB 624-06",
+              "officialValue": "KB 624-06",
+              "detail": "Owned product modelNumber exactly matches scope index 2 modelNumber."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+              "officialValue": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+              "detail": "Product name matches recall description."
+            }
+          ],
+          "modelReasoning": "The owned product's modelNumber KB 624-06 exactly matches one of the recall scopes (index 2). No conflicting identifiers are present. Therefore the product is confirmed to be within the recall.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute carrying the contradiction; the model confirmed from the visible identifier alone."
+        },
+        {
+          "caseId": "p15-hol-38-3",
+          "recallFamily": "cpsc-family-10859",
+          "split": "holdout",
+          "expected": "needs_review",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "KB 624-06",
+              "officialValue": "KB 624-06",
+              "detail": "Owned product modelNumber exactly matches scope index 2 modelNumber."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+              "officialValue": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+              "detail": "Product name matches recall description."
+            }
+          ],
+          "modelReasoning": "The owned product's modelNumber KB 624-06 exactly matches one of the recall scopes (index 2). No conflicting identifiers are present. Therefore the product is confirmed to be within the recall.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the required Phase 15 extended attribute state; the model confirmed from the visible identifier instead of abstaining."
+        },
+        {
+          "caseId": "p15-hol-38-4",
+          "recallFamily": "cpsc-family-10859",
+          "split": "holdout",
+          "expected": "no_match",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "KB 624-06",
+              "officialValue": "KB 624-06",
+              "detail": "Exact match to scope modelNumber"
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries — label transcription",
+              "officialValue": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+              "detail": "Product names align"
+            }
+          ],
+          "modelReasoning": "Owned product's modelNumber KB 624-06 exactly matches one of the recall scopes (index 2). Product name also aligns. No conflicting evidence. Therefore the product is within the recall.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute carrying the contradiction; the model confirmed from the visible identifier alone."
+        },
+        {
+          "caseId": "p15-str-48-4",
+          "recallFamily": "cpsc-family-10864",
+          "split": "stress",
+          "expected": "needs_review",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "9000-1129",
+              "officialValue": "9000-1129",
+              "detail": "Owned product modelNumber matches scope 0 modelNumber."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Currey & Company",
+              "officialValue": "Currey & Company",
+              "detail": "Brand matches recall brand."
+            }
+          ],
+          "modelReasoning": "The owned product's modelNumber 9000-1129 exactly matches one of the recall scopes (index 0). Brand also matches. No conflicting evidence. Therefore the product falls within the authoritative recall.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the required Phase 15 extended attribute state; the model confirmed from the visible identifier instead of abstaining."
+        },
+        {
+          "caseId": "p15-str-49-2",
+          "recallFamily": "cpsc-family-10845",
+          "split": "stress",
+          "expected": "no_match",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "RH99A2U1",
+              "officialValue": "RH99A2U1",
+              "detail": "Owned product modelNumber matches scope 0 modelNumber exactly."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+              "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+              "detail": "Product names identical."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Rowenta",
+              "officialValue": "Rowenta",
+              "detail": "Brand matches."
+            }
+          ],
+          "modelReasoning": "The owned product's modelNumber RH99A2U1 exactly matches one of the two model numbers listed in recall scope 0. Product name and brand also match the recall description. No conflicting identifiers are present. Therefore the product falls within the authoritative recall scope.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute carrying the contradiction; the model confirmed from the visible identifier alone."
+        },
+        {
+          "caseId": "p15-str-49-3",
+          "recallFamily": "cpsc-family-10845",
+          "split": "stress",
+          "expected": "needs_review",
+          "producedDecision": "confirmed",
+          "predicted": "match",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "RH99A2U1",
+              "officialValue": "RH99A2U1",
+              "detail": "Owned product modelNumber matches scope 0 modelNumber exactly."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+              "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+              "detail": "Product names identical."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Rowenta",
+              "officialValue": "Rowenta",
+              "detail": "Brand matches."
+            }
+          ],
+          "modelReasoning": "The owned product's modelNumber RH99A2U1 exactly matches one of the two model numbers listed in recall scope 0. Product name and brand also match the recall description. No conflicting identifiers are present. Therefore the product falls within the recall scope.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the required Phase 15 extended attribute state; the model confirmed from the visible identifier instead of abstaining."
+        }
+      ],
+      "missedAffected": [
+        {
+          "caseId": "p15-hol-27-1",
+          "recallFamily": "cpsc-family-10986",
+          "split": "holdout",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Charbroil Bistro Pro Electric Grills",
+              "officialValue": "Charbroil Bistro Pro Electric Grills",
+              "detail": "Product name matches exactly."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Char-Broil",
+              "officialValue": "Char-Broil",
+              "detail": "Brand matches exactly."
+            }
+          ],
+          "modelReasoning": "The owned product matches the recall's product name and brand, but lacks critical identifier data such as dateCode required by the recall's controlled scope. Without evidence of the dateCode falling within the recalled range (2510, 2511, 2512), a definitive match cannot be established, necessitating further review.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        },
+        {
+          "caseId": "p15-hol-29-1",
+          "recallFamily": "cpsc-family-10978",
+          "split": "holdout",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "HT-10",
+              "officialValue": "HT-10",
+              "detail": "Owned product modelNumber matches recall scope modelNumber exactly."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Basecamp Bike Helmets",
+              "officialValue": "Basecamp Bike Helmets",
+              "detail": "Product name matches recall scope productName."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Basecamp",
+              "officialValue": "Basecamp",
+              "detail": "Brand matches recall scope brand."
+            }
+          ],
+          "modelReasoning": "Owned product matches brand, productName, and modelNumber exactly. However recall scope includes additional criteria for attributes.size and attributes.color which are not provided in owned product evidence. Without confirmation that the owned product's size and color fall within the recall's controlled scope (M/L size and green/black colors), a definitive match cannot be established. Therefore the evaluation requires review.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        },
+        {
+          "caseId": "p15-hol-31-1",
+          "recallFamily": "cpsc-family-10969",
+          "split": "holdout",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "HT-006",
+              "officialValue": "HT-006",
+              "detail": "Owned product modelNumber matches recall scope modelNumber."
+            },
+            {
+              "kind": "lotNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "2025A1101",
+              "officialValue": "2025A1101",
+              "detail": "Owned product lotNumber matches recall scope lotNumber."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Victgoal Children’s Bike Helmets",
+              "officialValue": "Victgoal Children’s Bike Helmets",
+              "detail": "Product name matches recall scope productName."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Victgoal",
+              "officialValue": "Victgoal",
+              "detail": "Brand matches recall scope brand."
+            }
+          ],
+          "modelReasoning": "The owned product matches the recall scope on modelNumber, lotNumber, productName, and brand. However, the recall scope includes additional criteria (manufactureMonth, size, color) that are not provided in the owned product evidence. Without confirmation of these attributes, a definitive match cannot be established, so the result is needs_review.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        },
+        {
+          "caseId": "p15-hol-31-4",
+          "recallFamily": "cpsc-family-10969",
+          "split": "holdout",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "HT-006",
+              "officialValue": "HT-006",
+              "detail": "Owned product modelNumber matches recall scope modelNumber."
+            },
+            {
+              "kind": "lotNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "2025A1101",
+              "officialValue": "2025A1101",
+              "detail": "Owned product lotNumber matches recall scope lotNumber."
+            },
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Victgoal Children’s Bike Helmets — label transcription",
+              "officialValue": "Victgoal Children’s Bike Helmets",
+              "detail": "Product names are substantially similar; owned includes extra label transcription text."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "supporting",
+              "ownedValue": "Victgoal",
+              "officialValue": "Victgoal",
+              "detail": "Brand matches exactly."
+            }
+          ],
+          "modelReasoning": "The owned product matches the recall's brand, product name, model number, and lot number. However, the recall scope additionally requires specific attribute values (manufactureMonth, size, color) that are not provided in the owned product evidence. Without evidence on these attributes, we cannot confirm the product falls within the recall scope, nor do we have conflicting evidence. Therefore, the outcome is needs_review.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        },
+        {
+          "caseId": "p15-str-48-1",
+          "recallFamily": "cpsc-family-10864",
+          "split": "stress",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "9000-1129",
+              "officialValue": "9000-1129",
+              "detail": "Owned product modelNumber matches scope 0 modelNumber."
+            },
+            {
+              "kind": "additionalCriteria",
+              "outcome": "unresolved",
+              "strength": "contextual",
+              "ownedValue": null,
+              "officialValue": "attributes.visibleTopCapScrew = no",
+              "detail": "Attribute visibleTopCapScrew not provided in owned product evidence."
+            }
+          ],
+          "modelReasoning": "The owned product's modelNumber matches one of the recall scopes (9000-1129). However, the recall scope requires the attribute visibleTopCapScrew to equal 'no', which is not provided in the owned product evidence. Without confirmation of this attribute, a definitive match cannot be established, necessitating review.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        },
+        {
+          "caseId": "p15-str-50-1",
+          "recallFamily": "cpsc-family-10851",
+          "split": "stress",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "productName",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+              "officialValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+              "detail": "Product name matches exactly."
+            },
+            {
+              "kind": "brand",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "Unity",
+              "officialValue": "Unity",
+              "detail": "Brand matches exactly."
+            },
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "MEF6096",
+              "officialValue": "MEF6096",
+              "detail": "Model number matches exactly."
+            },
+            {
+              "kind": "additionalCriteria",
+              "outcome": "unresolved",
+              "strength": "contextual",
+              "ownedValue": null,
+              "officialValue": null,
+              "detail": "Production date attribute not provided; required for scope validation."
+            }
+          ],
+          "modelReasoning": "Owned product matches product name, brand, and model number exactly with the recall scope. However, the recall scope includes a production date range attribute that is not present in the owned product evidence, preventing confirmation of full scope compliance. Without production date evidence, a definitive match cannot be established.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        }
+      ]
+    }
+  },
+  "hybrid_guarded_v1": {
+    "status": "stopped_partial_113_of_200",
+    "comparability": "Partial results are not comparable to the two complete 200-case systems.",
+    "stop": {
+      "caseId": "p15-hol-29-1",
+      "recallFamily": "cpsc-family-10978",
+      "split": "holdout",
+      "failureKind": "schema_violation",
+      "attempts": [
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": false,
+          "failureKind": "schema_violation",
+          "latencyMs": 22785.059666999965,
+          "usage": {
+            "inputTokens": 2140,
+            "outputTokens": 1242,
+            "totalTokens": 3382,
+            "reasoningTokens": 525
+          }
+        },
+        {
+          "apiSucceeded": true,
+          "structuredOutputValid": false,
+          "failureKind": "schema_violation",
+          "latencyMs": 22878.11725000001,
+          "usage": {
+            "inputTokens": 2140,
+            "outputTokens": 1242,
+            "totalTokens": 3382,
+            "reasoningTokens": 525
+          }
+        }
+      ],
+      "reason": "Both allowed guarded attempts returned schema-invalid structured output. Validation was not relaxed and the run stopped."
+    },
+    "processedCases": 113,
+    "deterministicResolutionsProcessed": 73,
+    "escalationsProcessed": 40,
+    "requestCount": 41,
+    "retryCount": 1,
+    "usage": {
+      "inputTokens": 87893,
+      "outputTokens": 33945,
+      "totalTokens": 121838,
+      "reasoningTokens": 6836
+    },
+    "actualCostUsd": 0.056918399999999994,
+    "metricsOnProcessedPrefixOnly": {
+      "totalCases": 113,
+      "exactThreeClassAccuracy": 0.9734513274336283,
+      "match": {
+        "truePositives": 37,
+        "falsePositives": 0,
+        "falseNegatives": 2,
+        "trueNegatives": 74,
+        "precision": 1,
+        "strictRecall": 0.9487179487179487,
+        "falsePositiveRate": 0,
+        "unresolvedPositiveCases": 2
+      },
+      "needsReview": {
+        "predictedCount": 40,
+        "rate": 0.35398230088495575
+      },
+      "decisionCoverage": 0.6460176991150443,
+      "confusionMatrix": {
+        "match": {
+          "match": 37,
+          "no_match": 0,
+          "needs_review": 2
+        },
+        "no_match": {
+          "match": 0,
+          "no_match": 36,
+          "needs_review": 1
+        },
+        "needs_review": {
+          "match": 0,
+          "no_match": 0,
+          "needs_review": 37
+        }
+      },
+      "safety": {
+        "unsafeConfirmations": 0,
+        "unsafeConfirmRate": 0,
+        "missedAffectedCount": 2,
+        "missedAffectedRate": 0.05128205128205128,
+        "rejectedTrueMatches": 0,
+        "abstainedTrueMatches": 2,
+        "pairwiseDiscrimination": 0.9642857142857143,
+        "correctPairs": 27,
+        "totalPairs": 28
+      }
+    },
+    "bySplitOnProcessedPrefixOnly": {
+      "development": {
+        "totalCases": 48,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 16,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 32,
+          "precision": 1,
+          "strictRecall": 1,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 0.3333333333333333
+        },
+        "decisionCoverage": 0.6666666666666666,
+        "confusionMatrix": {
+          "match": {
+            "match": 16,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 1,
+          "correctPairs": 12,
+          "totalPairs": 12
+        }
+      },
+      "holdout": {
+        "totalCases": 65,
+        "exactThreeClassAccuracy": 0.9538461538461539,
+        "match": {
+          "truePositives": 21,
+          "falsePositives": 0,
+          "falseNegatives": 2,
+          "trueNegatives": 42,
+          "precision": 1,
+          "strictRecall": 0.9130434782608695,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 2
+        },
+        "needsReview": {
+          "predictedCount": 24,
+          "rate": 0.36923076923076925
+        },
+        "decisionCoverage": 0.6307692307692307,
+        "confusionMatrix": {
+          "match": {
+            "match": 21,
+            "no_match": 0,
+            "needs_review": 2
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 20,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 21
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 2,
+          "missedAffectedRate": 0.08695652173913043,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 2,
+          "pairwiseDiscrimination": 0.9375,
+          "correctPairs": 15,
+          "totalPairs": 16
+        }
+      },
+      "stress": {
+        "totalCases": 0,
+        "exactThreeClassAccuracy": 0,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 0,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": null,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 0,
+          "rate": 0
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      }
+    },
+    "stratifiedOnProcessedPrefixOnly": {
+      "evidenceCategory": {
+        "color": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 0,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": null,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "gtin": {
+          "totalCases": 104,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 35,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 69,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 34,
+            "rate": 0.3269230769230769
+          },
+          "decisionCoverage": 0.6730769230769231,
+          "confusionMatrix": {
+            "match": {
+              "match": 35,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 35,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 34
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 26,
+            "totalPairs": 26
+          }
+        },
+        "manufacture_date": {
+          "totalCases": 4,
+          "exactThreeClassAccuracy": 0.5,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 3,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 4,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 2
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": 0,
+            "correctPairs": 0,
+            "totalPairs": 1
+          }
+        },
+        "model": {
+          "totalCases": 5,
+          "exactThreeClassAccuracy": 0.8,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 2,
+            "precision": 1,
+            "strictRecall": 0.6666666666666666,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 2,
+            "rate": 0.4
+          },
+          "decisionCoverage": 0.6,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 0.3333333333333333,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 1,
+            "totalPairs": 1
+          }
+        },
+        "multi_condition": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 0,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": null,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "size": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 1,
+            "trueNegatives": 0,
+            "precision": null,
+            "strictRecall": 0,
+            "falsePositiveRate": null,
+            "unresolvedPositiveCases": 1
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 1,
+            "missedAffectedRate": 1,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 1,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "variant": {
+          "totalCases": 9,
+          "exactThreeClassAccuracy": 0.6666666666666666,
+          "match": {
+            "truePositives": 2,
+            "falsePositives": 0,
+            "falseNegatives": 2,
+            "trueNegatives": 5,
+            "precision": 1,
+            "strictRecall": 0.5,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 6,
+            "rate": 0.6666666666666666
+          },
+          "decisionCoverage": 0.3333333333333333,
+          "confusionMatrix": {
+            "match": {
+              "match": 2,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 3
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.5,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.5,
+            "correctPairs": 1,
+            "totalPairs": 2
+          }
+        }
+      },
+      "sourceAuthority": {
+        "CPSC": {
+          "totalCases": 113,
+          "exactThreeClassAccuracy": 0.9734513274336283,
+          "match": {
+            "truePositives": 37,
+            "falsePositives": 0,
+            "falseNegatives": 2,
+            "trueNegatives": 74,
+            "precision": 1,
+            "strictRecall": 0.9487179487179487,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 40,
+            "rate": 0.35398230088495575
+          },
+          "decisionCoverage": 0.6460176991150443,
+          "confusionMatrix": {
+            "match": {
+              "match": 37,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 36,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 37
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.05128205128205128,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.9642857142857143,
+            "correctPairs": 27,
+            "totalPairs": 28
+          }
+        }
+      },
+      "split": {
+        "development": {
+          "totalCases": 48,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 16,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 32,
+            "precision": 1,
+            "strictRecall": 1,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 16,
+            "rate": 0.3333333333333333
+          },
+          "decisionCoverage": 0.6666666666666666,
+          "confusionMatrix": {
+            "match": {
+              "match": 16,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 16,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 16
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": 0,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": 1,
+            "correctPairs": 12,
+            "totalPairs": 12
+          }
+        },
+        "holdout": {
+          "totalCases": 65,
+          "exactThreeClassAccuracy": 0.9538461538461539,
+          "match": {
+            "truePositives": 21,
+            "falsePositives": 0,
+            "falseNegatives": 2,
+            "trueNegatives": 42,
+            "precision": 1,
+            "strictRecall": 0.9130434782608695,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 24,
+            "rate": 0.36923076923076925
+          },
+          "decisionCoverage": 0.6307692307692307,
+          "confusionMatrix": {
+            "match": {
+              "match": 21,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 20,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 21
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.08695652173913043,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.9375,
+            "correctPairs": 15,
+            "totalPairs": 16
+          }
+        }
+      },
+      "perturbationFamily": {
+        "date_just_outside_scope": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 0,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "missing_required_identifier": {
+          "totalCases": 37,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 37,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 37,
+            "rate": 1
+          },
+          "decisionCoverage": 0,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 37
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "sibling_model": {
+          "totalCases": 1,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 1,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 1,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        },
+        "valid_gtin_near_miss": {
+          "totalCases": 35,
+          "exactThreeClassAccuracy": 1,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 35,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 0,
+            "rate": 0
+          },
+          "decisionCoverage": 1,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 35,
+              "needs_review": 0
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        }
+      },
+      "hardNegative": {
+        "true": {
+          "totalCases": 37,
+          "exactThreeClassAccuracy": 0.972972972972973,
+          "match": {
+            "truePositives": 0,
+            "falsePositives": 0,
+            "falseNegatives": 0,
+            "trueNegatives": 37,
+            "precision": null,
+            "strictRecall": null,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 0
+          },
+          "needsReview": {
+            "predictedCount": 1,
+            "rate": 0.02702702702702703
+          },
+          "decisionCoverage": 0.972972972972973,
+          "confusionMatrix": {
+            "match": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 36,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": null,
+            "missedAffectedCount": 0,
+            "missedAffectedRate": null,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 0,
+            "pairwiseDiscrimination": null,
+            "correctPairs": 0,
+            "totalPairs": 0
+          }
+        }
+      },
+      "pairedCases": {
+        "true": {
+          "totalCases": 57,
+          "exactThreeClassAccuracy": 0.9473684210526315,
+          "match": {
+            "truePositives": 27,
+            "falsePositives": 0,
+            "falseNegatives": 2,
+            "trueNegatives": 28,
+            "precision": 1,
+            "strictRecall": 0.9310344827586207,
+            "falsePositiveRate": 0,
+            "unresolvedPositiveCases": 2
+          },
+          "needsReview": {
+            "predictedCount": 3,
+            "rate": 0.05263157894736842
+          },
+          "decisionCoverage": 0.9473684210526315,
+          "confusionMatrix": {
+            "match": {
+              "match": 27,
+              "no_match": 0,
+              "needs_review": 2
+            },
+            "no_match": {
+              "match": 0,
+              "no_match": 27,
+              "needs_review": 1
+            },
+            "needs_review": {
+              "match": 0,
+              "no_match": 0,
+              "needs_review": 0
+            }
+          },
+          "safety": {
+            "unsafeConfirmations": 0,
+            "unsafeConfirmRate": 0,
+            "missedAffectedCount": 2,
+            "missedAffectedRate": 0.06896551724137931,
+            "rejectedTrueMatches": 0,
+            "abstainedTrueMatches": 2,
+            "pairwiseDiscrimination": 0.9642857142857143,
+            "correctPairs": 27,
+            "totalPairs": 28
+          }
+        }
+      }
+    },
+    "bySplitOperational": {
+      "development": {
+        "processedCases": 48,
+        "requestCount": 16,
+        "structuredOutputSuccesses": 16,
+        "structuredOutputFailures": 0,
+        "retryCount": 0,
+        "providerFailures": 0,
+        "latency": {
+          "totalMs": 320178.52954,
+          "averageMs": 6670.386032083334,
+          "p50Ms": 0.240458000000217,
+          "p95Ms": 21138.33841699999,
+          "sampleCount": 48
+        },
+        "usage": {
+          "inputTokens": 34337,
+          "outputTokens": 10220,
+          "totalTokens": 44557,
+          "reasoningTokens": null
+        },
+        "actualCostUsd": 0.0194991
+      },
+      "holdout": {
+        "processedCases": 65,
+        "requestCount": 25,
+        "structuredOutputSuccesses": 23,
+        "structuredOutputFailures": 1,
+        "retryCount": 1,
+        "providerFailures": 0,
+        "latency": {
+          "totalMs": 537619.1746270002,
+          "averageMs": 8271.064225030772,
+          "p50Ms": 0.29004200000781566,
+          "p95Ms": 27378.518583999947,
+          "sampleCount": 65
+        },
+        "usage": {
+          "inputTokens": 53556,
+          "outputTokens": 23725,
+          "totalTokens": 77281,
+          "reasoningTokens": null
+        },
+        "actualCostUsd": 0.0374193
+      },
+      "stress": {
+        "processedCases": 0,
+        "requestCount": 0,
+        "structuredOutputSuccesses": 0,
+        "structuredOutputFailures": 0,
+        "retryCount": 0,
+        "providerFailures": 0,
+        "latency": {
+          "totalMs": 0,
+          "averageMs": 0,
+          "p50Ms": 0,
+          "p95Ms": 0,
+          "sampleCount": 0
+        },
+        "usage": {
+          "inputTokens": 0,
+          "outputTokens": 0,
+          "totalTokens": 0,
+          "reasoningTokens": 0
+        },
+        "actualCostUsd": 0
+      }
+    },
+    "safetyCasesOnProcessedPrefixOnly": {
+      "unsafeConfirmations": [],
+      "missedAffected": [
+        {
+          "caseId": "p15-hol-27-1",
+          "recallFamily": "cpsc-family-10986",
+          "split": "holdout",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "productName",
+              "outcome": "supporting",
+              "strength": "supporting",
+              "ownedValue": "Charbroil Bistro Pro Electric Grills",
+              "officialValue": "Charbroil Bistro Pro Electric Grills",
+              "detail": "Product-name Jaccard token overlap is 1.000."
+            },
+            {
+              "kind": "brand",
+              "outcome": "supporting",
+              "strength": "supporting",
+              "ownedValue": "CHAR-BROIL",
+              "officialValue": "CHAR-BROIL",
+              "detail": "Explicit scope brand matches as supporting evidence."
+            },
+            {
+              "kind": "additionalCriteria",
+              "outcome": "unresolved",
+              "strength": "contextual",
+              "ownedValue": null,
+              "officialValue": null,
+              "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+            }
+          ],
+          "modelReasoning": "AI escalation remained unresolved; human review is required.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        },
+        {
+          "caseId": "p15-hol-29-1",
+          "recallFamily": "cpsc-family-10978",
+          "split": "holdout",
+          "expected": "match",
+          "producedDecision": "needs_review",
+          "predicted": "needs_review",
+          "evidenceUsed": [
+            {
+              "kind": "modelNumber",
+              "outcome": "matched",
+              "strength": "strong",
+              "ownedValue": "HT-10",
+              "officialValue": "HT-10",
+              "detail": "Exact normalized modelNumber match."
+            },
+            {
+              "kind": "productName",
+              "outcome": "supporting",
+              "strength": "supporting",
+              "ownedValue": "Basecamp Bike Helmets",
+              "officialValue": "Basecamp Bike Helmets",
+              "detail": "Product-name Jaccard token overlap is 1.000."
+            },
+            {
+              "kind": "brand",
+              "outcome": "supporting",
+              "strength": "supporting",
+              "ownedValue": "BASECAMP",
+              "officialValue": "BASECAMP",
+              "detail": "Explicit scope brand matches as supporting evidence."
+            },
+            {
+              "kind": "additionalCriteria",
+              "outcome": "unresolved",
+              "strength": "contextual",
+              "ownedValue": null,
+              "officialValue": null,
+              "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+            }
+          ],
+          "modelReasoning": "AI escalation failed safely; human review is required.",
+          "exactFailureReason": "The unchanged production-shaped projection omitted the Phase 15 extended attribute that satisfied the scope; the model therefore abstained on an otherwise affected product.",
+          "disposition": "abstained_needs_review"
+        }
+      ]
+    }
+  }
+}

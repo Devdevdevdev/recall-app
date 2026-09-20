@@ -1,0 +1,21 @@
+{
+  "complete": true,
+  "outputPath": "benchmarks/recall-matching/phase-15/results/hybrid-guarded-v1-paid-resumed.json",
+  "originalCheckpointSha256": "62e21fe7cef7b406fad0e151d5f62c1eab5285a8904c440f3db3429308d2bd61",
+  "requestCount": 101,
+  "actualCostUsd": 0.1601226,
+  "combinedPaidCostUsd": 0.4201263,
+  "schemaExhaustedCases": [
+    "p15-hol-29-1",
+    "p15-hol-29-2",
+    "p15-hol-29-3",
+    "p15-hol-30-2",
+    "p15-hol-31-4",
+    "p15-str-45-4",
+    "p15-str-46-2",
+    "p15-str-47-3",
+    "p15-str-47-4",
+    "p15-str-50-1",
+    "p15-str-50-3"
+  ]
+}

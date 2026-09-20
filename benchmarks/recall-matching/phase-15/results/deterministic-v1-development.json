@@ -1,0 +1,2808 @@
+{
+  "generatedAt": "2026-09-20T06:12:20.017Z",
+  "benchmarkVersion": "recall_safety_benchmark_v2",
+  "dataset": {
+    "split": "development",
+    "sha256": "07436aa4baccd220e254ef8167d6c604bee32838b40c76caa18753c65c4ee244",
+    "caseCount": 48,
+    "recallFamilyCount": 12
+  },
+  "matcher": {
+    "version": "deterministic_v1",
+    "schemaVersion": "1.0.0"
+  },
+  "sourceGitCommit": "c6fc8d5e43875a1c7c66934d8ad0cca11011c3a5",
+  "ai": {
+    "calls": 0,
+    "retries": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 0,
+    "costUsd": 0
+  },
+  "technicalFailures": {
+    "providerFailures": 0,
+    "timeouts": 0,
+    "invalidStructuredOutput": 0,
+    "retries": 0,
+    "exhaustedRetries": 0,
+    "safetyVerifierRejections": 0,
+    "fallbacks": 0
+  },
+  "metrics": {
+    "totalCases": 48,
+    "exactThreeClassAccuracy": 1,
+    "match": {
+      "truePositives": 16,
+      "falsePositives": 0,
+      "falseNegatives": 0,
+      "trueNegatives": 32,
+      "precision": 1,
+      "strictRecall": 1,
+      "falsePositiveRate": 0,
+      "unresolvedPositiveCases": 0
+    },
+    "needsReview": {
+      "predictedCount": 16,
+      "rate": 0.3333333333333333
+    },
+    "decisionCoverage": 0.6666666666666666,
+    "confusionMatrix": {
+      "match": {
+        "match": 16,
+        "no_match": 0,
+        "needs_review": 0
+      },
+      "no_match": {
+        "match": 0,
+        "no_match": 16,
+        "needs_review": 0
+      },
+      "needs_review": {
+        "match": 0,
+        "no_match": 0,
+        "needs_review": 16
+      }
+    },
+    "safety": {
+      "unsafeConfirmations": 0,
+      "unsafeConfirmRate": 0,
+      "missedAffectedCount": 0,
+      "missedAffectedRate": 0,
+      "rejectedTrueMatches": 0,
+      "abstainedTrueMatches": 0,
+      "pairwiseDiscrimination": 1,
+      "correctPairs": 12,
+      "totalPairs": 12
+    }
+  },
+  "stratified": {
+    "evidenceCategory": {
+      "gtin": {
+        "totalCases": 48,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 16,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 32,
+          "precision": 1,
+          "strictRecall": 1,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 0.3333333333333333
+        },
+        "decisionCoverage": 0.6666666666666666,
+        "confusionMatrix": {
+          "match": {
+            "match": 16,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 1,
+          "correctPairs": 12,
+          "totalPairs": 12
+        }
+      }
+    },
+    "sourceAuthority": {
+      "CPSC": {
+        "totalCases": 48,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 16,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 32,
+          "precision": 1,
+          "strictRecall": 1,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 0.3333333333333333
+        },
+        "decisionCoverage": 0.6666666666666666,
+        "confusionMatrix": {
+          "match": {
+            "match": 16,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 1,
+          "correctPairs": 12,
+          "totalPairs": 12
+        }
+      }
+    },
+    "split": {
+      "development": {
+        "totalCases": 48,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 16,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 32,
+          "precision": 1,
+          "strictRecall": 1,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 0.3333333333333333
+        },
+        "decisionCoverage": 0.6666666666666666,
+        "confusionMatrix": {
+          "match": {
+            "match": 16,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": 0,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 1,
+          "correctPairs": 12,
+          "totalPairs": 12
+        }
+      }
+    },
+    "perturbationFamily": {
+      "missing_required_identifier": {
+        "totalCases": 16,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 16,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 16,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 16
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "valid_gtin_near_miss": {
+        "totalCases": 16,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 16,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 0,
+          "rate": 0
+        },
+        "decisionCoverage": 1,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 16,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      }
+    }
+  },
+  "latency": {
+    "totalBenchmarkDurationMs": 2.7002920000000046,
+    "averageEvaluationMs": 0.016245752777777945,
+    "p50EvaluationMs": 0.012208999999998582,
+    "p95EvaluationMs": 0.03162499999999113,
+    "sampleCount": 1440
+  },
+  "cases": [
+    {
+      "caseId": "p15-dev-01-1",
+      "recallFamilyId": "cpsc-family-10889",
+      "pairGroupId": "p15-pair-10889",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["805253435117"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "805253435117",
+            "officialValue": "805253435117",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "officialValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WORLD CLASS FIREWORKS",
+            "officialValue": "WORLD CLASS FIREWORKS",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-01-2",
+      "recallFamilyId": "cpsc-family-10889",
+      "pairGroupId": "p15-pair-10889",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["805253435216 != 805253435117"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "805253435216",
+            "officialValue": "805253435117",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "officialValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WORLD CLASS FIREWORKS",
+            "officialValue": "WORLD CLASS FIREWORKS",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-01-3",
+      "recallFamilyId": "cpsc-family-10889",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "officialValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WORLD CLASS FIREWORKS",
+            "officialValue": "WORLD CLASS FIREWORKS",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-01-4",
+      "recallFamilyId": "cpsc-family-10889",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["805253435117"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "805253435117",
+            "officialValue": "805253435117",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "World Class Fireworks \"Skull Strobe\" Rockets — label transcription",
+            "officialValue": "World Class Fireworks \"Skull Strobe\" Rockets",
+            "detail": "Product-name Jaccard token overlap is 0.750."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WORLD CLASS FIREWORKS",
+            "officialValue": "WORLD CLASS FIREWORKS",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-02-1",
+      "recallFamilyId": "cpsc-family-10729",
+      "pairGroupId": "p15-pair-10729",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["885490244963"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "885490244963",
+            "officialValue": "885490244963",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Lil' Buddies Pet Laser Toy",
+            "officialValue": "Lil' Buddies Pet Laser Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "LIL' BUDDIES",
+            "officialValue": "LIL' BUDDIES",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-02-2",
+      "recallFamilyId": "cpsc-family-10729",
+      "pairGroupId": "p15-pair-10729",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["885490244062 != 885490244963"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "885490244062",
+            "officialValue": "885490244963",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Lil' Buddies Pet Laser Toy",
+            "officialValue": "Lil' Buddies Pet Laser Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "LIL' BUDDIES",
+            "officialValue": "LIL' BUDDIES",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-02-3",
+      "recallFamilyId": "cpsc-family-10729",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Lil' Buddies Pet Laser Toy",
+            "officialValue": "Lil' Buddies Pet Laser Toy",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "LIL' BUDDIES",
+            "officialValue": "LIL' BUDDIES",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-02-4",
+      "recallFamilyId": "cpsc-family-10729",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["885490244161 != 885490244963"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "885490244161",
+            "officialValue": "885490244963",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Lil' Buddies Pet Laser Toy — label transcription",
+            "officialValue": "Lil' Buddies Pet Laser Toy",
+            "detail": "Product-name Jaccard token overlap is 0.714."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "LIL' BUDDIES",
+            "officialValue": "LIL' BUDDIES",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-03-1",
+      "recallFamilyId": "cpsc-family-10695",
+      "pairGroupId": "p15-pair-10695",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["860007168901"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "860007168901",
+            "officialValue": "860007168901",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860007168901",
+            "officialValue": "860007168994",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860007168901",
+            "officialValue": "860010126417",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 3 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-03-2",
+      "recallFamilyId": "cpsc-family-10695",
+      "pairGroupId": "p15-pair-10695",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": [
+            "860007168000 != 860007168901",
+            "860007168000 != 860007168994",
+            "860007168000 != 860010126417"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860007168000",
+            "officialValue": "860007168901",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860007168000",
+            "officialValue": "860007168994",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860007168000",
+            "officialValue": "860010126417",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 3 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-03-3",
+      "recallFamilyId": "cpsc-family-10695",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "officialValue": "Various Brands of Iron-Containing Dietary Supplements",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "3 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-03-4",
+      "recallFamilyId": "cpsc-family-10695",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [],
+        "reasoningSummary": "No scope supplied enough comparable evidence for a safe deterministic decision.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-04-1",
+      "recallFamilyId": "cpsc-family-10585",
+      "pairGroupId": "p15-pair-10585",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["850022858529"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "850022858529",
+            "officialValue": "850022858529",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "850022858529",
+            "officialValue": "850022858536",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-04-2",
+      "recallFamilyId": "cpsc-family-10585",
+      "pairGroupId": "p15-pair-10585",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["850022858628 != 850022858529", "850022858628 != 850022858536"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "850022858628",
+            "officialValue": "850022858529",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "850022858628",
+            "officialValue": "850022858536",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-04-3",
+      "recallFamilyId": "cpsc-family-10585",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-04-4",
+      "recallFamilyId": "cpsc-family-10585",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["850022858529"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "850022858529",
+            "officialValue": "850022858529",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools — label transcription",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 0.833."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "850022858529",
+            "officialValue": "850022858536",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools — label transcription",
+            "officialValue": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+            "detail": "Product-name Jaccard token overlap is 0.833."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-05-1",
+      "recallFamilyId": "cpsc-family-10532",
+      "pairGroupId": "p15-pair-10532",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["860006498115"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "860006498115",
+            "officialValue": "860006498115",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Mamisan Pain Relieving Topical Ointment",
+            "officialValue": "Mamisan Pain Relieving Topical Ointment",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "MAMISAN",
+            "officialValue": "MAMISAN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-05-2",
+      "recallFamilyId": "cpsc-family-10532",
+      "pairGroupId": "p15-pair-10532",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["860006498214 != 860006498115"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860006498214",
+            "officialValue": "860006498115",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Mamisan Pain Relieving Topical Ointment",
+            "officialValue": "Mamisan Pain Relieving Topical Ointment",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "MAMISAN",
+            "officialValue": "MAMISAN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-05-3",
+      "recallFamilyId": "cpsc-family-10532",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Mamisan Pain Relieving Topical Ointment",
+            "officialValue": "Mamisan Pain Relieving Topical Ointment",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "MAMISAN",
+            "officialValue": "MAMISAN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-05-4",
+      "recallFamilyId": "cpsc-family-10532",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["860006498313 != 860006498115"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "860006498313",
+            "officialValue": "860006498115",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Mamisan Pain Relieving Topical Ointment — label transcription",
+            "officialValue": "Mamisan Pain Relieving Topical Ointment",
+            "detail": "Product-name Jaccard token overlap is 0.714."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "MAMISAN",
+            "officialValue": "MAMISAN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-06-1",
+      "recallFamilyId": "cpsc-family-10468",
+      "pairGroupId": "p15-pair-10468",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["196633883742"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "196633883742",
+            "officialValue": "196633883742",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+            "officialValue": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "KIRKLAND SIGNATURE",
+            "officialValue": "KIRKLAND SIGNATURE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-06-2",
+      "recallFamilyId": "cpsc-family-10468",
+      "pairGroupId": "p15-pair-10468",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["196633883841 != 196633883742"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "196633883841",
+            "officialValue": "196633883742",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+            "officialValue": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "KIRKLAND SIGNATURE",
+            "officialValue": "KIRKLAND SIGNATURE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-06-3",
+      "recallFamilyId": "cpsc-family-10468",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+            "officialValue": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "KIRKLAND SIGNATURE",
+            "officialValue": "KIRKLAND SIGNATURE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-06-4",
+      "recallFamilyId": "cpsc-family-10468",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.35,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "KIRKLAND SIGNATURE",
+            "officialValue": "KIRKLAND SIGNATURE",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-07-1",
+      "recallFamilyId": "cpsc-family-10421",
+      "pairGroupId": "p15-pair-10421",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["070257522266"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "070257522266",
+            "officialValue": "070257522266",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Scripto® Premium Torch",
+            "officialValue": "Scripto® Premium Torch",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SCRIPTO",
+            "officialValue": "SCRIPTO",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-07-2",
+      "recallFamilyId": "cpsc-family-10421",
+      "pairGroupId": "p15-pair-10421",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["070257522365 != 070257522266"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "070257522365",
+            "officialValue": "070257522266",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Scripto® Premium Torch",
+            "officialValue": "Scripto® Premium Torch",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SCRIPTO",
+            "officialValue": "SCRIPTO",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-07-3",
+      "recallFamilyId": "cpsc-family-10421",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Scripto® Premium Torch",
+            "officialValue": "Scripto® Premium Torch",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SCRIPTO",
+            "officialValue": "SCRIPTO",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-07-4",
+      "recallFamilyId": "cpsc-family-10421",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["070257522266"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "070257522266",
+            "officialValue": "070257522266",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Scripto® Premium Torch — label transcription",
+            "officialValue": "Scripto® Premium Torch",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SCRIPTO",
+            "officialValue": "SCRIPTO",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-08-1",
+      "recallFamilyId": "cpsc-family-10406",
+      "pairGroupId": "p15-pair-10406",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["628078800836"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "628078800836",
+            "officialValue": "628078800836",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Arizer Solo II portable electronic vaporizer devices",
+            "officialValue": "Arizer Solo II portable electronic vaporizer devices",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ARIZER",
+            "officialValue": "ARIZER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-08-2",
+      "recallFamilyId": "cpsc-family-10406",
+      "pairGroupId": "p15-pair-10406",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["628078800935 != 628078800836"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "628078800935",
+            "officialValue": "628078800836",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Arizer Solo II portable electronic vaporizer devices",
+            "officialValue": "Arizer Solo II portable electronic vaporizer devices",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ARIZER",
+            "officialValue": "ARIZER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-08-3",
+      "recallFamilyId": "cpsc-family-10406",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Arizer Solo II portable electronic vaporizer devices",
+            "officialValue": "Arizer Solo II portable electronic vaporizer devices",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ARIZER",
+            "officialValue": "ARIZER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-08-4",
+      "recallFamilyId": "cpsc-family-10406",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["628078800034 != 628078800836"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "628078800034",
+            "officialValue": "628078800836",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Arizer Solo II portable electronic vaporizer devices — label transcription",
+            "officialValue": "Arizer Solo II portable electronic vaporizer devices",
+            "detail": "Product-name Jaccard token overlap is 0.778."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ARIZER",
+            "officialValue": "ARIZER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-09-1",
+      "recallFamilyId": "cpsc-family-10403",
+      "pairGroupId": "p15-pair-10403",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["1922343012788"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "1922343012788",
+            "officialValue": "1922343012788",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Tabletop Fire Pits",
+            "officialValue": "Tabletop Fire Pits",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "1922343012788",
+            "officialValue": "1922346316838",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Tabletop Fire Pits",
+            "officialValue": "Tabletop Fire Pits",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-09-2",
+      "recallFamilyId": "cpsc-family-10403",
+      "pairGroupId": "p15-pair-10403",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["1922343012887 != 1922343012788", "1922343012887 != 1922346316838"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "1922343012887",
+            "officialValue": "1922343012788",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Tabletop Fire Pits",
+            "officialValue": "Tabletop Fire Pits",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "1922343012887",
+            "officialValue": "1922346316838",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Tabletop Fire Pits",
+            "officialValue": "Tabletop Fire Pits",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-09-3",
+      "recallFamilyId": "cpsc-family-10403",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Tabletop Fire Pits",
+            "officialValue": "Tabletop Fire Pits",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Tabletop Fire Pits",
+            "officialValue": "Tabletop Fire Pits",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          }
+        ],
+        "reasoningSummary": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-09-4",
+      "recallFamilyId": "cpsc-family-10403",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [],
+        "reasoningSummary": "No scope supplied enough comparable evidence for a safe deterministic decision.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-10-1",
+      "recallFamilyId": "cpsc-family-10381",
+      "pairGroupId": "p15-pair-10381",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["051751143171"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "051751143171",
+            "officialValue": "051751143171",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "051751143171",
+            "officialValue": "051751143188",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-10-2",
+      "recallFamilyId": "cpsc-family-10381",
+      "pairGroupId": "p15-pair-10381",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["051751143270 != 051751143171", "051751143270 != 051751143188"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "051751143270",
+            "officialValue": "051751143171",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "051751143270",
+            "officialValue": "051751143188",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 2 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-10-3",
+      "recallFamilyId": "cpsc-family-10381",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "2 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-10-4",
+      "recallFamilyId": "cpsc-family-10381",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["051751143171"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "051751143171",
+            "officialValue": "051751143171",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders — label transcription",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 0.800."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "051751143171",
+            "officialValue": "051751143188",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders — label transcription",
+            "officialValue": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+            "detail": "Product-name Jaccard token overlap is 0.800."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "WERNER",
+            "officialValue": "WERNER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 2 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-11-1",
+      "recallFamilyId": "cpsc-family-10220",
+      "pairGroupId": "p15-pair-10220",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["089301008588"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "089301008588",
+            "officialValue": "089301008588",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "officialValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT",
+            "officialValue": "DEWALT",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-11-2",
+      "recallFamilyId": "cpsc-family-10220",
+      "pairGroupId": "p15-pair-10220",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["089301008687 != 089301008588"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "089301008687",
+            "officialValue": "089301008588",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "officialValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT",
+            "officialValue": "DEWALT",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-11-3",
+      "recallFamilyId": "cpsc-family-10220",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "officialValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT",
+            "officialValue": "DEWALT",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-11-4",
+      "recallFamilyId": "cpsc-family-10220",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["089301008786 != 089301008588"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "089301008786",
+            "officialValue": "089301008588",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters — label transcription",
+            "officialValue": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+            "detail": "Product-name Jaccard token overlap is 0.846."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "DEWALT",
+            "officialValue": "DEWALT",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-12-1",
+      "recallFamilyId": "cpsc-family-10221",
+      "pairGroupId": "p15-pair-10221",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 1,
+        "matchedIdentifiers": {
+          "gtin": ["1922340368444"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "1922340368444",
+            "officialValue": "1922340368444",
+            "detail": "Exact valid GTIN match in an authoritative recall scope."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Room2Room LED Iridescent Bear Lights",
+            "officialValue": "Room2Room LED Iridescent Bear Lights",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROOM2ROOM",
+            "officialValue": "ROOM2ROOM",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-12-2",
+      "recallFamilyId": "cpsc-family-10221",
+      "pairGroupId": "p15-pair-10221",
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "valid_gtin_near_miss",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.98,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "gtin": ["1922340368543 != 1922340368444"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "gtin",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "1922340368543",
+            "officialValue": "1922340368444",
+            "detail": "Both GTINs are valid and explicitly differ."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Room2Room LED Iridescent Bear Lights",
+            "officialValue": "Room2Room LED Iridescent Bear Lights",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROOM2ROOM",
+            "officialValue": "ROOM2ROOM",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-12-3",
+      "recallFamilyId": "cpsc-family-10221",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Room2Room LED Iridescent Bear Lights",
+            "officialValue": "Room2Room LED Iridescent Bear Lights",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROOM2ROOM",
+            "officialValue": "ROOM2ROOM",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-dev-12-4",
+      "recallFamilyId": "cpsc-family-10221",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "development",
+      "evidenceDimensions": ["gtin"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.35,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROOM2ROOM",
+            "officialValue": "ROOM2ROOM",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    }
+  ]
+}

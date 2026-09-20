@@ -1,0 +1,4663 @@
+{
+  "generatedAt": "2026-09-20T06:12:20.143Z",
+  "benchmarkVersion": "recall_safety_benchmark_v2",
+  "dataset": {
+    "split": "stress",
+    "sha256": "7def9bfe2eb37ca2ddc336f451841f3fc6ad561d74f8f0bb6c6de0cd10849399",
+    "caseCount": 32,
+    "recallFamilyCount": 8
+  },
+  "matcher": {
+    "version": "deterministic_v1",
+    "schemaVersion": "1.0.0"
+  },
+  "sourceGitCommit": "c6fc8d5e43875a1c7c66934d8ad0cca11011c3a5",
+  "ai": {
+    "calls": 0,
+    "retries": 0,
+    "inputTokens": 0,
+    "outputTokens": 0,
+    "totalTokens": 0,
+    "costUsd": 0
+  },
+  "technicalFailures": {
+    "providerFailures": 0,
+    "timeouts": 0,
+    "invalidStructuredOutput": 0,
+    "retries": 0,
+    "exhaustedRetries": 0,
+    "safetyVerifierRejections": 0,
+    "fallbacks": 0
+  },
+  "metrics": {
+    "totalCases": 32,
+    "exactThreeClassAccuracy": 0.53125,
+    "match": {
+      "truePositives": 6,
+      "falsePositives": 3,
+      "falseNegatives": 5,
+      "trueNegatives": 18,
+      "precision": 0.6666666666666666,
+      "strictRecall": 0.5454545454545454,
+      "falsePositiveRate": 0.14285714285714285,
+      "unresolvedPositiveCases": 5
+    },
+    "needsReview": {
+      "predictedCount": 20,
+      "rate": 0.625
+    },
+    "decisionCoverage": 0.375,
+    "confusionMatrix": {
+      "match": {
+        "match": 6,
+        "no_match": 0,
+        "needs_review": 5
+      },
+      "no_match": {
+        "match": 1,
+        "no_match": 3,
+        "needs_review": 7
+      },
+      "needs_review": {
+        "match": 2,
+        "no_match": 0,
+        "needs_review": 8
+      }
+    },
+    "safety": {
+      "unsafeConfirmations": 3,
+      "unsafeConfirmRate": 0.3333333333333333,
+      "missedAffectedCount": 5,
+      "missedAffectedRate": 0.45454545454545453,
+      "rejectedTrueMatches": 0,
+      "abstainedTrueMatches": 5,
+      "pairwiseDiscrimination": 0.25,
+      "correctPairs": 2,
+      "totalPairs": 8
+    }
+  },
+  "stratified": {
+    "evidenceCategory": {
+      "adversarial": {
+        "totalCases": 32,
+        "exactThreeClassAccuracy": 0.53125,
+        "match": {
+          "truePositives": 6,
+          "falsePositives": 3,
+          "falseNegatives": 5,
+          "trueNegatives": 18,
+          "precision": 0.6666666666666666,
+          "strictRecall": 0.5454545454545454,
+          "falsePositiveRate": 0.14285714285714285,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 20,
+          "rate": 0.625
+        },
+        "decisionCoverage": 0.375,
+        "confusionMatrix": {
+          "match": {
+            "match": 6,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 3,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 8
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.45454545454545453,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0.25,
+          "correctPairs": 2,
+          "totalPairs": 8
+        }
+      },
+      "batch": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0.5,
+        "match": {
+          "truePositives": 2,
+          "falsePositives": 1,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": 0.6666666666666666,
+          "strictRecall": 1,
+          "falsePositiveRate": 0.5,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 0.25
+        },
+        "decisionCoverage": 0.75,
+        "confusionMatrix": {
+          "match": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 1,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 1
+        }
+      },
+      "date": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0.25,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 2,
+          "trueNegatives": 2,
+          "precision": null,
+          "strictRecall": 0,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 2
+        },
+        "needsReview": {
+          "predictedCount": 4,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 2
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 2,
+          "missedAffectedRate": 1,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 2,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 1
+        }
+      },
+      "lot": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0.5,
+        "match": {
+          "truePositives": 2,
+          "falsePositives": 1,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": 0.6666666666666666,
+          "strictRecall": 1,
+          "falsePositiveRate": 0.5,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 0.25
+        },
+        "decisionCoverage": 0.75,
+        "confusionMatrix": {
+          "match": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 1,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 1
+        }
+      },
+      "manufacture_date": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0.25,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 1,
+          "trueNegatives": 3,
+          "precision": null,
+          "strictRecall": 0,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 1
+        },
+        "needsReview": {
+          "predictedCount": 4,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 2
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 1,
+          "missedAffectedRate": 1,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 1,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 1
+        }
+      },
+      "model": {
+        "totalCases": 32,
+        "exactThreeClassAccuracy": 0.53125,
+        "match": {
+          "truePositives": 6,
+          "falsePositives": 3,
+          "falseNegatives": 5,
+          "trueNegatives": 18,
+          "precision": 0.6666666666666666,
+          "strictRecall": 0.5454545454545454,
+          "falsePositiveRate": 0.14285714285714285,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 20,
+          "rate": 0.625
+        },
+        "decisionCoverage": 0.375,
+        "confusionMatrix": {
+          "match": {
+            "match": 6,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 3,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 8
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.45454545454545453,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0.25,
+          "correctPairs": 2,
+          "totalPairs": 8
+        }
+      },
+      "multi_condition": {
+        "totalCases": 24,
+        "exactThreeClassAccuracy": 0.375,
+        "match": {
+          "truePositives": 3,
+          "falsePositives": 3,
+          "falseNegatives": 5,
+          "trueNegatives": 13,
+          "precision": 0.5,
+          "strictRecall": 0.375,
+          "falsePositiveRate": 0.1875,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 18,
+          "rate": 0.75
+        },
+        "decisionCoverage": 0.25,
+        "confusionMatrix": {
+          "match": {
+            "match": 3,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 6
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.5,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.625,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 6
+        }
+      },
+      "production_date": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0.25,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 1,
+          "trueNegatives": 3,
+          "precision": null,
+          "strictRecall": 0,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 1
+        },
+        "needsReview": {
+          "predictedCount": 4,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 2
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 1,
+          "missedAffectedRate": 1,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 1,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 1
+        }
+      },
+      "serial_range": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0.5,
+        "match": {
+          "truePositives": 1,
+          "falsePositives": 2,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": 0.3333333333333333,
+          "strictRecall": 1,
+          "falsePositiveRate": 0.6666666666666666,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 0.25
+        },
+        "decisionCoverage": 0.75,
+        "confusionMatrix": {
+          "match": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 1
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 2,
+          "unsafeConfirmRate": 0.6666666666666666,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": 0,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 1
+        }
+      },
+      "variant": {
+        "totalCases": 8,
+        "exactThreeClassAccuracy": 0.375,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 3,
+          "trueNegatives": 5,
+          "precision": null,
+          "strictRecall": 0,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 3
+        },
+        "needsReview": {
+          "predictedCount": 8,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 3
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 2
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 3
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 3,
+          "missedAffectedRate": 1,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 3,
+          "pairwiseDiscrimination": 0,
+          "correctPairs": 0,
+          "totalPairs": 2
+        }
+      }
+    },
+    "sourceAuthority": {
+      "CPSC": {
+        "totalCases": 32,
+        "exactThreeClassAccuracy": 0.53125,
+        "match": {
+          "truePositives": 6,
+          "falsePositives": 3,
+          "falseNegatives": 5,
+          "trueNegatives": 18,
+          "precision": 0.6666666666666666,
+          "strictRecall": 0.5454545454545454,
+          "falsePositiveRate": 0.14285714285714285,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 20,
+          "rate": 0.625
+        },
+        "decisionCoverage": 0.375,
+        "confusionMatrix": {
+          "match": {
+            "match": 6,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 3,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 8
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.45454545454545453,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0.25,
+          "correctPairs": 2,
+          "totalPairs": 8
+        }
+      }
+    },
+    "split": {
+      "stress": {
+        "totalCases": 32,
+        "exactThreeClassAccuracy": 0.53125,
+        "match": {
+          "truePositives": 6,
+          "falsePositives": 3,
+          "falseNegatives": 5,
+          "trueNegatives": 18,
+          "precision": 0.6666666666666666,
+          "strictRecall": 0.5454545454545454,
+          "falsePositiveRate": 0.14285714285714285,
+          "unresolvedPositiveCases": 5
+        },
+        "needsReview": {
+          "predictedCount": 20,
+          "rate": 0.625
+        },
+        "decisionCoverage": 0.375,
+        "confusionMatrix": {
+          "match": {
+            "match": 6,
+            "no_match": 0,
+            "needs_review": 5
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 3,
+            "needs_review": 7
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 8
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 3,
+          "unsafeConfirmRate": 0.3333333333333333,
+          "missedAffectedCount": 5,
+          "missedAffectedRate": 0.45454545454545453,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 5,
+          "pairwiseDiscrimination": 0.25,
+          "correctPairs": 2,
+          "totalPairs": 8
+        }
+      }
+    },
+    "perturbationFamily": {
+      "boundary_date": {
+        "totalCases": 4,
+        "exactThreeClassAccuracy": 0,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 4,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 4,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 4
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "conflicting_identifiers": {
+        "totalCases": 1,
+        "exactThreeClassAccuracy": 0,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "lot_near_miss": {
+        "totalCases": 1,
+        "exactThreeClassAccuracy": 0,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "missing_required_identifier": {
+        "totalCases": 9,
+        "exactThreeClassAccuracy": 0.7777777777777778,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 2,
+          "falseNegatives": 0,
+          "trueNegatives": 7,
+          "precision": 0,
+          "strictRecall": null,
+          "falsePositiveRate": 0.2222222222222222,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 7,
+          "rate": 0.7777777777777778
+        },
+        "decisionCoverage": 0.2222222222222222,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 2,
+            "no_match": 0,
+            "needs_review": 7
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 2,
+          "unsafeConfirmRate": 1,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "purchase_date_as_manufacture_date": {
+        "totalCases": 1,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "serial_just_outside_range": {
+        "totalCases": 1,
+        "exactThreeClassAccuracy": 0,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 1,
+          "falseNegatives": 0,
+          "trueNegatives": 0,
+          "precision": 0,
+          "strictRecall": null,
+          "falsePositiveRate": 1,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 0,
+          "rate": 0
+        },
+        "decisionCoverage": 1,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 1,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 1,
+          "unsafeConfirmRate": 1,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "single_character_model_mutation": {
+        "totalCases": 1,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 0,
+          "rate": 0
+        },
+        "decisionCoverage": 1,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 1,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "transposed_digits": {
+        "totalCases": 2,
+        "exactThreeClassAccuracy": 1,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 2,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 0,
+          "rate": 0
+        },
+        "decisionCoverage": 1,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 2,
+            "needs_review": 0
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      },
+      "variant_mismatch": {
+        "totalCases": 1,
+        "exactThreeClassAccuracy": 0,
+        "match": {
+          "truePositives": 0,
+          "falsePositives": 0,
+          "falseNegatives": 0,
+          "trueNegatives": 1,
+          "precision": null,
+          "strictRecall": null,
+          "falsePositiveRate": 0,
+          "unresolvedPositiveCases": 0
+        },
+        "needsReview": {
+          "predictedCount": 1,
+          "rate": 1
+        },
+        "decisionCoverage": 0,
+        "confusionMatrix": {
+          "match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          },
+          "no_match": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 1
+          },
+          "needs_review": {
+            "match": 0,
+            "no_match": 0,
+            "needs_review": 0
+          }
+        },
+        "safety": {
+          "unsafeConfirmations": 0,
+          "unsafeConfirmRate": null,
+          "missedAffectedCount": 0,
+          "missedAffectedRate": null,
+          "rejectedTrueMatches": 0,
+          "abstainedTrueMatches": 0,
+          "pairwiseDiscrimination": null,
+          "correctPairs": 0,
+          "totalPairs": 0
+        }
+      }
+    }
+  },
+  "latency": {
+    "totalBenchmarkDurationMs": 0.7364589999999964,
+    "averageEvaluationMs": 0.02124969583333328,
+    "p50EvaluationMs": 0.01654099999998948,
+    "p95EvaluationMs": 0.04220899999998551,
+    "sampleCount": 960
+  },
+  "cases": [
+    {
+      "caseId": "p15-str-43-1",
+      "recallFamilyId": "cpsc-family-10837",
+      "pairGroupId": "p15-pair-10837",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["2512JX02"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "2512JX02",
+            "officialValue": "2512JX02",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Small Fish Montessori Busy Board Toys",
+            "officialValue": "Small Fish Montessori Busy Board Toys",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SMALL FISH",
+            "officialValue": "SMALL FISH",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-43-2",
+      "recallFamilyId": "cpsc-family-10837",
+      "pairGroupId": "p15-pair-10837",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": "single_character_model_mutation",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["2512JX03 != 2512JX02"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "2512JX03",
+            "officialValue": "2512JX02",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Small Fish Montessori Busy Board Toys",
+            "officialValue": "Small Fish Montessori Busy Board Toys",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SMALL FISH",
+            "officialValue": "SMALL FISH",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-43-3",
+      "recallFamilyId": "cpsc-family-10837",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Small Fish Montessori Busy Board Toys",
+            "officialValue": "Small Fish Montessori Busy Board Toys",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SMALL FISH",
+            "officialValue": "SMALL FISH",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-43-4",
+      "recallFamilyId": "cpsc-family-10837",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["2512JX02"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "2512JX02",
+            "officialValue": "2512JX02",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Small Fish Montessori Busy Board Toys — label transcription",
+            "officialValue": "Small Fish Montessori Busy Board Toys",
+            "detail": "Product-name Jaccard token overlap is 0.750."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "SMALL FISH",
+            "officialValue": "SMALL FISH",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-44-1",
+      "recallFamilyId": "cpsc-family-10849",
+      "pairGroupId": "p15-pair-10849",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["2023-V3"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "2023-V3",
+            "officialValue": "2023-V3",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Junpower CR2032 Batteries",
+            "officialValue": "Junpower CR2032 Batteries",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "JUNPOWER",
+            "officialValue": "JUNPOWER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-44-2",
+      "recallFamilyId": "cpsc-family-10849",
+      "pairGroupId": "p15-pair-10849",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": "transposed_digits",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["2032-V3 != 2023-V3"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "2032-V3",
+            "officialValue": "2023-V3",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Junpower CR2032 Batteries",
+            "officialValue": "Junpower CR2032 Batteries",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "JUNPOWER",
+            "officialValue": "JUNPOWER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-44-3",
+      "recallFamilyId": "cpsc-family-10849",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.6499999999999999,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Junpower CR2032 Batteries",
+            "officialValue": "Junpower CR2032 Batteries",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "JUNPOWER",
+            "officialValue": "JUNPOWER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-44-4",
+      "recallFamilyId": "cpsc-family-10849",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "adversarial"],
+      "perturbationType": "transposed_digits",
+      "expected": "no_match",
+      "predicted": "no_match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "rejected",
+        "confidence": 0.92,
+        "matchedIdentifiers": {},
+        "conflictingIdentifiers": {
+          "modelNumber": ["2032-V3 != 2023-V3"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "2032-V3",
+            "officialValue": "2023-V3",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Junpower CR2032 Batteries — label transcription",
+            "officialValue": "Junpower CR2032 Batteries",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "JUNPOWER",
+            "officialValue": "JUNPOWER",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "All 1 relevant scope(s) contain concrete contradictory evidence.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-45-1",
+      "recallFamilyId": "cpsc-family-10855",
+      "pairGroupId": "p15-pair-10855",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "serial_range", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["QHXP029B"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "QHXP029B",
+            "officialValue": "QHXP029B",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "serialNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "ownedValue": "SQC200034980",
+            "officialValue": "SQC200034980..SQC202319171",
+            "detail": "serialNumber range cannot be compared safely without manufacturer-specific semantics."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN and MouTec Biometric Firearm Safes",
+            "officialValue": "BBRKIN and MouTec Biometric Firearm Safes",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN",
+            "officialValue": "BBRKIN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-45-2",
+      "recallFamilyId": "cpsc-family-10855",
+      "pairGroupId": "p15-pair-10855",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "serial_range", "multi_condition", "adversarial"],
+      "perturbationType": "serial_just_outside_range",
+      "expected": "no_match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["QHXP029B"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "QHXP029B",
+            "officialValue": "QHXP029B",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "serialNumber",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "ownedValue": "SQC200034979",
+            "officialValue": "SQC200034980..SQC202319171",
+            "detail": "serialNumber range cannot be compared safely without manufacturer-specific semantics."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN and MouTec Biometric Firearm Safes",
+            "officialValue": "BBRKIN and MouTec Biometric Firearm Safes",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN",
+            "officialValue": "BBRKIN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-45-3",
+      "recallFamilyId": "cpsc-family-10855",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "serial_range", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["QHXP029B"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "QHXP029B",
+            "officialValue": "QHXP029B",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN and MouTec Biometric Firearm Safes",
+            "officialValue": "BBRKIN and MouTec Biometric Firearm Safes",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN",
+            "officialValue": "BBRKIN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 1 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-45-4",
+      "recallFamilyId": "cpsc-family-10855",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "serial_range", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.72,
+        "matchedIdentifiers": {
+          "modelNumber": ["QHXP029B"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "QHXP029B",
+            "officialValue": "QHXP029B",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "BBRKIN",
+            "officialValue": "BBRKIN",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-46-1",
+      "recallFamilyId": "cpsc-family-10846",
+      "pairGroupId": "p15-pair-10846",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "lot", "batch", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.96,
+        "matchedIdentifiers": {
+          "modelNumber": ["BXP99"],
+          "lotNumber": ["202506001"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP99",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP93",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP94",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP96",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP97",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 5 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-46-2",
+      "recallFamilyId": "cpsc-family-10846",
+      "pairGroupId": "p15-pair-10846",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "lot", "batch", "multi_condition", "adversarial"],
+      "perturbationType": "lot_near_miss",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["BXP99"]
+        },
+        "conflictingIdentifiers": {
+          "lotNumber": ["202506002 != 202506001"],
+          "modelNumber": ["BXP99 != BXP93", "BXP99 != BXP94", "BXP99 != BXP96", "BXP99 != BXP97"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP99",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "lotNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "202506002",
+            "officialValue": "202506001",
+            "detail": "Explicit normalized lotNumber mismatch."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP93",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "lotNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "202506002",
+            "officialValue": "202506001",
+            "detail": "Explicit normalized lotNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP94",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "lotNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "202506002",
+            "officialValue": "202506001",
+            "detail": "Explicit normalized lotNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP96",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "lotNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "202506002",
+            "officialValue": "202506001",
+            "detail": "Explicit normalized lotNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP97",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "lotNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "202506002",
+            "officialValue": "202506001",
+            "detail": "Explicit normalized lotNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-46-3",
+      "recallFamilyId": "cpsc-family-10846",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "lot", "batch", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.9,
+        "matchedIdentifiers": {
+          "modelNumber": ["BXP99"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP99",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP93",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP94",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP96",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP97",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 5 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-46-4",
+      "recallFamilyId": "cpsc-family-10846",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "lot", "batch", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "match",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "confirmed",
+        "confidence": 0.96,
+        "matchedIdentifiers": {
+          "modelNumber": ["BXP99"],
+          "lotNumber": ["202506001"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP99",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows — label transcription",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP93",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows — label transcription",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP94",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows — label transcription",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP96",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows — label transcription",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BXP99",
+            "officialValue": "BXP97",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "lotNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "202506001",
+            "officialValue": "202506001",
+            "detail": "Exact normalized lotNumber match."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY Nursing Pillows — label transcription",
+            "officialValue": "AMASKY Nursing Pillows",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "AMASKY",
+            "officialValue": "AMASKY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          }
+        ],
+        "reasoningSummary": "1 of 5 scopes provided strong compatible evidence; other scopes cannot override an exact compatible scope.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-47-1",
+      "recallFamilyId": "cpsc-family-10885",
+      "pairGroupId": "p15-pair-10885",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "manufacture_date", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["BCD-215V-62H"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "BCD-215V-62H != GLR76TRDER",
+            "BCD-215V-62H != GLR76TBKER",
+            "BCD-215V-62H != GLR76TBEER",
+            "BCD-215V-62H != GLR76TWEER"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "BCD-215V-62H",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TRDER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBKER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TWEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-47-2",
+      "recallFamilyId": "cpsc-family-10885",
+      "pairGroupId": "p15-pair-10885",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "manufacture_date", "multi_condition", "adversarial"],
+      "perturbationType": "boundary_date",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["BCD-215V-62H"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "BCD-215V-62H != GLR76TRDER",
+            "BCD-215V-62H != GLR76TBKER",
+            "BCD-215V-62H != GLR76TBEER",
+            "BCD-215V-62H != GLR76TWEER"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "BCD-215V-62H",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TRDER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBKER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TWEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-47-3",
+      "recallFamilyId": "cpsc-family-10885",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "manufacture_date", "multi_condition", "adversarial"],
+      "perturbationType": "purchase_date_as_manufacture_date",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["BCD-215V-62H"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "BCD-215V-62H != GLR76TRDER",
+            "BCD-215V-62H != GLR76TBKER",
+            "BCD-215V-62H != GLR76TBEER",
+            "BCD-215V-62H != GLR76TWEER"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "BCD-215V-62H",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TRDER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBKER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TWEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-47-4",
+      "recallFamilyId": "cpsc-family-10885",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "manufacture_date", "multi_condition", "adversarial"],
+      "perturbationType": "boundary_date",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["BCD-215V-62H"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "BCD-215V-62H != GLR76TRDER",
+            "BCD-215V-62H != GLR76TBKER",
+            "BCD-215V-62H != GLR76TBEER",
+            "BCD-215V-62H != GLR76TWEER"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "BCD-215V-62H",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators — label transcription",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TRDER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators — label transcription",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBKER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators — label transcription",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TBEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators — label transcription",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "BCD-215V-62H",
+            "officialValue": "GLR76TWEER",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Galanz Retro Refrigerators — label transcription",
+            "officialValue": "Galanz Retro Refrigerators",
+            "detail": "Product-name Jaccard token overlap is 0.600."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "GALANZ",
+            "officialValue": "GALANZ",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-48-1",
+      "recallFamilyId": "cpsc-family-10864",
+      "pairGroupId": "p15-pair-10864",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "variant", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["9000-1129"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "9000-1129 != 9000-1130",
+            "9000-1129 != 9000-1254",
+            "9000-1129 != 9000-1255",
+            "9000-1129 != 9000-1314"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1129",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1130",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1254",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1255",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1314",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-48-2",
+      "recallFamilyId": "cpsc-family-10864",
+      "pairGroupId": "p15-pair-10864",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "variant", "multi_condition", "adversarial"],
+      "perturbationType": "variant_mismatch",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["9000-1129"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "9000-1129 != 9000-1130",
+            "9000-1129 != 9000-1254",
+            "9000-1129 != 9000-1255",
+            "9000-1129 != 9000-1314"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1129",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1130",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1254",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1255",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1314",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-48-3",
+      "recallFamilyId": "cpsc-family-10864",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "variant", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["9000-1129"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "9000-1129 != 9000-1130",
+            "9000-1129 != 9000-1254",
+            "9000-1129 != 9000-1255",
+            "9000-1129 != 9000-1314"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1129",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1130",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1254",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1255",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1314",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Nottaway Chandelier Fixtures",
+            "officialValue": "Nottaway Chandelier Fixtures",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-48-4",
+      "recallFamilyId": "cpsc-family-10864",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "variant", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["9000-1129"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": [
+            "9000-1129 != 9000-1130",
+            "9000-1129 != 9000-1254",
+            "9000-1129 != 9000-1255",
+            "9000-1129 != 9000-1314"
+          ]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1129",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1130",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1254",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 2,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1255",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 3,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "9000-1129",
+            "officialValue": "9000-1314",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "CURREY & COMPANY",
+            "officialValue": "CURREY & COMPANY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 4,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-49-1",
+      "recallFamilyId": "cpsc-family-10845",
+      "pairGroupId": "p15-pair-10845",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "date", "variant", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["RH99A2U1"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": ["RH99A2U1 != RH99F2U1"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99A2U1",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99F2U1",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-49-2",
+      "recallFamilyId": "cpsc-family-10845",
+      "pairGroupId": "p15-pair-10845",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "date", "variant", "multi_condition", "adversarial"],
+      "perturbationType": "conflicting_identifiers",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["RH99A2U1"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": ["RH99A2U1 != RH99F2U1"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99A2U1",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99F2U1",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-49-3",
+      "recallFamilyId": "cpsc-family-10845",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "date", "variant", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["RH99A2U1"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": ["RH99A2U1 != RH99F2U1"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99A2U1",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99F2U1",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-49-4",
+      "recallFamilyId": "cpsc-family-10845",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "date", "variant", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["RH99A2U1"]
+        },
+        "conflictingIdentifiers": {
+          "modelNumber": ["RH99A2U1 != RH99F2U1"]
+        },
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99A2U1",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery — label transcription",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 0.778."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "modelNumber",
+            "outcome": "conflicting",
+            "strength": "strong",
+            "ownedValue": "RH99A2U1",
+            "officialValue": "RH99F2U1",
+            "detail": "Explicit normalized modelNumber mismatch."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery — label transcription",
+            "officialValue": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+            "detail": "Product-name Jaccard token overlap is 0.778."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "ROWENTA",
+            "officialValue": "ROWENTA",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 1,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-50-1",
+      "recallFamilyId": "cpsc-family-10851",
+      "pairGroupId": "p15-pair-10851",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "production_date", "multi_condition", "adversarial"],
+      "perturbationType": null,
+      "expected": "match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["MEF6096"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "MEF6096",
+            "officialValue": "MEF6096",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "officialValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "UNITY",
+            "officialValue": "UNITY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-50-2",
+      "recallFamilyId": "cpsc-family-10851",
+      "pairGroupId": "p15-pair-10851",
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "production_date", "multi_condition", "adversarial"],
+      "perturbationType": "boundary_date",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["MEF6096"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "MEF6096",
+            "officialValue": "MEF6096",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "officialValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "UNITY",
+            "officialValue": "UNITY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-50-3",
+      "recallFamilyId": "cpsc-family-10851",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "production_date", "multi_condition", "adversarial"],
+      "perturbationType": "missing_required_identifier",
+      "expected": "needs_review",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["MEF6096"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "MEF6096",
+            "officialValue": "MEF6096",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "officialValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "detail": "Product-name Jaccard token overlap is 1.000."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "UNITY",
+            "officialValue": "UNITY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    },
+    {
+      "caseId": "p15-str-50-4",
+      "recallFamilyId": "cpsc-family-10851",
+      "pairGroupId": null,
+      "authority": "CPSC",
+      "split": "stress",
+      "evidenceDimensions": ["model", "production_date", "multi_condition", "adversarial"],
+      "perturbationType": "boundary_date",
+      "expected": "no_match",
+      "predicted": "needs_review",
+      "technicalFailure": false,
+      "evaluation": {
+        "decision": "needs_review",
+        "confidence": 0.75,
+        "matchedIdentifiers": {
+          "modelNumber": ["MEF6096"]
+        },
+        "conflictingIdentifiers": {},
+        "evidenceUsed": [
+          {
+            "scopeIndex": 0,
+            "kind": "modelNumber",
+            "outcome": "matched",
+            "strength": "strong",
+            "ownedValue": "MEF6096",
+            "officialValue": "MEF6096",
+            "detail": "Exact normalized modelNumber match."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "productName",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices — label transcription",
+            "officialValue": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+            "detail": "Product-name Jaccard token overlap is 0.818."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "brand",
+            "outcome": "supporting",
+            "strength": "supporting",
+            "ownedValue": "UNITY",
+            "officialValue": "UNITY",
+            "detail": "Explicit scope brand matches as supporting evidence."
+          },
+          {
+            "scopeIndex": 0,
+            "kind": "additionalCriteria",
+            "outcome": "unresolved",
+            "strength": "contextual",
+            "detail": "Structured additional criteria require interpretation beyond deterministic_v1."
+          }
+        ],
+        "reasoningSummary": "1 plausible scope(s) remain unresolved and no scope confirmed the match.",
+        "matchMethod": "deterministic_v1",
+        "schemaVersion": "1.0.0"
+      }
+    }
+  ]
+}

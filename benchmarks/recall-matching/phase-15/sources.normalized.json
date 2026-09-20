@@ -1,0 +1,2303 @@
+{
+  "snapshotVersion": "2.0.0",
+  "retrievedAt": "2026-09-20",
+  "authorities": ["CPSC"],
+  "sources": [
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10889",
+      "externalRecallId": "10889",
+      "recallNumber": "26653",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Jakes-Fireworks-Recalls-World-Class-Fireworks-Skull-Strobe-Rockets-Due-to-Risk-of-Serious-Injury-from-Explosion-and-Burn-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-30",
+      "title": "Jake's Fireworks Recalls World Class Fireworks \"Skull Strobe\" Rockets Due to Risk of Serious Injury from Explosion and Burn Hazards",
+      "productName": "World Class Fireworks \"Skull Strobe\" Rockets",
+      "recallFamilyId": "cpsc-family-10889",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["805253435117"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "World Class Fireworks \"Skull Strobe\" Rockets",
+          "brand": "World Class Fireworks",
+          "gtin": "805253435117"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10729",
+      "externalRecallId": "10729",
+      "recallNumber": "26428",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/JC-Sales-Recalls-Lil-Buddies-Pet-Laser-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Hazard-Violates-Mandatory-Standard-for-Consumer-Products-with-Button-Cell-Batteries",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-04-16",
+      "title": "JC Sales Recalls Lil' Buddies Pet Laser Toys Due to Risk of Serious Injury or Death from Battery Ingestion Hazard; Violates Mandatory Standard for Consumer Products with Button Cell Batteries",
+      "productName": "Lil' Buddies Pet Laser Toy",
+      "recallFamilyId": "cpsc-family-10729",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["885490244963"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Lil' Buddies Pet Laser Toy",
+          "brand": "Lil' Buddies",
+          "gtin": "885490244963"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10695",
+      "externalRecallId": "10695",
+      "recallNumber": "26386",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Vitaquest-International-Recalls-Multiple-Iron-Supplement-Bottles-and-Packets-Due-to-Risk-of-Serious-Injury-or-Death-from-Poisoning-to-Young-Children-Violates-Mandatory-Standard-for-Child-Resistant-Packaging",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-04-09",
+      "title": "Vitaquest International Recalls Multiple Iron Supplement Bottles and Packets Due to Risk of Serious Injury or Death from Poisoning to Young Children; Violates Mandatory Standard for Child-Resistant Packaging",
+      "productName": "Various Brands of Iron-Containing Dietary Supplements",
+      "recallFamilyId": "cpsc-family-10695",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["860007168901", "860007168994", "860010126417"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Various Brands of Iron-Containing Dietary Supplements",
+          "brand": null,
+          "gtin": "860007168901"
+        },
+        {
+          "productName": "Various Brands of Iron-Containing Dietary Supplements",
+          "brand": null,
+          "gtin": "860007168994"
+        },
+        {
+          "productName": "Various Brands of Iron-Containing Dietary Supplements",
+          "brand": null,
+          "gtin": "860010126417"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10585",
+      "externalRecallId": "10585",
+      "recallNumber": "26227",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Sunneday-and-Blue-Bay-Above-Ground-Pools-48-Inches-and-Taller-Recalled-Due-to-Drowning-Hazard-Manufactured-by-Starmatrix-Group",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-01-29",
+      "title": "Hobby Lobby Recalls Giraffe and Llama Plush Toys with Clips Due to Drowning Hazard; Manufactured by Starmatrix Group Drowning Hazard; Manufactured by Starmatrix Group",
+      "productName": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+      "recallFamilyId": "cpsc-family-10585",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["850022858529", "850022858536"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+          "brand": null,
+          "gtin": "850022858529"
+        },
+        {
+          "productName": "Sunneday and Blue Bay brand 48-inch and taller above-ground pools",
+          "brand": null,
+          "gtin": "850022858536"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10532",
+      "externalRecallId": "10532",
+      "recallNumber": "26157",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Plantimex-Recalls-Mamisan-Lidocaine-Ointment-Containers-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-Violates-Mandatory-Standard-for-Child-Resistant-Packaging",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-12-18",
+      "title": "Plantimex Recalls Mamisan Lidocaine Ointment Containers Due to Risk of Serious Injury or Death from Child Poisoning; Violates Mandatory Standard for Child-Resistant Packaging",
+      "productName": "Mamisan Pain Relieving Topical Ointment",
+      "recallFamilyId": "cpsc-family-10532",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["860006498115"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Mamisan Pain Relieving Topical Ointment",
+          "brand": "Mamisan",
+          "gtin": "860006498115"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10468",
+      "externalRecallId": "10468",
+      "recallNumber": "26068",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/F-F-Fine-Wines-Recalls-Kirkland-Signature-Valdobbiadene-Prosecco-DOCG-Bottles-sold-by-Costco-Due-to-Laceration-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-11-06",
+      "title": "F&F Fine Wines Recalls Kirkland Signature Valdobbiadene Prosecco DOCG Bottles sold by Costco Due to Laceration Hazard",
+      "productName": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+      "recallFamilyId": "cpsc-family-10468",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["196633883742"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Kirkland Signature Valdobbiadene Prosecco DOCG bottles",
+          "brand": "Kirkland Signature",
+          "gtin": "196633883742"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10421",
+      "externalRecallId": "10421",
+      "recallNumber": "26006",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Calico-Brands-Recalls-Scripto-Premium-Torches-Due-to-Risk-of-Injury-or-Death-from-Fires-and-Burns-Violates-Mandatory-Standard-for-Multipurpose-Lighters",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-10-09",
+      "title": "Calico Brands Recalls Scripto Premium Torches Due to Risk of Injury or Death from Fires and Burns; Violates Mandatory Standard for Multipurpose Lighters",
+      "productName": "Scripto® Premium Torch",
+      "recallFamilyId": "cpsc-family-10421",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["070257522266"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Scripto® Premium Torch",
+          "brand": "Scripto",
+          "gtin": "070257522266"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10406",
+      "externalRecallId": "10406",
+      "recallNumber": "25470",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Arizer-Solo-II-Portable-Vaporizers-Recalled-Due-to-Fire-and-Burn-Hazards-Imported-by-7111495-Canada",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-09-18",
+      "title": "Arizer Solo II Portable Vaporizers Recalled Due to Fire and Burn Hazards; Imported by 7111495 Canada",
+      "productName": "Arizer Solo II portable electronic vaporizer devices",
+      "recallFamilyId": "cpsc-family-10406",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["628078800836"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Arizer Solo II portable electronic vaporizer devices",
+          "brand": "Arizer",
+          "gtin": "628078800836"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10403",
+      "externalRecallId": "10403",
+      "recallNumber": "25467",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Five-Below-Recalls-Tabletop-Fire-Pits-Due-to-Risk-of-Serious-Burn-Injury-from-Flame-Jetting-and-Fire-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-09-18",
+      "title": "Five Below Recalls Tabletop Fire Pits Due to Risk of Serious Burn Injury from Flame Jetting and Fire Hazards",
+      "productName": "Tabletop Fire Pits",
+      "recallFamilyId": "cpsc-family-10403",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["1922343012788", "1922346316838"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Tabletop Fire Pits",
+          "brand": null,
+          "gtin": "1922343012788"
+        },
+        {
+          "productName": "Tabletop Fire Pits",
+          "brand": null,
+          "gtin": "1922346316838"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10381",
+      "externalRecallId": "10381",
+      "recallNumber": "25431",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Werner-Recalls-20-and-24-Multi-Max-Pro-Multi-Purpose-Ladders-Due-to-Fall-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-08-14",
+      "title": "Werner Recalls 20' and 24' Multi-Max Pro Multi-Purpose Ladders Due to Fall Hazard",
+      "productName": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+      "recallFamilyId": "cpsc-family-10381",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["051751143171", "051751143188"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+          "brand": "Werner",
+          "gtin": "051751143171"
+        },
+        {
+          "productName": "Werner 20' and 24' Multi-Max Pro Multi-Purpose Ladders",
+          "brand": "Werner",
+          "gtin": "051751143188"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10220",
+      "externalRecallId": "10220",
+      "recallNumber": "25203",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Enerco-Recalls-DEWALT-70000-BTU-Outdoor-Portable-Cordless-Forced-Air-Propane-Heaters-Due-to-Fire-and-Burn-Hazards-Sold-Exclusively-at-Lowes",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-04-03",
+      "title": "Enerco Recalls DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters Due to Fire and Burn Hazards; Sold Exclusively at Lowe's",
+      "productName": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+      "recallFamilyId": "cpsc-family-10220",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["089301008588"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "DEWALT 70,000 BTU Outdoor Portable Cordless Forced Air Propane Heaters",
+          "brand": "DEWALT",
+          "gtin": "089301008588"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10221",
+      "externalRecallId": "10221",
+      "recallNumber": "25204",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Five-Below-Recalls-Room2Room-LED-Iridescent-Bear-Lights-Due-to-Fire-and-Burn-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-04-03",
+      "title": "Five Below Recalls Room2Room LED Iridescent Bear Lights Due to Fire and Burn Hazards",
+      "productName": "Room2Room LED Iridescent Bear Lights",
+      "recallFamilyId": "cpsc-family-10221",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["1922340368444"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Room2Room LED Iridescent Bear Lights",
+          "brand": "Room2Room",
+          "gtin": "1922340368444"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10213",
+      "externalRecallId": "10213",
+      "recallNumber": "25197",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/LaRose-Industries-Recalls-Cra-Z-Art-Gemex-Gel2Gem-Jewelry-Kits-Due-to-Risk-of-Skin-Eye-and-Respiratory-Irritation-and-Sensitization-Violation-of-the-Federal-Hazardous-Substances-Act",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-03-27",
+      "title": "LaRose Industries Recalls Cra-Z-Art Gemex/Gel2Gem Jewelry Kits Due to Risk of Skin, Eye and Respiratory Irritation and Sensitization; Violation of the Federal Hazardous Substances Act",
+      "productName": "Cra-Z-Art Gemex/Gel2Gem Jewelry Kits",
+      "recallFamilyId": "cpsc-family-10213",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["884920250697", "884920365797", "884920365834"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Cra-Z-Art Gemex/Gel2Gem Jewelry Kits",
+          "brand": "Cra-Z-Art",
+          "gtin": "884920250697"
+        },
+        {
+          "productName": "Cra-Z-Art Gemex/Gel2Gem Jewelry Kits",
+          "brand": "Cra-Z-Art",
+          "gtin": "884920365797"
+        },
+        {
+          "productName": "Cra-Z-Art Gemex/Gel2Gem Jewelry Kits",
+          "brand": "Cra-Z-Art",
+          "gtin": "884920365834"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10207",
+      "externalRecallId": "10207",
+      "recallNumber": "25189",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Woolite-Delicates-Detergent-Recalled-by-Reckitt-Due-to-Risk-of-Exposure-to-Bacteria-Sold-Exclusively-on-Amazon-com",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-03-20",
+      "title": "Woolite Delicates Detergent Recalled by Reckitt Due to Risk of Exposure to Bacteria; Sold Exclusively on Amazon.com",
+      "productName": "Woolite Delicates detergent in 50-fluid-ounce bottles",
+      "recallFamilyId": "cpsc-family-10207",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["062338727240"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Woolite Delicates detergent in 50-fluid-ounce bottles",
+          "brand": "Woolite",
+          "gtin": "062338727240"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10191",
+      "externalRecallId": "10191",
+      "recallNumber": "25170",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Round-2-Recalls-Auto-World-Unassembled-Deluxe-Pit-Kit-Slot-Cars-Due-to-Ingestion-Hazard-Violation-of-Federal-Regulations-for-Magnets",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-03-06",
+      "title": "Round 2 Recalls Auto World Unassembled Deluxe Pit Kit Slot Cars Due to Ingestion Hazard; Violation of Federal Regulations for Magnets",
+      "productName": "Auto World Unassembled Deluxe Pit Kit Slot Cars",
+      "recallFamilyId": "cpsc-family-10191",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["849398065631", "849398065648", "849398065655"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Auto World Unassembled Deluxe Pit Kit Slot Cars",
+          "brand": "Auto World",
+          "gtin": "849398065631"
+        },
+        {
+          "productName": "Auto World Unassembled Deluxe Pit Kit Slot Cars",
+          "brand": "Auto World",
+          "gtin": "849398065648"
+        },
+        {
+          "productName": "Auto World Unassembled Deluxe Pit Kit Slot Cars",
+          "brand": "Auto World",
+          "gtin": "849398065655"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10144",
+      "externalRecallId": "10144",
+      "recallNumber": "25115",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Pearhead-Recalls-Infant-Learning-Toy-Sets-Due-to-Choking-Hazard-Violation-of-Federal-Regulations-for-Rattles",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2025-01-30",
+      "title": "Pearhead Recalls Infant Learning Toy Sets Due to Choking Hazard; Violation of Federal Regulations for Rattles",
+      "productName": "Pearhead Infant Learning Toy Sets",
+      "recallFamilyId": "cpsc-family-10144",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["698904871507"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Pearhead Infant Learning Toy Sets",
+          "brand": "Pearhead",
+          "gtin": "698904871507"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10080",
+      "externalRecallId": "10080",
+      "recallNumber": "25030",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Dreamgro-Recalls-Lullaby-Travel-Soothers-Due-to-Choking-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-11-07",
+      "title": "Dreamgro Recalls Lullaby Travel Soothers Due to Choking Hazard",
+      "productName": "Dreamgro Lullaby mermaid travel soothers",
+      "recallFamilyId": "cpsc-family-10080",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["196710005616", "196710008709"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Dreamgro Lullaby mermaid travel soothers",
+          "brand": "Dreamgro",
+          "gtin": "196710005616"
+        },
+        {
+          "productName": "Dreamgro Lullaby mermaid travel soothers",
+          "brand": "Dreamgro",
+          "gtin": "196710008709"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10077",
+      "externalRecallId": "10077",
+      "recallNumber": "25027",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Harbor-Freight-Tools-Recalls-Bauer-4-Gallon-Battery-Powered-Backpack-Sprayers-Due-to-Fire-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-10-31",
+      "title": "Harbor Freight Tools Recalls Bauer 4-Gallon Battery-Powered Backpack Sprayers Due to Fire Hazard",
+      "productName": "Bauer 20V Battery-Powered 4-Gallon Backpack Sprayers",
+      "recallFamilyId": "cpsc-family-10077",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["193175443663"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Bauer 20V Battery-Powered 4-Gallon Backpack Sprayers",
+          "brand": "Bauer",
+          "gtin": "193175443663"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10043",
+      "externalRecallId": "10043",
+      "recallNumber": "24354",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/Delta-Cycle-Recalls-Ceiling-Hoists-with-Straps-Due-to-Injury-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-09-05",
+      "title": "Delta Cycle Recalls Ceiling Hoists with Straps Due to Injury Hazard",
+      "productName": "Ceiling Hoists with Straps",
+      "recallFamilyId": "cpsc-family-10043",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["799403302902"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Ceiling Hoists with Straps",
+          "brand": null,
+          "gtin": "799403302902"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10040",
+      "externalRecallId": "10040",
+      "recallNumber": "24350",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/HALO-1000-Portable-Power-Stations-Recalled-Due-to-Serious-Fire-and-Burn-Hazards-One-Death-Reported-Imported-by-ZAGG-Sold-by-ACG-QVC-and-ZAGG",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-08-29",
+      "title": "HALO 1000 Portable Power Stations Recalled Due to Serious Fire and Burn Hazards; One Death Reported; Imported by ZAGG; Sold by ACG, QVC and ZAGG",
+      "productName": "HALO 1000 Portable Power Stations",
+      "recallFamilyId": "cpsc-family-10040",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["840056145528", "840056145535", "840056145542"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "HALO 1000 Portable Power Stations",
+          "brand": "HALO",
+          "gtin": "840056145528"
+        },
+        {
+          "productName": "HALO 1000 Portable Power Stations",
+          "brand": "HALO",
+          "gtin": "840056145535"
+        },
+        {
+          "productName": "HALO 1000 Portable Power Stations",
+          "brand": "HALO",
+          "gtin": "840056145542"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:9965",
+      "externalRecallId": "9965",
+      "recallNumber": "24257",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/Spectrum-Brands-Pet-Care-Recalls-Pet-Fur-deShedding-Conditioner-Due-to-Risk-of-Exposure-to-Bacteria",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-06-06",
+      "title": "Spectrum Brands Pet Care Recalls Pet Fur deShedding Conditioner Due to Risk of Exposure to Bacteria",
+      "productName": "FURminator deShedding Ultra Premium Dog Conditioner (1 Gallon)",
+      "recallFamilyId": "cpsc-family-9965",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["854460001073"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "FURminator deShedding Ultra Premium Dog Conditioner (1 Gallon)",
+          "brand": "FURminator",
+          "gtin": "854460001073"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:9961",
+      "externalRecallId": "9961",
+      "recallNumber": "24249",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/Black-Decker-Recalls-CRAFTSMAN-V20-Cordless-Tillers-Cultivators-Due-to-Laceration-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-05-30",
+      "title": "Black & Decker Recalls CRAFTSMAN V20 Cordless Tillers/Cultivators Due to Laceration Hazard",
+      "productName": "CRAFTSMAN® V20 Cordless Tillers/Cultivators",
+      "recallFamilyId": "cpsc-family-9961",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["885911843430"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "CRAFTSMAN® V20 Cordless Tillers/Cultivators",
+          "brand": "CRAFTSMAN",
+          "gtin": "885911843430"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:9959",
+      "externalRecallId": "9959",
+      "recallNumber": "24247",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/Compare-Brands-Recalls-ADIOS-Super-Vinegar-All-Natural-Cleaner-Due-to-Risk-of-Poisoning-and-Chemical-Burns-Violation-of-Labeling-Requirements-under-the-Federal-Hazardous-Substances-Act-Sold-Exclusively-on-Amazon-com",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-05-30",
+      "title": "Compare Brands Recalls ADIOS! Super Vinegar All Natural Cleaner Due to Risk of Poisoning and Chemical Burns; Violation of Labeling Requirements under the Federal Hazardous Substances Act; Sold Exclusively on Amazon.com",
+      "productName": "ADIOS! Super Vinegar All Natural Cleaner, 30%",
+      "recallFamilyId": "cpsc-family-9959",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["850039376139"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "ADIOS! Super Vinegar All Natural Cleaner, 30%",
+          "brand": "ADIOS!",
+          "gtin": "850039376139"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:9909",
+      "externalRecallId": "9909",
+      "recallNumber": "24180",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/C2-Crank-Cocking-Aids-for-Excalibur-Crossbows-Recalled-Due-to-Impact-Injury-and-Laceration-Hazards-Manufactured-by-Excalibur-Crossbow",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-04-04",
+      "title": "C2 Crank Cocking Aids for Excalibur Crossbows Recalled Due to Impact Injury and Laceration Hazards; Manufactured by Excalibur Crossbow",
+      "productName": "C2 Crank Cocking Aid for Crossbows",
+      "recallFamilyId": "cpsc-family-9909",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["626192021991"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "C2 Crank Cocking Aid for Crossbows",
+          "brand": "Excalibur",
+          "gtin": "626192021991"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:9910",
+      "externalRecallId": "9910",
+      "recallNumber": "24181",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/Two-Million-Black-Decker-Garment-Steamers-Recalled-by-Empower-Brands-in-Major-Recall-Expansion-Due-to-Burn-Hazard-Refund-Now-Offered",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-04-04",
+      "title": "Two Million Black+Decker® Garment Steamers Recalled by Empower Brands in Major Recall Expansion Due to Burn Hazard; Refund Now Offered",
+      "productName": "BLACK+DECKER Model HGS011 Easy Garment Steamers",
+      "recallFamilyId": "cpsc-family-9910",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["050875828407", "050875828391", "050875828384"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "BLACK+DECKER Model HGS011 Easy Garment Steamers",
+          "brand": "BLACK+DECKER",
+          "gtin": "050875828407"
+        },
+        {
+          "productName": "BLACK+DECKER Model HGS011 Easy Garment Steamers",
+          "brand": "BLACK+DECKER",
+          "gtin": "050875828391"
+        },
+        {
+          "productName": "BLACK+DECKER Model HGS011 Easy Garment Steamers",
+          "brand": "BLACK+DECKER",
+          "gtin": "050875828384"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:9851",
+      "externalRecallId": "9851",
+      "recallNumber": "24116",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2024/Char-Broil-Recalls-Digital-Electric-Smokers-Due-to-Risk-of-Electric-Shock",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2024-02-15",
+      "title": "Char-Broil Recalls Digital Electric Smokers Due to Risk of Electric Shock",
+      "productName": "Digital Electric Smokers",
+      "recallFamilyId": "cpsc-family-9851",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["gtin"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.gtin",
+              "operator": "one_of",
+              "values": ["047362324665", "099143020020", "099143020044"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Digital Electric Smokers",
+          "brand": "Char-Broil",
+          "gtin": "047362324665"
+        },
+        {
+          "productName": "Digital Electric Smokers",
+          "brand": "Char-Broil",
+          "gtin": "099143020020"
+        },
+        {
+          "productName": "Digital Electric Smokers",
+          "brand": "Char-Broil",
+          "gtin": "099143020044"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10986",
+      "externalRecallId": "10986",
+      "recallNumber": "26773",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-09-17",
+      "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+      "productName": "Charbroil Bistro Pro Electric Grills",
+      "recallFamilyId": "cpsc-family-10986",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["manufacture_date", "variant"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "attributes.dateCode",
+              "operator": "one_of",
+              "values": ["2510", "2511", "2512"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Charbroil Bistro Pro Electric Grills",
+          "brand": "Char-Broil",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.dateCode"]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10975",
+      "externalRecallId": "10975",
+      "recallNumber": "26778",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-09-17",
+      "title": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+      "productName": "JKMAX Heated Blankets and Heating Pads",
+      "recallFamilyId": "cpsc-family-10975",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "variant"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["JKMAX-002", "JKMAX-7284B", "JKMAX-6284B", "JKMAX-10090B", "JKMAX-8490B"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "JKMAX Heated Blankets and Heating Pads",
+          "brand": "JKMAX",
+          "modelNumber": "JKMAX-002"
+        },
+        {
+          "productName": "JKMAX Heated Blankets and Heating Pads",
+          "brand": "JKMAX",
+          "modelNumber": "JKMAX-7284B"
+        },
+        {
+          "productName": "JKMAX Heated Blankets and Heating Pads",
+          "brand": "JKMAX",
+          "modelNumber": "JKMAX-6284B"
+        },
+        {
+          "productName": "JKMAX Heated Blankets and Heating Pads",
+          "brand": "JKMAX",
+          "modelNumber": "JKMAX-10090B"
+        },
+        {
+          "productName": "JKMAX Heated Blankets and Heating Pads",
+          "brand": "JKMAX",
+          "modelNumber": "JKMAX-8490B"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10978",
+      "externalRecallId": "10978",
+      "recallNumber": "26785",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-09-17",
+      "title": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+      "productName": "Basecamp Bike Helmets",
+      "recallFamilyId": "cpsc-family-10978",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "variant", "size", "color", "multi_condition"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "HT-10"
+            },
+            {
+              "field": "attributes.size",
+              "operator": "equals",
+              "value": "M/L"
+            },
+            {
+              "field": "attributes.color",
+              "operator": "one_of",
+              "values": ["green", "black"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Basecamp Bike Helmets",
+          "brand": "Basecamp",
+          "modelNumber": "HT-10",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.size", "attributes.color"]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10966",
+      "externalRecallId": "10966",
+      "recallNumber": "26763",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-09-10",
+      "title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+      "productName": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+      "recallFamilyId": "cpsc-family-10966",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "serial_range", "multi_condition"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["TF450-C", "TF450-E", "TF450-X", "TF450RC Edition"]
+            },
+            {
+              "field": "ownedProduct.serialNumber",
+              "operator": "fixed_width_range",
+              "from": "XXXXXXXXXXXCD4981",
+              "to": "XXXXXXXXXXXCP1597"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+          "brand": "Triumph",
+          "modelNumber": "TF450-C",
+          "serialFrom": "XXXXXXXXXXXCD4981",
+          "serialTo": "XXXXXXXXXXXCP1597"
+        },
+        {
+          "productName": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+          "brand": "Triumph",
+          "modelNumber": "TF450-E",
+          "serialFrom": "XXXXXXXXXXXCD4981",
+          "serialTo": "XXXXXXXXXXXCP1597"
+        },
+        {
+          "productName": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+          "brand": "Triumph",
+          "modelNumber": "TF450-X",
+          "serialFrom": "XXXXXXXXXXXCD4981",
+          "serialTo": "XXXXXXXXXXXCP1597"
+        },
+        {
+          "productName": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+          "brand": "Triumph",
+          "modelNumber": "TF450RC Edition",
+          "serialFrom": "XXXXXXXXXXXCD4981",
+          "serialTo": "XXXXXXXXXXXCP1597"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10969",
+      "externalRecallId": "10969",
+      "recallNumber": "26749",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-09-10",
+      "title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+      "productName": "Victgoal Children’s Bike Helmets",
+      "recallFamilyId": "cpsc-family-10969",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": [
+          "model",
+          "lot",
+          "manufacture_date",
+          "variant",
+          "size",
+          "color",
+          "multi_condition"
+        ],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "HT-006"
+            },
+            {
+              "field": "ownedProduct.lotNumber",
+              "operator": "equals",
+              "value": "2025A1101"
+            },
+            {
+              "field": "attributes.manufactureMonth",
+              "operator": "equals",
+              "value": "2025-11"
+            },
+            {
+              "field": "attributes.size",
+              "operator": "equals",
+              "value": "S"
+            },
+            {
+              "field": "attributes.color",
+              "operator": "equals",
+              "value": "red"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Victgoal Children’s Bike Helmets",
+          "brand": "Victgoal",
+          "modelNumber": "HT-006",
+          "lotNumber": "2025A1101",
+          "additionalCriteria": {
+            "controlledScopeFields": [
+              "attributes.manufactureMonth",
+              "attributes.size",
+              "attributes.color"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10895",
+      "externalRecallId": "10895",
+      "recallNumber": "26659",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/OCOOPA-Direct-Recalls-1-5-Million-Rechargeable-Hand-Warmers-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported-Imported-by-Shenzhen-Street-Cat-Technology",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-30",
+      "title": "OCOOPA Direct Recalls 1.5 Million Rechargeable Hand Warmers Due to Risk of Serious Injury or Death from Fire and Burn Hazards; One Death Reported; Imported by Shenzhen Street Cat Technology",
+      "productName": "OCOOPA Rechargeable Hand Warmers",
+      "recallFamilyId": "cpsc-family-10895",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["UT3053", "UT3056", "ZLS-118", "ZLS-118S", "ZLS-118D", "H01", "H01(PD)"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "UT3053"
+        },
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "UT3056"
+        },
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "ZLS-118"
+        },
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "ZLS-118S"
+        },
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "ZLS-118D"
+        },
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "H01"
+        },
+        {
+          "productName": "OCOOPA Rechargeable Hand Warmers",
+          "brand": "OCOOPA",
+          "modelNumber": "H01(PD)"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10894",
+      "externalRecallId": "10894",
+      "recallNumber": "26658",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Woodure-Toddler-Kitchen-Step-Stools-Recalled-Due-to-Risk-of-Serious-Injury-and-Death-from-Entrapment-and-Fall-Hazards-Imported-by-Shenzhen-Muqiqu-Creative-Development",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-30",
+      "title": "Woodure Toddler Kitchen Step Stools Recalled Due to Risk of Serious Injury and Death from Entrapment and Fall Hazards; Imported by Shenzhen Muqiqu Creative Development",
+      "productName": "Woodure Toddler Kitchen Step Stools",
+      "recallFamilyId": "cpsc-family-10894",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["WD1764", "WD1357", "WD1720"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Woodure Toddler Kitchen Step Stools",
+          "brand": "Woodure",
+          "modelNumber": "WD1764"
+        },
+        {
+          "productName": "Woodure Toddler Kitchen Step Stools",
+          "brand": "Woodure",
+          "modelNumber": "WD1357"
+        },
+        {
+          "productName": "Woodure Toddler Kitchen Step Stools",
+          "brand": "Woodure",
+          "modelNumber": "WD1720"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10873",
+      "externalRecallId": "10873",
+      "recallNumber": "26630",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/MNIENT-Adult-Portable-Bed-Rails-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Entrapment-and-Asphyxiation-Violate-Mandatory-Standard-for-Adult-Portable-Bed-Rails",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-16",
+      "title": "MNIENT Adult Portable Bed Rails Recalled Due to Risk of Serious Injury or Death from Entrapment and Asphyxiation; Violate Mandatory Standard for Adult Portable Bed Rails",
+      "productName": "MNIENT Adult Portable Bed Rails",
+      "recallFamilyId": "cpsc-family-10873",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "LQX-110055"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "MNIENT Adult Portable Bed Rails",
+          "brand": "MNIENT",
+          "modelNumber": "LQX-110055"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10861",
+      "externalRecallId": "10861",
+      "recallNumber": "26618",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Panasonic-Recalls-Electric-Toaster-Ovens-Due-to-Shock-and-Fire-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-16",
+      "title": "Panasonic Recalls Electric Toaster Ovens Due to Shock and Fire Hazards",
+      "productName": "Electric Toaster Ovens",
+      "recallFamilyId": "cpsc-family-10861",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "NB-G200"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Electric Toaster Ovens",
+          "brand": "Panasonic",
+          "modelNumber": "NB-G200"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10871",
+      "externalRecallId": "10871",
+      "recallNumber": "26628",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/SDADI-Kitchen-Step-Stools-Recalled-Due-to-Risk-of-Serious-Injury-and-Death-from-Entrapment-and-Fall-Hazards-Imported-by-Yiwushi-Bihe-Trading",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-16",
+      "title": "SDADI Kitchen Step Stools Recalled Due to Risk of Serious Injury and Death from Entrapment and Fall Hazards; Imported by Yiwushi Bihe Trading",
+      "productName": "SDADI Kitchen Step Stools, models LT01 and LT05",
+      "recallFamilyId": "cpsc-family-10871",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "color"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["LT05", "LT01"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "SDADI Kitchen Step Stools, models LT01 and LT05",
+          "brand": "SDADI",
+          "modelNumber": "LT05"
+        },
+        {
+          "productName": "SDADI Kitchen Step Stools, models LT01 and LT05",
+          "brand": "SDADI",
+          "modelNumber": "LT01"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10854",
+      "externalRecallId": "10854",
+      "recallNumber": "26606",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Best-Buy-Recalls-Insignia-Gas-Ranges-Due-to-Risk-of-Serious-Injury-from-a-Fire-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-09",
+      "title": "Best Buy Recalls Insignia® Gas Ranges Due to Risk of Serious Injury from a Fire Hazard",
+      "productName": "Insignia Front Control Gas Ranges",
+      "recallFamilyId": "cpsc-family-10854",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["NS-RGFGSS1", "NS-RGFCGS2"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Insignia Front Control Gas Ranges",
+          "brand": "Insignia",
+          "modelNumber": "NS-RGFGSS1"
+        },
+        {
+          "productName": "Insignia Front Control Gas Ranges",
+          "brand": "Insignia",
+          "modelNumber": "NS-RGFCGS2"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10859",
+      "externalRecallId": "10859",
+      "recallNumber": "26611",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Greenworks-Tools-Recalls-24V-and-48V-Kobalt-Yard-Power-Tools-with-USB-C-Batteries-Due-to-Risk-of-Serious-Injury-from-Fire-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-09",
+      "title": "Greenworks Tools Recalls 24V and 48V Kobalt Yard Power Tools with USB-C Batteries Due to Risk of Serious Injury from Fire Hazard",
+      "productName": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+      "recallFamilyId": "cpsc-family-10859",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "capacity", "variant", "multi_condition"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["KB 424-06", "KB 524-06", "KB 624-06", "KXB 824-06", "KB 324-06"]
+            },
+            {
+              "field": "attributes.chargingPort",
+              "operator": "equals",
+              "value": "USB-C"
+            },
+            {
+              "field": "attributes.capacity",
+              "operator": "one_of",
+              "values": ["3.0Ah", "4.0Ah", "5.0Ah", "6.0Ah", "8.0Ah"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+          "brand": "Kobalt",
+          "modelNumber": "KB 424-06",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.chargingPort", "attributes.capacity"]
+          }
+        },
+        {
+          "productName": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+          "brand": "Kobalt",
+          "modelNumber": "KB 524-06",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.chargingPort", "attributes.capacity"]
+          }
+        },
+        {
+          "productName": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+          "brand": "Kobalt",
+          "modelNumber": "KB 624-06",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.chargingPort", "attributes.capacity"]
+          }
+        },
+        {
+          "productName": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+          "brand": "Kobalt",
+          "modelNumber": "KXB 824-06",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.chargingPort", "attributes.capacity"]
+          }
+        },
+        {
+          "productName": "Kobalt 24V and 48V Trimmers, Blowers, Mowers, Chainsaws and Pruning Saws with USB-C Batteries",
+          "brand": "Kobalt",
+          "modelNumber": "KB 324-06",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.chargingPort", "attributes.capacity"]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10857",
+      "externalRecallId": "10857",
+      "recallNumber": "26609",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/WonderStone-Infant-Walkers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fall-Hazard-Violate-Mandatory-Standard-for-Infant-Walkers-Sold-on-Walmart-com-by-Wonder-Stone-Toys",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-09",
+      "title": "WonderStone Infant Walkers Recalled Due to Risk of Serious Injury or Death from Fall Hazard; Violate Mandatory Standard for Infant Walkers; Sold on Walmart.com by Wonder Stone Toys",
+      "productName": "WonderStone Infant Walkers",
+      "recallFamilyId": "cpsc-family-10857",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "color"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["616", "616-1"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "WonderStone Infant Walkers",
+          "brand": "WonderStone",
+          "modelNumber": "616"
+        },
+        {
+          "productName": "WonderStone Infant Walkers",
+          "brand": "WonderStone",
+          "modelNumber": "616-1"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10852",
+      "externalRecallId": "10852",
+      "recallNumber": "26603",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winco-Fireworks-International-Recalls-Roman-Candles-8-Shot-Fireworks-Due-to-Risk-of-Serious-Injury-from-Explosion-and-Burn-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-02",
+      "title": "Winco Fireworks International Recalls Roman Candles 8 Shot Fireworks Due to Risk of Serious Injury from Explosion and Burn Hazards",
+      "productName": "Roman Candles 8 Shot 3-Pack Firework Devices",
+      "recallFamilyId": "cpsc-family-10852",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "color"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "RCLR-W8012"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Roman Candles 8 Shot 3-Pack Firework Devices",
+          "brand": "Hometown",
+          "modelNumber": "RCLR-W8012"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10839",
+      "externalRecallId": "10839",
+      "recallNumber": "26581",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Daikin-Comfort-Technologies-Manufacturing-Recalls-Amana-Air-Conditioners-and-Heat-Pumps-Due-to-Risk-of-Serious-Injury-from-Fire-and-Burns",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-06-25",
+      "title": "Daikin Comfort Technologies Manufacturing Recalls Amana Air Conditioners and Heat Pumps Due to Risk of Serious Injury from Fire and Burns",
+      "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+      "recallFamilyId": "cpsc-family-10839",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "model_family"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": [
+                "PBH113J35AA",
+                "PBH093J35AA",
+                "PBH073J35AA",
+                "PBE123J35AA",
+                "PBE093J35AA",
+                "AH183J35AA",
+                "AH123J35AA",
+                "AH093J35AA",
+                "AE183J35AA",
+                "AE123J35AA",
+                "AE093J35AA"
+              ]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "PBH113J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "PBH093J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "PBH073J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "PBE123J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "PBE093J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "AH183J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "AH123J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "AH093J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "AE183J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "AE123J35AA"
+        },
+        {
+          "productName": "Amana Window-Room-Air-Conditioners (WRAC) and Through the Wall (TTW) air conditioners or heat pumps",
+          "brand": "Amana",
+          "modelNumber": "AE093J35AA"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10834",
+      "externalRecallId": "10834",
+      "recallNumber": "26576",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Southern-Telecom-Expands-Recall-of-Lomi-Waxing-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-Additional-Model-and-Reported-Incidents",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-06-25",
+      "title": "Southern Telecom Expands Recall of Lomi Waxing Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards; Additional Model and Reported Incidents",
+      "productName": "Lomi Roll-On Waxing Kits",
+      "recallFamilyId": "cpsc-family-10834",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "model_family"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["LOMB2003PK", "LOMB2004PK"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Lomi Roll-On Waxing Kits",
+          "brand": "Lomi",
+          "modelNumber": "LOMB2003PK"
+        },
+        {
+          "productName": "Lomi Roll-On Waxing Kits",
+          "brand": "Lomi",
+          "modelNumber": "LOMB2004PK"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10837",
+      "externalRecallId": "10837",
+      "recallNumber": "26579",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Montessori-Busy-Board-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys-Sold-on-Amazon-by-Small-Fish",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-06-25",
+      "title": "Montessori Busy Board Toys Recalled Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys; Sold on Amazon by Small Fish",
+      "productName": "Small Fish Montessori Busy Board Toys",
+      "recallFamilyId": "cpsc-family-10837",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "2512JX02"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Small Fish Montessori Busy Board Toys",
+          "brand": "Small Fish",
+          "modelNumber": "2512JX02"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10849",
+      "externalRecallId": "10849",
+      "recallNumber": "26600",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Junpower-CR2032-Lithium-Coin-Batteries-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Hazard-Violate-Federal-Statute-for-Child-Resistant-Packaging-of-Coin-Batteries-Sold-on-Amazon-by-JSNJ-Tech-Store",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-02",
+      "title": "Junpower CR2032 Lithium Coin Batteries Recalled Due to Risk of Serious Injury or Death from Battery Ingestion Hazard; Violate Federal Statute for Child-Resistant Packaging of Coin Batteries; Sold on Amazon by JSNJ_Tech Store",
+      "productName": "Junpower CR2032 Batteries",
+      "recallFamilyId": "cpsc-family-10849",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "2023-V3"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Junpower CR2032 Batteries",
+          "brand": "Junpower",
+          "modelNumber": "2023-V3"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10855",
+      "externalRecallId": "10855",
+      "recallNumber": "26607",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Biometric-Gun-Safes-Recalled-Due-to-Serious-Injury-Hazard-and-Risk-of-Death-Sold-Exclusively-on-Amazon-com-by-BBRKIN",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-09",
+      "title": "Biometric Gun Safes Recalled Due to Serious Injury Hazard and Risk of Death; Sold Exclusively on Amazon.com by BBRKIN",
+      "productName": "BBRKIN and MouTec Biometric Firearm Safes",
+      "recallFamilyId": "cpsc-family-10855",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "serial_range", "multi_condition", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "QHXP029B"
+            },
+            {
+              "field": "ownedProduct.serialNumber",
+              "operator": "fixed_width_range",
+              "from": "SQC200034980",
+              "to": "SQC202319171"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "BBRKIN and MouTec Biometric Firearm Safes",
+          "brand": "BBRKIN",
+          "modelNumber": "QHXP029B",
+          "serialFrom": "SQC200034980",
+          "serialTo": "SQC202319171"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10846",
+      "externalRecallId": "10846",
+      "recallNumber": "26596",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/AMASKY-Nursing-Pillows-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Suffocation-Violate-Mandatory-Standards-for-Nursing-Pillows-and-Infant-Support-Cushions-Sold-on-Amazon-by-Pretty-Life",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-02",
+      "title": "AMASKY Nursing Pillows Recalled Due to Risk of Serious Injury or Death from Suffocation; Violate Mandatory Standards for Nursing Pillows and Infant Support Cushions; Sold on Amazon by Pretty-Life",
+      "productName": "AMASKY Nursing Pillows",
+      "recallFamilyId": "cpsc-family-10846",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "lot", "batch", "multi_condition", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["BXP99", "BXP93", "BXP94", "BXP96", "BXP97"]
+            },
+            {
+              "field": "ownedProduct.lotNumber",
+              "operator": "equals",
+              "value": "202506001"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "AMASKY Nursing Pillows",
+          "brand": "AMASKY",
+          "modelNumber": "BXP99",
+          "lotNumber": "202506001"
+        },
+        {
+          "productName": "AMASKY Nursing Pillows",
+          "brand": "AMASKY",
+          "modelNumber": "BXP93",
+          "lotNumber": "202506001"
+        },
+        {
+          "productName": "AMASKY Nursing Pillows",
+          "brand": "AMASKY",
+          "modelNumber": "BXP94",
+          "lotNumber": "202506001"
+        },
+        {
+          "productName": "AMASKY Nursing Pillows",
+          "brand": "AMASKY",
+          "modelNumber": "BXP96",
+          "lotNumber": "202506001"
+        },
+        {
+          "productName": "AMASKY Nursing Pillows",
+          "brand": "AMASKY",
+          "modelNumber": "BXP97",
+          "lotNumber": "202506001"
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10885",
+      "externalRecallId": "10885",
+      "recallNumber": "26649",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Galanz-Americas-Recalls-Retro-Refrigerators-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-30",
+      "title": "Galanz Americas Recalls Retro Refrigerators Due to Risk of Serious Injury or Death from Fire and Burn Hazards; One Death Reported",
+      "productName": "Galanz Retro Refrigerators",
+      "recallFamilyId": "cpsc-family-10885",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "manufacture_date", "multi_condition", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["BCD-215V-62H", "GLR76TRDER", "GLR76TBKER", "GLR76TBEER", "GLR76TWEER"]
+            },
+            {
+              "field": "attributes.manufactureMonth",
+              "operator": "date_range",
+              "from": "2018-12",
+              "to": "2020-12"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Galanz Retro Refrigerators",
+          "brand": "Galanz",
+          "modelNumber": "BCD-215V-62H",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.manufactureMonth"]
+          }
+        },
+        {
+          "productName": "Galanz Retro Refrigerators",
+          "brand": "Galanz",
+          "modelNumber": "GLR76TRDER",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.manufactureMonth"]
+          }
+        },
+        {
+          "productName": "Galanz Retro Refrigerators",
+          "brand": "Galanz",
+          "modelNumber": "GLR76TBKER",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.manufactureMonth"]
+          }
+        },
+        {
+          "productName": "Galanz Retro Refrigerators",
+          "brand": "Galanz",
+          "modelNumber": "GLR76TBEER",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.manufactureMonth"]
+          }
+        },
+        {
+          "productName": "Galanz Retro Refrigerators",
+          "brand": "Galanz",
+          "modelNumber": "GLR76TWEER",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.manufactureMonth"]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10864",
+      "externalRecallId": "10864",
+      "recallNumber": "26621",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Currey-Company-Recalls-Nottaway-Chandeliers-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Hazard",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-16",
+      "title": "Currey & Company Recalls Nottaway Chandeliers Due to Risk of Serious Injury or Death from Electrocution Hazard",
+      "productName": "Nottaway Chandelier Fixtures",
+      "recallFamilyId": "cpsc-family-10864",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "variant", "multi_condition", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["9000-1129", "9000-1130", "9000-1254", "9000-1255", "9000-1314"]
+            },
+            {
+              "field": "attributes.visibleTopCapScrew",
+              "operator": "equals",
+              "value": "no"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Nottaway Chandelier Fixtures",
+          "brand": "Currey & Company",
+          "modelNumber": "9000-1129",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.visibleTopCapScrew"]
+          }
+        },
+        {
+          "productName": "Nottaway Chandelier Fixtures",
+          "brand": "Currey & Company",
+          "modelNumber": "9000-1130",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.visibleTopCapScrew"]
+          }
+        },
+        {
+          "productName": "Nottaway Chandelier Fixtures",
+          "brand": "Currey & Company",
+          "modelNumber": "9000-1254",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.visibleTopCapScrew"]
+          }
+        },
+        {
+          "productName": "Nottaway Chandelier Fixtures",
+          "brand": "Currey & Company",
+          "modelNumber": "9000-1255",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.visibleTopCapScrew"]
+          }
+        },
+        {
+          "productName": "Nottaway Chandelier Fixtures",
+          "brand": "Currey & Company",
+          "modelNumber": "9000-1314",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.visibleTopCapScrew"]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10845",
+      "externalRecallId": "10845",
+      "recallNumber": "26595",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Rowenta-Recalls-Cordless-Vacuum-Cleaners-Due-to-Risk-of-Serious-Injury-from-fire-and-Burn-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-02",
+      "title": "Rowenta Recalls Cordless Vacuum Cleaners Due to Risk of Serious Injury from Fire and Burn Hazards",
+      "productName": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+      "recallFamilyId": "cpsc-family-10845",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "date", "variant", "multi_condition", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "one_of",
+              "values": ["RH99A2U1", "RH99F2U1"]
+            },
+            {
+              "field": "attributes.batteryModel",
+              "operator": "equals",
+              "value": "ZR0097U2"
+            },
+            {
+              "field": "attributes.dateCodePrefix",
+              "operator": "prefix_one_of",
+              "values": ["23", "24"]
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+          "brand": "Rowenta",
+          "modelNumber": "RH99A2U1",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.batteryModel", "attributes.dateCodePrefix"]
+          }
+        },
+        {
+          "productName": "Rowenta Cordless Vacuum Cleaners with lithium-ion battery",
+          "brand": "Rowenta",
+          "modelNumber": "RH99F2U1",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.batteryModel", "attributes.dateCodePrefix"]
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CPSC",
+      "sourceKey": "cpsc:10851",
+      "externalRecallId": "10851",
+      "recallNumber": "26602",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winco-Fireworks-International-Recalls-Unity-7-Shot-200-Gram-Aerial-Cake-Fireworks-Due-to-Risk-of-Serious-Injury-from-Explosion-and-Burn-Hazards",
+      "referenceDate": "2026-09-20",
+      "recallDate": "2026-07-02",
+      "title": "Winco Fireworks International Recalls Unity 7 Shot 200 Gram Aerial Cake Fireworks Due to Risk of Serious Injury from Explosion and Burn Hazards",
+      "productName": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+      "recallFamilyId": "cpsc-family-10851",
+      "retrievalMethod": "CPSC Recall Retrieval Web Services JSON API",
+      "scopeEvidence": {
+        "summary": "Field-reduced controlled transcription of explicit identifiers and scope boundaries in the official notice.",
+        "evidenceDimensions": ["model", "production_date", "multi_condition", "adversarial"],
+        "exhaustiveForControlledFields": true
+      },
+      "scopeRules": [
+        {
+          "criteria": [
+            {
+              "field": "ownedProduct.modelNumber",
+              "operator": "equals",
+              "value": "MEF6096"
+            },
+            {
+              "field": "attributes.productionDate",
+              "operator": "date_range",
+              "from": "2026-03-16",
+              "to": "2026-05-18"
+            }
+          ]
+        }
+      ],
+      "matcherScopes": [
+        {
+          "productName": "Unity 7 Shot 200 Gram Aerial Cake Firework Devices",
+          "brand": "Unity",
+          "modelNumber": "MEF6096",
+          "additionalCriteria": {
+            "controlledScopeFields": ["attributes.productionDate"]
+          }
+        }
+      ]
+    }
+  ]
+}

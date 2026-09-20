@@ -59,6 +59,16 @@
     "benchmark:phase-9-1:deterministic": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-9-1/run-deterministic-holdout.mjs",
     "benchmark:phase-9-1:hybrid": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-9-1/run-hybrid-holdout.mjs",
     "benchmark:phase-9-1:plan": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-9-1/run-hybrid-holdout.mjs --plan",
+    "benchmark:phase-15:build": "node benchmarks/recall-matching/phase-15/build-dataset.mjs",
+    "benchmark:phase-15:validate": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-15/validate.mjs",
+    "benchmark:phase-15:freeze:verify": "node benchmarks/recall-matching/phase-15/freezeGuard.mjs",
+    "benchmark:phase-15:deterministic": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-15/run-deterministic.mjs",
+    "benchmark:phase-15:plan": "node benchmarks/recall-matching/phase-15/plan-paid-runs.mjs",
+    "benchmark:phase-15:report": "node benchmarks/recall-matching/phase-15/generate-report.mjs",
+    "benchmark:phase-15:nemotron:paid": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-15/run-nemotron-paid.mjs --approved",
+    "benchmark:phase-15:hybrid:paid": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-15/run-hybrid-paid.mjs --approved",
+    "benchmark:phase-15:hybrid:resume": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types benchmarks/recall-matching/phase-15/resume-hybrid-paid.mjs --approved",
+    "test:phase-15": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-15-benchmark.test.mjs",
     "test:hybrid-guarded": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/guarded-hybrid.test.mjs",
     "test:phase-9-1-datasets": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-9-1-datasets.test.mjs",
     "test:phase-10": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-10-orchestration.test.mjs tests/phase-10-database.test.mjs tests/phase-10-edge-function.test.mjs tests/alerts-read-model.test.mjs",
@@ -69,7 +79,7 @@
     "test:database": "npx supabase test db",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion && npm run test:matching && npm run test:nemotron && npm run test:hybrid-guarded && npm run test:phase-9-1-datasets && npm run test:phase-10 && npm run test:phase-11 && npm run test:phase-12 && npm run test:phase-13 && npm run test:phase-14 && npm run benchmark:matching:validate && npm run benchmark:phase-9-1:validate:development && npm run benchmark:phase-9-1:validate:holdout && npm run benchmark:phase-9-1:freeze:verify"
+    "check": "npm run typecheck && npm run lint && npm run format:check && npm run test:parser && npm run test:phase-6-1 && npm run test:cpsc-ingestion && npm run test:matching && npm run test:nemotron && npm run test:hybrid-guarded && npm run test:phase-9-1-datasets && npm run test:phase-10 && npm run test:phase-11 && npm run test:phase-12 && npm run test:phase-13 && npm run test:phase-14 && npm run test:phase-15 && npm run benchmark:matching:validate && npm run benchmark:phase-9-1:validate:development && npm run benchmark:phase-9-1:validate:holdout && npm run benchmark:phase-9-1:freeze:verify && npm run benchmark:phase-15:validate && npm run benchmark:phase-15:freeze:verify"
   },
   "expo": {
     "doctor": {

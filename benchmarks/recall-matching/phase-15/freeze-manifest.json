@@ -1,0 +1,45 @@
+{
+  "benchmarkVersion": "recall_safety_benchmark_v2",
+  "frozenAt": "2026-09-20",
+  "phase15Artifacts": {
+    "benchmarks/recall-matching/phase-15/development.v2.json": "07436aa4baccd220e254ef8167d6c604bee32838b40c76caa18753c65c4ee244",
+    "benchmarks/recall-matching/phase-15/holdout.v2.json": "1a25e2a3b31a1ce9f496cfad4b6ce9ea208a59dc7d550796a7822fe607c04cb3",
+    "benchmarks/recall-matching/phase-15/stress.v2.json": "7def9bfe2eb37ca2ddc336f451841f3fc6ad561d74f8f0bb6c6de0cd10849399",
+    "benchmarks/recall-matching/phase-15/sources.normalized.json": "bbb9c08cb47a077f0582ceeda682b91944b25d13d4951dd54f17aecf9fec3b65",
+    "benchmarks/recall-matching/phase-15/benchmark.schema.json": "226d433c3929aab4dc676d7169b250256a90dd58ca67b273ff261296f656abc5",
+    "benchmarks/recall-matching/phase-15/policy.v1.json": "1ab6f90f086fe1fba12956b80ed850dc5a76b7d2e6af02d9d57d0715b1b0dfcf"
+  },
+  "promptPolicyArtifacts": {
+    "supabase/functions/_shared/matching/deterministicMatcher.ts": "1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb",
+    "supabase/functions/_shared/matching/evidence.ts": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+    "supabase/functions/_shared/matching/aggregation.ts": "6a73899f6f07553499ca862855c508258be143b63e5e150b8fb6181c214a4b63",
+    "supabase/functions/_shared/matching/normalization.ts": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02",
+    "supabase/functions/_shared/matching/nemotronMatcher.ts": "8db794f2a5372530bff4e241abd6a62759a7dcc17327741ad679ae4af0634ee0",
+    "supabase/functions/_shared/matching/nemotronPrompt.ts": "6310a6d60acd729f55eaf400210fd7eb2d40d05d0e7a179ef177fa8965ea8e3b",
+    "supabase/functions/_shared/matching/nemotronSchema.ts": "92727064fff97bef7388469bbfc2d2e06d68db2dd4e72a5bd1358c6ba969ab40",
+    "supabase/functions/_shared/matching/guardedNemotronMatcher.ts": "7a1aa58c988d97bd8aa1c86017d7a5d0688abc217848d9ee4bee13b20939b7c0",
+    "supabase/functions/_shared/matching/guardedNemotronPrompt.ts": "f7e4e4a6b5beeadfeb55dfebd305bb12d0485ef679e5e469556e0d63f8d69168",
+    "supabase/functions/_shared/matching/guardedNemotronSchema.ts": "aeddcd44749a15f94e738146ae1e22ec7bd1802b264f9753cd31d86fa6fa7ae3",
+    "supabase/functions/_shared/matching/hybridGuardedMatcher.ts": "0dcebd33961169011e3740d8c6fc255d5e124fbd42b0fdf912896c0e21184a1f",
+    "supabase/functions/_shared/matching/types.ts": "a3e6ac00bf03754fc158204e9e57636d06c391de43503adc8458f3f6b89d01e0"
+  },
+  "historicalArtifacts": {
+    "benchmarks/recall-matching/cases.v1.json": "c547d61df8e9eacc1d47d46ec505e409d88cd23795abc20cbbfb4e96f67fb3f8",
+    "benchmarks/recall-matching/results/comparison.json": "0d436c98883ee3a3f7e1a27e76fe12ba7b46533daee3ee78a811ab0e4e473549",
+    "benchmarks/recall-matching/results/deterministic-v1.json": "6f5c8bb6c463b31fad78796141cbd0f76dae3986904d547f0e9a498952ee4fb8",
+    "benchmarks/recall-matching/results/nemotron-v1.json": "c977bd1ab959563b3500cb83706459715697a875843b196c9608657d4ed8ee0b",
+    "benchmarks/recall-matching/phase-9-1/build-development.mjs": "53525688930982fd2c93a49639f80c1909d47ce58ae94f70a89e57c9ec42b717",
+    "benchmarks/recall-matching/phase-9-1/build-holdout.mjs": "655d01b8525fde31be4400bfd2ed2898cb28a0e33d8b4b36377158a6c9066a92",
+    "benchmarks/recall-matching/phase-9-1/dataset.ts": "b179d4c9dd13d76acb8d80c1039204d3f2f4295fdd194bf4b803a39632af986b",
+    "benchmarks/recall-matching/phase-9-1/development.v1.json": "1887da996161611c1d48d3fa75fea281d29f49d27befcb52ce818b0728bd81b1",
+    "benchmarks/recall-matching/phase-9-1/freezeGuard.mjs": "411cec8753ff30138911f81e45a1000e28f574b1ae75a0402b937ab914e0cec3",
+    "benchmarks/recall-matching/phase-9-1/holdout-manifest.json": "0c7d860a96dff9e506750eac34cc13f99837326b2759088bbbba7a64416ee27e",
+    "benchmarks/recall-matching/phase-9-1/holdout.v1.json": "3dd19b7075cc7f865816f7217984d1e98f6fd83e1aea2cba6ebbc4554502e608",
+    "benchmarks/recall-matching/phase-9-1/results/deterministic-holdout-v1.json": "b09b469fdbb1c6aaa2c353e46bc605ca94ca6f8f6c7d0813176068c30fc0a5d8",
+    "benchmarks/recall-matching/phase-9-1/results/holdout-comparison.json": "9f096792a9589fafe5ea036c7b3a206d168bdf95291557294c99b80ec26cbcf2",
+    "benchmarks/recall-matching/phase-9-1/results/hybrid-holdout-v1.json": "1a5a83bfd5ff18bed84eccff29ac634df6be591736128832cdea976c7fe759ea",
+    "benchmarks/recall-matching/phase-9-1/run-deterministic-holdout.mjs": "5e2e85bfa19a4588dcac8928139d238b07ee7cb66175cc490917eaf754b9169d",
+    "benchmarks/recall-matching/phase-9-1/run-hybrid-holdout.mjs": "5e8e5caf620e09601d95ee82e3d16398e5fa44e422ae05a0449c0ec24e1bdc4c",
+    "benchmarks/recall-matching/phase-9-1/validate.mjs": "603c00bc9b9ec08f408bcad1e74b5f6e1006c744e8b2a6f0be0a0b6d11d24db0"
+  }
+}

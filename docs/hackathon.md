@@ -78,7 +78,18 @@ classified as United States/English without altering matcher inputs or fingerpri
 bounded official-source adapters for CPSC and Health Canada without changing the matcher,
 deterministic-first policy, global limits, or historical-push protections. Password recovery,
 social login, additional authorities, translation, and public build/demo publication remain
-deferred.
+deferred. Phase 14 is release-closed: CPSC and Health Canada are the two active official sources,
+and the bounded autonomous loop processes them independently without changing the frozen
+deterministic-first guarded-AI policy.
+
+Phase 15 constructs and freezes a new 200-case controlled safety benchmark with 48 development,
+120 holdout, and 32 stress cases. It measures unsafe confirmations, missed affected products,
+abstention, pairwise discrimination, subgroup behavior, technical failures, latency, token usage,
+and cost across `deterministic_v1`, `nemotron_v1`, and `hybrid_guarded_v1`. The approved
+`nemotron_v1` run completed. The guarded-hybrid run initially stopped after one case exhausted its
+strict schema retry, then resumed under a separately approved fail-closed continuation without
+rerunning that case or relaxing any policy. All 200 cases are now complete. The original stop
+checkpoint/report remain preserved.
 
 ## Devpost-safe current coverage language
 
@@ -94,10 +105,37 @@ frozen CPSC datasets, not a general-world accuracy claim.
 
 ## Devpost-safe Phase 12 language
 
-Recall automatically checks official CPSC recall data on a recurring bounded schedule and processes
-affected inventory without user intervention. Matching remains deterministic-first; only ambiguous
-candidates may reach guarded Nebius verification, and only confirmed persisted alerts are eligible
-for push delivery.
+Recall automatically checks official CPSC and Health Canada recall data on a recurring bounded
+schedule and processes affected inventory without user intervention. Matching remains
+deterministic-first; only ambiguous candidates may reach guarded Nebius verification, and only
+confirmed persisted alerts are eligible for push delivery. Per-source state isolates retrieval
+failures while global matching, AI, and push limits remain in force.
+
+## Devpost-safe Phase 15 measurements
+
+These are controlled internal measurements from a 200-case CPSC-backed benchmark, not estimates of
+all real-world recalls. Present safety, abstention, and technical-failure results alongside
+accuracy; do not reduce the result to a subjective winner.
+
+| Metric                  | Deterministic v1 | Nemotron v1 | Guarded hybrid v1 |
+| ----------------------- | ---------------: | ----------: | ----------------: |
+| Unsafe confirmations    |                3 |           7 |                 3 |
+| Strict recall           |            85.1% |       91.0% |             85.1% |
+| MATCH precision         |            95.0% |       89.7% |             95.0% |
+| Needs-review rate       |            44.0% |       38.5% |             44.0% |
+| Decision coverage       |            56.0% |       61.5% |             56.0% |
+| Pairwise discrimination |            78.0% |       84.0% |             78.0% |
+| Stress accuracy         |            53.1% |       68.8% |             43.8% |
+| AI requests             |                0 |         200 |               101 |
+| Total tokens            |                0 |     538,637 |           327,268 |
+| Actual cost             |            USD 0 |  USD 0.2600 |        USD 0.1601 |
+
+Guarded hybrid recorded zero provider failures and zero timeouts, but 24 schema-invalid attempts;
+11 cases exhausted the single allowed retry and remained safely `needs_review`. Its three unsafe
+confirmations originated in deterministic confirmations that bypassed AI. Phase 15 also measured a
+future architecture need: size, color, charging-port type, screw state, battery model, date-code
+prefix, and manufacture/production dates are not representable in the current production-shaped
+owned-product projection.
 
 ## Devpost-safe Phase 9.1 language
 
