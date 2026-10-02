@@ -9,7 +9,7 @@ import {
 } from './ownedProductsMappers';
 
 const ownedProductColumns =
-  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, scan_date, purchase_date, purchase_country_code, image_path, identification_method, identification_confidence, created_at, updated_at';
+  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, scan_date, purchase_date, purchase_country_code, safety_attributes, image_path, identification_method, identification_confidence, created_at, updated_at';
 
 type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> & {
   user_id: string;
@@ -69,7 +69,7 @@ export class SupabaseOwnedProductsRepository implements OwnedProductsRepository 
     }
 
     const insertRow: OwnedProductInsertRow = {
-      ...toOwnedProductWriteRow(input),
+      ...toOwnedProductWriteRow({ ...input, safetyAttributes: input.safetyAttributes ?? {} }),
       user_id: userData.user.id,
       image_path: null,
       identification_method: input.identificationMethod ?? 'manual',
@@ -91,7 +91,7 @@ export class SupabaseOwnedProductsRepository implements OwnedProductsRepository 
   async update(id: string, input: OwnedProductInput): Promise<OwnedProduct> {
     const { data, error } = await requireSupabaseClient()
       .from('owned_products')
-      .update(toOwnedProductWriteRow(input))
+      .update(toOwnedProductWriteRow({ ...input, safetyAttributes: input.safetyAttributes ?? {} }))
       .eq('id', id)
       .select(ownedProductColumns)
       .maybeSingle();

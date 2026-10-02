@@ -10,6 +10,22 @@ export type RecallMatchStatus = 'candidate' | 'confirmed' | 'rejected' | 'needs_
 
 export type AlertStatus = 'unread' | 'read' | 'dismissed';
 
+export const PRODUCT_SAFETY_ATTRIBUTE_KEYS = [
+  'variant',
+  'color',
+  'size',
+  'capacity',
+  'battery_model',
+  'charging_port_type',
+  'screw_state',
+  'date_code',
+  'manufacture_date',
+  'production_date',
+] as const;
+
+export type ProductSafetyAttributeKey = (typeof PRODUCT_SAFETY_ATTRIBUTE_KEYS)[number];
+export type ProductSafetyAttributes = Partial<Record<ProductSafetyAttributeKey, string>>;
+
 export type OwnedProduct = {
   id: string;
   userId: string;
@@ -23,6 +39,7 @@ export type OwnedProduct = {
   scanDate: string;
   purchaseDate: string | null;
   purchaseCountryCode: CountryCode | null;
+  safetyAttributes?: ProductSafetyAttributes;
   imagePath: string | null;
   identificationMethod: string | null;
   identificationConfidence: number | null;
@@ -45,6 +62,7 @@ export type OwnedProductInput = {
   scanDate: string;
   purchaseDate: string | null;
   purchaseCountryCode: CountryCode | null;
+  safetyAttributes?: ProductSafetyAttributes;
   /** Set internally by a validated acquisition flow; never chosen in the product form. */
   identificationMethod?: 'barcode_scan' | 'ocr_assisted';
 };

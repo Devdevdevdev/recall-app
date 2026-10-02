@@ -1,5 +1,10 @@
 import { isSupportedCountryCode } from '../domain/countries.ts';
-import type { OwnedProduct, OwnedProductInput } from '../domain/types.ts';
+import {
+  PRODUCT_SAFETY_ATTRIBUTE_KEYS,
+  type OwnedProduct,
+  type OwnedProductInput,
+  type ProductSafetyAttributes,
+} from '../domain/types.ts';
 
 export type OwnedProductRow = {
   id: string;
@@ -14,6 +19,7 @@ export type OwnedProductRow = {
   scan_date: string;
   purchase_date: string | null;
   purchase_country_code: string | null;
+  safety_attributes?: Record<string, unknown>;
   image_path: string | null;
   identification_method: string | null;
   identification_confidence: number | string | null;
@@ -32,7 +38,17 @@ export type OwnedProductWriteRow = {
   scan_date: string;
   purchase_date: string | null;
   purchase_country_code: string | null;
+  safety_attributes?: ProductSafetyAttributes;
 };
+
+function toSafetyAttributes(value: Record<string, unknown> = {}): ProductSafetyAttributes {
+  const attributes: ProductSafetyAttributes = {};
+  for (const key of PRODUCT_SAFETY_ATTRIBUTE_KEYS) {
+    const candidate = value[key];
+    if (typeof candidate === 'string' && candidate.trim()) attributes[key] = candidate;
+  }
+  return attributes;
+}
 
 export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
   if (row.purchase_country_code !== null && !isSupportedCountryCode(row.purchase_country_code)) {
@@ -52,6 +68,9 @@ export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
     scanDate: row.scan_date,
     purchaseDate: row.purchase_date,
     purchaseCountryCode: row.purchase_country_code,
+    ...(row.safety_attributes
+      ? { safetyAttributes: toSafetyAttributes(row.safety_attributes) }
+      : {}),
     imagePath: row.image_path,
     identificationMethod: row.identification_method,
     identificationConfidence:
@@ -73,5 +92,6 @@ export function toOwnedProductWriteRow(input: OwnedProductInput): OwnedProductWr
     scan_date: input.scanDate,
     purchase_date: input.purchaseDate,
     purchase_country_code: input.purchaseCountryCode,
+    ...(input.safetyAttributes ? { safety_attributes: input.safetyAttributes } : {}),
   };
 }

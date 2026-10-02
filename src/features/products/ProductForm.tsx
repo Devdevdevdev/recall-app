@@ -106,6 +106,23 @@ export function ProductForm({
     initialValues ?? emptyProductFormValues(),
   );
   const [errors, setErrors] = useState<ProductFormErrors>({});
+  const [showSafetyDetails, setShowSafetyDetails] = useState(
+    Boolean(
+      initialValues &&
+      [
+        initialValues.variant,
+        initialValues.color,
+        initialValues.size,
+        initialValues.capacity,
+        initialValues.batteryModel,
+        initialValues.chargingPortType,
+        initialValues.screwState,
+        initialValues.dateCode,
+        initialValues.manufactureDate,
+        initialValues.productionDate,
+      ].some(Boolean),
+    ),
+  );
   const [appliedDefaultCountry, setAppliedDefaultCountry] = useState(
     initialValues?.purchaseCountryCode ?? '',
   );
@@ -171,6 +188,16 @@ export function ProductForm({
           value={values.scanDate}
         />
         <FormField
+          autoCapitalize="none"
+          error={errors.gtin}
+          keyboardType="number-pad"
+          label="GTIN / barcode"
+          maxLength={14}
+          onChangeText={(value) => updateValue('gtin', value)}
+          placeholder="8, 12, 13, or 14 digits"
+          value={values.gtin}
+        />
+        <FormField
           error={errors.category}
           label="Category"
           maxLength={120}
@@ -183,16 +210,6 @@ export function ProductForm({
       <FormSection
         description="Exact identifiers make recall matching more reliable."
         title="Identification">
-        <FormField
-          autoCapitalize="none"
-          error={errors.gtin}
-          keyboardType="number-pad"
-          label="GTIN / barcode"
-          maxLength={14}
-          onChangeText={(value) => updateValue('gtin', value)}
-          placeholder="8, 12, 13, or 14 digits"
-          value={values.gtin}
-        />
         <FormField
           autoCapitalize="characters"
           error={errors.modelNumber}
@@ -218,6 +235,96 @@ export function ProductForm({
           value={values.lotNumber}
         />
       </FormSection>
+
+      <View style={styles.section}>
+        <Pressable
+          accessibilityRole="button"
+          accessibilityState={{ expanded: showSafetyDetails }}
+          onPress={() => setShowSafetyDetails((current) => !current)}
+          style={({ pressed }) => [styles.optionalHeader, pressed && styles.optionalHeaderPressed]}>
+          <View style={styles.sectionHeading}>
+            <Text accessibilityRole="header" style={styles.sectionTitle}>
+              Additional safety details
+            </Text>
+            <Text style={styles.sectionDescription}>
+              Optional label details can help check narrowly scoped recalls.
+            </Text>
+          </View>
+          <Text style={styles.optionalIndicator}>{showSafetyDetails ? '−' : '+'}</Text>
+        </Pressable>
+        {showSafetyDetails ? (
+          <View style={styles.sectionFields}>
+            <FormField
+              label="Variant"
+              maxLength={120}
+              onChangeText={(value) => updateValue('variant', value)}
+              value={values.variant}
+            />
+            <FormField
+              label="Color"
+              maxLength={120}
+              onChangeText={(value) => updateValue('color', value)}
+              value={values.color}
+            />
+            <FormField
+              label="Size"
+              maxLength={120}
+              onChangeText={(value) => updateValue('size', value)}
+              value={values.size}
+            />
+            <FormField
+              label="Capacity"
+              maxLength={120}
+              onChangeText={(value) => updateValue('capacity', value)}
+              value={values.capacity}
+            />
+            <FormField
+              autoCapitalize="characters"
+              label="Battery model"
+              maxLength={120}
+              onChangeText={(value) => updateValue('batteryModel', value)}
+              value={values.batteryModel}
+            />
+            <FormField
+              label="Charging port"
+              maxLength={120}
+              onChangeText={(value) => updateValue('chargingPortType', value)}
+              value={values.chargingPortType}
+            />
+            <FormField
+              label="Screw state"
+              maxLength={120}
+              onChangeText={(value) => updateValue('screwState', value)}
+              value={values.screwState}
+            />
+            <FormField
+              autoCapitalize="characters"
+              label="Date code"
+              maxLength={120}
+              onChangeText={(value) => updateValue('dateCode', value)}
+              value={values.dateCode}
+            />
+            <FormField
+              autoCapitalize="none"
+              error={errors.manufactureDate}
+              label="Manufacture date"
+              maxLength={10}
+              onChangeText={(value) => updateValue('manufactureDate', value)}
+              placeholder="YYYY-MM-DD"
+              value={values.manufactureDate}
+            />
+            <FormField
+              autoCapitalize="none"
+              error={errors.productionDate}
+              label="Production date"
+              maxLength={10}
+              onChangeText={(value) => updateValue('productionDate', value)}
+              placeholder="YYYY-MM-DD"
+              value={values.productionDate}
+            />
+          </View>
+        ) : null}
+      </View>
 
       <FormSection
         description="Purchase context is saved for future multi-authority coverage."
@@ -272,6 +379,22 @@ const styles = StyleSheet.create({
     lineHeight: typography.lineHeight.label,
   },
   sectionFields: { gap: spacing.md },
+  optionalHeader: {
+    alignItems: 'center',
+    borderColor: colors.border.subtle,
+    borderRadius: radius.md,
+    borderWidth: 1,
+    flexDirection: 'row',
+    gap: spacing.md,
+    justifyContent: 'space-between',
+    padding: spacing.md,
+  },
+  optionalHeaderPressed: { backgroundColor: colors.surface.raised },
+  optionalIndicator: {
+    color: colors.brand.primary,
+    fontSize: typography.size.title,
+    fontWeight: typography.weight.bold,
+  },
   field: { gap: spacing.xs },
   label: {
     color: colors.text.primary,

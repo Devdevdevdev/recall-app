@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/src/components/ui/Screen';
 import { alertsRepository } from '@/src/data';
+import { listSafetyObservationsV2, type SafetyObservationV2 } from '@/src/data/safetyFeedV2';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import type { RecallAlert } from '@/src/domain';
 import {
@@ -55,6 +56,7 @@ function DetailRow({ label, value }: { label: string; value: string | null }) {
 
 export function AlertDetailScreen({ id }: { id: string | null }) {
   const [alert, setAlert] = useState<RecallAlert | null>(null);
+  const [correction, setCorrection] = useState<SafetyObservationV2 | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [linkError, setLinkError] = useState<string | null>(null);
@@ -70,9 +72,17 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
 
       setIsLoading(true);
       try {
-        const nextAlert = await alertsRepository.getById(id);
+        const [nextAlert, observations] = await Promise.all([
+          alertsRepository.getById(id),
+          listSafetyObservationsV2(),
+        ]);
         if (isActive?.() ?? true) {
           setAlert(nextAlert);
+          setCorrection(
+            observations.find(
+              (item) => item.previousAlertId === id && item.displayState === 'no_longer_confirmed',
+            ) ?? null,
+          );
           setError(nextAlert ? null : 'This recall alert is no longer available.');
         }
       } catch {
@@ -157,6 +167,17 @@ export function AlertDetailScreen({ id }: { id: string | null }) {
           </View>
 
           {error ? <MessageCard message={error} onRetry={() => void loadAlert()} /> : null}
+
+          {correction ? (
+            <View style={[styles.statusCard, styles.changedCard]}>
+              <Text style={styles.statusTitle}>Previous match no longer confirmed</Text>
+              <Text style={styles.statusCopy}>
+                Recall re-evaluated this product with newer matching rules. The previous match is no
+                longer confirmed. Review the official recall information. This does not mean the
+                product is safe.
+              </Text>
+            </View>
+          ) : null}
 
           <View
             style={[

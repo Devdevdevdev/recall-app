@@ -228,8 +228,8 @@ export function ScanScreen() {
       return;
     }
 
-    const { lotNumber, modelNumber, serialNumber } = labelReview.candidates;
-    if (!lotNumber && !modelNumber && !serialNumber) {
+    const { referenceNumber: _referenceNumber, ...persistedCandidates } = labelReview.candidates;
+    if (!Object.values(persistedCandidates).some(Boolean)) {
       enterManually();
       return;
     }
@@ -238,9 +238,7 @@ export function ScanScreen() {
       pathname: '/products/new',
       params: {
         source: 'ocr_assisted',
-        ...(modelNumber ? { modelNumber } : {}),
-        ...(serialNumber ? { serialNumber } : {}),
-        ...(lotNumber ? { lotNumber } : {}),
+        ...persistedCandidates,
       },
     });
   };
@@ -581,8 +579,8 @@ function LabelReviewCard({
   recognizedText: string;
   showRecognizedText: boolean;
 }) {
-  const hasPersistedCandidate = Boolean(
-    candidates.modelNumber || candidates.serialNumber || candidates.lotNumber,
+  const hasPersistedCandidate = Object.entries(candidates).some(
+    ([key, value]) => key !== 'referenceNumber' && Boolean(value),
   );
 
   return (
@@ -600,6 +598,34 @@ function LabelReviewCard({
           ) : null}
           {candidates.lotNumber ? (
             <CandidateRow label="Possible lot / batch" value={candidates.lotNumber} />
+          ) : null}
+          {candidates.variant ? (
+            <CandidateRow label="Possible variant" value={candidates.variant} />
+          ) : null}
+          {candidates.color ? (
+            <CandidateRow label="Possible color" value={candidates.color} />
+          ) : null}
+          {candidates.size ? <CandidateRow label="Possible size" value={candidates.size} /> : null}
+          {candidates.capacity ? (
+            <CandidateRow label="Possible capacity" value={candidates.capacity} />
+          ) : null}
+          {candidates.batteryModel ? (
+            <CandidateRow label="Possible battery model" value={candidates.batteryModel} />
+          ) : null}
+          {candidates.chargingPortType ? (
+            <CandidateRow label="Possible charging port" value={candidates.chargingPortType} />
+          ) : null}
+          {candidates.screwState ? (
+            <CandidateRow label="Possible screw state" value={candidates.screwState} />
+          ) : null}
+          {candidates.dateCode ? (
+            <CandidateRow label="Possible date code" value={candidates.dateCode} />
+          ) : null}
+          {candidates.manufactureDate ? (
+            <CandidateRow label="Possible manufacture date" value={candidates.manufactureDate} />
+          ) : null}
+          {candidates.productionDate ? (
+            <CandidateRow label="Possible production date" value={candidates.productionDate} />
           ) : null}
           {candidates.referenceNumber ? (
             <CandidateRow label="Possible reference" value={candidates.referenceNumber} />

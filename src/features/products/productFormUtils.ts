@@ -1,6 +1,10 @@
 import { validateGtin } from '../../domain/barcode.ts';
 import { isSupportedCountryCode } from '../../domain/countries.ts';
-import type { OwnedProduct, OwnedProductInput } from '../../domain/types.ts';
+import type {
+  OwnedProduct,
+  OwnedProductInput,
+  ProductSafetyAttributes,
+} from '../../domain/types.ts';
 
 import {
   isFuturePurchaseDate,
@@ -20,6 +24,16 @@ export type ProductFormValues = {
   purchaseDate: string;
   scanDate: string;
   serialNumber: string;
+  variant: string;
+  color: string;
+  size: string;
+  capacity: string;
+  batteryModel: string;
+  chargingPortType: string;
+  screwState: string;
+  dateCode: string;
+  manufactureDate: string;
+  productionDate: string;
 };
 
 export type ProductFormErrors = Partial<Record<keyof ProductFormValues, string>>;
@@ -31,6 +45,16 @@ export type ProductCreationParams = {
   lotNumber?: string | string[];
   modelNumber?: string | string[];
   serialNumber?: string | string[];
+  variant?: string | string[];
+  color?: string | string[];
+  size?: string | string[];
+  capacity?: string | string[];
+  batteryModel?: string | string[];
+  chargingPortType?: string | string[];
+  screwState?: string | string[];
+  dateCode?: string | string[];
+  manufactureDate?: string | string[];
+  productionDate?: string | string[];
   source?: string | string[];
 };
 
@@ -50,6 +74,16 @@ const maximumLengths: Record<keyof ProductFormValues, number> = {
   purchaseCountryCode: 2,
   purchaseDate: 10,
   scanDate: 10,
+  variant: 120,
+  color: 120,
+  size: 120,
+  capacity: 120,
+  batteryModel: 120,
+  chargingPortType: 120,
+  screwState: 120,
+  dateCode: 120,
+  manufactureDate: 10,
+  productionDate: 10,
 };
 
 export function emptyProductFormValues(now = new Date()): ProductFormValues {
@@ -64,6 +98,16 @@ export function emptyProductFormValues(now = new Date()): ProductFormValues {
     scanDate: todayDateOnly(now),
     purchaseCountryCode: '',
     purchaseDate: '',
+    variant: '',
+    color: '',
+    size: '',
+    capacity: '',
+    batteryModel: '',
+    chargingPortType: '',
+    screwState: '',
+    dateCode: '',
+    manufactureDate: '',
+    productionDate: '',
   };
 }
 
@@ -108,6 +152,16 @@ export function productCreationPrefillFromParams(
       lotNumber: validatedIdentifierParam(params.lotNumber),
       modelNumber: validatedIdentifierParam(params.modelNumber),
       serialNumber: validatedIdentifierParam(params.serialNumber),
+      variant: validatedIdentifierParam(params.variant),
+      color: validatedIdentifierParam(params.color),
+      size: validatedIdentifierParam(params.size),
+      capacity: validatedIdentifierParam(params.capacity),
+      batteryModel: validatedIdentifierParam(params.batteryModel),
+      chargingPortType: validatedIdentifierParam(params.chargingPortType),
+      screwState: validatedIdentifierParam(params.screwState),
+      dateCode: validatedIdentifierParam(params.dateCode),
+      manufactureDate: validatedIdentifierParam(params.manufactureDate),
+      productionDate: validatedIdentifierParam(params.productionDate),
     };
     const hasIdentifier = Boolean(values.lotNumber || values.modelNumber || values.serialNumber);
 
@@ -137,6 +191,7 @@ export function mergeOptionalDefaultCountry(
 }
 
 export function productFormValuesFromProduct(product: OwnedProduct): ProductFormValues {
+  const safetyAttributes = product.safetyAttributes ?? {};
   return {
     productName: product.productName ?? '',
     brand: product.brand ?? '',
@@ -148,6 +203,16 @@ export function productFormValuesFromProduct(product: OwnedProduct): ProductForm
     scanDate: product.scanDate,
     purchaseCountryCode: product.purchaseCountryCode ?? '',
     purchaseDate: product.purchaseDate ?? '',
+    variant: safetyAttributes.variant ?? '',
+    color: safetyAttributes.color ?? '',
+    size: safetyAttributes.size ?? '',
+    capacity: safetyAttributes.capacity ?? '',
+    batteryModel: safetyAttributes.battery_model ?? '',
+    chargingPortType: safetyAttributes.charging_port_type ?? '',
+    screwState: safetyAttributes.screw_state ?? '',
+    dateCode: safetyAttributes.date_code ?? '',
+    manufactureDate: safetyAttributes.manufacture_date ?? '',
+    productionDate: safetyAttributes.production_date ?? '',
   };
 }
 
@@ -198,8 +263,33 @@ export function validateProductForm(values: ProductFormValues): {
     ? purchaseCountryCode
     : null;
 
+  for (const field of ['manufactureDate', 'productionDate'] as const) {
+    const value = nullableTrimmed(values[field]);
+    if (value && !isValidDateOnly(value)) {
+      errors[field] = 'Use a real date in YYYY-MM-DD format.';
+    }
+  }
+
   if (Object.keys(errors).length > 0) {
     return { errors, input: null };
+  }
+
+  const safetyAttributes: ProductSafetyAttributes = {};
+  const safetyValues = {
+    variant: values.variant,
+    color: values.color,
+    size: values.size,
+    capacity: values.capacity,
+    battery_model: values.batteryModel,
+    charging_port_type: values.chargingPortType,
+    screw_state: values.screwState,
+    date_code: values.dateCode,
+    manufacture_date: values.manufactureDate,
+    production_date: values.productionDate,
+  } as const;
+  for (const [key, value] of Object.entries(safetyValues)) {
+    const normalized = nullableTrimmed(value);
+    if (normalized) safetyAttributes[key as keyof ProductSafetyAttributes] = normalized;
   }
 
   return {
@@ -215,6 +305,7 @@ export function validateProductForm(values: ProductFormValues): {
       scanDate,
       purchaseDate,
       purchaseCountryCode: validPurchaseCountryCode,
+      ...(Object.keys(safetyAttributes).length ? { safetyAttributes } : {}),
     },
   };
 }

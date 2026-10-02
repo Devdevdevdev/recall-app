@@ -3,6 +3,7 @@ import { requireSupabaseClient } from '@/src/services/supabase';
 
 import type { AlertsRepository } from './AlertsRepository';
 import { toRecallAlert, type RecallAlertRow } from './alertsMappers';
+import { listSafetyObservationsV2, safetyFeedV2Enabled } from './safetyFeedV2';
 
 const alertColumns = `
   id,
@@ -57,7 +58,20 @@ export class SupabaseAlertsRepository implements AlertsRepository {
       .eq('recall_match.status', 'confirmed');
 
     if (error) throw error;
-    return count ?? 0;
+    if (!safetyFeedV2Enabled) return count ?? 0;
+    const observations = await listSafetyObservationsV2();
+    const correctedLegacy = observations.filter(
+      (item) =>
+        item.displayState === 'no_longer_confirmed' &&
+        item.previousAlertId &&
+        item.previousAlertState !== 'dismissed' &&
+        item.previousMatchStatus === 'confirmed',
+    ).length;
+    const activeV2 = observations.filter(
+      (item) =>
+        item.alertId && item.alertState !== 'dismissed' && item.displayState === 'confirmed_alert',
+    ).length;
+    return Math.max(0, (count ?? 0) - correctedLegacy) + activeV2;
   }
 
   async listForCurrentUser(): Promise<readonly RecallAlert[]> {

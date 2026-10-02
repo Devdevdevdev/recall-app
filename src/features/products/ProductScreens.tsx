@@ -65,7 +65,23 @@ type NewProductScreenProps = {
 };
 
 export function NewProductScreen({ creationParams = {} }: NewProductScreenProps) {
-  const { gtin, lotNumber, modelNumber, serialNumber, source } = creationParams;
+  const {
+    gtin,
+    lotNumber,
+    modelNumber,
+    serialNumber,
+    source,
+    variant,
+    color,
+    size,
+    capacity,
+    batteryModel,
+    chargingPortType,
+    screwState,
+    dateCode,
+    manufactureDate,
+    productionDate,
+  } = creationParams;
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [prefill, setPrefill] = useState<{
@@ -75,7 +91,23 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
 
   useEffect(() => {
     let active = true;
-    const currentParams = { gtin, lotNumber, modelNumber, serialNumber, source };
+    const currentParams = {
+      gtin,
+      lotNumber,
+      modelNumber,
+      serialNumber,
+      source,
+      variant,
+      color,
+      size,
+      capacity,
+      batteryModel,
+      chargingPortType,
+      screwState,
+      dateCode,
+      manufactureDate,
+      productionDate,
+    };
     void (async () => {
       try {
         const defaultCountry = await userPreferencesRepository.getDefaultPurchaseCountryCode();
@@ -91,7 +123,23 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
     return () => {
       active = false;
     };
-  }, [gtin, lotNumber, modelNumber, serialNumber, source]);
+  }, [
+    gtin,
+    lotNumber,
+    modelNumber,
+    serialNumber,
+    source,
+    variant,
+    color,
+    size,
+    capacity,
+    batteryModel,
+    chargingPortType,
+    screwState,
+    dateCode,
+    manufactureDate,
+    productionDate,
+  ]);
 
   const identificationMethod = prefill.identificationMethod;
 
@@ -270,6 +318,40 @@ export function ProductDetailScreen({ id }: ProductDetailScreenProps) {
               value={identificationMethodLabel(product.identificationMethod)}
             />
           </View>
+          {Object.keys(product.safetyAttributes ?? {}).length ? (
+            <View style={styles.detailSection}>
+              <Text accessibilityRole="header" style={styles.detailSectionTitle}>
+                Additional safety details
+              </Text>
+              <View style={styles.detailCard}>
+                <DetailRow label="Variant" value={product.safetyAttributes?.variant ?? null} />
+                <DetailRow label="Color" value={product.safetyAttributes?.color ?? null} />
+                <DetailRow label="Size" value={product.safetyAttributes?.size ?? null} />
+                <DetailRow label="Capacity" value={product.safetyAttributes?.capacity ?? null} />
+                <DetailRow
+                  label="Battery model"
+                  value={product.safetyAttributes?.battery_model ?? null}
+                />
+                <DetailRow
+                  label="Charging port"
+                  value={product.safetyAttributes?.charging_port_type ?? null}
+                />
+                <DetailRow
+                  label="Screw state"
+                  value={product.safetyAttributes?.screw_state ?? null}
+                />
+                <DetailRow label="Date code" value={product.safetyAttributes?.date_code ?? null} />
+                <DetailRow
+                  label="Manufacture date"
+                  value={product.safetyAttributes?.manufacture_date ?? null}
+                />
+                <DetailRow
+                  label="Production date"
+                  value={product.safetyAttributes?.production_date ?? null}
+                />
+              </View>
+            </View>
+          ) : null}
           <View style={styles.monitoringCard}>
             <Text style={styles.monitoringTitle}>Automatic recall checks</Text>
             <Text style={styles.monitoringText}>
@@ -433,6 +515,13 @@ const styles = StyleSheet.create({
     borderColor: colors.border.subtle,
     borderRadius: radius.lg,
     borderWidth: 1,
+  },
+  detailSection: { gap: spacing.sm },
+  detailSectionTitle: {
+    color: colors.text.primary,
+    fontSize: typography.size.subtitle,
+    fontWeight: typography.weight.bold,
+    lineHeight: typography.lineHeight.subtitle,
   },
   detailRow: {
     borderBottomColor: colors.border.subtle,
