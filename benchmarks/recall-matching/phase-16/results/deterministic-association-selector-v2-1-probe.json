@@ -1,0 +1,418 @@
+{
+  "generatedAt": "2026-09-23T00:00:00.000Z",
+  "mode": "offline_no_ai",
+  "productionImpact": "none",
+  "proposedDatasetStatus": "proposed_not_frozen",
+  "proposedLabelWarning": "The rejected proposed dataset is measured as stored. The two Seeday labels are not repaired or treated as valid ground truth.",
+  "proposedCases": [
+    {
+      "caseId": "p16-ai-thermos-match",
+      "expected": "match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "confirmed",
+      "safeAssociationCount": 1,
+      "selectedAssociation": { "scopeIndex": 0, "associationId": "thermos-sk3000-pre-july-2023" },
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "thermos-sk3000-pre-july-2023",
+          "structurallyValid": true,
+          "fullySatisfied": true,
+          "criterionOutcomes": [
+            { "criterionId": "thermos-model", "outcome": "matched" },
+            { "criterionId": "thermos-manufacture-date", "outcome": "matched" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-thermos-no-match",
+      "expected": "no_match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "thermos-sk3000-pre-july-2023",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "thermos-model", "outcome": "matched" },
+            { "criterionId": "thermos-manufacture-date", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-thermos-review",
+      "expected": "needs_review",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "thermos-sk3000-pre-july-2023",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "thermos-model", "outcome": "matched" },
+            { "criterionId": "thermos-manufacture-date", "outcome": "missing" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-orb-match",
+      "expected": "match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "confirmed",
+      "safeAssociationCount": 1,
+      "selectedAssociation": { "scopeIndex": 0, "associationId": "orb-17451-date-3102491a" },
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "orb-17451-date-3102491a",
+          "structurallyValid": true,
+          "fullySatisfied": true,
+          "criterionOutcomes": [
+            { "criterionId": "orb-model", "outcome": "matched" },
+            { "criterionId": "orb-date-code", "outcome": "matched" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-orb-no-match",
+      "expected": "no_match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "orb-17451-date-3102491a",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "orb-model", "outcome": "matched" },
+            { "criterionId": "orb-date-code", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-orb-review",
+      "expected": "needs_review",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "orb-17451-date-3102491a",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "orb-model", "outcome": "matched" },
+            { "criterionId": "orb-date-code", "outcome": "missing" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-dresser-match",
+      "expected": "match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "confirmed",
+      "safeAssociationCount": 1,
+      "selectedAssociation": { "scopeIndex": 0, "associationId": "dresser-dg-pb-0007-white" },
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "dresser-dg-pb-0007-white",
+          "structurallyValid": true,
+          "fullySatisfied": true,
+          "criterionOutcomes": [
+            { "criterionId": "dresser-model", "outcome": "matched" },
+            { "criterionId": "dresser-color", "outcome": "matched" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-dresser-no-match",
+      "expected": "no_match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "dresser-dg-pb-0007-white",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "dresser-model", "outcome": "matched" },
+            { "criterionId": "dresser-color", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-dresser-review",
+      "expected": "needs_review",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "dresser-dg-pb-0007-white",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "dresser-model", "outcome": "matched" },
+            { "criterionId": "dresser-color", "outcome": "missing" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-fire-truck-match",
+      "expected": "match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "confirmed",
+      "safeAssociationCount": 1,
+      "selectedAssociation": {
+        "scopeIndex": 0,
+        "associationId": "fire-truck-affected-packaging-date-code"
+      },
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "fire-truck-affected-packaging-date-code",
+          "structurallyValid": true,
+          "fullySatisfied": true,
+          "criterionOutcomes": [{ "criterionId": "fire-truck-date-code", "outcome": "matched" }],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-fire-truck-no-match",
+      "expected": "no_match",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "fire-truck-affected-packaging-date-code",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "fire-truck-date-code", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "p16-ai-fire-truck-review",
+      "expected": "needs_review",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "fire-truck-affected-packaging-date-code",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [{ "criterionId": "fire-truck-date-code", "outcome": "missing" }],
+          "rejectionReasons": []
+        }
+      ]
+    }
+  ],
+  "candidateDatasetStatus": "research_probe_not_holdout",
+  "candidateCases": [
+    {
+      "caseId": "probe-bowflex-552-range-a",
+      "expected": "confirmed",
+      "deterministicV2": "confirmed",
+      "probeDecision": "confirmed",
+      "safeAssociationCount": 1,
+      "selectedAssociation": { "scopeIndex": 0, "associationId": "bowflex-552-range-a" },
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "bowflex-552-range-a",
+          "structurallyValid": true,
+          "fullySatisfied": true,
+          "criterionOutcomes": [
+            { "criterionId": "bowflex-552-model-a", "outcome": "matched" },
+            { "criterionId": "bowflex-552-serial-a", "outcome": "matched" }
+          ],
+          "rejectionReasons": []
+        },
+        {
+          "scopeIndex": 1,
+          "associationId": "bowflex-552-range-b",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "bowflex-552-model-b", "outcome": "matched" },
+            { "criterionId": "bowflex-552-serial-b", "outcome": "unresolved" }
+          ],
+          "rejectionReasons": []
+        },
+        {
+          "scopeIndex": 2,
+          "associationId": "bowflex-1090-range",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "bowflex-1090-model", "outcome": "conflicting" },
+            { "criterionId": "bowflex-1090-serial", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "probe-bowflex-overlap-none",
+      "expected": "needs_review",
+      "deterministicV2": "needs_review",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "bowflex-552-range-a",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "bowflex-552-model-a", "outcome": "matched" },
+            { "criterionId": "bowflex-552-serial-a", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        },
+        {
+          "scopeIndex": 1,
+          "associationId": "bowflex-552-range-b",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "bowflex-552-model-b", "outcome": "matched" },
+            { "criterionId": "bowflex-552-serial-b", "outcome": "unresolved" }
+          ],
+          "rejectionReasons": []
+        },
+        {
+          "scopeIndex": 2,
+          "associationId": "bowflex-1090-range",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "bowflex-1090-model", "outcome": "conflicting" },
+            { "criterionId": "bowflex-1090-serial", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "probe-omnitrope-box-1",
+      "expected": "confirmed",
+      "deterministicV2": "confirmed",
+      "probeDecision": "confirmed",
+      "safeAssociationCount": 1,
+      "selectedAssociation": { "scopeIndex": 0, "associationId": "omnitrope-box-1" },
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "omnitrope-box-1",
+          "structurallyValid": true,
+          "fullySatisfied": true,
+          "criterionOutcomes": [
+            { "criterionId": "omnitrope-upc-1", "outcome": "matched" },
+            { "criterionId": "omnitrope-lot-1", "outcome": "matched" }
+          ],
+          "rejectionReasons": []
+        },
+        {
+          "scopeIndex": 1,
+          "associationId": "omnitrope-box-5",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "omnitrope-upc-5", "outcome": "conflicting" },
+            { "criterionId": "omnitrope-lot-5", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    },
+    {
+      "caseId": "probe-omnitrope-cross-row",
+      "expected": "needs_review",
+      "deterministicV2": "rejected",
+      "probeDecision": "needs_review",
+      "safeAssociationCount": 0,
+      "selectedAssociation": null,
+      "associationEvaluations": [
+        {
+          "scopeIndex": 0,
+          "associationId": "omnitrope-box-1",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "omnitrope-upc-1", "outcome": "matched" },
+            { "criterionId": "omnitrope-lot-1", "outcome": "conflicting" }
+          ],
+          "rejectionReasons": []
+        },
+        {
+          "scopeIndex": 1,
+          "associationId": "omnitrope-box-5",
+          "structurallyValid": true,
+          "fullySatisfied": false,
+          "criterionOutcomes": [
+            { "criterionId": "omnitrope-upc-5", "outcome": "conflicting" },
+            { "criterionId": "omnitrope-lot-5", "outcome": "matched" }
+          ],
+          "rejectionReasons": []
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "proposedCaseCount": 12,
+    "proposedDeterministicV2NeedsReview": 12,
+    "proposedProbeConfirmed": 4,
+    "proposedProbeNeedsReview": 8,
+    "candidateCaseCount": 4,
+    "candidateExpectedDecisionsMatched": 4
+  }
+}

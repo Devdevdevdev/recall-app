@@ -1,0 +1,637 @@
+{
+  "version": "phase_16_ai_value_holdout_proposed_v1",
+  "status": "proposed_not_frozen",
+  "split": "holdout",
+  "labelSource": "controlled_authoritative_evidence",
+  "labelQualification": "Labels are derived from official CPSC evidence and controlled counterfactuals; they are not independent human-reviewed ground truth.",
+  "classDistribution": {
+    "match": 4,
+    "no_match": 4,
+    "needs_review": 4
+  },
+  "families": [
+    {
+      "recallFamilyId": "cpsc-26-444-thermos-stainless-king",
+      "officialSource": "CPSC",
+      "externalRecallId": "26-444",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+      "recallDate": "2026-04-30",
+      "title": "Thermos Stainless King Food Jars and Sportsman Bottles",
+      "sourceExcerptParaphrase": "SK3000 and SK3020 units manufactured before July 2023 are affected; all SK3010 units are affected.",
+      "recall": {
+        "recallNoticeId": "cpsc-26-444",
+        "source": {
+          "authority": "CPSC",
+          "externalId": "26-444",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards"
+        },
+        "title": "Thermos Stainless King Food Jars and Sportsman Bottles",
+        "description": null,
+        "hazard": null,
+        "remedy": null,
+        "recallDate": "2026-04-30",
+        "scopes": [
+          {
+            "productName": "Thermos Stainless King SK3000 Food Jar",
+            "brand": "Thermos",
+            "criteria": {
+              "semantics": "ambiguous",
+              "criteria": [
+                {
+                  "id": "thermos-model",
+                  "kind": "model_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "SK3000",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+                    "sourceField": "Recall Details.Description.model number",
+                    "normalizationRule": "case_insensitive_identifier_equals"
+                  }
+                },
+                {
+                  "id": "thermos-manufacture-date",
+                  "kind": "manufacture_date",
+                  "operator": "date_range",
+                  "required": true,
+                  "range": { "from": "1900-01-01", "to": "2023-06-30" },
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+                    "sourceField": "Recall Details.Description.manufactured before July 2023",
+                    "normalizationRule": "exclusive_month_boundary_to_inclusive_date_range"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "thermos-sk3000-pre-july-2023",
+                "criterionIds": ["thermos-model", "thermos-manufacture-date"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+                  "sourceField": "Recall Details.Description",
+                  "normalizationRule": "source_addressed_model_date_association"
+                }
+              }
+            ]
+          }
+        ],
+        "rawEvidence": null
+      }
+    },
+    {
+      "recallFamilyId": "cpsc-26-499-orb-funkee",
+      "officialSource": "CPSC",
+      "externalRecallId": "26-499",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+      "recallDate": "2026-05-21",
+      "title": "Orb Funkee Squeeze Toys",
+      "sourceExcerptParaphrase": "Models 17451 and 41929 are affected only with date code 3102491A.",
+      "recall": {
+        "recallNoticeId": "cpsc-26-499",
+        "source": {
+          "authority": "CPSC",
+          "externalId": "26-499",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory"
+        },
+        "title": "Orb Funkee Squeeze Toys",
+        "description": null,
+        "hazard": null,
+        "remedy": null,
+        "recallDate": "2026-05-21",
+        "scopes": [
+          {
+            "productName": "Orb Funkee Gold Jumbo Monkee",
+            "brand": "Orb Funkee",
+            "criteria": {
+              "semantics": "ambiguous",
+              "criteria": [
+                {
+                  "id": "orb-model",
+                  "kind": "model_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "17451",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+                    "sourceField": "Recall Details.Description.model 17451",
+                    "normalizationRule": "case_insensitive_identifier_equals"
+                  }
+                },
+                {
+                  "id": "orb-date-code",
+                  "kind": "date_code",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "3102491A",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+                    "sourceField": "Recall Details.Description.date code",
+                    "normalizationRule": "case_insensitive_identifier_equals"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "orb-17451-date-3102491a",
+                "criterionIds": ["orb-model", "orb-date-code"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+                  "sourceField": "Recall Details.Description",
+                  "normalizationRule": "source_addressed_model_date_code_association"
+                }
+              }
+            ]
+          }
+        ],
+        "rawEvidence": null
+      }
+    },
+    {
+      "recallFamilyId": "cpsc-26-663-seeday-dressers",
+      "officialSource": "CPSC",
+      "externalRecallId": "26-663",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+      "recallDate": "2026-08-06",
+      "title": "Winston Porter and Seeday Dressers",
+      "sourceExcerptParaphrase": "The three-drawer white dresser is model DG-PB-0007; the black version is DG-PB-0013.",
+      "recall": {
+        "recallNoticeId": "cpsc-26-663",
+        "source": {
+          "authority": "CPSC",
+          "externalId": "26-663",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units"
+        },
+        "title": "Winston Porter and Seeday Dressers",
+        "description": null,
+        "hazard": null,
+        "remedy": null,
+        "recallDate": "2026-08-06",
+        "scopes": [
+          {
+            "productName": "Seeday three-drawer dresser",
+            "brand": "Seeday",
+            "criteria": {
+              "semantics": "ambiguous",
+              "criteria": [
+                {
+                  "id": "dresser-model",
+                  "kind": "model_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "DG-PB-0007",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+                    "sourceField": "Recall Details.Description.three-drawer model mapping",
+                    "normalizationRule": "case_insensitive_identifier_equals"
+                  }
+                },
+                {
+                  "id": "dresser-color",
+                  "kind": "color",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "white",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+                    "sourceField": "Recall Details.Description.DG-PB-0007 color mapping",
+                    "normalizationRule": "case_insensitive_identifier_equals"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "dresser-dg-pb-0007-white",
+                "criterionIds": ["dresser-model", "dresser-color"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+                  "sourceField": "Recall Details.Description",
+                  "normalizationRule": "source_addressed_model_color_association"
+                }
+              }
+            ]
+          }
+        ],
+        "rawEvidence": null
+      }
+    },
+    {
+      "recallFamilyId": "cpsc-26-780-melissa-doug-fire-truck",
+      "officialSource": "CPSC",
+      "externalRecallId": "26-780",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+      "recallDate": "2026-09-17",
+      "title": "Melissa & Doug Lights & Sounds Fire Truck Activity Board",
+      "sourceExcerptParaphrase": "Affected packaging date codes are OET 25100, OET 25150, and OET 26064.",
+      "recall": {
+        "recallNoticeId": "cpsc-26-780",
+        "source": {
+          "authority": "CPSC",
+          "externalId": "26-780",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target"
+        },
+        "title": "Melissa & Doug Lights & Sounds Fire Truck Activity Board",
+        "description": null,
+        "hazard": null,
+        "remedy": null,
+        "recallDate": "2026-09-17",
+        "scopes": [
+          {
+            "productName": "Lights & Sounds Fire Truck Activity Board",
+            "brand": "Melissa & Doug",
+            "criteria": {
+              "semantics": "ambiguous",
+              "criteria": [
+                {
+                  "id": "fire-truck-date-code",
+                  "kind": "date_code",
+                  "operator": "one_of",
+                  "required": true,
+                  "values": ["OET 25100", "OET 25150", "OET 26064"],
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+                    "sourceField": "Recall Details.Description.packaging date codes",
+                    "normalizationRule": "case_insensitive_identifier_one_of"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "fire-truck-affected-packaging-date-code",
+                "criterionIds": ["fire-truck-date-code"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+                  "sourceField": "Recall Details.Description",
+                  "normalizationRule": "source_addressed_date_code_association"
+                }
+              }
+            ]
+          }
+        ],
+        "rawEvidence": null
+      }
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "p16-ai-thermos-match",
+      "recallFamilyId": "cpsc-26-444-thermos-stainless-king",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+      "ownedEvidence": {
+        "productName": "Thermos food jar",
+        "brand": "Thermos",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "SK3000",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          {
+            "key": "manufacture_date",
+            "value": "2023-06-15",
+            "valueType": "date",
+            "captureSource": "manual"
+          }
+        ]
+      },
+      "authoritativeCriteria": ["thermos-model", "thermos-manufacture-date"],
+      "expectedDecision": "match",
+      "labelRationale": "The supplied model and manufacture date satisfy the CPSC model/date association.",
+      "constructionType": "controlled_positive",
+      "provenance": { "authority": "CPSC", "control": "exact official affected values" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher deliberately abstains on explicit ambiguous association semantics."
+    },
+    {
+      "caseId": "p16-ai-thermos-no-match",
+      "recallFamilyId": "cpsc-26-444-thermos-stainless-king",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+      "ownedEvidence": {
+        "productName": "Thermos food jar",
+        "brand": "Thermos",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "SK3000",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          {
+            "key": "manufacture_date",
+            "value": "2023-07-15",
+            "valueType": "date",
+            "captureSource": "manual"
+          }
+        ]
+      },
+      "authoritativeCriteria": ["thermos-model", "thermos-manufacture-date"],
+      "expectedDecision": "no_match",
+      "labelRationale": "The controlled date is after the official pre-July-2023 cutoff.",
+      "constructionType": "controlled_counterfactual_hard_negative",
+      "provenance": { "authority": "CPSC", "control": "one-field boundary counterfactual" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher does not reject ambiguous association scopes."
+    },
+    {
+      "caseId": "p16-ai-thermos-review",
+      "recallFamilyId": "cpsc-26-444-thermos-stainless-king",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Thermos-Recalls-8-2-Million-Stainless-King-Food-Jars-and-Bottles-Due-to-Serious-Impact-Injury-and-Laceration-Hazards",
+      "ownedEvidence": {
+        "productName": "Thermos food jar",
+        "brand": "Thermos",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "SK3000",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      },
+      "authoritativeCriteria": ["thermos-model", "thermos-manufacture-date"],
+      "expectedDecision": "needs_review",
+      "labelRationale": "Manufacture date is mandatory for SK3000 and is genuinely absent.",
+      "constructionType": "controlled_missing_evidence",
+      "provenance": { "authority": "CPSC", "control": "mandatory field removed" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "Association semantics are ambiguous and mandatory owned evidence is missing."
+    },
+    {
+      "caseId": "p16-ai-orb-match",
+      "recallFamilyId": "cpsc-26-499-orb-funkee",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+      "ownedEvidence": {
+        "productName": "Gold Jumbo Monkee",
+        "brand": "Orb Funkee",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "17451",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          {
+            "key": "date_code",
+            "value": "3102491A",
+            "valueType": "text",
+            "captureSource": "manual"
+          }
+        ]
+      },
+      "authoritativeCriteria": ["orb-model", "orb-date-code"],
+      "expectedDecision": "match",
+      "labelRationale": "Both the official model and affected date code are supplied.",
+      "constructionType": "controlled_positive",
+      "provenance": { "authority": "CPSC", "control": "exact official affected values" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher deliberately abstains on explicit ambiguous association semantics."
+    },
+    {
+      "caseId": "p16-ai-orb-no-match",
+      "recallFamilyId": "cpsc-26-499-orb-funkee",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+      "ownedEvidence": {
+        "productName": "Gold Jumbo Monkee",
+        "brand": "Orb Funkee",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "17451",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          {
+            "key": "date_code",
+            "value": "3102491B",
+            "valueType": "text",
+            "captureSource": "manual"
+          }
+        ]
+      },
+      "authoritativeCriteria": ["orb-model", "orb-date-code"],
+      "expectedDecision": "no_match",
+      "labelRationale": "The one-character counterfactual date code is not the recalled code.",
+      "constructionType": "controlled_counterfactual_hard_negative",
+      "provenance": { "authority": "CPSC", "control": "one-character date-code counterfactual" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher does not reject ambiguous association scopes."
+    },
+    {
+      "caseId": "p16-ai-orb-review",
+      "recallFamilyId": "cpsc-26-499-orb-funkee",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Orb-Funkee-Squeeze-Toys-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Asbestos-Exposure-Imported-by-The-Orb-Factory",
+      "ownedEvidence": {
+        "productName": "Gold Jumbo Monkee",
+        "brand": "Orb Funkee",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "17451",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      },
+      "authoritativeCriteria": ["orb-model", "orb-date-code"],
+      "expectedDecision": "needs_review",
+      "labelRationale": "The mandatory date code is genuinely absent.",
+      "constructionType": "controlled_missing_evidence",
+      "provenance": { "authority": "CPSC", "control": "mandatory field removed" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "Association semantics are ambiguous and mandatory owned evidence is missing."
+    },
+    {
+      "caseId": "p16-ai-dresser-match",
+      "recallFamilyId": "cpsc-26-663-seeday-dressers",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+      "ownedEvidence": {
+        "productName": "Three-drawer dresser",
+        "brand": "Seeday",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "DG-PB-0007",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          { "key": "color", "value": "white", "valueType": "text", "captureSource": "manual" }
+        ]
+      },
+      "authoritativeCriteria": ["dresser-model", "dresser-color"],
+      "expectedDecision": "match",
+      "labelRationale": "The model/color pair exactly matches the official mapping.",
+      "constructionType": "controlled_positive",
+      "provenance": { "authority": "CPSC", "control": "exact official affected mapping" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher deliberately abstains on explicit ambiguous association semantics."
+    },
+    {
+      "caseId": "p16-ai-dresser-no-match",
+      "recallFamilyId": "cpsc-26-663-seeday-dressers",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+      "ownedEvidence": {
+        "productName": "Three-drawer dresser",
+        "brand": "Seeday",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "DG-PB-0007",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          { "key": "color", "value": "black", "valueType": "text", "captureSource": "manual" }
+        ]
+      },
+      "authoritativeCriteria": ["dresser-model", "dresser-color"],
+      "expectedDecision": "no_match",
+      "labelRationale": "CPSC maps DG-PB-0007 to white; black is a controlled conflicting color.",
+      "constructionType": "controlled_counterfactual_hard_negative",
+      "provenance": { "authority": "CPSC", "control": "one-field mapping counterfactual" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher does not reject ambiguous association scopes."
+    },
+    {
+      "caseId": "p16-ai-dresser-review",
+      "recallFamilyId": "cpsc-26-663-seeday-dressers",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winston-Porter-and-Seeday-3-Drawer-4-Drawer-and-5-Drawer-Dressers-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+      "ownedEvidence": {
+        "productName": "Three-drawer dresser",
+        "brand": "Seeday",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "DG-PB-0007",
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      },
+      "authoritativeCriteria": ["dresser-model", "dresser-color"],
+      "expectedDecision": "needs_review",
+      "labelRationale": "Color is required by the controlled association and is genuinely absent.",
+      "constructionType": "controlled_missing_evidence",
+      "provenance": { "authority": "CPSC", "control": "mandatory field removed" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "Association semantics are ambiguous and mandatory owned evidence is missing."
+    },
+    {
+      "caseId": "p16-ai-fire-truck-match",
+      "recallFamilyId": "cpsc-26-780-melissa-doug-fire-truck",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+      "ownedEvidence": {
+        "productName": "Lights & Sounds Fire Truck Activity Board",
+        "brand": "Melissa & Doug",
+        "category": null,
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          {
+            "key": "date_code",
+            "value": "OET 25100",
+            "valueType": "text",
+            "captureSource": "manual"
+          }
+        ]
+      },
+      "authoritativeCriteria": ["fire-truck-date-code"],
+      "expectedDecision": "match",
+      "labelRationale": "The packaging date code is one of the three official affected codes.",
+      "constructionType": "controlled_positive",
+      "provenance": { "authority": "CPSC", "control": "exact official affected value" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher deliberately abstains on explicit ambiguous association semantics."
+    },
+    {
+      "caseId": "p16-ai-fire-truck-no-match",
+      "recallFamilyId": "cpsc-26-780-melissa-doug-fire-truck",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+      "ownedEvidence": {
+        "productName": "Lights & Sounds Fire Truck Activity Board",
+        "brand": "Melissa & Doug",
+        "category": null,
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": [
+          {
+            "key": "date_code",
+            "value": "OET 25101",
+            "valueType": "text",
+            "captureSource": "manual"
+          }
+        ]
+      },
+      "authoritativeCriteria": ["fire-truck-date-code"],
+      "expectedDecision": "no_match",
+      "labelRationale": "The one-digit counterfactual packaging code is not in the official affected set.",
+      "constructionType": "controlled_counterfactual_hard_negative",
+      "provenance": { "authority": "CPSC", "control": "one-digit date-code counterfactual" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "The frozen matcher does not reject ambiguous association scopes."
+    },
+    {
+      "caseId": "p16-ai-fire-truck-review",
+      "recallFamilyId": "cpsc-26-780-melissa-doug-fire-truck",
+      "officialSource": "CPSC",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+      "ownedEvidence": {
+        "productName": "Lights & Sounds Fire Truck Activity Board",
+        "brand": "Melissa & Doug",
+        "category": null,
+        "gtin": null,
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      },
+      "authoritativeCriteria": ["fire-truck-date-code"],
+      "expectedDecision": "needs_review",
+      "labelRationale": "The mandatory date code is genuinely absent.",
+      "constructionType": "controlled_missing_evidence",
+      "provenance": { "authority": "CPSC", "control": "mandatory field removed" },
+      "deterministicV2Decision": "needs_review",
+      "deterministicV2Reason": "Association semantics are ambiguous and mandatory owned evidence is missing."
+    }
+  ]
+}

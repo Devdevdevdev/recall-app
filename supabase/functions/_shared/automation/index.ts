@@ -9,4 +9,6 @@ export type {
   IngestionSummary,
   MatchingSummary,
   PushSummary,
+  UnresolvedMatchingRecall,
+  UnresolvedMatchingReason,
 } from './types.ts';

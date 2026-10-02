@@ -1,0 +1,223 @@
+begin;
+create extension if not exists pgtap with schema extensions;
+select extensions.plan(23);
+
+select extensions.ok(
+  pg_catalog.has_function_privilege('service_role',
+    'public.finalize_recall_match_evaluation_v2(uuid,uuid,text,timestamptz,timestamptz,uuid,public.recall_match_status,numeric,jsonb,text)',
+    'EXECUTE'), 'service role can finalize v2');
+select extensions.ok(
+  not pg_catalog.has_function_privilege('authenticated',
+    'public.finalize_recall_match_evaluation_v2(uuid,uuid,text,timestamptz,timestamptz,uuid,public.recall_match_status,numeric,jsonb,text)',
+    'EXECUTE'), 'authenticated cannot finalize v2');
+select extensions.ok(
+  pg_catalog.has_function_privilege('service_role',
+    'public.get_recall_v2_scopes(uuid)', 'EXECUTE'),
+  'service role can read reviewed v2 scopes');
+select extensions.ok(
+  not pg_catalog.has_function_privilege('authenticated',
+    'public.get_recall_v2_scopes(uuid)', 'EXECUTE'),
+  'authenticated cannot read reviewed v2 scopes');
+
+-- Post-16.11 path only: worker evidence -> authorized human review -> materialization.
+-- The retired free-text approval and direct criterion writes are never used.
+insert into auth.users (
+  id, aud, role, email, encrypted_password, email_confirmed_at,
+  raw_app_meta_data, raw_user_meta_data, created_at, updated_at
+) values
+  ('91000000-0000-4000-8000-000000000001', 'authenticated', 'authenticated',
+   'phase-16-3-fixture@example.invalid', '', now(), '{}'::jsonb, '{}'::jsonb, now(), now()),
+  ('91000000-0000-4000-8000-000000000002', 'authenticated', 'authenticated',
+   'phase-16-3-reviewer@example.invalid', '', now(), '{}'::jsonb, '{}'::jsonb, now(), now());
+insert into private.cpsc_reviewer_authorizations (user_id, authorized_at, reason)
+values ('91000000-0000-4000-8000-000000000002', now() - interval '1 minute',
+  'Phase 16.3 transaction-only reviewer');
+select public.ensure_cpsc_recall_source();
+
+set local role service_role;
+set local request.jwt.claims = '{"role":"service_role"}';
+select set_config('gate.observation', public.record_cpsc_identity_observation(
+  '9916300001', '99163', 'https://www.cpsc.gov/Recalls/2026/phase-16-3',
+  'https://www.cpsc.gov/Recalls/2026/phase-16-3', 'Controlled v2 recall', '2026-09-01',
+  repeat('a', 64), now(), 'Phase 16.3 gate')::text, true);
+select set_config('gate.notice', public.ingest_cpsc_identity_notice(
+  (current_setting('gate.observation')::jsonb->>'observationId')::uuid, null, null, null, now(),
+  '{"RecallID":"9916300001","RecallNumber":"99163"}',
+  '[{"productName":"Controlled product","modelNumber":"MODEL-1"}]')->>'noticeId', true);
+select set_config('gate.revision', public.record_cpsc_page_revision(
+  (current_setting('gate.observation')::jsonb->>'identityId')::uuid, repeat('c', 64),
+  '{"recallNumber":"99163","canonicalUrl":"https://www.cpsc.gov/Recalls/2026/phase-16-3","title":"Controlled v2 recall"}',
+  '{}', '[]', 'phase-16.11-structured-v1')->>'revisionId', true);
+reset request.jwt.claims;
+reset role;
+select set_config('gate.scope', (select id::text from public.recall_scopes
+  where recall_notice_id = current_setting('gate.notice')::uuid), true);
+set local role service_role;
+set local request.jwt.claims = '{"role":"service_role"}';
+select set_config('gate.' || field, public.propose_cpsc_candidate_criterion(
+  current_setting('gate.revision')::uuid, current_setting('gate.scope')::uuid,
+  jsonb_build_object('source', 'cpsc', 'recallNumber', '99163',
+    'canonicalUrl', 'https://www.cpsc.gov/Recalls/2026/phase-16-3',
+    'sourceSemanticRevision', repeat('c', 64), 'sectionIdentity', 'description',
+    'tableIdentity', 'gate-table', 'rowIdentity', 'row-1', 'fieldIdentity', field),
+  repeat('d', 64), kind, value, 'gate-table/row-1', 'Controlled product | MODEL-1 | 2510',
+  'phase-16.11-structured-v1')->>'candidateId', true)
+from (values ('model', 'model_exact', '"MODEL-1"'::jsonb),
+  ('date', 'date_code_exact', '"2510"'::jsonb)) proposal(field, kind, value);
+reset request.jwt.claims;
+reset role;
+
+set local role authenticated;
+set local request.jwt.claims = '{"role":"authenticated","sub":"91000000-0000-4000-8000-000000000002"}';
+select public.decide_cpsc_candidate(current_setting('gate.model')::uuid, 'reviewed', true);
+select public.decide_cpsc_candidate(current_setting('gate.date')::uuid, 'reviewed', true);
+select extensions.is(public.materialize_cpsc_reviewed_conjunction(
+  current_setting('gate.model')::uuid)->>'status', 'materialized',
+  'human-reviewed model AND date code materializes');
+reset request.jwt.claims;
+reset role;
+
+select extensions.is((
+  select count(*)::integer from public.get_recall_v2_scopes(current_setting('gate.notice')::uuid)
+  where reviewed_criteria->>'semantics' = 'any_of'
+    and jsonb_array_length(reviewed_criteria->'ruleSets') = 1
+), 1, 'reviewed rule set is bound to the official scope ID');
+insert into public.owned_products (
+  id, user_id, product_name, model_number, identification_method, safety_attributes
+) values
+  ('95000000-0000-4000-8000-000000000005', '91000000-0000-4000-8000-000000000001', 'Controlled product', 'MODEL-1', 'manual', '{"date_code":"2510"}'),
+  ('95000000-0000-4000-8000-000000000006', '91000000-0000-4000-8000-000000000001', 'Controlled product', 'MODEL-1', 'manual', '{}'),
+  ('95000000-0000-4000-8000-000000000007', '91000000-0000-4000-8000-000000000001', 'Controlled product', 'MODEL-1', 'manual', '{"date_code":"2509"}');
+
+create temporary table phase163_candidates as
+select * from public.get_recall_candidates(
+  current_setting('gate.notice')::uuid, null, null, 50
+);
+select extensions.is((select count(*)::integer from phase163_candidates), 3,
+  'existing bounded production candidate RPC returns all three fixture pairs');
+
+create temporary table phase163_claim as
+select product.id as product_id, claim.status, claim.lease_token,
+  case product.id
+    when '95000000-0000-4000-8000-000000000005' then '__FINGERPRINT_5__'
+    when '95000000-0000-4000-8000-000000000006' then '__FINGERPRINT_6__'
+    else '__FINGERPRINT_7__' end as fingerprint,
+  product.updated_at as product_revision, notice.updated_at as recall_revision
+from public.owned_products as product
+join phase163_candidates as candidate on candidate.owned_product_id = product.id
+cross join public.recall_notices as notice
+cross join lateral public.claim_recall_match_evaluation(
+  product.id, notice.id,
+  case product.id
+    when '95000000-0000-4000-8000-000000000005' then '__FINGERPRINT_5__'
+    when '95000000-0000-4000-8000-000000000006' then '__FINGERPRINT_6__'
+    else '__FINGERPRINT_7__' end,
+  product.updated_at,
+  notice.updated_at, 120) as claim
+where product.id in (
+  '95000000-0000-4000-8000-000000000005',
+  '95000000-0000-4000-8000-000000000006',
+  '95000000-0000-4000-8000-000000000007'
+) and notice.id = current_setting('gate.notice')::uuid;
+
+select extensions.is((select count(*)::integer from phase163_claim where status = 'claimed'),
+  3, 'three bounded candidates claimed');
+
+create temporary table phase163_final as
+select claim.product_id, result.status, result.alert_eligibility
+from phase163_claim as claim
+cross join lateral public.finalize_recall_match_evaluation_v2(
+  claim.product_id, current_setting('gate.notice')::uuid, claim.fingerprint,
+  claim.product_revision, claim.recall_revision, claim.lease_token,
+  case claim.product_id
+    when '95000000-0000-4000-8000-000000000005' then '__DECISION_5__'::public.recall_match_status
+    when '95000000-0000-4000-8000-000000000006' then '__DECISION_6__'::public.recall_match_status
+    else '__DECISION_7__'::public.recall_match_status end,
+  0.9, '{}'::jsonb, 'Controlled deterministic v2 fixture.'
+) as result;
+
+select extensions.is((select count(*)::integer from phase163_final where status = 'finalized'),
+  3, 'three v2 evaluations finalized');
+select extensions.is((select count(*)::integer from phase163_final where alert_eligibility = 'created'),
+  1, 'only confirmed is alert eligible');
+select extensions.is((select count(*)::integer from private.recall_match_evaluations_v2
+  where recall_notice_id = current_setting('gate.notice')::uuid),
+  3, 'each candidate persists exactly once');
+select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2
+  where recall_notice_id = current_setting('gate.notice')::uuid),
+  1, 'one eligibility record exists');
+select extensions.is((select count(*)::integer from public.alerts a
+  join public.recall_matches m on m.id = a.recall_match_id
+  where m.recall_notice_id = current_setting('gate.notice')::uuid),
+  0, 'no real alert is created');
+select extensions.is((select count(*)::integer from public.recall_matches
+  where recall_notice_id = current_setting('gate.notice')::uuid),
+  0, 'legacy matches remain untouched');
+
+create temporary table phase163_repeat_claim as
+select * from public.claim_recall_match_evaluation(
+  '95000000-0000-4000-8000-000000000005',
+  current_setting('gate.notice')::uuid, '__FINGERPRINT_5__',
+  (select updated_at from public.owned_products where id = '95000000-0000-4000-8000-000000000005'),
+  (select updated_at from public.recall_notices where id = current_setting('gate.notice')::uuid),
+  120
+);
+select extensions.is((select status from phase163_repeat_claim), 'claimed',
+  'repeat claim remains bounded by lease');
+select extensions.is((
+  select status from public.finalize_recall_match_evaluation_v2(
+    '95000000-0000-4000-8000-000000000005',
+    current_setting('gate.notice')::uuid, '__FINGERPRINT_5__',
+    (select updated_at from public.owned_products where id = '95000000-0000-4000-8000-000000000005'),
+    (select updated_at from public.recall_notices where id = current_setting('gate.notice')::uuid),
+    (select lease_token from phase163_repeat_claim), 'confirmed', 0.9,
+    '{}'::jsonb, 'Controlled deterministic v2 fixture.')
+), 'unchanged', 'repeat evaluation is idempotent');
+select extensions.is((select count(*)::integer from private.recall_match_evaluations_v2
+  where recall_notice_id = current_setting('gate.notice')::uuid),
+  3, 'repeat creates no evaluation');
+select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2
+  where recall_notice_id = current_setting('gate.notice')::uuid),
+  1, 'repeat creates no duplicate eligibility');
+
+update public.owned_products
+set safety_attributes = '{}'
+where id = '95000000-0000-4000-8000-000000000005';
+
+create temporary table phase163_reversal_claim as
+select * from public.claim_recall_match_evaluation(
+  '95000000-0000-4000-8000-000000000005',
+  current_setting('gate.notice')::uuid, '__FINGERPRINT_REVERSED__',
+  (select updated_at from public.owned_products where id = '95000000-0000-4000-8000-000000000005'),
+  (select updated_at from public.recall_notices where id = current_setting('gate.notice')::uuid),
+  120
+);
+select extensions.is((select status from phase163_reversal_claim), 'claimed',
+  'changed v2 evidence is eligible for a new evaluation');
+select extensions.is((
+  select alert_eligibility from public.finalize_recall_match_evaluation_v2(
+    '95000000-0000-4000-8000-000000000005',
+    current_setting('gate.notice')::uuid, '__FINGERPRINT_REVERSED__',
+    (select updated_at from public.owned_products where id = '95000000-0000-4000-8000-000000000005'),
+    (select updated_at from public.recall_notices where id = current_setting('gate.notice')::uuid),
+    (select lease_token from phase163_reversal_claim), '__DECISION_REVERSED__', 0.5,
+    '{}'::jsonb, 'Changed evidence is unresolved.')
+), 'revoked', 'unresolved reversal revokes unconsumed eligibility');
+select extensions.is((
+  select count(*)::integer from private.recall_alert_eligibility_v2
+  where recall_notice_id = current_setting('gate.notice')::uuid
+    and revoked_at is not null and revoked_by_evaluation_id is not null
+), 1, 'reversal is recorded without deleting historical evidence');
+
+update public.recall_notices
+set official_url = 'https://www.cpsc.gov/Recalls/2026/phase-16-3-revised'
+where id = current_setting('gate.notice')::uuid;
+select extensions.is((
+  select count(*)::integer from public.get_recall_v2_scopes(current_setting('gate.notice')::uuid)
+  where reviewed_criteria is null
+), 1, 'official URL change invalidates old reviewed criteria');
+select extensions.is((select count(*)::integer from private.recall_scope_criteria_v2), 0,
+  'the superseded single-binding table is never written');
+
+select * from extensions.finish();
+rollback;

@@ -1,7 +1,19 @@
 import { createClient, type SupabaseClient } from 'npm:@supabase/supabase-js@2';
 
 import { getRecallSourceAdapter } from '../_shared/recallSources/index.ts';
-import { isJsonObject } from '../_shared/recallSources/validation.ts';
+import { ingestCpscRecallIdentity } from '../_shared/cpsc/ingestionGate.ts';
+import { classifySourceWatermarkDbError } from '../_shared/recallSources/watermarkDbError.ts';
+import {
+  classifyCpscIngestion,
+  emptyOutcomeCounts,
+  sourceRunComplete,
+} from '../_shared/cpsc/sourceOutcome.ts';
+import {
+  assertForwardSourceWatermark,
+  isJsonObject,
+  SourceWatermarkError,
+  validateRetrievalRequest,
+} from '../_shared/recallSources/validation.ts';
 
 const jsonHeaders = { 'content-type': 'application/json; charset=utf-8' };
 const maxReportedErrors = 20;
@@ -72,6 +84,11 @@ Deno.serve(async (request) => {
 
   const adapter = getRecallSourceAdapter(input.sourceKey);
   if (!adapter) return json(404, { error: 'Recall source adapter is unavailable.' });
+  try {
+    validateRetrievalRequest(input, adapter.definition.retrieval);
+  } catch (error) {
+    return json(400, { error: error instanceof Error ? error.message : 'Invalid source window.' });
+  }
 
   let database: SupabaseClient | null = null;
   if (!input.dryRun) {
@@ -84,7 +101,21 @@ Deno.serve(async (request) => {
       if (error || !state || state.is_active !== true) {
         return json(409, { error: 'Recall source is not active for production ingestion.' });
       }
-    } catch {
+      assertForwardSourceWatermark(
+        state.watermark,
+        adapter.definition.retrieval.watermarkKind,
+        input.endDate,
+      );
+    } catch (error) {
+      if (error instanceof SourceWatermarkError) {
+        return json(409, {
+          code: error.code,
+          error:
+            error.code === 'watermark_regression'
+              ? 'Source watermark cannot move backward.'
+              : 'Source watermark was rejected.',
+        });
+      }
       return json(500, { error: 'Recall source activation could not be verified.' });
     }
   }
@@ -119,8 +150,18 @@ Deno.serve(async (request) => {
     updated: 0,
     unchanged: 0,
     rejected: 0,
+    // Phase 16.16A: durable CPSC holds, reported but never counted as rejections.
+    quarantined: 0,
+    unresolved: 0,
+    outcomes: emptyOutcomeCounts(),
     scopeCount: 0,
     errors: [] as Array<{ externalId: string | null; reason: string }>,
+    quarantines: [] as Array<{
+      externalId: string | null;
+      observationId: string;
+      decisionClass: string;
+      replayed: boolean;
+    }>,
   };
   const notices = [];
   const affectedRecallIds: string[] = [];
@@ -133,6 +174,34 @@ Deno.serve(async (request) => {
       notices.push(notice);
       stats.scopeCount += notice.scopes.length;
       if (!database) continue;
+
+      if (input.sourceKey === 'cpsc') {
+        const outcome = await ingestCpscRecallIdentity(database, notice);
+        const rowOutcome = classifyCpscIngestion(outcome);
+        stats.outcomes[rowOutcome] += 1;
+        if (outcome.status === 'quarantined') {
+          stats.quarantined += 1;
+          if (
+            stats.quarantines.length < maxReportedErrors &&
+            outcome.observation.status === 'quarantined'
+          ) {
+            stats.quarantines.push({
+              externalId,
+              observationId: outcome.observation.observationId,
+              decisionClass: outcome.observation.decisionClass,
+              replayed: outcome.observation.replayed,
+            });
+          }
+          continue;
+        }
+        if (outcome.status === 'inserted') {
+          stats.inserted += 1;
+          affectedRecallIds.push(outcome.noticeId);
+        } else {
+          stats.unchanged += 1;
+        }
+        continue;
+      }
 
       const { data, error } = await database.rpc('ingest_authoritative_recall', {
         p_source_key: input.sourceKey,
@@ -152,6 +221,7 @@ Deno.serve(async (request) => {
         throw new Error('database persistence rejected the record');
       }
       stats[data as 'inserted' | 'updated' | 'unchanged'] += 1;
+      stats.outcomes[data === 'unchanged' ? 'unchanged' : 'processed'] += 1;
       if (data === 'inserted' || data === 'updated') {
         const { data: noticeId, error: identityError } = await database.rpc(
           'get_recall_notice_id',
@@ -164,6 +234,7 @@ Deno.serve(async (request) => {
       }
     } catch (error) {
       stats.rejected += 1;
+      stats.outcomes.failed += 1;
       if (stats.errors.length < maxReportedErrors) {
         stats.errors.push({
           externalId,
@@ -174,7 +245,10 @@ Deno.serve(async (request) => {
   }
 
   if (database) {
-    const complete = stats.rejected === 0;
+    // Success (and so a watermark advance) requires every fetched row to be
+    // accounted for and none to have failed. The database independently refuses
+    // a CPSC watermark advance while any quarantine lacks a retained payload.
+    const complete = sourceRunComplete(stats.fetched, stats.outcomes);
     const { error } = await database.rpc('record_recall_source_sync_result', {
       p_source_key: input.sourceKey,
       p_status: complete ? 'success' : 'failed',
@@ -182,7 +256,19 @@ Deno.serve(async (request) => {
       p_error_code: complete ? null : 'record_rejected',
       p_metrics: stats,
     });
-    if (error) return json(500, { error: 'Source sync state persistence failed.' });
+    if (error) {
+      const watermarkCode = classifySourceWatermarkDbError(error);
+      if (watermarkCode) {
+        return json(409, {
+          code: watermarkCode,
+          error:
+            watermarkCode === 'watermark_regression'
+              ? 'Source watermark cannot move backward.'
+              : 'Source watermark was rejected.',
+        });
+      }
+      return json(500, { error: 'Source sync state persistence failed.' });
+    }
   }
 
   return json(200, {

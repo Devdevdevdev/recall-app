@@ -1,0 +1,358 @@
+{
+  "version": "phase_16_2_authoritative_structure_probe_v1",
+  "status": "research_probe_not_holdout",
+  "families": [
+    {
+      "familyId": "cpsc-25-311-bowflex",
+      "authority": "CPSC",
+      "externalId": "25-311",
+      "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+      "sourceStructure": "Model Number | Serial Number Range table",
+      "scopeCount": 3,
+      "associationCount": 3,
+      "notes": "The official table binds each model row to one or more serial ranges. The probe uses three representative row/range associations, not the full recall inventory.",
+      "recall": {
+        "recallNoticeId": "cpsc-25-311",
+        "source": {
+          "authority": "CPSC",
+          "externalId": "25-311",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc"
+        },
+        "title": "BowFlex Adjustable Dumbbells",
+        "description": null,
+        "hazard": null,
+        "remedy": null,
+        "recallDate": "2025-06-05",
+        "scopes": [
+          {
+            "productName": "BowFlex 552 Adjustable Dumbbells",
+            "criteria": {
+              "semantics": "all_of",
+              "criteria": [
+                {
+                  "id": "bowflex-552-model-a",
+                  "kind": "model_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "552",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                    "sourceField": "Recall Details.Description.Model Number row 552",
+                    "normalizationRule": "model_row"
+                  }
+                },
+                {
+                  "id": "bowflex-552-serial-a",
+                  "kind": "serial_number",
+                  "operator": "range",
+                  "required": true,
+                  "range": { "from": "00182M243902233", "to": "00182M243902592" },
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                    "sourceField": "Recall Details.Description.Serial Number Range row 552 range 1",
+                    "normalizationRule": "fixed_width_range"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "bowflex-552-range-a",
+                "criterionIds": ["bowflex-552-model-a", "bowflex-552-serial-a"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                  "sourceField": "Recall Details.Description.Model Number | Serial Number Range row 552 range 1",
+                  "normalizationRule": "table_row_association"
+                }
+              }
+            ]
+          },
+          {
+            "productName": "BowFlex 552 Adjustable Dumbbells",
+            "criteria": {
+              "semantics": "all_of",
+              "criteria": [
+                {
+                  "id": "bowflex-552-model-b",
+                  "kind": "model_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "552",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                    "sourceField": "Recall Details.Description.Model Number row 552",
+                    "normalizationRule": "model_row"
+                  }
+                },
+                {
+                  "id": "bowflex-552-serial-b",
+                  "kind": "serial_number",
+                  "operator": "range",
+                  "required": true,
+                  "range": { "from": "X00748MAG233003670", "to": "X00748MAG233003672" },
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                    "sourceField": "Recall Details.Description.Serial Number Range row 552 range 12",
+                    "normalizationRule": "fixed_width_range"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "bowflex-552-range-b",
+                "criterionIds": ["bowflex-552-model-b", "bowflex-552-serial-b"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                  "sourceField": "Recall Details.Description.Model Number | Serial Number Range row 552 range 12",
+                  "normalizationRule": "table_row_association"
+                }
+              }
+            ]
+          },
+          {
+            "productName": "BowFlex 1090 Adjustable Dumbbells",
+            "criteria": {
+              "semantics": "all_of",
+              "criteria": [
+                {
+                  "id": "bowflex-1090-model",
+                  "kind": "model_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "1090",
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                    "sourceField": "Recall Details.Description.Model Number row 1090",
+                    "normalizationRule": "model_row"
+                  }
+                },
+                {
+                  "id": "bowflex-1090-serial",
+                  "kind": "serial_number",
+                  "operator": "range",
+                  "required": true,
+                  "range": { "from": "4551MAG21452813", "to": "4551MAG23350381" },
+                  "provenance": {
+                    "authority": "CPSC",
+                    "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                    "sourceField": "Recall Details.Description.Serial Number Range row 1090 range 1",
+                    "normalizationRule": "fixed_width_range"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "bowflex-1090-range",
+                "criterionIds": ["bowflex-1090-model", "bowflex-1090-serial"],
+                "provenance": {
+                  "authority": "CPSC",
+                  "officialUrl": "https://www.cpsc.gov/Recalls/2025/Johnson-Health-Tech-Trading-Recalls-BowFlex-Adjustable-Dumbbells-Due-to-Impact-Hazard-Including-3-7-Million-Sold-by-Nautilus-Inc",
+                  "sourceField": "Recall Details.Description.Model Number | Serial Number Range row 1090 range 1",
+                  "normalizationRule": "table_row_association"
+                }
+              }
+            ]
+          }
+        ],
+        "rawEvidence": null
+      }
+    },
+    {
+      "familyId": "hc-ra-82295-omnitrope",
+      "authority": "Health Canada",
+      "externalId": "RA-82295",
+      "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+      "sourceStructure": "Product | DIN | Lot | UPC | Expiry table",
+      "scopeCount": 2,
+      "associationCount": 2,
+      "notes": "The two rows share product and DIN but bind different package UPCs to different lots.",
+      "recall": {
+        "recallNoticeId": "hc-ra-82295",
+        "source": {
+          "authority": "Health Canada",
+          "externalId": "RA-82295",
+          "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges"
+        },
+        "title": "Two lots of Omnitrope injectable human growth hormone",
+        "description": null,
+        "hazard": null,
+        "remedy": null,
+        "recallDate": "2026-07-08",
+        "scopes": [
+          {
+            "productName": "Omnitrope 5 mg/1.5 mL box of 1",
+            "criteria": {
+              "semantics": "all_of",
+              "criteria": [
+                {
+                  "id": "omnitrope-upc-1",
+                  "kind": "gtin",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "057513215742",
+                  "provenance": {
+                    "authority": "Health Canada",
+                    "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+                    "sourceField": "Affected products row box of 1.UPC",
+                    "normalizationRule": "gtin"
+                  }
+                },
+                {
+                  "id": "omnitrope-lot-1",
+                  "kind": "lot_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "PR7350",
+                  "provenance": {
+                    "authority": "Health Canada",
+                    "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+                    "sourceField": "Affected products row box of 1.Lot",
+                    "normalizationRule": "identifier"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "omnitrope-box-1",
+                "criterionIds": ["omnitrope-upc-1", "omnitrope-lot-1"],
+                "provenance": {
+                  "authority": "Health Canada",
+                  "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+                  "sourceField": "Affected products row box of 1",
+                  "normalizationRule": "table_row_association"
+                }
+              }
+            ]
+          },
+          {
+            "productName": "Omnitrope 5 mg/1.5 mL box of 5",
+            "criteria": {
+              "semantics": "all_of",
+              "criteria": [
+                {
+                  "id": "omnitrope-upc-5",
+                  "kind": "gtin",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "057513215759",
+                  "provenance": {
+                    "authority": "Health Canada",
+                    "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+                    "sourceField": "Affected products row box of 5.UPC",
+                    "normalizationRule": "gtin"
+                  }
+                },
+                {
+                  "id": "omnitrope-lot-5",
+                  "kind": "lot_number",
+                  "operator": "equals",
+                  "required": true,
+                  "value": "PR7351",
+                  "provenance": {
+                    "authority": "Health Canada",
+                    "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+                    "sourceField": "Affected products row box of 5.Lot",
+                    "normalizationRule": "identifier"
+                  }
+                }
+              ]
+            },
+            "associations": [
+              {
+                "id": "omnitrope-box-5",
+                "criterionIds": ["omnitrope-upc-5", "omnitrope-lot-5"],
+                "provenance": {
+                  "authority": "Health Canada",
+                  "officialUrl": "https://recalls-rappels.canada.ca/en/alert-recall/two-lots-omnitrope-injectable-human-growth-hormone-recalled-due-cracked-cartridges",
+                  "sourceField": "Affected products row box of 5",
+                  "normalizationRule": "table_row_association"
+                }
+              }
+            ]
+          }
+        ],
+        "rawEvidence": null
+      }
+    }
+  ],
+  "cases": [
+    {
+      "caseId": "probe-bowflex-552-range-a",
+      "familyId": "cpsc-25-311-bowflex",
+      "expectedProbeDecision": "confirmed",
+      "ownedEvidence": {
+        "productName": "BowFlex 552 Adjustable Dumbbells",
+        "brand": "BowFlex",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "552",
+        "serialNumber": "00182M243902300",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      }
+    },
+    {
+      "caseId": "probe-bowflex-overlap-none",
+      "familyId": "cpsc-25-311-bowflex",
+      "expectedProbeDecision": "needs_review",
+      "ownedEvidence": {
+        "productName": "BowFlex 552 Adjustable Dumbbells",
+        "brand": "BowFlex",
+        "category": null,
+        "gtin": null,
+        "modelNumber": "552",
+        "serialNumber": "00182M243902999",
+        "lotNumber": null,
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      }
+    },
+    {
+      "caseId": "probe-omnitrope-box-1",
+      "familyId": "hc-ra-82295-omnitrope",
+      "expectedProbeDecision": "confirmed",
+      "ownedEvidence": {
+        "productName": "Omnitrope 5 mg/1.5 mL box of 1",
+        "brand": "Omnitrope",
+        "category": null,
+        "gtin": "057513215742",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "PR7350",
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      }
+    },
+    {
+      "caseId": "probe-omnitrope-cross-row",
+      "familyId": "hc-ra-82295-omnitrope",
+      "expectedProbeDecision": "needs_review",
+      "ownedEvidence": {
+        "productName": "Omnitrope 5 mg/1.5 mL",
+        "brand": "Omnitrope",
+        "category": null,
+        "gtin": "057513215742",
+        "modelNumber": null,
+        "serialNumber": null,
+        "lotNumber": "PR7351",
+        "purchaseDate": null,
+        "identificationMethod": "controlled_fixture",
+        "attributes": []
+      }
+    }
+  ]
+}

@@ -50,6 +50,9 @@ export type OwnedProductRow = {
   lot_number: string | null;
   purchase_date: string | null;
   identification_method: string | null;
+  safety_attributes?: Partial<
+    Record<import('../matching/typesV2.ts').ProductAttributeKey, string>
+  > | null;
   exact_rank?: number;
 };
 

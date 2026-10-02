@@ -286,7 +286,7 @@ test('both remote delivery entry points require the server-side kill switch', as
     'utf8',
   );
   const matchingSource = await readFile(
-    new URL('../supabase/functions/process-recall-matches/index.ts', import.meta.url),
+    new URL('../supabase/functions/process-recall-matches/legacyRun.ts', import.meta.url),
     'utf8',
   );
   assert.match(sendSource, /RECALL_PUSH_DELIVERY_ENABLED/);

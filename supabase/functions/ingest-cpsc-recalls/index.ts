@@ -1,6 +1,8 @@
 import { createClient, type SupabaseClient } from 'npm:@supabase/supabase-js@2';
 
 import { cpscRecallSourceAdapter } from '../_shared/cpsc/adapter.ts';
+import { ingestCpscRecallIdentity } from '../_shared/cpsc/ingestionGate.ts';
+import { classifyCpscIngestion, emptyOutcomeCounts } from '../_shared/cpsc/sourceOutcome.ts';
 import type { CpscIngestionRequest, CpscIngestionStats } from '../_shared/cpsc/types.ts';
 import { isJsonObject, parseCpscIngestionRequest } from '../_shared/cpsc/validation.ts';
 
@@ -54,6 +56,9 @@ function emptyStats(fetched: number): CpscIngestionStats {
     updated: 0,
     unchanged: 0,
     rejected: 0,
+    quarantined: 0,
+    unresolved: 0,
+    outcomes: emptyOutcomeCounts(),
     scopeCount: 0,
     errors: [],
     examples: [],
@@ -132,40 +137,25 @@ Deno.serve(async (request) => {
         continue;
       }
 
-      const { data, error } = await database.rpc('ingest_cpsc_recall', {
-        p_external_id: mapped.externalId,
-        p_title: mapped.title,
-        p_description: mapped.description,
-        p_hazard: mapped.hazard,
-        p_remedy: mapped.remedy,
-        p_recall_date: mapped.recallDate,
-        p_official_url: mapped.officialUrl,
-        p_retrieved_at: new Date().toISOString(),
-        p_raw_payload: mapped.rawPayload,
-        p_scopes: mapped.scopes,
-      });
-      if (error || !['inserted', 'updated', 'unchanged'].includes(String(data))) {
-        throw new Error('database persistence rejected the record');
+      const outcome = await ingestCpscRecallIdentity(database, mapped);
+      // Phase 16.16A: a durably retained hold is an outcome, not a rejection.
+      const rowOutcome = classifyCpscIngestion(outcome);
+      stats.outcomes[rowOutcome] += 1;
+      if (outcome.status === 'quarantined') {
+        stats.quarantined += 1;
+        continue;
       }
-      if (data === 'inserted') {
+      // Only a new canonical identity creates a notice. An existing notice is never
+      // rewritten here; its revision is recorded as lineage for later review.
+      if (outcome.status === 'inserted') {
         stats.inserted += 1;
-      } else if (data === 'updated') {
-        stats.updated += 1;
+        affectedRecallIds.push(outcome.noticeId);
       } else {
         stats.unchanged += 1;
       }
-      if (data === 'inserted' || data === 'updated') {
-        const { data: recallNoticeId, error: identityError } = await database.rpc(
-          'get_cpsc_recall_notice_id',
-          { p_external_id: mapped.externalId },
-        );
-        if (identityError || typeof recallNoticeId !== 'string') {
-          throw new Error('affected recall identity lookup failed');
-        }
-        affectedRecallIds.push(recallNoticeId);
-      }
     } catch (error) {
       stats.rejected += 1;
+      stats.outcomes.failed += 1;
       if (stats.errors.length < maxReportedErrors) {
         stats.errors.push({
           externalId: stableId,

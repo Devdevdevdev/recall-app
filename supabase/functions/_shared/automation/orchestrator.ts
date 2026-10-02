@@ -3,6 +3,8 @@ import type {
   AutomationRunRequest,
   AutomationRunResult,
   MatchingSummary,
+  UnresolvedMatchingReason,
+  UnresolvedMatchingRecall,
 } from './types.ts';
 
 function errorCode(error: unknown): string {
@@ -18,7 +20,75 @@ function errorCode(error: unknown): string {
 }
 
 function incompleteMatching(summary: MatchingSummary): boolean {
-  return summary.failures > 0 || summary.providerFailures > 0 || summary.limitsReached > 0;
+  return (
+    summary.failures > 0 ||
+    summary.providerFailures > 0 ||
+    summary.limitsReached > 0 ||
+    (summary.staleSkipped ?? 0) > 0 ||
+    (summary.busySkipped ?? 0) > 0
+  );
+}
+
+// Partitions the requested recalls. Only a recall the matcher reports as
+// resolved leaves the pending set; anything unaccounted for stays pending.
+// Without per-recall data (a pre-16.33 matcher) any incompleteness keeps the
+// whole batch pending, as Phase 12 did, but now including stale and busy pairs.
+function partitionMatching(
+  requested: readonly string[],
+  summary: MatchingSummary,
+): { resolved: string[]; unresolved: UnresolvedMatchingRecall[] } {
+  const incomplete = incompleteMatching(summary);
+  if (!summary.resolvedRecallIds || !summary.unresolvedRecalls) {
+    const reason: UnresolvedMatchingReason =
+      summary.providerFailures > 0
+        ? 'provider_failure'
+        : summary.failures > 0
+          ? 'failure'
+          : summary.limitsReached > 0
+            ? 'limit'
+            : (summary.staleSkipped ?? 0) > 0
+              ? 'stale'
+              : 'busy';
+    return incomplete
+      ? {
+          resolved: [],
+          unresolved: requested.map((recallNoticeId) => ({ recallNoticeId, reason })),
+        }
+      : { resolved: [...requested], unresolved: [] };
+  }
+  const reported = new Map(summary.unresolvedRecalls.map((item) => [item.recallNoticeId, item]));
+  const resolvedSet = new Set(summary.resolvedRecallIds);
+  const resolved: string[] = [];
+  const unresolved: UnresolvedMatchingRecall[] = [];
+  for (const recallNoticeId of requested) {
+    const item = reported.get(recallNoticeId);
+    if (item) unresolved.push({ recallNoticeId, reason: item.reason });
+    else if (resolvedSet.has(recallNoticeId)) resolved.push(recallNoticeId);
+    else unresolved.push({ recallNoticeId, reason: 'inconsistent_summary' });
+  }
+  // Counters that report unfinished work while every recall claims to be
+  // resolved are contradictory; fail closed.
+  if (incomplete && unresolved.length === 0) {
+    return {
+      resolved: [],
+      unresolved: requested.map((recallNoticeId) => ({
+        recallNoticeId,
+        reason: 'inconsistent_summary' as const,
+      })),
+    };
+  }
+  return { resolved, unresolved };
+}
+
+function matchingErrorCode(
+  summary: MatchingSummary,
+  unresolved: readonly UnresolvedMatchingRecall[],
+): string {
+  if (summary.providerFailures > 0) return 'provider_failure';
+  if (unresolved.every((item) => item.reason === 'stale' || item.reason === 'busy')) {
+    return 'matching_retry_pending';
+  }
+  return 'matching_incomplete';
 }
 
 export async function runRecallAutomation(
@@ -131,22 +201,23 @@ export async function runRecallAutomation(
         maxCandidatePairs: claim.maxCandidatePairs,
         maxAiEscalations: claim.aiEnabled ? claim.maxAiEscalations : 0,
       });
-      const complete = !incompleteMatching(matching);
+      const { resolved, unresolved } = partitionMatching(pendingRecallIds, matching);
       await dependencies.store.recordMatching({
         runId: claim.runId,
         leaseToken: claim.leaseToken,
-        recallNoticeIds: pendingRecallIds,
-        complete,
+        resolvedRecallIds: resolved,
+        unresolvedRecalls: unresolved,
         summary: matching,
       });
-      if (!complete) {
+      if (unresolved.length > 0) {
+        const code = matchingErrorCode(matching, unresolved);
         await dependencies.store.completeRun({
           runId: claim.runId,
           leaseToken: claim.leaseToken,
           status: 'partial_success',
           push: null,
           errorStep: 'matching',
-          errorCode: matching.providerFailures > 0 ? 'provider_failure' : 'matching_incomplete',
+          errorCode: code,
         });
         return {
           ...base,
@@ -155,7 +226,7 @@ export async function runRecallAutomation(
           matching,
           push: null,
           errorStep: 'matching',
-          errorCode: matching.providerFailures > 0 ? 'provider_failure' : 'matching_incomplete',
+          errorCode: code,
         };
       }
     } catch (error) {

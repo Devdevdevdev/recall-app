@@ -59,16 +59,39 @@ function functionsRoot(): string {
   return `${url.origin}/functions/v1`;
 }
 
+const TICKET = /^[0-9a-f]{64}$/u;
+
+// Phase 16.33: the Cron tick sends a single-use database ticket, never the
+// static key. The run it authorizes is fixed by the database: trigger 'cron'
+// with the stored control limits; the request body is ignored.
+async function ticketAuthorized(ticket: string): Promise<boolean> {
+  if (!TICKET.test(ticket)) return false;
+  try {
+    const { data, error } = await privilegedClient().rpc('consume_recall_automation_ticket', {
+      p_ticket: ticket,
+    });
+    const grant = data as { accepted?: unknown; trigger?: unknown } | null;
+    return !error && grant?.accepted === true && grant.trigger === 'cron';
+  } catch {
+    return false;
+  }
+}
+
 Deno.serve(async (request) => {
   if (request.method !== 'POST') return json(405, { error: 'Only POST is allowed.' });
-  if (!authorized(request)) return json(401, { error: 'Unauthorized.' });
-
+  const ticket = request.headers.get('x-recall-automation-ticket');
   let input;
-  try {
-    const body = await request.text();
-    input = parseAutomationRunRequest(body ? JSON.parse(body) : null);
-  } catch (error) {
-    return json(400, { error: error instanceof Error ? error.message : 'Invalid request.' });
+  if (ticket !== null) {
+    if (!(await ticketAuthorized(ticket))) return json(401, { error: 'Unauthorized.' });
+    input = parseAutomationRunRequest({ trigger: 'cron' });
+  } else {
+    if (!authorized(request)) return json(401, { error: 'Unauthorized.' });
+    try {
+      const body = await request.text();
+      input = parseAutomationRunRequest(body ? JSON.parse(body) : null);
+    } catch (error) {
+      return json(400, { error: error instanceof Error ? error.message : 'Invalid request.' });
+    }
   }
 
   try {

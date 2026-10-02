@@ -265,7 +265,13 @@ test('matching failure, provider failure, and the AI hard cap fail closed withou
       calls.some(([name]) => name === 'push'),
       false,
     );
-    assert.equal(calls.find(([name]) => name === 'record-matching')?.[1].complete, false);
+    // Phase 16.33: the pending recall stays unresolved instead of a batch flag.
+    const recorded = calls.find(([name]) => name === 'record-matching')?.[1];
+    assert.deepEqual(recorded.resolvedRecallIds, []);
+    assert.deepEqual(
+      recorded.unresolvedRecalls.map((item) => item.recallNoticeId),
+      [recallId],
+    );
   }
 });
 
@@ -299,7 +305,9 @@ test('push failure is partial success and never rolls back completed matching', 
   assert.equal(result.status, 'partial_success');
   assert.equal(result.errorStep, 'push');
   assert.ok(calls.some(([name]) => name === 'record-matching'));
-  assert.equal(calls.find(([name]) => name === 'record-matching')?.[1].complete, true);
+  const recorded = calls.find(([name]) => name === 'record-matching')?.[1];
+  assert.deepEqual(recorded.resolvedRecallIds, [recallId]);
+  assert.deepEqual(recorded.unresolvedRecalls, []);
 });
 
 test('Phase 12 source keeps dedicated auth, Vault names, disabled controls, and no mobile secret', async () => {

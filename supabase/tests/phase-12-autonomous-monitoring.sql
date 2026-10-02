@@ -258,9 +258,10 @@ select extensions.is(
 );
 
 insert into public.recall_sources (
-  id, name, jurisdiction, base_url, is_authoritative, created_at, updated_at
+  id, source_key, name, jurisdiction, base_url, is_authoritative, created_at, updated_at
 ) values (
   '41000000-0000-4000-8000-000000000004',
+  'cpsc',
   'U.S. Consumer Product Safety Commission (CPSC)',
   'US',
   'https://www.cpsc.gov',
@@ -472,8 +473,8 @@ select extensions.is(
     from cron.job
     where jobname = 'recall-automation-every-6h'
   ),
-  1::bigint,
-  'exactly one production Cron job is installed'
+  0::bigint,
+  'local reset does not install a production Cron job without Vault secrets'
 );
 select extensions.is(
   (
@@ -481,8 +482,8 @@ select extensions.is(
     from cron.job
     where jobname = 'recall-automation-every-6h'
   ),
-  false,
-  'the installed production Cron job remains inactive'
+  null::boolean,
+  'local reset has no active production Cron job'
 );
 
 select * from extensions.finish();

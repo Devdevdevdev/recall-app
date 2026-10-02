@@ -46,7 +46,16 @@ export type RecallMatchingSummary = {
   providerFailures: number;
   limitsReached: number;
   usage: NullableUsage;
+  /** Recalls whose every candidate pair reached a final or unchanged state. */
+  resolvedRecallIds: string[];
+  /** Recalls with at least one pair that must be retried; never complete. */
+  unresolvedRecalls: UnresolvedRecall[];
 };
+
+export type UnresolvedRecallReason =
+  'stale' | 'busy' | 'failure' | 'provider_failure' | 'limit' | 'not_reached';
+
+export type UnresolvedRecall = { recallNoticeId: string; reason: UnresolvedRecallReason };
 
 export type RecallMatchingDependencies = {
   store: RecallMatchingStore;
@@ -76,6 +85,8 @@ function emptySummary(): RecallMatchingSummary {
     providerFailures: 0,
     limitsReached: 0,
     usage: { inputTokens: 0, outputTokens: 0, totalTokens: 0 },
+    resolvedRecallIds: [],
+    unresolvedRecalls: [],
   };
 }
 
@@ -150,6 +161,15 @@ export async function processRecallMatches(
   let evaluator: GuardedEvaluator | null = null;
   let providerUnavailable = false;
   let nebiusCalls = 0;
+  // Per-recall resolution. A recall is resolved only after its candidate list
+  // was fully enumerated and no pair was left stale, busy, failed or capped.
+  const unresolved = new Map<string, UnresolvedRecallReason>();
+  const enumerated = new Set<string>();
+  const seen = new Set<string>();
+  let listingExhausted = false;
+  const markUnresolved = (recallId: string, reason: UnresolvedRecallReason) => {
+    if (!unresolved.has(recallId)) unresolved.set(recallId, reason);
+  };
 
   recallLoop: while (
     summary.recallsProcessed < limits.maxRecalls &&
@@ -161,11 +181,15 @@ export async function processRecallMatches(
       limit: recallLimit,
       recallNoticeIds: limits.recallNoticeIds ?? null,
     });
-    if (!recallRows.length) break;
+    if (!recallRows.length) {
+      listingExhausted = true;
+      break;
+    }
 
     for (const recallRow of recallRows.slice(0, recallLimit)) {
       summary.recallsProcessed += 1;
       afterRecallId = recallRow.recall_notice_id;
+      seen.add(recallRow.recall_notice_id);
       let afterProductId: string | null = null;
       let afterExactRank: number | null = null;
       const officialRecall = projectAuthoritativeRecall(recallRow);
@@ -185,7 +209,10 @@ export async function processRecallMatches(
           afterProductId,
           limit: productLimit,
         });
-        if (!productRows.length) break;
+        if (!productRows.length) {
+          enumerated.add(recallRow.recall_notice_id);
+          break;
+        }
 
         for (const productRow of productRows.slice(0, productLimit)) {
           afterProductId = productRow.owned_product_id;
@@ -220,8 +247,14 @@ export async function processRecallMatches(
             });
             if (claim.status !== 'claimed') {
               if (claim.status === 'unchanged') summary.unchangedSkipped += 1;
-              else if (claim.status === 'busy') summary.busySkipped += 1;
-              else summary.staleSkipped += 1;
+              else if (claim.status === 'busy') {
+                summary.busySkipped += 1;
+                markUnresolved(recallRow.recall_notice_id, 'busy');
+              } else {
+                summary.staleSkipped += 1;
+                // A vanished product or recall leaves no work; a changed one does.
+                if (claim.status === 'stale') markUnresolved(recallRow.recall_notice_id, 'stale');
+              }
               continue;
             }
 
@@ -238,8 +271,10 @@ export async function processRecallMatches(
               summary.deterministicResolved += 1;
             } else if (nebiusCalls >= limits.maxNebiusCalls) {
               summary.limitsReached += 1;
+              markUnresolved(recallRow.recall_notice_id, 'limit');
             } else if (providerUnavailable) {
               summary.failures += 1;
+              markUnresolved(recallRow.recall_notice_id, 'failure');
             } else {
               try {
                 evaluator ??= dependencies.createNemotronEvaluator();
@@ -275,6 +310,7 @@ export async function processRecallMatches(
                 if (result.trace.aiTechnicalFailure) {
                   summary.failures += 1;
                   summary.providerFailures += 1;
+                  markUnresolved(recallRow.recall_notice_id, 'provider_failure');
                   if (
                     ['authentication', 'authorization', 'invalid_request'].includes(
                       result.trace.aiTechnicalFailure,
@@ -287,6 +323,7 @@ export async function processRecallMatches(
                 providerUnavailable = true;
                 summary.failures += 1;
                 summary.providerFailures += 1;
+                markUnresolved(recallRow.recall_notice_id, 'provider_failure');
               }
             }
 
@@ -308,6 +345,9 @@ export async function processRecallMatches(
             });
             if (finalization.status === 'stale' || finalization.status === 'missing') {
               summary.staleSkipped += 1;
+              if (finalization.status === 'stale') {
+                markUnresolved(recallRow.recall_notice_id, 'stale');
+              }
               continue;
             }
             if (evaluation.decision === 'confirmed') summary.confirmed += 1;
@@ -317,6 +357,7 @@ export async function processRecallMatches(
             else if (finalization.alertOutcome === 'existing') summary.alertsExisting += 1;
           } catch {
             summary.failures += 1;
+            markUnresolved(recallRow.recall_notice_id, 'failure');
             dependencies.logger?.error('recall_matching_pair_failed', {
               failures: summary.failures,
             });
@@ -324,16 +365,40 @@ export async function processRecallMatches(
 
           if (summary.candidatePairs >= limits.maxCandidatePairs) {
             summary.limitsReached += 1;
+            markUnresolved(recallRow.recall_notice_id, 'limit');
             break recallLoop;
           }
         }
 
-        if (productRows.length < productLimit) break;
+        if (productRows.length < productLimit) {
+          enumerated.add(recallRow.recall_notice_id);
+          break;
+        }
+      }
+      if (!enumerated.has(recallRow.recall_notice_id)) {
+        markUnresolved(recallRow.recall_notice_id, 'limit');
       }
 
       if (summary.recallsProcessed >= limits.maxRecalls) break recallLoop;
     }
-    if (recallRows.length < recallLimit) break;
+    if (recallRows.length < recallLimit) {
+      listingExhausted = true;
+      break;
+    }
+  }
+
+  for (const recallId of seen) {
+    if (!unresolved.has(recallId)) summary.resolvedRecallIds.push(recallId);
+  }
+  // A requested recall the listing never returned is no longer matchable only
+  // when the listing ran to its end; otherwise it was simply not reached.
+  for (const recallId of limits.recallNoticeIds ?? []) {
+    if (seen.has(recallId)) continue;
+    if (listingExhausted) summary.resolvedRecallIds.push(recallId);
+    else markUnresolved(recallId, 'not_reached');
+  }
+  for (const [recallNoticeId, reason] of unresolved) {
+    summary.unresolvedRecalls.push({ recallNoticeId, reason });
   }
 
   summary.duration = Math.max(0, now() - startedAt);

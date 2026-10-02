@@ -298,9 +298,10 @@ select extensions.is(
 select extensions.throws_ok(
   $$
     insert into public.recall_sources (
-      name, jurisdiction, base_url, is_authoritative, source_language_code
+      source_key, name, jurisdiction, base_url, is_authoritative, source_language_code
     ) values (
-      'Invalid language source', 'ZZ', 'https://invalid.example', false, 'EN'
+      'invalid_language_fixture', 'Invalid language source', 'ZZ',
+      'https://invalid.example', false, 'EN'
     )
   $$,
   '23514',
@@ -528,6 +529,10 @@ values (
   'manual', false, '2099-01-13 11:55:00+00', '2099-01-13 12:00:00+00', 'success',
   100, 500, 5, 25
 );
+select public.record_recall_source_sync_result(
+  'cpsc', 'success', null, null, '{}'::jsonb,
+  '2099-01-13 12:00:00+00'
+);
 
 set local role authenticated;
 set local request.jwt.claim.sub = '13000000-0000-4000-8000-000000000001';
@@ -661,8 +666,8 @@ select extensions.is(
     from cron.job
     where jobname = 'recall-automation-every-6h'
   ),
-  1::bigint,
-  'Phase 12 still has exactly one production Cron job'
+  0::bigint,
+  'local reset leaves production Cron unscheduled without Vault secrets'
 );
 select extensions.is(
   (
@@ -670,8 +675,8 @@ select extensions.is(
     from cron.job
     where jobname = 'recall-automation-every-6h'
   ),
-  '17 */6 * * *',
-  'Phase 12 Cron schedule remains unchanged'
+  null::text,
+  'local reset exposes no production Cron schedule without Vault secrets'
 );
 
 select * from extensions.finish();

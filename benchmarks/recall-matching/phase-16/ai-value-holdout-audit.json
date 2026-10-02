@@ -1,0 +1,100 @@
+{
+  "generatedAt": "2026-09-23T00:00:00.000Z",
+  "datasetVersion": "phase_16_ai_value_holdout_proposed_v1",
+  "status": "proposed_not_frozen",
+  "labelSource": "controlled_authoritative_evidence",
+  "caseCount": 12,
+  "recallFamilyCount": 4,
+  "classDistribution": { "match": 4, "no_match": 4, "needs_review": 4 },
+  "familyOverlapCount": 0,
+  "familyOverlaps": [],
+  "historicalCorporaChecked": [
+    "benchmarks/recall-matching/cases.v1.json",
+    "benchmarks/recall-matching/phase-9-1/development.v1.json",
+    "benchmarks/recall-matching/phase-9-1/holdout.v1.json",
+    "benchmarks/recall-matching/phase-15/sources.normalized.json"
+  ],
+  "missingProvenanceCount": 0,
+  "allDeterministicV2NeedsReview": true,
+  "futureAiEligibleCount": 12,
+  "estimatedPaidRun": {
+    "basis": "Phase 15 average: 76 requests, 245451 tokens, $0.1201 for 66 eligible cases",
+    "requests": 14,
+    "tokens": 44627,
+    "costUsd": 0.0218
+  },
+  "caseChecks": [
+    {
+      "caseId": "p16-ai-thermos-match",
+      "expectedDecision": "match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "matched"]
+    },
+    {
+      "caseId": "p16-ai-thermos-no-match",
+      "expectedDecision": "no_match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "conflicting"]
+    },
+    {
+      "caseId": "p16-ai-thermos-review",
+      "expectedDecision": "needs_review",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "missing"]
+    },
+    {
+      "caseId": "p16-ai-orb-match",
+      "expectedDecision": "match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "matched"]
+    },
+    {
+      "caseId": "p16-ai-orb-no-match",
+      "expectedDecision": "no_match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "conflicting"]
+    },
+    {
+      "caseId": "p16-ai-orb-review",
+      "expectedDecision": "needs_review",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "missing"]
+    },
+    {
+      "caseId": "p16-ai-dresser-match",
+      "expectedDecision": "match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "matched"]
+    },
+    {
+      "caseId": "p16-ai-dresser-no-match",
+      "expectedDecision": "no_match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "conflicting"]
+    },
+    {
+      "caseId": "p16-ai-dresser-review",
+      "expectedDecision": "needs_review",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched", "missing"]
+    },
+    {
+      "caseId": "p16-ai-fire-truck-match",
+      "expectedDecision": "match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["matched"]
+    },
+    {
+      "caseId": "p16-ai-fire-truck-no-match",
+      "expectedDecision": "no_match",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["conflicting"]
+    },
+    {
+      "caseId": "p16-ai-fire-truck-review",
+      "expectedDecision": "needs_review",
+      "deterministicV2Decision": "needs_review",
+      "requiredOutcomes": ["missing"]
+    }
+  ]
+}

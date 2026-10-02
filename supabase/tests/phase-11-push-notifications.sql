@@ -201,9 +201,10 @@ set local request.jwt.claim.sub = '22000000-0000-4000-8000-000000000002';
 select * from public.register_push_device('ExpoPushToken[user_b_primary]', 'android');
 reset role;
 
-insert into public.recall_sources (id, name, jurisdiction, base_url, is_authoritative)
+insert into public.recall_sources (id, source_key, name, jurisdiction, base_url, is_authoritative)
 values (
   '33000000-0000-4000-8000-000000000003',
+  'phase11_fixture',
   'Phase 11 CPSC fixture',
   'US',
   'https://www.cpsc.gov',

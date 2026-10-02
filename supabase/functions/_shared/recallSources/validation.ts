@@ -29,6 +29,41 @@ export function dateOnlyFromSource(value: unknown): string | null {
     : dateOnly;
 }
 
+export class SourceWatermarkError extends Error {
+  readonly code: 'watermark_regression' | 'watermark_invalid';
+
+  constructor(code: 'watermark_regression' | 'watermark_invalid', message: string) {
+    super(message);
+    this.code = code;
+  }
+}
+
+export function assertForwardSourceWatermark(
+  previous: unknown,
+  expectedKind: string,
+  requestedEndDate: string,
+): void {
+  if (previous === null) return;
+  if (
+    !isJsonObject(previous) ||
+    Object.keys(previous).length !== 2 ||
+    previous.kind !== expectedKind ||
+    typeof previous.value !== 'string' ||
+    dateOnlyFromSource(previous.value) !== previous.value
+  ) {
+    throw new SourceWatermarkError(
+      'watermark_invalid',
+      'Existing source watermark is malformed or has an unexpected kind.',
+    );
+  }
+  if (requestedEndDate < previous.value) {
+    throw new SourceWatermarkError(
+      'watermark_regression',
+      `Source watermark cannot move backward from ${previous.value} to ${requestedEndDate}.`,
+    );
+  }
+}
+
 export function validateRetrievalRequest(
   request: RecallSourceRetrievalRequest,
   limits: { maximumWindowDays: number; maximumRecords: number },

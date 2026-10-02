@@ -1,0 +1,28 @@
+{
+  "matcherVersion": "deterministic_v2",
+  "schemaVersion": "2.0.0",
+  "frozenAt": "2026-09-23",
+  "implementationArtifacts": {
+    "supabase/functions/_shared/matching/typesV2.ts": "d289ef557a732f02c923f7075d643dd1ad79e17ad853460454ccdcb0c348c0ed",
+    "supabase/functions/_shared/matching/criterionEvaluatorV2.ts": "32c6110d66a60b48e48ba2275532ce395bf114a328d9a6cec7689b4eef5e450d",
+    "supabase/functions/_shared/matching/deterministicMatcherV2.ts": "5c397f58a02be37e1601de4f556cde1f58a39f622eb35de097a093e8f334bc46",
+    "supabase/functions/_shared/matching/guardedNemotronSchemaV2.ts": "e4d6dea53bc2bd64815fc71d3c3de5fc742d59d16957d138050d8429f9d37475",
+    "supabase/functions/_shared/matching/hybridGuardedMatcherV2.ts": "22660a99e08f77c6b9848adb77b231b17ac5e3111a0125831f0b96b576ec4da0",
+    "supabase/functions/_shared/matching/nemotronSafetyVerifierV2.ts": "debce31b106d918f559aa3879eddd152024ada689aac1e206f38c57829e39d94",
+    "supabase/functions/_shared/recallMatching/fingerprintV2.ts": "8fe816a6299e84b0436cdd1d72bf381070a7daaafaaec239ceb6083418bde940"
+  },
+  "benchmarkArtifacts": {
+    "benchmarks/recall-matching/phase-16/projection.ts": "0ac71f5152bee05a62c179598cffe59a0b76ca1a4aa4000cc6e4d7802dd2a9eb",
+    "benchmarks/recall-matching/phase-16/run-deterministic-v2.mjs": "0df9a5583988fdde9c733356d788125383f288458294339e64da808a3f0a31b2",
+    "benchmarks/recall-matching/phase-16/results/deterministic-v2-all.json": "be1961c323b5c9cd690ac1181804a9b289f8f1fda32d7d1a7335b7b8041e37c1",
+    "benchmarks/recall-matching/phase-16/results/decision-delta-v1-to-v2.json": "42e60d3739203fef642b3c2a2827a42a224ab7845a15d8f8efb70afeadae00d9"
+  },
+  "reviewArtifacts": {
+    "tests/phase-16-safety.test.mjs": "aa2fe3d10008fb1ef61090acc235c3582ef6bb45223343c913c0d87e855291e0",
+    "tests/phase-16-benchmark.test.mjs": "d17ccc44eec158a179c507f3db41f093c1b8b397e56f3b28463dffa8ed798251",
+    "tests/phase-16-database.test.mjs": "db1db46681463ef08f33dfbd5d2f20a614fe44d03642d25e6d401d65d209aead",
+    "supabase/migrations/20260920160000_phase_16_product_safety_evidence.sql": "ae0b79dc932d97336e0811d93caa9c4789a795a40f8afd381b052fea0d0711c8",
+    "supabase/migrations/20260923040130_phase_16_fix_immutable_safety_date_validation.sql": "07fdc8e46edafb33eba99b56ff61f1885667cc21fc4461483839f05e6ce494cd",
+    "supabase/tests/phase-16-product-safety-evidence.sql": "800ce8cd9c93a17b32c91b988625ff2d159b3b72662a756f11afc79fb30376ab"
+  }
+}

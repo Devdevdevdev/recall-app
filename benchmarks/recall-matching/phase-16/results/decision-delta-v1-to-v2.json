@@ -1,0 +1,510 @@
+[
+  {
+    "caseId": "p15-hol-27-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10986",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-27-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10986",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10986:rule-0:criterion-0",
+        "kind": "date_code",
+        "outcome": "conflicting",
+        "ownedValue": "2509",
+        "officialValue": "2510 | 2511 | 2512",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+          "sourceField": "attributes.dateCode",
+          "normalizationRule": "phase_15_frozen_scope_rule:one_of"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-29-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10978",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-29-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10978",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10978:rule-0:criterion-1",
+        "kind": "size",
+        "outcome": "conflicting",
+        "ownedValue": "S",
+        "officialValue": "M/L",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+          "sourceField": "attributes.size",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-29-4",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10978",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10978:rule-0:criterion-1",
+        "kind": "size",
+        "outcome": "conflicting",
+        "ownedValue": "S",
+        "officialValue": "M/L",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+          "sourceField": "attributes.size",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-30-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10966",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10966:rule-0:criterion-0",
+        "kind": "model_number",
+        "outcome": "conflicting",
+        "ownedValue": "TF450-R",
+        "officialValue": "TF450-C | TF450-E | TF450-X | TF450RC Edition",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+          "sourceField": "ownedProduct.modelNumber",
+          "normalizationRule": "phase_15_frozen_scope_rule:one_of"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-31-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10969",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-31-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10969",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10969:rule-0:criterion-2",
+        "kind": "manufacture_date",
+        "outcome": "conflicting",
+        "ownedValue": "2025-12-01",
+        "officialValue": "2025-11-01",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+          "sourceField": "attributes.manufactureMonth",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-31-4",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10969",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-38-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10859",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-38-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10859",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10859:rule-0:criterion-1",
+        "kind": "charging_port_type",
+        "outcome": "conflicting",
+        "ownedValue": "barrel",
+        "officialValue": "USB-C",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Greenworks-Tools-Recalls-24V-and-48V-Kobalt-Yard-Power-Tools-with-USB-C-Batteries-Due-to-Risk-of-Serious-Injury-from-Fire-Hazard",
+          "sourceField": "attributes.chargingPort",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-hol-38-4",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10859",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10859:rule-0:criterion-1",
+        "kind": "charging_port_type",
+        "outcome": "conflicting",
+        "ownedValue": "barrel",
+        "officialValue": "USB-C",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Greenworks-Tools-Recalls-24V-and-48V-Kobalt-Yard-Power-Tools-with-USB-C-Batteries-Due-to-Risk-of-Serious-Injury-from-Fire-Hazard",
+          "sourceField": "attributes.chargingPort",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-45-2",
+    "expected": "no_match",
+    "v1Decision": "match",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10855",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10855:rule-0:criterion-1",
+        "kind": "serial_number",
+        "outcome": "conflicting",
+        "ownedValue": "SQC200034979",
+        "officialValue": "SQC200034980..SQC202319171",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Biometric-Gun-Safes-Recalled-Due-to-Serious-Injury-Hazard-and-Risk-of-Death-Sold-Exclusively-on-Amazon-com-by-BBRKIN",
+          "sourceField": "ownedProduct.serialNumber",
+          "normalizationRule": "phase_15_frozen_scope_rule:fixed_width_range"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-45-3",
+    "expected": "needs_review",
+    "v1Decision": "match",
+    "v2Decision": "needs_review",
+    "recallFamily": "cpsc-family-10855",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10855:rule-0:criterion-1",
+        "kind": "serial_number",
+        "outcome": "missing",
+        "ownedValue": null,
+        "officialValue": "SQC200034980..SQC202319171",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Biometric-Gun-Safes-Recalled-Due-to-Serious-Injury-Hazard-and-Risk-of-Death-Sold-Exclusively-on-Amazon-com-by-BBRKIN",
+          "sourceField": "ownedProduct.serialNumber",
+          "normalizationRule": "phase_15_frozen_scope_rule:fixed_width_range"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-46-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10846",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10846:rule-0:criterion-1",
+        "kind": "lot_number",
+        "outcome": "conflicting",
+        "ownedValue": "202506002",
+        "officialValue": "202506001",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/AMASKY-Nursing-Pillows-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Suffocation-Violate-Mandatory-Standards-for-Nursing-Pillows-and-Infant-Support-Cushions-Sold-on-Amazon-by-Pretty-Life",
+          "sourceField": "ownedProduct.lotNumber",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-46-3",
+    "expected": "needs_review",
+    "v1Decision": "match",
+    "v2Decision": "needs_review",
+    "recallFamily": "cpsc-family-10846",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10846:rule-0:criterion-1",
+        "kind": "lot_number",
+        "outcome": "missing",
+        "ownedValue": null,
+        "officialValue": "202506001",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/AMASKY-Nursing-Pillows-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Suffocation-Violate-Mandatory-Standards-for-Nursing-Pillows-and-Infant-Support-Cushions-Sold-on-Amazon-by-Pretty-Life",
+          "sourceField": "ownedProduct.lotNumber",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-47-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10885",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-47-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10885",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10885:rule-0:criterion-1",
+        "kind": "manufacture_date",
+        "outcome": "conflicting",
+        "ownedValue": "2021-01-01",
+        "officialValue": "2018-12-01..2020-12-31",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Galanz-Americas-Recalls-Retro-Refrigerators-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported",
+          "sourceField": "attributes.manufactureMonth",
+          "normalizationRule": "phase_15_frozen_scope_rule:date_range"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-47-4",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10885",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10885:rule-0:criterion-1",
+        "kind": "manufacture_date",
+        "outcome": "conflicting",
+        "ownedValue": "2021-01-01",
+        "officialValue": "2018-12-01..2020-12-31",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Galanz-Americas-Recalls-Retro-Refrigerators-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards-One-Death-Reported",
+          "sourceField": "attributes.manufactureMonth",
+          "normalizationRule": "phase_15_frozen_scope_rule:date_range"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-48-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10864",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-48-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10864",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10864:rule-0:criterion-1",
+        "kind": "screw_state",
+        "outcome": "conflicting",
+        "ownedValue": "yes",
+        "officialValue": "no",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Currey-Company-Recalls-Nottaway-Chandeliers-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Hazard",
+          "sourceField": "attributes.visibleTopCapScrew",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-49-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10845",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-49-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10845",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10845:rule-0:criterion-1",
+        "kind": "battery_model",
+        "outcome": "conflicting",
+        "ownedValue": "ZR0097U3",
+        "officialValue": "ZR0097U2",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Rowenta-Recalls-Cordless-Vacuum-Cleaners-Due-to-Risk-of-Serious-Injury-from-fire-and-Burn-Hazards",
+          "sourceField": "attributes.batteryModel",
+          "normalizationRule": "phase_15_frozen_scope_rule:equals"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-49-4",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10845",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-50-1",
+    "expected": "match",
+    "v1Decision": "needs_review",
+    "v2Decision": "match",
+    "recallFamily": "cpsc-family-10851",
+    "safetyRule": "all_mandatory_criteria_satisfied",
+    "evidence": [],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-50-2",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10851",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10851:rule-0:criterion-1",
+        "kind": "production_date",
+        "outcome": "conflicting",
+        "ownedValue": "2026-05-19",
+        "officialValue": "2026-03-16..2026-05-18",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winco-Fireworks-International-Recalls-Unity-7-Shot-200-Gram-Aerial-Cake-Fireworks-Due-to-Risk-of-Serious-Injury-from-Explosion-and-Burn-Hazards",
+          "sourceField": "attributes.productionDate",
+          "normalizationRule": "phase_15_frozen_scope_rule:date_range"
+        }
+      }
+    ],
+    "outcome": "improved"
+  },
+  {
+    "caseId": "p15-str-50-4",
+    "expected": "no_match",
+    "v1Decision": "needs_review",
+    "v2Decision": "no_match",
+    "recallFamily": "cpsc-family-10851",
+    "safetyRule": "explicit_all_of_required_criterion_gate",
+    "evidence": [
+      {
+        "criterionId": "cpsc-family-10851:rule-0:criterion-1",
+        "kind": "production_date",
+        "outcome": "conflicting",
+        "ownedValue": "2026-05-19",
+        "officialValue": "2026-03-16..2026-05-18",
+        "provenance": {
+          "authority": "CPSC",
+          "officialUrl": "https://www.cpsc.gov/Recalls/2026/Winco-Fireworks-International-Recalls-Unity-7-Shot-200-Gram-Aerial-Cake-Fireworks-Due-to-Risk-of-Serious-Injury-from-Explosion-and-Burn-Hazards",
+          "sourceField": "attributes.productionDate",
+          "normalizationRule": "phase_15_frozen_scope_rule:date_range"
+        }
+      }
+    ],
+    "outcome": "improved"
+  }
+]

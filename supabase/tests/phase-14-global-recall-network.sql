@@ -7,6 +7,9 @@ create extension if not exists pgtap with schema extensions;
 
 select extensions.plan(52);
 
+-- Local reset has no CPSC row until the first ingestion; create that source fixture.
+select public.ensure_cpsc_recall_source();
+
 select extensions.has_column(
   'public', 'owned_products', 'scan_date', 'owned products have a scan date'
 );

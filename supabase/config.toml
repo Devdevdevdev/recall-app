@@ -19,6 +19,10 @@ verify_jwt = false
 [functions.process-recall-matches]
 verify_jwt = false
 
+# Explicitly gated manual cohort endpoint. No Cron job targets this function.
+[functions.process-recall-matches-v2-cohort]
+verify_jwt = false
+
 # Cron and secure manual verification share this endpoint. Its handler requires the dedicated
 # RECALL_AUTOMATION_KEY; mobile JWTs and the Phase 7-11 administrative keys are not substitutes.
 [functions.run-recall-automation]

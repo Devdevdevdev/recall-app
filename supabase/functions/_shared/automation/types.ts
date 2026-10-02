@@ -41,6 +41,20 @@ export type IngestionSummary = {
   }[];
 };
 
+export type UnresolvedMatchingReason =
+  | 'stale'
+  | 'busy'
+  | 'failure'
+  | 'provider_failure'
+  | 'limit'
+  | 'not_reached'
+  | 'inconsistent_summary';
+
+export type UnresolvedMatchingRecall = {
+  recallNoticeId: string;
+  reason: UnresolvedMatchingReason;
+};
+
 export type MatchingSummary = {
   recallsProcessed: number;
   candidatePairs: number;
@@ -53,6 +67,11 @@ export type MatchingSummary = {
   failures: number;
   providerFailures: number;
   limitsReached: number;
+  staleSkipped?: number;
+  busySkipped?: number;
+  /** Per-recall resolution from the matcher; absent from pre-16.33 matchers. */
+  resolvedRecallIds?: readonly string[];
+  unresolvedRecalls?: readonly UnresolvedMatchingRecall[];
 };
 
 export type PushSummary = {
@@ -89,8 +108,8 @@ export type AutomationStore = {
   recordMatching(input: {
     runId: string;
     leaseToken: string;
-    recallNoticeIds: readonly string[];
-    complete: boolean;
+    resolvedRecallIds: readonly string[];
+    unresolvedRecalls: readonly UnresolvedMatchingRecall[];
     summary: MatchingSummary;
   }): Promise<void>;
   completeRun(input: {

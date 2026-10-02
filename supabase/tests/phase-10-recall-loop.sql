@@ -145,6 +145,7 @@ values
 
 insert into public.recall_sources (
   id,
+  source_key,
   name,
   jurisdiction,
   base_url,
@@ -152,6 +153,7 @@ insert into public.recall_sources (
 )
 values (
   '30000000-0000-4000-8000-000000000003',
+  'phase_10_fixture',
   'Phase 10 CPSC fixture',
   'US',
   'https://www.cpsc.gov',

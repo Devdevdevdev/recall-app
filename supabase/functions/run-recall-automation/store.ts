@@ -89,11 +89,13 @@ export class SupabaseAutomationStore implements AutomationStore {
   }
 
   async recordMatching(input: Parameters<AutomationStore['recordMatching']>[0]): Promise<void> {
-    const { error } = await this.database.rpc('record_recall_automation_matching', {
+    // Phase 16.33: resolved recalls leave the pending set; unresolved ones stay
+    // with a bounded, recorded retry count. Nothing is acknowledged in bulk.
+    const { error } = await this.database.rpc('record_recall_automation_matching_outcome', {
       p_run_id: input.runId,
       p_lease_token: input.leaseToken,
-      p_recall_notice_ids: input.recallNoticeIds,
-      p_complete: input.complete,
+      p_resolved_recall_ids: input.resolvedRecallIds,
+      p_unresolved: input.unresolvedRecalls,
       p_candidate_pairs: input.summary.candidatePairs,
       p_deterministic_resolved: input.summary.deterministicResolved,
       p_confirmed: input.summary.confirmed,

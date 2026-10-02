@@ -1,7 +1,11 @@
 import { createClient } from 'npm:@supabase/supabase-js@2';
 
 import { getRecallSourceAdapter } from '../_shared/recallSources/index.ts';
-import { isJsonObject } from '../_shared/recallSources/validation.ts';
+import {
+  assertForwardSourceWatermark,
+  dateOnlyFromSource,
+  isJsonObject,
+} from '../_shared/recallSources/validation.ts';
 
 const jsonHeaders = { 'content-type': 'application/json; charset=utf-8' };
 const responseLimitBytes = 1024 * 1024;
@@ -60,7 +64,10 @@ Deno.serve(async (request) => {
       typeof value.endDate !== 'string' ||
       !Number.isInteger(value.maxRecords) ||
       Number(value.maxRecords) < 1 ||
-      Number(value.maxRecords) > 100
+      Number(value.maxRecords) > 100 ||
+      dateOnlyFromSource(value.startDate) !== value.startDate ||
+      dateOnlyFromSource(value.endDate) !== value.endDate ||
+      value.startDate > value.endDate
     ) {
       throw new Error('Invalid bounded ingestion request.');
     }
@@ -94,6 +101,9 @@ Deno.serve(async (request) => {
     updated: 0,
     unchanged: 0,
     rejected: 0,
+    // Phase 16.16A: durable CPSC holds, passed through for visibility only.
+    quarantined: 0,
+    unresolved: 0,
   };
   const affectedRecallIds: string[] = [];
   const sources: Array<Record<string, unknown>> = [];
@@ -116,6 +126,11 @@ Deno.serve(async (request) => {
       if (stateError) throw new Error('source_state_unavailable');
       const state = Array.isArray(stateData) ? stateData[0] : null;
       const watermark = isJsonObject(state?.watermark) ? state.watermark : null;
+      assertForwardSourceWatermark(
+        state?.watermark ?? null,
+        adapter.definition.retrieval.watermarkKind,
+        input.endDate,
+      );
       const watermarkValue = typeof watermark?.value === 'string' ? watermark.value : null;
       const maximumStart = subtractDays(
         input.endDate,
@@ -154,6 +169,8 @@ Deno.serve(async (request) => {
       const updated = count(stats.updated);
       const unchanged = count(stats.unchanged);
       const rejected = count(stats.rejected);
+      const quarantined = count(stats.quarantined);
+      const unresolved = count(stats.unresolved);
       const ids = Array.isArray(body.affectedRecallIds)
         ? body.affectedRecallIds.filter((value): value is string => typeof value === 'string')
         : [];
@@ -162,6 +179,8 @@ Deno.serve(async (request) => {
       totals.inserted += inserted;
       totals.updated += updated;
       totals.unchanged += unchanged;
+      totals.quarantined += quarantined;
+      totals.unresolved += unresolved;
       affectedRecallIds.push(...ids);
       sources.push({
         sourceKey,
@@ -173,6 +192,8 @@ Deno.serve(async (request) => {
         updated,
         unchanged,
         rejected,
+        quarantined,
+        unresolved,
       });
     } catch (sourceError) {
       const errorCode = sourceError instanceof Error ? sourceError.message : 'source_failed';

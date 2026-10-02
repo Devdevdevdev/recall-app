@@ -1,0 +1,1815 @@
+{
+  "generatedAt": "2026-09-23T00:00:00.000Z",
+  "corpus": "phase_15_frozen_200_case_safety_regression",
+  "mode": "offline_advisory_no_provider_calls",
+  "totalCases": 200,
+  "aiEligibleCount": 66,
+  "changedDecisionCount": 0,
+  "changedDecisions": [],
+  "unsafeConfirmations": 0,
+  "needsReviewPreserved": 66,
+  "expectedNeedsReviewCount": 66,
+  "providerCalls": 0,
+  "cases": [
+    {
+      "caseId": "p15-dev-01-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-01-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-01-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-01-4",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-02-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-02-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-02-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-02-4",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-03-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-03-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-03-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-03-4",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-04-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-04-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-04-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-04-4",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-05-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-05-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-05-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-05-4",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-06-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-06-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-06-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-06-4",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-07-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-07-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-07-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-07-4",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-08-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-08-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-08-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-08-4",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-09-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-09-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-09-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-09-4",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-10-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-10-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-10-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-10-4",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-11-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-11-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-11-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-11-4",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-12-1",
+      "split": "development",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-12-2",
+      "split": "development",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-12-3",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-dev-12-4",
+      "split": "development",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-13-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-13-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-13-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-13-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-14-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-14-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-14-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-14-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-15-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-15-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-15-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-15-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-16-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-16-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-16-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-16-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-17-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-17-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-17-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-17-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-18-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-18-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-18-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-18-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-19-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-19-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-19-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-19-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-20-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-20-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-20-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-20-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-21-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-21-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-21-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-21-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-22-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-22-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-22-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-22-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-23-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-23-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-23-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-23-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-24-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-24-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-24-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-24-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-25-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-25-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-25-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-25-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-26-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-26-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-26-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-26-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-27-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-27-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-27-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-27-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-28-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-28-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-28-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-28-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-29-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-29-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-29-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-29-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-30-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-30-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-30-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-30-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-31-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-31-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-31-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-31-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-32-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-32-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-32-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-32-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-33-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-33-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-33-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-33-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-34-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-34-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-34-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-34-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-35-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-35-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-35-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-35-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-36-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-36-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-36-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-36-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-37-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-37-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-37-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-37-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-38-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-38-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-38-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-38-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-39-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-39-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-39-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-39-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-40-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-40-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-40-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-40-4",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-41-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-41-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-41-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-41-4",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-42-1",
+      "split": "holdout",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-42-2",
+      "split": "holdout",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-42-3",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-hol-42-4",
+      "split": "holdout",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-43-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-43-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-43-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-43-4",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-44-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-44-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-44-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-44-4",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-45-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-45-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-45-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-45-4",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-46-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-46-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-46-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-46-4",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-47-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-47-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-47-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-47-4",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-48-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-48-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-48-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-48-4",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-49-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-49-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-49-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-49-4",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-50-1",
+      "split": "stress",
+      "expected": "match",
+      "frozenV2": "match",
+      "v2_1": "match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-50-2",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-50-3",
+      "split": "stress",
+      "expected": "needs_review",
+      "frozenV2": "needs_review",
+      "v2_1": "needs_review",
+      "aiEscalated": true,
+      "verifierAccepted": false
+    },
+    {
+      "caseId": "p15-str-50-4",
+      "split": "stress",
+      "expected": "no_match",
+      "frozenV2": "no_match",
+      "v2_1": "no_match",
+      "aiEscalated": false,
+      "verifierAccepted": false
+    }
+  ]
+}

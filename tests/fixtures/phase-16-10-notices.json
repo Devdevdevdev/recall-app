@@ -1,0 +1,620 @@
+[
+  {
+    "id": "cff21252-f028-484f-8db9-75905629bbec",
+    "external_id": "8875",
+    "title": "Intertex Recalls Blowers Due To Fire Hazard",
+    "recall_date": "2020-08-12",
+    "official_url": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+    "recall_number": "20162",
+    "scopes": [
+      {
+        "id": "8fdf1986-ff53-4f76-9dec-8d1416ce907c",
+        "product_name": "B-Air, BlueDri, BlueDri Pro and Soleaire Blowers",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "fba00000-da4c-4353-8177-0f48d0e39276",
+    "external_id": "8876",
+    "title": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+    "recall_date": "2020-08-12",
+    "official_url": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+    "recall_number": "20163",
+    "scopes": [
+      {
+        "id": "3b71553d-b188-4d5d-b246-440ba549e0e2",
+        "product_name": "Lawn dart sets",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "9d3aa7a0-33d7-4be8-97fd-c9f44931acaf",
+    "external_id": "8877",
+    "title": "Thule Recalls Strollers Due to Injury Hazard",
+    "recall_date": "2020-08-12",
+    "official_url": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+    "recall_number": "20164",
+    "scopes": [
+      {
+        "id": "a04e05c8-7a1e-4772-8eea-a52b57ccf2f9",
+        "product_name": "Thule Sleek strollers",
+        "gtin": null,
+        "model_number": null
+      },
+      {
+        "id": "ba8b7050-8217-4e6e-8116-2f25fbeece42",
+        "product_name": null,
+        "gtin": "091021037090",
+        "model_number": null
+      },
+      {
+        "id": "bbc8c599-d1af-49ec-9019-4d7ca802449c",
+        "product_name": null,
+        "gtin": "091021070585",
+        "model_number": null
+      },
+      {
+        "id": "a598c309-bb93-46e5-9e0d-45ad79961aff",
+        "product_name": null,
+        "gtin": "091021079779",
+        "model_number": null
+      },
+      {
+        "id": "804fdd00-f1d5-4ff1-9531-66c06aa22f57",
+        "product_name": null,
+        "gtin": "091021091900",
+        "model_number": null
+      },
+      {
+        "id": "9a1efb07-2317-4755-b981-b4f8c04a6a0e",
+        "product_name": null,
+        "gtin": "091021190214",
+        "model_number": null
+      },
+      {
+        "id": "b6318f95-0016-475c-bddc-ee86c60bf004",
+        "product_name": null,
+        "gtin": "091021349001",
+        "model_number": null
+      },
+      {
+        "id": "893edd15-ec45-4801-94d0-4e766ebda7bd",
+        "product_name": null,
+        "gtin": "091021433137",
+        "model_number": null
+      },
+      {
+        "id": "0d084e01-1abc-4fd0-a16a-7ac00c62bcdc",
+        "product_name": null,
+        "gtin": "091021460256",
+        "model_number": null
+      },
+      {
+        "id": "89351dbc-e3f2-480b-9954-71211dbe441c",
+        "product_name": null,
+        "gtin": "091021514386",
+        "model_number": null
+      },
+      {
+        "id": "ee654b25-5d8f-40b6-86b3-f52e343b0d63",
+        "product_name": null,
+        "gtin": "091021648937",
+        "model_number": null
+      },
+      {
+        "id": "71362d7c-46fd-448d-8731-9c133e4a2a3b",
+        "product_name": null,
+        "gtin": "091021761773",
+        "model_number": null
+      },
+      {
+        "id": "71a6835c-8f5b-45d7-a275-7eef26d16432",
+        "product_name": null,
+        "gtin": "091021883703",
+        "model_number": null
+      },
+      {
+        "id": "3ac96abf-1275-4d5d-abc8-688767d7a8cc",
+        "product_name": null,
+        "gtin": "091021978485",
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "cb902502-af10-4a50-ac88-19f681dd098e",
+    "external_id": "8878",
+    "title": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+    "recall_date": "2020-08-12",
+    "official_url": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+    "recall_number": "20165",
+    "scopes": [
+      {
+        "id": "6e8f8528-471d-4934-afab-6d504584ecca",
+        "product_name": "Sweet Protection brand Ripper Jr., Ripper MIPS Jr., and Ripper MIPS bicycle helmets",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "54846788-840a-4669-b92d-6d9fd1896568",
+    "external_id": "10965",
+    "title": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+    "recall_number": "26748",
+    "scopes": [
+      {
+        "id": "40d5affb-4485-4824-909d-0f8111ec5c31",
+        "product_name": "Ricky Joy Sour Crush Rolling Liquid Candy Bottles",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "fc7ebdf7-1376-4b7f-9eb0-0c0726700a7f",
+    "external_id": "10966",
+    "title": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+    "recall_number": "26755",
+    "scopes": [
+      {
+        "id": "249334df-93bb-4f85-a788-5940224578d3",
+        "product_name": "Hero Fire Spray Canisters",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "cc8778d2-01af-416f-b9e1-d4ed16e1e7d4",
+    "external_id": "10967",
+    "title": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+    "recall_number": "26761",
+    "scopes": [
+      {
+        "id": "d02847a5-1002-479c-9dd5-07149881001d",
+        "product_name": "Cade California Electronic Projecting Finger Light Toys",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "e56969d5-9e50-402f-8d18-574a428d91df",
+    "external_id": "10968",
+    "title": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+    "recall_number": "26753",
+    "scopes": [
+      {
+        "id": "25d63552-201e-47c8-8406-37881e2f6b58",
+        "product_name": "Lontcs Busy Board",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "8e1a18b3-302a-4087-b5eb-a50091ae356a",
+    "external_id": "10969",
+    "title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+    "recall_number": "26763",
+    "scopes": [
+      {
+        "id": "11d2cb6e-f84e-4988-ac4a-5f45aafab380",
+        "product_name": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "a67c766e-571c-4cd7-b577-e724e9d0ca62",
+    "external_id": "10970",
+    "title": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+    "recall_number": "26754",
+    "scopes": [
+      {
+        "id": "98c13088-e4df-4d1c-a751-fd4b75363ca0",
+        "product_name": "Wantefully Hair Dryer Brushes",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "26d839a5-2c4d-4cc5-80fc-5914105bd328",
+    "external_id": "10971",
+    "title": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+    "recall_number": "26756",
+    "scopes": [
+      {
+        "id": "d97dfe28-2226-4a3e-b357-67efdac045f3",
+        "product_name": "AGA Elise and Mercury Series Freestanding Dual Fuel Ranges and La Cornue CornuFé 90 and CornuFé 110 Series Freestanding Dual Fuel Ranges",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "3b21bcfb-38a3-4e19-86b6-bd311b7af7df",
+    "external_id": "10972",
+    "title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+    "recall_number": "26749",
+    "scopes": [
+      {
+        "id": "6a139759-01c8-4b0e-9850-1e0fbbc84717",
+        "product_name": "Victgoal Children’s Bike Helmets",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "1e327e61-d86b-49f8-82e8-a2dd2332f99f",
+    "external_id": "10973",
+    "title": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+    "recall_date": "2026-09-10",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+    "recall_number": "26766",
+    "scopes": [
+      {
+        "id": "e4b6c2d8-b22b-4b94-ab8e-81852f8e1168",
+        "product_name": "Light-Up Children’s Toys",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "6cc2622a-0309-4940-94d8-c94f2e2d5ae0",
+    "external_id": "10974",
+    "title": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+    "recall_number": "26774",
+    "scopes": [
+      {
+        "id": "2d7d1231-790c-486d-b522-b4021fc8aa50",
+        "product_name": "Jerify Magnetic Humanoid Toy Sets 30 PCS",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "ccce261b-e10d-4938-92b1-b1d2eec396cb",
+    "external_id": "10975",
+    "title": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+    "recall_number": "26778",
+    "scopes": [
+      {
+        "id": "e46d82cc-5d90-4565-b3e0-36d68a9b178f",
+        "product_name": "JKMAX Heated Blankets and Heating Pads",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "1c14be65-1cb2-48fa-b8eb-8bc62b1af496",
+    "external_id": "10976",
+    "title": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+    "recall_number": "26780",
+    "scopes": [
+      {
+        "id": "97359a9e-5d2c-40f7-9217-60019e86897a",
+        "product_name": "Lights & Sounds Fire Truck Activity Board",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "597a55fd-8fde-4a44-a2fc-4cc1a63e5da1",
+    "external_id": "10977",
+    "title": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+    "recall_number": "26782",
+    "scopes": [
+      {
+        "id": "cb82cc01-dccb-4f35-ab40-d6c83155baca",
+        "product_name": "Pull & Chew Montessori Teething Toys",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "9b2f29d3-8574-45e8-8565-8bd85d70320b",
+    "external_id": "10978",
+    "title": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+    "recall_number": "26785",
+    "scopes": [
+      {
+        "id": "19897881-1b70-4d21-820a-78dcd1518c4a",
+        "product_name": "Basecamp Bike Helmets",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "a62f2b3a-14d4-4342-a8ea-abd542c57c3c",
+    "external_id": "10979",
+    "title": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+    "recall_number": "26783",
+    "scopes": [
+      {
+        "id": "96a4ba98-eecb-41ef-8421-60d96d6b13d0",
+        "product_name": "Tylö Halmstad and Kiruna Hybrid Saunas",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "c4b69c73-a5de-4072-bb3a-812ab60c2306",
+    "external_id": "10980",
+    "title": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+    "recall_number": "26786",
+    "scopes": [
+      {
+        "id": "33662dae-38b2-4956-9a9e-dcd11fa1c8bb",
+        "product_name": "Rainbow Mystery Squishy Bun Toys",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "7c7a4411-3c76-4e89-95ee-63733426b4be",
+    "external_id": "10981",
+    "title": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+    "recall_number": "26781",
+    "scopes": [
+      {
+        "id": "b39104ac-b912-41f9-8a9f-0d15a4005dfe",
+        "product_name": "BedsPick Mattresses",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "3b189fd9-eb49-4918-bd7d-149852f9bece",
+    "external_id": "10982",
+    "title": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+    "recall_number": "26775",
+    "scopes": [
+      {
+        "id": "797cd922-8c6b-469a-ba90-e14afbd668e0",
+        "product_name": "Esjay Toddler Busy Board Montessori Toys",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "c1bd0804-ac86-43dd-b3dd-5dc56f0d5c82",
+    "external_id": "10983",
+    "title": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+    "recall_number": "26779",
+    "scopes": [
+      {
+        "id": "d991c03c-0fa2-480a-be55-0f3bdd889d1c",
+        "product_name": "LANCHEZ Pressure Washers",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "70dd6878-2b28-4f99-9786-2d596f82c2b3",
+    "external_id": "10984",
+    "title": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+    "recall_number": "26784",
+    "scopes": [
+      {
+        "id": "5e9c5955-f34c-4b4b-8530-abbd9753d0f8",
+        "product_name": "Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "76b87fdc-52c8-47a6-b3dd-08a634ff2c7b",
+    "external_id": "10985",
+    "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+    "recall_number": "26776",
+    "scopes": [
+      {
+        "id": "50d46c71-0947-435a-ba83-835c17b776e7",
+        "product_name": "Kühl® Q and Kühl® S Window Air Conditioners",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "a9310ed9-ecef-4988-b28b-e76e609724ea",
+    "external_id": "10986",
+    "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+    "recall_number": "26773",
+    "scopes": [
+      {
+        "id": "4b09222d-fc62-4803-bef1-03801b9f36d7",
+        "product_name": "Charbroil Bistro Pro Electric Grills",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "776fdc2d-c468-48e3-b491-0291c7cb1b21",
+    "external_id": "10987",
+    "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+    "recall_date": "2026-09-17",
+    "official_url": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+    "recall_number": "26777",
+    "scopes": [
+      {
+        "id": "89318d61-b41c-41b9-bdda-935a40afcdfe",
+        "product_name": "400,000 BTU Universal-HC Series Pool Heaters",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "0bc73d18-a7a0-4f40-a36c-008ca2173324",
+    "external_id": "10988",
+    "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+    "recall_date": "2026-09-17",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+    "recall_number": "26776",
+    "scopes": [
+      {
+        "id": "b32156d8-85f4-4d4f-bb69-9ba7375a627e",
+        "product_name": "Kühl® Q and Kühl® S Window Air Conditioners",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "29942a2d-df3d-461e-92e6-57929463e10b",
+    "external_id": "10989",
+    "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+    "recall_date": "2026-09-17",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+    "recall_number": "26773",
+    "scopes": [
+      {
+        "id": "ef303b9e-a6aa-4f86-a9f7-1459f9752577",
+        "product_name": "Charbroil Bistro Pro Electric Grills",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  },
+  {
+    "id": "206f4550-a2d0-4f48-9f4e-7707c76b6514",
+    "external_id": "10990",
+    "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+    "recall_date": "2026-09-17",
+    "official_url": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+    "recall_number": "26777",
+    "scopes": [
+      {
+        "id": "a39d9526-0055-4ae0-9ef0-9e003de52dfc",
+        "product_name": "400,000 BTU Universal-HC Series Pool Heaters",
+        "gtin": null,
+        "model_number": null
+      }
+    ],
+    "match_count": 0,
+    "alert_count": 0
+  }
+]

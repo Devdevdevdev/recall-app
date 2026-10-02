@@ -1,3 +1,5 @@
+import type { CpscOutcomeCounts } from './sourceOutcome.ts';
+
 export type JsonPrimitive = boolean | number | string | null;
 
 export type JsonValue = JsonPrimitive | JsonObject | JsonValue[];
@@ -41,6 +43,10 @@ export type CpscIngestionStats = {
   updated: number;
   unchanged: number;
   rejected: number;
+  /** Phase 16.16A: durable holds; not rejections. */
+  quarantined: number;
+  unresolved: number;
+  outcomes: CpscOutcomeCounts;
   scopeCount: number;
   errors: CpscRecordRejection[];
   examples: Array<{ externalId: string; title: string; scopeCount: number }>;

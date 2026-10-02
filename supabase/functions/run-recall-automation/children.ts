@@ -2,6 +2,7 @@ import type {
   IngestionSummary,
   MatchingSummary,
   PushSummary,
+  UnresolvedMatchingRecall,
 } from '../_shared/automation/index.ts';
 
 const responseLimitBytes = 1024 * 1024;
@@ -39,6 +40,47 @@ function strings(value: unknown): readonly string[] {
     throw new ChildFunctionError('invalid_child_response');
   }
   return value as string[];
+}
+
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/u;
+const UNRESOLVED_REASONS = new Set([
+  'stale',
+  'busy',
+  'failure',
+  'provider_failure',
+  'limit',
+  'not_reached',
+]);
+
+function optionalCount(value: unknown): number | undefined {
+  return value === undefined ? undefined : count(value);
+}
+
+function optionalRecallIds(value: unknown): readonly string[] | undefined {
+  if (value === undefined) return undefined;
+  const ids = strings(value);
+  if (ids.some((id) => !UUID.test(id))) throw new ChildFunctionError('invalid_child_response');
+  return ids;
+}
+
+function optionalUnresolved(value: unknown): readonly UnresolvedMatchingRecall[] | undefined {
+  if (value === undefined) return undefined;
+  if (!Array.isArray(value)) throw new ChildFunctionError('invalid_child_response');
+  return value.map((item) => {
+    const row = record(item);
+    if (
+      typeof row.recallNoticeId !== 'string' ||
+      !UUID.test(row.recallNoticeId) ||
+      typeof row.reason !== 'string' ||
+      !UNRESOLVED_REASONS.has(row.reason)
+    ) {
+      throw new ChildFunctionError('invalid_child_response');
+    }
+    return {
+      recallNoticeId: row.recallNoticeId,
+      reason: row.reason as UnresolvedMatchingRecall['reason'],
+    };
+  });
 }
 
 function sourceResults(value: unknown): IngestionSummary['sources'] {
@@ -164,6 +206,10 @@ export class RecallAutomationChildren {
       failures: count(response.failures),
       providerFailures: count(response.providerFailures),
       limitsReached: count(response.limitsReached),
+      staleSkipped: optionalCount(response.staleSkipped),
+      busySkipped: optionalCount(response.busySkipped),
+      resolvedRecallIds: optionalRecallIds(response.resolvedRecallIds),
+      unresolvedRecalls: optionalUnresolved(response.unresolvedRecalls),
     };
   }
 

@@ -3,6 +3,10 @@ import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
 const edgeUrl = new URL('../supabase/functions/process-recall-matches/index.ts', import.meta.url);
+const legacyUrl = new URL(
+  '../supabase/functions/process-recall-matches/legacyRun.ts',
+  import.meta.url,
+);
 const storeUrl = new URL('../supabase/functions/process-recall-matches/store.ts', import.meta.url);
 const configUrl = new URL('../supabase/config.toml', import.meta.url);
 const appConfigUrl = new URL('../app.json', import.meta.url);
@@ -16,17 +20,19 @@ test('production matching endpoint is POST-only and fails closed on its dedicate
   assert.match(edge, /request\.method !== 'POST'/u);
   assert.match(edge, /Deno\.env\.get\('RECALL_MATCHING_KEY'\)/u);
   assert.match(edge, /x-recall-matching-key/u);
-  assert.match(edge, /constantTimeEqual/u);
+  assert.match(edge, /difference \|=/u);
   assert.match(config, /\[functions\.process-recall-matches\]\s+verify_jwt = false/u);
 });
 
 test('Nebius is pinned server-side with transport retries disabled', async () => {
   const edge = await readFile(edgeUrl, 'utf8');
+  const legacy = await readFile(legacyUrl, 'utf8');
 
-  assert.match(edge, /nvidia\/nemotron-3-super-120b-a12b/u);
-  assert.match(edge, /https:\/\/api\.tokenfactory\.us-central1\.nebius\.com\/v1\//u);
-  assert.match(edge, /maxRetries: 0/u);
-  assert.match(edge, /createNemotronEvaluator: createProductionEvaluator/u);
+  assert.match(edge, /import\('\.\/legacyRun\.ts'\)/u);
+  assert.match(legacy, /nvidia\/nemotron-3-super-120b-a12b/u);
+  assert.match(legacy, /https:\/\/api\.tokenfactory\.us-central1\.nebius\.com\/v1\//u);
+  assert.match(legacy, /maxRetries: 0/u);
+  assert.match(legacy, /createNemotronEvaluator: createProductionEvaluator/u);
 });
 
 test('the Edge adapter uses only service-role RPCs and never serializes secret configuration', async () => {
