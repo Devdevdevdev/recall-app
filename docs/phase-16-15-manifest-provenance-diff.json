@@ -1,0 +1,44 @@
+{
+  "diffVersion": "phase-16.15-provenance-diff-v1",
+  "old": {
+    "file": "docs/phase-16-14-backfill-manifest.json",
+    "fileSha256": "c8b01dfee8686104e36aec6722807d3460c3fedc149d752c504c0a68aab177d3",
+    "canonicalSha256": "6dddac41f0a6edb58604378943a6ffc5e3bcb092d0196efb4182aba96bd7353f"
+  },
+  "corrected": {
+    "file": "docs/phase-16-15-backfill-manifest.json",
+    "fileSha256": "e3ab192c397fa1a50ac5e34595358a7fe02a873e26c8891197d46c659487d9ed",
+    "canonicalSha256": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c"
+  },
+  "operationalViewSha256": {
+    "old": "9461516bc999a1b03eeaa41b1a6c58b006d6f9381692bf0dcc010f0c4340b668",
+    "corrected": "9461516bc999a1b03eeaa41b1a6c58b006d6f9381692bf0dcc010f0c4340b668"
+  },
+  "operationalContentIdentical": true,
+  "provenanceChanges": {
+    "manifestGeneration": ["phase-16.13-fresh-capture-v1", "phase-16.15-explicit-provenance-v1"],
+    "source": [
+      "Phase 16.8 official page captures (historical page revisions) + Phase 16.13 fresh CPSC API capture corroborated against the current official pages (public data only)",
+      "Phase 16.8 official page captures (historical page revisions, from docs/phase-16-12-backfill-manifest.json) + fresh CPSC API capture docs/phase-16-14-cpsc-fresh-capture.json corroborated against the current official pages (public data only)"
+    ],
+    "freshCapture.file": [
+      "docs/phase-16-13-cpsc-fresh-capture.json",
+      "docs/phase-16-14-cpsc-fresh-capture.json"
+    ],
+    "freshCapture.sha256": [
+      "c4b43808804c376ec7d35b70230a23c8b3e8061cf8c44c8e25a7f904ff3b4bea",
+      "c4b43808804c376ec7d35b70230a23c8b3e8061cf8c44c8e25a7f904ff3b4bea"
+    ],
+    "freshCapture.capturedAtUtc": ["2026-09-26T09:06:13.773Z", "2026-09-26T09:06:13.773Z"],
+    "noticeSnapshotAdded": {
+      "file": "docs/phase-16-14-cpsc-notice-snapshot.json",
+      "notices": 41,
+      "sha256": "f61c8168a4f42a312036ea2364c3e181221132e5ad3d489e5718ac05943d6540"
+    },
+    "pagesSourceAdded": {
+      "file": "docs/phase-16-12-backfill-manifest.json",
+      "sha256": "b3d119cafa15b6f9cd19ba854c15f8f06a381fe2637533c6a6c3169e69cd8501"
+    }
+  },
+  "defect": "The Phase 16.14 manifest named docs/phase-16-13-cpsc-fresh-capture.json while its sha256 is that of docs/phase-16-14-cpsc-fresh-capture.json (hard-coded path in the builder)."
+}

@@ -1,0 +1,90 @@
+{
+  "mode": "dry_run",
+  "persisted": false,
+  "structure": {
+    "scope": "structure",
+    "counts": {
+      "linksCreated": 41,
+      "aliasesCreated": 82,
+      "identitiesCreated": 38,
+      "pageFetchesCreated": 27,
+      "apiRevisionsCreated": 41,
+      "pageRevisionsCreated": 27,
+      "noticesWithoutRecallNumber": 0
+    },
+    "newRows": 256,
+    "complete": true,
+    "conflicts": [],
+    "driftRows": 11,
+    "collisions": 0,
+    "quarantines": [],
+    "decisionClasses": {},
+    "duplicateGroups": [
+      { "notices": 2, "recallNumber": "26773" },
+      { "notices": 2, "recallNumber": "26776" },
+      { "notices": 2, "recallNumber": "26777" }
+    ],
+    "unexpectedConflicts": 0,
+    "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+    "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac",
+    "historicalRowsRewritten": 0,
+    "reviewedCriteriaCreated": 0,
+    "humanReconciliationsCreated": 0
+  },
+  "observations": {
+    "scope": "observations",
+    "counts": { "currentObservationsRecorded": 37, "historicalObservationsRecorded": 41 },
+    "newRows": 78,
+    "complete": true,
+    "conflicts": [],
+    "driftRows": 11,
+    "collisions": 6,
+    "quarantines": [
+      {
+        "kind": "current",
+        "apiId": "10969",
+        "recallNumber": "26749",
+        "decisionClass": "D_api_id_reuse"
+      },
+      {
+        "kind": "current",
+        "apiId": "10965",
+        "recallNumber": "26753",
+        "decisionClass": "D_api_id_reuse"
+      },
+      {
+        "kind": "current",
+        "apiId": "10967",
+        "recallNumber": "26754",
+        "decisionClass": "D_api_id_reuse"
+      },
+      {
+        "kind": "current",
+        "apiId": "10968",
+        "recallNumber": "26756",
+        "decisionClass": "D_api_id_reuse"
+      },
+      {
+        "kind": "current",
+        "apiId": "10966",
+        "recallNumber": "26763",
+        "decisionClass": "D_api_id_reuse"
+      },
+      {
+        "kind": "current",
+        "apiId": "10970",
+        "recallNumber": "26766",
+        "decisionClass": "D_api_id_reuse"
+      }
+    ],
+    "decisionClasses": { "B_new_alias": 3, "A_known_alias": 69, "D_api_id_reuse": 6 },
+    "duplicateGroups": [],
+    "unexpectedConflicts": 0,
+    "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+    "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac",
+    "historicalRowsRewritten": 0,
+    "reviewedCriteriaCreated": 0,
+    "humanReconciliationsCreated": 0
+  },
+  "manifestSha256": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c"
+}

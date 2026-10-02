@@ -1,0 +1,361 @@
+{
+  "driftCases": [
+    {
+      "internalNoticeId": "54846788-840a-4669-b92d-6d9fd1896568",
+      "storedExternalId": "10965",
+      "currentApiId": "10962",
+      "officialRecallNumber": "26748",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+      "storedPayloadHash": "68e5bda796e0d46bab92e9d17dc35851e1b88017affdf2bd459de1daaa1fbe59",
+      "currentPayloadHash": "f9756f8bd07c617ec915d82eb72f6ed8d97dc993edc772a6ffb82ce986c2c7ee",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["Description", "RecallID", "Retailers", "URL"]
+    },
+    {
+      "internalNoticeId": "fc7ebdf7-1376-4b7f-9eb0-0c0726700a7f",
+      "storedExternalId": "10966",
+      "currentApiId": "10963",
+      "officialRecallNumber": "26755",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "storedPayloadHash": "8d4a745f6c9dc9ecfc544d8ceb73f47d209a2ba161108519c60b2444dcb56e3e",
+      "currentPayloadHash": "df6950154de072427cd3e9a2c1f7ca6f6b12288c038c36388f00dc905ad050e5",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["ConsumerContact", "RecallID", "URL"]
+    },
+    {
+      "internalNoticeId": "cc8778d2-01af-416f-b9e1-d4ed16e1e7d4",
+      "storedExternalId": "10967",
+      "currentApiId": "10964",
+      "officialRecallNumber": "26761",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "storedPayloadHash": "54ae2ce30904e70b7f2f6b62be920ae9630b3cc840139f131cbd44a90b82de7c",
+      "currentPayloadHash": "affa0a50cd9a9325e1b9d14d56b7847b508ea037f882c514890fe5f6c04952ae",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["Description", "Distributors", "RecallID", "Retailers", "URL"]
+    },
+    {
+      "internalNoticeId": "e56969d5-9e50-402f-8d18-574a428d91df",
+      "storedExternalId": "10968",
+      "currentApiId": "10965",
+      "officialRecallNumber": "26753",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+      "storedPayloadHash": "730fabaa4633f2f11a24e5a05d039f6dbd67130d456d4e1a2da18764f003cfef",
+      "currentPayloadHash": "316823508cb771a7d86efaffbf04b8cc678703d59c34ae78ab29e5a594d18de0",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference"],
+      "changedApiFields": ["RecallID", "URL"]
+    },
+    {
+      "internalNoticeId": "8e1a18b3-302a-4087-b5eb-a50091ae356a",
+      "storedExternalId": "10969",
+      "currentApiId": "10966",
+      "officialRecallNumber": "26763",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+      "storedPayloadHash": "7c51017918e230c1c0b616b0743d2a8d00b66ba5f212e5d983c09b55c804ae79",
+      "currentPayloadHash": "2ead4847dfed00d4d1280ccfc6493a1fe176dbb6a96c285faef0736b6e440117",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["ConsumerContact", "Description", "RecallID", "URL"]
+    },
+    {
+      "internalNoticeId": "a67c766e-571c-4cd7-b577-e724e9d0ca62",
+      "storedExternalId": "10970",
+      "currentApiId": "10967",
+      "officialRecallNumber": "26754",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+      "storedPayloadHash": "822d8ff53ea268d25a88e114b67b4417441607c5296fdd40a4053f9d865d83b4",
+      "currentPayloadHash": "5af2405f874ee90f9819eca708f6be60123abee3566bcdcd87b4f75df4f2e104",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["Distributors", "RecallID", "URL"]
+    },
+    {
+      "internalNoticeId": "26d839a5-2c4d-4cc5-80fc-5914105bd328",
+      "storedExternalId": "10971",
+      "currentApiId": "10968",
+      "officialRecallNumber": "26756",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+      "storedPayloadHash": "2143cb61dcaccfbec62a9d4c54e94e70aa0fd3b74a2be9ceafabfb19f18441f5",
+      "currentPayloadHash": "a300928462e2324ed88b30891146b0e8cd23a9417675a480d86dd20847b09cf1",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": [
+        "ConsumerContact",
+        "Description",
+        "RecallID",
+        "Remedies",
+        "RemedyOptions",
+        "Retailers",
+        "URL"
+      ]
+    },
+    {
+      "internalNoticeId": "3b21bcfb-38a3-4e19-86b6-bd311b7af7df",
+      "storedExternalId": "10972",
+      "currentApiId": "10969",
+      "officialRecallNumber": "26749",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "storedPayloadHash": "92c29fe89ded930d1ae66af8a1bece904a89d7d83592d00b2c7ff5bbf5ff74e2",
+      "currentPayloadHash": "1316efd47ec33bf7fc3029e985bd6d1049efbf4bcf450e3ea4599bef2aa7e23a",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["Description", "Images", "RecallID", "Remedies", "RemedyOptions", "URL"]
+    },
+    {
+      "internalNoticeId": "1e327e61-d86b-49f8-82e8-a2dd2332f99f",
+      "storedExternalId": "10973",
+      "currentApiId": "10970",
+      "officialRecallNumber": "26766",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "storedPayloadHash": "ac7323429d3c02814d2d65b5a2cf8bab619cf64e1bde1b27f5ea3ab48cf54810",
+      "currentPayloadHash": "b4a8d7501f9a5ccd37fc2cfa74429a1a02a01134df7eb234aba23d7a44000731",
+      "publicationDate": "2026-09-10",
+      "sameOfficialRecall": true,
+      "primaryClassification": "API identifier drift",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["Description", "RecallID", "URL"]
+    },
+    {
+      "internalNoticeId": "0bc73d18-a7a0-4f40-a36c-008ca2173324",
+      "storedExternalId": "10988",
+      "currentApiId": "10985",
+      "officialRecallNumber": "26776",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "storedPayloadHash": "de91af897b03458d0245469b6d9274919cefc9ca15746b59db9bd0b9bb55b1a6",
+      "currentPayloadHash": "f55cdb3d19493c3cd74ba988c3bb3f3c4816157ee2ce24375e6c1dc3f797e4f7",
+      "publicationDate": "2026-09-17",
+      "sameOfficialRecall": true,
+      "primaryClassification": "duplicate ingestion",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": ["ConsumerContact", "Description", "Hazards", "Images", "RecallID", "URL"]
+    },
+    {
+      "internalNoticeId": "29942a2d-df3d-461e-92e6-57929463e10b",
+      "storedExternalId": "10989",
+      "currentApiId": "10986",
+      "officialRecallNumber": "26773",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "storedPayloadHash": "fa3534a2aed5c1f7cf42dae33dd39a6e4e369e2b1e3d99b4caa404f7babc23ad",
+      "currentPayloadHash": "ea026302c74b5b848d22e9ef96a4ff025b77bc007400c7b33f6305b37089ed57",
+      "publicationDate": "2026-09-17",
+      "sameOfficialRecall": true,
+      "primaryClassification": "duplicate ingestion",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": [
+        "ConsumerContact",
+        "Description",
+        "Hazards",
+        "Images",
+        "Products",
+        "RecallID",
+        "URL"
+      ]
+    },
+    {
+      "internalNoticeId": "206f4550-a2d0-4f48-9f4e-7707c76b6514",
+      "storedExternalId": "10990",
+      "currentApiId": "10987",
+      "officialRecallNumber": "26777",
+      "currentOfficialUrl": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "normalizedCanonicalUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "storedPayloadHash": "82916eda3036d8452f5edc4fc6c25e921b137aa5b2716762ba13eac9836b7826",
+      "currentPayloadHash": "151627e65db8fdc9a18e27df340aa7b17e68d2aef76fb6835549ab997084fc71",
+      "publicationDate": "2026-09-17",
+      "sameOfficialRecall": true,
+      "primaryClassification": "duplicate ingestion",
+      "secondaryClassifications": ["URL canonicalization difference", "source correction"],
+      "changedApiFields": [
+        "ConsumerContact",
+        "Description",
+        "Hazards",
+        "Images",
+        "Products",
+        "RecallID",
+        "URL"
+      ]
+    }
+  ],
+  "duplicateGroups": [
+    {
+      "officialRecallNumber": "26776",
+      "canonicalOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "canonicalCandidateNoticeId": "76b87fdc-52c8-47a6-b3dd-08a634ff2c7b",
+      "canonicalCandidateExternalId": "10985",
+      "aliases": [
+        {
+          "noticeId": "76b87fdc-52c8-47a6-b3dd-08a634ff2c7b",
+          "externalId": "10985",
+          "storedOfficialUrl": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+          "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+          "publicationDate": "2026-09-17",
+          "scopes": [
+            {
+              "id": "50d46c71-0947-435a-ba83-835c17b776e7",
+              "product_name": "Kühl® Q and Kühl® S Window Air Conditioners",
+              "gtin": null,
+              "model_number": null
+            }
+          ],
+          "matchReferences": 0,
+          "alertReferences": 0
+        },
+        {
+          "noticeId": "0bc73d18-a7a0-4f40-a36c-008ca2173324",
+          "externalId": "10988",
+          "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+          "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+          "publicationDate": "2026-09-17",
+          "scopes": [
+            {
+              "id": "b32156d8-85f4-4d4f-bb69-9ba7375a627e",
+              "product_name": "Kühl® Q and Kühl® S Window Air Conditioners",
+              "gtin": null,
+              "model_number": null
+            }
+          ],
+          "matchReferences": 0,
+          "alertReferences": 0
+        }
+      ],
+      "sameAuthoritativeRecall": true,
+      "logicalDeduplicationSafe": true,
+      "physicalMergeSafeNow": false,
+      "historyMustRemainAddressable": true
+    },
+    {
+      "officialRecallNumber": "26773",
+      "canonicalOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "canonicalCandidateNoticeId": "a9310ed9-ecef-4988-b28b-e76e609724ea",
+      "canonicalCandidateExternalId": "10986",
+      "aliases": [
+        {
+          "noticeId": "a9310ed9-ecef-4988-b28b-e76e609724ea",
+          "externalId": "10986",
+          "storedOfficialUrl": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+          "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+          "publicationDate": "2026-09-17",
+          "scopes": [
+            {
+              "id": "4b09222d-fc62-4803-bef1-03801b9f36d7",
+              "product_name": "Charbroil Bistro Pro Electric Grills",
+              "gtin": null,
+              "model_number": null
+            }
+          ],
+          "matchReferences": 0,
+          "alertReferences": 0
+        },
+        {
+          "noticeId": "29942a2d-df3d-461e-92e6-57929463e10b",
+          "externalId": "10989",
+          "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+          "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+          "publicationDate": "2026-09-17",
+          "scopes": [
+            {
+              "id": "ef303b9e-a6aa-4f86-a9f7-1459f9752577",
+              "product_name": "Charbroil Bistro Pro Electric Grills",
+              "gtin": null,
+              "model_number": null
+            }
+          ],
+          "matchReferences": 0,
+          "alertReferences": 0
+        }
+      ],
+      "sameAuthoritativeRecall": true,
+      "logicalDeduplicationSafe": true,
+      "physicalMergeSafeNow": false,
+      "historyMustRemainAddressable": true
+    },
+    {
+      "officialRecallNumber": "26777",
+      "canonicalOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "canonicalCandidateNoticeId": "776fdc2d-c468-48e3-b491-0291c7cb1b21",
+      "canonicalCandidateExternalId": "10987",
+      "aliases": [
+        {
+          "noticeId": "776fdc2d-c468-48e3-b491-0291c7cb1b21",
+          "externalId": "10987",
+          "storedOfficialUrl": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+          "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+          "publicationDate": "2026-09-17",
+          "scopes": [
+            {
+              "id": "89318d61-b41c-41b9-bdda-935a40afcdfe",
+              "product_name": "400,000 BTU Universal-HC Series Pool Heaters",
+              "gtin": null,
+              "model_number": null
+            }
+          ],
+          "matchReferences": 0,
+          "alertReferences": 0
+        },
+        {
+          "noticeId": "206f4550-a2d0-4f48-9f4e-7707c76b6514",
+          "externalId": "10990",
+          "storedOfficialUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+          "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+          "publicationDate": "2026-09-17",
+          "scopes": [
+            {
+              "id": "a39d9526-0055-4ae0-9ef0-9e003de52dfc",
+              "product_name": "400,000 BTU Universal-HC Series Pool Heaters",
+              "gtin": null,
+              "model_number": null
+            }
+          ],
+          "matchReferences": 0,
+          "alertReferences": 0
+        }
+      ],
+      "sameAuthoritativeRecall": true,
+      "logicalDeduplicationSafe": true,
+      "physicalMergeSafeNow": false,
+      "historyMustRemainAddressable": true
+    }
+  ],
+  "apiIdCollisionWarning": "Current API IDs 10965-10970 are already stored as IDs for different CPSC recalls; alias values are not globally unique."
+}

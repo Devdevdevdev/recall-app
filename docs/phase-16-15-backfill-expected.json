@@ -1,0 +1,61 @@
+{
+  "expectedVersion": "phase-16.15-backfill-expected-v1",
+  "registeredBeforeExecution": true,
+  "manifest": {
+    "file": "docs/phase-16-15-backfill-manifest.json",
+    "fileSha256": "e3ab192c397fa1a50ac5e34595358a7fe02a873e26c8891197d46c659487d9ed",
+    "canonicalSha256": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c"
+  },
+  "preview": "docs/phase-16-15-backfill-preview.json",
+  "backfillItemsByStage": {
+    "A_identity": 38,
+    "B_link": 41,
+    "C_alias": 82,
+    "C_api_revision": 41,
+    "E_page_revision": 27,
+    "E_page_fetch": 27,
+    "D_observation": 72,
+    "F_quarantine": 6
+  },
+  "tables": {
+    "cpsc_source_identities": 38,
+    "cpsc_notice_identity_links": 41,
+    "cpsc_source_aliases": 226,
+    "cpsc_api_revisions": 48,
+    "cpsc_page_revisions": 27,
+    "cpsc_page_fetches": 27,
+    "cpsc_identity_observations": 78,
+    "cpsc_backfill_runs": 2,
+    "cpsc_backfill_items": 334,
+    "cpsc_identity_reconciliations": 0,
+    "cpsc_candidate_criteria": 0,
+    "cpsc_candidate_review_ledger": 0,
+    "cpsc_reviewer_authorizations": 0,
+    "cpsc_admin_capabilities": 0,
+    "cpsc_review_decision_invalidations": 0,
+    "cpsc_notice_revisions": 0,
+    "cpsc_page_coverage_ledgers": 0
+  },
+  "derivation": {
+    "cpsc_source_aliases": "82 structure (api_id + official_url per stored notice, provenance 'Phase 16.12 historical backfill') + 82 historical observations (same pairs, provenance '... (stored notice)') + 62 resolved current observations (31 x api_id + official_url, provenance '... (captured current API)'); quarantined observations write no alias",
+    "cpsc_api_revisions": "41 structure + 7 resolved current observations whose (identity, API ID, payload hash) no stored notice carries (26748/10962, 26755/10963, 26761/10964, 26778/10975, 26781/10981, 26785/10978, 26786/10980); historical observations upsert onto the structure rows",
+    "cpsc_identity_observations": "41 historical (all resolved) + 37 current (31 resolved, 6 D_api_id_reuse quarantined)"
+  },
+  "observations": {
+    "resolved": 72,
+    "quarantined": [
+      { "apiId": "10965", "recallNumber": "26753" },
+      { "apiId": "10966", "recallNumber": "26763" },
+      { "apiId": "10967", "recallNumber": "26754" },
+      { "apiId": "10968", "recallNumber": "26756" },
+      { "apiId": "10969", "recallNumber": "26749" },
+      { "apiId": "10970", "recallNumber": "26766" }
+    ],
+    "decisionClasses": { "A_known_alias": 69, "B_new_alias": 3, "D_api_id_reuse": 6 }
+  },
+  "digests": {
+    "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+    "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac"
+  },
+  "unresolved": { "recallNumber": "26777", "apiId": "10987", "currentObservationRecorded": false }
+}

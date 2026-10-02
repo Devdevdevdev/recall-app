@@ -1,0 +1,38 @@
+--- a/supabase/functions/ingest-recall-sources/index.ts
++++ b/supabase/functions/ingest-recall-sources/index.ts
+@@ -94,6 +94,7 @@
+     updated: 0,
+     unchanged: 0,
+     rejected: 0,
++    outcomes: { processed: 0, unchanged: 0, quarantined: 0, unresolved: 0, failed: 0 },
+   };
+   const affectedRecallIds: string[] = [];
+   const sources: Array<Record<string, unknown>> = [];
+@@ -154,6 +155,17 @@
+       const updated = count(stats.updated);
+       const unchanged = count(stats.unchanged);
+       const rejected = count(stats.rejected);
++      if (!isJsonObject(stats.outcomes)) throw new Error('invalid source outcome metrics');
++      const outcomes = {
++        processed: count(stats.outcomes.processed),
++        unchanged: count(stats.outcomes.unchanged),
++        quarantined: count(stats.outcomes.quarantined),
++        unresolved: count(stats.outcomes.unresolved),
++        failed: count(stats.outcomes.failed),
++      };
++      if (Object.values(outcomes).reduce((sum, value) => sum + value, 0) !== fetched) {
++        throw new Error('invalid source outcome metrics');
++      }
+       const ids = Array.isArray(body.affectedRecallIds)
+         ? body.affectedRecallIds.filter((value): value is string => typeof value === 'string')
+         : [];
+@@ -162,6 +174,9 @@
+       totals.inserted += inserted;
+       totals.updated += updated;
+       totals.unchanged += unchanged;
++      for (const key of Object.keys(outcomes) as Array<keyof typeof outcomes>) {
++        totals.outcomes[key] += outcomes[key];
++      }
+       affectedRecallIds.push(...ids);
+       sources.push({
+         sourceKey,

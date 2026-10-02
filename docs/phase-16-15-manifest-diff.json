@@ -1,0 +1,1618 @@
+{
+  "diffVersion": "phase-16.13-manifest-diff-v1",
+  "oldManifest": "docs/phase-16-12-backfill-manifest.json",
+  "freshManifest": "docs/phase-16-15-backfill-manifest.json",
+  "summary": {
+    "recallNumbers": 38,
+    "unchangedIdentities": [
+      "20162",
+      "20163",
+      "20164",
+      "20165",
+      "26748",
+      "26749",
+      "26753",
+      "26754",
+      "26755",
+      "26756",
+      "26761",
+      "26763",
+      "26766",
+      "26773",
+      "26774",
+      "26775",
+      "26776",
+      "26778",
+      "26779",
+      "26780",
+      "26781",
+      "26782",
+      "26783",
+      "26784",
+      "26785",
+      "26786"
+    ],
+    "changedApiIds": [],
+    "changedUrls": [],
+    "changedTitles": ["26777"],
+    "changedDates": [],
+    "changedPayloadHashes": ["26777"],
+    "reconstructedUrlsReplaced": 15,
+    "reconstructedUrlsThatDifferedFromFreshApi": [],
+    "newRecalls": [
+      "26788",
+      "26789",
+      "26790",
+      "26791",
+      "26792",
+      "26793",
+      "26794",
+      "26796",
+      "26797",
+      "26798",
+      "26799"
+    ],
+    "disappearedRecalls": [],
+    "unresolvedIdentityConflicts": ["26777"],
+    "phase168ApiVsFresh": {
+      "compared": 27,
+      "changedApiIds": [],
+      "changedUrls": [],
+      "changedTitles": ["26777"],
+      "changedRecallDates": [],
+      "changedLastPublishDates": [],
+      "changedPayloadHashes": ["26777"]
+    }
+  },
+  "consistency": {
+    "driftRows": {
+      "known": 12,
+      "freshApi": 12,
+      "consistent": true,
+      "exercisedByManifest": 11,
+      "withheldWithUnresolvedObservation": ["10990"]
+    },
+    "duplicateGroups": {
+      "known": ["26773", "26776", "26777"],
+      "fresh": ["26773", "26776", "26777"],
+      "consistent": true
+    },
+    "numericIdCollisions": {
+      "known": ["10965", "10966", "10967", "10968", "10969", "10970"],
+      "fresh": ["10965", "10966", "10967", "10968", "10969", "10970"],
+      "consistent": true
+    }
+  },
+  "rows": [
+    {
+      "recallNumber": "20162",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "8875",
+        "fresh": "8875"
+      },
+      "observedUrl": {
+        "old": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+        "fresh": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Intertex Recalls Blowers Due To Fire Hazard",
+        "fresh": "Intertex Recalls Blowers Due To Fire Hazard",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2020-08-12",
+        "fresh": "2020-08-12"
+      },
+      "payloadHash": {
+        "old": "99fde55893fa1e113d4bc86a73b87c3f724ce14ec8ba0cdf93445039e9ebc67c",
+        "fresh": "99fde55893fa1e113d4bc86a73b87c3f724ce14ec8ba0cdf93445039e9ebc67c",
+        "phase168": "99fde55893fa1e113d4bc86a73b87c3f724ce14ec8ba0cdf93445039e9ebc67c"
+      },
+      "phase168Api": {
+        "apiId": "8875",
+        "url": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+        "title": "Intertex Recalls Blowers Due To Fire Hazard",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "freshApi": {
+        "url": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+        "title": "Intertex Recalls Blowers Due To Fire Hazard",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "20163",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "8876",
+        "fresh": "8876"
+      },
+      "observedUrl": {
+        "old": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+        "fresh": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+        "fresh": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2020-08-12",
+        "fresh": "2020-08-12"
+      },
+      "payloadHash": {
+        "old": "99f8fd123e50a0e8cc14f5d169834c2bf4619ae5eae182e27abb43824f935ed3",
+        "fresh": "99f8fd123e50a0e8cc14f5d169834c2bf4619ae5eae182e27abb43824f935ed3",
+        "phase168": "99f8fd123e50a0e8cc14f5d169834c2bf4619ae5eae182e27abb43824f935ed3"
+      },
+      "phase168Api": {
+        "apiId": "8876",
+        "url": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+        "title": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "freshApi": {
+        "url": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+        "title": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "20164",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "8877",
+        "fresh": "8877"
+      },
+      "observedUrl": {
+        "old": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+        "fresh": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Thule Recalls Strollers Due to Injury Hazard",
+        "fresh": "Thule Recalls Strollers Due to Injury Hazard",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2020-08-12",
+        "fresh": "2020-08-12"
+      },
+      "payloadHash": {
+        "old": "39453c036217f2cc24819fb103898610586b7c27dfc3c1837f02ff60fbb17355",
+        "fresh": "39453c036217f2cc24819fb103898610586b7c27dfc3c1837f02ff60fbb17355",
+        "phase168": "39453c036217f2cc24819fb103898610586b7c27dfc3c1837f02ff60fbb17355"
+      },
+      "phase168Api": {
+        "apiId": "8877",
+        "url": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+        "title": "Thule Recalls Strollers Due to Injury Hazard",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "freshApi": {
+        "url": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+        "title": "Thule Recalls Strollers Due to Injury Hazard",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "20165",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "8878",
+        "fresh": "8878"
+      },
+      "observedUrl": {
+        "old": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+        "fresh": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+        "fresh": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2020-08-12",
+        "fresh": "2020-08-12"
+      },
+      "payloadHash": {
+        "old": "95947c2d01a945835eafecd6c0f9eb39ed34672e8bf51cd5d9ae15e4924363b0",
+        "fresh": "95947c2d01a945835eafecd6c0f9eb39ed34672e8bf51cd5d9ae15e4924363b0",
+        "phase168": "95947c2d01a945835eafecd6c0f9eb39ed34672e8bf51cd5d9ae15e4924363b0"
+      },
+      "phase168Api": {
+        "apiId": "8878",
+        "url": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+        "title": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "freshApi": {
+        "url": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+        "title": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+        "recallDate": "2020-08-12",
+        "lastPublishDate": "2020-08-12"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26748",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10962",
+        "fresh": "10962"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "fresh": "https://cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+        "fresh": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "f9756f8bd07c617ec915d82eb72f6ed8d97dc993edc772a6ffb82ce986c2c7ee",
+        "fresh": "f9756f8bd07c617ec915d82eb72f6ed8d97dc993edc772a6ffb82ce986c2c7ee",
+        "phase168": "f9756f8bd07c617ec915d82eb72f6ed8d97dc993edc772a6ffb82ce986c2c7ee"
+      },
+      "phase168Api": {
+        "apiId": "10962",
+        "url": "https://cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "title": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "title": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26749",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10969",
+        "fresh": "10969"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "fresh": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "fresh": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "1316efd47ec33bf7fc3029e985bd6d1049efbf4bcf450e3ea4599bef2aa7e23a",
+        "fresh": "1316efd47ec33bf7fc3029e985bd6d1049efbf4bcf450e3ea4599bef2aa7e23a",
+        "phase168": "1316efd47ec33bf7fc3029e985bd6d1049efbf4bcf450e3ea4599bef2aa7e23a"
+      },
+      "phase168Api": {
+        "apiId": "10969",
+        "url": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26753",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10965",
+        "fresh": "10965"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+        "fresh": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+        "fresh": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "316823508cb771a7d86efaffbf04b8cc678703d59c34ae78ab29e5a594d18de0",
+        "fresh": "316823508cb771a7d86efaffbf04b8cc678703d59c34ae78ab29e5a594d18de0",
+        "phase168": "316823508cb771a7d86efaffbf04b8cc678703d59c34ae78ab29e5a594d18de0"
+      },
+      "phase168Api": {
+        "apiId": "10965",
+        "url": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+        "title": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+        "title": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26754",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10967",
+        "fresh": "10967"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+        "fresh": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+        "fresh": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "5af2405f874ee90f9819eca708f6be60123abee3566bcdcd87b4f75df4f2e104",
+        "fresh": "5af2405f874ee90f9819eca708f6be60123abee3566bcdcd87b4f75df4f2e104",
+        "phase168": "5af2405f874ee90f9819eca708f6be60123abee3566bcdcd87b4f75df4f2e104"
+      },
+      "phase168Api": {
+        "apiId": "10967",
+        "url": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+        "title": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+        "title": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26755",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10963",
+        "fresh": "10963"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "fresh": "https://cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "fresh": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "df6950154de072427cd3e9a2c1f7ca6f6b12288c038c36388f00dc905ad050e5",
+        "fresh": "df6950154de072427cd3e9a2c1f7ca6f6b12288c038c36388f00dc905ad050e5",
+        "phase168": "df6950154de072427cd3e9a2c1f7ca6f6b12288c038c36388f00dc905ad050e5"
+      },
+      "phase168Api": {
+        "apiId": "10963",
+        "url": "https://cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26756",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10968",
+        "fresh": "10968"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+        "fresh": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+        "fresh": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "a300928462e2324ed88b30891146b0e8cd23a9417675a480d86dd20847b09cf1",
+        "fresh": "a300928462e2324ed88b30891146b0e8cd23a9417675a480d86dd20847b09cf1",
+        "phase168": "a300928462e2324ed88b30891146b0e8cd23a9417675a480d86dd20847b09cf1"
+      },
+      "phase168Api": {
+        "apiId": "10968",
+        "url": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+        "title": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+        "title": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26761",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10964",
+        "fresh": "10964"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "fresh": "https://cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "fresh": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "affa0a50cd9a9325e1b9d14d56b7847b508ea037f882c514890fe5f6c04952ae",
+        "fresh": "affa0a50cd9a9325e1b9d14d56b7847b508ea037f882c514890fe5f6c04952ae",
+        "phase168": "affa0a50cd9a9325e1b9d14d56b7847b508ea037f882c514890fe5f6c04952ae"
+      },
+      "phase168Api": {
+        "apiId": "10964",
+        "url": "https://cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26763",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10966",
+        "fresh": "10966"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "fresh": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+        "fresh": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "2ead4847dfed00d4d1280ccfc6493a1fe176dbb6a96c285faef0736b6e440117",
+        "fresh": "2ead4847dfed00d4d1280ccfc6493a1fe176dbb6a96c285faef0736b6e440117",
+        "phase168": "2ead4847dfed00d4d1280ccfc6493a1fe176dbb6a96c285faef0736b6e440117"
+      },
+      "phase168Api": {
+        "apiId": "10966",
+        "url": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26766",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10970",
+        "fresh": "10970"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "fresh": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "fresh": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-10",
+        "fresh": "2026-09-10"
+      },
+      "payloadHash": {
+        "old": "b4a8d7501f9a5ccd37fc2cfa74429a1a02a01134df7eb234aba23d7a44000731",
+        "fresh": "b4a8d7501f9a5ccd37fc2cfa74429a1a02a01134df7eb234aba23d7a44000731",
+        "phase168": "b4a8d7501f9a5ccd37fc2cfa74429a1a02a01134df7eb234aba23d7a44000731"
+      },
+      "phase168Api": {
+        "apiId": "10970",
+        "url": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-10",
+        "lastPublishDate": "2026-09-10"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26773",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10986",
+        "fresh": "10986"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+        "fresh": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+        "fresh": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "ea026302c74b5b848d22e9ef96a4ff025b77bc007400c7b33f6305b37089ed57",
+        "fresh": "ea026302c74b5b848d22e9ef96a4ff025b77bc007400c7b33f6305b37089ed57",
+        "phase168": "ea026302c74b5b848d22e9ef96a4ff025b77bc007400c7b33f6305b37089ed57"
+      },
+      "phase168Api": {
+        "apiId": "10986",
+        "url": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+        "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+        "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26774",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10974",
+        "fresh": "10974"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "fresh": "https://cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+        "fresh": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "3554ce83ac76eabd202d3d112d8074ee5a113fb613ef86a663b6a9a2cad1e124",
+        "fresh": "3554ce83ac76eabd202d3d112d8074ee5a113fb613ef86a663b6a9a2cad1e124",
+        "phase168": "3554ce83ac76eabd202d3d112d8074ee5a113fb613ef86a663b6a9a2cad1e124"
+      },
+      "phase168Api": {
+        "apiId": "10974",
+        "url": "https://cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26775",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10982",
+        "fresh": "10982"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+        "fresh": "https://cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+        "fresh": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "581518905cbb92e745c1802636df8c538a91ffc68a9695e6dcf9bd2d0a6fcaef",
+        "fresh": "581518905cbb92e745c1802636df8c538a91ffc68a9695e6dcf9bd2d0a6fcaef",
+        "phase168": "581518905cbb92e745c1802636df8c538a91ffc68a9695e6dcf9bd2d0a6fcaef"
+      },
+      "phase168Api": {
+        "apiId": "10982",
+        "url": "https://cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+        "title": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+        "title": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26776",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10985",
+        "fresh": "10985"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "fresh": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "fresh": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "f55cdb3d19493c3cd74ba988c3bb3f3c4816157ee2ce24375e6c1dc3f797e4f7",
+        "fresh": "f55cdb3d19493c3cd74ba988c3bb3f3c4816157ee2ce24375e6c1dc3f797e4f7",
+        "phase168": "f55cdb3d19493c3cd74ba988c3bb3f3c4816157ee2ce24375e6c1dc3f797e4f7"
+      },
+      "phase168Api": {
+        "apiId": "10985",
+        "url": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26777",
+      "identityStatus": "unresolved",
+      "apiId": {
+        "old": "10987",
+        "fresh": "10987"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+        "fresh": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+        "fresh": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard.",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "151627e65db8fdc9a18e27df340aa7b17e68d2aef76fb6835549ab997084fc71",
+        "fresh": "7c7daf626a58b4652926860ceb00ad85d41d5dcf2f6b906462cba63f413320a3",
+        "phase168": "151627e65db8fdc9a18e27df340aa7b17e68d2aef76fb6835549ab997084fc71"
+      },
+      "phase168Api": {
+        "apiId": "10987",
+        "url": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+        "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+        "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard.",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": false
+    },
+    {
+      "recallNumber": "26778",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10975",
+        "fresh": "10975"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+        "fresh": "https://cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+        "fresh": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "6d57e8ba29d324aa017886809bdba2e275a1834b7e9a9fa4fd5314d7a407c654",
+        "fresh": "6d57e8ba29d324aa017886809bdba2e275a1834b7e9a9fa4fd5314d7a407c654",
+        "phase168": "6d57e8ba29d324aa017886809bdba2e275a1834b7e9a9fa4fd5314d7a407c654"
+      },
+      "phase168Api": {
+        "apiId": "10975",
+        "url": "https://cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+        "title": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+        "title": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26779",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10983",
+        "fresh": "10983"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+        "fresh": "https://cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+        "fresh": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "eabda37115520f97ca1b71dcb35db27b7d3d1dfbe2ecce84fd7424f8a296957a",
+        "fresh": "eabda37115520f97ca1b71dcb35db27b7d3d1dfbe2ecce84fd7424f8a296957a",
+        "phase168": "eabda37115520f97ca1b71dcb35db27b7d3d1dfbe2ecce84fd7424f8a296957a"
+      },
+      "phase168Api": {
+        "apiId": "10983",
+        "url": "https://cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+        "title": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+        "title": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26780",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10976",
+        "fresh": "10976"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+        "fresh": "https://cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+        "fresh": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "2f537cacbd149d71dc24407f57409687b1a94a948bbc8df09b7448ca64d86e5f",
+        "fresh": "2f537cacbd149d71dc24407f57409687b1a94a948bbc8df09b7448ca64d86e5f",
+        "phase168": "2f537cacbd149d71dc24407f57409687b1a94a948bbc8df09b7448ca64d86e5f"
+      },
+      "phase168Api": {
+        "apiId": "10976",
+        "url": "https://cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+        "title": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+        "title": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26781",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10981",
+        "fresh": "10981"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+        "fresh": "https://cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+        "fresh": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "68b647a4704003eb727eed0cfa0b5e7fd1d482e489675a1d0f63c6cd500e8bba",
+        "fresh": "68b647a4704003eb727eed0cfa0b5e7fd1d482e489675a1d0f63c6cd500e8bba",
+        "phase168": "68b647a4704003eb727eed0cfa0b5e7fd1d482e489675a1d0f63c6cd500e8bba"
+      },
+      "phase168Api": {
+        "apiId": "10981",
+        "url": "https://cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+        "title": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+        "title": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26782",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10977",
+        "fresh": "10977"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+        "fresh": "https://cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+        "fresh": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "cf2b93ff1f3bef9cba76a319b6c45460c99bfd7e1e72e47e4b433738b61cda1f",
+        "fresh": "cf2b93ff1f3bef9cba76a319b6c45460c99bfd7e1e72e47e4b433738b61cda1f",
+        "phase168": "cf2b93ff1f3bef9cba76a319b6c45460c99bfd7e1e72e47e4b433738b61cda1f"
+      },
+      "phase168Api": {
+        "apiId": "10977",
+        "url": "https://cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+        "title": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+        "title": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26783",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10979",
+        "fresh": "10979"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+        "fresh": "https://cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+        "fresh": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "f9e54bfef721be195e4179293ab8782de2b43d2931ae9abab9e36987369b303f",
+        "fresh": "f9e54bfef721be195e4179293ab8782de2b43d2931ae9abab9e36987369b303f",
+        "phase168": "f9e54bfef721be195e4179293ab8782de2b43d2931ae9abab9e36987369b303f"
+      },
+      "phase168Api": {
+        "apiId": "10979",
+        "url": "https://cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+        "title": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+        "title": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26784",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10984",
+        "fresh": "10984"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "fresh": "https://cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "fresh": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "dd3392c40b4b83b33bbb036b2778183e1748f5956d6bd37f9dc2075cf988f426",
+        "fresh": "dd3392c40b4b83b33bbb036b2778183e1748f5956d6bd37f9dc2075cf988f426",
+        "phase168": "dd3392c40b4b83b33bbb036b2778183e1748f5956d6bd37f9dc2075cf988f426"
+      },
+      "phase168Api": {
+        "apiId": "10984",
+        "url": "https://cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26785",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10978",
+        "fresh": "10978"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "fresh": "https://cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "fresh": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "18724a0b82ba82c0fba4aecbc758b7f4e89466bf3847c03199f4b2ce6b53ea52",
+        "fresh": "18724a0b82ba82c0fba4aecbc758b7f4e89466bf3847c03199f4b2ce6b53ea52",
+        "phase168": "18724a0b82ba82c0fba4aecbc758b7f4e89466bf3847c03199f4b2ce6b53ea52"
+      },
+      "phase168Api": {
+        "apiId": "10978",
+        "url": "https://cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26786",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": "10980",
+        "fresh": "10980"
+      },
+      "observedUrl": {
+        "old": "https://cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "fresh": "https://cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "oldWasReconstructed": true
+      },
+      "title": {
+        "old": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+        "fresh": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": "2026-09-17",
+        "fresh": "2026-09-17"
+      },
+      "payloadHash": {
+        "old": "2bd6a4f2eec13c6a521f0a23bf07b2d43b358ed555498bd700eaddf7e191b2a6",
+        "fresh": "2bd6a4f2eec13c6a521f0a23bf07b2d43b358ed555498bd700eaddf7e191b2a6",
+        "phase168": "2bd6a4f2eec13c6a521f0a23bf07b2d43b358ed555498bd700eaddf7e191b2a6"
+      },
+      "phase168Api": {
+        "apiId": "10980",
+        "url": "https://cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-17",
+        "lastPublishDate": "2026-09-17"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26788",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10991"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/ZCK01-Recalls-Kesyup-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "ZCK01 Recalls Kesyup Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "97aa4a03e44c46c2ea966951dba5158fffe26d2537e077ec71060a876cbf8447",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/ZCK01-Recalls-Kesyup-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+        "title": "ZCK01 Recalls Kesyup Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26789",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10992"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/5Color-Recalls-Childrens-Bicycle-Helmet-and-Pads-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "5Color Recalls Children’s Bicycle Helmet and Pads Sets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "e4a8507f7d0d6231b1de1978499adff8a1e60a5e0fa395814e02b0db8b527555",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/5Color-Recalls-Childrens-Bicycle-Helmet-and-Pads-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "5Color Recalls Children’s Bicycle Helmet and Pads Sets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26790",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10996"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/Hyperfuels-Recalls-Methanol-and-Ethanol-Fuel-Containers-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-and-Flame-Jetting-Violates-Multiple-Federal-Safety-Standards",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "Hyperfuels Recalls Methanol and Ethanol Fuel Containers Due to Risk of Serious Injury or Death from Child Poisoning and Flame Jetting; Violates Multiple Federal Safety Standards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "cfc431db97d14ff1a14c4c8950a05b3b821a1b1f4954b0b488ec0ef7a8fee2c1",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Hyperfuels-Recalls-Methanol-and-Ethanol-Fuel-Containers-Due-to-Risk-of-Serious-Injury-or-Death-from-Child-Poisoning-and-Flame-Jetting-Violates-Multiple-Federal-Safety-Standards",
+        "title": "Hyperfuels Recalls Methanol and Ethanol Fuel Containers Due to Risk of Serious Injury or Death from Child Poisoning and Flame Jetting; Violates Multiple Federal Safety Standards",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26791",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10997"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/The-Blue-Cactus-Company-Reclining-Chair-Battery-Packs-Recalled-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "The Blue Cactus Company Reclining Chair Battery Packs Recalled Due to Fire and Burn Hazards; Sold on Amazon",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "11164de9c8e1d1afe0158e420ebaab737050c11170193f920f41981e5ad1154a",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/The-Blue-Cactus-Company-Reclining-Chair-Battery-Packs-Recalled-Due-to-Fire-and-Burn-Hazards-Sold-on-Amazon",
+        "title": "The Blue Cactus Company Reclining Chair Battery Packs Recalled Due to Fire and Burn Hazards; Sold on Amazon",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26792",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "11000"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "NEWDERY Power Banks Recalled Due to Fire and Burn Hazards; Risk of Serious Injury; Sold on Amazon",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "ae4bb1a271493b06adbadcf48b27043ed3194667c12cf50f763bfd24aac2922c",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/NEWDERY-Power-Banks-Recalled-Due-to-Fire-and-Burn-Hazards-Risk-of-Serious-Injury-Sold-on-Amazon",
+        "title": "NEWDERY Power Banks Recalled Due to Fire and Burn Hazards; Risk of Serious Injury; Sold on Amazon",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26793",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10994"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/Xinan-Home-Recalls-WinxMatrs-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "Xinan Home Recalls WinxMatrs Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "db93a51dec2670a6b758d589c9a6db3808c8fb07606615956eb865d9f12c98e1",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Xinan-Home-Recalls-WinxMatrs-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+        "title": "Xinan Home Recalls WinxMatrs Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26794",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10998"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/Yuyitop-Recalls-Aitjunz-8-Drawer-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "Yuyitop Recalls Aitjunz 8-Drawer Dressers Due to Risk of Serious Injury or Death from Tip-Over and Entrapment Hazards; Violate Mandatory Standard for Clothing Storage Units",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "b3e1881d60117abfd9cef6a61b9a0462d45cb2795b479d1a9bb6c9740a25f661",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Yuyitop-Recalls-Aitjunz-8-Drawer-Dressers-Due-to-Risk-of-Serious-Injury-or-Death-from-Tip-Over-and-Entrapment-Hazards-Violate-Mandatory-Standard-for-Clothing-Storage-Units",
+        "title": "Yuyitop Recalls Aitjunz 8-Drawer Dressers Due to Risk of Serious Injury or Death from Tip-Over and Entrapment Hazards; Violate Mandatory Standard for Clothing Storage Units",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26796",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10993"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/Style-Homeware-Recalls-Emerspring-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "Style Homeware Recalls Emerspring Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "88c710bc718b2a3785ba4afcbb17c0e05025d4762eb7bc8a243719861a820f24",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Style-Homeware-Recalls-Emerspring-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Hazard-Violate-Mandatory-Standard-for-Mattress-Flammability",
+        "title": "Style Homeware Recalls Emerspring Mattresses Due to Risk of Serious Injury or Death from Fire Hazard; Violate Mandatory Standard for Mattress Flammability",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26797",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10995"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/INMO-International-Technology-Limited-Recalls-INMO-Air3-Smart-Glasses-Due-to-Risk-of-Serious-Injury-or-Death-from-Burn-Hazard",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "INMO International Technology Limited Recalls INMO Air3 Smart Glasses Due to Risk of Serious Injury or Death from Burn Hazard",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "110136bff0a6367bf15b33dc9d3982b537307aaab63bd808b85f4184eaf6fd05",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/INMO-International-Technology-Limited-Recalls-INMO-Air3-Smart-Glasses-Due-to-Risk-of-Serious-Injury-or-Death-from-Burn-Hazard",
+        "title": "INMO International Technology Limited Recalls INMO Air3 Smart Glasses Due to Risk of Serious Injury or Death from Burn Hazard",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26798",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "11001"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/Love-To-Dream-Recalls-Portable-Sleep-Machines-Due-to-Risk-of-Injury-from-Fire-and-Burn-Hazards",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "Love To Dream Recalls Portable Sleep Machines Due to Risk of Injury from Fire and Burn Hazards",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "64e5a8e4a96763501d628f5799225ec7cab5f3f4862e0ad64d2c713d2f3ad77c",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/Love-To-Dream-Recalls-Portable-Sleep-Machines-Due-to-Risk-of-Injury-from-Fire-and-Burn-Hazards",
+        "title": "Love To Dream Recalls Portable Sleep Machines Due to Risk of Injury from Fire and Burn Hazards",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    },
+    {
+      "recallNumber": "26799",
+      "identityStatus": "corroborated",
+      "apiId": {
+        "old": null,
+        "fresh": "10999"
+      },
+      "observedUrl": {
+        "old": null,
+        "fresh": "https://cpsc.gov/Recalls/2026/ABC-Trading-Recalls-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "oldWasReconstructed": false
+      },
+      "title": {
+        "old": null,
+        "fresh": "ABC Trading Recalls Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "oldSource": "official page (16.12 manifest)",
+        "freshSource": "CPSC API"
+      },
+      "publicationDate": {
+        "old": null,
+        "fresh": "2026-09-24"
+      },
+      "payloadHash": {
+        "old": null,
+        "fresh": "11f63fe4a66cad99a55f356e3ab0afab16fdac20e1c6e9448169f4bd9f655141",
+        "phase168": null
+      },
+      "phase168Api": null,
+      "freshApi": {
+        "url": "https://cpsc.gov/Recalls/2026/ABC-Trading-Recalls-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "ABC Trading Recalls Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "recallDate": "2026-09-24",
+        "lastPublishDate": "2026-09-24"
+      },
+      "includedInFreshManifest": true
+    }
+  ]
+}

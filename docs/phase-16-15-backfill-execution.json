@@ -1,0 +1,482 @@
+{
+  "executionVersion": "phase-16.15-backfill-execution-v1",
+  "manifest": {
+    "file": "docs/phase-16-15-backfill-manifest.json",
+    "fileSha256": "e3ab192c397fa1a50ac5e34595358a7fe02a873e26c8891197d46c659487d9ed",
+    "canonicalSha256": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c"
+  },
+  "call": "private.cpsc_historical_backfill(<manifest>, 'all', true, 'Phase 16.15 production historical backfill', 5000) as the postgres owner, one transaction, COMMIT",
+  "previews": {
+    "count": 2,
+    "identical": true,
+    "equalToPhase1614PreviewExceptManifestHash": true,
+    "productionStateUnchanged": true,
+    "note": "Each preview (and each run) consumed identity values of cpsc_backfill_runs.run_seq (non-transactional sequence); no row persisted."
+  },
+  "run1": {
+    "report": {
+      "mode": "execute",
+      "persisted": true,
+      "structure": {
+        "runId": "8e323088-c136-4f35-aa6e-0def168275af",
+        "scope": "structure",
+        "counts": {
+          "linksCreated": 41,
+          "aliasesCreated": 82,
+          "identitiesCreated": 38,
+          "pageFetchesCreated": 27,
+          "apiRevisionsCreated": 41,
+          "pageRevisionsCreated": 27,
+          "noticesWithoutRecallNumber": 0
+        },
+        "newRows": 256,
+        "complete": true,
+        "conflicts": [],
+        "driftRows": 11,
+        "collisions": 0,
+        "quarantines": [],
+        "decisionClasses": {},
+        "duplicateGroups": [
+          {
+            "notices": 2,
+            "recallNumber": "26773"
+          },
+          {
+            "notices": 2,
+            "recallNumber": "26776"
+          },
+          {
+            "notices": 2,
+            "recallNumber": "26777"
+          }
+        ],
+        "unexpectedConflicts": 0,
+        "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+        "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac",
+        "historicalRowsRewritten": 0,
+        "reviewedCriteriaCreated": 0,
+        "humanReconciliationsCreated": 0
+      },
+      "observations": {
+        "runId": "aadd886f-69f5-4b50-b945-9dd275f97f2c",
+        "scope": "observations",
+        "counts": {
+          "currentObservationsRecorded": 37,
+          "historicalObservationsRecorded": 41
+        },
+        "newRows": 78,
+        "complete": true,
+        "conflicts": [],
+        "driftRows": 11,
+        "collisions": 6,
+        "quarantines": [
+          {
+            "kind": "current",
+            "apiId": "10969",
+            "recallNumber": "26749",
+            "decisionClass": "D_api_id_reuse"
+          },
+          {
+            "kind": "current",
+            "apiId": "10965",
+            "recallNumber": "26753",
+            "decisionClass": "D_api_id_reuse"
+          },
+          {
+            "kind": "current",
+            "apiId": "10967",
+            "recallNumber": "26754",
+            "decisionClass": "D_api_id_reuse"
+          },
+          {
+            "kind": "current",
+            "apiId": "10968",
+            "recallNumber": "26756",
+            "decisionClass": "D_api_id_reuse"
+          },
+          {
+            "kind": "current",
+            "apiId": "10966",
+            "recallNumber": "26763",
+            "decisionClass": "D_api_id_reuse"
+          },
+          {
+            "kind": "current",
+            "apiId": "10970",
+            "recallNumber": "26766",
+            "decisionClass": "D_api_id_reuse"
+          }
+        ],
+        "decisionClasses": {
+          "B_new_alias": 3,
+          "A_known_alias": 69,
+          "D_api_id_reuse": 6
+        },
+        "duplicateGroups": [],
+        "unexpectedConflicts": 0,
+        "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+        "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac",
+        "historicalRowsRewritten": 0,
+        "reviewedCriteriaCreated": 0,
+        "humanReconciliationsCreated": 0
+      },
+      "manifestSha256": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c"
+    },
+    "tablesBefore": {
+      "page_fetches": 0,
+      "api_revisions": 0,
+      "backfill_runs": 0,
+      "backfill_items": 0,
+      "page_revisions": 0,
+      "source_aliases": 0,
+      "coverage_ledgers": 0,
+      "notice_revisions": 0,
+      "source_identities": 0,
+      "admin_capabilities": 0,
+      "candidate_criteria": 0,
+      "identity_observations": 0,
+      "notice_identity_links": 0,
+      "candidate_review_ledger": 0,
+      "reviewer_authorizations": 0,
+      "identity_reconciliations": 0,
+      "review_decision_invalidations": 0
+    },
+    "tablesAfter": {
+      "page_fetches": 27,
+      "api_revisions": 48,
+      "backfill_runs": 2,
+      "backfill_items": 334,
+      "page_revisions": 27,
+      "source_aliases": 226,
+      "coverage_ledgers": 0,
+      "notice_revisions": 0,
+      "source_identities": 38,
+      "admin_capabilities": 0,
+      "candidate_criteria": 0,
+      "identity_observations": 78,
+      "notice_identity_links": 41,
+      "candidate_review_ledger": 0,
+      "reviewer_authorizations": 0,
+      "identity_reconciliations": 0,
+      "review_decision_invalidations": 0
+    },
+    "matchesPreRegisteredExpectation": true
+  },
+  "run2": {
+    "report": {
+      "mode": "execute",
+      "persisted": true,
+      "structure": {
+        "runId": "14d82a4c-7965-4a9e-a935-4e01a3d1b6ac",
+        "scope": "structure",
+        "counts": {
+          "linksReused": 41,
+          "aliasesReused": 82,
+          "identitiesReused": 38,
+          "pageFetchesReused": 27,
+          "apiRevisionsReused": 41,
+          "pageRevisionsReused": 27,
+          "noticesWithoutRecallNumber": 0
+        },
+        "newRows": 0,
+        "complete": true,
+        "conflicts": [],
+        "driftRows": 11,
+        "collisions": 0,
+        "quarantines": [],
+        "decisionClasses": {},
+        "duplicateGroups": [
+          {
+            "notices": 2,
+            "recallNumber": "26773"
+          },
+          {
+            "notices": 2,
+            "recallNumber": "26776"
+          },
+          {
+            "notices": 2,
+            "recallNumber": "26777"
+          }
+        ],
+        "unexpectedConflicts": 0,
+        "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+        "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac",
+        "historicalRowsRewritten": 0,
+        "reviewedCriteriaCreated": 0,
+        "humanReconciliationsCreated": 0
+      },
+      "observations": {
+        "runId": "84f17408-9bcd-4368-b8e5-491fd6e60272",
+        "scope": "observations",
+        "counts": {
+          "observationsAlreadyRecorded": 78
+        },
+        "newRows": 0,
+        "complete": true,
+        "conflicts": [],
+        "driftRows": 11,
+        "collisions": 0,
+        "quarantines": [],
+        "decisionClasses": {},
+        "duplicateGroups": [],
+        "unexpectedConflicts": 0,
+        "historicalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+        "canonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac",
+        "historicalRowsRewritten": 0,
+        "reviewedCriteriaCreated": 0,
+        "humanReconciliationsCreated": 0
+      },
+      "manifestSha256": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c"
+    },
+    "tablesAfter": {
+      "page_fetches": 27,
+      "api_revisions": 48,
+      "backfill_runs": 4,
+      "backfill_items": 334,
+      "page_revisions": 27,
+      "source_aliases": 226,
+      "coverage_ledgers": 0,
+      "notice_revisions": 0,
+      "source_identities": 38,
+      "admin_capabilities": 0,
+      "candidate_criteria": 0,
+      "identity_observations": 78,
+      "notice_identity_links": 41,
+      "candidate_review_ledger": 0,
+      "reviewer_authorizations": 0,
+      "identity_reconciliations": 0,
+      "review_decision_invalidations": 0
+    },
+    "newRows": 0,
+    "rowFingerprintsUnchanged": true,
+    "note": "Only the two run-audit rows (cpsc_backfill_runs seq 11/12) are added by design."
+  },
+  "rowFingerprintsAfterRun1": {
+    "cpsc_page_fetches": "453a3802cc0d231f58ec43e6e283b501",
+    "cpsc_api_revisions": "c103fe20ebf081f28a14773004568bcd",
+    "cpsc_backfill_items": "8e927be62b0f6344dadb05ba547da552",
+    "cpsc_page_revisions": "6745c3596eb49cbc4557ff467d14f36b",
+    "cpsc_source_aliases": "7a4fe1b84926d626940e58e42541466e",
+    "cpsc_source_identities": "15a9c1b96fd3f88c569a8e51f2d78513",
+    "cpsc_identity_observations": "0aa41b392fa76393ed38b6fd7369dd06",
+    "cpsc_notice_identity_links": "073b1bcdb2107e9858a503865578569a",
+    "cpsc_backfill_runs_first_two": "e3ea03d747b491925dc14a9f78132a70"
+  },
+  "lineageDigest": "09511692826f34dd6aa94ea60e873bd9dcb59846684a8e639f223d5cd6fccac0",
+  "lineageDigestDefinition": "sha256 over sorted UUID-free lines of aliases, API revisions, page revisions, fetches and observations (see phase 16.15 report).",
+  "verificationAfterRun2": {
+    "runs": [
+      {
+        "seq": 9,
+        "label": "Phase 16.15 production historical backfill",
+        "scope": "structure",
+        "finished": true,
+        "manifest": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c",
+        "retracted": false
+      },
+      {
+        "seq": 10,
+        "label": "Phase 16.15 production historical backfill",
+        "scope": "observations",
+        "finished": true,
+        "manifest": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c",
+        "retracted": false
+      },
+      {
+        "seq": 11,
+        "label": "Phase 16.15 production historical backfill",
+        "scope": "structure",
+        "finished": true,
+        "manifest": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c",
+        "retracted": false
+      },
+      {
+        "seq": 12,
+        "label": "Phase 16.15 production historical backfill",
+        "scope": "observations",
+        "finished": true,
+        "manifest": "a8bce170402bc3470d73b4a338ea9f6da5df01e16d76429f8142496b6c273c3c",
+        "retracted": false
+      }
+    ],
+    "itemsByRun": {
+      "structure:Phase 16.15 production historical backfill": 0,
+      "observations:Phase 16.15 production historical backfill": 0
+    },
+    "quarantined": [
+      {
+        "apiId": "10965",
+        "class": "D_api_id_reuse",
+        "recallNumber": "26753",
+        "identityResolved": true
+      },
+      {
+        "apiId": "10966",
+        "class": "D_api_id_reuse",
+        "recallNumber": "26763",
+        "identityResolved": true
+      },
+      {
+        "apiId": "10967",
+        "class": "D_api_id_reuse",
+        "recallNumber": "26754",
+        "identityResolved": true
+      },
+      {
+        "apiId": "10968",
+        "class": "D_api_id_reuse",
+        "recallNumber": "26756",
+        "identityResolved": true
+      },
+      {
+        "apiId": "10969",
+        "class": "D_api_id_reuse",
+        "recallNumber": "26749",
+        "identityResolved": true
+      },
+      {
+        "apiId": "10970",
+        "class": "D_api_id_reuse",
+        "recallNumber": "26766",
+        "identityResolved": true
+      }
+    ],
+    "itemsByStage": {
+      "B_link": 41,
+      "C_alias": 82,
+      "A_identity": 38,
+      "E_page_fetch": 27,
+      "F_quarantine": 6,
+      "D_observation": 72,
+      "C_api_revision": 41,
+      "E_page_revision": 27
+    },
+    "identity26777": {
+      "links": 2,
+      "status": "reconciled",
+      "apiAliases": ["10987", "10990"],
+      "urlAliases": [
+        "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+        "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0"
+      ],
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "observations": [
+        {
+          "api": "10990",
+          "url": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+          "class": "A_known_alias",
+          "provenance": "Phase 16.12 historical backfill (stored notice)",
+          "resolution": "resolved"
+        },
+        {
+          "api": "10987",
+          "url": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+          "class": "A_known_alias",
+          "provenance": "Phase 16.12 historical backfill (stored notice)",
+          "resolution": "resolved"
+        }
+      ],
+      "pageRevisions": 1,
+      "reconciliations": 0,
+      "observationsForApi10987": 1
+    },
+    "identityStatus": {
+      "reconciled": 38
+    },
+    "aliasesReconciled": 0,
+    "aliasesByProvenance": {
+      "Phase 16.12 historical backfill / api_id": 41,
+      "Phase 16.12 historical backfill / official_url": 41,
+      "Phase 16.12 historical backfill (stored notice) / api_id": 41,
+      "Phase 16.12 historical backfill (stored notice) / official_url": 41,
+      "Phase 16.12 historical backfill (captured current API) / api_id": 31,
+      "Phase 16.12 historical backfill (captured current API) / official_url": 31
+    },
+    "observationsByClass": {
+      "B_new_alias:resolved": 3,
+      "A_known_alias:resolved": 69,
+      "D_api_id_reuse:quarantined": 6
+    },
+    "apiRevisionsByProvenance": {
+      "Phase 16.12 historical backfill": 41,
+      "Phase 16.12 historical backfill (captured current API)": 7
+    },
+    "pageRevisionsWithCoverage": 0,
+    "identitiesWithoutCanonicalNotice": 0
+  },
+  "businessState": {
+    "before": {
+      "alerts": "d41d8cd98f00b204e9800998ecf8427e",
+      "recall_scopes": "afe330459ffd4eb46c9ad3d8469d5cd1",
+      "owned_products": "d41d8cd98f00b204e9800998ecf8427e",
+      "recall_matches": "d41d8cd98f00b204e9800998ecf8427e",
+      "recall_notices": "1364c126f11576ad709c77c27e3449e7",
+      "push_alert_queue": "d41d8cd98f00b204e9800998ecf8427e",
+      "cpscHistoricalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+      "cpscCanonicalIdentityDigest": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "after": {
+      "alerts": "d41d8cd98f00b204e9800998ecf8427e",
+      "recall_scopes": "afe330459ffd4eb46c9ad3d8469d5cd1",
+      "owned_products": "d41d8cd98f00b204e9800998ecf8427e",
+      "recall_matches": "d41d8cd98f00b204e9800998ecf8427e",
+      "recall_notices": "1364c126f11576ad709c77c27e3449e7",
+      "push_alert_queue": "d41d8cd98f00b204e9800998ecf8427e",
+      "cpscHistoricalRowsDigest": "5cae811185873566a0edb06afa83b7652e5cdea1e20ec7e7f053db0c4b82e3c4",
+      "cpscCanonicalIdentityDigest": "417082827cd060ceb2ce7e89b457b0d696eee6ce989856e7170fe7322166e7ac"
+    },
+    "countsBefore": {
+      "alerts": 0,
+      "hc_notices": 38,
+      "v2_evidence": 0,
+      "cpsc_notices": 41,
+      "push_devices": 2,
+      "rule_sets_v2": 0,
+      "recall_scopes": 92,
+      "owned_products": 0,
+      "recall_matches": 0,
+      "recall_notices": 79,
+      "v2_corrections": 0,
+      "v2_eligibility": 0,
+      "v2_evaluations": 0,
+      "automation_runs": 46,
+      "matching_leases": 0,
+      "pending_recalls": 0,
+      "push_deliveries": 0,
+      "push_alert_queue": 0,
+      "v2_alert_snapshots": 0,
+      "reviewed_criteria_v2": 0,
+      "matching_leases_active": 0,
+      "automation_lease_active": 0,
+      "automation_runs_running": 0,
+      "v2_legacy_alert_snapshots": 0
+    },
+    "countsAfter": {
+      "alerts": 0,
+      "hc_notices": 38,
+      "v2_evidence": 0,
+      "cpsc_notices": 41,
+      "push_devices": 2,
+      "rule_sets_v2": 0,
+      "recall_scopes": 92,
+      "owned_products": 0,
+      "recall_matches": 0,
+      "recall_notices": 79,
+      "v2_corrections": 0,
+      "v2_eligibility": 0,
+      "v2_evaluations": 0,
+      "automation_runs": 46,
+      "matching_leases": 0,
+      "pending_recalls": 0,
+      "push_deliveries": 0,
+      "push_alert_queue": 0,
+      "v2_alert_snapshots": 0,
+      "reviewed_criteria_v2": 0,
+      "matching_leases_active": 0,
+      "automation_lease_active": 0,
+      "automation_runs_running": 0,
+      "v2_legacy_alert_snapshots": 0
+    }
+  }
+}

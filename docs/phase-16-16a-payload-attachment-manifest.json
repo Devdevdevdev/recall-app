@@ -1,0 +1,553 @@
+{
+  "attachmentVersion": "phase-16.16a-captured-payload-attachment-v1",
+  "apiRoot": "https://www.saferproducts.gov/RestWebServices/Recall",
+  "captureSha256": "c4b43808804c376ec7d35b70230a23c8b3e8061cf8c44c8e25a7f904ff3b4bea",
+  "capturedAtUtc": "2026-09-26T09:06:13.773Z",
+  "derivedFrom": {
+    "capture": "docs/phase-16-14-cpsc-fresh-capture.json",
+    "recordedHashes": "docs/phase-16-15-backfill-manifest.json",
+    "quarantines": "docs/phase-16-15-backfill-execution.json",
+    "hashContract": "cpsc-canonical-json-sha256/v1"
+  },
+  "items": [
+    {
+      "apiId": "10969",
+      "recallNumber": "26749",
+      "payloadSha256": "1316efd47ec33bf7fc3029e985bd6d1049efbf4bcf450e3ea4599bef2aa7e23a",
+      "payload": {
+        "RecallID": 10969,
+        "RecallNumber": "26749",
+        "RecallDate": "2026-09-10T00:00:00",
+        "Description": "This recall involves Victgoal-branded bicycle helmets. The red helmets were sold in size small (S), fitting a head circumference of about 19.68 to 21.25 inches. The helmets have red padding, black straps with a silver reflective pattern in the center, a black and red buckle and a black fit-adjusting knob at the back. Only helmets manufactured in November 2025 are included in this recall. \"Model HT-006,\" \"Production: 2025/11\" and \"Ref/Lot# 2025A1101\" are printed on a label on the inside of the helmet. \"Victgoal\" is printed on the product packing bag.",
+        "URL": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "Title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "ConsumerContact": "Victgoal by email at walmart@victgoal.com.",
+        "LastPublishDate": "2026-09-10T00:00:00",
+        "Products": [
+          {
+            "Name": "Victgoal Children’s Bike Helmets",
+            "Description": "",
+            "Model": "",
+            "Type": "Headgear or Helmets",
+            "CategoryID": "1342",
+            "NumberOfUnits": "About 40"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/victgoal1_0.jpg",
+            "Caption": "Recalled Victgoal Children's Bike Helmet"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/victgoal2_0.png",
+            "Caption": "Ref/Lot# 2025A1101' and \"Production: 2025/11\" are printed on a label on the inside of the recalled Victgoal children's helmet"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/victgoal3_0.jpg",
+            "Caption": "\"Model HT-006\" is printed on a label on the inside of the recalled Victgoal children's helmet"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/victgoal4_0.jpg",
+            "Caption": "Recalled Victgoal Children's Bike Helmet – packaging bag"
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "None reported."
+          }
+        ],
+        "Manufacturers": [
+          {
+            "Name": "Dongguan Hongtu Sports Goods Co. Ltd., of China",
+            "CompanyID": ""
+          }
+        ],
+        "Retailers": [
+          {
+            "Name": "Sold Online At:\nWalmart.com from March 2026 through June 2026 for between $22 and $36.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [
+          {
+            "Name": "Victgoal, of China",
+            "CompanyID": ""
+          }
+        ],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "China"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The recalled helmets violate the mandatory safety standard for bicycle helmets because the helmets do not comply with the retention system, positional stability and certification requirements. The helmets can fail to protect the user in the event of a crash, posing a serious risk of injury or death due to head injury.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should stop using the recalled helmets immediately and contact Victgoal for a full refund. Consumers will be asked to destroy the helmets by cutting the straps and then sending a photo of the destroyed product, showing the helmet’s production date to walmart@victgoal.com. Consumers should then dispose of the recalled product."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Refund"
+          }
+        ]
+      }
+    },
+    {
+      "apiId": "10965",
+      "recallNumber": "26753",
+      "payloadSha256": "316823508cb771a7d86efaffbf04b8cc678703d59c34ae78ab29e5a594d18de0",
+      "payload": {
+        "RecallID": 10965,
+        "RecallNumber": "26753",
+        "RecallDate": "2026-09-10T00:00:00",
+        "Description": "This recall involves the Lontcs Busy Board toys. The toys consist of a wood board and metal handle with multiple attached components including a black plastic buckle with cream colored straps; a brown zipper; a metal latch; a caster wheel; a white doorbell; a lock with keys; a music box with crank; a zig zag duck puzzle; an abacus with three rows of white; red and tan beads; and a white fidget spinner.",
+        "URL": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+        "Title": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+        "ConsumerContact": "SQT by email at Lontcs@163.com",
+        "LastPublishDate": "2026-09-10T00:00:00",
+        "Products": [
+          {
+            "Name": "Lontcs Busy Board",
+            "Description": "",
+            "Model": "",
+            "Type": "Toy Miscellaneous",
+            "CategoryID": "2198",
+            "NumberOfUnits": "About 1,835"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/SQT1.png?VersionId=d9xWpvX_nU8QpaVc6XM_d8xH2XNzINMe",
+            "Caption": "Recalled Lontcs Busy Board Toy"
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "None reported"
+          }
+        ],
+        "Manufacturers": [
+          {
+            "Name": "Xianyouxianlichengshaungqiaotouqichemeirongdian (Xianyou County Licheng Shuangqiaotou Auto Beauty Shop), dba SQT LLC, of China",
+            "CompanyID": ""
+          }
+        ],
+        "Retailers": [
+          {
+            "Name": "Sold Online At:\nAmazon.com from May 2024 through July 2026 for about $31.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "China"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The toys’ zipper contains levels of lead that exceed the standard set in the federal lead paint ban. Lead is toxic if ingested by young children and can cause adverse health issues.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should stop using the busy boards immediately and contact SQT for a full refund. Consumers will be asked to destroy the toys by unscrewing its components, write in permanent marker “RECALLED” on the board, and send a photo of the destroyed toy to Lontcs@163.com. Consumers should then dispose of the destroyed product."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Refund"
+          }
+        ]
+      }
+    },
+    {
+      "apiId": "10967",
+      "recallNumber": "26754",
+      "payloadSha256": "5af2405f874ee90f9819eca708f6be60123abee3566bcdcd87b4f75df4f2e104",
+      "payload": {
+        "RecallID": 10967,
+        "RecallNumber": "26754",
+        "RecallDate": "2026-09-10T00:00:00",
+        "Description": "This recall involves Wantefully 2 in 1 Hair Dryer & Styler, One Step Hair Dryer Brush Straightner, and the Negative Ion Electric Hot Air Blow Dryer Comb, model number XR-8801. The hair dryers are black hot air dryer paddle brushes with a striped pink design and brush bristles. There are three heat settings on the hair dryers. XRUI and the model name XR-8801 are printed on the top of the product packaging.",
+        "URL": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+        "Title": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+        "ConsumerContact": "Guang Zhou at wantefully@163.com.",
+        "LastPublishDate": "2026-09-10T00:00:00",
+        "Products": [
+          {
+            "Name": "Wantefully Hair Dryer Brushes",
+            "Description": "",
+            "Model": "",
+            "Type": "Hair Dryers",
+            "CategoryID": "1982",
+            "NumberOfUnits": "About 2,295"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/guang1.gif?VersionId=IPYabnv4LtvKTkZhx2BoyjhgYZ4p8b1C",
+            "Caption": "Recalled Wantefully Hair Dryer and Blow Dryer Brush"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/guang2.gif?VersionId=syW61Hsb5Wcoj2OG_ZXjqCQa60qQnJDG",
+            "Caption": "Recalled Wantefully Hair Dryer and Blow Dryer Brush"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/guang3.gif?VersionId=qM6jcx1Q.34r3NsbG4hIyeOOgNIHihZN",
+            "Caption": "Recalled Wantefully Hair Dryer and Blow Dryer Brush"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/guang4.gif?VersionId=Hk6fmFiACPoym4_JrzXQ8KPra.G2xdVW",
+            "Caption": "Recalled Wantefully Hair Dryer and Blow Dryer Brush – Product Packaging"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/guang5.gif?VersionId=nioUsdizjwyhbNWEX8h9BbeEA0Aqaf7k",
+            "Caption": "Product Packaging Label with Model Number"
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "There has been one report of the hair dryer overheating and melting. No injuries have been reported."
+          }
+        ],
+        "Manufacturers": [],
+        "Retailers": [
+          {
+            "Name": "Sold Online At:\nAmazon.com from February 2026 through March 2026 for about $30.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [],
+        "Distributors": [
+          {
+            "Name": "Guang Zhou Shi Wan Te Fu Ke Ji You Xian Gong Si, dba Wantefully, of China",
+            "CompanyID": ""
+          }
+        ],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "China"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The recalled hair dryer brushes are in violation of federal regulations for hair dryers as they lack an integrated immersion protection device, which presents a substantial product hazard to consumers and  the risk of death or serious injury from electrocution or shock if the hair dryers fall into water while plugged in. In addition, the recalled hair dryer brushes can overheat, posing a burn hazard.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should unplug and stop using the recalled hair dryers immediately and contact Guang Zhou to receive a full refund. Consumers will be asked to cut the power cord and provide a photo of the destroyed product to wantefully@163.com."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Refund"
+          }
+        ]
+      }
+    },
+    {
+      "apiId": "10968",
+      "recallNumber": "26756",
+      "payloadSha256": "a300928462e2324ed88b30891146b0e8cd23a9417675a480d86dd20847b09cf1",
+      "payload": {
+        "RecallID": 10968,
+        "RecallNumber": "26756",
+        "RecallDate": "2026-09-10T00:00:00",
+        "Description": "This recall involves freestanding AGA Elise and Mercury Series Dual Fuel Ranges, in 36- and 48-inch widths and freestanding La Cornue CornuFé Series Dual Fuel Ranges in 36- and 43-inch widths manufactured between March 19, 2025 and July 24, 2026. All units have gas surface burners, set for Natural or LP gas, with one to three electric ovens depending on size.  The products are sold in stainless steel, white and 13 other colors, which can be found at www.agarangeusa.com and www.lacornueusa.com. All colors, trim options and gas types (Natural or LP) are included.  The serial number is on the rating plate, which is located on the bottom panel of the unit under the storage drawer.",
+        "URL": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+        "Title": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+        "ConsumerContact": "AGA Rangemaster recall line toll-free at 888-257-7912 from 8 a.m. to 8 p.m. ET Monday through Friday, online at  www.agarangeusa/testcap-recall  or www.lacornueusa/testcap-recall and click on \"Recall Information\" at the bottom of the page for more information.",
+        "LastPublishDate": "2026-09-10T00:00:00",
+        "Products": [
+          {
+            "Name": "AGA Elise and Mercury Series Freestanding Dual Fuel Ranges and La Cornue CornuFé 90 and CornuFé 110 Series Freestanding Dual Fuel Ranges",
+            "Description": "",
+            "Model": "",
+            "Type": "Gas Ranges (With Ovens)",
+            "CategoryID": "975",
+            "NumberOfUnits": "About 3,992 (In addition, about 336 were sold in Canada)"
+          }
+        ],
+        "Inconjunctions": [
+          {
+            "URL": "https://recalls-rappels.canada.ca/en/alert-recall/aga-and-cornue-freestanding-dual-fuel-ranges-recalled-due-fire-hazard"
+          }
+        ],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual1.png?VersionId=8m0SZNGo_hKLAVVy12xNOnOVTK53eQHs",
+            "Caption": "Recalled AGA Elise Freestanding Dual Fuel Range- Model AEL361DF"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual2.png?VersionId=BwwSOH6YMvlZ_Aq2wvhhTGOc7AoSUcWJ",
+            "Caption": "Recalled AGA Mercury Freestanding Dual Fuel Range- Model AMC36DF "
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual3.png?VersionId=N8U2HDW8K0BuqRELbgyp47z2aMXrMq_P",
+            "Caption": "Recalled AGA Mercury Freestanding Dual Fuel Range- Model AMC48DF"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual4.png?VersionId=ar7MoIBnUUk1TZnQoh8XHMTlIW0s2V.D",
+            "Caption": "Recalled AGA Mercury Freestanding Dual Fuel Range- Model AMC48DF"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual5.png?VersionId=pQnAWBbSZ3Y4MMC8IQrchI4RcpbpRwup",
+            "Caption": "Recalled La Cornue CornuFé 90 Dual Fuel Range Model- LAC9"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual6.png?VersionId=4q6vpUj9ZTDAOxcYedmpDF1RO0rKjRcH",
+            "Caption": "Recalled La Cornue CornuFé 110 Dual Fuel Range Model- LAC1"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/dual7.png?VersionId=QfKdQXxONHq_oV359BLMFvG5nccHG2bk",
+            "Caption": "Consumers can continue to use the electric oven sections indicated by the green checks but must shut off the gas supply valve which will prevent usage of the gas surface burners, indicated by the red X’s.  "
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "None reported."
+          }
+        ],
+        "Manufacturers": [
+          {
+            "Name": "AGA Rangemaster Limited, of United Kingdom",
+            "CompanyID": ""
+          }
+        ],
+        "Retailers": [
+          {
+            "Name": "Sold At:\nAuthorized appliance dealers nationwide from March 2025 through July 2026 for about $6,000 to $20,000.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "United Kingdom"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "Dual Fuel Ranges with a missing cap from the gas test port can cause a gas leak,​ posing a risk of serious injury or death from fire or explosion hazards.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should shut off the gas supply to avoid the risk of gas leak immediately and contact AGA Rangemaster. Consumers should promptly determine if their range is subject to recall by locating the model/serial number on the rating plate (on the bottom panel under the storage drawer) and visiting the Recall webpage at www.lacornueusa.com/testcap-recall or  www.agarangeusa.com/testcap-recall. If subject to the recall, consumers should contact AGA Rangemaster for a free inspection and repair by a certified technician. Consumers can continue to use only the electric oven sections of the range. The gas surface burners cannot be used."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Repair"
+          }
+        ]
+      }
+    },
+    {
+      "apiId": "10966",
+      "recallNumber": "26763",
+      "payloadSha256": "2ead4847dfed00d4d1280ccfc6493a1fe176dbb6a96c285faef0736b6e440117",
+      "payload": {
+        "RecallID": 10966,
+        "RecallNumber": "26763",
+        "RecallDate": "2026-09-10T00:00:00",
+        "Description": "This recall involves 2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles. The motorcycles have a Jet Black/Pure White color scheme. Affected models are TF450-C, TF450-E, TF450-X and TF450RC Edition. The range of affected Vehicle Identification Numbers (VIN) is XXXXXXXXXXXCD4981 to and including XXXXXXXXXXXCP1597. The VIN is located on the vehicle identification plate on the left side of the steering head. Consumers can check if their VIN is included in this recall at https://www.triumphmotorcycles.com/owners/recalls.",
+        "URL": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "Title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+        "ConsumerContact": "Triumph Motorcycles toll-free at 888-284-6288 from 8:30 a.m. to 6 p.m. ET Monday through Friday, email at tma.aftersales@triumphmotorcycles.com or online at https://www.triumphmotorcycles.com/owners/recalls or www.triumphmotorcycles.com and click “Owners” at the top of the page, then click \"Recalls\" for more information.",
+        "LastPublishDate": "2026-09-10T00:00:00",
+        "Products": [
+          {
+            "Name": "2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles",
+            "Description": "",
+            "Model": "",
+            "Type": "Motorcycles/Dirt Bikes (Off-Road) & Accessories",
+            "CategoryID": "2049",
+            "NumberOfUnits": "About 1,560 (In addition, about 171 were sold in Canada)"
+          }
+        ],
+        "Inconjunctions": [
+          {
+            "URL": "https://wwwapps.tc.gc.ca/Saf-Sec-Sur/7/VRDB-BDRV/search-recherche/detail.aspx?lang=eng&rn=2026378"
+          }
+        ],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/triumph1.png?VersionId=2heZTaR9AWOD.ivzUP_FbalRUuVyJNbk",
+            "Caption": "Recalled 2025/2026 Triumph TF450 model Closed Course Competition Motorcycle"
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "The firm has received 12 reports of a seized or sticking exhaust rocker shaft or damage to the exhaust valves that will result in a progressive decrease in engine performance. One injury, including a broken bone, has been reported."
+          }
+        ],
+        "Manufacturers": [],
+        "Retailers": [
+          {
+            "Name": "Sold At:\nAuthorized Triumph Motorcycle Dealers from January 2025 through July 2026 for between $10,000 and $15,000.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [
+          {
+            "Name": "Triumph Motorcycles America Ltd., of Atlanta, Georgia",
+            "CompanyID": ""
+          }
+        ],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "Thailand"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The engine rocker arm on the recalled motorcycles can seize or stick and the exhaust valves can remain open or break, posing a risk of serious injury or death from a crash hazard.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should stop using 2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles immediately and contact Triumph Motorcycles for a free repair. Consumers can check if their VIN is included in this recall at https://www.triumphmotorcycles.com/owners/recalls. Consumers with recalled motorcycles should contact their local authorized Triumph Motorcycle dealer who will inspect the engine and replace the cylinder head free of charge."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Repair"
+          }
+        ]
+      }
+    },
+    {
+      "apiId": "10970",
+      "recallNumber": "26766",
+      "payloadSha256": "b4a8d7501f9a5ccd37fc2cfa74429a1a02a01134df7eb234aba23d7a44000731",
+      "payload": {
+        "RecallID": 10970,
+        "RecallNumber": "26766",
+        "RecallDate": "2026-09-10T00:00:00",
+        "Description": "This recall expansion involves ZMC Group battery-operated light-up toys including a Mexican flag theme foam stick, a Unicorn headband, assorted colors and transparent jelly rings and heart shaped balloon flowers. Product Name  Item # 19.4\" Mexican Flag Theme Light Up Stick SS041-M Light-Up Unicorn Headband G02-UN Light-Up Assorted Colors Jelly Rings PS270 Light-Up Transparent Jelly Rings PS271 Light-Up Heart Balloon Flower 777-1 Packaging for the products has a label with the item number, identification of the distributor, place of manufacture, production date and batch number.",
+        "URL": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "Title": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "ConsumerContact": "Email ZMC Group at recallzmctoy@gmail.com.",
+        "LastPublishDate": "2026-09-10T00:00:00",
+        "Products": [
+          {
+            "Name": "Light-Up Children’s Toys",
+            "Description": "",
+            "Model": "",
+            "Type": "Toys",
+            "CategoryID": "1386",
+            "NumberOfUnits": "About 245,124 (ZMC Group previously recalled 124,560 battery-operated light up toys on May 07, 2026, which are included in the total of 245,124)"
+          }
+        ],
+        "Inconjunctions": [],
+        "Images": [
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC1.png?VersionId=jKsiSHQMIZXrlVmSuZizG0Mt2h61uwne",
+            "Caption": "Recalled Light‑Up Foam Stick (Item No. SS041‑M) – Model Wrapped with Mexican Flag Design"
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC2.png?VersionId=q88gFM.RHst5Ga2pNazkmB1KXcFNAt9v",
+            "Caption": "Recalled Light‑Up Foam Stick (Item No. SS041‑M) – End of stick showing accessible button cell batteries."
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC3.png?VersionId=WBISQGJFFAM2VVTgI7wB8ZSs0Kj0tqcj",
+            "Caption": "Recalled Light‑Up Foam Stick (Item No. SS041‑M) – Labeling area located along the side of the stick."
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC4.png?VersionId=FTtnT9B2oTttoo5qoooR7SnFooSFimnt",
+            "Caption": "Recalled light-up unicorn headband (Item No. G02-UN) – Headband and close up showing accessible button cell batteries."
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC5.png?VersionId=ZO_V5Gl9CAasgxomIqoYzqgUVox6fx0w",
+            "Caption": "Recalled light-up assorted colors jelly rings (Item No. PS270) – Ring and close up showing accessible button cell batteries."
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC6.png?VersionId=e.1JJjhZ3Emqabi_oh4PztVjfBLOlaMN",
+            "Caption": "Recalled light-up transparent jelly rings (Item No. PS271) – Ring and close up showing accessible button cell batteries."
+          },
+          {
+            "URL": "https://www.cpsc.gov/s3fs-public/ZMC7.png?VersionId=i_wwYh1MUflfft7.dzesFSaj1NlwqT0H",
+            "Caption": "Recalled light-up heart balloon flower (Item No. 777-1) – Wand and close up showing accessible button cell batteries."
+          }
+        ],
+        "Injuries": [
+          {
+            "Name": "None reported."
+          }
+        ],
+        "Manufacturers": [],
+        "Retailers": [
+          {
+            "Name": "Sold At:\nDiva at Heart, primarily in California, Texas, Oregon, Mississippi, and Arizona, and various distributors and retail stores and online at https://www.divaatheartsj.com/ from October 2018 through July 2026.",
+            "CompanyID": ""
+          }
+        ],
+        "Importers": [
+          {
+            "Name": "ZMC Group Inc., of Los Angeles, California",
+            "CompanyID": ""
+          }
+        ],
+        "Distributors": [],
+        "SoldAtLabel": null,
+        "ManufacturerCountries": [
+          {
+            "Country": "China"
+          }
+        ],
+        "ProductUPCs": [],
+        "Hazards": [
+          {
+            "Name": "The recalled light-up toys violate the mandatory safety standard for children’s toys because the toys contain button cell batteries that can be easily accessed by children. If button cell or coin batteries are swallowed, the ingested batteries can cause serious injuries, including internal chemical burns, and death.",
+            "HazardType": "",
+            "HazardTypeID": ""
+          }
+        ],
+        "Remedies": [
+          {
+            "Name": "Consumers should stop using the toys immediately, take them away from children and contact ZMC Group for a full refund. Consumers will be asked to remove the batteries, write “RECALLED” or a large “X” on the product with a permanent marker and submit a photo of the disposed product to recallzmctoy@gmail.com.   \n\nNote: Button cell batteries are hazardous. Batteries should be disposed of or recycled by following local hazardous waste procedures."
+          }
+        ],
+        "RemedyOptions": [
+          {
+            "Option": "Refund"
+          }
+        ]
+      }
+    }
+  ]
+}

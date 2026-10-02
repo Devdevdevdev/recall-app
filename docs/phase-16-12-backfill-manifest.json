@@ -1,0 +1,1495 @@
+{
+  "manifestVersion": "phase-16.12-cpsc-backfill-v1",
+  "source": "Phase 16.8 captured CPSC pages and current API observations (public data only)",
+  "expected": {
+    "storedNotices": 30,
+    "canonicalIdentities": 27,
+    "canonicalPages": 27,
+    "duplicateGroups": 3,
+    "currentObservations": 27,
+    "driftRows": 12,
+    "collisions": 6
+  },
+  "pages": [
+    {
+      "recallNumber": "20162",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+      "evidenceHash": "5be0f8816455971b19ba48ded825133baa5ae53013a65041adcbe37b769cbeed",
+      "rawPageHash": "5a230277fad30d83f90a40258c283de851b333d0aa33968f892078b101331d8b",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.789007+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "bd150b1524d6dc01f8ce245951aae40e80dbceda65ebe1f29070df5814187339",
+        "publicationDate": "4a55b475e18ab9c1f56589727900c0812e1c1a8434756a747eedd0f71b5f1649",
+        "descriptionText": "f26d07b1762de38b359782b3e66c655487f9800cc7a031bc4eb358551fe063c0",
+        "recallDetails": {
+          "description": "f26d07b1762de38b359782b3e66c655487f9800cc7a031bc4eb358551fe063c0",
+          "remedy": "25f7ffd508eae4cb848e13f3c50cd9a39bea094da4c8fe09d65a9bf24a751a5a",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "ec2b4e99cf7ea91dd6561bf75faef3b1a9f9098903a382613d2d8d26374bc100",
+          "importer(s)": "aa5b753af70c7b7d4605795a92338971971abf4e9227f24b275395700033f183",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "306a551b196042077d8cb1504c095e73e9c3d18be2d26ddddfa299917dfd495d"
+        },
+        "tables": ["fb0b128321bd645e91f6e235302d76f82784fabc0c415e0c2cfd1b4960d9ffc8"]
+      },
+      "normalizedEvidence": {
+        "recallNumber": "20162",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+        "title": "Intertex Recalls Blowers Due To Fire Hazard",
+        "publicationDate": "2020-08-12",
+        "description": "This recall involves several models of centrifugal and axial blowers sold under the B-Air, BlueDri, BlueDri Pro and Soleaire brands. Each blower has convenience outlets on the side of the unit to allow the blowers to be “daisy chained” (several blowers plugged together in series) or other devices to be plugged in. These blowers were sold in a variety of models and colors. Model numbers can be found on the rear of the products. MODEL BRAND DESCRIPTION MSRP VP-33 B-Air® AIR MOVER 1/3 HP $209.00 PB-25 B-Air® AXIAL AIR MOVER 1/4 HP $299.00 FX-1 B-Air® COMPACT AIR MOVER 1/4 HP $119.00 GP-33 B-Air® AIR MOVER 1/3 HP $259.99 BD-ONE-29 BlueDri AIR MOVER 1/3 HP $158.00 BDPRO-33 BlueDri Pro AIR MOVER 1/3 HP $179.00 BD AXIAL-25 BlueDri Pro AXIAL AIR MOVER 1/4 HP $249.00 Jetster Soleaire AIR MOVER 1/3 HP $159.00",
+        "recallDetails": {
+          "description": "This recall involves several models of centrifugal and axial blowers sold under the B-Air, BlueDri, BlueDri Pro and Soleaire brands. Each blower has convenience outlets on the side of the unit to allow the blowers to be “daisy chained” (several blowers plugged together in series) or other devices to be plugged in. These blowers were sold in a variety of models and colors. Model numbers can be found on the rear of the products. MODEL BRAND DESCRIPTION MSRP VP-33 B-Air® AIR MOVER 1/3 HP $209.00 PB-25 B-Air® AXIAL AIR MOVER 1/4 HP $299.00 FX-1 B-Air® COMPACT AIR MOVER 1/4 HP $119.00 GP-33 B-Air® AIR MOVER 1/3 HP $259.99 BD-ONE-29 BlueDri AIR MOVER 1/3 HP $158.00 BDPRO-33 BlueDri Pro AIR MOVER 1/3 HP $179.00 BD AXIAL-25 BlueDri Pro AXIAL AIR MOVER 1/4 HP $249.00 Jetster Soleaire AIR MOVER 1/3 HP $159.00",
+          "remedy": "Consumers should immediately stop using the convenience outlets on the side of the recalled blowers and contact Intertex for a free repair. Consumers with recalled units will receive a free cordset adapter with an integrated circuit breaker.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Home Depot and Lowes stores nationwide and online at www.aerindustries.com, www.amazon.com, www.ebay.com, www.homedepot.com, and www.lowes.com from January 2008 through July 2020 for between $120 and $300.",
+          "importer(s)": "Intertex, LLC, of Azusa, CA.",
+          "manufactured in": "China",
+          "recall number": "20-162"
+        },
+        "tables": [
+          [
+            ["MODEL", "BRAND", "DESCRIPTION", "MSRP"],
+            ["VP-33", "B-Air®", "AIR MOVER 1/3 HP", "$209.00"],
+            ["PB-25", "B-Air®", "AXIAL AIR MOVER 1/4 HP", "$299.00"],
+            ["FX-1", "B-Air®", "COMPACT AIR MOVER 1/4 HP", "$119.00"],
+            ["GP-33", "B-Air®", "AIR MOVER 1/3 HP", "$259.99"],
+            ["BD-ONE-29", "BlueDri", "AIR MOVER 1/3 HP", "$158.00"],
+            ["BDPRO-33", "BlueDri Pro", "AIR MOVER 1/3 HP", "$179.00"],
+            ["BD AXIAL-25", "BlueDri Pro", "AXIAL AIR MOVER 1/4 HP", "$249.00"],
+            ["Jetster", "Soleaire", "AIR MOVER 1/3 HP", "$159.00"]
+          ]
+        ]
+      }
+    },
+    {
+      "recallNumber": "20163",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+      "evidenceHash": "db375bbc470baddc2fe9e8a23eea7e09012059b56b1a7ca1d87f9b4a15be124a",
+      "rawPageHash": "5db0a98676aa43671a15a7a093f39d8c56034f293d1156e77a8218079e9da05a",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.966188+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "02f44a8504671d9ee29e646f045a41de363c6ed57bcd39c219095670a23f740b",
+        "publicationDate": "4a55b475e18ab9c1f56589727900c0812e1c1a8434756a747eedd0f71b5f1649",
+        "descriptionText": "02860d58bbc6760415f083312f08cd82dfce7fd11d0d2deade7898c8291432ee",
+        "recallDetails": {
+          "description": "02860d58bbc6760415f083312f08cd82dfce7fd11d0d2deade7898c8291432ee",
+          "remedy": "130030f73e135331fc6e1a45ca304c6c9e49144cedfad50f7d804852e21b2ef0",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "d368ca31e7fc9e5cc065f22b11370f40e2534f5c4489e0534d4467c5121e2ba2",
+          "manufacturer(s)": "d32d26d2befeebc92a46258ed25f34efc407cc0c63a0bc3e5ac09214542a4f68",
+          "importer(s)": "d32d26d2befeebc92a46258ed25f34efc407cc0c63a0bc3e5ac09214542a4f68",
+          "manufactured in": "8d23a6e37e0a6431a8f1b43a91026dcff51170a89a6512ff098eaa56a4d5fb19",
+          "recall number": "f35829d73ab1eb0c5464eee5c0b184413c7b2bbfb50fbf8e9c5b43dce36279ef"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "20163",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+        "title": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+        "publicationDate": "2020-08-12",
+        "description": "The recalled lawn dart sets were sold for 2, 4 and 5 players and contained 4, 8 and 10 units (darts) respectively, as well as individual spare darts. The lawn darts are about a foot long (30 cm), have polypropylene flights (fins) designed to be held at the tail, with a brass body ending in a stainless steel spigot (peg). The lawn darts were sold in assorted colors including red, blue, yellow, purple, pink, orange, ivory and green. The CROWN DARTS logo is printed on the product.",
+        "recallDetails": {
+          "description": "The recalled lawn dart sets were sold for 2, 4 and 5 players and contained 4, 8 and 10 units (darts) respectively, as well as individual spare darts. The lawn darts are about a foot long (30 cm), have polypropylene flights (fins) designed to be held at the tail, with a brass body ending in a stainless steel spigot (peg). The lawn darts were sold in assorted colors including red, blue, yellow, purple, pink, orange, ivory and green. The CROWN DARTS logo is printed on the product.",
+          "remedy": "Crown Darts UK is unable to conduct the recall. Consumers should immediately stop using the recalled lawn dart sets and destroy and dispose of them to prevent further usage.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Online at www.crowndarts.com from May 2004 through June 2020 for between $15 and $139.",
+          "manufacturer(s)": "Crown Darts UK, of United Kingdom",
+          "importer(s)": "Crown Darts UK, of United Kingdom",
+          "manufactured in": "United Kingdom",
+          "recall number": "20-163"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "20164",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+      "evidenceHash": "6487bb7464da16dd97cb189f5da82ec26496898a2dab8b095b3e673edd4b9c54",
+      "rawPageHash": "cc42e547df2aba5d56e0856496c49605f94a98d1c7e44e4c548786ae3c41d176",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:59.010562+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "01c102ae9fbc3c61700c1c25d8414d1363bc9e121b03c2722e35f57a6046280b",
+        "publicationDate": "4a55b475e18ab9c1f56589727900c0812e1c1a8434756a747eedd0f71b5f1649",
+        "descriptionText": "0a872c5f2e4c9de5be29d6217f2ab1bc054fe9e6fb3dac03102cf00f3d5f8089",
+        "recallDetails": {
+          "description": "0a872c5f2e4c9de5be29d6217f2ab1bc054fe9e6fb3dac03102cf00f3d5f8089",
+          "remedy": "e9cc156874a9ffcd4d09b12377525f6fc94a2bdf8d1e33c20a385e3b11f71fa7",
+          "incidents/injuries": "68355bc98eeb5ef96d338789693d60edab16a3118a798b4de1fa6b76094afd66",
+          "sold at": "7a29d329c3abb509dd2a96d1881dde823ecebfcb0d192d4a8b357867bd903a5f",
+          "importer(s)": "c9acf1358901ba5ad1b6229a783085ddd49006f9b917e17edf4622572bcc0c9e",
+          "manufactured in": "7f69649ad70496d441a62f0f196b1c3283572f2c64f7b1b9cbc3939dac388958",
+          "recall number": "42536152c2fd2296e9dd1812fb16ee8853db10fc4c458599ee2648edc568c392"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "20164",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+        "title": "Thule Recalls Strollers Due to Injury Hazard",
+        "publicationDate": "2020-08-12",
+        "description": "This recall involves Thule Sleek strollers. The recalled strollers were sold in black, dark gray, light gray, navy blue and red with a silver or black frame. Only strollers without a QC2020 sticker next to the product label and manufactured between May 2018 through September 2019 are included in this recall. The manufacture date code in YY/MM format, Thule Sleek and product number: 11000001-5, 11000017, 11000330 or 11000337-342 can be found on the product label located on the lower inside frame of the stroller. UPC code 091021978485, 091021883703, 091021460256, 091021761773, 091021079779, 091021070585, 091021349001, 091021433137, 091021514386, 091021037090,091021091900, 091021648937 or 091021190214 can be found on the product packaging.",
+        "recallDetails": {
+          "description": "This recall involves Thule Sleek strollers. The recalled strollers were sold in black, dark gray, light gray, navy blue and red with a silver or black frame. Only strollers without a QC2020 sticker next to the product label and manufactured between May 2018 through September 2019 are included in this recall. The manufacture date code in YY/MM format, Thule Sleek and product number: 11000001-5, 11000017, 11000330 or 11000337-342 can be found on the product label located on the lower inside frame of the stroller. UPC code 091021978485, 091021883703, 091021460256, 091021761773, 091021079779, 091021070585, 091021349001, 091021433137, 091021514386, 091021037090,091021091900, 091021648937 or 091021190214 can be found on the product packaging.",
+          "remedy": "Consumers should immediately stop using the recalled strollers and contact Thule Group to arrange for the return of the product and to receive a free replacement Sleek stroller frame.",
+          "incidents/injuries": "Thule has received one report of the stroller’s handlebar detaching. No injuries have been reported.",
+          "sold at": "Buy Buy Baby, REI and others stores nationwide and online at Thule.com and Amazon.com from July 2018 through June 2020 for between $830 and $850.",
+          "importer(s)": "Thule Group, of Sweden",
+          "manufactured in": "Poland",
+          "recall number": "20-164"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "20165",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+      "evidenceHash": "3b4e2a5e6f07bc15af2cdf94e4e8bbed57705215081bf8cfa0a384f7d8d1c4b7",
+      "rawPageHash": "ea409761639f9d0f17dadc5dc5101236f6962d92f40822aa9ada09ab74208de5",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:59.018862+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "3e19f9a9191251c96166c91d740e73127d26be74d92cde64f0ad21be007a1573",
+        "publicationDate": "4a55b475e18ab9c1f56589727900c0812e1c1a8434756a747eedd0f71b5f1649",
+        "descriptionText": "7360a0907f1954a2cb3e59fe82f21ed33d20c7727b0f1ff2454d445142cefce9",
+        "recallDetails": {
+          "description": "7360a0907f1954a2cb3e59fe82f21ed33d20c7727b0f1ff2454d445142cefce9",
+          "remedy": "62cdadcb44f140440ab7b7b4f21f3529da487f54ee422dfba3004385c39676f9",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "3d31a9e724e873574b14cd58e0427ef2afd8c29d05e48496327e7af4a20de310",
+          "manufacturer(s)": "01279a9d0559e0cdf5e33432e43794e2511469bfeab0644db72b6b71d320e617",
+          "importer(s)": "53aa71cb6ba874c820a8befc5ed9a97e46092f2a51b47da9c51a07a2edfa0849",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "8909e89c8ef3bd81229b3661b87131e1d8b4b205ff54410ce625e2d235f739f6"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "20165",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+        "title": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+        "publicationDate": "2020-08-12",
+        "description": "This recall involves Active Brand AS Sweet Protection-branded Ripper Jr., Ripper MIPS Jr. and Ripper MIPS bicycle helmets. The Ripper Jr. and Ripper MIPS Jr. helmets were sold in one size, fitting head circumference from 48 cm to 53 cm (18.9 to 20.9 inches). The Ripper MIPS helmet was sold in one size, fitting head circumference from 53 cm to 61 cm (20.9 to 24.0 inches). The helmets were sold in matte colors: black, white, blue, gray, green, pink and purple. “Sweet Protection” is printed on the side of the helmets. All helmets have the manufacturing date printed inside the helmet with 2019 as the production year and a number between 9 and 12 as the production month. The model name is printed on a label on the rear back side of the helmet. The bicycle helmets are tested and certified according to the European standard for bicycle helmets, EN1078 and were only meant to be sold in the European market.",
+        "recallDetails": {
+          "description": "This recall involves Active Brand AS Sweet Protection-branded Ripper Jr., Ripper MIPS Jr. and Ripper MIPS bicycle helmets. The Ripper Jr. and Ripper MIPS Jr. helmets were sold in one size, fitting head circumference from 48 cm to 53 cm (18.9 to 20.9 inches). The Ripper MIPS helmet was sold in one size, fitting head circumference from 53 cm to 61 cm (20.9 to 24.0 inches). The helmets were sold in matte colors: black, white, blue, gray, green, pink and purple. “Sweet Protection” is printed on the side of the helmets. All helmets have the manufacturing date printed inside the helmet with 2019 as the production year and a number between 9 and 12 as the production month. The model name is printed on a label on the rear back side of the helmet. The bicycle helmets are tested and certified according to the European standard for bicycle helmets, EN1078 and were only meant to be sold in the European market.",
+          "remedy": "Consumers should immediately stop using the recalled helmets and return to the store where sold or contact Active Brands/Sweet Protection for a full refund.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Evo and Rogers Ski and Sport sporting goods stores in California, Colorado, Montana, New Hampshire, Utah, Washington and Wyoming and online at Expert Voice Pro Purchase (www.expertvoice.com) from February 2020 through June 2020 for between $50 and $90.",
+          "manufacturer(s)": "Active Brands AS, of Norway",
+          "importer(s)": "Active Brands NA, of Broomfield, Colo.",
+          "manufactured in": "China",
+          "recall number": "20-165"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26748",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+      "evidenceHash": "db43caa70409ce7b7033676938a94c5e840238d1002d74799c9b0c1552550455",
+      "rawPageHash": "8d8a77e5fe2383d1453fa474a687d379bdc2e0d5648ca6ed13527d41bd3a262e",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.213045+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "a23c4d53fd7851f31821a06d17309c41c4636627cc3356920fea65e654264bb6",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "edc2a5b24fb262b38a8d46a32ff1df200bb07a2afc34a87dcd6556e0be1954b6",
+        "recallDetails": {
+          "description": "edc2a5b24fb262b38a8d46a32ff1df200bb07a2afc34a87dcd6556e0be1954b6",
+          "remedy": "23a928bf332b6b809403311c045144b648cd877b27f49ef67393a3aaac9a4501",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "98e99470cb3035c5a60a2bc6e0741c4db9e7edd7e496adf36dc4b5306bea5a96",
+          "importer(s)": "5d3128b336d4181adc2ac56bdd139e08fa9a6056d2f994c6b0238eda3cb45b68",
+          "manufactured in": "6b615adb1300c1161bcb58c11141164e9b762987607e7cccdcd0178f3bb13d0b",
+          "recall number": "e2a79aff7126d8bd3e128a31ce9b1d1ef46d3d7cbf58c64060164339da220e57"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26748",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+        "title": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves Ricky Joy-branded Sour Crush Rolling Liquid Candy bottles. The bottles contain 1.85 fluid ounce of sour liquid candy intended to be applied through the bottle’s rollerball top. The plastic candy bottles were sold individually and in packs of three or 12 bottles per pack, and in the following colors/flavors: blue (blue raspberry), red (strawberry), green (green apple) and pink (watermelon). The Ricky Joy logo, “EXTREME SOUR\", “SOUR CRUSH” and the flavor name are printed on the front of the bottle, along with the image of a green monster.",
+        "recallDetails": {
+          "description": "This recall involves Ricky Joy-branded Sour Crush Rolling Liquid Candy bottles. The bottles contain 1.85 fluid ounce of sour liquid candy intended to be applied through the bottle’s rollerball top. The plastic candy bottles were sold individually and in packs of three or 12 bottles per pack, and in the following colors/flavors: blue (blue raspberry), red (strawberry), green (green apple) and pink (watermelon). The Ricky Joy logo, “EXTREME SOUR\", “SOUR CRUSH” and the flavor name are printed on the front of the bottle, along with the image of a green monster.",
+          "remedy": "Consumers should stop using the candy bottles immediately, take them away from children and contact The Ricky Joy Company for a refund. Consumers will be provided with a pre-paid shipping label to return the recalled product.",
+          "incidents/injuries": "None reported.",
+          "sold at": "H-E-B, Forman Mill and other candy stores nationwide and online at Walmart.com, CandyFunHouse.com, RickyJoy.com and other online retailers from January 2023 through May 2026 for about $3 for the bottle and for between $13 and $32 for the pack.",
+          "importer(s)": "International Trade Imports LLC (The Ricky Joy Company), dba Ricky Joy, of Cumming, Georgia",
+          "manufactured in": "Colombia",
+          "recall number": "26-748"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26749",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "evidenceHash": "317f5871a4532234f6e234c95dfc05354f29d9bcb1274cb43a54c102ceb91d30",
+      "rawPageHash": "b78ee682866654b5cafb611af781a721e7241daa9f0fe02b5fa5518ca6426067",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.530187+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "6c88fb4694db2da442fa0e53837ae7222256969364841be9ee0f13b01863a41e",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "9c666fbabb7a4740077ed02401a39be1d4bd4980a282d84276b317da664582e8",
+        "recallDetails": {
+          "description": "9c666fbabb7a4740077ed02401a39be1d4bd4980a282d84276b317da664582e8",
+          "remedy": "536d0de2ed8ecd3e80224c1e2c99f521e68a6639de2871d9197717730c74f40d",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold online at": "febf384801df4830089f6cd78f7ae1f7c68f46b3412bcf7bca116aa2c1b6fbcc",
+          "manufacturer(s)": "0645b0983145f324e2e19eca35246150b848220ab864983bedbe484be79f4edd",
+          "importer(s)": "665727dd8a247cf5e5ac31cd24999ff82fa3d2a22b4197a15c8d8f7cd371d09f",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "751175c70e44148e166b1088add0bab531858d2cf6f333f3490f19c9f417e242"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26749",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves Victgoal-branded bicycle helmets. The red helmets were sold in size small (S), fitting a head circumference of about 19.68 to 21.25 inches. The helmets have red padding, black straps with a silver reflective pattern in the center, a black and red buckle and a black fit-adjusting knob at the back. Only helmets manufactured in November 2025 are included in this recall. “Model HT-006,” “Production: 2025/11” and “Ref/Lot# 2025A1101” are printed on a label on the inside of the helmet. “Victgoal” is printed on the product packing bag.",
+        "recallDetails": {
+          "description": "This recall involves Victgoal-branded bicycle helmets. The red helmets were sold in size small (S), fitting a head circumference of about 19.68 to 21.25 inches. The helmets have red padding, black straps with a silver reflective pattern in the center, a black and red buckle and a black fit-adjusting knob at the back. Only helmets manufactured in November 2025 are included in this recall. “Model HT-006,” “Production: 2025/11” and “Ref/Lot# 2025A1101” are printed on a label on the inside of the helmet. “Victgoal” is printed on the product packing bag.",
+          "remedy": "Consumers should stop using the recalled helmets immediately and contact Victgoal for a full refund. Consumers will be asked to destroy the helmets by cutting the straps and then sending a photo of the destroyed product, showing the helmet’s production date to walmart@victgoal.com. Consumers should then dispose of the recalled product.",
+          "incidents/injuries": "None reported.",
+          "sold online at": "Walmart.com from March 2026 through June 2026 for between $22 and $36.",
+          "manufacturer(s)": "Dongguan Hongtu Sports Goods Co. Ltd., of China",
+          "importer(s)": "Victgoal, of China",
+          "manufactured in": "China",
+          "recall number": "26-749"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26753",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+      "evidenceHash": "4689854ccc16a0668d28fd7bfa11c79b49a83d73a553caa6083d007ffbca1880",
+      "rawPageHash": "1ab80349fca59e22ab1bcb87228ff9c8d7a181271f8770d37468ecbe148d6005",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.198564+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "7de231bd7a5ebc9e778fb4481cafddc8a6cbe307abe3e21658f597c1ec085a02",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "bf9501807a9b36a2cdde5d2e0b355f4df040881ef24f63352ea5885b33b1efef",
+        "recallDetails": {
+          "description": "bf9501807a9b36a2cdde5d2e0b355f4df040881ef24f63352ea5885b33b1efef",
+          "remedy": "fb25a659c3bf251fc3eb6f06002ccbd70741405695ee12e9c420cb16ec988bdb",
+          "incidents/injuries": "ffcae7fc619081e1aee380a867e0d7334732a125d5b8aaf9e96cddfede22bcc0",
+          "sold online at": "eef7cd4809671e86bec5b8551a049569fb17736c4025c2a25bf62fd571386244",
+          "manufacturer(s)": "aee86e3c8e0c8763f347311de967f570a1e7c76615343de0536b105cd1cd3df8",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "a0e92314ac7338422bac82e8292f82c6738424e0e1051590e845859f0420bc55"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26753",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+        "title": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves the Lontcs Busy Board toys. The toys consist of a wood board and metal handle with multiple attached components including a black plastic buckle with cream colored straps; a brown zipper; a metal latch; a caster wheel; a white doorbell; a lock with keys; a music box with crank; a zig zag duck puzzle; an abacus with three rows of white; red and tan beads; and a white fidget spinner.",
+        "recallDetails": {
+          "description": "This recall involves the Lontcs Busy Board toys. The toys consist of a wood board and metal handle with multiple attached components including a black plastic buckle with cream colored straps; a brown zipper; a metal latch; a caster wheel; a white doorbell; a lock with keys; a music box with crank; a zig zag duck puzzle; an abacus with three rows of white; red and tan beads; and a white fidget spinner.",
+          "remedy": "Consumers should stop using the busy boards immediately and contact SQT for a full refund. Consumers will be asked to destroy the toys by unscrewing its components, write in permanent marker “RECALLED” on the board, and send a photo of the destroyed toy to Lontcs@163.com . Consumers should then dispose of the destroyed product.",
+          "incidents/injuries": "None reported",
+          "sold online at": "Amazon.com from May 2024 through July 2026 for about $31.",
+          "manufacturer(s)": "Xianyouxianlichengshaungqiaotouqichemeirongdian (Xianyou County Licheng Shuangqiaotou Auto Beauty Shop), dba SQT LLC, of China",
+          "manufactured in": "China",
+          "recall number": "26-753"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26754",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+      "evidenceHash": "8ced3654ddea19c71d7f4ab4dbaf1b2ad4ebb8d88c33aed3169daa9bf68927c1",
+      "rawPageHash": "7fc0d957af2e0729a001b25e544b7c2ae063aaed25edc9a5f3f194692010b6c8",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.489283+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "8d8fe271a70ac0a07b84c1d1186efe31763f512e7ba383edf5c5500d85b5a463",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "2ef243db0457dcbd51a89629c6759a5304535990080943c90827b50aec0078ed",
+        "recallDetails": {
+          "description": "2ef243db0457dcbd51a89629c6759a5304535990080943c90827b50aec0078ed",
+          "remedy": "5a414df502a438710865bba262b7fea4ae0f7d9db0585aabfc19ab627b8ba34d",
+          "incidents/injuries": "15d209317da2b2be9f49c70a86a5ea42203740063a63b0cb99beea22e6e9a470",
+          "sold online at": "31c5d750f30dc8b5251eb04c2832a89936489fef9267c693c93dc7cb0f93b5bb",
+          "retailer": "28cf481a9b0cb9ec6971171ae690c0fe50bffc201daa5a29976b877d3904a1ff",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "ea5447dc39472b5a72c060cbe3a2ac6a3498213e43c1b484e681775c8512f499"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26754",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+        "title": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves Wantefully 2 in 1 Hair Dryer & Styler, One Step Hair Dryer Brush Straightner, and the Negative Ion Electric Hot Air Blow Dryer Comb, model number XR-8801. The hair dryers are black hot air dryer paddle brushes with a striped pink design and brush bristles. There are three heat settings on the hair dryers. XRUI and the model name XR-8801 are printed on the top of the product packaging.",
+        "recallDetails": {
+          "description": "This recall involves Wantefully 2 in 1 Hair Dryer & Styler, One Step Hair Dryer Brush Straightner, and the Negative Ion Electric Hot Air Blow Dryer Comb, model number XR-8801. The hair dryers are black hot air dryer paddle brushes with a striped pink design and brush bristles. There are three heat settings on the hair dryers. XRUI and the model name XR-8801 are printed on the top of the product packaging.",
+          "remedy": "Consumers should unplug and stop using the recalled hair dryers immediately and contact Guang Zhou to receive a full refund. Consumers will be asked to cut the power cord and provide a photo of the destroyed product to wantefully@163.com .",
+          "incidents/injuries": "There has been one report of the hair dryer overheating and melting. No injuries have been reported.",
+          "sold online at": "Amazon.com from February 2026 through March 2026 for about $30.",
+          "retailer": "Guang Zhou Shi Wan Te Fu Ke Ji You Xian Gong Si, dba Wantefully, of China",
+          "manufactured in": "China",
+          "recall number": "26-754"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26755",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "evidenceHash": "bd3355fefd2b6f4c97ba1970736044dca10551c65d0201347c0dde723636837b",
+      "rawPageHash": "54c1b875f8ca459b74b1e3690b56158aec83598d3bcd5704a25004af60e1038b",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.302596+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "d308749e59654dabdd8748a3723bbfbbcb5ecea470f0fc41e95bb9d90bcf092f",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "c78f42b5b5596fad66b6cb6dfe14774816706784a5f254ed8f4ccec5f50d53dd",
+        "recallDetails": {
+          "description": "c78f42b5b5596fad66b6cb6dfe14774816706784a5f254ed8f4ccec5f50d53dd",
+          "remedy": "18b2a91198409f6c5e117e2d3a60e2bb230ef53465a304c4ba019c58fe2f3ac0",
+          "incidents/injuries": "1786a007ba0392775e6d735ab1172d6bd59a22412c6c364d4f3422a34d09e52e",
+          "sold online at": "2a2f9d4f3369a85a494d1d12c5a7906b8baf350049c457e80133dfde118009d0",
+          "importer(s)": "4f5a8ad6fab5493db8819c2b1f14dddbc21296028f1b7a98e60a13d23512dcde",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "8b99d15d371f0907c570c341ab0ab328cd696c305b8e22bf870b078b0973ae71"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26755",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves the Hero Fire Spray Fire Canisters. The canisters are either red and blue or red and have the company's logo on them with the name HERO Fire Spray on the front panel of the spray. Each canister contains 20 fluid ounces. The circular canisters are about 2.6 inches in diameter and 11.4 inches tall and weigh about 1.8 pounds. There is a black plastic release tab on the top of the canister. The affected batch is clearly marked on the base of the canister with the numbers \"09/2024\" as the date code.",
+        "recallDetails": {
+          "description": "This recall involves the Hero Fire Spray Fire Canisters. The canisters are either red and blue or red and have the company's logo on them with the name HERO Fire Spray on the front panel of the spray. Each canister contains 20 fluid ounces. The circular canisters are about 2.6 inches in diameter and 11.4 inches tall and weigh about 1.8 pounds. There is a black plastic release tab on the top of the canister. The affected batch is clearly marked on the base of the canister with the numbers \"09/2024\" as the date code.",
+          "remedy": "Consumers should stop using the fire spray canisters immediately and visit www.preparedhero.com/pages/recall for instructions on how to receive a free replacement unit and how to properly dispose of the recalled fire spray canister according to local and state regulations. Consumers will be asked to place their fire spray canister in a box, label the box “RECALLED”, and bring it to a municipal household hazardous waste (HHW) collection center to receive a free replacement. Note: Do not throw the recalled fire spray canister in the trash or the general recycling stream (e.g., street-level or curbside recycling bins). Recalled fire spray canisters must be disposed of differently than other products, because they are pressurized. Your municipal household hazardous waste (HHW) collection center may accept this recalled fire spray canister for disposal. Before taking your fire spray canister to a HHW collection center, contact that office ahead of time and ask whether it accepts pressurized canisters. If it does not, contact your municipality for further guidance.",
+          "incidents/injuries": "The firm has received nine reports of the fire spray canister exploding or deteriorating while in storage. No injuries reported.",
+          "sold online at": "PreparedHero.com and Amazon.com from October 2024 through January 2026 for between $18 to $30.",
+          "importer(s)": "Prepared Hero, of Sheridan, Wyoming",
+          "manufactured in": "China",
+          "recall number": "26-755"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26756",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+      "evidenceHash": "8e5c21ca93b395de59140b934083c52e38ee0e5feee72d72f76446bf53be5000",
+      "rawPageHash": "c946cccd0e03ba767a738d0ffeaf2cb51ecf7491ab7b7b30f3d4c58380c40c14",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.544234+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "c9d26b9980298345c1c7fa3ac2b258b1eeb799c3d176ee8ffc24b37cd9bada4e",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "652a86d6377728960d7eb40da5701b0519191ac2d6b99ae0a7911d13abceb131",
+        "recallDetails": {
+          "description": "5c81d8bcf0ccb4f1fdea4693579a2f45d6c4644779a1da92149ba70ebba36eb0",
+          "remedy": "7ddaf164f7167bf238ada7c9924d175e737445692dc3a1718fd1147ad52c2b50",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "62e1c7467ed77b36f16cccd5200a95da0366d33fc1d3299f09dfd2acf45368b4",
+          "manufacturer(s)": "505a2d29cfff3ae9acba03c80082a4c4e2fbf490fbdecb007548cba1960fa1ab",
+          "manufactured in": "8d23a6e37e0a6431a8f1b43a91026dcff51170a89a6512ff098eaa56a4d5fb19",
+          "recall number": "1ef8dd7820f0f9725ef3aca7467657311b13faec6d447378dbd6da4a2844bcca"
+        },
+        "tables": ["f264ce1ad54fc24b5a69eb7b16ded62e019d71548b76603a6a7294d81381dfd3"]
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26756",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+        "title": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves freestanding AGA Elise and Mercury Series Dual Fuel Ranges, in 36- and 48-inch widths and freestanding La Cornue CornuFé Series Dual Fuel Ranges in 36- and 43-inch widths manufactured between March 19, 2025 and July 24, 2026. All units have gas surface burners, set for Natural or LP gas, with one to three electric ovens depending on size. The products are sold in stainless steel, white and 13 other colors, which can be found at www.agarangeusa.com and www.lacornueusa.com . All colors, trim options and gas types (Natural or LP) are included. The serial number is on the rating plate, which is located on the bottom panel of the unit under the storage drawer.",
+        "recallDetails": {
+          "description": "This recall involves freestanding AGA Elise and Mercury Series Dual Fuel Ranges, in 36- and 48-inch widths and freestanding La Cornue CornuFé Series Dual Fuel Ranges in 36- and 43-inch widths manufactured between March 19, 2025 and July 24, 2026. All units have gas surface burners, set for Natural or LP gas, with one to three electric ovens depending on size. The products are sold in stainless steel, white and 13 other colors, which can be found at www.agarangeusa.com and www.lacornueusa.com . All colors, trim options and gas types (Natural or LP) are included. The serial number is on the rating plate, which is located on the bottom panel of the unit under the storage drawer. Model Production Date Range AEL361DF 3/19/25 to 7/24/26 AEL481DF 3/19/25 to 7/24/26 AMC36DF 3/19/25 to 7/24/26 AMC48DF 3/19/25 to 7/24/26 LAC9 3/19/25 to 7/24/26 LAC1 3/19/25 to 7/24/26",
+          "remedy": "Consumers should shut off the gas supply to avoid the risk of gas leak immediately and contact AGA Rangemaster. Consumers should promptly determine if their range is subject to recall by locating the model/serial number on the rating plate (on the bottom panel under the storage drawer) and visiting the Recall webpage at www.lacornueusa.com/testcap-recall or www.agarangeusa.com/testcap-recall . If subject to the recall, consumers should contact AGA Rangemaster for a free inspection and repair by a certified technician. Consumers can continue to use only the electric oven sections of the range. The gas surface burners cannot be used.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Authorized appliance dealers nationwide from March 2025 through July 2026 for about $6,000 to $20,000.",
+          "manufacturer(s)": "AGA Rangemaster Limited, of United Kingdom",
+          "manufactured in": "United Kingdom",
+          "recall number": "26-756"
+        },
+        "tables": [
+          [
+            ["Model", "Production Date Range"],
+            ["AEL361DF", "3/19/25 to 7/24/26"],
+            ["AEL481DF", "3/19/25 to 7/24/26"],
+            ["AMC36DF", "3/19/25 to 7/24/26"],
+            ["AMC48DF", "3/19/25 to 7/24/26"],
+            ["LAC9", "3/19/25 to 7/24/26"],
+            ["LAC1", "3/19/25 to 7/24/26"]
+          ]
+        ]
+      }
+    },
+    {
+      "recallNumber": "26761",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "evidenceHash": "426418fd4d06ee4e4892ea91985e5864eacf84f1b35c685a81cf017e697cee4b",
+      "rawPageHash": "23eb14de723d48ba4a50c4005fc0b5f3f839170618d481bda3f759df21730f82",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.277393+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "305223b3596d6d9eaea9e312da9a5c75977218243c451151d918addf4a3335cd",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "994212930d1862a4184c9bad47eb93d8e1faa786e2a7c73a36f4a6de6bb60d36",
+        "recallDetails": {
+          "description": "994212930d1862a4184c9bad47eb93d8e1faa786e2a7c73a36f4a6de6bb60d36",
+          "remedy": "01f3514654f32b747c19c20ee71160153a17439fc07fc0cc4e6ffd122927437e",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "b955b70cc871a0e0e9a0c1a68a94af124a3c883891eaccee349efb22f0f6a601",
+          "retailer": "7d67557f67708dcff37df370fe074753798239c990aadb7611f25aaa4f3a921e",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "7c66c2ddd11c004649f369b372190666065fe3049b96f2777491b8dd9344c0b8"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26761",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves California Cade Electronic Finger Lights, which contain three button cells batteries. The finger lights come in 50 pieces in a box in white, blue, red and green. The finger lights have “California Cade Electronic” and “Finger Flashlights” printed on labels located on the front of the package.",
+        "recallDetails": {
+          "description": "This recall involves California Cade Electronic Finger Lights, which contain three button cells batteries. The finger lights come in 50 pieces in a box in white, blue, red and green. The finger lights have “California Cade Electronic” and “Finger Flashlights” printed on labels located on the front of the package.",
+          "remedy": "Consumers should stop using the recalled toys immediately, take them away from children and contact Cade California Electronic for a full refund. Consumers will be asked to properly dispose of the finger lights into the trash and send a photo of the disposed product to ccecamazonservice@gmail.com . Note: Button cell batteries are hazardous. Batteries should be disposed of or recycled by following local hazardous waste procedures.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Amazon.com from March 2015 through July 2026 for between $5 and $16.",
+          "retailer": "California Cade Electronic, LLC, of Hacienda Heights, California",
+          "manufactured in": "China",
+          "recall number": "26-761"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26763",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+      "evidenceHash": "8e0a5094f5aae7198e7ce6e0afbb2fdbf17f60cb70ae3f187489dba93e804286",
+      "rawPageHash": "ecc1734bf695f8ace9f6ace03cebe06e37d683432f49e9c3c0af20aac5f641ac",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.533282+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "a0470ef86678fa5ae1b0199098e425032d74db26847efc5b59e634c5a0c78447",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "136d6ddc0f400dd611b69fd16a00d113b970c6421b9528152c64a69e9f9981ca",
+        "recallDetails": {
+          "description": "136d6ddc0f400dd611b69fd16a00d113b970c6421b9528152c64a69e9f9981ca",
+          "remedy": "4a73f4916379b90b6a05a0b4383d97d47a9de1fd56a1db74d8b819834cdc4a40",
+          "incidents/injuries": "4f4f45e0d0aa9172754e7eefcb15dc6231b21eaa5b925a3d5b4a6677bd037a54",
+          "sold at": "7b9711fbac100936f1f241f58a06ee5bf4cea62380aba26f411dfb64bcb019a8",
+          "importer(s)": "0d5a86d9a4377ca33dc909606ff3d5709e71db52d67ab820931d6885817597cd",
+          "manufactured in": "6e49e65081b2bcb5a54e6a6a74086f42949ddf388d516ce7eb0dad7d95e80ceb",
+          "recall number": "73648d8e1146802eeb3a77b1574f88f84c04ef314debac669bc10d59fbd924f8"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26763",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+        "title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+        "publicationDate": "2026-09-10",
+        "description": "This recall involves 2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles. The motorcycles have a Jet Black/Pure White color scheme. Affected models are TF450-C, TF450-E, TF450-X and TF450RC Edition. The range of affected Vehicle Identification Numbers (VIN) is XXXXXXXXXXXCD4981 to and including XXXXXXXXXXXCP1597. The VIN is located on the vehicle identification plate on the left side of the steering head. Consumers can check if their VIN is included in this recall at https://www.triumphmotorcycles.com/owners/recalls .",
+        "recallDetails": {
+          "description": "This recall involves 2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles. The motorcycles have a Jet Black/Pure White color scheme. Affected models are TF450-C, TF450-E, TF450-X and TF450RC Edition. The range of affected Vehicle Identification Numbers (VIN) is XXXXXXXXXXXCD4981 to and including XXXXXXXXXXXCP1597. The VIN is located on the vehicle identification plate on the left side of the steering head. Consumers can check if their VIN is included in this recall at https://www.triumphmotorcycles.com/owners/recalls .",
+          "remedy": "Consumers should stop using 2025 and 2026 Triumph TF450 models Closed Course Competition Motorcycles immediately and contact Triumph Motorcycles for a free repair. Consumers can check if their VIN is included in this recall at https://www.triumphmotorcycles.com/owners/recalls . Consumers with recalled motorcycles should contact their local authorized Triumph Motorcycle dealer who will inspect the engine and replace the cylinder head free of charge.",
+          "incidents/injuries": "The firm has received 12 reports of a seized or sticking exhaust rocker shaft or damage to the exhaust valves that will result in a progressive decrease in engine performance. One injury, including a broken bone, has been reported.",
+          "sold at": "Authorized Triumph Motorcycle Dealers from January 2025 through July 2026 for between $10,000 and $15,000.",
+          "importer(s)": "Triumph Motorcycles America Ltd., of Atlanta, Georgia",
+          "manufactured in": "Thailand",
+          "recall number": "26-763"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26766",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "evidenceHash": "599ef33abfe5460ddaa363e30f8f7efdfe92bb523829215da5c169f09eb1cddb",
+      "rawPageHash": "caf96ee12812223c6e3107bada7d373c0e1fe64b13f5563e893ae7abbd6a3142",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.753869+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "19568431d331c62009b12b870c65e91caf86bc5e42c4c24eadd2cc5454825a53",
+        "publicationDate": "febdcffe80f65f132f958ab62dd154c630d3c2e768c2695482afc6819eae0907",
+        "descriptionText": "a61da38c4e9d58779321e40c0cddde5e2114d56d5c987c44e84c6c791444a2bf",
+        "recallDetails": {
+          "description": "cf793d34819746d5e11c59fb3ad7a9166080ed3e5e81adf4aeb45af790b730f2",
+          "remedy": "7651703e3ee6eb4a796085a374cafb48898cc1e6aec9201a7974a3e777c2bcba",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "96a94b4337ddac382ea8700e0f56a8de736d1c0b25fa9695285ac68cc43a6fca",
+          "importer(s)": "df0f618aaafd975e90276a222a293498845b8a29b0ec17daf967b9be5179993d",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "de6f4cbeae114a3f5fb0135d8651b301ac8c0a21384bc09591f227b7d9e78999"
+        },
+        "tables": ["ae2b7cc8abb85753a4beee3a6a267768ab2943bbb1b165d5e6428dc9cc543d40"]
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26766",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+        "publicationDate": "2026-09-10",
+        "description": "This recall expansion involves ZMC Group battery-operated light-up toys including a Mexican flag theme foam stick, a Unicorn headband, assorted colors and transparent jelly rings and heart shaped balloon flowers. Packaging for the products has a label with the item number, identification of the distributor, place of manufacture, production date and batch number.",
+        "recallDetails": {
+          "description": "This recall expansion involves ZMC Group battery-operated light-up toys including a Mexican flag theme foam stick, a Unicorn headband, assorted colors and transparent jelly rings and heart shaped balloon flowers. Product Name Item # 19.4\" Mexican Flag Theme Light Up Stick SS041-M Light-Up Unicorn Headband G02-UN Light-Up Assorted Colors Jelly Rings PS270 Light-Up Transparent Jelly Rings PS271 Light-Up Heart Balloon Flower 777-1 Packaging for the products has a label with the item number, identification of the distributor, place of manufacture, production date and batch number.",
+          "remedy": "Consumers should stop using the toys immediately, take them away from children and contact ZMC Group for a full refund. Consumers will be asked to remove the batteries, write “RECALLED” or a large “X” on the product with a permanent marker and submit a photo of the disposed product to recallzmctoy@gmail.com . Note: Button cell batteries are hazardous. Batteries should be disposed of or recycled by following local hazardous waste procedures.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Diva at Heart, primarily in California, Texas, Oregon, Mississippi, and Arizona, and various distributors and retail stores and online at https://www.divaatheartsj.com/ from October 2018 through July 2026.",
+          "importer(s)": "ZMC Group Inc., of Los Angeles, California",
+          "manufactured in": "China",
+          "recall number": "26-766"
+        },
+        "tables": [
+          [
+            ["Product Name", "Item #"],
+            ["19.4\" Mexican Flag Theme Light Up Stick", "SS041-M"],
+            ["Light-Up Unicorn Headband", "G02-UN"],
+            ["Light-Up Assorted Colors Jelly Rings", "PS270"],
+            ["Light-Up Transparent Jelly Rings", "PS271"],
+            ["Light-Up Heart Balloon Flower", "777-1"]
+          ]
+        ]
+      }
+    },
+    {
+      "recallNumber": "26773",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "evidenceHash": "d37c79b398c6a8a99cdd4197665e46d5deefd71a112689d6961538689667e667",
+      "rawPageHash": "77d31796ba9c6db1630a66bc37881be7d3fcb7b0120c9a9a7ea8c1ca3ed22f61",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.767768+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "0f52e6e9efcfa30e57e2436d97b7a44ecfc50d26f20eac0cf587bc715da5494b",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "fe7b30af43913cdf5cb69ffcce14e3e4883af43b7a09676604ae60647c906736",
+        "recallDetails": {
+          "description": "2f66218ef6906b2a307cb2a37e178d7680e2686c5eb1eaf2affdb2c3a0dddff6",
+          "remedy": "68dc8d82c0bf23c9ed791bc455fcb5cd24e838be6ee95dc3b99eedc9d9646158",
+          "incidents/injuries": "ffcae7fc619081e1aee380a867e0d7334732a125d5b8aaf9e96cddfede22bcc0",
+          "sold at": "ea9dc5e2feffff887c972731da70938827f4b9747672c6705af31de9e7164c9d",
+          "importer(s)": "247efb83f2500ab1110244d57fe47cf540ac5dd5b97ddef12e9f2f1caef8c076",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "57757445e2df778d5f4b6498ebcc02bca75fe1ed99e4c4bd8881eb09bdd597fb"
+        },
+        "tables": ["0c329f78c1f233881b73ede37376ca8411f66615f12dc17d44630f05940058c8"]
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26773",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+        "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves the Charbroil Bistro Pro Electric Grills with model descriptions Bistro Pro Electric Grill & Griddle + Charcoal, Bistro Electric Grill + Charcoal and Bistro Pro Tabletop Electric Grill. The grills were sold in full-size and tabletop configurations in Black (black and gray), Red, Blackout (all black) and Emerald (green). The units have a “CB” logo plate on the front of the lid and “CHARBROIL” printed on the front control panel. The product label listing the model and serial number, including a four ‑ digit manufacturing date code in year and month (YYMM) format, is located on the bottom shelf of full-size grills and on the side bar of tabletop models. Only Bistro Pro Electric Grills with date codes of 2510 (Oct-2025), 2511 (Nov-2025) and 2512 (Dec-2025) are included in this recall.",
+        "recallDetails": {
+          "description": "This recall involves the Charbroil Bistro Pro Electric Grills with model descriptions Bistro Pro Electric Grill & Griddle + Charcoal, Bistro Electric Grill + Charcoal and Bistro Pro Tabletop Electric Grill. The grills were sold in full-size and tabletop configurations in Black (black and gray), Red, Blackout (all black) and Emerald (green). The units have a “CB” logo plate on the front of the lid and “CHARBROIL” printed on the front control panel. The product label listing the model and serial number, including a four ‑ digit manufacturing date code in year and month (YYMM) format, is located on the bottom shelf of full-size grills and on the side bar of tabletop models. Only Bistro Pro Electric Grills with date codes of 2510 (Oct-2025), 2511 (Nov-2025) and 2512 (Dec-2025) are included in this recall. Model Description Model No. Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Black 25302145 Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Red 25302146 Bistro Pro™ Electric Grill + Charcoal Mode Blackout 25302147 Bistro Pro™ Electric Grill + Charcoal Mode Black 25302148 Bistro Pro™ Tabletop Electric Grill Black 25302149 Bistro Pro™ Tabletop Electric Grill Red 25302150 Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Black with Cover 25302151 Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Red with cover 25302159 Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Emerald with cover 25302163",
+          "remedy": "Consumers should stop using the recalled electric grills immediately and contact Char-Broil for a free repair kit. Consumers will be asked to register at www.charbroil.com/BistroProFix to receive repair instructions, a screwdriver, a wrench, screws and a label to affix to the grill after repair. Char-Broil is offering a digital $25 gift card, valid at participating retailers, to consumers who provide photo documentation of the completed repair.",
+          "incidents/injuries": "None reported",
+          "sold at": "Ace Hardware, Lowe’s, Walmart, Wayfair, QVC and other hardware stores nationwide online at Amazon.com, Charbroil.com, Ace Hardware.com, Lowes.com, Walmart.com, Wayfair.com, QVC.com and other online retailers from October 2025 through June 2026 for between $150 and $250.",
+          "importer(s)": "Char-Broil LLC, of Columbus, Georgia",
+          "manufactured in": "China",
+          "recall number": "26-773"
+        },
+        "tables": [
+          [
+            ["Model Description", "Model No."],
+            ["Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Black", "25302145"],
+            ["Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Red", "25302146"],
+            ["Bistro Pro™ Electric Grill + Charcoal Mode Blackout", "25302147"],
+            ["Bistro Pro™ Electric Grill + Charcoal Mode Black", "25302148"],
+            ["Bistro Pro™ Tabletop Electric Grill Black", "25302149"],
+            ["Bistro Pro™ Tabletop Electric Grill Red", "25302150"],
+            ["Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Black with Cover", "25302151"],
+            ["Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Red with cover", "25302159"],
+            ["Bistro Pro™ Electric Grill & Griddle + Charcoal Mode Emerald with cover", "25302163"]
+          ]
+        ]
+      }
+    },
+    {
+      "recallNumber": "26774",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "evidenceHash": "f5f40bacc8211fce0fbe5a8ec16cadbc0877f97f0a127f94a8e615a86b80087c",
+      "rawPageHash": "0cbbc16dde7d817f98787b2f863b43512070133e13477ba3374e2b6920ff961b",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.796783+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "c611b100ef9e55c1c73d207e872659ca5eb4ae283ee27e57e4460c24490245be",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "bc75cbae03a3776fcfbe8ce4a99a07814a8c58a347990cccb1e213c9db7e9c19",
+        "recallDetails": {
+          "description": "bc75cbae03a3776fcfbe8ce4a99a07814a8c58a347990cccb1e213c9db7e9c19",
+          "remedy": "39bb1371d4cf30d88023d05204783a8b7951edee1c7572f7495c813f2ca6792d",
+          "incidents/injuries": "5c0f6f5307a87e362241175588ccf174a6b99ac0239b103400531a629f37c88f",
+          "sold online at": "c04691c689a076e488a8af1a482a2c8ecb7f33187f234d7d701b0620663b917e",
+          "manufacturer(s)": "a3d694ddc93a7c40831ec0f0223128d04ca1ff920f08e904c60caa2125ef3663",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "a31f2507c98010eaf8a83758075784923f4034bb3b434bc27ed2939dca3ac5cc"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26774",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves Jerify Magnetic Humanoid Toys 30 PCS. The 30-piece magnetic toys come in three units of brown, white, green, peach, yellow, pink, blue, orange, purple, and red figures in the shape of a human. Each figure measures about 2.7 inches tall by 2.5 inches wide. The magnetic toys contain magnets in the hand and foot locations. There is no labeling on the product. The magnetic toys come in an unlabeled clear bag enclosed in a brown box with the brand name “Jerify” and number “X003ADA3TD” located on the sticker.",
+        "recallDetails": {
+          "description": "This recall involves Jerify Magnetic Humanoid Toys 30 PCS. The 30-piece magnetic toys come in three units of brown, white, green, peach, yellow, pink, blue, orange, purple, and red figures in the shape of a human. Each figure measures about 2.7 inches tall by 2.5 inches wide. The magnetic toys contain magnets in the hand and foot locations. There is no labeling on the product. The magnetic toys come in an unlabeled clear bag enclosed in a brown box with the brand name “Jerify” and number “X003ADA3TD” located on the sticker.",
+          "remedy": "Consumers should take the magnetic humanoid toys away from children immediately, stop using them and contact Colerinsec for a full refund. Consumers will be asked to throw away the magnetic toys and submit a photo of the disposed toys to coushdwugintwer@163.com .",
+          "incidents/injuries": "CPSC and the firm are aware of two reports involving children who were able to remove and ingest magnets from the limbs. Both incidents resulted in hospitalization.",
+          "sold online at": "Amazon.com from October 2022 through May 2026 for about $21.",
+          "manufacturer(s)": "Hefei Hanchan Network Technology Co., Ltd., dba Colerinsec, of China",
+          "manufactured in": "China",
+          "recall number": "26-774"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26775",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+      "evidenceHash": "572a628f0ee3939756a37a7d62e559e12f2417d1c0cd8706730e696558efaccc",
+      "rawPageHash": "054da9c6be8fd4f4db3464272b7a39ef67726b4eb78b6add1748212097e77f00",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.512858+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "1a693824fc3c05e29464f9ee11ec0ff6ab1c2933a1131cb87453ecd16f2bfaf6",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "a4d3874f77620dd50f6c581de47bc9e125238c6af8ea0dcb83a947e9125a4a2b",
+        "recallDetails": {
+          "description": "a4d3874f77620dd50f6c581de47bc9e125238c6af8ea0dcb83a947e9125a4a2b",
+          "remedy": "e5668393076619425593076989210755629ae39485c193a3bddbe1b67f46d67a",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold online at": "d06958a1e7ff403e11cb6cd761b1af55e7b96b33ca565107fc8293fbb51bfe78",
+          "manufacturer(s)": "a13bf6742bca33807efd42618ade9012934524bd17fda3109f8ab171f035796d",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "3bad15a7521da37c7263be41829727e900e9fd3e893118e7ec53a23899e5445c"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26775",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+        "title": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves Esjay Toddler Busy Board Montessori Toys. The busy boards are made of blue felt, have carrying handles, elastic cords and button closures. The front is printed with various cartoon dinosaurs, and the back is printed with 26 small squares, each corresponding to a letter of the alphabet. Each square contains the letter and a cartoon animal. The busy boards have five pages in total and the page with red knobs is the second page.",
+        "recallDetails": {
+          "description": "This recall involves Esjay Toddler Busy Board Montessori Toys. The busy boards are made of blue felt, have carrying handles, elastic cords and button closures. The front is printed with various cartoon dinosaurs, and the back is printed with 26 small squares, each corresponding to a letter of the alphabet. Each square contains the letter and a cartoon animal. The busy boards have five pages in total and the page with red knobs is the second page.",
+          "remedy": "Consumers should take the recalled toy away from children, stop using it immediately and contact Esjay for instructions on the repair. Consumers will be asked to unzip the page with red knobs, write “RECALLED” on both sides of the page and throw it away. Send a photo of the disposed page to Esjay US at esjay-service@outlook.com to receive a replacement page.",
+          "incidents/injuries": "None reported.",
+          "sold online at": "Amazon.com from March 2023 to July 2026 for between $18 and $30.",
+          "manufacturer(s)": "Shenzhen Yishijie Technology Co., Ltd., dba Esjay US, of China",
+          "manufactured in": "China",
+          "recall number": "26-775"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26776",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "evidenceHash": "3f7ec2b433b0d39f30f60b8037f6ed3fc5dda02ab736f505c2021e34664a57ea",
+      "rawPageHash": "fa448b291f9bf7f6df07d8a46ed285324a62b522df2e0c89b11ade6a1f8c48e1",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.703694+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "5d4c563f2d8d91c6ec1f6d0e7d031fbab6d817d4b1357f26d6995a3598747802",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "df8b2d7f9f1e80814521f9ba92f2f513b43d49fefb11abbbf57f071e0566174a",
+        "recallDetails": {
+          "description": "df8b2d7f9f1e80814521f9ba92f2f513b43d49fefb11abbbf57f071e0566174a",
+          "remedy": "f3618ad90b51fa3340ceb94935db7953ec216dc675fda470a997ffc622d67c2d",
+          "incidents/injuries": "00146f3fabedea83b4795c068966f39ed00396adc61c66db1cec7f3740b4bb76",
+          "sold at": "42e516eae0a5944b93423e5afb8c35c56eed18d17ad8edb157456200325c3787",
+          "importer(s)": "032c78e21e90847730e0461ea5a0e7902530ac3d7dd293cf0e65601e88134150",
+          "manufactured in": "a7d355b26bda6bf1196ccffead0b2cf2b81f0a9de5b4876b44407f1dc07e51e6",
+          "recall number": "7db3e5f3b4ba8578ca9df793e8e9eff09d594e51006d4a83e9af7cc1f7d59cdd"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26776",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves KÜHL Q and KÜHL S Window Air Conditioners. The products have a gray front and a black air discharge grille and have the name Friedrich and the Friedrich logo in the lower left corner of the unit. The Kühl Q front control panel is located on the top left corner of the unit, and the Kühl S front control panel is located on the right side of the unit below the discharge grille. The models are KCVQ08B10A, KHVQ10B11A, KCVS08B10A, KCVS12B10A, KCVS12B30A and KCVS16B30A. The model and serial number are located inside the air conditioners. Only some serial numbers below have motors that are included in this recall.",
+        "recallDetails": {
+          "description": "This recall involves KÜHL Q and KÜHL S Window Air Conditioners. The products have a gray front and a black air discharge grille and have the name Friedrich and the Friedrich logo in the lower left corner of the unit. The Kühl Q front control panel is located on the top left corner of the unit, and the Kühl S front control panel is located on the right side of the unit below the discharge grille. The models are KCVQ08B10A, KHVQ10B11A, KCVS08B10A, KCVS12B10A, KCVS12B30A and KCVS16B30A. The model and serial number are located inside the air conditioners. Only some serial numbers below have motors that are included in this recall.",
+          "remedy": "Consumers should stop using the recalled air conditioners immediately and visit www.friedrich.com/product-recall to receive information on how to determine if their unit is covered by the recall. Consumers should have the air conditioner’s serial number, which can be found on the inside of the unit, when they visit the recall web page or call Friedrich about the recall. If your unit has a serial number that is included in the recall, the firm will send you instructions on how to obtain a refund or free replacement unit.",
+          "incidents/injuries": "The firm has received two reports indicating that the air conditioner’s motor ignited, with one incident causing smoke and fire damage to a residence. No injuries have been reported.",
+          "sold at": "PC Richard & Son, Grainger, and Johnson Supply stores and other appliance distributors and retailers nationwide from January 2026 through August 2026 for between $1,300 and $2,000.",
+          "importer(s)": "Friedrich Air Conditioning Co., of San Antonio, Texas",
+          "manufactured in": "Mexico",
+          "recall number": "26-776"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26777",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "evidenceHash": "b2c466c0902b7910ca6c90ad625d3f576bbe1939fc198a057cfaf77d9b35586b",
+      "rawPageHash": "c7f98294d74dd096b676e42f9e6694f57a25694c87df2033cae2d582a03003fd",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.873532+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "4c015eefc008b1c543845f7596ccd42b9b9e94941ea1145a35b50a09c1a1e48d",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "33f8194657ef153c6451a7554b40c43c7ee06f3d0fe5d74622fca9cfa5451bba",
+        "recallDetails": {
+          "description": "33f8194657ef153c6451a7554b40c43c7ee06f3d0fe5d74622fca9cfa5451bba",
+          "remedy": "0d6312fb0b798fff8aceec42e288d8270247ab7db40c48165a96391e6c84dee5",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "05d48cad224138e092cc0a05b9039e21e25a31c7e39ff34e421f237a40de3dda",
+          "manufacturer(s)": "a47af8fbe08b2edb3ed8bc29df699e601dd0142fd36e73dc9f2f9832e6352267",
+          "manufactured in": "49dca65f362fee401292ed7ada96f96295eab1e589c52e4e66bf4aedda715fdd",
+          "recall number": "e2dbde481743da1155ad133e5cb9b62b1a307403feb22d28fa0b970c87f4598b"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26777",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+        "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves Hayward-branded HDFS400 Universal-HC Series pool heaters. The 400,000 BTU dual-fuel gas heaters are brown with black atop and measure 21 inches long, 28 inches wide and 31 inches high. The pool heaters have a digital display control panel at the top and a molded base with integrated tie-down connections. The heater’s name plate is below the vent with the word “Hayward” appearing at the bottom of the name plate and the model number “HDFS400” appears at the top of the name plate.",
+        "recallDetails": {
+          "description": "This recall involves Hayward-branded HDFS400 Universal-HC Series pool heaters. The 400,000 BTU dual-fuel gas heaters are brown with black atop and measure 21 inches long, 28 inches wide and 31 inches high. The pool heaters have a digital display control panel at the top and a molded base with integrated tie-down connections. The heater’s name plate is below the vent with the word “Hayward” appearing at the bottom of the name plate and the model number “HDFS400” appears at the top of the name plate.",
+          "remedy": "Consumers should stop using the pool heater immediately and contact Hayward Industries to schedule a free in-home inspection and repair by a qualified technician.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Pool equipment distributors, builders and service professionals nationwide from March 2026 through July 2026 for about $5,600.",
+          "manufacturer(s)": "Hayward Industries, Inc., of Charlotte, North Carolina",
+          "manufactured in": "United States",
+          "recall number": "26-777"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26778",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+      "evidenceHash": "4a72116d17706d883e31fb41f2f36408d4ddddfd0761540d303d41e045e1676f",
+      "rawPageHash": "e6ac7bf2a7d9db8cd30f9027ba25b396216c66e1c0edbff3e7e2121978db8508",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.807064+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "0ffc2c16082f83621e13f8a6a6500aaaf44d7c07c1a2ce309282538ec4e5dfac",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "7cd56fac373009d0bdb7caeb6c34971b98b1d76c813063273bb3adfe37771e83",
+        "recallDetails": {
+          "description": "7cd56fac373009d0bdb7caeb6c34971b98b1d76c813063273bb3adfe37771e83",
+          "remedy": "98d6f851e20551f82bce76f9d16449f887469864bfc773df08348f5e48a680d6",
+          "incidents/injuries": "ddc5eae7792a8f6dddd69a4078c676c4a79458efc703a8b3fa62ac2cfc2e7a39",
+          "sold online at": "18ffad0ada492ed5cf3322694d6814a638e5cbbd736d0d36e8087beec4293523",
+          "importer(s)": "059b2758dc53d5ef1f2ca44a574d878b874fa6c55ab732976620ea5dac494b93",
+          "recall number": "d3bc4e03e7513ffb0598ddaeef7dfd9bb40d04cd5106b1736d8309b2923aa360"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26778",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+        "title": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves all heating pads and heated blankets sold by JKMax including models JKMAX-002, JKMAX-7284B, JKMAX-6284B, JKMAX-10090B, JKMAX-8490B and JKMAX-6284B. The heated blankets and heating pads are blue, gray, brown or red. They are made of polyester fabric and are machine washable. The blankets and pads were sold in multiple sizes, and both have a detachable white remote that can be used to adjust the heat. The model number is located on the back of the remote and is also printed on a white label affixed to the product packaging along with the brand name “JKMAX”.",
+        "recallDetails": {
+          "description": "This recall involves all heating pads and heated blankets sold by JKMax including models JKMAX-002, JKMAX-7284B, JKMAX-6284B, JKMAX-10090B, JKMAX-8490B and JKMAX-6284B. The heated blankets and heating pads are blue, gray, brown or red. They are made of polyester fabric and are machine washable. The blankets and pads were sold in multiple sizes, and both have a detachable white remote that can be used to adjust the heat. The model number is located on the back of the remote and is also printed on a white label affixed to the product packaging along with the brand name “JKMAX”.",
+          "remedy": "Consumers should stop using the recalled blankets and pads immediately and contact JKMax for a full refund.",
+          "incidents/injuries": "JKMax is aware of 577 reports of blankets smoking, melting or burning due to the heating elements overheating, including 53 burn injuries.",
+          "sold online at": "Amazon.com from September 2022 through July 2026 as both a one-pack or a two-pack.",
+          "importer(s)": "Jiande Pengshuai Trading Co., Ltd, of China",
+          "recall number": "26-778"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26779",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+      "evidenceHash": "a5123d8370a2c68e896a61af8659f6a5f2518dfa46c84c67b4a9e61ecd5c6739",
+      "rawPageHash": "40c206f9b93c0bd3bd54ef20d3b37e6d1b443dfbcfdcccbd0c692555c800a4a4",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.551065+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "6ff19fb81a93e44a8b2c902b6c50b7d4d9d11b02775c2146708578a3b7947a35",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "f75a6a7863526e1f11982544c92c9468ae39d6ab98c349b1c8a709dcc8296a36",
+        "recallDetails": {
+          "description": "f75a6a7863526e1f11982544c92c9468ae39d6ab98c349b1c8a709dcc8296a36",
+          "remedy": "ca536720dee08bce9360ccaf54289848894d0d7cc7632efd6a4ab4b0b14741fb",
+          "incidents/injuries": "738e66949e681812badfead617a7c80884d97d3fe24775bfde04b03229a3b08b",
+          "sold online at": "1952455b1797151ca000245057d9d207ca3025356176954b45eca0d5659a13cf",
+          "importer(s)": "301a2de1e47385ed823c0dd79175dccf31240b8f6bf3ddef94533f46e146fef3",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "99bedc9f42aa2853a69e9fb148c4e7aadeeb8f19185977b84b8b6d51064e4849"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26779",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+        "title": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves LANCHEZ-branded pressure washers. The recalled, 3.2 GPM electric pressure washers were sold in blue-and-black or red-and-black, and measure about 12.2 inches deep, 16.9 inches wide and 16.5 inches high. The pressure washers came with a 500 ml soap tank, four quick disconnect nozzles and a 23-foot hose. Only power washers without a GFCI or adequate-length power cord are included in this recall. “LANCHEZ” is printed on the front of the power washer and model number “KLC-BULL135C” is printed on a label on top of the unit near the handle.",
+        "recallDetails": {
+          "description": "This recall involves LANCHEZ-branded pressure washers. The recalled, 3.2 GPM electric pressure washers were sold in blue-and-black or red-and-black, and measure about 12.2 inches deep, 16.9 inches wide and 16.5 inches high. The pressure washers came with a 500 ml soap tank, four quick disconnect nozzles and a 23-foot hose. Only power washers without a GFCI or adequate-length power cord are included in this recall. “LANCHEZ” is printed on the front of the power washer and model number “KLC-BULL135C” is printed on a label on top of the unit near the handle.",
+          "remedy": "Consumers should stop using the recalled pressure washers immediately and contact LANCHEZ for a full refund. Consumers will be asked to unplug the pressure washer, destroy it by cutting the power cord in half and send a photo of the destroyed power washer, showing the model number, to service@lanchezpumps.com . Consumers should then dispose of the destroyed recalled product.",
+          "incidents/injuries": "CPSC is aware of one report of a missing GFCI. No injuries have been reported.",
+          "sold online at": "Amazon.com and Walmart.com from February 2026 through June 2026 for between $88 and $266.",
+          "importer(s)": "Ningbo Lanchez E-Commerce Co., Ltd. of China",
+          "manufactured in": "China",
+          "recall number": "26-779"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26780",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+      "evidenceHash": "0edea86df5319e537a5c2df5ee983423782fcc522bb0c264587b4592aff12605",
+      "rawPageHash": "84771f6f00d5e20532976570b275345bd317b0008878125501e5060e77358871",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:57.807547+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "49da91f8d6f303674515bde02ae5ad2e0f990a2e2eadee23b6b0dd7d84bb5a20",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "302efc66dcafaa54edcbf66f8921bc408e8e24905330cde82ae2ce4de29ceda3",
+        "recallDetails": {
+          "description": "302efc66dcafaa54edcbf66f8921bc408e8e24905330cde82ae2ce4de29ceda3",
+          "remedy": "837d970aed5d037283708204f1a3ec8b5471457ae6034d926258f0ecd78f75ab",
+          "incidents/injuries": "9d8e7235af71545d0a6b28e46e724057a5782be4dd6d5b8f249586f16767a930",
+          "sold at": "998e141371ebf4ea14af3d676dbda7f2d3ed0b502a7457447350c0e4dca56e46",
+          "importer(s)": "1729b4e1313b8866b65e43fb57c0a6c3154be17655db08915de86e23abdc434d",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "0ced17235bb42610550d035c24c21097d3ba7dd0a06b4f0b17a0780f82486660"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26780",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+        "title": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+        "publicationDate": "2026-09-17",
+        "description": "The “Lights and Sound Fire Truck” is a compact fire engine toy with wheels that spin, that also features busy board activities that activate lights and sounds. The toy is made of red plastic, has four black wheels and has a white plastic rotating ladder. The toy has a black plastic connector that looks like a fire hose. The toy measures 10.5 inches high by 14.31 inches wide by 3.06 inches deep and weighs about 1.6 pounds. On the bottom of the toy, “Melissa & Doug” is embossed on the battery compartment box as are two date wheels showing the dates of manufacturer by year and month. Affected units will have one arrow pointing to the number 25 and the second arrow pointing to the number 4 or 5 or they will have one arrow pointing to the number 26 and the second arrow pointing to the number 3. Date codes OET 25100, OET 25150 or OET 26064 are printed on the product packaging of the recalled units.",
+        "recallDetails": {
+          "description": "The “Lights and Sound Fire Truck” is a compact fire engine toy with wheels that spin, that also features busy board activities that activate lights and sounds. The toy is made of red plastic, has four black wheels and has a white plastic rotating ladder. The toy has a black plastic connector that looks like a fire hose. The toy measures 10.5 inches high by 14.31 inches wide by 3.06 inches deep and weighs about 1.6 pounds. On the bottom of the toy, “Melissa & Doug” is embossed on the battery compartment box as are two date wheels showing the dates of manufacturer by year and month. Affected units will have one arrow pointing to the number 25 and the second arrow pointing to the number 4 or 5 or they will have one arrow pointing to the number 26 and the second arrow pointing to the number 3. Date codes OET 25100, OET 25150 or OET 26064 are printed on the product packaging of the recalled units.",
+          "remedy": "Consumers should stop using the fire truck activity board immediately and register at www.melissaanddoug.com/recall for instructions on how to receive a free replacement fire truck activity board, register for a full refund of $30 in the form of a check or receive a $40 melissaanddoug.com store credit. Consumers will be asked to remove the batteries, write in permanent marker the word “RECALL” on the front of the product along with a unique code provided during the online registration process, and to cut the black hose off from the toy. Consumers will then be directed to upload a photograph of the destroyed product to the registration page. Once their registration has been successfully confirmed, consumers should dispose of the product in their ordinary household trash.",
+          "incidents/injuries": "The firm has received 26 reports of the small port coming loose on the product. The Firm has also received one report of a minor cut.",
+          "sold at": "Target stores nationwide and online at Target.com from July 2025 through August 2026 for about $30.",
+          "importer(s)": "Melissa & Doug, of Wilton, Connecticut",
+          "manufactured in": "China",
+          "recall number": "26-780"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26781",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+      "evidenceHash": "0672fa82bb4c33f1f79aa9182088aceef644f92e769dae932cb88864feeb149e",
+      "rawPageHash": "9682e48572dc2b94873a5975df0ccf5017a393e7052d65d125a0fcc63a8bb5fd",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.447084+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "a269d10da94c9192882b241dd9bcc360ad7b329575cce443e32e1e5e5e24dbfe",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "ab7efd70cbc44aeb56ebe4a002e23223a31139bb704a1cfbb1ce0ebb7c71d8b6",
+        "recallDetails": {
+          "description": "ab7efd70cbc44aeb56ebe4a002e23223a31139bb704a1cfbb1ce0ebb7c71d8b6",
+          "remedy": "1a29f94829a67ef501c5d9b90387add53cad134beb409fcaa1dbe5c130d0044b",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold online at": "052eecec902c261e2f39231d922692e5c6d947438b82b4462d01c5796f463766",
+          "retailer": "b799044924fad83dd93aa61dc226a52d0a3a39861f011a392d29875e114c64f6",
+          "manufactured in": "dbc74a36d8e7439c45c64d856388506cc9b1218619cef979c3d605115a7a4546",
+          "recall number": "11b867981af07394b0b38f5105b2241bf6ad0c9d6c0bf128ed9be6d3df4c5a94"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26781",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+        "title": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves two styles of BedsPick branded Mattresses. The mattresses are 12 inches thick and sold in queen size. They have a white top and purple sides or a white top and gray sides and were sold compressed in a box. Prototype ID “AMGSW066” or “AMGSW067” and model numbers “SME004” or “AMG005197_12_Q_GLT” are printed on a sewn-in white label located on one side of the mattress.",
+        "recallDetails": {
+          "description": "This recall involves two styles of BedsPick branded Mattresses. The mattresses are 12 inches thick and sold in queen size. They have a white top and purple sides or a white top and gray sides and were sold compressed in a box. Prototype ID “AMGSW066” or “AMGSW067” and model numbers “SME004” or “AMG005197_12_Q_GLT” are printed on a sewn-in white label located on one side of the mattress.",
+          "remedy": "Consumers should stop using the recalled mattresses immediately and contact Regfear for a full refund. Consumers will be asked to destroy the mattress, write in permanent marker “Recalled,” on the mattress’ top surface and email a photo of the destroyed mattress to BedsPickRecall@outlook.com. Consumers should then dispose of the recalled product. The refund will be issued after Regfear receives photos and written confirmation of disposal.",
+          "incidents/injuries": "None reported.",
+          "sold online at": "Amazon.com from February 2025 through May 2026 for between $140 to $200.",
+          "retailer": "Regfear Ltd., of Raleigh, North Carolina",
+          "manufactured in": "Indonesia",
+          "recall number": "26-781"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26782",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+      "evidenceHash": "27e402d5601078f3e16038b773181230a0c96bd1099e9871a7c2468a1e8ee53e",
+      "rawPageHash": "9b79c0f42b23be8618ab2d774c8efc665ae3426fdf8c0340fe91b50bd2ce82f9",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.104572+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "37c7b78175d369350b72aab746fdedf3e91a2a2faa4a702e7d3ae09cd5b2f2e9",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "2a990f5e7b544b402ef4d0d6162303220dc72a83876f83445bd5a5ed8ae65fe4",
+        "recallDetails": {
+          "description": "2a990f5e7b544b402ef4d0d6162303220dc72a83876f83445bd5a5ed8ae65fe4",
+          "remedy": "05fdd15e2a6eb0237e9dcd3efd4eb9892fe5b837f945c90821be053750a0206f",
+          "incidents/injuries": "ffcae7fc619081e1aee380a867e0d7334732a125d5b8aaf9e96cddfede22bcc0",
+          "sold online at": "49580429608bcd3e45512295dbeca0ed46eb7b34ef46eb6a08a39c2db817ef6c",
+          "importer(s)": "522f95c3900bb19b2e635cdd842b924119d28693292dd4cc756e673476fa9443",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "e830b5f5a040f200ac78f4389337b500d315b478a2d35de347fc46b3e5d633e0"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26782",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+        "title": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves Pull & Chew Montessori Teething Toys. The silicone teething toys are green, pink, yellow or blue and have four strings in various colors. The recalled toys are packaged in a clear and white plastic pouch with “BABY PRODUCTS” and “Crafted in Gentle Care” printed on the front. The product SKU (sa25092843915310553, sa2404237092800828, or sa251115653050553503) is printed on the front of the packaging. The manufacturer’s name and address, product date, and batch code are printed on the front and back of the packaging.",
+        "recallDetails": {
+          "description": "This recall involves Pull & Chew Montessori Teething Toys. The silicone teething toys are green, pink, yellow or blue and have four strings in various colors. The recalled toys are packaged in a clear and white plastic pouch with “BABY PRODUCTS” and “Crafted in Gentle Care” printed on the front. The product SKU (sa25092843915310553, sa2404237092800828, or sa251115653050553503) is printed on the front of the packaging. The manufacturer’s name and address, product date, and batch code are printed on the front and back of the packaging.",
+          "remedy": "Consumers should stop using the recalled teething toys immediately, take them away from children, and contact SHEIN for a refund. Consumers will be asked to cut the teething toy’s silicone strings and send a photo of the destroyed toy to productrecall@shein.com . Consumers should then dispose of the destroyed product.",
+          "incidents/injuries": "None reported",
+          "sold online at": "SHEIN.com from December 2025 through April 2026 for about $10.",
+          "importer(s)": "SHEIN Distribution Corporation, of Los Angeles, California",
+          "manufactured in": "China",
+          "recall number": "26-782"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26783",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+      "evidenceHash": "528261fe467da0a2f55144aaadadab0e9355f6135b9e73a5f80c6b2ecba9e467",
+      "rawPageHash": "e86ebf7e3d4af36a67775796001296e52787206c261ebd99944c9a16d12cb18b",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.141974+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "45494d2808125d19d2bcf4d401c98ab59938547f3e99cdcf7d0b213193dbae06",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "af435f428d3841ba0e6ee387751994a8fa517adfb057ea6bc6a07704433a3594",
+        "recallDetails": {
+          "description": "ec39f5b7366df3bfdde9435b31314cd5b0f645aaadf833cc410346a74cf96c98",
+          "remedy": "5472a7b5b62f68b3ff6d73f22e5e79b6f06a7781898421d7cf1f17c5ac0d55f1",
+          "incidents/injuries": "a851862995f8e5c6f0f7d5a5f68f7607c66df8bbbdb08c3b90c3bb0585d643e3",
+          "sold at": "8ce260376d2b0a37671eab533a61ac75edc5271935088ed158823850fe92a570",
+          "manufacturer(s)": "87e488e662b07ff4300a036ebcb8abce0a19e49535c46c5e20d65836a7ef45f7",
+          "importer(s)": "219e43d91b441076bf9498be22a743e2a78ed5afc7ae7d6a1e8db3100c278d2c",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "fe4242dfca7ea7f6d4782f43a1e7697beaa0d48ee980603a4abbad38b776d21c"
+        },
+        "tables": ["9f3ec608d30d270dfdce02bb998c289b3cd1221d2a9b69cb445cc56ad90d0de6"]
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26783",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+        "title": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+        "publicationDate": "2026-09-17",
+        "description": "This recall expansion involves bench seating in Sauna360’s Tylö branded Halmstad and Kiruna Hybrid sauna rooms. The serial number for each room can be found on both the packaging and the sauna rooms. The Halmstad 2, 3 and 4 sauna rooms have the serial number label located beneath the upper bench on the left side, directly above the electrical contactor box. The Kiruna Hybrid 2 and 3 rooms have the serial number label applied to the right wall, located beneath the right side of the upper bench. The model number is printed in the manual. The following models and serial numbers are included in this recall: CSFxxABTRxx-V1-4296 through CSFxxABADTRxx-V1-18577 SFxxABTRxx-V1-48413 through SFxxABTRxx-V1-48444 CSFxxABISxxTL-V1-4674 through CSFxxABADISxxTL-V1-18503",
+        "recallDetails": {
+          "description": "This recall expansion involves bench seating in Sauna360’s Tylö branded Halmstad and Kiruna Hybrid sauna rooms. The serial number for each room can be found on both the packaging and the sauna rooms. The Halmstad 2, 3 and 4 sauna rooms have the serial number label located beneath the upper bench on the left side, directly above the electrical contactor box. The Kiruna Hybrid 2 and 3 rooms have the serial number label applied to the right wall, located beneath the right side of the upper bench. The model number is printed in the manual. The following models and serial numbers are included in this recall: Recalled Model Numbers Range of Recalled Serial Numbers TRAD, Tylö Halmstad™ 2, W/BLISS, 15A, 120V, CB21-1, V1 CSFxxABTRxx-V1-4296 through CSFxxABADTRxx-V1-18577 SFxxABTRxx-V1-48413 through SFxxABTRxx-V1-48444 TRAD, Tylö Halmstad™ 2, W/BLISS, 20A, 120V, CB21-1, V1 TRAD, Tylö Halmstad™ 3, W/BLISS, 240V, CB23-1, V1 TRAD, Tylö Halmstad™ 4, W/BLISS, 240V, CB23-1, V1 IS, Tylö Kiruna Hybrid™ 2, W/BLISS, 15A, 120V, LOW EMR, CB20-1, V1 CSFxxABISxxTL-V1-4674 through CSFxxABADISxxTL-V1-18503 IS, Tylö Kiruna Hybrid™ 2, W/BLISS, 20A, 120V, LOW EMR, CB20-1, V1 IS, Tylö Kiruna Hybrid™ 3, W/BLISS, 240V, LOW EMR, CB22-1, V1",
+          "remedy": "Consumers should stop using the saunas immediately, even if they received the 2025 recall remedy and contact Sauna360 for another free repair. Sauna360 will provide a professional installer to retrofit the benches with additional hardware and supports.",
+          "incidents/injuries": "Sauna360 has received 77 additional reports of the benches breaking with six injuries, including one consumer with head and neck injuries and another with a sprained ankle.",
+          "sold at": "Various distributors nationwide from July 2024 through July 2026 for between $6,000 and $12,000.",
+          "manufacturer(s)": "SFactor, of China",
+          "importer(s)": "Sauna360, Inc., of Cokato, Minnesota",
+          "manufactured in": "China",
+          "recall number": "26-783"
+        },
+        "tables": [
+          [
+            ["Recalled Model Numbers", "Range of Recalled Serial Numbers"],
+            [
+              "TRAD, Tylö Halmstad™ 2, W/BLISS, 15A, 120V, CB21-1, V1",
+              "CSFxxABTRxx-V1-4296 through CSFxxABADTRxx-V1-18577 SFxxABTRxx-V1-48413 through SFxxABTRxx-V1-48444"
+            ],
+            [
+              "TRAD, Tylö Halmstad™ 2, W/BLISS, 20A, 120V, CB21-1, V1",
+              "CSFxxABTRxx-V1-4296 through CSFxxABADTRxx-V1-18577 SFxxABTRxx-V1-48413 through SFxxABTRxx-V1-48444"
+            ],
+            [
+              "TRAD, Tylö Halmstad™ 3, W/BLISS, 240V, CB23-1, V1",
+              "CSFxxABTRxx-V1-4296 through CSFxxABADTRxx-V1-18577 SFxxABTRxx-V1-48413 through SFxxABTRxx-V1-48444"
+            ],
+            [
+              "TRAD, Tylö Halmstad™ 4, W/BLISS, 240V, CB23-1, V1",
+              "CSFxxABTRxx-V1-4296 through CSFxxABADTRxx-V1-18577 SFxxABTRxx-V1-48413 through SFxxABTRxx-V1-48444"
+            ],
+            [
+              "IS, Tylö Kiruna Hybrid™ 2, W/BLISS, 15A, 120V, LOW EMR, CB20-1, V1",
+              "CSFxxABISxxTL-V1-4674 through CSFxxABADISxxTL-V1-18503"
+            ],
+            [
+              "IS, Tylö Kiruna Hybrid™ 2, W/BLISS, 20A, 120V, LOW EMR, CB20-1, V1",
+              "CSFxxABISxxTL-V1-4674 through CSFxxABADISxxTL-V1-18503"
+            ],
+            [
+              "IS, Tylö Kiruna Hybrid™ 3, W/BLISS, 240V, LOW EMR, CB22-1, V1",
+              "CSFxxABISxxTL-V1-4674 through CSFxxABADISxxTL-V1-18503"
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "recallNumber": "26784",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "evidenceHash": "b2a9bd4b93c06dc927db73518062f2d3e2e724f586d39ee489486acd5bea1084",
+      "rawPageHash": "cbcc891632a95a8eca311a289973aeaa3b36a593a813b2e5b796cbd2d3f123f6",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.507948+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "52de2c1a66510fd3f42b5c6c11c0c5250820b346ed2a108cc4f9a4652ba4316d",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "edfa6b5cb570b01a120dc9ac94d6074f72417fd3589caf9c7fa32968311223fa",
+        "recallDetails": {
+          "description": "3c00fec76fdbacab31f6e7ad4f79881fa64fd5a63ab6b440a7c9ae8915a036a5",
+          "remedy": "b6577959f16ec95edd54eedf546ed1a20a2590cac5edaa1cbd58acdc46161439",
+          "incidents/injuries": "25c87f809de93815c59f6eb73714eccfb41755ccc558c406342da47797648cd0",
+          "sold at": "211837f06e34c3f1d268bf3698afbf255a4945a8563d9d8bf3f4ebdd1e34f3c3",
+          "importer(s)": "d61adf4bde815a57f09bf6d389d991c9004c5aa8205dda9439a7ef6163cddfe1",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "d55afc401fb65da973e522c774621e410898d420dc83bb36740b692fd88223c8"
+        },
+        "tables": ["608d6bd34cf6c518fac3c21ad6462a3e36815778a44922953b39672b39c56539"]
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26784",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+        "title": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves various infrared and hybrid sauna models and infrared (IR) kits. Customers who purchased custom rooms built with IR panels can check for the words “Saunalogic,” “Infralogic,” “Carbonflex,” or “Tylö” on their control panel or locate their product manual. Customers who purchased pre-configured infrared sauna rooms can identify their product by the brand badge on the front frame panel, the control panel, the manual or the logo handle. Consumers can also find the serial number located under the lower bench or on the wall under the upper bench depending on the unit and provide Sauna360 the serial number to determine if they have a recalled sauna. The IR sauna kits with panels, along with the following sauna model numbers, are included in this recall: IR KITS (with panels)",
+        "recallDetails": {
+          "description": "This recall involves various infrared and hybrid sauna models and infrared (IR) kits. Customers who purchased custom rooms built with IR panels can check for the words “Saunalogic,” “Infralogic,” “Carbonflex,” or “Tylö” on their control panel or locate their product manual. Customers who purchased pre-configured infrared sauna rooms can identify their product by the brand badge on the front frame panel, the control panel, the manual or the logo handle. Consumers can also find the serial number located under the lower bench or on the wall under the upper bench depending on the unit and provide Sauna360 the serial number to determine if they have a recalled sauna. The IR sauna kits with panels, along with the following sauna model numbers, are included in this recall: BRAND SERIES MODEL Finnleo IS Series IS44, IS44-15, IS44-20, IS440-15, IS440-20, and IS565 Finnleo S Series S810, S820, S825, S830, S840, S870, and S880 Finnleo Sentinel Sentinel 3 Finnleo Sentinel Hybrid Sentinel Hybrid 2-20 and Sentinel Hybrid 3 Helo S Series S820 and S870 Radiant Health Elite E-1H, E-2H, E-2.5H, E-3H, E-4H, EC-3H, EC-4H Radiant Health Pause P-1H, P-2H, P-2.5H, P-3H, P-1H-CA, P-2H-CA, P-2.5H-CA, P-3H-CA Sauna360 E Series E510, E570, and E580 Saunatec B Series B200, B200C, B300C, B300CC, B300CH, B400, B400C, B400CC, B810, B810C, B820, B820C, B830, B830C, B840, B840C, B870, B870C, B880, and B880C Tylo IG Series IG810, IG820, IG830, IG840, IG870, and IG880 Tylo Kiruna Kiruna 1, Kiruna 2, and Kiruna 3 Tylo Kiruna Hybrid Kiruna Hybrid 2-15, Kiruna Hybrid 2-20, and Kiruna Hybrid 3 Tylohelo B Series B200, B200C, B300C, B300CC, B300CH, B400, B400C, B400CC, B810, B810C, B820, B820C, B830, B830C, B840, B840C, B870, B870C, B880, and B880C Tylohelo S Series S810, S820, S825, S830, S840, S870, and S880 No Brand S Series S810, S820, S825, S830, S840, S870, and S880 IR KITS (with panels) Saunatec Custom/Semi-Custom (IR/IS/Hybrid) Carbonflex Tylo Custom/Semi-Custom (IS/Hybrid) Saunalogic Helo Custom/Semi-Custom (IS/Hybrid) Saunalogic Finnleo Custom/Semi-Custom (IS/Hybrid) Saunalogic Amerec Custom/Semi-Custom (IS/Hybrid) Saunalogic Finnleo Custom/Semi-Custom (IR) Infralogic Saunatec Custom/Semi-Custom (IR/IS/Hybrid) Saunalogic Tylohelo Custom/Semi-Custom (IR/IS/Hybrid) Saunalogic Tylo Custom/Semi-Custom (IR) Aspire Tylo Custom/Semi-Custom (IR/IS/Hybrid) Bliss",
+          "remedy": "Consumers should stop using the infrared and hybrid saunas immediately and contact Sauna360 to schedule a free in-home repair from a professional installer.",
+          "incidents/injuries": "The firm has received 67 reports of overheating, melting, charring or burning. No injuries have been reported.",
+          "sold at": "Costco stores and pool and spa dealerships nationwide and online at Costco.com and other online sites from May 2013 through July 2026 for between $6000 and $13,000.",
+          "importer(s)": "Sauna360 Inc., of Cokato, Minnesota",
+          "manufactured in": "China",
+          "recall number": "26-784"
+        },
+        "tables": [
+          [
+            ["BRAND", "SERIES", "MODEL"],
+            ["Finnleo", "IS Series", "IS44, IS44-15, IS44-20, IS440-15, IS440-20, and IS565"],
+            ["Finnleo", "S Series", "S810, S820, S825, S830, S840, S870, and S880"],
+            ["Finnleo", "Sentinel", "Sentinel 3"],
+            ["Finnleo", "Sentinel Hybrid", "Sentinel Hybrid 2-20 and Sentinel Hybrid 3"],
+            ["Helo", "S Series", "S820 and S870"],
+            ["Radiant Health", "Elite", "E-1H, E-2H, E-2.5H, E-3H, E-4H, EC-3H, EC-4H"],
+            [
+              "Radiant Health",
+              "Pause",
+              "P-1H, P-2H, P-2.5H, P-3H, P-1H-CA, P-2H-CA, P-2.5H-CA, P-3H-CA"
+            ],
+            ["Sauna360", "E Series", "E510, E570, and E580"],
+            [
+              "Saunatec",
+              "B Series",
+              "B200, B200C, B300C, B300CC, B300CH, B400, B400C, B400CC, B810, B810C, B820, B820C, B830, B830C, B840, B840C, B870, B870C, B880, and B880C"
+            ],
+            ["Tylo", "IG Series", "IG810, IG820, IG830, IG840, IG870, and IG880"],
+            ["Tylo", "Kiruna", "Kiruna 1, Kiruna 2, and Kiruna 3"],
+            [
+              "Tylo",
+              "Kiruna Hybrid",
+              "Kiruna Hybrid 2-15, Kiruna Hybrid 2-20, and Kiruna Hybrid 3"
+            ],
+            [
+              "Tylohelo",
+              "B Series",
+              "B200, B200C, B300C, B300CC, B300CH, B400, B400C, B400CC, B810, B810C, B820, B820C, B830, B830C, B840, B840C, B870, B870C, B880, and B880C"
+            ],
+            ["Tylohelo", "S Series", "S810, S820, S825, S830, S840, S870, and S880"],
+            ["No Brand", "S Series", "S810, S820, S825, S830, S840, S870, and S880"],
+            ["", "IR KITS (with panels)", ""],
+            ["Saunatec", "Custom/Semi-Custom (IR/IS/Hybrid)", "Carbonflex"],
+            ["Tylo", "Custom/Semi-Custom (IS/Hybrid)", "Saunalogic"],
+            ["Helo", "Custom/Semi-Custom (IS/Hybrid)", "Saunalogic"],
+            ["Finnleo", "Custom/Semi-Custom (IS/Hybrid)", "Saunalogic"],
+            ["Amerec", "Custom/Semi-Custom (IS/Hybrid)", "Saunalogic"],
+            ["Finnleo", "Custom/Semi-Custom (IR)", "Infralogic"],
+            ["Saunatec", "Custom/Semi-Custom (IR/IS/Hybrid)", "Saunalogic"],
+            ["Tylohelo", "Custom/Semi-Custom (IR/IS/Hybrid)", "Saunalogic"],
+            ["Tylo", "Custom/Semi-Custom (IR)", "Aspire"],
+            ["Tylo", "Custom/Semi-Custom (IR/IS/Hybrid)", "Bliss"]
+          ]
+        ]
+      }
+    },
+    {
+      "recallNumber": "26785",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "evidenceHash": "93ea3acc173c9ea4fe27a309c0c782f5c48580b5081607cb080356656b38f57e",
+      "rawPageHash": "f3101ee8358c78a9a11f70fa4c2e43d12da10b143724da4805f6c2f018e445dd",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.157142+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "cdc68209d98d2b8eef84c2e07fd67e72503b13aa278823858442f87ffbc18ebf",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "d6f7eefb745d1283f9516b92e5d86e5bb22e8e7f36a9428e7b6fc196aa3c18e1",
+        "recallDetails": {
+          "description": "d6f7eefb745d1283f9516b92e5d86e5bb22e8e7f36a9428e7b6fc196aa3c18e1",
+          "remedy": "6d32efc4819825e48c4c40ab0490cd3630986c97948322a5a3bdcedd7530dd53",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold online at": "bfcdcaf1c73c19a62dcd2f780bc61200ce1e22c219d0b17b59d4cc154f725b9e",
+          "retailer": "d0aef06e362699c652ddca5204ad0630bbc13012c02e19064a7e4fece98e1eba",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "e3bbcaa877f7ce20f0fcd8f7d7e65d3e4f367f28b749e6a48cfedb23cbe91c0b"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26785",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+        "title": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves Basecamp-branded bicycle helmets, model HT-10. The helmets were sold in green and black and in size medium/large (M/L), fitting a head circumference of about 22.44 to 24.41 inches. The helmets have red padding, black and red straps, a black and red buckle and a black and red fit-adjusting knob at the back. “Basecamp” is printed on the sides of the helmet and “HT-10” on a label inside of the helmet.",
+        "recallDetails": {
+          "description": "This recall involves Basecamp-branded bicycle helmets, model HT-10. The helmets were sold in green and black and in size medium/large (M/L), fitting a head circumference of about 22.44 to 24.41 inches. The helmets have red padding, black and red straps, a black and red buckle and a black and red fit-adjusting knob at the back. “Basecamp” is printed on the sides of the helmet and “HT-10” on a label inside of the helmet.",
+          "remedy": "Consumers should stop using the helmets immediately and contact Tongyang Cycling for a full refund. Consumers will be asked to destroy the recalled helmet by cutting the straps and send a photo of the destroyed helmet to tongyangshangwuus@hotmail.com. Consumers should then dispose of the recalled product. Note: Button cell batteries are hazardous. Batteries should be disposed of or recycled by following local hazardous waste procedures.",
+          "incidents/injuries": "None reported.",
+          "sold online at": "Amazon.com from July 2024 through July 2026 for about $34.",
+          "retailer": "HK Tongyang Technology Co., Ltd., dba Tongyang Cycling, of China",
+          "manufactured in": "China",
+          "recall number": "26-785"
+        },
+        "tables": []
+      }
+    },
+    {
+      "recallNumber": "26786",
+      "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "evidenceHash": "e3ff5047c6966f622b29e8c08b02437246ec5fe62b79c0654e627a4ceeaeb5f5",
+      "rawPageHash": "07e687fe02e8c6dd3e6b9042cce38e1c850bda4ae7dfcd496f541b74c7dd9c72",
+      "parserVersion": "phase-16.9-v1",
+      "fetchedAt": "2026-09-24T05:34:58.170292+00:00",
+      "fetchedAtProvenance": "Phase 16.8 cached file modification time",
+      "sectionHashes": {
+        "title": "e99c60f7ac101061b4f7253473dd31caf2caa1f2202d48edaa0610fb5b53da62",
+        "publicationDate": "5bc56dcf4ed57f743dda41d3834e4c29d6468386b9dfecbe890b9ea862bbf66b",
+        "descriptionText": "5da2371280666d44c38e2e3944f0059c356701338211e92ecb12258656a9d6bf",
+        "recallDetails": {
+          "description": "5da2371280666d44c38e2e3944f0059c356701338211e92ecb12258656a9d6bf",
+          "remedy": "dd343a9d120d4f2c3e4ada19195f554066b5d8b0a2dde747ceebc8857e6f1168",
+          "incidents/injuries": "cd90773611983870a867defdd1a6bb46c54a24389f69186862e6b10dca33bf74",
+          "sold at": "248fbf8cbfb2c23c0c9145345422f97ffff90c48dc2b91c84e83a3de5fad848f",
+          "importer(s)": "23bbfff3868cace60530b557e60331f17f8ed7d5b356535be100d049a0cc326e",
+          "manufactured in": "10436829032f361a3de50048de41755140e581467bc1895e6c1a17f423e42d10",
+          "recall number": "a8ca98beffad9c358c59aa5635afd66cc1ea7fd19c2f83865edd7bdf5ed7e9fa"
+        },
+        "tables": []
+      },
+      "normalizedEvidence": {
+        "recallNumber": "26786",
+        "canonicalUrl": "https://www.cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+        "title": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+        "publicationDate": "2026-09-17",
+        "description": "This recall involves Rainbow Mystery Squishy Bun Toys. The squishy bun toys are a translucent green color, containing glitter and water beads. The toys have a cartoon face and are packaged in a tan plastic container shaped like a bamboo steamer. “Rainbow MYSTERY” and “SUGAR EDITION” are printed on the front of the removable package labeling. There are no markings on the product, other than the cartoon face.",
+        "recallDetails": {
+          "description": "This recall involves Rainbow Mystery Squishy Bun Toys. The squishy bun toys are a translucent green color, containing glitter and water beads. The toys have a cartoon face and are packaged in a tan plastic container shaped like a bamboo steamer. “Rainbow MYSTERY” and “SUGAR EDITION” are printed on the front of the removable package labeling. There are no markings on the product, other than the cartoon face.",
+          "remedy": "Consumers should stop using the squishy dumpling toys immediately and contact Toyworld168 for a full refund. Consumers will be asked to write “RECALLED” in permanent marker on the squeezy dumpling and its tan plastic container, throw the toy away and email a photo of the disposed toy to toyworld16850@gmail.com.",
+          "incidents/injuries": "None reported.",
+          "sold at": "Various third-party stores nationwide from June 2026 through July 2026 for about $3.",
+          "importer(s)": "Toyworld168 Inc., of Orlando, Florida",
+          "manufactured in": "China",
+          "recall number": "26-786"
+        },
+        "tables": []
+      }
+    }
+  ],
+  "currentObservations": [
+    {
+      "apiId": "8875",
+      "recallNumber": "20162",
+      "observedUrl": "https://www.cpsc.gov/Recalls/2020/Intertex-Recalls-Blowers-Due-To-Fire-Hazard",
+      "title": "Intertex Recalls Blowers Due To Fire Hazard",
+      "publicationDate": "2020-08-12",
+      "payloadHash": "99fde55893fa1e113d4bc86a73b87c3f724ce14ec8ba0cdf93445039e9ebc67c",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "8876",
+      "recallNumber": "20163",
+      "observedUrl": "https://www.cpsc.gov/Recalls/2020/CPSC-and-Crown-Darts-UK-Warn-Consumers-to-Stop-Using-and-Dispose-of-Banned-Lawn-Dart-Sets-Recalling-Firm-is-Unable-to-Conduct-Recall",
+      "title": "CPSC and Crown Darts UK Warn Consumers to Stop Using and Dispose of Banned Lawn Dart Sets; Recalling Firm is Unable to Conduct Recall",
+      "publicationDate": "2020-08-12",
+      "payloadHash": "99f8fd123e50a0e8cc14f5d169834c2bf4619ae5eae182e27abb43824f935ed3",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "8877",
+      "recallNumber": "20164",
+      "observedUrl": "https://www.cpsc.gov/Recalls/2020/Thule-Recalls-Strollers-Due-to-Injury-Hazard",
+      "title": "Thule Recalls Strollers Due to Injury Hazard",
+      "publicationDate": "2020-08-12",
+      "payloadHash": "39453c036217f2cc24819fb103898610586b7c27dfc3c1837f02ff60fbb17355",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "8878",
+      "recallNumber": "20165",
+      "observedUrl": "https://www.cpsc.gov/Recalls/2020/Active-Brands-Recalls-Bicycle-Helmets-Due-to-Risk-of-Head-Injury",
+      "title": "Active Brands Recalls Bicycle Helmets Due to Risk of Head Injury",
+      "publicationDate": "2020-08-12",
+      "payloadHash": "95947c2d01a945835eafecd6c0f9eb39ed34672e8bf51cd5d9ae15e4924363b0",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10962",
+      "recallNumber": "26748",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Ricky-Joy-Recalls-More-Than-2-3-Million-Sour-Crush-Candy-Bottles-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard",
+      "title": "Ricky Joy Recalls More Than 2.3 Million Sour Crush Candy Bottles Due to Risk of Serious Injury or Death from Choking Hazard",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "f9756f8bd07c617ec915d82eb72f6ed8d97dc993edc772a6ffb82ce986c2c7ee",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10969",
+      "recallNumber": "26749",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Victgoal-Recalls-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "title": "Victgoal Recalls Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "1316efd47ec33bf7fc3029e985bd6d1049efbf4bcf450e3ea4599bef2aa7e23a",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10965",
+      "recallNumber": "26753",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/SQT-Recalls-Lontcs-Busy-Boards-Due-to-Risk-of-Serious-Injury-from-Lead-Poisoning-Violate-Federal-Lead-Paint-Ban",
+      "title": "SQT Recalls Lontcs Busy Boards Due to Risk of Serious Injury from Lead Poisoning; Violate Federal Lead Paint Ban",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "316823508cb771a7d86efaffbf04b8cc678703d59c34ae78ab29e5a594d18de0",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10967",
+      "recallNumber": "26754",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Guang-Zhou-Recalls-Wantefully-Hair-Dryer-Brushes-Due-to-Risk-of-Serious-Injury-or-Death-from-Electrocution-Shock-and-Burn-Hazards-Violate-Federal-Regulations",
+      "title": "Guang Zhou Recalls Wantefully Hair Dryer Brushes Due to Risk of Serious Injury or Death from Electrocution, Shock and Burn Hazards; Violate Federal Regulations",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "5af2405f874ee90f9819eca708f6be60123abee3566bcdcd87b4f75df4f2e104",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10963",
+      "recallNumber": "26755",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Prepared-Hero-Recalls-Fire-Spray-Canisters-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "title": "Prepared Hero Recalls Fire Spray Canisters Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "df6950154de072427cd3e9a2c1f7ca6f6b12288c038c36388f00dc905ad050e5",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10968",
+      "recallNumber": "26756",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Dual-Fuel-Ranges-Recalled-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-or-Explosion-Hazards-Manufactured-by-AGA-Rangemaster",
+      "title": "Dual Fuel Ranges Recalled Due to Risk of Serious Injury or Death from Fire or Explosion Hazards; Manufactured by AGA Rangemaster",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "a300928462e2324ed88b30891146b0e8cd23a9417675a480d86dd20847b09cf1",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10964",
+      "recallNumber": "26761",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Cade-California-Electronic-Recalls-Finger-Light-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "title": "Cade California Electronic Recalls Finger Light Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "affa0a50cd9a9325e1b9d14d56b7847b508ea037f882c514890fe5f6c04952ae",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10966",
+      "recallNumber": "26763",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Triumph-Motorcycles-Recalls-Closed-Course-Competition-Motorcycles-Due-to-Risk-of-Serious-Injury-or-Death-from-Crash-Hazard",
+      "title": "Triumph Motorcycles Recalls Closed Course Competition Motorcycles Due to Risk of Serious Injury or Death from Crash Hazard",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "2ead4847dfed00d4d1280ccfc6493a1fe176dbb6a96c285faef0736b6e440117",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10970",
+      "recallNumber": "26766",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/ZMC-Group-Expands-Recall-of-Light-Up-Childrens-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Battery-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "title": "ZMC Group Expands Recall of Light-Up Children’s Toys Due to Risk of Serious Injury or Death from Battery Ingestion; Violate Mandatory Standard for Toys",
+      "publicationDate": "2026-09-10",
+      "payloadHash": "b4a8d7501f9a5ccd37fc2cfa74429a1a02a01134df7eb234aba23d7a44000731",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10986",
+      "recallNumber": "26773",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Char-Broil-Recalls-Bistro-Pro-Electric-Grills-Due-to-Risk-of-Electric-Shock",
+      "title": "Char-Broil Recalls Bistro Pro Electric Grills Due to Risk of Electric Shock",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "ea026302c74b5b848d22e9ef96a4ff025b77bc007400c7b33f6305b37089ed57",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10974",
+      "recallNumber": "26774",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Colerinsec-Recalls-Jerify-Magnetic-Stick-Figure-Toy-Sets-Due-to-Risk-of-Serious-Injury-or-Death-from-Magnet-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "title": "Colerinsec Recalls Jerify Magnetic Stick Figure Toy Sets Due to Risk of Serious Injury or Death from Magnet Ingestion; Violate Mandatory Standard for Toys",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "3554ce83ac76eabd202d3d112d8074ee5a113fb613ef86a663b6a9a2cad1e124",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10982",
+      "recallNumber": "26775",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Esjay-US-Recalls-Toddler-Busy-Board-Montessori-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Violates-Small-Parts-Ban",
+      "title": "Esjay US Recalls Toddler Busy Board Montessori Toys Due to Risk of Serious Injury or Death from Choking; Violates Small Parts Ban",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "581518905cbb92e745c1802636df8c538a91ffc68a9695e6dcf9bd2d0a6fcaef",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10985",
+      "recallNumber": "26776",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Friedrich-Air-Conditioning-Recalls-K%C3%9CHL-Window-Air-Conditioners-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "title": "Friedrich Air Conditioning Recalls KÜHL Window Air Conditioners Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "f55cdb3d19493c3cd74ba988c3bb3f3c4816157ee2ce24375e6c1dc3f797e4f7",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10987",
+      "recallNumber": "26777",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+      "title": "Hayward Industries Recalls Universal Pool Heaters Due to Risk of Serious Injury or Death from Carbon Monoxide Poisoning Hazard",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "151627e65db8fdc9a18e27df340aa7b17e68d2aef76fb6835549ab997084fc71",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10975",
+      "recallNumber": "26778",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/JKMAX-Recalls-Heated-Blankets-and-Heating-Pads-Due-to-Fire-and-Burn-Hazards",
+      "title": "JKMAX Recalls Heated Blankets and Heating Pads Due to Fire and Burn Hazards",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "6d57e8ba29d324aa017886809bdba2e275a1834b7e9a9fa4fd5314d7a407c654",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10983",
+      "recallNumber": "26779",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/LANCHEZ-Pressure-Washers-Recalled-Due-to-Serious-Risk-of-Injury-or-Death-from-Shock-and-Electrocution-Hazards",
+      "title": "LANCHEZ Pressure Washers Recalled Due to Serious Risk of Injury or Death from Shock and Electrocution Hazards",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "eabda37115520f97ca1b71dcb35db27b7d3d1dfbe2ecce84fd7424f8a296957a",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10976",
+      "recallNumber": "26780",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Melissa-and-Doug-Recalls-Fire-Truck-Activity-Board-Toys-Due-to-Risk-of-Serious-Injury-from-Choking-Hazard-Sold-Exclusively-at-Target",
+      "title": "Melissa & Doug Recalls Fire Truck Activity Board Toys Due to Risk of Serious Injury from Choking Hazard; Sold Exclusively at Target",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "2f537cacbd149d71dc24407f57409687b1a94a948bbc8df09b7448ca64d86e5f",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10981",
+      "recallNumber": "26781",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Regfear-Recalls-BedsPick-Mattresses-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-Violate-Mandatory-Flammability-Standard-for-Mattresses",
+      "title": "Regfear Recalls BedsPick Mattresses Due to Risk of Serious Injury or Death from Fire; Violate Mandatory Flammability Standard for Mattresses",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "68b647a4704003eb727eed0cfa0b5e7fd1d482e489675a1d0f63c6cd500e8bba",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10977",
+      "recallNumber": "26782",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/SHEIN-Distribution-Corporation-Recalls-Pull-and-Chew-Montessori-Teething-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Choking-Hazard-Violate-Mandatory-Standard-for-Toys",
+      "title": "SHEIN Distribution Corporation Recalls Pull and Chew Montessori Teething Toys Due to Risk of Serious Injury or Death from Choking Hazard; Violate Mandatory Standard for Toys",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "cf2b93ff1f3bef9cba76a319b6c45460c99bfd7e1e72e47e4b433738b61cda1f",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10979",
+      "recallNumber": "26783",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Sauna360-Expands-Recall-of-Tylo-Halmstad-and-Kiruna-Hybrid-Saunas-Due-to-Fall-Hazard-New-Remedy-Provided",
+      "title": "Sauna360 Expands Recall of Tylö Halmstad and Kiruna Hybrid Saunas Due to Fall Hazard; New Remedy Provided",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "f9e54bfef721be195e4179293ab8782de2b43d2931ae9abab9e36987369b303f",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10984",
+      "recallNumber": "26784",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Sauna360-Recalls-Infrared-Saunas-Hybrid-Infrared-Saunas-and-Infrared-Kits-Due-to-Risk-of-Serious-Injury-or-Death-from-Fire-and-Burn-Hazards",
+      "title": "Sauna360 Recalls Infrared Saunas, Hybrid Infrared Saunas and Infrared Kits Due to Risk of Serious Injury or Death from Fire and Burn Hazards",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "dd3392c40b4b83b33bbb036b2778183e1748f5956d6bd37f9dc2075cf988f426",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10978",
+      "recallNumber": "26785",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Tongyang-Cycling-Recalls-Basecamp-Bicycle-Helmets-Due-to-Risk-of-Serious-Injury-or-Death-from-Head-Injury-Violate-Mandatory-Standard-for-Bicycle-Helmets",
+      "title": "Tongyang Cycling Recalls Basecamp Bicycle Helmets Due to Risk of Serious Injury or Death from Head Injury; Violate Mandatory Standard for Bicycle Helmets",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "18724a0b82ba82c0fba4aecbc758b7f4e89466bf3847c03199f4b2ce6b53ea52",
+      "observedAt": "2026-09-24T00:00:00Z"
+    },
+    {
+      "apiId": "10980",
+      "recallNumber": "26786",
+      "observedUrl": "https://cpsc.gov/Recalls/2026/Toyworld168-Recalls-Rainbow-Mystery-Squishy-Bun-Toys-Due-to-Risk-of-Serious-Injury-or-Death-from-Water-Bead-Ingestion-Violate-Mandatory-Standard-for-Toys",
+      "title": "Toyworld168 Recalls Rainbow Mystery Squishy Bun Toys Due to Risk of Serious Injury or Death from Water Bead Ingestion; Violate Mandatory Standard for Toys",
+      "publicationDate": "2026-09-17",
+      "payloadHash": "2bd6a4f2eec13c6a521f0a23bf07b2d43b358ed555498bd700eaddf7e191b2a6",
+      "observedAt": "2026-09-24T00:00:00Z"
+    }
+  ]
+}

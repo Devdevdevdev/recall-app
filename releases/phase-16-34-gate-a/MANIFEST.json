@@ -1,0 +1,305 @@
+{
+  "functions": {
+    "process-recall-matches": [
+      "supabase/functions/_shared/matching/aggregation.ts",
+      "supabase/functions/_shared/matching/candidateRetrieval.ts",
+      "supabase/functions/_shared/matching/criterionEvaluatorV2.ts",
+      "supabase/functions/_shared/matching/deterministicMatcher.ts",
+      "supabase/functions/_shared/matching/deterministicMatcherV2.ts",
+      "supabase/functions/_shared/matching/evidence.ts",
+      "supabase/functions/_shared/matching/guardedNemotronMatcher.ts",
+      "supabase/functions/_shared/matching/guardedNemotronPrompt.ts",
+      "supabase/functions/_shared/matching/guardedNemotronSchema.ts",
+      "supabase/functions/_shared/matching/hybridGuardedMatcher.ts",
+      "supabase/functions/_shared/matching/nemotronMatcher.ts",
+      "supabase/functions/_shared/matching/nemotronPrompt.ts",
+      "supabase/functions/_shared/matching/nemotronSafetyVerifier.ts",
+      "supabase/functions/_shared/matching/nemotronSchema.ts",
+      "supabase/functions/_shared/matching/normalization.ts",
+      "supabase/functions/_shared/matching/types.ts",
+      "supabase/functions/_shared/matching/typesV2.ts",
+      "supabase/functions/_shared/nebius/client.ts",
+      "supabase/functions/_shared/nebius/config.ts",
+      "supabase/functions/_shared/nebius/errors.ts",
+      "supabase/functions/_shared/push/delivery.ts",
+      "supabase/functions/_shared/push/expoClient.ts",
+      "supabase/functions/_shared/push/index.ts",
+      "supabase/functions/_shared/push/payload.ts",
+      "supabase/functions/_shared/push/store.ts",
+      "supabase/functions/_shared/push/validation.ts",
+      "supabase/functions/_shared/recallMatching/fingerprint.ts",
+      "supabase/functions/_shared/recallMatching/index.ts",
+      "supabase/functions/_shared/recallMatching/orchestrator.ts",
+      "supabase/functions/_shared/recallMatching/orchestratorV2.ts",
+      "supabase/functions/_shared/recallMatching/policySelector.ts",
+      "supabase/functions/_shared/recallMatching/productionPolicyV2.ts",
+      "supabase/functions/_shared/recallMatching/projection.ts",
+      "supabase/functions/_shared/recallMatching/request.ts",
+      "supabase/functions/_shared/recallMatching/reviewedCriteriaV2.ts",
+      "supabase/functions/process-recall-matches/index.ts",
+      "supabase/functions/process-recall-matches/legacyRun.ts",
+      "supabase/functions/process-recall-matches/store.ts",
+      "supabase/functions/process-recall-matches/storeV2.ts"
+    ],
+    "run-recall-automation": [
+      "supabase/functions/_shared/automation/index.ts",
+      "supabase/functions/_shared/automation/orchestrator.ts",
+      "supabase/functions/_shared/automation/request.ts",
+      "supabase/functions/run-recall-automation/children.ts",
+      "supabase/functions/run-recall-automation/index.ts",
+      "supabase/functions/run-recall-automation/store.ts"
+    ]
+  },
+  "files": {
+    "supabase/functions/_shared/matching/aggregation.ts": {
+      "sha256": "6a73899f6f07553499ca862855c508258be143b63e5e150b8fb6181c214a4b63",
+      "deployedSha256": "6a73899f6f07553499ca862855c508258be143b63e5e150b8fb6181c214a4b63",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/candidateRetrieval.ts": {
+      "sha256": "37a23a8da45927ab0a51ac73069343ea29b1e5e68acbbfb89a81dd61279e108e",
+      "deployedSha256": "37a23a8da45927ab0a51ac73069343ea29b1e5e68acbbfb89a81dd61279e108e",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/criterionEvaluatorV2.ts": {
+      "sha256": "32c6110d66a60b48e48ba2275532ce395bf114a328d9a6cec7689b4eef5e450d",
+      "deployedSha256": "32c6110d66a60b48e48ba2275532ce395bf114a328d9a6cec7689b4eef5e450d",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/deterministicMatcher.ts": {
+      "sha256": "1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb",
+      "deployedSha256": "1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/deterministicMatcherV2.ts": {
+      "sha256": "5c397f58a02be37e1601de4f556cde1f58a39f622eb35de097a093e8f334bc46",
+      "deployedSha256": "5c397f58a02be37e1601de4f556cde1f58a39f622eb35de097a093e8f334bc46",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/evidence.ts": {
+      "sha256": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+      "deployedSha256": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/guardedNemotronMatcher.ts": {
+      "sha256": "7a1aa58c988d97bd8aa1c86017d7a5d0688abc217848d9ee4bee13b20939b7c0",
+      "deployedSha256": "7a1aa58c988d97bd8aa1c86017d7a5d0688abc217848d9ee4bee13b20939b7c0",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/guardedNemotronPrompt.ts": {
+      "sha256": "f7e4e4a6b5beeadfeb55dfebd305bb12d0485ef679e5e469556e0d63f8d69168",
+      "deployedSha256": "f7e4e4a6b5beeadfeb55dfebd305bb12d0485ef679e5e469556e0d63f8d69168",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/guardedNemotronSchema.ts": {
+      "sha256": "aeddcd44749a15f94e738146ae1e22ec7bd1802b264f9753cd31d86fa6fa7ae3",
+      "deployedSha256": "aeddcd44749a15f94e738146ae1e22ec7bd1802b264f9753cd31d86fa6fa7ae3",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/hybridGuardedMatcher.ts": {
+      "sha256": "0dcebd33961169011e3740d8c6fc255d5e124fbd42b0fdf912896c0e21184a1f",
+      "deployedSha256": "0dcebd33961169011e3740d8c6fc255d5e124fbd42b0fdf912896c0e21184a1f",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/nemotronMatcher.ts": {
+      "sha256": "8db794f2a5372530bff4e241abd6a62759a7dcc17327741ad679ae4af0634ee0",
+      "deployedSha256": "8db794f2a5372530bff4e241abd6a62759a7dcc17327741ad679ae4af0634ee0",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/nemotronPrompt.ts": {
+      "sha256": "6310a6d60acd729f55eaf400210fd7eb2d40d05d0e7a179ef177fa8965ea8e3b",
+      "deployedSha256": "6310a6d60acd729f55eaf400210fd7eb2d40d05d0e7a179ef177fa8965ea8e3b",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/nemotronSafetyVerifier.ts": {
+      "sha256": "0db1dff8ddd7b15aa55e20e0e0146c0eab4ea3b8bfb9692d05d4e8be6b852af3",
+      "deployedSha256": "0db1dff8ddd7b15aa55e20e0e0146c0eab4ea3b8bfb9692d05d4e8be6b852af3",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/nemotronSchema.ts": {
+      "sha256": "92727064fff97bef7388469bbfc2d2e06d68db2dd4e72a5bd1358c6ba969ab40",
+      "deployedSha256": "92727064fff97bef7388469bbfc2d2e06d68db2dd4e72a5bd1358c6ba969ab40",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/normalization.ts": {
+      "sha256": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02",
+      "deployedSha256": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/types.ts": {
+      "sha256": "a3e6ac00bf03754fc158204e9e57636d06c391de43503adc8458f3f6b89d01e0",
+      "deployedSha256": "a3e6ac00bf03754fc158204e9e57636d06c391de43503adc8458f3f6b89d01e0",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/matching/typesV2.ts": {
+      "sha256": "d289ef557a732f02c923f7075d643dd1ad79e17ad853460454ccdcb0c348c0ed",
+      "deployedSha256": "d289ef557a732f02c923f7075d643dd1ad79e17ad853460454ccdcb0c348c0ed",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/nebius/client.ts": {
+      "sha256": "037253ce7516e8442c42e88e033c63b7cb8a9aea39d572d94208f6b52b10d07d",
+      "deployedSha256": "037253ce7516e8442c42e88e033c63b7cb8a9aea39d572d94208f6b52b10d07d",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/nebius/config.ts": {
+      "sha256": "74cb5c510f7f1156079b537e82b8143a25fd304258088933ed8e3985f82dba43",
+      "deployedSha256": "74cb5c510f7f1156079b537e82b8143a25fd304258088933ed8e3985f82dba43",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/nebius/errors.ts": {
+      "sha256": "ab4687fbc9f357de81cfa7515e35a2018fe45a04f81494800016eb5d1dfc5ddc",
+      "deployedSha256": "ab4687fbc9f357de81cfa7515e35a2018fe45a04f81494800016eb5d1dfc5ddc",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/push/delivery.ts": {
+      "sha256": "5b42902f1ff2a929c9975cb20b1d75d726aa35549bc29140d385074c18b7559e",
+      "deployedSha256": "5b42902f1ff2a929c9975cb20b1d75d726aa35549bc29140d385074c18b7559e",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/push/expoClient.ts": {
+      "sha256": "146050d26db572651c67a6785df58112d9db9339cf5ea0021a2b777ce2815ced",
+      "deployedSha256": "146050d26db572651c67a6785df58112d9db9339cf5ea0021a2b777ce2815ced",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/push/index.ts": {
+      "sha256": "d295c395306187e6be92eebf94101b2f47716c9f5b056c9ec4b3ee92fb75651d",
+      "deployedSha256": "d295c395306187e6be92eebf94101b2f47716c9f5b056c9ec4b3ee92fb75651d",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/push/payload.ts": {
+      "sha256": "96ca206e5e7e238fbfb9da614668764c43d6598c942e7ddcaf01ce9d3c14b9bc",
+      "deployedSha256": "96ca206e5e7e238fbfb9da614668764c43d6598c942e7ddcaf01ce9d3c14b9bc",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/push/store.ts": {
+      "sha256": "2782a9c429fbeb501c9e364f035c454160a9760c7818055abb576e260e25c13e",
+      "deployedSha256": "2782a9c429fbeb501c9e364f035c454160a9760c7818055abb576e260e25c13e",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/push/validation.ts": {
+      "sha256": "a9dd68c725360459e580a9f604313950c980dd4bbeaf987a5ee75351bd4ed740",
+      "deployedSha256": "a9dd68c725360459e580a9f604313950c980dd4bbeaf987a5ee75351bd4ed740",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/recallMatching/fingerprint.ts": {
+      "sha256": "f63728c6b88bbf003e1a9b7be4cc78051391f7233df0a6da0622dc04750997e3",
+      "deployedSha256": "f63728c6b88bbf003e1a9b7be4cc78051391f7233df0a6da0622dc04750997e3",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/recallMatching/index.ts": {
+      "sha256": "f22b4db701db5496cac9f5295d21eec912708805eac58310330c322ed7909704",
+      "deployedSha256": "4ea4aab9abd69d80ec25657d3437c450ec8d705a6d610f37ddc6f606a907606c",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/_shared/recallMatching/orchestrator.ts": {
+      "sha256": "8b044008eedabdc2c3885c559867dd8cfabc5657ca9188a8da816d5cdfbf9a4c",
+      "deployedSha256": "415dd0802152856b244cb07bfca3f4ffce88af4d5a687b9cc69b197152958854",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/_shared/recallMatching/orchestratorV2.ts": {
+      "sha256": "5fa6674027b9be5c4b4938b5db906007dd238509fa4f8bce4e72242dec2e0e2e",
+      "deployedSha256": "5fa6674027b9be5c4b4938b5db906007dd238509fa4f8bce4e72242dec2e0e2e",
+      "kind": "deployed bytes kept (worktree differs)"
+    },
+    "supabase/functions/_shared/recallMatching/policySelector.ts": {
+      "sha256": "09e44c116fa28672cd7fc583c76f9f2df8dd12a84946cda9044ae5cc493a5052",
+      "deployedSha256": "09e44c116fa28672cd7fc583c76f9f2df8dd12a84946cda9044ae5cc493a5052",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/recallMatching/productionPolicyV2.ts": {
+      "sha256": "d9c6b51062df459fb8a9ee779a582e0164fad9bf59456114128b1ccf5778c9c9",
+      "deployedSha256": "d9c6b51062df459fb8a9ee779a582e0164fad9bf59456114128b1ccf5778c9c9",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/recallMatching/projection.ts": {
+      "sha256": "1d961c0027b52a9c64ab449135e615506ed9143ff8077933e5a490053373cc2c",
+      "deployedSha256": "1d961c0027b52a9c64ab449135e615506ed9143ff8077933e5a490053373cc2c",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/recallMatching/request.ts": {
+      "sha256": "62f6d92d9d5e5b382dffd24d55dd26396aef0d49d968df39c657fb880b6f1c79",
+      "deployedSha256": "62f6d92d9d5e5b382dffd24d55dd26396aef0d49d968df39c657fb880b6f1c79",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/recallMatching/reviewedCriteriaV2.ts": {
+      "sha256": "ef6e9da5c0e83c30e88487e0d12c2f28877c868d9c3043c325e3a0f25ba6e5c5",
+      "deployedSha256": "ef6e9da5c0e83c30e88487e0d12c2f28877c868d9c3043c325e3a0f25ba6e5c5",
+      "kind": "deployed bytes kept (worktree differs)"
+    },
+    "supabase/functions/process-recall-matches/index.ts": {
+      "sha256": "94105ddd9f59010a0592d4fec46c9fa6bc28d3967366ea6c85e2e45f9d77eb9e",
+      "deployedSha256": "94105ddd9f59010a0592d4fec46c9fa6bc28d3967366ea6c85e2e45f9d77eb9e",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/process-recall-matches/legacyRun.ts": {
+      "sha256": "f1a8d0476a8e5f8b4c6e32bfe740eaa9629614992e7786de7742008f0a5b8e5a",
+      "deployedSha256": "78b20cb2a20a65625df6614cdc38f3df754d0db9980a38cb8961bf48caa21dbd",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/process-recall-matches/store.ts": {
+      "sha256": "df8a7b605b488a356a3f57ee4d54f0564ae020000bfe128dc42e87f60f111381",
+      "deployedSha256": "df8a7b605b488a356a3f57ee4d54f0564ae020000bfe128dc42e87f60f111381",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/process-recall-matches/storeV2.ts": {
+      "sha256": "8e2632b44c6d684e864bdb0ff7b30bd80ef027402e0f480824f62d5ed293be51",
+      "deployedSha256": "8e2632b44c6d684e864bdb0ff7b30bd80ef027402e0f480824f62d5ed293be51",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/_shared/automation/index.ts": {
+      "sha256": "f7b8c7855380acf73e7050f9240e58c5979a7ba9088021198c8c0640c11211e7",
+      "deployedSha256": "199364b28cff7a62399947cc258123c8a1ac10b3f031804ebc65522bc5b94fe7",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/_shared/automation/orchestrator.ts": {
+      "sha256": "05133c737b07f93621fdfacd7ceb289ddb0de3ec1d43d703b79be197fa360222",
+      "deployedSha256": "492bfb74e237567c01563fd1316e8183892c4c3e84dd02df9aa3652b3513d301",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/_shared/automation/request.ts": {
+      "sha256": "916b0dc157389361bd8581c1a2f82bbf7bcdfafa09d2ebc75f8d8a76a0a0c3f7",
+      "deployedSha256": "916b0dc157389361bd8581c1a2f82bbf7bcdfafa09d2ebc75f8d8a76a0a0c3f7",
+      "kind": "deployed=worktree"
+    },
+    "supabase/functions/run-recall-automation/children.ts": {
+      "sha256": "70933ae64435581bbff83d3c30487f30fa52407596370ea09d73b267fad31f03",
+      "deployedSha256": "42684f7ad82c3565f98e5b2866cf0e1c3dc0ef0854afff17dc72261c7e64a5c5",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/run-recall-automation/index.ts": {
+      "sha256": "ffda65effa45acf589c6f78bb9c4b1a9d2171d84edfdfbdcf0df8ecd03e8fc11",
+      "deployedSha256": "427a0fda04577a95dd3910fc549085e761a399679e9277f62984b63f9c4bb7c3",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/run-recall-automation/store.ts": {
+      "sha256": "22a222e8647f2eee7231a04caf5428016bbd3074460a7ff8d462d119835f102e",
+      "deployedSha256": "500dd427dedc350896a32f1df530dd4b71da4d9baca2f008b0f259d723f6d1f9",
+      "kind": "phase-16.33-edit"
+    },
+    "supabase/functions/_shared/automation/types.ts": {
+      "sha256": "b0d231c5077f5eb95d0eb503281a64f1447951853ca66fb528ba0e3f5a22efc4",
+      "deployedSha256": null,
+      "kind": "type-only (erased at bundle)"
+    },
+    "supabase/functions/_shared/recallMatching/types.ts": {
+      "sha256": "7dcf0b84d98b0707baa968217b6b3d60c42debefddc05d483edb2417c106cd36",
+      "deployedSha256": null,
+      "kind": "type-only (erased at bundle)"
+    },
+    "supabase/functions/_shared/nebius/types.ts": {
+      "sha256": "0c82ca0f898136016f744c9cbfec607064796ba139baa02f7bb519ce5e6d3469",
+      "deployedSha256": null,
+      "kind": "type-only (erased at bundle)"
+    },
+    "supabase/functions/_shared/push/types.ts": {
+      "sha256": "eecfedf976344e526661572447b70021077dc138d43ef3a6c8b1dd8ae3cf6f91",
+      "deployedSha256": null,
+      "kind": "type-only (erased at bundle)"
+    },
+    "supabase/config.toml": {
+      "sha256": "fa87a017f5bc22d8a2a9eb1624557096f0ff34b2ad6e9a5fd1e8991d2fce2158",
+      "kind": "project config"
+    }
+  },
+  "releaseSha256": "20fc07f08dc92c95b00c609e69e6aadc1d4d514708cb278dc09c053f2a31cec0"
+}

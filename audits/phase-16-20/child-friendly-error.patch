@@ -1,0 +1,56 @@
+--- deployed/index.ts
++++ candidate/index.ts
+@@ -2,6 +2,7 @@
+ 
+ import { getRecallSourceAdapter } from '../_shared/recallSources/index.ts';
+ import { ingestCpscRecallIdentity } from '../_shared/cpsc/ingestionGate.ts';
++import { classifySourceWatermarkDbError } from '../_shared/recallSources/watermarkDbError.ts';
+ import {
+   classifyCpscIngestion,
+   emptyOutcomeCounts,
+@@ -231,7 +232,18 @@
+       p_error_code: complete ? null : 'record_rejected',
+       p_metrics: stats,
+     });
+-    if (error) return json(500, { error: 'Source sync state persistence failed.' });
++    if (error) {
++      const watermarkCode = classifySourceWatermarkDbError(error);
++      if (watermarkCode) {
++        return json(409, {
++          code: watermarkCode,
++          error: watermarkCode === 'watermark_regression'
++            ? 'Source watermark cannot move backward.'
++            : 'Source watermark was rejected.',
++        });
++      }
++      return json(500, { error: 'Source sync state persistence failed.' });
++    }
+   }
+ 
+   return json(200, {
+--- /dev/null
++++ candidate/_shared/recallSources/watermarkDbError.ts
+@@ -0,0 +1,23 @@
++type DatabaseError = { code?: string; message?: string } | null;
++
++// The Phase 16.17 trigger uses SQLSTATE 23514. That code is shared by other
++// constraints, so only its exact, versioned messages identify this guard.
++export function classifySourceWatermarkDbError(
++  error: DatabaseError,
++): 'watermark_regression' | 'watermark_invalid' | null {
++  if (error?.code !== '23514') return null;
++  if (
++    /^source watermark cannot move backward from \d{4}-\d{2}-\d{2} to \d{4}-\d{2}-\d{2}$/u.test(
++      error.message ?? '',
++    )
++  ) {
++    return 'watermark_regression';
++  }
++  if (
++    error.message === 'source watermark cursor is malformed or has an unexpected kind' ||
++    error.message === 'source watermark existing cursor is malformed or has an unexpected kind'
++  ) {
++    return 'watermark_invalid';
++  }
++  return null;
++}

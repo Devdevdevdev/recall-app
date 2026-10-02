@@ -1,0 +1,59 @@
+{
+  "checkVersion": "phase-16.15-capture-currency-v1",
+  "purpose": "Prove the frozen Phase 16.14 capture is still current before it is reused for the corrected manifest (read-only public GETs; recheck capture kept out of the repository).",
+  "frozenCapture": {
+    "file": "docs/phase-16-14-cpsc-fresh-capture.json",
+    "sha256": "c4b43808804c376ec7d35b70230a23c8b3e8061cf8c44c8e25a7f904ff3b4bea",
+    "capturedAtUtc": "2026-09-26T09:06:13.773Z"
+  },
+  "recheckCapture": {
+    "capturedAtUtc": "2026-09-26T19:09:31.648Z",
+    "sha256": "d6e85b0f3549d1a5977e04ca2df0c340b82a73463bc857f79dbd938bd4c41430",
+    "command": "npm run backfill:phase-16-13:capture -- --notices docs/phase-16-14-cpsc-notice-snapshot.json --pages-from docs/phase-16-12-backfill-manifest.json --out <scratch>/recheck-capture.json"
+  },
+  "productionSnapshot": {
+    "file": "docs/phase-16-14-cpsc-notice-snapshot.json",
+    "sha256": "f61c8168a4f42a312036ea2364c3e181221132e5ad3d489e5718ac05943d6540",
+    "reExportedByteIdentical": true,
+    "snapshotMd5": "20f258cd29950287c34f91803a35f4a1"
+  },
+  "sameRecallNumbers": true,
+  "sameApiRecordKeys": true,
+  "sameIdentityStatus": true,
+  "apiFieldsChanged": {},
+  "pageFieldsChanged": {},
+  "rawPageHashChanged": [
+    "20162",
+    "26773",
+    "26774",
+    "26775",
+    "26777",
+    "26778",
+    "26779",
+    "26780",
+    "26781",
+    "26788",
+    "26789",
+    "26790",
+    "26791",
+    "26792",
+    "26793",
+    "26798"
+  ],
+  "rawPageHashNote": "Raw HTML bytes vary between fetches (dynamic markup); semantic evidence hash, coverage fingerprint, canonical/final URL, and displayed recall number are unchanged. The manifest does not consume page raw hashes of this capture operationally.",
+  "recall26777": {
+    "apiId": "10987",
+    "apiUrl": "https://cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard-0",
+    "httpStatus": 301,
+    "redirectTarget": "https://www.cpsc.gov/Recalls/2026/Hayward-Industries-Recalls-Universal-Pool-Heaters-Due-to-Risk-of-Serious-Injury-or-Death-from-Carbon-Monoxide-Poisoning-Hazard",
+    "payloadHash": "7c7daf626a58b4652926860ceb00ad85d41d5dcf2f6b906462cba63f413320a3",
+    "payloadHashUnchanged": true,
+    "frozenRawPageHash": "5c86331e341b6ce0c09bb2b5d17ba882852fc03af35d5b4cf5853ec959113f3c",
+    "recheckRawPageHash": "16a7a1a76b964d03a47bda15007cfed9070b7eaa018ddab5de8d61250669ec94",
+    "identityStatus": "unresolved",
+    "reasons": [
+      "official page identity check failed: CPSC page canonical link contradicts its identity."
+    ]
+  },
+  "currentForReuse": true
+}

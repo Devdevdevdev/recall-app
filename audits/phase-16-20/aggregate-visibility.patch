@@ -1,0 +1,55 @@
+--- deployed/aggregate-deployed-v1-index.ts
++++ candidate/index.ts
+@@ -94,6 +94,8 @@
+     updated: 0,
+     unchanged: 0,
+     rejected: 0,
++    accountedRecords: 0,
++    outcomes: { processed: 0, unchanged: 0, quarantined: 0, unresolved: 0, failed: 0 },
+   };
+   const affectedRecallIds: string[] = [];
+   const sources: Array<Record<string, unknown>> = [];
+@@ -154,14 +156,34 @@
+       const updated = count(stats.updated);
+       const unchanged = count(stats.unchanged);
+       const rejected = count(stats.rejected);
++      if (!isJsonObject(stats.outcomes)) throw new Error('invalid source outcome metrics');
++      const outcomes = {
++        processed: count(stats.outcomes.processed),
++        unchanged: count(stats.outcomes.unchanged),
++        quarantined: count(stats.outcomes.quarantined),
++        unresolved: count(stats.outcomes.unresolved),
++        failed: count(stats.outcomes.failed),
++      };
++      if (
++        Object.values(outcomes).reduce((sum, value) => sum + value, 0) !== fetched ||
++        outcomes.processed !== inserted + updated ||
++        outcomes.unchanged !== unchanged ||
++        outcomes.failed !== rejected
++      ) {
++        throw new Error('invalid source outcome metrics');
++      }
+       const ids = Array.isArray(body.affectedRecallIds)
+         ? body.affectedRecallIds.filter((value): value is string => typeof value === 'string')
+         : [];
+       const accepted = inserted + updated + unchanged;
+       totals.fetched += accepted;
++      totals.accountedRecords += fetched;
+       totals.inserted += inserted;
+       totals.updated += updated;
+       totals.unchanged += unchanged;
++      for (const key of Object.keys(outcomes) as Array<keyof typeof outcomes>) {
++        totals.outcomes[key] += outcomes[key];
++      }
+       affectedRecallIds.push(...ids);
+       sources.push({
+         sourceKey,
+@@ -173,6 +195,8 @@
+         updated,
+         unchanged,
+         rejected,
++        accountedRecords: fetched,
++        outcomes,
+       });
+     } catch (sourceError) {
+       const errorCode = sourceError instanceof Error ? sourceError.message : 'source_failed';
