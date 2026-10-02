@@ -5,13 +5,20 @@ import { Pressable, RefreshControl, StyleSheet, Text, View } from 'react-native'
 import { EmptyState } from '@/src/components/ui/EmptyState';
 import { Screen } from '@/src/components/ui/Screen';
 import { ScreenHeader } from '@/src/components/ui/ScreenHeader';
-import { ownedProductsRepository } from '@/src/data';
+import { ownedProductsRepository, productMonitoringRepository } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
-import type { OwnedProduct } from '@/src/domain';
+import type { OwnedProduct, ProductMonitoringStatus } from '@/src/domain';
 
+import { monitoringLabel, monitoringTone, productsToResume } from './productMonitoring';
 import { formatScanDate } from './purchaseDate';
 
-function ProductCard({ product }: { product: OwnedProduct }) {
+function ProductCard({
+  product,
+  monitoring,
+}: {
+  product: OwnedProduct;
+  monitoring: ProductMonitoringStatus | undefined;
+}) {
   return (
     <Pressable
       accessibilityHint="Opens this product's details"
@@ -26,6 +33,13 @@ function ProductCard({ product }: { product: OwnedProduct }) {
         {product.brand ? <Text style={styles.brand}>{product.brand}</Text> : null}
         <Text style={styles.productDetails}>Scanned on {formatScanDate(product.scanDate)}</Text>
         {product.gtin ? <Text style={styles.gtin}>GTIN: {product.gtin}</Text> : null}
+        {monitoring ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            style={[styles.monitoring, toneStyles[monitoringTone(monitoring.state)]]}>
+            {monitoringLabel(monitoring.state)}
+          </Text>
+        ) : null}
       </View>
       <Text accessibilityElementsHidden style={styles.chevron}>
         ›
@@ -39,31 +53,57 @@ export function ProductsScreen() {
   const [isLoading, setIsLoading] = useState(true);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [monitoring, setMonitoring] = useState<ReadonlyMap<string, ProductMonitoringStatus>>(
+    new Map(),
+  );
 
-  const loadProducts = useCallback(async (refresh = false, isActive?: () => boolean) => {
-    if (refresh) {
-      setIsRefreshing(true);
-    } else {
-      setIsLoading(true);
-    }
-
+  // Best-effort: monitoring states never block the inventory, and at most three pending
+  // or retrying checks are resumed per focus. The server keeps every job durable.
+  const loadMonitoring = useCallback(async (isActive?: () => boolean) => {
     try {
-      const nextProducts = await ownedProductsRepository.listForCurrentUser();
+      const statuses = await productMonitoringRepository.listForCurrentUser();
+      if (!(isActive?.() ?? true)) return;
+      setMonitoring(new Map(statuses.map((item) => [item.ownedProductId, item])));
+      const resume = productsToResume(statuses);
+      if (!resume.length) return;
+      await Promise.allSettled(resume.map((id) => productMonitoringRepository.requestCheck(id)));
+      const refreshed = await productMonitoringRepository.listForCurrentUser();
       if (isActive?.() ?? true) {
-        setProducts(nextProducts);
-        setError(null);
+        setMonitoring(new Map(refreshed.map((item) => [item.ownedProductId, item])));
       }
     } catch {
-      if (isActive?.() ?? true) {
-        setError('Unable to load your products. Please try again.');
-      }
-    } finally {
-      if (isActive?.() ?? true) {
-        setIsLoading(false);
-        setIsRefreshing(false);
-      }
+      // Monitoring labels are optional on this screen.
     }
   }, []);
+
+  const loadProducts = useCallback(
+    async (refresh = false, isActive?: () => boolean) => {
+      if (refresh) {
+        setIsRefreshing(true);
+      } else {
+        setIsLoading(true);
+      }
+
+      try {
+        const nextProducts = await ownedProductsRepository.listForCurrentUser();
+        if (isActive?.() ?? true) {
+          setProducts(nextProducts);
+          setError(null);
+          void loadMonitoring(isActive);
+        }
+      } catch {
+        if (isActive?.() ?? true) {
+          setError('Unable to load your products. Please try again.');
+        }
+      } finally {
+        if (isActive?.() ?? true) {
+          setIsLoading(false);
+          setIsRefreshing(false);
+        }
+      }
+    },
+    [loadMonitoring],
+  );
 
   useFocusEffect(
     useCallback(() => {
@@ -140,7 +180,11 @@ export function ProductsScreen() {
       {products.length > 0 ? (
         <View style={styles.list}>
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              monitoring={monitoring.get(product.id)}
+              product={product}
+            />
           ))}
         </View>
       ) : null}
@@ -251,4 +295,17 @@ const styles = StyleSheet.create({
     lineHeight: typography.lineHeight.caption,
   },
   chevron: { color: colors.text.muted, fontSize: 32, lineHeight: 32 },
+  monitoring: {
+    fontSize: typography.size.caption,
+    fontWeight: typography.weight.semibold,
+    lineHeight: typography.lineHeight.caption,
+    marginTop: spacing.xxs,
+  },
+});
+
+const toneStyles = StyleSheet.create({
+  neutral: { color: colors.text.secondary },
+  safe: { color: colors.semantic.safe },
+  warning: { color: colors.semantic.warning },
+  danger: { color: colors.semantic.danger },
 });

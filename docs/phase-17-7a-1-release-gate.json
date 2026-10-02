@@ -1,0 +1,22 @@
+{
+  "phase": "17.7a-1",
+  "productionReady": false,
+  "productCheckEnabledByDefault": false,
+  "blockers": [
+    {
+      "id": "F-4",
+      "status": "open",
+      "title": "v1 recall->products confirms recall-level GTIN scopes without structured conditions or jurisdiction",
+      "document": "docs/findings/f-4-v1-recall-level-gtin-confirmation.md",
+      "decision": null
+    }
+  ],
+  "tracked": [
+    {
+      "id": "F-1",
+      "status": "open",
+      "document": "docs/findings/f-1-ai-budget-fingerprint-freeze.md",
+      "blocksThisPhase": false
+    }
+  ]
+}

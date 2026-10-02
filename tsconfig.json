@@ -20,6 +20,7 @@
     "scripts/verify-phase-16-24-replay.ts",
     "tests/phase-16-32-worker-invocation-auth.test.ts",
     "tests/phase-16-33-ticket-invocation.test.ts",
+    "tests/phase-17-7a-1-check-owned-product.test.ts",
     "supabase/functions/ingest-cpsc-recalls/**",
     "supabase/functions/ingest-recall-source/**",
     "supabase/functions/ingest-recall-sources/**",
@@ -28,6 +29,10 @@
     "supabase/functions/process-cpsc-page-evidence/**",
     "supabase/functions/run-recall-automation/**",
     "supabase/functions/send-recall-notifications/**",
-    "supabase/functions/_shared/push/store.ts"
+    "supabase/functions/_shared/push/store.ts",
+    "supabase/functions/check-owned-product/**",
+    "supabase/functions/process-owned-product-checks/**",
+    "supabase/functions/_shared/productCheck/server.ts",
+    "supabase/functions/_shared/productCheck/supabaseStore.ts"
   ]
 }

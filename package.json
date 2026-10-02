@@ -100,6 +100,8 @@
     "test:phase-16-4": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-16-4-production-path.test.mjs",
     "test:phase-16-v2-1": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-16-v2-1.test.mjs",
     "test:phase-16-ai-necessity": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-16-ai-necessity-audit.test.mjs",
+    "test:phase-17-7a": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-17-7a-safe-confirmation.test.mjs tests/phase-17-7a-1-product-check.test.mjs tests/phase-17-7a-1-mobile-monitoring.test.mjs tests/phase-17-7a-1-release-gate.test.mjs tests/finding-f1-ai-budget-fingerprint-freeze.test.mjs && npx -y deno@2 test --allow-env tests/phase-17-7a-1-check-owned-product.test.ts",
+    "test:phase-17-7a-1:http": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/verify-phase-17-7a-1-http.mjs",
     "test:hybrid-guarded": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/guarded-hybrid.test.mjs",
     "test:phase-9-1-datasets": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-9-1-datasets.test.mjs",
     "test:phase-10": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test tests/phase-10-orchestration.test.mjs tests/phase-10-database.test.mjs tests/phase-10-edge-function.test.mjs tests/alerts-read-model.test.mjs",

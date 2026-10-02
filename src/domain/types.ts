@@ -67,6 +67,32 @@ export type OwnedProductInput = {
   identificationMethod?: 'barcode_scan' | 'ocr_assisted';
 };
 
+/**
+ * Phase 17.7a server-derived check state of one owned product. `monitored_no_known_recall`
+ * only means that no matching recall was found in the currently monitored sources with
+ * the available evidence; it never means the product was never recalled.
+ */
+export const PRODUCT_MONITORING_STATES = [
+  'pending_check',
+  'checking',
+  'monitored_no_known_recall',
+  'possible_match_needs_verification',
+  'recall_detected',
+  'check_failed_retrying',
+  'check_failed',
+] as const;
+
+export type ProductMonitoringState = (typeof PRODUCT_MONITORING_STATES)[number];
+
+export type ProductMonitoringStatus = {
+  ownedProductId: string;
+  state: ProductMonitoringState;
+  checkedAt: string | null;
+  possibleMatches: number;
+  confirmedAlerts: number;
+  retrying: boolean;
+};
+
 export type RecallSource = {
   id: string;
   name: string;

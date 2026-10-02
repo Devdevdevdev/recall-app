@@ -3,7 +3,11 @@ import { router, useFocusEffect, type Href } from 'expo-router';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
 import { Screen } from '@/src/components/ui/Screen';
-import { ownedProductsRepository, userPreferencesRepository } from '@/src/data';
+import {
+  ownedProductsRepository,
+  productMonitoringRepository,
+  userPreferencesRepository,
+} from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import { getCountryName, type OwnedProduct, type OwnedProductInput } from '@/src/domain';
 
@@ -14,7 +18,13 @@ import {
   type ProductCreationParams,
   type ProductFormValues,
 } from './productFormUtils';
+import { hasMatchingAttributeChange } from './productMonitoring';
 import { formatPurchaseDate, formatScanDate } from './purchaseDate';
+
+/** Never blocks or fails the save; the server keeps the durable job and retries it. */
+function requestCheckInBackground(productId: string) {
+  void productMonitoringRepository.requestCheck(productId).catch(() => undefined);
+}
 
 function BackButton({
   href = '/products',
@@ -156,6 +166,8 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
           ...input,
           ...(identificationMethod ? { identificationMethod } : {}),
         });
+        // The product is saved. The recall check is best-effort and retried server-side.
+        requestCheckInBackground(product.id);
         router.replace(`/products/${product.id}` as Href);
       } catch {
         setError('Unable to save this product. Please try again.');
@@ -433,7 +445,10 @@ export function EditProductScreen({ id }: EditProductScreenProps) {
       setIsSaving(true);
       setError(null);
       try {
-        await ownedProductsRepository.update(id, input);
+        const updated = await ownedProductsRepository.update(id, input);
+        if (!product || hasMatchingAttributeChange(product, updated)) {
+          requestCheckInBackground(id);
+        }
         router.replace(`/products/${id}` as Href);
       } catch {
         setError('Unable to save this product. Please try again.');
@@ -441,7 +456,7 @@ export function EditProductScreen({ id }: EditProductScreenProps) {
         setIsSaving(false);
       }
     },
-    [id, isSaving],
+    [id, isSaving, product],
   );
 
   return (

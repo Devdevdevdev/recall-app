@@ -6,6 +6,8 @@ export type {
   JsonValue,
   OwnedProduct,
   OwnedProductInput,
+  ProductMonitoringState,
+  ProductMonitoringStatus,
   RecallMatch,
   RecallMatchStatus,
   RecallAlert,
@@ -16,6 +18,8 @@ export type {
   RecallScope,
   RecallSource,
 } from './types';
+
+export { PRODUCT_MONITORING_STATES } from './types';
 
 export {
   productBarcodeFormats,

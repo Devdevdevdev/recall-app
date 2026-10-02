@@ -19,3 +19,8 @@ export {
   userPreferencesRepository,
   SupabaseUserPreferencesRepository,
 } from './SupabaseUserPreferencesRepository';
+export type { ProductMonitoringRepository } from './ProductMonitoringRepository';
+export {
+  productMonitoringRepository,
+  SupabaseProductMonitoringRepository,
+} from './SupabaseProductMonitoringRepository';

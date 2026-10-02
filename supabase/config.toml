@@ -28,6 +28,16 @@ verify_jwt = false
 [functions.run-recall-automation]
 verify_jwt = false
 
+# Phase 17.7a-1 user endpoint. The handler itself verifies the user's access token with the
+# auth server (auth.getUser) and the product owner in the database; the gateway check is not
+# relied upon. The request body carries one product id and nothing else.
+[functions.check-owned-product]
+verify_jwt = false
+
+# Phase 17.7a-1 administrative worker, local only. Its handler requires RECALL_MATCHING_KEY.
+[functions.process-owned-product-checks]
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.
