@@ -10,7 +10,7 @@ the Best Apps and Agents Track.
 
 ## Current status
 
-**Phase 14 is released.** Recall now monitors two active official product-safety sources: the U.S.
+**Phase 15 is release-closed.** Recall monitors two active official product-safety sources: the U.S.
 Consumer Product Safety Commission (CPSC) and Health Canada. This is multi-source coverage, not
 worldwide coverage.
 
@@ -58,6 +58,31 @@ measured 84.5% with three. Guarded hybrid used 101 requests and USD 0.160123; el
 cases failed closed to `needs_review`. These are internal benchmark measurements, not population
 claims. Historical benchmark artifacts remain immutable.
 
+Phase 16 began with local design and benchmark review. It adds explicit
+`deterministic_v2` / `hybrid_guarded_v2` contracts, mandatory-criterion gating, richer private
+product evidence, and a separate v2 fingerprint. On the frozen Phase 15 controlled rules and 200
+cases, deterministic v2 produced zero unsafe confirmations and corrected the three known v1 unsafe
+confirmations. Because the labels are derived from those same frozen structured rules, this replay
+is a contract-consistency result—not independent real-world validation. At that stage production
+was on v1, and no Phase 16 migration, shadow run, Nebius call, production alert, push, or
+deployment had occurred.
+
+Phase 16.4 then added an inactive local server, database, alert correction, and consumer read path.
+At that point the production selector was `phase_10_guarded_v1` and no v2 production cohort,
+alert, push, or Nebius call had run.
+Local Supabase tests do create disposable v2 alert snapshots. Source promotion currently supports
+only a reviewer-attested CPSC product-level model; Health Canada summary prose and recall-level
+CPSC UPCs remain unresolved. See
+[the Phase 16.4 source matrix and rollout gate](docs/phase-16-4-inactive-production-path.md).
+
+**Phase 16 closure (2026-10-02).** All 32 migrations through
+`20261001090000_phase_16_34_gate_f_retire_v1_key_installer` are applied in production, and the
+production `public`/`private` schema matches a clean local replay. The v1 automation runs on
+single-use scheduler tickets. v2 matching and the CPSC page worker remain inactive. Two items are
+tracked separately and do not block product work: a current CPSC API outage on date filters, and
+the `pg_net` `PUBLIC` grants awaiting Supabase support. The exact deployed Edge Function sources are
+recorded in [audits/README.md](audits/README.md).
+
 Known limitations remain explicit: Recall covers only CPSC and Health Canada; it does not identify a
 commercial product from a photo, infer missing identifiers, translate authoritative notices, or
 claim representative real-world accuracy. Password recovery, magic links, social login, and public
@@ -93,6 +118,22 @@ cp .env.example .env.local
 npm run check
 npm start
 ```
+
+### Validation
+
+`npm run check:all` is Recall's complete validation and the command to run before every commit.
+It runs `npm run check` and then the pgTAP suite against the **local** Supabase database only
+(`supabase test db --local`, which needs Docker and `npx supabase start` with all migrations
+applied). `npm run check` alone needs no Docker: TypeScript, Deno type-checks of every Edge
+Function, lint, formatting, every `tests/*.test.mjs` file (discovered automatically, so a new test
+file cannot be skipped), every Deno `tests/*.test.ts` file, and the benchmark validators and freeze
+guards. Neither command contacts production, and neither modifies a tracked file. After an
+intentional benchmark change, regenerate the Phase 15 audit with
+`npm run benchmark:phase-15:audit:write` and review the diff.
+
+The `scripts/verify-phase-16-*` and `scripts/rehearse-*` files are not part of validation. They are
+one-off phase-gate proofs that need a freshly reset local stack or locally served functions, and
+`scripts/verify-phase-16-10-production-readonly.py` reads production.
 
 From the Expo terminal, open the project on Android, iOS, or web. You can also run `npm run
 android`, `npm run ios`, or `npm run web` directly.

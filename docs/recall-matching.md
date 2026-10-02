@@ -4,6 +4,37 @@ Phase 8 establishes Recall's server-safe, non-AI reference matcher and offline b
 reuses that exact matcher inside the production orchestration path; the historical Phase 8
 benchmark itself remains read-only and unchanged.
 
+## Phase 16 local v2 review boundary
+
+Phase 16.4 extends the controlled matcher with an inactive production adapter, reviewed CPSC
+product-model binding, immutable v2 evaluations and alert snapshots, corrections, and an
+authenticated owner-only read model. Current production remains `phase_10_guarded_v1`. The live
+source support matrix, Health Canada fallback, cohort bounds, and activation controls are in
+[phase-16-4-inactive-production-path.md](phase-16-4-inactive-production-path.md).
+
+`deterministic_v2` is a separate schema `2.0.0` matcher. It does not rename, replace, or alter
+`deterministic_v1`, `nemotron_v1`, or `hybrid_guarded_v1`, and production continues to select v1.
+V2 evaluates only explicit `RecallCriterion` sets whose relationship is declared as `all_of` or
+`ambiguous`. It never infers conjunction from fields merely appearing in the same normalized row.
+
+Each criterion carries a kind, comparison operator, required flag, controlled value/range, and
+source provenance. Mandatory criteria evaluate to `matched`, `conflicting`, `missing`, or
+`unresolved`. An explicit all-of scope confirms only when every required criterion matches. A safe
+contradiction can reject that scope; missing or incomparable evidence requires review. Ambiguous
+criterion relationships can neither confirm nor reject. An exact model or GTIN therefore cannot
+bypass a declared narrower serial, lot, date, or attribute condition.
+
+`hybrid_guarded_v2` invokes its injected AI evaluator only after a v2 abstention. Its local verifier
+recomputes every mandatory criterion and rejects any confirmation that relies on absent user
+evidence. The implementation has mock-only coverage; no Phase 16 Nebius request has been sent.
+
+The frozen Phase 15 replay is stored separately under `phase-16/results/`. It reports 200/200 exact
+three-class agreement, 67 TP, 0 FP, 0 FN, 133 TN, 100% precision and strict recall, 33% review,
+67% coverage, 100% pairwise discrimination, and zero unsafe confirmations. All 27 v1→v2 changes
+were improvements relative to the controlled labels. This is expected contract consistency because
+the benchmark labels and v2 criteria share the same frozen authoritative `scopeRules`; it must not
+be presented as independent generalization evidence.
+
 ## Separation of responsibilities
 
 1. **Candidate retrieval** finds plausible authoritative recalls using exact valid GTIN, exact

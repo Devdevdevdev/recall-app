@@ -15,6 +15,22 @@ fingerprints, or recall reevaluation.
 Model, serial, lot, purchase date, purchase country, category and identification method remain
 secondary safety-critical fields and are preserved in product detail.
 
+Phase 16 adds an optional collapsed **Additional safety details** section for variant, color, size,
+capacity, battery model, charging port, screw state, date code, manufacture date, and production
+date. Product detail shows only values that were actually stored. These fields are optional and do
+not imply that a product is recalled.
+
+The Phase 16 migration adds a single `safety_attributes` JSONB column to preserve atomic
+product create/update behavior. It is not arbitrary JSON: a database validator rejects unknown
+keys, non-string values, control characters, values outside 1–120 characters, and non-canonical
+manufacture/production dates. Existing owner-only `owned_products` RLS applies unchanged. Existing
+rows receive `{}` without fabricated evidence, timestamp changes, match reevaluation, or fingerprint
+churn. The migration was verified in disposable local Supabase first and is now applied in
+production. The inactive v2 worker fetches only the current
+product's identifiers and `safety_attributes` through a service-only RPC; it excludes
+`purchase_date` and never treats `scan_date` as evidence. Invalid stored safety values fail closed.
+See [phase-16-4-inactive-production-path.md](phase-16-4-inactive-production-path.md).
+
 ## Phase 4 scope
 
 Authenticated users can now list, create, view, edit, refresh, and delete their own inventory
@@ -35,7 +51,9 @@ delete operations; no privileged key is present in the app.
 Manual products store `identification_method` as `manual`; products created through the confirmed
 Phase 5 scanner handoff store `barcode_scan`; products created from accepted Phase 6 model, serial,
 or lot OCR suggestions store `ocr_assisted`. Every method keeps `identification_confidence` and
-`image_path` as `null`. The form trims text and converts blank optional values to `null` so the
+`image_path` as `null`. Richer OCR candidates are accepted only from explicit labels such as
+`COLOR: BLACK`; appearance-based color, size, port, screw, or date inference is prohibited. The
+form trims text and converts blank optional values to `null` so the
 database represents absence consistently rather than accumulating meaningless empty strings.
 
 ## Product experience

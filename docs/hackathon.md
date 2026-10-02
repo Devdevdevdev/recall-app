@@ -91,6 +91,33 @@ strict schema retry, then resumed under a separately approved fail-closed contin
 rerunning that case or relaxing any policy. All 200 cases are now complete. The original stop
 checkpoint/report remain preserved.
 
+Phase 16 is at its first review gate. A separate deterministic v2 consumes only explicit structured
+criterion semantics and fails closed when mandatory evidence is missing or unresolved. On the
+frozen 200-case corpus it corrected all three known deterministic unsafe confirmations, introduced
+no new unsafe confirmation, and produced 27 explained non-worsening decision changes. The replay's
+100% agreement is a consistency check against the same source-derived rules used to label the
+controlled cases, not an independent product-accuracy claim. At that stage no Phase 16 paid
+inference, production migration, shadow run, production alert, push, commit, or deployment had
+occurred. By Phase 16 closure (2026-10-02) the Phase 16 migrations and gated Edge deployments were
+applied in production; production matching remains on v1 and v2 remains inactive.
+
+Phase 16.4 subsequently implemented an inactive local production path with a narrow, human-reviewed
+CPSC product-model criterion route, immutable v2 observations, alert snapshots, historical
+corrections, and an owner-only read model. Local tests created disposable alert fixtures; no v2
+production alert or push was created. Health Canada summary prose and CPSC recall-level UPCs remain
+`needs_review`. Phase 16 research found no measured need for AI in automatic confirmation once
+authoritative structured evidence was modeled correctly. Historical Nemotron evaluations and the
+current guarded v1 policy remain accurately documented. See
+[phase-16-4-inactive-production-path.md](phase-16-4-inactive-production-path.md).
+
+## Devpost-safe Phase 16 language
+
+Recall now has a locally evaluated second-generation deterministic contract that requires every
+explicit mandatory recall criterion to be satisfied before confirmation. In a replay of the frozen
+controlled Phase 15 cases, it eliminated the three known unsafe v1 confirmations without adding a
+new one. This implementation is awaiting migration and activation review and is not the production
+matcher.
+
 ## Devpost-safe current coverage language
 
 Recall is architected for multi-jurisdiction recall monitoring and captures the market context of

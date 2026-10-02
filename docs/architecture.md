@@ -25,6 +25,13 @@ Mobile
   → protected alert detail on notification tap
 ```
 
+Production currently follows this v1 path unchanged. Phase 16.4 adds an inactive,
+deterministic-only server branch: reviewed source-bound criterion set → `deterministic_v2` →
+immutable evaluation → eligibility → optional alert snapshot. The selector defaults to
+`phase_10_guarded_v1`; a separate manual cohort endpoint is disabled by default and never creates
+alerts. Neither branch has been deployed for v2. See
+[phase-16-4-inactive-production-path.md](phase-16-4-inactive-production-path.md).
+
 1. **Mobile:** The React Native app captures a barcode or image and lets the user confirm product
    identity.
 2. **On-device scan/OCR:** Barcode and text recognition produce product identifiers without
@@ -89,6 +96,8 @@ Mobile
 - `supabase/functions/_shared/matching/`: pure common contract, normalization, candidate retrieval,
   per-scope evidence, deterministic matching, multi-scope aggregation, the versioned Nemotron
   prompt/schema, strict local output validation, and the guarded evidence verifier
+- `typesV2.ts`, `criterionEvaluatorV2.ts`, `deterministicMatcherV2.ts`, and the v2 guarded verifier:
+  isolated schema-2 criterion semantics; v1 imports and constants remain unchanged
 - `supabase/functions/_shared/nebius/`: server-only configuration, redacted errors, and the
   standards-based Token Factory HTTP client
 - `supabase/functions/_shared/recallMatching/`: authoritative evidence projection, canonical
@@ -203,5 +212,12 @@ jurisdictions, English source-language metadata, consumer-friendly coverage and 
 and product/alert polish. Phase 14 adds reviewed multi-authority ingestion through the source-adapter
 boundary and activates CPSC/United States plus Health Canada/Canada. It does not add a translation
 pipeline, matcher rule, benchmark change, AI call, or deliberate push.
+
+Phase 15 closes the frozen 200-case safety benchmark. Phase 16.4 completes the inactive local
+server, database, alert, correction, and read contracts. At Phase 16 closure (2026-10-02) all 32
+migrations are applied in production, while v2 matching and the CPSC page worker remain inactive.
+Cohort execution and policy activation still require explicit approval. Phase 16 research found no measured need
+for AI in automatic confirmation once authoritative structured evidence was modeled correctly.
+This does not erase historical Nemotron work or claim real-world accuracy.
 
 The detailed table relationships and policy matrix are in [database.md](database.md).
