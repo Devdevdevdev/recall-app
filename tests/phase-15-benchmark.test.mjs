@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 
@@ -232,4 +233,20 @@ test('hybrid continuation rejects duplicate or reordered completed cases', () =>
     () => validateHybridContinuationCheckpoint(orderedCases, corrupted),
     /completed case IDs/u,
   );
+});
+
+test('validation verifies the versioned audit artifact without rewriting it', async () => {
+  const auditUrl = new URL('../benchmarks/recall-matching/phase-15/audit.json', import.meta.url);
+  const before = await readFile(auditUrl);
+  const result = spawnSync(
+    process.execPath,
+    [
+      '--disable-warning=MODULE_TYPELESS_PACKAGE_JSON',
+      '--experimental-strip-types',
+      new URL('../benchmarks/recall-matching/phase-15/validate.mjs', import.meta.url).pathname,
+    ],
+    { encoding: 'utf8' },
+  );
+  assert.equal(result.status, 0, result.stderr);
+  assert.deepEqual(await readFile(auditUrl), before);
 });

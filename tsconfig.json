@@ -15,10 +15,17 @@
   },
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"],
   "exclude": [
+    "audits/**",
+    "releases/**",
+    "scripts/verify-phase-16-24-replay.ts",
+    "tests/phase-16-32-worker-invocation-auth.test.ts",
+    "tests/phase-16-33-ticket-invocation.test.ts",
     "supabase/functions/ingest-cpsc-recalls/**",
     "supabase/functions/ingest-recall-source/**",
     "supabase/functions/ingest-recall-sources/**",
     "supabase/functions/process-recall-matches/**",
+    "supabase/functions/process-recall-matches-v2-cohort/**",
+    "supabase/functions/process-cpsc-page-evidence/**",
     "supabase/functions/run-recall-automation/**",
     "supabase/functions/send-recall-notifications/**",
     "supabase/functions/_shared/push/store.ts"

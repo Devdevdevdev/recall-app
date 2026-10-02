@@ -50,6 +50,12 @@ GoogleService-Info.plist
 # Supabase local development
 supabase/.branches/
 supabase/.temp/
+# CLI link metadata inside downloaded or staged function trees (audits/, releases/)
+**/supabase/.temp/
+
+# Python
+__pycache__/
+*.pyc
 
 # typescript
 *.tsbuildinfo

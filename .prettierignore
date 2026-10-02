@@ -2,3 +2,15 @@ node_modules
 .expo
 dist
 package-lock.json
+audits/phase-16-20/candidate-a/
+audits/phase-16-20/candidate-b/
+audits/phase-16-20/*-index.ts
+audits/phase-16-20/candidate-manifest.json
+# Byte-exact copies of deployed Edge bundles; formatting would break their recorded hashes.
+audits/phase-16-34-gate-a1/
+audits/phase-16-34-gate-a2/
+audits/phase-16-34-gate-a3/
+releases/
+tests/fixtures/cpsc-pages/*.html
+# Local, user-specific Claude Code settings (globally git-ignored)
+.claude/settings.local.json

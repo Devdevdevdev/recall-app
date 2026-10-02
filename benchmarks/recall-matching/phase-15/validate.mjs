@@ -1,4 +1,6 @@
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
+import { isDeepStrictEqual } from 'node:util';
+import { format, resolveConfig } from 'prettier';
 
 import { auditPhase15Benchmark, validatePhase15Split } from './dataset.ts';
 
@@ -39,5 +41,28 @@ if (audit.duplicateEvidenceFingerprints.length)
   errors.push('Duplicate controlled evidence is present.');
 if (audit.unsupportedLabelCount) errors.push('Unsupported labels are present.');
 if (errors.length) throw new Error(errors.map((error) => `- ${error}`).join('\n'));
-await writeFile(new URL('./audit.json', import.meta.url), `${JSON.stringify(audit, null, 2)}\n`);
-console.log(JSON.stringify({ valid: true, ...audit }, null, 2));
+// audit.json is versioned. Validation only verifies it; `--write` regenerates it, and only when
+// its content changed, so running the checks never dirties the worktree with a new timestamp.
+const auditUrl = new URL('./audit.json', import.meta.url);
+const { generatedAt: _committedAt, ...committedContent } = JSON.parse(
+  await readFile(auditUrl, 'utf8'),
+);
+const { generatedAt: _currentAt, ...currentContent } = audit;
+const isCurrent = isDeepStrictEqual(committedContent, currentContent);
+if (process.argv.includes('--write')) {
+  if (!isCurrent) {
+    await writeFile(
+      auditUrl,
+      await format(JSON.stringify(audit, null, 2), {
+        ...(await resolveConfig(auditUrl.pathname)),
+        filepath: auditUrl.pathname,
+        parser: 'json',
+      }),
+    );
+  }
+} else if (!isCurrent) {
+  throw new Error(
+    'audit.json is stale. Run `npm run benchmark:phase-15:audit:write` and review the diff.',
+  );
+}
+console.log(JSON.stringify({ valid: true, ...currentContent }, null, 2));
