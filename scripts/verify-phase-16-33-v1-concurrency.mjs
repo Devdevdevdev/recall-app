@@ -3,8 +3,16 @@
 // the local Supabase database, with page-ledger notice touches injected from
 // separate sessions. Proves that a stale or busy pair is never acknowledged,
 // is retried, and ends matched exactly once or explicitly unresolved.
-// It also replays the Phase 12 (HEAD) orchestrator to reproduce the defect.
-// Requires a disposable local database: run `supabase db reset --local` after.
+// It also replays the Phase 12 orchestrator (pinned at PHASE12_REF) to reproduce
+// the defect.
+//
+// Phase 17.7a F-4: the fixtures are recall-level GTIN scopes without any reviewed
+// rule set, so the v1 matcher still proposes `confirmed` but the database stores a
+// withheld `needs_review` and creates no alert. The invariant proven here is
+// unchanged: every legitimate pair is persisted exactly once, or its recall stays
+// explicitly pending. Rehearsal only (not in check:all): it commits fixtures, so run
+// it through `npm run test:phase-16-33:rehearsal`, which resets the local database
+// before and after.
 import assert from 'node:assert/strict';
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, writeFileSync, mkdirSync } from 'node:fs';
@@ -21,6 +29,8 @@ import { RecallAutomationChildren } from '../supabase/functions/run-recall-autom
 const LOCAL_DB = 'postgresql://postgres:postgres@127.0.0.1:54322/postgres';
 const MODEL_ID = 'nvidia/nemotron-3-super-120b-a12b';
 const PREFIX = '16339';
+// Last commit whose automation orchestrator predates the Phase 16.33 correction.
+const PHASE12_REF = 'c6fc8d5';
 const id = (suffix) => `${PREFIX}000-0000-4000-8000-${String(suffix).padStart(12, '0')}`;
 
 const admin = postgres(LOCAL_DB, { max: 1, onnotice: () => {} });
@@ -130,6 +140,8 @@ function matchingStore(hooks = {}) {
         recallMatchId: row.recall_match_id,
         alertId: row.alert_id,
         alertOutcome: row.alert_outcome,
+        storedStatus: row.stored_status ?? undefined,
+        safetyStatus: row.safety_status ?? null,
       };
     },
   };
@@ -388,14 +400,20 @@ const pending = async () =>
     join public.recall_notices n on n.id = p.recall_notice_id
     where n.external_id like 'cpsc:9339%' order by n.external_id`
   ).map((row) => ({ ...row }));
+// Every persisted match of a recall (any status), with its alert count and whether
+// F-4 withheld the matcher's confirmation.
 const matchesFor = async (recall) =>
   (
-    await admin`select m.owned_product_id, m.status, (select count(*) from public.alerts a
-      where a.recall_match_id = m.id)::int as alerts
+    await admin`select m.owned_product_id, m.status::text as status,
+      m.reasoning_summary like 'Automatic alert withheld (%' as withheld,
+      (select count(*) from public.alerts a where a.recall_match_id = m.id)::int as alerts
     from public.recall_matches m where m.recall_notice_id = ${recall}::uuid
-      and m.status = 'confirmed'
     order by m.owned_product_id`
   ).map((row) => ({ ...row }));
+// F-4 outcome for an unreviewed GTIN pair: persisted once, needs_review, withheld, no alert.
+const withheldOnce = (matches, expected = 2) =>
+  matches.length === expected &&
+  matches.every((m) => m.status === 'needs_review' && m.withheld && m.alerts === 0);
 const upc = (body) => {
   const digits = body.split('').map(Number);
   const sum = digits.reduce((total, digit, index) => total + digit * (index % 2 === 0 ? 3 : 1), 0);
@@ -468,7 +486,7 @@ async function main() {
     mkdirSync(dirname(path), { recursive: true });
     writeFileSync(
       path,
-      execFileSync('git', ['show', `HEAD:supabase/functions/_shared/automation/${file}`]),
+      execFileSync('git', ['show', `${PHASE12_REF}:supabase/functions/_shared/automation/${file}`]),
     );
   }
   const { runRecallAutomation: runPhase12 } = await import(
@@ -535,9 +553,20 @@ async function main() {
     await pending(),
   );
   check(
-    'the lost Phase 12 pair is matched once its recall is affected again',
-    (await matchesFor(R['93391'])).length === 2,
+    'the lost Phase 12 pair is persisted once its recall is affected again (F-4 withheld, no alert)',
+    withheldOnce(await matchesFor(R['93391'])),
     await matchesFor(R['93391']),
+  );
+  check(
+    'F-4: the matcher confirmations are counted as withheld, not confirmed',
+    c1.matching.confirmed === 0 &&
+      c1.matching.safetyWithheld === 2 &&
+      c1.matching.alertsCreated === 0,
+    {
+      confirmed: c1.matching.confirmed,
+      withheld: c1.matching.safetyWithheld,
+      alerts: c1.matching.alertsCreated,
+    },
   );
 
   // 2. Stale pair followed by successful retry.
@@ -546,7 +575,7 @@ async function main() {
     'stale pair followed by successful retry',
     c2.status === 'success' &&
       (await pending()).length === 0 &&
-      (await matchesFor(R['93392'])).length === 2,
+      withheldOnce(await matchesFor(R['93392'])),
     {
       status: c2.status,
       matches: await matchesFor(R['93392']),
@@ -569,8 +598,8 @@ async function main() {
   );
   await automationCycle({ affected: [] });
   check(
-    'after the updates stop, every legitimate match is confirmed',
-    (await pending()).length === 0 && (await matchesFor(R['93393'])).length === 2,
+    'after the updates stop, every legitimate pair is persisted once (F-4 withheld)',
+    (await pending()).length === 0 && withheldOnce(await matchesFor(R['93393'])),
     await matchesFor(R['93393']),
   );
 
@@ -592,7 +621,7 @@ async function main() {
   const recovered = await automationCycle({ affected: [] });
   check(
     "the next cycle recovers the terminated run's work",
-    recovered.status === 'success' && (await matchesFor(R['93394'])).length === 2,
+    recovered.status === 'success' && withheldOnce(await matchesFor(R['93394'])),
     {
       status: recovered.status,
       matches: await matchesFor(R['93394']),
@@ -640,10 +669,8 @@ async function main() {
     },
   );
   check(
-    'concurrent executions: A finalizes; every pair matched exactly once',
-    cA.status === 'success' &&
-      (await matchesFor(R['93395'])).length === 2 &&
-      (await matchesFor(R['93395'])).every((m) => m.alerts === 1),
+    'concurrent executions: A finalizes; every pair persisted exactly once, no alert',
+    cA.status === 'success' && withheldOnce(await matchesFor(R['93395'])),
     {
       status: cA.status,
       matches: await matchesFor(R['93395']),
@@ -655,7 +682,7 @@ async function main() {
     again.status === 'success' &&
       again.matching.unchangedSkipped === 2 &&
       again.matching.alertsCreated === 0 &&
-      (await matchesFor(R['93395'])).length === 2,
+      withheldOnce(await matchesFor(R['93395'])),
     {
       unchanged: again.matching.unchangedSkipped,
       alerts: again.matching.alertsCreated,
@@ -708,8 +735,8 @@ async function main() {
     { status: daily.status },
   );
 
-  // Final invariant: no silent loss. Every designed match exists exactly once
-  // with one alert, or its recall is explicitly pending.
+  // Final invariant: no silent loss. Every designed pair exists exactly once
+  // (withheld by F-4, no alert), or its recall is explicitly pending.
   const designed = await admin`select p.id as product, r.id as recall
     from public.owned_products p join public.recall_scopes s on s.gtin = p.gtin
     join public.recall_notices r on r.id = s.recall_notice_id
@@ -717,6 +744,8 @@ async function main() {
   const lost = [];
   for (const pair of designed) {
     const [row] = await admin`select count(*)::int as matches,
+        count(*) filter (where status = 'needs_review'
+          and reasoning_summary like 'Automatic alert withheld (%')::int as withheld,
         (select count(*)::int from public.alerts a join public.recall_matches m2
           on m2.id = a.recall_match_id where m2.owned_product_id = ${pair.product}::uuid
           and m2.recall_notice_id = ${pair.recall}::uuid) as alerts,
@@ -724,16 +753,20 @@ async function main() {
           where recall_notice_id = ${pair.recall}::uuid) as pending
       from public.recall_matches where owned_product_id = ${pair.product}::uuid
         and recall_notice_id = ${pair.recall}::uuid`;
-    if (!(row.matches === 1 && row.alerts === 1) && !row.pending) lost.push({ ...pair, ...row });
+    if (!(row.matches === 1 && row.withheld === 1 && row.alerts === 0) && !row.pending) {
+      lost.push({ ...pair, ...row });
+    }
   }
   check(
-    'no silent loss: every legitimate match is confirmed once or explicitly pending',
+    'no silent loss: every legitimate pair is persisted once (withheld, no alert) or pending',
     designed.length === 10 && lost.length === 0,
     { designed: designed.length, lost },
   );
   const [{ dupes }] = await admin`select count(*)::int as dupes from (select owned_product_id,
     recall_notice_id from public.recall_matches group by 1, 2 having count(*) > 1) d`;
   check('no duplicated matches anywhere', dupes === 0, { dupes });
+  const [{ alerts }] = await admin`select count(*)::int as alerts from public.alerts`;
+  check('F-4: no alert was created for any unreviewed GTIN pair', alerts === 0, { alerts });
   const [{ outcomes }] = await admin`select jsonb_object_agg(outcome, n) as outcomes from (
     select outcome, count(*)::int n from private.recall_automation_matching_outcomes group by 1) o`;
   process.stdout.write(

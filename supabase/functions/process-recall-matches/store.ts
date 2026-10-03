@@ -136,12 +136,19 @@ export class SupabaseRecallMatchingStore implements RecallMatchingStore {
     if (!['created', 'existing', 'none'].includes(alertOutcome)) {
       throw new Error('Recall match finalization returned an invalid alert outcome.');
     }
+    const storedStatus = row.stored_status;
     return {
       status: row.status as FinalizePairResult['status'],
       recallMatchId: nullableString(row.recall_match_id),
       alertId: nullableString(row.alert_id),
       alertOutcome: alertOutcome as FinalizePairResult['alertOutcome'],
       confirmationReversed: row.confirmation_reversed === true,
+      ...(storedStatus === 'confirmed' ||
+      storedStatus === 'rejected' ||
+      storedStatus === 'needs_review'
+        ? { storedStatus }
+        : {}),
+      safetyStatus: nullableString(row.safety_status),
     };
   }
 }

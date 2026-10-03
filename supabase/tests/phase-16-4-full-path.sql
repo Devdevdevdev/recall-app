@@ -2,6 +2,16 @@ begin;
 create extension if not exists pgtap with schema extensions;
 select extensions.no_plan();
 
+-- Phase 17.7a F-4 test seam. This suite exercises alert mechanics on fixtures whose
+-- official scope is not human-reviewed. F-4 (an automatic alert needs a proven
+-- complete official scope) is covered by phase-17-7a-f4-automatic-alert-safety.sql;
+-- here the proof is granted only inside this rolled-back transaction.
+create or replace function private.automatic_alert_eligibility(
+  p_owned_product_id uuid, p_recall_notice_id uuid)
+returns text language sql stable security definer set search_path = ''
+as $f4$ select 'eligible'::text $f4$;
+
+
 select extensions.ok(has_function_privilege('service_role',
   'public.get_owned_product_evidence_v2(uuid)','EXECUTE'), 'worker may fetch safety evidence');
 select extensions.ok(not has_function_privilege('authenticated',

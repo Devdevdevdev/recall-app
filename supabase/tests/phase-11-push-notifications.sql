@@ -2,7 +2,17 @@ begin;
 
 create extension if not exists pgtap with schema extensions;
 
-select extensions.plan(43);
+select extensions.plan(44);
+
+-- Phase 17.7a F-4 test seam. This suite exercises alert mechanics on fixtures whose
+-- official scope is not human-reviewed. F-4 (an automatic alert needs a proven
+-- complete official scope) is covered by phase-17-7a-f4-automatic-alert-safety.sql;
+-- here the proof is granted only inside this rolled-back transaction.
+create or replace function private.automatic_alert_eligibility(
+  p_owned_product_id uuid, p_recall_notice_id uuid)
+returns text language sql stable security definer set search_path = ''
+as $f4$ select 'eligible'::text $f4$;
+
 
 select extensions.has_table('private', 'push_devices', 'push devices are stored privately');
 select extensions.has_table('private', 'push_alert_queue', 'push alert eligibility is stored privately');
@@ -314,11 +324,16 @@ select extensions.is(
 delete from private.push_alert_queue
 where alert_id = '77000000-0000-4000-8000-000000000007';
 
-insert into public.alerts (id, user_id, recall_match_id)
-values (
-  '78000000-0000-4000-8000-000000000008',
-  '11000000-0000-4000-8000-000000000001',
-  '68000000-0000-4000-8000-000000000008'
+-- Phase 17.7a F-4: an alert for a needs-review match is now refused by the database.
+select extensions.throws_ok(
+  $$insert into public.alerts (id, user_id, recall_match_id)
+    values (
+      '78000000-0000-4000-8000-000000000008',
+      '11000000-0000-4000-8000-000000000001',
+      '68000000-0000-4000-8000-000000000008'
+    )$$,
+  'automatic alert requires a proven complete official scope',
+  'a needs-review match cannot receive an alert'
 );
 
 select extensions.is(

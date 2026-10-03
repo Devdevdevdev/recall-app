@@ -4,7 +4,27 @@ set local lock_timeout = '2s';
 set local statement_timeout = '20s';
 set local idle_in_transaction_session_timeout = '30s';
 
-select extensions.plan(89);
+select extensions.plan(90);
+
+-- Phase 17.7a F-4: this suite never grants, forges, or bypasses the automatic-alert
+-- proof. It requires F-4 to be installed and stops before any fixture write
+-- otherwise, so it can never exercise an unguarded alert or eligibility path.
+do $f4$
+begin
+  if pg_catalog.to_regprocedure('private.automatic_alert_eligibility(uuid,uuid)') is null then
+    raise exception 'Phase 17.7a F-4 is not installed: the remote compatibility suite refuses to run';
+  end if;
+end;
+$f4$;
+select extensions.is((select count(*)::integer from pg_trigger where not tgisinternal and tgname in (
+  'alerts_require_safe_scope','recall_alert_eligibility_v2_require_safe_scope',
+  'recall_alert_snapshots_v2_require_safe_scope','recall_matches_require_safe_confirmation',
+  'recall_match_evaluations_v2_require_safe_confirmation')),5,'F-4 guards every automatic alert and confirmation write');
+select extensions.ok(not has_function_privilege('service_role','private.automatic_alert_eligibility(uuid,uuid)','EXECUTE')
+  and not has_function_privilege('authenticated','private.automatic_alert_eligibility(uuid,uuid)','EXECUTE')
+  and not has_function_privilege('anon','private.automatic_alert_eligibility(uuid,uuid)','EXECUTE'),
+  'no API role can call the F-4 proof directly');
+
 
 -- Schema, RLS, constraints and RPC ACLs are checked before any fixture write.
 select extensions.has_table('private','recall_match_evaluations_v2','v2 evaluations exist');
@@ -53,7 +73,7 @@ select extensions.ok(has_function_privilege('authenticated','public.list_cpsc_pe
 
 create temporary table phase16_fixture(k text primary key, id uuid not null unique, fingerprint text) on commit drop;
 insert into phase16_fixture(k,id,fingerprint)
-select k,gen_random_uuid(),null from unnest(array['owner','other','reviewer','p1','p2','p3','p4','p5','legacy_match','legacy_alert']) k;
+select k,gen_random_uuid(),null from unnest(array['owner','other','reviewer','p1','p2','p3','p4','p5']) k;
 update phase16_fixture set fingerprint=md5(id::text)||md5(id::text||':phase16') where k like 'p%';
 
 -- Unique, unused identity values: never an existing recall number, API ID, or URL.
@@ -229,6 +249,10 @@ insert into public.owned_products(id,user_id,product_name,model_number,identific
 select p.id,u.id,'pgtap_phase16_'||p.id::text,case when p.k='p3' then 'MODEL-2' else 'MODEL-1' end,'manual'
 from phase16_fixture p cross join phase16_fixture u where p.k in ('p1','p2','p3','p4','p5') and u.k='owner';
 select extensions.is((select count(*)::integer from public.owned_products where user_id=(select id from phase16_fixture where k='owner')),5,'five isolated owned products exist');
+-- F-4: the fixture products carry no date code and no purchase country, so the
+-- reviewed rule set is never satisfied; no fixture pair is ever alert-eligible.
+select extensions.ok((select bool_and(private.automatic_alert_eligibility(p.id,(select id from phase16_fixture where k='notice')) <> 'eligible')
+  from phase16_fixture p where p.k in ('p1','p2','p3','p4','p5')),'no fixture pair has an automatic-alert proof');
 
 -- A stale revision must not create an evaluation.
 select extensions.is((select status from public.claim_recall_match_evaluation(
@@ -261,8 +285,9 @@ cross join lateral public.finalize_recall_match_evaluation_v2(
   case c.k when 'p2' then 'needs_review'::public.recall_match_status when 'p3' then 'rejected'::public.recall_match_status else 'confirmed'::public.recall_match_status end,
   0.9,'{}'::jsonb,'Transaction-only deterministic decision.') r;
 select extensions.is((select count(*)::integer from phase16_final where status='finalized'),4,'valid leases finalize four observations');
-select extensions.is((select count(*)::integer from phase16_final where alert_eligibility='created'),2,'confirmed creates eligibility once per pair');
-select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),2,'review and rejection create no eligibility');
+select extensions.is((select count(*)::integer from phase16_final where alert_eligibility='created'),0,'unproven confirmations create no eligibility (F-4)');
+select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'no eligibility row exists for any fixture pair');
+select extensions.is((select count(*)::integer from private.recall_match_evaluations_v2 where recall_notice_id=(select id from phase16_fixture where k='notice') and status='needs_review' and reasoning_summary like 'Automatic alert withheld (%'),2,'unproven confirmations are stored as needs_review with the reason');
 select extensions.is((select count(*)::integer from private.recall_match_evaluations_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),4,'one immutable observation per pair and fingerprint');
 select extensions.is((select status from public.finalize_recall_match_evaluation_v2(
   (select product_id from phase16_claim where k='p1'),(select id from phase16_fixture where k='notice'),
@@ -298,21 +323,12 @@ select extensions.is((select status from public.finalize_recall_match_evaluation
   (select lease_token from phase16_replay),'needs_review',0.9,'{}','Replay.')),'unchanged','same pair and fingerprint replays unchanged');
 select extensions.is((select count(*)::integer from private.recall_match_evaluations_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),4,'replay adds no observation');
 
-select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p1'),(select id from phase16_fixture where k='notice'))),'created','eligible confirmation creates alert snapshot');
-select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p1'),(select id from phase16_fixture where k='notice'))),'existing','alert replay returns existing snapshot');
-select extensions.is((select count(*)::integer from private.recall_alert_snapshots_v2 where owned_product_id=(select id from phase16_fixture where k='p1')),1,'exactly one immutable alert snapshot');
+select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p1'),(select id from phase16_fixture where k='notice'))),'ineligible','a withheld confirmation cannot alert');
+select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p1'),(select id from phase16_fixture where k='notice'))),'ineligible','a replayed alert request stays ineligible');
+select extensions.is((select count(*)::integer from private.recall_alert_snapshots_v2 where owned_product_id=(select id from phase16_fixture where k='p1')),0,'no alert snapshot is written');
 select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p2'),(select id from phase16_fixture where k='notice'))),'ineligible','needs review cannot alert');
 select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p3'),(select id from phase16_fixture where k='notice'))),'ineligible','rejection cannot alert');
 select extensions.is((select count(*)::integer from private.push_alert_queue q join public.alerts a on a.id=q.alert_id join public.recall_matches m on m.id=a.recall_match_id where m.recall_notice_id=(select id from phase16_fixture where k='notice')),0,'v2 alert creates no push queue row');
-
--- The fifth product has a transaction-local historical v1 match and alert.
-insert into public.recall_matches(id,owned_product_id,recall_notice_id,status,confidence,match_method,matched_identifiers,reasoning_summary,schema_version,evidence_fingerprint)
-select m.id,p.id,n.id,'confirmed',0.9,'deterministic_v1','{}','Transaction-only legacy match.','1.0.0',p.fingerprint
-from phase16_fixture m cross join phase16_fixture p cross join phase16_fixture n where m.k='legacy_match' and p.k='p5' and n.k='notice';
-insert into public.alerts(id,user_id,recall_match_id)
-select a.id,u.id,m.id from phase16_fixture a cross join phase16_fixture u cross join phase16_fixture m
-where a.k='legacy_alert' and u.k='owner' and m.k='legacy_match';
-select extensions.is((select count(*)::integer from private.recall_legacy_alert_snapshots_v2 where alert_id=(select id from phase16_fixture where k='legacy_alert')),1,'historical alert source captured');
 
 update public.owned_products set model_number=null where id in (select id from phase16_fixture where k in ('p1','p4'));
 create temporary table phase16_changed on commit drop as
@@ -329,14 +345,11 @@ public.finalize_recall_match_evaluation_v2(c.product_id,(select id from phase16_
   case when c.k in ('p4','p5') then 'rejected'::public.recall_match_status else 'needs_review'::public.recall_match_status end,
   0.5,'{}','Newer transaction-only contradiction.') r;
 select extensions.is((select count(*)::integer from phase16_reversed where status='finalized'),3,'new observations finalize');
-select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2 where recall_notice_id=(select id from phase16_fixture where k='notice') and revoked_at is not null),2,'pending and delivered eligibility revoked');
-select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p4'),(select id from phase16_fixture where k='notice'))),'ineligible','revoked pending eligibility cannot alert');
-select extensions.is((select count(*)::integer from private.recall_alert_snapshots_v2 where owned_product_id=(select id from phase16_fixture where k='p1')),1,'older v2 alert preserved');
-select extensions.is((select count(*)::integer from private.recall_alert_corrections_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),2,'v1 and v2 alerts each have correction');
-select extensions.is((select count(*)::integer from public.alerts where id=(select id from phase16_fixture where k='legacy_alert')),1,'historical v1 alert preserved');
-select extensions.is((select status::text from public.recall_matches where id=(select id from phase16_fixture where k='legacy_match')),'confirmed','v1 match status remains unchanged');
-select extensions.is((select evidence_fingerprint from public.recall_matches where id=(select id from phase16_fixture where k='legacy_match')),(select fingerprint from phase16_fixture where k='p5'),'v1 fingerprint remains unchanged');
-select extensions.is((select count(*)::integer from private.push_alert_queue q where q.alert_id=(select id from phase16_fixture where k='legacy_alert')),1,'historical alert alone has its expected v1 queue entry');
+select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'contradictions find no eligibility to revoke');
+select extensions.is((select status from public.create_recall_v2_alert((select id from phase16_fixture where k='p4'),(select id from phase16_fixture where k='notice'))),'ineligible','a contradicted pair cannot alert');
+select extensions.is((select count(*)::integer from private.recall_alert_snapshots_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'no v2 alert exists for the fixture notice');
+select extensions.is((select count(*)::integer from private.recall_alert_corrections_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'no alert means no correction');
+select extensions.is((select count(*)::integer from public.recall_matches where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'the v2 path writes no v1 match');
 
 -- Share IDs through transaction-local settings so role sections do not need temp-table access.
 select set_config('phase16.owner',(select id::text from phase16_fixture where k='owner'),true);
@@ -344,14 +357,13 @@ select set_config('phase16.other',(select id::text from phase16_fixture where k=
 select set_config('phase16.p1',(select id::text from phase16_fixture where k='p1'),true);
 select set_config('phase16.p2',(select id::text from phase16_fixture where k='p2'),true);
 select set_config('phase16.notice',(select id::text from phase16_fixture where k='notice'),true);
-select set_config('phase16.alert',(select id::text from private.recall_alert_snapshots_v2 where owned_product_id=(select id from phase16_fixture where k='p1')),true);
 
 set local role authenticated;
 set local request.jwt.claim.sub = '';
 select set_config('request.jwt.claim.sub',current_setting('phase16.owner'),true);
 select extensions.is((select count(*)::integer from public.get_recall_safety_feed_v2() where recall_notice_id=current_setting('phase16.notice')::uuid),5,'owner reads own five v2 observations');
-select extensions.is((select display_state from public.get_recall_safety_feed_v2() where owned_product_id=current_setting('phase16.p1')::uuid),'no_longer_confirmed','correction does not declare product safe');
-select extensions.ok(public.update_recall_v2_alert_state(current_setting('phase16.alert')::uuid,'read'),'owner can update own alert state');
+select extensions.is((select display_state from public.get_recall_safety_feed_v2() where owned_product_id=current_setting('phase16.p1')::uuid),'needs_review','a withheld confirmation is shown as needs review, never as safe');
+select extensions.ok(not public.update_recall_v2_alert_state(gen_random_uuid(),'read'),'an unknown alert cannot be updated');
 select extensions.throws_ok(format('select * from public.create_recall_v2_alert(%L::uuid,%L::uuid)',current_setting('phase16.p1'),current_setting('phase16.notice')),'42501',null,'authenticated cannot execute service alert writer');
 select extensions.throws_ok('select * from public.finalize_recall_match_evaluation_v2(null::uuid,null::uuid,null::text,null::timestamptz,null::timestamptz,null::uuid,null::public.recall_match_status,null::numeric,null::jsonb,null::text)','42501',null,'authenticated cannot execute service finalizer');
 reset role;
@@ -360,7 +372,7 @@ reset request.jwt.claim.sub;
 set local role authenticated;
 select set_config('request.jwt.claim.sub',current_setting('phase16.other'),true);
 select extensions.is((select count(*)::integer from public.get_recall_safety_feed_v2() where recall_notice_id=current_setting('phase16.notice')::uuid),0,'second user cannot read owner v2 state');
-select extensions.ok(not public.update_recall_v2_alert_state(current_setting('phase16.alert')::uuid,'dismissed'),'second user cannot change owner alert');
+select extensions.ok(not public.update_recall_v2_alert_state(gen_random_uuid(),'dismissed'),'second user cannot change any alert');
 reset role;
 reset request.jwt.claim.sub;
 
@@ -387,12 +399,13 @@ select extensions.is((select status from public.finalize_recall_match_evaluation
   (select updated_at from public.owned_products where id=current_setting('phase16.p2')::uuid),
   (select updated_at from public.recall_notices where id=current_setting('phase16.notice')::uuid),
   (current_setting('phase16.service_claim')::jsonb->>'lease_token')::uuid,
-  'confirmed',0.9,'{}','Service role transaction-only confirmation.')),'finalized','service role finalizes a valid leased observation');
+  'confirmed',0.9,'{}','Service role transaction-only confirmation.')),'finalized','service role finalizes a valid leased observation (stored as needs_review)');
 select extensions.is((select count(*)::integer from public.get_recall_v2_scopes(current_setting('phase16.notice')::uuid)),1,'service also executes the scoped worker read RPC');
 reset role;
 reset request.jwt.claim.sub;
 
 select extensions.is((select count(*)::integer from private.recall_match_evaluations_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),8,'only the service role adds the final evaluation');
-select extensions.is((select count(*)::integer from private.recall_alert_snapshots_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),1,'role tests add no alert');
+select extensions.is((select count(*)::integer from private.recall_alert_snapshots_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'no alert was created anywhere in this suite');
+select extensions.is((select count(*)::integer from private.recall_alert_eligibility_v2 where recall_notice_id=(select id from phase16_fixture where k='notice')),0,'no eligibility was created anywhere in this suite');
 select * from extensions.finish();
 rollback;

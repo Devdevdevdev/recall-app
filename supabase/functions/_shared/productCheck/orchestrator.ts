@@ -174,7 +174,7 @@ function signalIdentifiers(owned: OwnedProductEvidenceV2, signals: readonly Cand
 }
 
 async function scopeStates(
-  recall: CandidateRecallRow,
+  recall: AuthoritativeRecallRow,
   scopes: readonly ReviewedScopeRowV2[],
 ): Promise<ScopeRuleSetState[]> {
   return Promise.all(
@@ -189,16 +189,46 @@ async function scopeStates(
   );
 }
 
-async function evaluatePair(
-  claim: ProductCheckClaim,
-  product: OwnedProductRow,
+export type AutomaticAlertClassification =
+  AutomaticConfirmationEligibility | 'criteria_not_satisfied';
+
+export type RecallAssessment =
+  | {
+      states: ScopeRuleSetState[];
+      projection: RuleSetProjectionV2;
+      gate: AutomaticConfirmationEligibility;
+      evaluation: ReturnType<typeof evaluateRuleSetsPairV2>;
+      /** Same vocabulary as private.automatic_alert_classification (parity tested). */
+      classification: AutomaticAlertClassification;
+    }
+  | {
+      /** A non-authoritative source is never projected or evaluated (fail closed). */
+      states: [];
+      projection: null;
+      gate: 'unsupported_scope';
+      evaluation: null;
+      classification: 'unsupported_scope';
+    };
+
+/**
+ * Pure assessment of one notice for one product: live envelope validation, the safe
+ * gate, and the unchanged deterministic_v2 rule-set evaluation. No I/O, no AI.
+ */
+export async function assessRecallForProduct(
   owned: OwnedProductEvidenceV2,
-  recall: CandidateRecallRow,
-  store: ProductCheckPairStore,
-  counters: ProductCheckCounters,
-): Promise<PairResult> {
-  const scopes = await store.getReviewedScopes(recall.recall_notice_id);
-  if (!scopes.length) return { kind: 'not_candidate' };
+  recall: AuthoritativeRecallRow & { jurisdictions: readonly NoticeJurisdiction[] },
+  scopes: readonly ReviewedScopeRowV2[],
+  purchaseCountryCode: string | null,
+): Promise<RecallAssessment> {
+  if (recall.source_is_authoritative !== true) {
+    return {
+      states: [],
+      projection: null,
+      gate: 'unsupported_scope',
+      evaluation: null,
+      classification: 'unsupported_scope',
+    };
+  }
   const recallRow = { ...recall, scopes };
   let states = await scopeStates(recall, scopes);
   let projection: RuleSetProjectionV2;
@@ -215,18 +245,41 @@ async function evaluatePair(
       scopes.map(() => null),
     );
   }
+  const gate = assessAutomaticConfirmationEligibility({
+    sourceIsAuthoritative: recall.source_is_authoritative === true,
+    purchaseCountryCode,
+    noticeJurisdictions: recall.jurisdictions,
+    scopes: states,
+  });
+  const evaluation = evaluateRuleSetsPairV2(owned, projection);
+  const classification: AutomaticAlertClassification =
+    gate !== 'eligible'
+      ? gate
+      : evaluation.decision === 'confirmed'
+        ? 'eligible'
+        : 'criteria_not_satisfied';
+  return { states, projection, gate, evaluation, classification };
+}
+
+async function evaluatePair(
+  claim: ProductCheckClaim,
+  product: OwnedProductRow,
+  owned: OwnedProductEvidenceV2,
+  recall: CandidateRecallRow,
+  store: ProductCheckPairStore,
+  counters: ProductCheckCounters,
+): Promise<PairResult> {
+  const scopes = await store.getReviewedScopes(recall.recall_notice_id);
+  if (!scopes.length) return { kind: 'not_candidate' };
+  const assessment = await assessRecallForProduct(owned, recall, scopes, claim.purchaseCountryCode);
+  if (assessment.projection === null) return { kind: 'not_candidate' };
+  const { projection, gate, evaluation: v2 } = assessment;
 
   // Same in-memory retrieval guard as the existing orchestrators.
   const signals =
     retrieveRecallCandidates(owned, [projection.official], { maxCandidates: 1 })[0]?.signals ?? [];
   if (!signals.length) return { kind: 'not_candidate' };
 
-  const gate = assessAutomaticConfirmationEligibility({
-    sourceIsAuthoritative: recall.source_is_authoritative === true,
-    purchaseCountryCode: claim.purchaseCountryCode,
-    noticeJurisdictions: recall.jurisdictions,
-    scopes: states,
-  });
   counters.gate[gate] = (counters.gate[gate] ?? 0) + 1;
   const strong = signals.some((signal) => STRONG_SIGNALS.has(signal.kind));
   // A weak, ineligible candidate (name/brand overlap only) is not worth a verification prompt.
@@ -256,7 +309,6 @@ async function evaluatePair(
   }
   if (pair.status !== 'claimed') return { kind: 'ignored' };
 
-  const v2 = evaluateRuleSetsPairV2(owned, projection);
   const eligible = gate === 'eligible';
   const decision: MatchDecision = eligible ? v2.decision : 'needs_review';
   const missingRequired = v2.criterionEvaluations.some(

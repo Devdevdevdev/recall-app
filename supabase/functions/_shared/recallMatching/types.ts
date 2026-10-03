@@ -94,6 +94,10 @@ export type FinalizePairResult = {
   alertId?: string | null;
   alertOutcome: 'created' | 'existing' | 'none';
   confirmationReversed?: boolean;
+  /** F-4: the status the database stored; an unproven 'confirmed' is stored as needs_review. */
+  storedStatus?: MatchDecision;
+  /** F-4: 'eligible' or why an automatic alert was withheld (confirmed decisions only). */
+  safetyStatus?: string | null;
 };
 
 export type RecallMatchingStore = {

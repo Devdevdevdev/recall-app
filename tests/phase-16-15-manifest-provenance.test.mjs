@@ -186,7 +186,8 @@ test('remote pgTAP wrapper injects a transaction-scoped extension into the uncha
   assert.equal(lines.at(-1), 'rollback;');
   // Only the one injected line differs from the reviewed suite.
   assert.equal(wrapped.replace(`${TRANSIENT_PGTAP}\n`, ''), suite);
-  assert.match(suite, /select extensions\.plan\(89\);/);
+  // Phase 17.7a F-4 rewrote the alert assertions of the remote suite (89 -> 90 tests).
+  assert.match(suite, /select extensions\.plan\(90\);/);
 
   assert.throws(() => wrapRemoteSuite('select 1;\nrollback;\n'), /must start with BEGIN/);
   assert.throws(() => wrapRemoteSuite('begin;\nselect 1;\ncommit;\n'), /must end with ROLLBACK/);

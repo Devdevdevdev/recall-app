@@ -45,6 +45,8 @@ export type RecallMatchingSummary = {
   staleSkipped: number;
   providerFailures: number;
   limitsReached: number;
+  /** F-4: matcher confirmations stored as needs_review because the safety proof failed. */
+  safetyWithheld: number;
   usage: NullableUsage;
   /** Recalls whose every candidate pair reached a final or unchanged state. */
   resolvedRecallIds: string[];
@@ -84,6 +86,7 @@ function emptySummary(): RecallMatchingSummary {
     staleSkipped: 0,
     providerFailures: 0,
     limitsReached: 0,
+    safetyWithheld: 0,
     usage: { inputTokens: 0, outputTokens: 0, totalTokens: 0 },
     resolvedRecallIds: [],
     unresolvedRecalls: [],
@@ -350,8 +353,11 @@ export async function processRecallMatches(
               }
               continue;
             }
-            if (evaluation.decision === 'confirmed') summary.confirmed += 1;
-            else if (evaluation.decision === 'rejected') summary.rejected += 1;
+            // F-4: count what the database stored, not what the matcher proposed.
+            const stored = finalization.storedStatus ?? evaluation.decision;
+            if (stored !== evaluation.decision) summary.safetyWithheld += 1;
+            if (stored === 'confirmed') summary.confirmed += 1;
+            else if (stored === 'rejected') summary.rejected += 1;
             else summary.needsReview += 1;
             if (finalization.alertOutcome === 'created') summary.alertsCreated += 1;
             else if (finalization.alertOutcome === 'existing') summary.alertsExisting += 1;

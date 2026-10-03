@@ -587,6 +587,8 @@ select extensions.throws_ok(
 );
 reset role;
 
+-- Phase 17.7a F-4: a match may only become confirmed with a proven complete scope;
+-- this isolation fixture does not depend on the status, so it is needs_review.
 insert into public.recall_matches (
   id, owned_product_id, recall_notice_id, status, confidence, match_method,
   reasoning_summary, schema_version, evidence_fingerprint
@@ -598,7 +600,7 @@ values (
     select id from public.recall_notices
     where external_id = 'phase-13-cpsc-test'
   ),
-  'confirmed', 1, 'deterministic_v1', 'Controlled Phase 13 match.', '1.0.0', repeat('a', 64)
+  'needs_review', 1, 'deterministic_v1', 'Controlled Phase 13 match.', '1.0.0', repeat('a', 64)
 );
 
 set local role authenticated;

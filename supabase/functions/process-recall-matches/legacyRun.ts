@@ -142,6 +142,7 @@ export async function runLegacyRecallMatching(request: Request): Promise<Respons
       staleSkipped: result.staleSkipped,
       providerFailures: result.providerFailures,
       limitsReached: result.limitsReached,
+      safetyWithheld: result.safetyWithheld,
       usage: result.usage,
       resolvedRecallIds: result.resolvedRecallIds,
       unresolvedRecalls: result.unresolvedRecalls,
