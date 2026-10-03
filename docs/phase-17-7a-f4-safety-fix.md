@@ -298,6 +298,11 @@ Les valeurs ci-dessous sont l'état final après la revue pré-commit du 2026-10
 
 ## 10. Release gate 17.7a
 
+> **Mise à jour du 2026-10-03 :** F-4 est installé, vérifié en production et `resolved` (preuve :
+> `releases/phase-17-7a-f4/post-install-verification.json`). 17.7a-1 n'est toujours pas
+> installée : `productionReady` reste `false`. Le reste de cette section décrit l'état au moment
+> de la revue.
+
 Dans `docs/phase-17-7a-1-release-gate.json` :
 
 - F-4 a le statut `fixed_locally_pending_review` (non commité, non installé) ;

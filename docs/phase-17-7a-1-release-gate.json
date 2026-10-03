@@ -1,19 +1,26 @@
 {
   "phase": "17.7a-1",
+  "productionReadyMeaning": "Phase 17.7a-1 is installed and verified in production (derived: F-4 committed, installed, verified and resolved, AND a 17.7a-1 post-install verification record exists)",
   "productionReady": false,
   "productCheckEnabledByDefault": false,
+  "productCheck": {
+    "migration": "supabase/migrations/20261002120000_phase_17_7a_1_owned_product_recall_checks.sql",
+    "verification": "releases/phase-17-7a-1/post-install-verification.json",
+    "installedInProduction": false
+  },
   "blockers": [
     {
       "id": "F-4",
-      "status": "fixed_locally_pending_review",
+      "status": "resolved",
       "title": "v1 and hybrid confirmations could create automatic alerts without a proven complete official scope or a compatible jurisdiction",
       "document": "docs/findings/f-4-v1-unsafe-auto-confirmation.md",
-      "decision": null,
+      "decision": "Resolved 2026-10-03: migration 20261002110000 installed in production, process-recall-matches v23 deployed, remote suite 90/90 with rollback, neutralization inventory 0, natural cron run of 2026-10-03 12:17 UTC without regression. Evidence: releases/phase-17-7a-f4/post-install-verification.json",
       "localFix": {
         "migration": "supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql",
         "report": "docs/phase-17-7a-f4-safety-fix.md",
-        "committed": false,
-        "installedInProduction": false
+        "committed": true,
+        "installedInProduction": true,
+        "verification": "releases/phase-17-7a-f4/post-install-verification.json"
       }
     }
   ],

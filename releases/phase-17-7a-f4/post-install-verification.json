@@ -1,0 +1,54 @@
+{
+  "finding": "F-4",
+  "migration": "20261002110000_phase_17_7a_f4_automatic_alert_safety.sql",
+  "migrationVersion": "20261002110000",
+  "migrationContentSha256": "622dc3893d47875c68899970b9724832ff9be872c4b75867a522854a210ca457",
+  "migrationCount": 33,
+  "f4GuardTriggersEnabled": 5,
+  "remoteSuite": "pass",
+  "remoteSuitePlan": 90,
+  "remoteSuiteOk": 90,
+  "remoteSuiteNotOk": 0,
+  "remoteSuiteRolledBack": true,
+  "pgtapInstalledAfter": 0,
+  "idleInTransactionAfter": 0,
+  "neutralizationInventory": 0,
+  "processRecallMatchesVersion": 23,
+  "processRecallMatchesEzbr": "7370fe793e9673094e59cadb93b428a89e04af261d2e3945504e855a4354bbe2",
+  "processRecallMatchesUpdatedAt": "2026-10-03T08:10:40.790Z",
+  "expectedRuntimeTreeSha256": "81ff731ce714bbc283144fc6f25b9aff1b39af04760f4cdbe6488ca3a13dd9e5",
+  "postRemoteSuiteCheckedAt": "2026-10-03T08:24:47Z",
+  "postRemoteSuiteResidue": {
+    "fixtureRows": 0,
+    "businessRowsAdded": 0
+  },
+  "naturalRunVerifiedAt": "2026-10-03T12:23:00Z",
+  "naturalRun": {
+    "scheduledAt": "2026-10-03T12:17:00Z",
+    "cron": "succeeded",
+    "automationHttpStatus": 200,
+    "f4Related401": 0,
+    "f4Related500": 0,
+    "unsafeAlerts": 0,
+    "unsafePush": 0,
+    "unsafeEligibility": 0,
+    "pendingRecalls": 0,
+    "automationLeases": 0,
+    "matchingLeases": 0,
+    "processRecallMatchesInvoked": false,
+    "runStatus": "partial_success",
+    "runErrorCode": "source_partial_failure"
+  },
+  "firstRealCandidateInvocationObserved": false,
+  "knownSourceIncidents": [
+    {
+      "source": "cpsc",
+      "observedAt": "2026-10-03T12:17:03Z",
+      "symptom": "ingest-recall-source answered HTTP 502 for one source request; the run ended partial_success with error_code source_partial_failure at step ingestion",
+      "classification": "pre-existing upstream source incident: the 06:17 UTC run, before the F-4 Edge deploy at 08:10 UTC, ended with the same source_partial_failure; F-4 does not modify the ingestion functions; not an F-4 failure",
+      "relatedToF4": false
+    }
+  ],
+  "phase17_7a1InstalledInProduction": false,
+  "verifiedAt": "2026-10-03T12:23:00Z"
+}
