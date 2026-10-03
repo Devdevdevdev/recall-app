@@ -662,6 +662,9 @@ test('the product-check path imports no AI provider and no v1 matcher or orchest
 // Phase 17.7a F-4 deliberately changed recallMatching/orchestrator.ts (counts the
 // stored status, safetyWithheld) and process-recall-matches/{legacyRun,store}.ts
 // (surface stored_status / safety_status); their digests are the F-4 versions.
+// Phase 17.7a-2 deliberately changed the automation orchestrator, index and children
+// (product-check stage, disabled by default); their digests are the 17.7a-2 versions,
+// and tests/phase-17-7a-2-automation.test.mjs pins the production baseline they diverge from.
 const FROZEN = {
   'supabase/functions/_shared/matching/aggregation.ts':
     '6a73899f6f07553499ca862855c508258be143b63e5e150b8fb6181c214a4b63',
@@ -696,7 +699,7 @@ const FROZEN = {
   'supabase/functions/_shared/recallMatching/ruleSetsV2.ts':
     '49d6080b516dd14148028f5970ada0ecf70fbf1deb2dbc2343d52484207407ec',
   'supabase/functions/_shared/automation/orchestrator.ts':
-    '05133c737b07f93621fdfacd7ceb289ddb0de3ec1d43d703b79be197fa360222',
+    'dccbbd177ff7206a3dacffcc702a454729c6e157b5a922ac2c8a7471837fc35d',
   'supabase/functions/process-recall-matches/index.ts':
     '94105ddd9f59010a0592d4fec46c9fa6bc28d3967366ea6c85e2e45f9d77eb9e',
   'supabase/functions/process-recall-matches/legacyRun.ts':
@@ -704,9 +707,9 @@ const FROZEN = {
   'supabase/functions/process-recall-matches/store.ts':
     'daa90146ede74a5d871449bcfdf316c662508571c15ac65b98c9f295d1b77b97',
   'supabase/functions/run-recall-automation/index.ts':
-    'ffda65effa45acf589c6f78bb9c4b1a9d2171d84edfdfbdcf0df8ecd03e8fc11',
+    '392f21637fb7da1f8a2d6b5182a17f05fac211e12c1e47607fc67d9293eb1445',
   'supabase/functions/run-recall-automation/children.ts':
-    '70933ae64435581bbff83d3c30487f30fa52407596370ea09d73b267fad31f03',
+    '6470b2bc4d9e5a40db55cae5523de2a2a52000586fde7110abc414adf5ff6377',
 };
 
 test('v1/v2 matching libraries, the v1 pipeline and the automation are unchanged', async () => {

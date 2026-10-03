@@ -108,6 +108,23 @@ export class SupabaseAutomationStore implements AutomationStore {
     if (error) throw new Error('Automation matching persistence failed.');
   }
 
+  // Phase 17.7a-2: read-only and bound to the live run lease. Anything but an
+  // explicit boolean is an error, so the stage fails closed.
+  async getProductCheckPlan(input: {
+    runId: string;
+    leaseToken: string;
+  }): Promise<{ enabled: boolean }> {
+    const { data, error } = await this.database.rpc('get_recall_automation_product_check_plan', {
+      p_run_id: input.runId,
+      p_lease_token: input.leaseToken,
+    });
+    const enabled = firstRecord(data)?.product_check_enabled;
+    if (error || typeof enabled !== 'boolean') {
+      throw new Error('Product check plan retrieval failed.');
+    }
+    return { enabled };
+  }
+
   async completeRun(input: Parameters<AutomationStore['completeRun']>[0]): Promise<void> {
     const pushFailed = input.push
       ? input.push.failed + input.push.invalidDevices + input.push.transientFailures

@@ -100,17 +100,37 @@ Deno.serve(async (request) => {
       matching: requiredEnvironment('RECALL_MATCHING_KEY'),
       push: requiredEnvironment('RECALL_PUSH_DELIVERY_KEY'),
     });
+    const store = new SupabaseAutomationStore(privilegedClient());
     const result = await runRecallAutomation(input, {
-      store: new SupabaseAutomationStore(privilegedClient()),
+      store,
       ingest: (childInput) => children.ingest(childInput),
       match: (childInput) => children.match(childInput),
       push: (childInput) => children.push(childInput),
       pushDeliveryGateEnabled: Deno.env.get('RECALL_PUSH_DELIVERY_ENABLED') === 'true',
+      productCheck: {
+        readPlan: (lease) => store.getProductCheckPlan(lease),
+        runWorker: (stageInput) => children.checkProducts(stageInput),
+      },
     });
+    // Aggregate counters only: no product, user or recall identifier is logged.
+    const stage = result.productCheck;
     console.info('recall_automation_run_complete', {
       status: result.status,
       errorStep: result.errorStep,
       errorCode: result.errorCode,
+      matchingInvoked: result.matching !== null,
+      productCheck: stage && {
+        status: stage.status,
+        attempted: stage.attempted,
+        claimed: stage.claimed,
+        completed: stage.completed,
+        possibleMatches: stage.possibleMatches,
+        confirmedAlerts: stage.confirmedAlerts,
+        retrying: stage.retrying,
+        failed: stage.failed,
+        durationMs: stage.durationMs,
+        errorCode: stage.errorCode,
+      },
     });
     return json(result.status === 'failed' ? 502 : 200, result);
   } catch {

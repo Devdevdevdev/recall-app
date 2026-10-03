@@ -22,6 +22,7 @@
     "tests/phase-16-33-ticket-invocation.test.ts",
     "tests/phase-17-7a-1-check-owned-product.test.ts",
     "tests/phase-17-7a-f4-store.test.ts",
+    "tests/phase-17-7a-2-automation-children.test.ts",
     "supabase/functions/ingest-cpsc-recalls/**",
     "supabase/functions/ingest-recall-source/**",
     "supabase/functions/ingest-recall-sources/**",

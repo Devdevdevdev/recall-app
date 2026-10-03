@@ -1,12 +1,17 @@
 import type {
   IngestionSummary,
   MatchingSummary,
+  ProductCheckWorkerSummary,
   PushSummary,
   UnresolvedMatchingRecall,
 } from '../_shared/automation/index.ts';
 
 const responseLimitBytes = 1024 * 1024;
 const requestTimeoutMs = 150_000;
+// Phase 17.7a-2: the worker bounds each product to 20 s and the automation asks for
+// at most 3 products, so a slower answer is abandoned; the claimed jobs keep their
+// 120 s lease and are reclaimed afterwards.
+export const PRODUCT_CHECK_TIMEOUT_MS = 75_000;
 
 export class ChildFunctionError extends Error {
   constructor(readonly code: string) {
@@ -104,14 +109,62 @@ function sourceResults(value: unknown): IngestionSummary['sources'] {
   });
 }
 
+const PRODUCT_CHECK_FIELDS = [
+  'claimed',
+  'completed',
+  'continued',
+  'retrying',
+  'exhausted',
+  'rearmed',
+  'staleLeases',
+  'confirmed',
+  'rejected',
+  'possibleMatches',
+  'alertsCreated',
+  'aiCalls',
+] as const;
+
+// Exactly the worker's aggregate counters, internally consistent, and no AI call.
+// Anything else is refused rather than partially trusted.
+function productCheckSummary(
+  response: Record<string, unknown>,
+  maxProducts: number,
+): ProductCheckWorkerSummary {
+  const keys = Object.keys(response).sort();
+  const expected = [...PRODUCT_CHECK_FIELDS].sort();
+  if (keys.length !== expected.length || keys.some((key, index) => key !== expected[index])) {
+    throw new ChildFunctionError('invalid_child_response');
+  }
+  const summary = Object.fromEntries(
+    PRODUCT_CHECK_FIELDS.map((field) => [field, count(response[field])]),
+  ) as ProductCheckWorkerSummary;
+  const outcomes =
+    summary.completed +
+    summary.continued +
+    summary.retrying +
+    summary.exhausted +
+    summary.rearmed +
+    summary.staleLeases;
+  if (
+    summary.aiCalls !== 0 ||
+    summary.claimed > maxProducts ||
+    outcomes !== summary.claimed ||
+    summary.alertsCreated > summary.confirmed
+  ) {
+    throw new ChildFunctionError('invalid_child_response');
+  }
+  return summary;
+}
+
 async function invoke(
   url: string,
   headerName: string,
   secret: string,
   body: Record<string, unknown>,
+  timeoutMs = requestTimeoutMs,
 ): Promise<Record<string, unknown>> {
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), requestTimeoutMs);
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch(url, {
       method: 'POST',
@@ -144,6 +197,7 @@ export class RecallAutomationChildren {
   constructor(
     private readonly functionsRoot: string,
     private readonly secrets: ChildSecrets,
+    private readonly productCheckTimeoutMs = PRODUCT_CHECK_TIMEOUT_MS,
   ) {}
 
   async ingest(input: {
@@ -227,5 +281,18 @@ export class RecallAutomationChildren {
       invalidDevices: count(response.invalidDevices),
       transientFailures: count(response.transientFailures),
     };
+  }
+
+  // Phase 17.7a-2: same server-held matching key the automation already sends to
+  // process-recall-matches; no new secret and never the automation caller key.
+  async checkProducts(input: { maxProducts: number }): Promise<ProductCheckWorkerSummary> {
+    const response = await invoke(
+      `${this.functionsRoot}/process-owned-product-checks`,
+      'x-recall-matching-key',
+      this.secrets.matching,
+      { maxProducts: input.maxProducts },
+      this.productCheckTimeoutMs,
+    );
+    return productCheckSummary(response, input.maxProducts);
   }
 }

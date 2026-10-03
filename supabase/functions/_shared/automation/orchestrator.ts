@@ -2,7 +2,10 @@ import type {
   AutomationDependencies,
   AutomationRunRequest,
   AutomationRunResult,
+  IngestionSummary,
   MatchingSummary,
+  ProductCheckStageResult,
+  PushSummary,
   UnresolvedMatchingReason,
   UnresolvedMatchingRecall,
 } from './types.ts';
@@ -91,10 +94,94 @@ function matchingErrorCode(
   return 'matching_incomplete';
 }
 
+/**
+ * Phase 17.7a-2 budget. The stage is a durable catch-up net behind the app's
+ * immediate check, so it stays small: at most this many products per run
+ * (each bounded to 20 s by the worker), and it is not started once the run has
+ * already used this much time. Deferred jobs simply stay due.
+ */
+export const PRODUCT_CHECK_MAX_PRODUCTS_PER_RUN = 3;
+export const PRODUCT_CHECK_LATEST_START_MS = 60_000;
+
+async function runProductCheckStage(
+  stage: NonNullable<AutomationDependencies['productCheck']>,
+  lease: { runId: string; leaseToken: string },
+  startedAt: number,
+  now: () => number,
+): Promise<ProductCheckStageResult> {
+  const began = now();
+  const maxProducts = PRODUCT_CHECK_MAX_PRODUCTS_PER_RUN;
+  const done = (patch: Partial<ProductCheckStageResult>): ProductCheckStageResult => ({
+    status: 'disabled',
+    enabled: false,
+    attempted: false,
+    maxProducts,
+    claimed: 0,
+    completed: 0,
+    continued: 0,
+    rearmed: 0,
+    staleLeases: 0,
+    possibleMatches: 0,
+    confirmedAlerts: 0,
+    retrying: 0,
+    failed: 0,
+    errorCode: null,
+    ...patch,
+    durationMs: Math.max(0, now() - began),
+  });
+
+  let enabled: boolean;
+  try {
+    const plan = await stage.readPlan(lease);
+    if (typeof plan?.enabled !== 'boolean') throw new Error('invalid plan');
+    enabled = plan.enabled;
+  } catch {
+    // The flag is unknown: fail closed, never call the worker.
+    return done({ status: 'failed', enabled: null, errorCode: 'product_check_plan_unavailable' });
+  }
+  if (!enabled) return done({ status: 'disabled', enabled: false });
+  if (began - startedAt > PRODUCT_CHECK_LATEST_START_MS) {
+    return done({ status: 'deferred', enabled: true });
+  }
+
+  try {
+    const summary = await stage.runWorker({ maxProducts });
+    if (summary.aiCalls !== 0 || summary.claimed > maxProducts) {
+      return done({
+        status: 'failed',
+        enabled: true,
+        attempted: true,
+        errorCode: 'invalid_child_response',
+      });
+    }
+    return done({
+      status: 'completed',
+      enabled: true,
+      attempted: true,
+      claimed: summary.claimed,
+      completed: summary.completed,
+      continued: summary.continued,
+      rearmed: summary.rearmed,
+      staleLeases: summary.staleLeases,
+      possibleMatches: summary.possibleMatches,
+      confirmedAlerts: summary.alertsCreated,
+      retrying: summary.retrying,
+      failed: summary.exhausted,
+    });
+  } catch (error) {
+    // Claimed jobs keep their lease and are reclaimed after it expires: nothing is lost.
+    return done({ status: 'failed', enabled: true, attempted: true, errorCode: errorCode(error) });
+  }
+}
+
+type FinalStatus = 'success' | 'partial_success' | 'failed';
+
 export async function runRecallAutomation(
   request: AutomationRunRequest,
   dependencies: AutomationDependencies,
 ): Promise<AutomationRunResult> {
+  const now = dependencies.now ?? (() => Date.now());
+  const startedAt = now();
   const claim = await dependencies.store.claimRun(request);
   if (claim.status !== 'claimed') {
     return {
@@ -104,6 +191,7 @@ export async function runRecallAutomation(
       ingestion: null,
       matching: null,
       push: null,
+      productCheck: null,
       errorStep: null,
       errorCode: null,
     };
@@ -113,11 +201,64 @@ export async function runRecallAutomation(
     runId: claim.runId,
     window: { start: claim.windowStart, end: claim.windowEnd },
   };
-  let ingestion = null;
-  let matching = null;
-  let push = null;
+  let ingestion: IngestionSummary | null = null;
+  let matching: MatchingSummary | null = null;
+  let push: PushSummary | null = null;
   let ingestionStep: 'ingestion' | 'persistence' = 'ingestion';
   let hasSourceFailure = false;
+  let productCheck: ProductCheckStageResult | null = null;
+  let productCheckRan = false;
+
+  // Phase 17.7a-2: the product-check stage runs once, after ingestion and matching
+  // and before notifications, whatever their outcome: it only reads recalls that
+  // are already stored. Its failure never changes an earlier error and never fails
+  // the run; at worst it turns an otherwise successful run into partial_success.
+  const productCheckStage = async () => {
+    if (productCheckRan) return;
+    productCheckRan = true;
+    if (dependencies.productCheck) {
+      productCheck = await runProductCheckStage(
+        dependencies.productCheck,
+        { runId: claim.runId, leaseToken: claim.leaseToken },
+        startedAt,
+        now,
+      );
+    }
+  };
+
+  const finish = async (
+    finalStatus: FinalStatus,
+    finalErrorStep: AutomationRunResult['errorStep'],
+    finalErrorCode: string | null,
+  ): Promise<AutomationRunResult> => {
+    await productCheckStage();
+    let status = finalStatus;
+    let errorStep = finalErrorStep;
+    let code = finalErrorCode;
+    if (status === 'success' && productCheck?.status === 'failed') {
+      status = 'partial_success';
+      errorStep = 'product_check';
+      code = productCheck.errorCode;
+    }
+    await dependencies.store.completeRun({
+      runId: claim.runId,
+      leaseToken: claim.leaseToken,
+      status,
+      push,
+      errorStep,
+      errorCode: code,
+    });
+    return {
+      ...base,
+      status,
+      ingestion,
+      matching,
+      push,
+      productCheck,
+      errorStep,
+      errorCode: code,
+    };
+  };
 
   try {
     ingestion = await dependencies.ingest({
@@ -145,24 +286,7 @@ export async function runRecallAutomation(
       summary: ingestion,
     });
   } catch (error) {
-    const code = errorCode(error);
-    await dependencies.store.completeRun({
-      runId: claim.runId,
-      leaseToken: claim.leaseToken,
-      status: 'failed',
-      push: null,
-      errorStep: ingestionStep,
-      errorCode: code,
-    });
-    return {
-      ...base,
-      status: 'failed',
-      ingestion,
-      matching: null,
-      push: null,
-      errorStep: ingestionStep,
-      errorCode: code,
-    };
+    return finish('failed', ingestionStep, errorCode(error));
   }
 
   let pendingRecallIds: readonly string[];
@@ -173,24 +297,7 @@ export async function runRecallAutomation(
       limit: claim.maxRecalls,
     });
   } catch (error) {
-    const code = errorCode(error);
-    await dependencies.store.completeRun({
-      runId: claim.runId,
-      leaseToken: claim.leaseToken,
-      status: 'partial_success',
-      push: null,
-      errorStep: 'persistence',
-      errorCode: code,
-    });
-    return {
-      ...base,
-      status: 'partial_success',
-      ingestion,
-      matching: null,
-      push: null,
-      errorStep: 'persistence',
-      errorCode: code,
-    };
+    return finish('partial_success', 'persistence', errorCode(error));
   }
 
   if (pendingRecallIds.length) {
@@ -210,107 +317,26 @@ export async function runRecallAutomation(
         summary: matching,
       });
       if (unresolved.length > 0) {
-        const code = matchingErrorCode(matching, unresolved);
-        await dependencies.store.completeRun({
-          runId: claim.runId,
-          leaseToken: claim.leaseToken,
-          status: 'partial_success',
-          push: null,
-          errorStep: 'matching',
-          errorCode: code,
-        });
-        return {
-          ...base,
-          status: 'partial_success',
-          ingestion,
-          matching,
-          push: null,
-          errorStep: 'matching',
-          errorCode: code,
-        };
+        return finish('partial_success', 'matching', matchingErrorCode(matching, unresolved));
       }
     } catch (error) {
-      const code = errorCode(error);
-      await dependencies.store.completeRun({
-        runId: claim.runId,
-        leaseToken: claim.leaseToken,
-        status: 'partial_success',
-        push: null,
-        errorStep: 'matching',
-        errorCode: code,
-      });
-      return {
-        ...base,
-        status: 'partial_success',
-        ingestion,
-        matching,
-        push: null,
-        errorStep: 'matching',
-        errorCode: code,
-      };
+      return finish('partial_success', 'matching', errorCode(error));
     }
   }
 
   if (hasSourceFailure) {
-    await dependencies.store.completeRun({
-      runId: claim.runId,
-      leaseToken: claim.leaseToken,
-      status: 'partial_success',
-      push: null,
-      errorStep: 'ingestion',
-      errorCode: 'source_partial_failure',
-    });
-    return {
-      ...base,
-      status: 'partial_success',
-      ingestion,
-      matching,
-      push: null,
-      errorStep: 'ingestion',
-      errorCode: 'source_partial_failure',
-    };
+    return finish('partial_success', 'ingestion', 'source_partial_failure');
   }
+
+  await productCheckStage();
 
   if (claim.pushEnabled && dependencies.pushDeliveryGateEnabled) {
     try {
       push = await dependencies.push({ batchSize: claim.notificationBatchSize });
     } catch (error) {
-      const code = errorCode(error);
-      await dependencies.store.completeRun({
-        runId: claim.runId,
-        leaseToken: claim.leaseToken,
-        status: 'partial_success',
-        push: null,
-        errorStep: 'push',
-        errorCode: code,
-      });
-      return {
-        ...base,
-        status: 'partial_success',
-        ingestion,
-        matching,
-        push: null,
-        errorStep: 'push',
-        errorCode: code,
-      };
+      return finish('partial_success', 'push', errorCode(error));
     }
   }
 
-  await dependencies.store.completeRun({
-    runId: claim.runId,
-    leaseToken: claim.leaseToken,
-    status: 'success',
-    push,
-    errorStep: null,
-    errorCode: null,
-  });
-  return {
-    ...base,
-    status: 'success',
-    ingestion,
-    matching,
-    push,
-    errorStep: null,
-    errorCode: null,
-  };
+  return finish('success', null, null);
 }

@@ -82,6 +82,49 @@ export type PushSummary = {
   transientFailures: number;
 };
 
+/** Aggregate counters returned by process-owned-product-checks (Phase 17.7a-1). */
+export type ProductCheckWorkerSummary = {
+  claimed: number;
+  completed: number;
+  continued: number;
+  retrying: number;
+  exhausted: number;
+  rearmed: number;
+  staleLeases: number;
+  confirmed: number;
+  rejected: number;
+  possibleMatches: number;
+  alertsCreated: number;
+  aiCalls: number;
+};
+
+/**
+ * Phase 17.7a-2 product-check stage. Aggregate counters only: never a product,
+ * user or recall identifier.
+ *   disabled  - flag false: no worker call, no claim, no job change
+ *   deferred  - enabled but the run is past its start budget; jobs stay due
+ *   completed - the worker answered with a valid summary
+ *   failed    - plan read, worker call or worker response failed (fail closed)
+ */
+export type ProductCheckStageResult = {
+  status: 'disabled' | 'deferred' | 'completed' | 'failed';
+  /** null when the flag itself could not be read. */
+  enabled: boolean | null;
+  attempted: boolean;
+  maxProducts: number;
+  claimed: number;
+  completed: number;
+  continued: number;
+  rearmed: number;
+  staleLeases: number;
+  possibleMatches: number;
+  confirmedAlerts: number;
+  retrying: number;
+  failed: number;
+  durationMs: number;
+  errorCode: string | null;
+};
+
 export type AutomationRunResult = {
   status: 'success' | 'partial_success' | 'failed' | 'skipped_disabled' | 'skipped_already_running';
   runId: string;
@@ -89,7 +132,9 @@ export type AutomationRunResult = {
   ingestion: IngestionSummary | null;
   matching: MatchingSummary | null;
   push: PushSummary | null;
-  errorStep: 'ingestion' | 'matching' | 'push' | 'persistence' | null;
+  /** null when the run was not claimed or no product-check stage is wired. */
+  productCheck: ProductCheckStageResult | null;
+  errorStep: 'ingestion' | 'matching' | 'product_check' | 'push' | 'persistence' | null;
   errorCode: string | null;
 };
 
@@ -137,4 +182,13 @@ export type AutomationDependencies = {
   }): Promise<MatchingSummary>;
   push(input: { batchSize: number }): Promise<PushSummary>;
   pushDeliveryGateEnabled: boolean;
+  /**
+   * Phase 17.7a-2. Absent: no stage at all (pre-17.7a-2 behaviour). Present: the
+   * flag is read under the run lease and the worker is called only when it is true.
+   */
+  productCheck?: {
+    readPlan(input: { runId: string; leaseToken: string }): Promise<{ enabled: boolean }>;
+    runWorker(input: { maxProducts: number }): Promise<ProductCheckWorkerSummary>;
+  };
+  now?: () => number;
 };
