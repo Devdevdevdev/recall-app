@@ -253,7 +253,7 @@ Priorité :
 
 - **F-4 (bloquant).** Le pipeline v1 recall → produits confirme encore sur des GTIN
   recall-level, sans conditions ni juridiction
-  ([fiche](findings/f-4-v1-recall-level-gtin-confirmation.md)).
+  ([fiche](findings/f-4-v1-unsafe-auto-confirmation.md)).
   - `docs/phase-17-7a-1-release-gate.json` déclare `productionReady: false` avec F-4 `open`.
   - `tests/phase-17-7a-1-release-gate.test.mjs` échoue si la phase est déclarée prête tant que
     F-4 n'est pas `resolved` ou `neutralized` avec une décision écrite.

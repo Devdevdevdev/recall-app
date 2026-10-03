@@ -5,10 +5,16 @@
   "blockers": [
     {
       "id": "F-4",
-      "status": "open",
-      "title": "v1 recall->products confirms recall-level GTIN scopes without structured conditions or jurisdiction",
-      "document": "docs/findings/f-4-v1-recall-level-gtin-confirmation.md",
-      "decision": null
+      "status": "fixed_locally_pending_review",
+      "title": "v1 and hybrid confirmations could create automatic alerts without a proven complete official scope or a compatible jurisdiction",
+      "document": "docs/findings/f-4-v1-unsafe-auto-confirmation.md",
+      "decision": null,
+      "localFix": {
+        "migration": "supabase/migrations/20261002180000_phase_17_7a_f4_automatic_alert_safety.sql",
+        "report": "docs/phase-17-7a-f4-safety-fix.md",
+        "committed": false,
+        "installedInProduction": false
+      }
     }
   ],
   "tracked": [
@@ -18,5 +24,9 @@
       "document": "docs/findings/f-1-ai-budget-fingerprint-freeze.md",
       "blocksThisPhase": false
     }
+  ],
+  "installOrder": [
+    "F-4 migration and process-recall-matches update installed and verified in production",
+    "then Phase 17.7a-1"
   ]
 }
