@@ -16,7 +16,7 @@ const gate = JSON.parse(
   await readFile(new URL('docs/phase-17-7a-1-release-gate.json', root), 'utf8'),
 );
 const CLOSED = new Set(['resolved', 'neutralized']);
-const F4_MIGRATION = 'supabase/migrations/20261002180000_phase_17_7a_f4_automatic_alert_safety.sql';
+const F4_MIGRATION = 'supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql';
 const P17_MIGRATION =
   'supabase/migrations/20261002120000_phase_17_7a_1_owned_product_recall_checks.sql';
 const F4_ARTIFACTS = [
@@ -68,7 +68,7 @@ async function derivedState() {
     f4Installed: await installed(
       'releases/phase-17-7a-f4/post-install-verification.json',
       F4_MIGRATION,
-      '20261002180000',
+      '20261002110000',
     ),
     productCheckInstalled: await installed(
       'releases/phase-17-7a-1/post-install-verification.json',

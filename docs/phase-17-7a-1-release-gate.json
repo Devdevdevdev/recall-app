@@ -10,7 +10,7 @@
       "document": "docs/findings/f-4-v1-unsafe-auto-confirmation.md",
       "decision": null,
       "localFix": {
-        "migration": "supabase/migrations/20261002180000_phase_17_7a_f4_automatic_alert_safety.sql",
+        "migration": "supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql",
         "report": "docs/phase-17-7a-f4-safety-fix.md",
         "committed": false,
         "installedInProduction": false

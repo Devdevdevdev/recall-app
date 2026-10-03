@@ -163,7 +163,7 @@ test('an older database without the F-4 result columns keeps the previous counti
 test('the migration keeps the policy switch, the v1 fingerprint and the allowlist untouched', async () => {
   const migration = await readFile(
     new URL(
-      '../supabase/migrations/20261002180000_phase_17_7a_f4_automatic_alert_safety.sql',
+      '../supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql',
       import.meta.url,
     ),
     'utf8',
@@ -301,7 +301,7 @@ test('no runtime code can override, skip, or force the automatic-alert proof', a
       definitions.push(file.pathname.split('/').at(-1));
     }
   }
-  assert.deepEqual(definitions, ['20261002180000_phase_17_7a_f4_automatic_alert_safety.sql']);
+  assert.deepEqual(definitions, ['20261002110000_phase_17_7a_f4_automatic_alert_safety.sql']);
 });
 
 test('test seams exist only in local pgTAP suites, never in the remote production suite', async () => {
@@ -338,7 +338,7 @@ test('test seams exist only in local pgTAP suites, never in the remote productio
 test('the migration never deletes an alert and never runs the neutralization', async () => {
   const migration = await readFile(
     new URL(
-      '../supabase/migrations/20261002180000_phase_17_7a_f4_automatic_alert_safety.sql',
+      '../supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql',
       import.meta.url,
     ),
     'utf8',

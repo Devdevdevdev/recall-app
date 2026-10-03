@@ -116,7 +116,7 @@ retenir une alerte, jamais l'élargir. Un test vérifie ce sous-ensemble.
 ## 4. Implémentation
 
 **Migration locale additive :**
-`supabase/migrations/20261002180000_phase_17_7a_f4_automatic_alert_safety.sql`.
+`supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql`.
 
 - **Fonctions privées**, inaccessibles à anon, authenticated et service_role :
   `automatic_alert_identifier`, `automatic_alert_jurisdiction` et `automatic_alert_eligibility`.
