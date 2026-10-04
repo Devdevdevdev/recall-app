@@ -5,6 +5,7 @@ import {
   normalizeIdentifier,
   productNameOverlap,
 } from './normalization.ts';
+import { gtinsEquivalent } from './gtin.ts';
 import type {
   CandidateSignal,
   OfficialRecallEvidence,
@@ -74,10 +75,8 @@ export function retrieveRecallCandidates(
       if (
         ownedGtin &&
         isValidGtin(ownedGtin) &&
-        recall.scopes.some((scope) => {
-          const official = normalizeGtin(scope.gtin);
-          return official === ownedGtin && isValidGtin(official);
-        })
+        // Phase 17.3-S: same canonical GTIN-14 is the same identifier (exact or equivalent).
+        recall.scopes.some((scope) => gtinsEquivalent(ownedGtin, scope.gtin))
       ) {
         signals.push({ kind: 'exact_gtin', score: 1, detail: 'Exact valid GTIN candidate.' });
       }

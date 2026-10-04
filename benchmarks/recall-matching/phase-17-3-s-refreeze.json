@@ -1,0 +1,69 @@
+{
+  "phase": "17.3-S",
+  "kind": "documented re-freeze (user-authorized, limited to 17.3-S)",
+  "date": "2026-10-04",
+  "reason": "Canonical GTIN-14 equivalence: the GTIN comparisons in evidence.ts (v1), criterionEvaluatorV2.ts (v2), nemotronSafetyVerifier.ts (guarded AI verifier) and candidateRetrieval.ts now treat equal canonical GTIN-14 as the same identifier (supabase/functions/_shared/matching/gtin.ts). No other behaviour changes.",
+  "scope": "Only the source hashes below change. Datasets, historical results, reports, policy fingerprints and policy versions are unchanged; the Phase 15 historical reports keep recording the pre-17.3-S hashes as the provenance of their runs.",
+  "unchanged": {
+    "supabase/functions/_shared/matching/normalization.ts": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02"
+  },
+  "entries": [
+    {
+      "manifest": "benchmarks/recall-matching/phase-9-1/holdout-manifest.json",
+      "section": "frozenPolicyFiles",
+      "path": "supabase/functions/_shared/matching/nemotronSafetyVerifier.ts",
+      "before": "0db1dff8ddd7b15aa55e20e0e0146c0eab4ea3b8bfb9692d05d4e8be6b852af3",
+      "after": "b63f863a34db609bbc86228b3488be0d59b9ce55f4aa43d386ef6a4a2e009538"
+    },
+    {
+      "manifest": "benchmarks/recall-matching/phase-9-1/holdout-manifest.json",
+      "section": "frozenPolicyFiles",
+      "path": "supabase/functions/_shared/matching/evidence.ts",
+      "before": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+      "after": "311284dc89b760d7ee43338197e956b897276636b43956807c99b74090592020"
+    },
+    {
+      "manifest": "benchmarks/recall-matching/phase-15/freeze-manifest.json",
+      "section": "promptPolicyArtifacts",
+      "path": "supabase/functions/_shared/matching/evidence.ts",
+      "before": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+      "after": "311284dc89b760d7ee43338197e956b897276636b43956807c99b74090592020"
+    },
+    {
+      "manifest": "benchmarks/recall-matching/phase-15/freeze-manifest.json",
+      "section": "historicalArtifacts",
+      "path": "benchmarks/recall-matching/phase-9-1/holdout-manifest.json",
+      "before": "0c7d860a96dff9e506750eac34cc13f99837326b2759088bbbba7a64416ee27e",
+      "after": "5cb574524f06032fdf1820983f92973396cb2967202f90589043450f570b4c78"
+    },
+    {
+      "manifest": "benchmarks/recall-matching/phase-16/freeze-manifest.json",
+      "section": "implementationArtifacts",
+      "path": "supabase/functions/_shared/matching/criterionEvaluatorV2.ts",
+      "before": "32c6110d66a60b48e48ba2275532ce395bf114a328d9a6cec7689b4eef5e450d",
+      "after": "e0265430774a7f2eefe4eb77c90794ba5ad3a5e6b0f8cd5ea7837bdbcfaab97e"
+    }
+  ],
+  "testPins": {
+    "tests/phase-17-7a-1-product-check.test.mjs": [
+      "supabase/functions/_shared/matching/candidateRetrieval.ts",
+      "supabase/functions/_shared/matching/criterionEvaluatorV2.ts",
+      "supabase/functions/_shared/matching/evidence.ts"
+    ]
+  },
+  "behaviourProof": {
+    "method": "Deterministic benchmarks re-run in two isolated copies (git archive HEAD vs HEAD + 17.3-S) and compared with the committed results; only generatedAt, sourceGitCommit and latency fields may differ.",
+    "identical": [
+      "benchmarks/recall-matching/run.mjs (Phase 8 deterministic report)",
+      "benchmarks/recall-matching/phase-9-1/results/deterministic-holdout-v1.json",
+      "benchmarks/recall-matching/phase-15/results/deterministic-v1-all.json",
+      "benchmarks/recall-matching/phase-15/results/deterministic-v1-development.json",
+      "benchmarks/recall-matching/phase-15/results/deterministic-v1-holdout.json",
+      "benchmarks/recall-matching/phase-15/results/deterministic-v1-stress.json",
+      "benchmarks/recall-matching/phase-16/results/deterministic-v2-all.json",
+      "benchmarks/recall-matching/phase-16/results/decision-delta-v1-to-v2.json",
+      "benchmarks/recall-matching/phase-16/results/deterministic-association-selector-v2-1-probe.json"
+    ],
+    "equivalentGtinPairsInFrozenDatasets": 0
+  }
+}

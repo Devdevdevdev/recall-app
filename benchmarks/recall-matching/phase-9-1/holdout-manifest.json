@@ -25,9 +25,9 @@
     "supabase/functions/_shared/matching/guardedNemotronMatcher.ts": "7a1aa58c988d97bd8aa1c86017d7a5d0688abc217848d9ee4bee13b20939b7c0",
     "supabase/functions/_shared/matching/guardedNemotronPrompt.ts": "f7e4e4a6b5beeadfeb55dfebd305bb12d0485ef679e5e469556e0d63f8d69168",
     "supabase/functions/_shared/matching/guardedNemotronSchema.ts": "aeddcd44749a15f94e738146ae1e22ec7bd1802b264f9753cd31d86fa6fa7ae3",
-    "supabase/functions/_shared/matching/nemotronSafetyVerifier.ts": "0db1dff8ddd7b15aa55e20e0e0146c0eab4ea3b8bfb9692d05d4e8be6b852af3",
+    "supabase/functions/_shared/matching/nemotronSafetyVerifier.ts": "b63f863a34db609bbc86228b3488be0d59b9ce55f4aa43d386ef6a4a2e009538",
     "supabase/functions/_shared/matching/deterministicMatcher.ts": "1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb",
-    "supabase/functions/_shared/matching/evidence.ts": "89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f",
+    "supabase/functions/_shared/matching/evidence.ts": "311284dc89b760d7ee43338197e956b897276636b43956807c99b74090592020",
     "supabase/functions/_shared/matching/normalization.ts": "e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02"
   },
   "model": "nvidia/nemotron-3-super-120b-a12b",

@@ -665,13 +665,16 @@ test('the product-check path imports no AI provider and no v1 matcher or orchest
 // Phase 17.7a-2 deliberately changed the automation orchestrator, index and children
 // (product-check stage, disabled by default); their digests are the 17.7a-2 versions,
 // and tests/phase-17-7a-2-automation.test.mjs pins the production baseline they diverge from.
+// Phase 17.3-S deliberately changed the GTIN comparison in matching/{candidateRetrieval,
+// criterionEvaluatorV2,evidence}.ts (canonical GTIN-14 equivalence, matching/gtin.ts); their
+// digests are the 17.3-S versions (see benchmarks/recall-matching/phase-17-3-s-refreeze.json).
 const FROZEN = {
   'supabase/functions/_shared/matching/aggregation.ts':
     '6a73899f6f07553499ca862855c508258be143b63e5e150b8fb6181c214a4b63',
   'supabase/functions/_shared/matching/candidateRetrieval.ts':
-    '37a23a8da45927ab0a51ac73069343ea29b1e5e68acbbfb89a81dd61279e108e',
+    'fca8cc313f8b2313105459270c99feedc8b9dce6de42ccfd39b95e67559201c5',
   'supabase/functions/_shared/matching/criterionEvaluatorV2.ts':
-    '32c6110d66a60b48e48ba2275532ce395bf114a328d9a6cec7689b4eef5e450d',
+    'e0265430774a7f2eefe4eb77c90794ba5ad3a5e6b0f8cd5ea7837bdbcfaab97e',
   'supabase/functions/_shared/matching/deterministicMatcher.ts':
     '1ae93803147fb7bb8ee652e874c0b012c9681ffc05503b5a06a3b66ec955e6bb',
   'supabase/functions/_shared/matching/deterministicMatcherV2.ts':
@@ -679,7 +682,7 @@ const FROZEN = {
   'supabase/functions/_shared/matching/deterministicRuleSetsV2.ts':
     '6714524a94f43646ba3132895e261df68608774528c8d56f551af33698fd1f2a',
   'supabase/functions/_shared/matching/evidence.ts':
-    '89989ca2a665044e5f3ca457d41572ed0f1c129d5e7063a66de4db63fba7219f',
+    '311284dc89b760d7ee43338197e956b897276636b43956807c99b74090592020',
   'supabase/functions/_shared/matching/normalization.ts':
     'e4824410dae250efe254423a9413880dae5583e854697deca3e4f364c08b5c02',
   'supabase/functions/_shared/recallMatching/fingerprint.ts':

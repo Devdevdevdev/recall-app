@@ -5,6 +5,7 @@ import {
   normalizeIdentifier,
   productNameOverlap,
 } from './normalization.ts';
+import { gtinsEquivalent } from './gtin.ts';
 import type {
   IdentifierEvidence,
   IdentifierKind,
@@ -154,7 +155,8 @@ export function evaluateRecallScope(
   const officialGtin = normalizeGtin(scope.gtin);
   if (owned.gtin && scope.gtin) {
     if (ownedGtin && officialGtin && isValidGtin(ownedGtin) && isValidGtin(officialGtin)) {
-      if (ownedGtin === officialGtin) {
+      // Phase 17.3-S: equal canonical GTIN-14 is the same identifier (raw values are kept).
+      if (gtinsEquivalent(ownedGtin, officialGtin)) {
         addIdentifier(matched, 'gtin', ownedGtin);
         items.push(
           evidence(scopeIndex, {
@@ -163,7 +165,10 @@ export function evaluateRecallScope(
             strength: 'strong',
             ownedValue: ownedGtin,
             officialValue: officialGtin,
-            detail: 'Exact valid GTIN match in an authoritative recall scope.',
+            detail:
+              ownedGtin === officialGtin
+                ? 'Exact valid GTIN match in an authoritative recall scope.'
+                : 'Equivalent valid GTIN (same canonical GTIN-14) in an authoritative recall scope.',
           }),
         );
       } else {

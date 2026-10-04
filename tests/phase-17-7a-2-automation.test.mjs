@@ -645,7 +645,21 @@ test('L. no new cron: neither the migration nor the automation schedules anythin
 
 test('migration: one additive, read-only, lease-bound, service_role-only function', async () => {
   const migrations = (await readdir(new URL('supabase/migrations/', root))).sort();
-  assert.equal(migrations.at(-1), MIGRATION.split('/').at(-1));
+  // Only reviewed later phases may follow 17.7a-2, each bound to its reviewed bytes
+  // (Phase 17.3-S: canonical GTIN equivalence). Anything else after 17.7a-2 fails.
+  const LATER_PHASES = {
+    '20261004090000_phase_17_3_s_canonical_gtin_equivalence.sql':
+      'd58d8438dcf2e0358bc62fd66d067bf05e32f92c86085acd2786bced3c4407e0',
+  };
+  assert.ok(migrations.includes(MIGRATION.split('/').at(-1)));
+  assert.deepEqual(
+    migrations.slice(migrations.indexOf(MIGRATION.split('/').at(-1)) + 1),
+    Object.keys(LATER_PHASES),
+  );
+  for (const [file, digest] of Object.entries(LATER_PHASES)) {
+    const bytes = await readFile(new URL(`supabase/migrations/${file}`, root));
+    assert.equal(createHash('sha256').update(bytes).digest('hex'), digest, file);
+  }
   assert.ok(
     migrations.indexOf(MIGRATION.split('/').at(-1)) >
       migrations.indexOf('20261002120000_phase_17_7a_1_owned_product_recall_checks.sql'),

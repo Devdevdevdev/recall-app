@@ -5,6 +5,7 @@ import {
   normalizeIdentifier,
   productNameOverlap,
 } from './normalization.ts';
+import { gtinsEquivalent } from './gtin.ts';
 import {
   ownedFieldForCriterion,
   type GuardedEvidenceClaim,
@@ -106,7 +107,10 @@ function compareExact(
   if (criterion === 'gtin') {
     const left = normalizeGtin(owned);
     const right = normalizeGtin(official);
-    return Boolean(left && right && isValidGtin(left) && isValidGtin(right) && left === right);
+    // Phase 17.3-S: same canonical GTIN-14 is the same identifier.
+    return Boolean(
+      left && right && isValidGtin(left) && isValidGtin(right) && gtinsEquivalent(left, right),
+    );
   }
   return normalizeIdentifier(owned) === normalizeIdentifier(official);
 }

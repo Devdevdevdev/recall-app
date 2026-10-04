@@ -1,4 +1,5 @@
 import { isValidGtin, normalizeGtin, normalizeIdentifier } from './normalization.ts';
+import { gtinsEquivalent } from './gtin.ts';
 import type {
   CriterionEvaluation,
   OfficialRecallScopeEvidenceV2,
@@ -48,6 +49,11 @@ function normalize(kind: RecallCriterionKind, value: string | null | undefined):
   return normalizeIdentifier(value);
 }
 
+/** Phase 17.3-S: two valid GTINs with the same canonical GTIN-14 are the same identifier. */
+function sameValue(kind: RecallCriterionKind, actual: string, expected: string): boolean {
+  return actual === expected || (kind === 'gtin' && gtinsEquivalent(actual, expected));
+}
+
 function compareFixedWidthRange(
   actual: string,
   fromValue: string,
@@ -65,11 +71,13 @@ function compare(criterion: RecallCriterion, rawOwned: string): boolean | null {
   if (criterion.kind === 'gtin' && !isValidGtin(actual)) return null;
   if (criterion.operator === 'equals') {
     const expected = normalize(criterion.kind, criterion.value);
-    return expected ? actual === expected : null;
+    return expected ? sameValue(criterion.kind, actual, expected) : null;
   }
   if (criterion.operator === 'one_of') {
     const expected = criterion.values?.map((value) => normalize(criterion.kind, value));
-    return expected?.length && expected.every(Boolean) ? expected.includes(actual) : null;
+    return expected?.length && expected.every(Boolean)
+      ? expected.some((value) => sameValue(criterion.kind, actual, value as string))
+      : null;
   }
   if (criterion.operator === 'prefix') {
     const expected = criterion.values?.length

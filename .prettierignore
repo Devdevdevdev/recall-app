@@ -14,3 +14,5 @@ releases/
 tests/fixtures/cpsc-pages/*.html
 # Local, user-specific Claude Code settings (globally git-ignored)
 .claude/settings.local.json
+# Shared TS/SQL GTIN vectors: explicit \u escapes for invisible characters must stay escaped.
+tests/fixtures/phase-17-3-s-gtin-vectors.json
