@@ -1,5 +1,12 @@
 # Phase 17.7a-1 — Vérification immédiate d'un nouveau produit (implémentation locale)
 
+> **Mise à jour du 2026-10-04 : installé, vérifié et activé en production.** Le blocage F-4 est
+> levé (F-4 résolu le 2026-10-03), et `product_check_enabled = true` depuis le 2026-10-04 à
+> 17:31:02 UTC. Voir
+> [phase-17-7a-production-verification.md](phase-17-7a-production-verification.md) et la fiche
+> non bloquante [F-5](findings/f-5-immediate-check-continuation.md). Le statut ci-dessous décrit
+> la passe locale d'origine.
+
 **Statut :** implémenté et vérifié **localement uniquement**. **Pas prêt pour la production :**
 la phase est bloquée par F-4 (voir §10).
 

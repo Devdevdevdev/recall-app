@@ -1,12 +1,18 @@
 {
   "phase": "17.7a-1",
-  "productionReadyMeaning": "Phase 17.7a-1 is installed and verified in production (derived: F-4 committed, installed, verified and resolved, AND a 17.7a-1 post-install verification record exists)",
-  "productionReady": false,
+  "productionReadyMeaning": "Phase 17.7a-1 is installed and verified in production (derived: F-4 committed, installed, verified and resolved, AND a 17.7a-1 post-install verification record that pins the migration bytes and proves the worker path (T2) and the immediate user path (T3))",
+  "productionReady": true,
   "productCheckEnabledByDefault": false,
   "productCheck": {
     "migration": "supabase/migrations/20261002120000_phase_17_7a_1_owned_product_recall_checks.sql",
     "verification": "releases/phase-17-7a-1/post-install-verification.json",
-    "installedInProduction": false
+    "installedInProduction": true,
+    "activation": {
+      "note": "Migration default stays false; the flag was turned on operationally by a separate, single-row GO.",
+      "productCheckEnabledInProduction": true,
+      "activatedAt": "2026-10-04T17:31:02Z",
+      "maxProductCheckCandidates": 25
+    }
   },
   "blockers": [
     {
@@ -29,6 +35,12 @@
       "id": "F-1",
       "status": "open",
       "document": "docs/findings/f-1-ai-budget-fingerprint-freeze.md",
+      "blocksThisPhase": false
+    },
+    {
+      "id": "F-5",
+      "status": "open",
+      "document": "docs/findings/f-5-immediate-check-continuation.md",
       "blocksThisPhase": false
     }
   ],

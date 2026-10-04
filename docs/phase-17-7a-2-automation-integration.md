@@ -1,5 +1,10 @@
 # Phase 17.7a-2 — Intégration des vérifications produit dans l'automation (implémentation locale)
 
+> **Mise à jour du 2026-10-04 : installé et vérifié en production.** `run-recall-automation` est
+> en v15 (arbre `96875b00…`, construit depuis les octets exacts de la v14). Voir
+> [phase-17-7a-production-verification.md](phase-17-7a-production-verification.md). Le statut
+> ci-dessous décrit la passe locale d'origine.
+
 **Statut :** implémenté et vérifié **localement uniquement**. **Pas prêt pour la production.**
 
 **Ce qui n'a pas été fait :** aucune écriture production, aucune migration distante, aucun
@@ -355,7 +360,8 @@ Chaque étape demande un GO explicite. **Aucune activation implicite.**
    sans nouveau secret (`RECALL_MATCHING_KEY` existe déjà). Avec le flag `false`, ils répondent
    `disabled` / 0 claim. `GO 17.7a-1-EDGE`.
 5. **Deploy de l'automation 17.7a-2 depuis l'arbre minimal :**
-   - relire le bundle (`get_edge_function`) et confirmer la v14 `37a79b95…` ;
+   - relire le bundle en sources d'origine (`get_edge_function`, ou `functions download --use-api`,
+     jamais le download Docker transpilé) et confirmer la v14 `37a79b95…` ;
    - `node scripts/stage-17-7a-2-automation-bundle.mjs <deployed-v14.json> "$SCR/a2-stage" <commit>`
      doit afficher `96875b00…` ;
    - `npx supabase functions deploy run-recall-automation --no-verify-jwt --workdir "$SCR/a2-stage"`.

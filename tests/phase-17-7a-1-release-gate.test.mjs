@@ -3,6 +3,8 @@
 //   - the F-4 fix is committed (git: tracked and identical to HEAD);
 //   - a post-install verification record exists for F-4 and for 17.7a-1, and the
 //     migration SHA-256 it records equals the migration file in this repository;
+//   - the 17.7a-1 record also pins the 17.7a-2 migration and the deployed Edge trees,
+//     and proves the worker path (T2) and the immediate user path (T3);
 //   - the F-4 blocker is closed by a recorded decision ("resolved" also requires an
 //     empty neutralization inventory in the F-4 record).
 // Editing docs/phase-17-7a-1-release-gate.json can never, by itself, pass the gate.
@@ -18,6 +20,8 @@ const gate = JSON.parse(
 );
 const CLOSED = new Set(['resolved', 'neutralized']);
 const F4_MIGRATION = 'supabase/migrations/20261002110000_phase_17_7a_f4_automatic_alert_safety.sql';
+const P17_2_MIGRATION =
+  'supabase/migrations/20261003090000_phase_17_7a_2_automation_product_check_plan.sql';
 const P17_MIGRATION =
   'supabase/migrations/20261002120000_phase_17_7a_1_owned_product_recall_checks.sql';
 const F4_ARTIFACTS = [
@@ -93,6 +97,40 @@ function f4Verified(record) {
   );
 }
 
+/**
+ * 17.7a-1 is verified when its record also pins the 17.7a-2 migration bytes, the three
+ * deployed Edge trees, and proves the worker path (T2) and the immediate user path (T3)
+ * without AI, alerts or unsafe confirmations.
+ */
+async function productCheckVerified(record) {
+  if (!record) return false;
+  const plan = record.automationPlanMigration;
+  const edge = record.edgeFunctions ?? {};
+  const t2 = record.t2WorkerPath;
+  const t3 = record.t3ImmediatePath;
+  const safety = record.safety;
+  return Boolean(
+    plan?.migration === P17_2_MIGRATION.split('/').at(-1) &&
+    plan.migrationContentSha256 === (await sha256(P17_2_MIGRATION)) &&
+    ['check-owned-product', 'process-owned-product-checks', 'run-recall-automation'].every(
+      (name) => SHA256.test(edge[name]?.runtimeTreeSha256 ?? '') && edge[name]?.verifyJwt === false,
+    ) &&
+    record.pgtapInstalledAfter === 0 &&
+    record.idleInTransactionAfter === 0 &&
+    t2?.passed === true &&
+    t2.aiCalls === 0 &&
+    t2.workerHttpStatus === 200 &&
+    t2.completedRevision === 1 &&
+    t3?.passed === true &&
+    t3.aiCalls === 0 &&
+    t3.claimSource === 'user' &&
+    t3.completedRevision === 1 &&
+    safety?.alerts === 0 &&
+    safety.unsafeConfirmations === 0 &&
+    typeof record.firstRealCandidateInvocationObserved === 'boolean',
+  );
+}
+
 async function derivedState() {
   const f4 = gate.blockers.find((item) => item.id === 'F-4');
   const f4Record = await readRecord(
@@ -110,6 +148,7 @@ async function derivedState() {
     f4Installed: f4Record !== null,
     f4Verified: f4Verified(f4Record),
     productCheckInstalled: productCheckRecord !== null,
+    productCheckVerified: await productCheckVerified(productCheckRecord),
     f4Closed: Boolean(
       f4 &&
       CLOSED.has(f4.status) &&
@@ -123,6 +162,7 @@ async function derivedState() {
     state.f4Installed &&
     state.f4Verified &&
     state.productCheckInstalled &&
+    state.productCheckVerified &&
     state.f4Closed;
   return state;
 }
@@ -159,7 +199,7 @@ test('the gate JSON never claims more than the artifacts prove', async () => {
   }
 });
 
-test('current state: F-4 installed, verified and resolved; 17.7a-1 not installed', async () => {
+test('current state: F-4 resolved; 17.7a-1 + 17.7a-2 installed and verified (T2, T3)', async () => {
   const state = await derivedState();
   const f4 = gate.blockers.find((item) => item.id === 'F-4');
   assert.equal(state.f4Committed, true, 'F-4 artifacts must be committed');
@@ -168,10 +208,33 @@ test('current state: F-4 installed, verified and resolved; 17.7a-1 not installed
   assert.equal(f4.status, 'resolved');
   assert.equal(state.f4Closed, true);
   assert.equal(f4.localFix.installedInProduction, true);
-  assert.equal(state.productCheckInstalled, false, '17.7a-1 is not installed in production');
-  assert.equal(gate.productCheck.installedInProduction, false);
-  assert.equal(state.productionReady, false);
-  assert.equal(gate.productionReady, false);
+  assert.equal(state.productCheckInstalled, true, '17.7a-1 post-install record missing');
+  assert.equal(state.productCheckVerified, true, '17.7a-1 record does not prove T2 and T3');
+  assert.equal(gate.productCheck.installedInProduction, true);
+  assert.equal(state.productionReady, true);
+  assert.equal(gate.productionReady, true);
+});
+
+test('activation is recorded as an operational GO, never as a migration default', async () => {
+  const record = JSON.parse(
+    await readFile(new URL('releases/phase-17-7a-1/post-install-verification.json', root), 'utf8'),
+  );
+  assert.equal(gate.productCheckEnabledByDefault, false);
+  assert.equal(record.activation.productCheckEnabled, true);
+  assert.equal(record.activation.rowsAffected, 1);
+  assert.ok(Number.isFinite(Date.parse(record.activation.activatedAt)));
+  assert.equal(gate.productCheck.activation.activatedAt, record.activation.activatedAt);
+  assert.equal(record.activation.maxProductCheckCandidates, 25);
+  if (record.firstRealCandidateInvocationObserved === true) {
+    assert.ok(Number.isFinite(Date.parse(record.firstRealCandidateInvocationObservedAt)));
+  }
+});
+
+test('F-5 is tracked as a non-blocking finding with a document', async () => {
+  const f5 = gate.tracked.find((item) => item.id === 'F-5');
+  assert.ok(f5, 'F-5 must be tracked');
+  assert.equal(f5.blocksThisPhase, false);
+  await access(new URL(f5.document, root));
 });
 
 test('the F-4 record never claims a real candidate invocation without a timestamp', async () => {

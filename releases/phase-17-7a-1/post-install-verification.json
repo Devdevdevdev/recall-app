@@ -1,0 +1,100 @@
+{
+  "phase": "17.7a-1 + 17.7a-2",
+  "migration": "20261002120000_phase_17_7a_1_owned_product_recall_checks.sql",
+  "migrationVersion": "20261002120000",
+  "migrationContentSha256": "61639ab4445cf42897217ecd5b31f7b66fd88ef2f3cc63537f51c3848ec219be",
+  "migrationAppliedAt": "2026-10-03T14:20:51Z",
+  "postMigrationChecks": { "query": "audits/phase-17-7a-install/p1-post-17-7a-1.sql", "passed": 25, "total": 25 },
+  "automationPlanMigration": {
+    "migration": "20261003090000_phase_17_7a_2_automation_product_check_plan.sql",
+    "migrationVersion": "20261003090000",
+    "migrationContentSha256": "2b2a3b35b7c93ccbce928db563b7250430eea1257ac79f73abfbb11873dab890",
+    "appliedAt": "2026-10-03T14:31:28Z",
+    "postMigrationChecks": { "query": "audits/phase-17-7a-install/p2-post-17-7a-2.sql", "passed": 28, "total": 28 }
+  },
+  "migrationCount": 35,
+  "migrationHistoryMd5": "a07eb32d7999326a89ec7a9d8c0454c3",
+  "edgeFunctions": {
+    "check-owned-product": {
+      "version": 1,
+      "ezbr": "b5703800309e5e63db8280711611f70bd56fde2a0c4536ba1843af032fc3a024",
+      "runtimeTreeSha256": "b029ef383cd4717d81fa3d2ca778f9039e5a93f796adbf7195f9508fe5f99ca0",
+      "verifyJwt": false,
+      "deployedAt": "2026-10-03T14:35:31Z"
+    },
+    "process-owned-product-checks": {
+      "version": 1,
+      "ezbr": "998e5ae0590f79748f3565ff668c5f4c93f531cc8e28f0212bf51fb655d59cf9",
+      "runtimeTreeSha256": "1b02f9706eb638804b354810a4b70922db452476be63d575c742794ba2eb1a78",
+      "verifyJwt": false,
+      "deployedAt": "2026-10-03T14:38:07Z"
+    },
+    "run-recall-automation": {
+      "version": 15,
+      "ezbr": "5622e99c3a0d071ce103234d4538dddcc5c70c90d6e47cf4e2e950ac5aa34a80",
+      "runtimeTreeSha256": "96875b00ba96b3721f43c48a98e1f9912fb41196f417e111f466d44de5455e57",
+      "baselineVersion": 14,
+      "baselineRuntimeTreeSha256": "37a79b95bf01bb37d7af54d0c0337fc981c63ff2f5dd2adb74092196fafda515",
+      "verifyJwt": false,
+      "deployedAt": "2026-10-03T14:43:25Z"
+    }
+  },
+  "remoteSuite": "pass",
+  "remoteSuitePlan": 90,
+  "remoteSuiteOk": 90,
+  "remoteSuiteNotOk": 0,
+  "remoteSuiteRolledBack": true,
+  "pgtapInstalledAfter": 0,
+  "idleInTransactionAfter": 0,
+  "postRemoteSuiteResidue": { "checkedAt": "2026-10-03T16:16:20Z", "fixtureRows": 0, "businessRowsAdded": 0 },
+  "neutralizationInventory": 0,
+  "flagFalseObservations": {
+    "p4NaturalRun": { "scheduledAt": "2026-10-03T18:17:00Z", "automationHttpStatus": 200, "productCheckStatus": "disabled", "productWorkerInvoked": false },
+    "t1UserPath": { "productCreatedAt": "2026-10-04T07:37:30Z", "checkOwnedProductCalls": 8, "httpStatus": 200, "claims": 0, "taskStatus": "pending" },
+    "p5NaturalRunWithPendingTask": { "scheduledAt": "2026-10-04T12:17:00Z", "productCheckStatus": "disabled", "productWorkerInvoked": false, "taskTouched": false }
+  },
+  "activation": {
+    "productCheckEnabled": true,
+    "activatedAt": "2026-10-04T17:31:02Z",
+    "rowsAffected": 1,
+    "maxProductCheckCandidates": 25
+  },
+  "t2WorkerPath": {
+    "scheduledAt": "2026-10-04T18:17:00Z",
+    "automationProductCheckStatus": "completed",
+    "workerHttpStatus": 200,
+    "workerDurationMs": 1311,
+    "claimed": 1,
+    "completed": 1,
+    "aiCalls": 0,
+    "events": ["armed/trigger", "claimed/worker", "completed/worker"],
+    "completedRevision": 1,
+    "monitoringState": "monitored_no_known_recall",
+    "passed": true
+  },
+  "t3ImmediatePath": {
+    "productCreatedAt": "2026-10-04T18:55:25Z",
+    "firstCall": { "httpStatus": 200, "candidatesExamined": 25, "outcome": "continued" },
+    "secondCall": { "candidatesExamined": 11, "outcome": "completed", "resumedFromCursor": true },
+    "candidatesTotal": 36,
+    "claimSource": "user",
+    "aiCalls": 0,
+    "events": ["armed/trigger", "claimed/user", "continued/user", "claimed/user", "completed/user"],
+    "completedRevision": 1,
+    "monitoringState": "monitored_no_known_recall",
+    "passed": true
+  },
+  "safety": {
+    "f4GuardTriggersEnabled": 5,
+    "f4DefinitionsCompositeMd5": "627cbc06e192a973a8ea432ac8fa253c",
+    "recallMatches": 0,
+    "v2Evaluations": 0,
+    "alerts": 0,
+    "pushQueue": 0,
+    "pushDeliveries": 0,
+    "unsafeConfirmations": 0
+  },
+  "firstRealCandidateInvocationObserved": false,
+  "openFindings": [{ "id": "F-5", "blocking": false, "document": "docs/findings/f-5-immediate-check-continuation.md" }],
+  "verifiedAt": "2026-10-04T19:03:52Z"
+}

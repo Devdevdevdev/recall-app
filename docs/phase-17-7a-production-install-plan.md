@@ -1,5 +1,11 @@
 # Phase 17.7a-1 + 17.7a-2 — Plan d'installation production contrôlée
 
+> **Mise à jour du 2026-10-04 : plan exécuté.** Toutes les étapes sont passées, jusqu'à
+> l'activation (`GO 17.7A-ACTIVATE`), puis T2 et T3. Les résultats sont dans
+> [phase-17-7a-production-verification.md](phase-17-7a-production-verification.md). Le texte
+> ci-dessous est le plan **tel qu'approuvé avant exécution**. Une seule correction est apportée,
+> au §7 : la façon de relire les octets déployés (voir l'encadré).
+
 **Statut :** plan préparé. **Aucune écriture production** dans cette passe :
 
 - aucune migration, aucun deploy, aucune activation ;
@@ -355,7 +361,9 @@ appel au worker** n'est fait pour le « tester ».
 | `verify_jwt`             | `false`, comme la v14                                                                                 |
 
 ```bash
-# 1. relire la production juste avant : get_edge_function run-recall-automation -> "${SCR:?}/deployed-v14.json"
+# 1. relire la production juste avant, en SOURCES D'ORIGINE : get_edge_function, ou
+#    supabase functions download run-recall-automation --use-api (jamais le download Docker,
+#    qui renvoie du code transpilé), puis assembler "${SCR:?}/deployed-v14.json"
 node scripts/stage-17-7a-2-automation-bundle.mjs "${SCR:?}/deployed-v14.json" "${SCR:?}/edge-run-recall-automation" \
   6bab7d340ab6c42bdb6dd41fe14e929a7801b31c       # refuse si ce n'est pas 37a79b95… ; doit afficher 96875b00…
 mkdir -p "${SCR:?}/edge-run-recall-automation/supabase/.temp" && cp supabase/.temp/project-ref "${SCR:?}/edge-run-recall-automation/supabase/.temp/"
