@@ -157,17 +157,23 @@ export function ScanScreen() {
     scanLocked.current = true;
     setBarcodeState('detected');
     setTorchEnabled(false);
-    setDetectedBarcode(toScannedBarcode(format, event.raw ?? event.data, event.data));
+    // `data` is the only payload both platforms deliver; it is kept exactly as scanned.
+    setDetectedBarcode(toScannedBarcode(format, event.data));
   };
 
   const useBarcode = () => {
-    if (!detectedBarcode?.gtin) {
+    if (detectedBarcode?.classification !== 'valid_gtin') {
       return;
     }
 
+    // Only the scanned payload and its symbology travel; the form re-derives the identity.
     router.push({
       pathname: '/products/new',
-      params: { gtin: detectedBarcode.gtin, source: 'barcode_scan' },
+      params: {
+        barcodeRawValue: detectedBarcode.rawValue,
+        barcodeSymbology: detectedBarcode.format,
+        source: 'barcode_scan',
+      },
     });
   };
 
@@ -525,7 +531,7 @@ function ConfirmationCard({
       </Text>
       <Text style={styles.format}>{label}</Text>
       <Text selectable style={styles.barcodeValue}>
-        {barcode.normalizedValue ?? barcode.rawValue}
+        {barcode.rawValue.trim() || barcode.rawValue}
       </Text>
       {barcode.classification === 'valid_gtin' ? (
         <>

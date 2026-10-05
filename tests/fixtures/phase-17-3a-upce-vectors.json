@@ -1,0 +1,91 @@
+{
+  "schema": "phase-17-3a-upce-vectors/v1",
+  "note": "Supplements the upce list of phase-17-3-s-gtin-vectors.json. Expected values were computed with expandUpcE (supabase/functions/_shared/matching/gtin.ts) and checked by hand for 12345639 and 01234565. private.expand_upce_to_upca must return exactly `expanded`; like expandUpcE it never trims.",
+  "upce": [
+    {
+      "id": "upc-e-d6-6",
+      "input": "01234565",
+      "expanded": "012345000065",
+      "canonical": "00012345000065"
+    },
+    {
+      "id": "upc-e-d6-7",
+      "input": "01234572",
+      "expanded": "012345000072",
+      "canonical": "00012345000072"
+    },
+    {
+      "id": "upc-e-d6-8",
+      "input": "01234589",
+      "expanded": "012345000089",
+      "canonical": "00012345000089"
+    },
+    {
+      "id": "upc-e-number-system-1-d6-2",
+      "input": "19876520",
+      "expanded": "198200007650",
+      "canonical": "00198200007650"
+    },
+    {
+      "id": "upc-e-number-system-1-d6-3",
+      "input": "12345639",
+      "expanded": "123400000569",
+      "canonical": "00123400000569"
+    },
+    {
+      "id": "upc-e-number-system-1-d6-4",
+      "input": "12345649",
+      "expanded": "123450000069",
+      "canonical": "00123450000069"
+    },
+    {
+      "id": "upc-e-also-valid-ean-8",
+      "input": "01234558",
+      "expanded": "012345000058",
+      "canonical": "00012345000058"
+    },
+    {
+      "id": "valid-ean-8-not-upc-e",
+      "input": "96385074",
+      "expanded": null,
+      "canonical": null
+    },
+    {
+      "id": "upc-e-number-system-9",
+      "input": "94252614",
+      "expanded": null,
+      "canonical": null
+    },
+    {
+      "id": "upc-e-9-digits",
+      "input": "042526140",
+      "expanded": null,
+      "canonical": null
+    },
+    { "id": "upc-e-empty", "input": "", "expanded": null, "canonical": null },
+    {
+      "id": "upc-e-non-digit",
+      "input": "0425261A",
+      "expanded": null,
+      "canonical": null
+    },
+    {
+      "id": "upc-e-leading-space",
+      "input": " 04252614",
+      "expanded": null,
+      "canonical": null
+    },
+    {
+      "id": "upc-e-trailing-space",
+      "input": "04252614 ",
+      "expanded": null,
+      "canonical": null
+    },
+    {
+      "id": "upc-e-trailing-newline",
+      "input": "04252614\n",
+      "expanded": null,
+      "canonical": null
+    }
+  ]
+}

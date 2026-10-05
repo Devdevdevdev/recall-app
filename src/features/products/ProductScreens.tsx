@@ -13,10 +13,13 @@ import { getCountryName, type OwnedProduct, type OwnedProductInput } from '@/src
 
 import { ProductForm } from './ProductForm';
 import {
+  barcodeScanForSubmission,
   productFormValuesFromProduct,
   productCreationPrefillFromParams,
+  scannedBarcodeDetail,
+  scannedBarcodeForGtin,
   type ProductCreationParams,
-  type ProductFormValues,
+  type ProductCreationPrefill,
 } from './productFormUtils';
 import { hasMatchingAttributeChange } from './productMonitoring';
 import { formatPurchaseDate, formatScanDate } from './purchaseDate';
@@ -76,6 +79,8 @@ type NewProductScreenProps = {
 
 export function NewProductScreen({ creationParams = {} }: NewProductScreenProps) {
   const {
+    barcodeRawValue,
+    barcodeSymbology,
     gtin,
     lotNumber,
     modelNumber,
@@ -94,14 +99,15 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
   } = creationParams;
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [prefill, setPrefill] = useState<{
-    identificationMethod: 'barcode_scan' | 'ocr_assisted' | null;
-    values: ProductFormValues;
-  }>(() => productCreationPrefillFromParams(creationParams));
+  const [prefill, setPrefill] = useState<ProductCreationPrefill>(() =>
+    productCreationPrefillFromParams(creationParams),
+  );
 
   useEffect(() => {
     let active = true;
     const currentParams = {
+      barcodeRawValue,
+      barcodeSymbology,
       gtin,
       lotNumber,
       modelNumber,
@@ -134,6 +140,8 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
       active = false;
     };
   }, [
+    barcodeRawValue,
+    barcodeSymbology,
     gtin,
     lotNumber,
     modelNumber,
@@ -152,6 +160,7 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
   ]);
 
   const identificationMethod = prefill.identificationMethod;
+  const scannedBarcode = prefill.scannedBarcode;
 
   const createProduct = useCallback(
     async (input: OwnedProductInput) => {
@@ -162,9 +171,11 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
       setIsSaving(true);
       setError(null);
       try {
+        const barcodeScan = barcodeScanForSubmission(scannedBarcode, input.gtin);
         const product = await ownedProductsRepository.create({
           ...input,
           ...(identificationMethod ? { identificationMethod } : {}),
+          ...(barcodeScan ? { barcodeScan } : {}),
         });
         // The product is saved. The recall check is best-effort and retried server-side.
         requestCheckInBackground(product.id);
@@ -175,7 +186,7 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
         setIsSaving(false);
       }
     },
-    [identificationMethod, isSaving],
+    [identificationMethod, isSaving, scannedBarcode],
   );
 
   return (
@@ -196,6 +207,7 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
         initialValues={prefill.values}
         isSubmitting={isSaving}
         onSubmit={createProduct}
+        scannedBarcode={scannedBarcode}
         submitLabel="Save product"
       />
     </Screen>
@@ -311,6 +323,7 @@ export function ProductDetailScreen({ id }: ProductDetailScreenProps) {
             <DetailRow label="Brand" value={product.brand} />
             <DetailRow label="Scanned on" value={formatScanDate(product.scanDate)} />
             <DetailRow label="GTIN" value={product.gtin} />
+            <DetailRow label="Scanned barcode" value={scannedBarcodeDetail(product)} />
             <DetailRow
               label="Country of purchase"
               value={
@@ -476,6 +489,7 @@ export function EditProductScreen({ id }: EditProductScreenProps) {
           initialValues={productFormValuesFromProduct(product)}
           isSubmitting={isSaving}
           onSubmit={updateProduct}
+          scannedBarcode={scannedBarcodeForGtin(product.barcodeScan, product.gtin)}
           submitLabel="Save changes"
         />
       ) : null}

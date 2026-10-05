@@ -1,5 +1,6 @@
 export type {
   Alert,
+  BarcodeScanProvenance,
   AlertStatus,
   JsonObject,
   JsonPrimitive,
@@ -22,9 +23,13 @@ export type {
 export { PRODUCT_MONITORING_STATES } from './types';
 
 export {
+  gtinCarrierLengths,
+  isGtinCarrierSymbology,
   productBarcodeFormats,
   toScannedBarcode,
   type BarcodeClassification,
+  type GtinCarrierSymbology,
+  type GtinTransformation,
   validateGtin,
   type GtinValidationResult,
   type ProductBarcodeFormat,

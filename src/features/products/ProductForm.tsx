@@ -8,7 +8,7 @@ import {
   type KeyboardTypeOptions,
 } from 'react-native';
 
-import type { OwnedProductInput } from '@/src/domain';
+import type { OwnedProductInput, ScannedBarcode } from '@/src/domain';
 import type { CountryCode } from '@/src/domain/countries';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 
@@ -17,6 +17,7 @@ import { PurchaseDateField, ScanDateField } from './PurchaseDateField';
 import {
   emptyProductFormValues,
   mergeOptionalDefaultCountry,
+  scannedGtinNote,
   validateProductForm,
   type ProductFormErrors,
   type ProductFormValues,
@@ -26,12 +27,15 @@ type ProductFormProps = {
   initialValues?: ProductFormValues;
   isSubmitting: boolean;
   onSubmit: (input: OwnedProductInput) => Promise<void>;
+  /** The scan this product came from, used only to explain a transformed GTIN. */
+  scannedBarcode?: ScannedBarcode | null;
   submitLabel: string;
 };
 
 type FieldProps = {
   autoCapitalize?: 'characters' | 'none' | 'sentences' | 'words';
   error?: string;
+  hint?: string | null;
   keyboardType?: KeyboardTypeOptions;
   label: string;
   maxLength: number;
@@ -65,6 +69,7 @@ function FormSection({
 function FormField({
   autoCapitalize = 'sentences',
   error,
+  hint,
   keyboardType = 'default',
   label,
   maxLength,
@@ -87,6 +92,7 @@ function FormField({
         style={[styles.input, error && styles.inputError]}
         value={value}
       />
+      {hint && !error ? <Text style={styles.hint}>{hint}</Text> : null}
       {error ? (
         <Text accessibilityLiveRegion="polite" style={styles.error}>
           {error}
@@ -100,6 +106,7 @@ export function ProductForm({
   initialValues,
   isSubmitting,
   onSubmit,
+  scannedBarcode = null,
   submitLabel,
 }: ProductFormProps) {
   const [values, setValues] = useState<ProductFormValues>(
@@ -190,6 +197,7 @@ export function ProductForm({
         <FormField
           autoCapitalize="none"
           error={errors.gtin}
+          hint={scannedGtinNote(scannedBarcode, values.gtin)}
           keyboardType="number-pad"
           label="GTIN / barcode"
           maxLength={14}
@@ -415,6 +423,11 @@ const styles = StyleSheet.create({
     paddingVertical: spacing.sm,
   },
   inputError: { borderColor: colors.semantic.danger },
+  hint: {
+    color: colors.text.secondary,
+    fontSize: typography.size.caption,
+    lineHeight: typography.lineHeight.caption,
+  },
   error: {
     color: colors.semantic.danger,
     fontSize: typography.size.caption,

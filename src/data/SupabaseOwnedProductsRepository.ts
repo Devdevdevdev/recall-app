@@ -4,19 +4,22 @@ import { requireSupabaseClient } from '@/src/services/supabase';
 import type { OwnedProductsRepository } from './OwnedProductsRepository';
 import {
   toOwnedProduct,
+  toOwnedProductScanProvenanceRow,
   toOwnedProductWriteRow,
   type OwnedProductRow,
+  type OwnedProductScanProvenanceRow,
 } from './ownedProductsMappers';
 
 const ownedProductColumns =
-  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, scan_date, purchase_date, purchase_country_code, safety_attributes, image_path, identification_method, identification_confidence, created_at, updated_at';
+  'id, user_id, brand, product_name, category, gtin, model_number, serial_number, lot_number, scan_date, purchase_date, purchase_country_code, safety_attributes, barcode_raw_value, barcode_symbology, image_path, identification_method, identification_confidence, created_at, updated_at';
 
-type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> & {
-  user_id: string;
-  image_path: null;
-  identification_method: 'manual' | 'barcode_scan' | 'ocr_assisted';
-  identification_confidence: null;
-};
+type OwnedProductInsertRow = ReturnType<typeof toOwnedProductWriteRow> &
+  Partial<OwnedProductScanProvenanceRow> & {
+    user_id: string;
+    image_path: null;
+    identification_method: 'manual' | 'barcode_scan' | 'ocr_assisted';
+    identification_confidence: null;
+  };
 
 /** Mobile adapter. RLS remains the authority for every returned or changed row. */
 export class SupabaseOwnedProductsRepository implements OwnedProductsRepository {
@@ -70,6 +73,9 @@ export class SupabaseOwnedProductsRepository implements OwnedProductsRepository 
 
     const insertRow: OwnedProductInsertRow = {
       ...toOwnedProductWriteRow({ ...input, safetyAttributes: input.safetyAttributes ?? {} }),
+      // The app writes scan provenance only here. Updates never send these columns; the
+      // database clears them when gtin stops being equivalent.
+      ...toOwnedProductScanProvenanceRow(input.barcodeScan),
       user_id: userData.user.id,
       image_path: null,
       identification_method: input.identificationMethod ?? 'manual',

@@ -1,6 +1,13 @@
-import { validateGtin } from '../../domain/barcode.ts';
+import { canonicalGtin14 } from '../../../supabase/functions/_shared/matching/gtin.ts';
+import {
+  isGtinCarrierSymbology,
+  toScannedBarcode,
+  validateGtin,
+  type ScannedBarcode,
+} from '../../domain/barcode.ts';
 import { isSupportedCountryCode } from '../../domain/countries.ts';
 import type {
+  BarcodeScanProvenance,
   OwnedProduct,
   OwnedProductInput,
   ProductSafetyAttributes,
@@ -41,6 +48,10 @@ export type ProductFormErrors = Partial<Record<keyof ProductFormValues, string>>
 export type ProductCreationMethod = 'barcode_scan' | 'ocr_assisted';
 
 export type ProductCreationParams = {
+  /** Phase 17.3a scan route: the camera payload and symbology, revalidated here. */
+  barcodeRawValue?: string | string[];
+  barcodeSymbology?: string | string[];
+  /** Legacy barcode route: a bare GTIN, without provenance. */
   gtin?: string | string[];
   lotNumber?: string | string[];
   modelNumber?: string | string[];
@@ -61,6 +72,8 @@ export type ProductCreationParams = {
 export type ProductCreationPrefill = {
   identificationMethod: ProductCreationMethod | null;
   values: ProductFormValues;
+  /** The revalidated scan identity, or null for manual, OCR and legacy GTIN routes. */
+  scannedBarcode: ScannedBarcode | null;
 };
 
 const maximumLengths: Record<keyof ProductFormValues, number> = {
@@ -136,12 +149,29 @@ export function productCreationPrefillFromParams(
     : '';
   const baseValues = { ...emptyProductFormValues(), purchaseCountryCode };
 
+  if (
+    source === 'barcode_scan' &&
+    typeof params.barcodeRawValue === 'string' &&
+    isGtinCarrierSymbology(params.barcodeSymbology)
+  ) {
+    // The identity is re-derived from raw + symbology, never trusted from the route.
+    const scannedBarcode = toScannedBarcode(params.barcodeSymbology, params.barcodeRawValue);
+    if (scannedBarcode.classification === 'valid_gtin' && scannedBarcode.matchingGtin) {
+      return {
+        identificationMethod: 'barcode_scan',
+        values: { ...baseValues, gtin: scannedBarcode.matchingGtin },
+        scannedBarcode,
+      };
+    }
+  }
+
   if (source === 'barcode_scan' && typeof params.gtin === 'string') {
     const gtin = validateGtin(params.gtin);
     if (gtin.isValid && gtin.normalizedValue) {
       return {
         identificationMethod: 'barcode_scan',
         values: { ...baseValues, gtin: gtin.normalizedValue },
+        scannedBarcode: null,
       };
     }
   }
@@ -168,10 +198,80 @@ export function productCreationPrefillFromParams(
     return {
       identificationMethod: hasIdentifier ? 'ocr_assisted' : null,
       values,
+      scannedBarcode: null,
     };
   }
 
-  return { identificationMethod: null, values: baseValues };
+  return { identificationMethod: null, values: baseValues, scannedBarcode: null };
+}
+
+/**
+ * Scan provenance to persist with a new product: only while the saved GTIN is still the scanned
+ * GTIN (same canonical GTIN-14). If the user replaced or cleared it before saving, the scan no
+ * longer describes the product and nothing is attached.
+ */
+export function barcodeScanForSubmission(
+  scannedBarcode: ScannedBarcode | null,
+  submittedGtin: string | null,
+): BarcodeScanProvenance | null {
+  if (
+    !scannedBarcode ||
+    scannedBarcode.classification !== 'valid_gtin' ||
+    !isGtinCarrierSymbology(scannedBarcode.format) ||
+    scannedBarcode.canonicalGtin14 === null ||
+    canonicalGtin14(submittedGtin) !== scannedBarcode.canonicalGtin14
+  ) {
+    return null;
+  }
+  return { rawValue: scannedBarcode.rawValue, symbology: scannedBarcode.format };
+}
+
+/** Re-derives the identity of stored provenance; null unless it still describes `gtin`. */
+export function scannedBarcodeForGtin(
+  provenance: BarcodeScanProvenance | undefined,
+  gtin: string | null,
+): ScannedBarcode | null {
+  if (!provenance) return null;
+  const scannedBarcode = toScannedBarcode(provenance.symbology, provenance.rawValue);
+  return scannedBarcode.canonicalGtin14 !== null &&
+    canonicalGtin14(gtin) === scannedBarcode.canonicalGtin14
+    ? scannedBarcode
+    : null;
+}
+
+const symbologyLabels: Record<BarcodeScanProvenance['symbology'], string> = {
+  ean13: 'EAN-13',
+  ean8: 'EAN-8',
+  upc_a: 'UPC-A',
+  upc_e: 'UPC-E',
+  itf14: 'ITF-14',
+};
+
+/**
+ * Plain-language note shown under the GTIN field only when the stored GTIN is not the printed
+ * code (a UPC-E is saved as its full UPC-A). Canonical GTIN-14 stays internal.
+ */
+export function scannedGtinNote(
+  scannedBarcode: ScannedBarcode | null,
+  gtinValue: string,
+): string | null {
+  if (
+    !scannedBarcode ||
+    scannedBarcode.transformation !== 'upc_e_to_upc_a' ||
+    gtinValue.trim() !== scannedBarcode.matchingGtin
+  ) {
+    return null;
+  }
+  return `Scanned UPC-E code ${scannedBarcode.rawValue}, saved as its full 12-digit form.`;
+}
+
+/** "04252614 (UPC-E)" for the product detail, only when it differs from the stored GTIN. */
+export function scannedBarcodeDetail(product: OwnedProduct): string | null {
+  const scannedBarcode = scannedBarcodeForGtin(product.barcodeScan, product.gtin);
+  if (!scannedBarcode || !product.barcodeScan || scannedBarcode.rawValue === product.gtin) {
+    return null;
+  }
+  return `${scannedBarcode.rawValue} (${symbologyLabels[product.barcodeScan.symbology]})`;
 }
 
 export function mergeOptionalDefaultCountry(

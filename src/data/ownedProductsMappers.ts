@@ -1,6 +1,9 @@
+import { canonicalGtin14 } from '../../supabase/functions/_shared/matching/gtin.ts';
+import { isGtinCarrierSymbology, toScannedBarcode } from '../domain/barcode.ts';
 import { isSupportedCountryCode } from '../domain/countries.ts';
 import {
   PRODUCT_SAFETY_ATTRIBUTE_KEYS,
+  type BarcodeScanProvenance,
   type OwnedProduct,
   type OwnedProductInput,
   type ProductSafetyAttributes,
@@ -20,6 +23,8 @@ export type OwnedProductRow = {
   purchase_date: string | null;
   purchase_country_code: string | null;
   safety_attributes?: Record<string, unknown>;
+  barcode_raw_value?: string | null;
+  barcode_symbology?: string | null;
   image_path: string | null;
   identification_method: string | null;
   identification_confidence: number | string | null;
@@ -50,10 +55,40 @@ function toSafetyAttributes(value: Record<string, unknown> = {}): ProductSafetyA
   return attributes;
 }
 
+/** Insert-only scan provenance columns; `toOwnedProductWriteRow` (also used by updates) omits them. */
+export type OwnedProductScanProvenanceRow = {
+  barcode_raw_value: string;
+  barcode_symbology: BarcodeScanProvenance['symbology'];
+};
+
+/**
+ * Defense in depth: exposes provenance only while it describes the current gtin (same canonical
+ * GTIN-14). The database is the guarantee (owned_products_barcode_provenance_gtin_check, with
+ * symbology-aware UPC-E expansion, and the clearing trigger); a row passing its constraints
+ * never fails this check.
+ */
+function toBarcodeScanProvenance(row: OwnedProductRow): BarcodeScanProvenance | null {
+  const { barcode_raw_value: rawValue, barcode_symbology: symbology } = row;
+  if (typeof rawValue !== 'string' || !isGtinCarrierSymbology(symbology)) return null;
+  const scanned = toScannedBarcode(symbology, rawValue);
+  return scanned.canonicalGtin14 !== null && scanned.canonicalGtin14 === canonicalGtin14(row.gtin)
+    ? { rawValue, symbology }
+    : null;
+}
+
+export function toOwnedProductScanProvenanceRow(
+  provenance: BarcodeScanProvenance | undefined,
+): OwnedProductScanProvenanceRow | null {
+  return provenance
+    ? { barcode_raw_value: provenance.rawValue, barcode_symbology: provenance.symbology }
+    : null;
+}
+
 export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
   if (row.purchase_country_code !== null && !isSupportedCountryCode(row.purchase_country_code)) {
     throw new Error('Owned product has an unsupported purchase country code.');
   }
+  const barcodeScan = toBarcodeScanProvenance(row);
 
   return {
     id: row.id,
@@ -71,6 +106,7 @@ export function toOwnedProduct(row: OwnedProductRow): OwnedProduct {
     ...(row.safety_attributes
       ? { safetyAttributes: toSafetyAttributes(row.safety_attributes) }
       : {}),
+    ...(barcodeScan ? { barcodeScan } : {}),
     imagePath: row.image_path,
     identificationMethod: row.identification_method,
     identificationConfidence:

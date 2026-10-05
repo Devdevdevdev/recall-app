@@ -1,3 +1,4 @@
+import type { GtinCarrierSymbology } from './barcode.ts';
 import type { CountryCode } from './countries.ts';
 
 export type JsonPrimitive = boolean | number | string | null;
@@ -26,6 +27,17 @@ export const PRODUCT_SAFETY_ATTRIBUTE_KEYS = [
 export type ProductSafetyAttributeKey = (typeof PRODUCT_SAFETY_ATTRIBUTE_KEYS)[number];
 export type ProductSafetyAttributes = Partial<Record<ProductSafetyAttributeKey, string>>;
 
+/**
+ * Phase 17.3a: provenance of the CURRENT `gtin` — the barcode value delivered to JavaScript and
+ * the symbology the scanner reported. The app writes it on creation only; the database clears it
+ * as soon as `gtin` stops being canonically equivalent. `gtin` stays the matching GTIN (for a
+ * UPC-E, its UPC-A). Not a history of the first scan.
+ */
+export type BarcodeScanProvenance = {
+  rawValue: string;
+  symbology: GtinCarrierSymbology;
+};
+
 export type OwnedProduct = {
   id: string;
   userId: string;
@@ -40,6 +52,8 @@ export type OwnedProduct = {
   purchaseDate: string | null;
   purchaseCountryCode: CountryCode | null;
   safetyAttributes?: ProductSafetyAttributes;
+  /** Present only for products created from a barcode scan since Phase 17.3a. */
+  barcodeScan?: BarcodeScanProvenance;
   imagePath: string | null;
   identificationMethod: string | null;
   identificationConfidence: number | null;
@@ -65,6 +79,8 @@ export type OwnedProductInput = {
   safetyAttributes?: ProductSafetyAttributes;
   /** Set internally by a validated acquisition flow; never chosen in the product form. */
   identificationMethod?: 'barcode_scan' | 'ocr_assisted';
+  /** Set internally by the scan flow and persisted on creation only, never on update. */
+  barcodeScan?: BarcodeScanProvenance;
 };
 
 /**
