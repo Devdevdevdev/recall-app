@@ -1,0 +1,189 @@
+{
+  "phase": "17.3-S",
+  "title": "Canonical GTIN equivalence across Recall matching",
+  "productionCommit": "8924ca90b52ec6efafd718fa065b5e4daf3da7ab",
+  "migration": "20261004090000_phase_17_3_s_canonical_gtin_equivalence.sql",
+  "migrationVersion": "20261004090000",
+  "migrationContentSha256": "d58d8438dcf2e0358bc62fd66d067bf05e32f92c86085acd2786bced3c4407e0",
+  "migrationAppliedAt": "2026-10-05T07:04:19Z",
+  "migrationCount": 36,
+  "migrationHistoryMd5": "e893f721bab6c56782dc84b510687d2f",
+  "sqlObjects": {
+    "canonicalGtin14DefinitionMd5": "1f360d45c59400d5a49ee82636ff680c",
+    "canonicalGtin14Execute": [
+      "authenticated",
+      "service_role"
+    ],
+    "indexes": [
+      "owned_products_canonical_gtin14_idx",
+      "recall_scopes_canonical_gtin14_idx"
+    ],
+    "allIndexesMd5": "232db25670612c47a798803bb043e60f",
+    "getRecallCandidatesMd5": "695243ea58ac9b8b7cd61cfe9830555e",
+    "getOwnedProductRecallCandidatesMd5": "985de76d0dee90834b720c55d46d7e2e"
+  },
+  "edgeFunctions": {
+    "process-owned-product-checks": {
+      "version": 2,
+      "ezbr": "6c924d4221de88af9771e6b4d61d3bb4a91fe74ab48bbcd429c941b2147014a9",
+      "runtimeTreeSha256": "c68b141c416b758a08a471438d9146f5f85e28103fc16d12800b2e705379d295",
+      "baselineVersion": 1,
+      "baselineRuntimeTreeSha256": "1b02f9706eb638804b354810a4b70922db452476be63d575c742794ba2eb1a78",
+      "verifyJwt": false,
+      "deployedAt": "2026-10-05T06:27:42Z"
+    },
+    "check-owned-product": {
+      "version": 2,
+      "ezbr": "f0eeee9f49fa528283606cd79aecd64ebcff7476fee8b9628956bb05653f60de",
+      "runtimeTreeSha256": "673632dae91a7a729b482b1a6b8251fc12d0217a461ca69a5572bcfe5f20cd18",
+      "baselineVersion": 1,
+      "baselineRuntimeTreeSha256": "b029ef383cd4717d81fa3d2ca778f9039e5a93f796adbf7195f9508fe5f99ca0",
+      "verifyJwt": false,
+      "deployedAt": "2026-10-05T06:34:47Z"
+    },
+    "process-recall-matches": {
+      "version": 24,
+      "ezbr": "4d68e4aa299f0be6b1f443be324ac2152fd6fbf0831a3b7200f935804327de01",
+      "runtimeTreeSha256": "31e649e6f63660feb388d3f8a6fac3f13ebaef43585043bce308f8c4447072c7",
+      "baselineVersion": 23,
+      "baselineRuntimeTreeSha256": "81ff731ce714bbc283144fc6f25b9aff1b39af04760f4cdbe6488ca3a13dd9e5",
+      "verifyJwt": false,
+      "deployedAt": "2026-10-05T06:56:22Z"
+    },
+    "run-recall-automation": {
+      "version": 15,
+      "runtimeTreeSha256": "96875b00ba96b3721f43c48a98e1f9912fb41196f417e111f466d44de5455e57",
+      "redeployed": false
+    },
+    "process-recall-matches-v2-cohort": {
+      "version": 11,
+      "status": "affected_but_intentionally_deferred",
+      "enabled": false,
+      "cron": false,
+      "rule": "DO NOT ENABLE process-recall-matches-v2-cohort UNTIL ITS 17.3-S RUNTIME HAS BEEN STAGED, DEPLOYED AND VERIFIED.",
+      "preparedTargetRuntimeTreeSha256": "67d7074beb938066475c21ba5f2c9222638edbd79314f52fd220d1f783e3d150"
+    }
+  },
+  "installOrder": [
+    "process-owned-product-checks",
+    "check-owned-product",
+    "process-recall-matches",
+    "migration"
+  ],
+  "remoteSuite": "pass",
+  "remoteSuiteFileSha256": "9fa1945c2644a124adb28a3e777f6150b8a8fda77953067cf90ce4a397ded7cc",
+  "remoteSuitePlan": 64,
+  "remoteSuiteOk": 64,
+  "remoteSuiteNotOk": 0,
+  "remoteSuiteRolledBack": true,
+  "pgtapInstalledAfter": 0,
+  "idleInTransactionAfter": 0,
+  "postRemoteSuiteResidue": {
+    "checkedAt": "2026-10-05T07:36:06Z",
+    "fixtureRows": 0,
+    "businessRowsAdded": 0,
+    "extensionsMd5": "20bfc25903f6accec670b6c1a508ffc0",
+    "rolesMd5": "1fd5bb1c0d53af1ed49555a43e652150"
+  },
+  "remoteCoverage": {
+    "validatedByRemotePgtap": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "J",
+      "K"
+    ],
+    "partialSqlOnly": [
+      "G"
+    ],
+    "validatedByLocalTestsAndExactBundle": [
+      "G-typescript",
+      "H",
+      "I"
+    ]
+  },
+  "naturalRun": {
+    "scheduledAt": "2026-10-05T12:17:00Z",
+    "cron": "succeeded",
+    "automationStatus": "success",
+    "startedAt": "2026-10-05T12:17:02Z",
+    "completedAt": "2026-10-05T12:17:06Z",
+    "ingestion": {
+      "seen": 2,
+      "unchanged": 2,
+      "rejected": 0,
+      "sources": "success"
+    },
+    "matchingInvoked": false,
+    "productCheck": {
+      "status": "completed",
+      "attempted": true,
+      "claimed": 0,
+      "workerHttpStatus": 200,
+      "retrying": 0,
+      "failed": 0
+    },
+    "aiCalls": 0,
+    "alertsCreated": 0,
+    "pushClaimed": 0,
+    "errors": 0
+  },
+  "regressionVerifiedAt": "2026-10-05T14:00:02Z",
+  "candidateBaseline": {
+    "pairs": 37,
+    "md5": "ae99b6b5741b41b8f19da95f32a6baca",
+    "bothDirectionsIdentical": true,
+    "unchangedByInstall": true
+  },
+  "safety": {
+    "f4GuardTriggersEnabled": 5,
+    "f4DefinitionsUnchanged": true,
+    "neutralizationInventory": 0,
+    "recallMatches": 0,
+    "v2Evaluations": 0,
+    "alerts": 0,
+    "pushQueue": 0,
+    "pushDeliveries": 0
+  },
+  "productCheckEnabled": true,
+  "maxProductCheckCandidates": 25,
+  "historicalAffectedPairs": 0,
+  "replayRequired": false,
+  "findings": {
+    "independentEquivalenceDefect": "confirmed_and_fixed",
+    "D1": "confirmed_upc_e_app_wiring_deferred_to_17_3a",
+    "D2": "unconfirmed_no_physical_ios_device_available"
+  },
+  "knownDebt": [
+    "v1 evidence fingerprint does not cover matcher code (no impact: 0 affected pairs)"
+  ],
+  "rollbackAvailable": {
+    "order": [
+      "sql",
+      "edge"
+    ],
+    "sqlRollbackSha256": "720f9723930e43cfa8e9a4d842197d8cf3fd27da91c74e6dfe0d02a7f4953edd",
+    "used": false
+  },
+  "verifiedAt": "2026-10-05T14:00:02Z",
+  "businessCountersStable": true,
+  "releaseGate": {
+    "passed": true,
+    "criteria": {
+      "remotePgtap64of64": true,
+      "remoteRolledBack": true,
+      "zeroPersistentResidue": true,
+      "firstNaturalRunSucceeded": true,
+      "noGtinSqlOrPermissionErrors": true,
+      "candidateBaselineStable": true,
+      "noUnsafeAlerts": true,
+      "f4Intact": true,
+      "structuresUnchanged": true,
+      "noHistoricalReplayRequired": true,
+      "v2CohortBlocked": true
+    }
+  }
+}

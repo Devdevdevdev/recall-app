@@ -1,7 +1,12 @@
 # Phase 17.3-S — Canonical GTIN equivalence — Plan d'installation production
 
-Statut : **revue de release terminée, rien exécuté**. Aucune production, migration distante,
-deploy, push, secret, cron ni flag.
+Statut : **INSTALLÉE ET VÉRIFIÉE EN PRODUCTION le 2026-10-05** depuis le commit
+`8924ca90b52ec6efafd718fa065b5e4daf3da7ab`. Les 3 Edge Functions ont été déployées, puis la
+migration `20261004090000` appliquée. Remote pgTAP 64/64, zéro résidu, run naturel de 12:17 UTC
+`success`. Aucun replay. Cohort v2 non déployée, activation interdite. Détail :
+`docs/phase-17-3-s-production-verification.md`.
+
+Le reste de ce document est le plan tel qu'il a été revu avant installation.
 Base : `main` @ `07821592c280648be1a056b0dd27634894c5d8c4` (= `origin/main`), arbre de travail
 non commité. Implémentation : `docs/phase-17-3-s-gtin-equivalence-implementation.md`.
 
