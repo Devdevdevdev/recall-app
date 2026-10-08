@@ -1,0 +1,3297 @@
+{
+  "schema": "phase-17-3b-product-lookup-benchmark-results/v1",
+  "generatedAt": "2026-10-08T12:18:03.387Z",
+  "userAgent": "RecallProductLookupBenchmark/0.1 (research benchmark)",
+  "privacy": "Each request carried only a GTIN in the URL path/query. No user, account, device, inventory, lot, serial or date data. No cookies, no API keys.",
+  "licenseNote": "Open Food Facts family responses: ODbL (data) / CC BY-SA (images), (c) Open Food Facts contributors. UPCitemdb responses are kept trimmed to identity fields for benchmark audit only.",
+  "normalization": [
+    {
+      "id": "gen-upce",
+      "identity": {
+        "rawValue": "04252614",
+        "symbology": "upc_e",
+        "classification": "valid_gtin",
+        "matchingGtin": "042100005264",
+        "canonicalGtin14": "00042100005264"
+      },
+      "providerInput": "042100005264",
+      "pass": true
+    }
+  ],
+  "requests": [
+    {
+      "provider": "off",
+      "caseId": "phys-be-ean13",
+      "sent": "5400141472714",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:06:34.295Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 188,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5400141472714",
+      "items": [
+        {
+          "name": "Light margarine",
+          "brand": "boni selection",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:spreads",
+            "en:fats"
+          ],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "phys-be-ean13",
+      "sent": "05400141472714",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:06:38.693Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5400141472714",
+      "items": [
+        {
+          "name": "Light margarine",
+          "brand": "boni selection",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:spreads",
+            "en:fats"
+          ],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "phys-be-ean8-rcn",
+      "sent": "27044193",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": "RCN-8",
+      "at": "2026-10-08T12:06:43.081Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "27044193",
+      "items": [
+        {
+          "name": "Citroensap",
+          "brand": "Regalo",
+          "category": [
+            "en:beverages-and-beverages-preparations",
+            "en:plant-based-foods-and-beverages",
+            "en:beverages",
+            "en:fruit-based-foods-and-beverages"
+          ],
+          "image": true,
+          "quantity": "250 ml",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "phys-be-ean8-rcn",
+      "sent": "00000027044193",
+      "representations": ["canonicalGtin14"],
+      "restricted": "RCN-8",
+      "at": "2026-10-08T12:06:47.471Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 89,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "27044193",
+      "items": [
+        {
+          "name": "Citroensap",
+          "brand": "Regalo",
+          "category": [
+            "en:beverages-and-beverages-preparations",
+            "en:plant-based-foods-and-beverages",
+            "en:beverages",
+            "en:fruit-based-foods-and-beverages"
+          ],
+          "image": true,
+          "quantity": "250 ml",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "phys-eu-ean13-historic",
+      "sent": "7622202826269",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:06:51.866Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 92,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "7622202826269",
+      "items": [
+        {
+          "name": "PHILADELPHIA Mediteraanse kruiden",
+          "brand": "PHILADELPHIA",
+          "category": [
+            "en:dairies",
+            "en:fermented-foods",
+            "en:fermented-milk-products",
+            "en:cheeses"
+          ],
+          "image": false,
+          "quantity": "185 gram",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "phys-eu-ean13-historic",
+      "sent": "07622202826269",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:06:56.254Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 86,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "7622202826269",
+      "items": [
+        {
+          "name": "PHILADELPHIA Mediteraanse kruiden",
+          "brand": "PHILADELPHIA",
+          "category": [
+            "en:dairies",
+            "en:fermented-foods",
+            "en:fermented-milk-products",
+            "en:cheeses"
+          ],
+          "image": false,
+          "quantity": "185 gram",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "us-thule-sleek",
+      "sent": "091021037090",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:00.641Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0091021037090"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-thule-sleek",
+      "sent": "0091021037090",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:05.021Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 78,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0091021037090"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-thule-sleek",
+      "sent": "00091021037090",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:09.536Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 210,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0091021037090"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-nutella-400",
+      "sent": "3017620422003",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:13.923Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 85,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3017620422003",
+      "items": [
+        {
+          "name": "Nutella",
+          "brand": "Nutella, Ferrero",
+          "category": [
+            "en:breakfasts",
+            "en:spreads",
+            "en:sweet-spreads",
+            "en:confectionary-based-spreads"
+          ],
+          "image": true,
+          "quantity": "400 g e",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-nutella-400",
+      "sent": "03017620422003",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:18.322Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 97,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3017620422003",
+      "items": [
+        {
+          "name": "Nutella",
+          "brand": "Nutella, Ferrero",
+          "category": [
+            "en:breakfasts",
+            "en:spreads",
+            "en:sweet-spreads",
+            "en:confectionary-based-spreads"
+          ],
+          "image": true,
+          "quantity": "400 g e",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-coca-cola-330",
+      "sent": "5449000000996",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:22.742Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 117,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5449000000996",
+      "items": [
+        {
+          "name": "Coca-Cola Original",
+          "brand": "COCA-COLA SERVICES SA/NV",
+          "category": [
+            "en:beverages-and-beverages-preparations",
+            "en:beverages",
+            "en:non-alcoholic-beverages",
+            "en:carbonated-drinks"
+          ],
+          "image": true,
+          "quantity": "330 ml",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-coca-cola-330",
+      "sent": "05449000000996",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:27.178Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 134,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5449000000996",
+      "items": [
+        {
+          "name": "Coca-Cola Original",
+          "brand": "COCA-COLA SERVICES SA/NV",
+          "category": [
+            "en:beverages-and-beverages-preparations",
+            "en:beverages",
+            "en:non-alcoholic-beverages",
+            "en:carbonated-drinks"
+          ],
+          "image": true,
+          "quantity": "330 ml",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "us-kraft-mac-cheese",
+      "sent": "021000658831",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:31.637Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 158,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0021000658831",
+      "items": [
+        {
+          "name": "mac & cheese",
+          "brand": "Kraft",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:meals",
+            "en:pasta-dishes"
+          ],
+          "image": true,
+          "quantity": "7.25 oz",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "us-kraft-mac-cheese",
+      "sent": "0021000658831",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:36.036Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 95,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0021000658831",
+      "items": [
+        {
+          "name": "mac & cheese",
+          "brand": "Kraft",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:meals",
+            "en:pasta-dishes"
+          ],
+          "image": true,
+          "quantity": "7.25 oz",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "us-kraft-mac-cheese",
+      "sent": "00021000658831",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:40.417Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 78,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0021000658831",
+      "items": [
+        {
+          "name": "mac & cheese",
+          "brand": "Kraft",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:meals",
+            "en:pasta-dishes"
+          ],
+          "image": true,
+          "quantity": "7.25 oz",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "us-hampton-bay-halwin",
+      "sent": "840059614922",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:44.797Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 77,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0840059614922"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-hampton-bay-halwin",
+      "sent": "0840059614922",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:49.187Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0840059614922"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-hampton-bay-halwin",
+      "sent": "00840059614922",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:53.581Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 91,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0840059614922"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-boon-nursh",
+      "sent": "669028116546",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:57.969Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 81,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0669028116546"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-boon-nursh",
+      "sent": "0669028116546",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:02.351Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 81,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0669028116546"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-boon-nursh",
+      "sent": "00669028116546",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:06.731Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 77,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0669028116546"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-lil-buddies-laser",
+      "sent": "885490244963",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:11.123Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 89,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0885490244963"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-lil-buddies-laser",
+      "sent": "0885490244963",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:15.520Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 94,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0885490244963"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-lil-buddies-laser",
+      "sent": "00885490244963",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:19.920Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 98,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0885490244963"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-granitestone-saute",
+      "sent": "080313081316",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:24.318Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 95,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0080313081316"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-granitestone-saute",
+      "sent": "0080313081316",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:28.710Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 90,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0080313081316"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-granitestone-saute",
+      "sent": "00080313081316",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:33.099Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0080313081316"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-bazic-glue",
+      "sent": "764608020302",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:37.485Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 84,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0764608020302"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-bazic-glue",
+      "sent": "0764608020302",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:41.864Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 77,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0764608020302"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-bazic-glue",
+      "sent": "00764608020302",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:46.266Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 98,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0764608020302"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-woolite-delicates",
+      "sent": "062338727240",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:50.650Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0062338727240"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-woolite-delicates",
+      "sent": "0062338727240",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:55.036Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 82,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0062338727240"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-woolite-delicates",
+      "sent": "00062338727240",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:59.418Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 82,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0062338727240"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-scripto-torch",
+      "sent": "070257522266",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:03.813Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 92,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0070257522266"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-scripto-torch",
+      "sent": "0070257522266",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:08.215Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 99,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0070257522266"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-scripto-torch",
+      "sent": "00070257522266",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:12.610Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 90,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0070257522266"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-dewalt-heater",
+      "sent": "089301008588",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:16.993Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 80,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0089301008588"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-dewalt-heater",
+      "sent": "0089301008588",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:21.376Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 80,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0089301008588"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-dewalt-heater",
+      "sent": "00089301008588",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:25.776Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 97,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0089301008588"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-pearhead-learning",
+      "sent": "698904871507",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:30.163Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0698904871507"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-pearhead-learning",
+      "sent": "0698904871507",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:34.548Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 84,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0698904871507"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-pearhead-learning",
+      "sent": "00698904871507",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:38.936Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 85,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0698904871507"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-craftsman-tiller",
+      "sent": "885911843430",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:43.348Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 110,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0885911843430"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-craftsman-tiller",
+      "sent": "0885911843430",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:47.731Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 81,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0885911843430"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-craftsman-tiller",
+      "sent": "00885911843430",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:52.119Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 84,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0885911843430"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-adios-vinegar",
+      "sent": "850039376139",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:56.505Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0850039376139"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-adios-vinegar",
+      "sent": "0850039376139",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:00.964Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 153,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0850039376139"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-adios-vinegar",
+      "sent": "00850039376139",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:05.357Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 90,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0850039376139"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-furminator-conditioner",
+      "sent": "854460001073",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:09.742Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 82,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0854460001073"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-furminator-conditioner",
+      "sent": "0854460001073",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:14.123Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 78,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0854460001073"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-furminator-conditioner",
+      "sent": "00854460001073",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:19.515Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 1090,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0854460001073"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-bauer-sprayer",
+      "sent": "193175443663",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:23.912Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 91,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0193175443663"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-bauer-sprayer",
+      "sent": "0193175443663",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:28.312Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 97,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0193175443663"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-bauer-sprayer",
+      "sent": "00193175443663",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:32.708Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 95,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0193175443663"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-black-decker-steamer",
+      "sent": "050875828407",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:37.090Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 78,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0050875828407"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-black-decker-steamer",
+      "sent": "0050875828407",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:41.479Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 85,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0050875828407"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-black-decker-steamer",
+      "sent": "00050875828407",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:45.877Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 95,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0050875828407"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-sloosh-dive-sticks",
+      "sent": "812355036227",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:50.301Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 121,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0812355036227"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-sloosh-dive-sticks",
+      "sent": "0812355036227",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:54.690Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 85,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0812355036227"
+    },
+    {
+      "provider": "off",
+      "caseId": "us-sloosh-dive-sticks",
+      "sent": "00812355036227",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:59.084Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 91,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0812355036227"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-gobi-heat-warmer",
+      "sent": "810141672550",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:03.476Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 89,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0810141672550"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-gobi-heat-warmer",
+      "sent": "0810141672550",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:07.857Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 79,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0810141672550"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-gobi-heat-warmer",
+      "sent": "00810141672550",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:12.247Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 86,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0810141672550"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-powerg-walking-pad",
+      "sent": "846325031158",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:16.645Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 95,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0846325031158"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-powerg-walking-pad",
+      "sent": "0846325031158",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:21.035Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 88,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0846325031158"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-powerg-walking-pad",
+      "sent": "00846325031158",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:25.427Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 90,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0846325031158"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-mec-shuttlecraft",
+      "sent": "840251534745",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:29.819Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 88,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0840251534745"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-mec-shuttlecraft",
+      "sent": "0840251534745",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:34.221Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 99,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0840251534745"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-mec-shuttlecraft",
+      "sent": "00840251534745",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:38.611Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0840251534745"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-so-delicious-salted-caramel",
+      "sent": "744473276134",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:43.022Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 108,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0744473276134",
+      "items": [
+        {
+          "name": "CASHEW BASE NON-DAIRY FROZEN DESSERT",
+          "brand": "SO DELICIOUS",
+          "category": [
+            "en:desserts",
+            "en:frozen-foods",
+            "en:frozen-desserts",
+            "en:ice-creams-and-sorbets"
+          ],
+          "image": true,
+          "quantity": "500 mL",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-so-delicious-salted-caramel",
+      "sent": "0744473276134",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:47.409Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 85,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0744473276134",
+      "items": [
+        {
+          "name": "CASHEW BASE NON-DAIRY FROZEN DESSERT",
+          "brand": "SO DELICIOUS",
+          "category": [
+            "en:desserts",
+            "en:frozen-foods",
+            "en:frozen-desserts",
+            "en:ice-creams-and-sorbets"
+          ],
+          "image": true,
+          "quantity": "500 mL",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-so-delicious-salted-caramel",
+      "sent": "00744473276134",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:51.823Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 108,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0744473276134",
+      "items": [
+        {
+          "name": "CASHEW BASE NON-DAIRY FROZEN DESSERT",
+          "brand": "SO DELICIOUS",
+          "category": [
+            "en:desserts",
+            "en:frozen-foods",
+            "en:frozen-desserts",
+            "en:ice-creams-and-sorbets"
+          ],
+          "image": true,
+          "quantity": "500 mL",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-compliments-chicken-burgers",
+      "sent": "055742583335",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:56.215Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 89,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0055742583335",
+      "items": [
+        {
+          "name": "100% Chicken Burgers",
+          "brand": "Compliments",
+          "category": [],
+          "image": false,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-compliments-chicken-burgers",
+      "sent": "0055742583335",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:00.601Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0055742583335",
+      "items": [
+        {
+          "name": "100% Chicken Burgers",
+          "brand": "Compliments",
+          "category": [],
+          "image": false,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-compliments-chicken-burgers",
+      "sent": "00055742583335",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:04.990Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0055742583335",
+      "items": [
+        {
+          "name": "100% Chicken Burgers",
+          "brand": "Compliments",
+          "category": [],
+          "image": false,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-nutraphase-clean-beans",
+      "sent": "628618002973",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:09.397Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 105,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0628618002973",
+      "items": [
+        {
+          "name": "Clean Beans - Ketchup",
+          "brand": "Clean Beans",
+          "category": [],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-nutraphase-clean-beans",
+      "sent": "0628618002973",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:13.795Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 94,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0628618002973",
+      "items": [
+        {
+          "name": "Clean Beans - Ketchup",
+          "brand": "Clean Beans",
+          "category": [],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-nutraphase-clean-beans",
+      "sent": "00628618002973",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:18.180Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 81,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0628618002973",
+      "items": [
+        {
+          "name": "Clean Beans - Ketchup",
+          "brand": "Clean Beans",
+          "category": [],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-olymel-chicken-strips",
+      "sent": "069094635963",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:22.615Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 132,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0069094635963",
+      "items": [
+        {
+          "name": "Lanieres de poitrines de poulet",
+          "brand": "Olymel",
+          "category": [],
+          "image": false,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-olymel-chicken-strips",
+      "sent": "0069094635963",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:27.008Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 91,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0069094635963",
+      "items": [
+        {
+          "name": "Lanieres de poitrines de poulet",
+          "brand": "Olymel",
+          "category": [],
+          "image": false,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-olymel-chicken-strips",
+      "sent": "00069094635963",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:31.394Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 84,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "0069094635963",
+      "items": [
+        {
+          "name": "Lanieres de poitrines de poulet",
+          "brand": "Olymel",
+          "category": [],
+          "image": false,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-chungjungwon-ssamjang",
+      "sent": "8801052773261",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:35.769Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 74,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "8801052773261"
+    },
+    {
+      "provider": "off",
+      "caseId": "ca-chungjungwon-ssamjang",
+      "sent": "08801052773261",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:40.164Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 88,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "8801052773261"
+    },
+    {
+      "provider": "off",
+      "caseId": "be-lima-rice-cakes",
+      "sent": "5411788002493",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:44.556Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 91,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5411788002493",
+      "items": [
+        {
+          "name": "Galettes de riz complet",
+          "brand": "Lima",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:cereals-and-potatoes",
+            "en:cereals-and-their-products"
+          ],
+          "image": true,
+          "quantity": "100 g",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-lima-rice-cakes",
+      "sent": "05411788002493",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:48.951Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 93,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5411788002493",
+      "items": [
+        {
+          "name": "Galettes de riz complet",
+          "brand": "Lima",
+          "category": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:cereals-and-potatoes",
+            "en:cereals-and-their-products"
+          ],
+          "image": true,
+          "quantity": "100 g",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-isali-tikka",
+      "sent": "5413110519518",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:53.343Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 86,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5413110519518",
+      "items": [
+        {
+          "name": "",
+          "brand": "",
+          "category": [],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-isali-tikka",
+      "sent": "05413110519518",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:57.729Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5413110519518",
+      "items": [
+        {
+          "name": "",
+          "brand": "",
+          "category": [],
+          "image": true,
+          "quantity": "",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-nollens-aiguillettes",
+      "sent": "5420033322682",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:02.136Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 106,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5420033322682",
+      "items": [
+        {
+          "name": "Aiguillettes de poulet",
+          "brand": "",
+          "category": [
+            "en:meats-and-their-products",
+            "en:meats",
+            "en:chicken-and-its-products",
+            "en:poultries"
+          ],
+          "image": true,
+          "quantity": "500 g",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-nollens-aiguillettes",
+      "sent": "05420033322682",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:06.522Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 83,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5420033322682",
+      "items": [
+        {
+          "name": "Aiguillettes de poulet",
+          "brand": "",
+          "category": [
+            "en:meats-and-their-products",
+            "en:meats",
+            "en:chicken-and-its-products",
+            "en:poultries"
+          ],
+          "image": true,
+          "quantity": "500 g",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-chatka-crab",
+      "sent": "5410238917325",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:10.918Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 95,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5410238917325",
+      "items": [
+        {
+          "name": "Chatka",
+          "brand": "",
+          "category": [],
+          "image": true,
+          "quantity": "170 g",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "be-chatka-crab",
+      "sent": "05410238917325",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:15.311Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5410238917325",
+      "items": [
+        {
+          "name": "Chatka",
+          "brand": "",
+          "category": [],
+          "image": true,
+          "quantity": "170 g",
+          "productType": "food"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-brabantia-ladle",
+      "sent": "8710755250620",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:19.699Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 84,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "8710755250620"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-brabantia-ladle",
+      "sent": "08710755250620",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:24.088Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 87,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "8710755250620"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-zwilling-enfinigy-grill",
+      "sent": "4009839681981",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:28.481Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 90,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "4009839681981"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-zwilling-enfinigy-grill",
+      "sent": "04009839681981",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:32.878Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 96,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "4009839681981"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-legrand-rx3",
+      "sent": "3245064020381",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:37.259Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 78,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3245064020381"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-legrand-rx3",
+      "sent": "03245064020381",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:41.652Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 89,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3245064020381"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-sophie-livre",
+      "sent": "3056562308525",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:46.054Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 100,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3056562308525"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-sophie-livre",
+      "sent": "03056562308525",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:50.456Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 99,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3056562308525"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-quechua-sh500-snowshoes",
+      "sent": "3608439231469",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:54.841Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 84,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3608439231469"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-quechua-sh500-snowshoes",
+      "sent": "03608439231469",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:59.221Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 76,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3608439231469"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-sostrene-grene-clay",
+      "sent": "5711812840979",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:03.603Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 80,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5711812840979"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-sostrene-grene-clay",
+      "sent": "05711812840979",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:08.013Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 110,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "5711812840979"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-nicer-dicer",
+      "sent": "4023012901536",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:12.409Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 94,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "4023012901536"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-nicer-dicer",
+      "sent": "04023012901536",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:16.789Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 76,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "4023012901536"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-westmark-gallant",
+      "sent": "4004094295072",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:21.187Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 97,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "4004094295072"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-westmark-gallant",
+      "sent": "04004094295072",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:25.574Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 81,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "4004094295072"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-activilong-shampoo",
+      "sent": "3327520004026",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:31.452Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 1575,
+      "finalHost": "world.openbeautyfacts.org",
+      "returnedCode": "3327520004026",
+      "items": [
+        {
+          "name": "ACTICURL HYDRA SHAMPOOING ACTIVATEUR DE BOUCLES",
+          "brand": "ACTIVILONG",
+          "category": [],
+          "image": false,
+          "quantity": "250 ml",
+          "productType": "beauty"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-activilong-shampoo",
+      "sent": "03327520004026",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:35.945Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 191,
+      "finalHost": "world.openbeautyfacts.org",
+      "returnedCode": "3327520004026",
+      "items": [
+        {
+          "name": "ACTICURL HYDRA SHAMPOOING ACTIVATEUR DE BOUCLES",
+          "brand": "ACTIVILONG",
+          "category": [],
+          "image": false,
+          "quantity": "250 ml",
+          "productType": "beauty"
+        }
+      ]
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-la-vie-claire-savon",
+      "sent": "3266191023106",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:40.328Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 79,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3266191023106"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-la-vie-claire-savon",
+      "sent": "03266191023106",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:44.733Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 102,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3266191023106"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-celia-argan-rose",
+      "sent": "3700344107546",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:49.134Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 97,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3700344107546"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-celia-argan-rose",
+      "sent": "03700344107546",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:53.516Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 80,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "3700344107546"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-berjuan-peppa",
+      "sent": "8421560505200",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:57.909Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 90,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "8421560505200"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-berjuan-peppa",
+      "sent": "08421560505200",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:02.311Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 98,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "8421560505200"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-da-vinci-cr2032",
+      "sent": "6998817920328",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:06.760Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 146,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "6998817920328"
+    },
+    {
+      "provider": "off",
+      "caseId": "eu-da-vinci-cr2032",
+      "sent": "06998817920328",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:11.222Z",
+      "outcome": "not_found",
+      "status": 404,
+      "latencyMs": 159,
+      "finalHost": "world.openfoodfacts.org",
+      "returnedCode": "6998817920328"
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "phys-be-ean13",
+      "sent": "5400141472714",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:06:54.478Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 588,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "98",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "phys-be-ean8-rcn",
+      "sent": "27044193",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": "RCN-8",
+      "at": "2026-10-08T12:07:05.795Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 311,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "97",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "phys-eu-ean13-historic",
+      "sent": "7622202826269",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:17.221Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 421,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "96",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-thule-sleek",
+      "sent": "091021037090",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:28.560Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 334,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "95",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-nutella-400",
+      "sent": "3017620422003",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:39.879Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 315,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "94",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-coca-cola-330",
+      "sent": "5449000000996",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:07:51.208Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 324,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "93",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "2 Packs Of 24 X 330ml Coke Cans",
+          "brand": "",
+          "category": ["Media > DVDs & Videos"],
+          "image": true,
+          "model": "",
+          "ean": "5449000000996",
+          "upc": "",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-kraft-mac-cheese",
+      "sent": "021000658831",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:02.589Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 373,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "92",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Kraft Original Mac and Cheese Dinner - 7.25oz",
+          "brand": "Kraft",
+          "category": ["Food, Beverages & Tobacco > Food Items > Pasta & Noodles"],
+          "image": true,
+          "model": "10000052",
+          "ean": "0021000658831",
+          "upc": "021000658831",
+          "offers": 9
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-hampton-bay-halwin",
+      "sent": "840059614922",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:13.929Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 338,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "91",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Hampton Bay Halwin 52in Matte Black LED Indoor Outdoor Ceiling Fan with Remote Control",
+          "brand": "unknown",
+          "category": [],
+          "image": true,
+          "model": "AK396H-MBK",
+          "ean": "0840059614922",
+          "upc": "840059614922",
+          "offers": 2
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-boon-nursh",
+      "sent": "669028116546",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:25.254Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 322,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "90",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-lil-buddies-laser",
+      "sent": "885490244963",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:36.626Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 370,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "89",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "New 370647  Lil Buddies Pet Laser Toy 5 Heads (24-Pack) Accessories Cheap Wholesale Discount Bulk Pets Accessories Boys",
+          "brand": "Lil Buddies",
+          "category": [
+            "Toys & Games > Toys > Dolls, Playsets & Toy Figures > Action & Toy Figures"
+          ],
+          "image": true,
+          "model": "370647",
+          "ean": "0885490244963",
+          "upc": "885490244963",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-granitestone-saute",
+      "sent": "080313081316",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:47.983Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 354,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "88",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Granitestone Ceramic Non Stick Frying Pans Skillet  10 & 11.5 Inch Stainless Steel Pans for Cooking Non Toxic  Oven and Dishwasher Safe",
+          "brand": "GraniteStone",
+          "category": ["Animals & Pet Supplies"],
+          "image": true,
+          "model": "PPPETZOOMBONUSPACK",
+          "ean": "0080313081316",
+          "upc": "080313081316",
+          "offers": 2
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-bazic-glue",
+      "sent": "764608020302",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:08:59.319Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 332,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "87",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "BAZIC Silicone Glue 3.38Oz (100 ml)  Waterproof Crack Resistant  1-Pack",
+          "brand": "BAZIC Products",
+          "category": [
+            "Arts & Entertainment > Hobbies & Creative Arts > Arts & Crafts > Art & Crafting Tools > Glue Guns"
+          ],
+          "image": true,
+          "model": "2030",
+          "ean": "0764608020302",
+          "upc": "764608020302",
+          "offers": 4
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-woolite-delicates",
+      "sent": "062338727240",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:10.704Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 381,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "86",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Woolite Delicates Hypoallergenic Liquid Laundry Detergent, 50 oz, 33 Washes, Machine and Hand Wash Eligible (B08P3FW3N8)",
+          "brand": "AmazonUs/RECAS",
+          "category": [],
+          "image": true,
+          "model": "Boyeb",
+          "ean": "0062338727240",
+          "upc": "062338727240",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-scripto-torch",
+      "sent": "070257522266",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:22.042Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 334,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "85",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-dewalt-heater",
+      "sent": "089301008588",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:33.371Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 324,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "84",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-pearhead-learning",
+      "sent": "698904871507",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:44.690Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 316,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "83",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Pearhead Discover Learning Set, Multi",
+          "brand": "Pearhead",
+          "category": [],
+          "image": true,
+          "model": "87150",
+          "ean": "0698904871507",
+          "upc": "698904871507",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-craftsman-tiller",
+      "sent": "885911843430",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:09:56.014Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 321,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "82",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Craftsman Cordless Tiller/Cultivator 1 ea",
+          "brand": "CRAFTSMAN",
+          "category": [],
+          "image": true,
+          "model": "CMCTL320B",
+          "ean": "0885911843430",
+          "upc": "885911843430",
+          "offers": 2
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-adios-vinegar",
+      "sent": "850039376139",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:07.333Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 315,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "81",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-furminator-conditioner",
+      "sent": "854460001073",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:18.733Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 398,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "80",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "FURminator deShedding Ultra Premium Dog Conditioner, 1-Gallon (FUR00107) (B000O5HZLI)",
+          "brand": "Furminator",
+          "category": [
+            "Animals & Pet Supplies > Pet Supplies > Pet Grooming Supplies > Pet Shampoo & Conditioner"
+          ],
+          "image": true,
+          "model": "ZX825 91",
+          "ean": "0854460001073",
+          "upc": "854460001073",
+          "offers": 7
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-bauer-sprayer",
+      "sent": "193175443663",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:30.075Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 339,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "79",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-black-decker-steamer",
+      "sent": "050875828407",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:41.401Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 322,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "78",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Easy Garment Steamer HGS011F",
+          "brand": "BLACK+DECKER",
+          "category": [
+            "Home & Garden > Household Appliances > Laundry Appliances > Garment Steamers"
+          ],
+          "image": true,
+          "model": "HGS011F",
+          "ean": "0050875828407",
+          "upc": "050875828407",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-sloosh-dive-sticks",
+      "sent": "812355036227",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:10:52.773Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 368,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "77",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "JOYIN 30 Pcs Diving Pool Toys for Kids Ages 3-12 Jumbo Set with Storage Bag Pool Games Summer Swim Water FishToys",
+          "brand": "Joyin",
+          "category": ["Home & Garden > Pool & Spa > Pool & Spa Accessories > Pool Toys"],
+          "image": true,
+          "model": "9D-FGHF-YGTV",
+          "ean": "0812355036227",
+          "upc": "812355036227",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-gobi-heat-warmer",
+      "sent": "810141672550",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:04.107Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 331,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "76",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-powerg-walking-pad",
+      "sent": "846325031158",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:15.431Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 321,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "75",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-mec-shuttlecraft",
+      "sent": "840251534745",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:26.772Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 336,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "74",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-so-delicious-salted-caramel",
+      "sent": "744473276134",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:38.144Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 368,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "73",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "So Delicious Salted Caramel Cluster Flavoured, Gluten-Free Dairy-Free, Cashew Frozen Dessert 500 Ml",
+          "brand": "So Delicious",
+          "category": [],
+          "image": true,
+          "model": "",
+          "ean": "0744473276134",
+          "upc": "744473276134",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-compliments-chicken-burgers",
+      "sent": "055742583335",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:11:49.473Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 326,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "72",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-nutraphase-clean-beans",
+      "sent": "628618002973",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:00.806Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 329,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "71",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-olymel-chicken-strips",
+      "sent": "069094635963",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:12.135Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 325,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "70",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "ca-chungjungwon-ssamjang",
+      "sent": "8801052773261",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:23.554Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 416,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "69",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-lima-rice-cakes",
+      "sent": "5411788002493",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:34.891Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 333,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "68",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Lima - Rice Cakes With Salt | 100g",
+          "brand": "LIMA",
+          "category": ["Health & Beauty > Health Care"],
+          "image": false,
+          "model": "",
+          "ean": "5411788002493",
+          "upc": "",
+          "offers": 0
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-isali-tikka",
+      "sent": "5413110519518",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:46.208Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 311,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "67",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-nollens-aiguillettes",
+      "sent": "5420033322682",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:12:57.516Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 305,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "66",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-chatka-crab",
+      "sent": "5410238917325",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:08.831Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 311,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "65",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-brabantia-ladle",
+      "sent": "8710755250620",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:20.149Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 314,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "64",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-zwilling-enfinigy-grill",
+      "sent": "4009839681981",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:31.472Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 319,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "63",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-legrand-rx3",
+      "sent": "3245064020381",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:42.796Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 321,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "62",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-sophie-livre",
+      "sent": "3056562308525",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:13:54.137Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 334,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "61",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-quechua-sh500-snowshoes",
+      "sent": "3608439231469",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:05.457Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 317,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "60",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-sostrene-grene-clay",
+      "sent": "5711812840979",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:16.777Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 315,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "59",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-nicer-dicer",
+      "sent": "4023012901536",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:28.107Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 327,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "58",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-westmark-gallant",
+      "sent": "4004094295072",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:39.425Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 312,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "57",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-activilong-shampoo",
+      "sent": "3327520004026",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:14:50.758Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 326,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "56",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-la-vie-claire-savon",
+      "sent": "3266191023106",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:02.094Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 329,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "55",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-celia-argan-rose",
+      "sent": "3700344107546",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:13.424Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 326,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "54",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-berjuan-peppa",
+      "sent": "8421560505200",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:24.746Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 319,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "53",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-da-vinci-cr2032",
+      "sent": "6998817920328",
+      "representations": ["raw", "matchingGtin"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:36.071Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 320,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "52",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "phys-be-ean8-rcn",
+      "sent": "00000027044193",
+      "representations": ["canonicalGtin14"],
+      "restricted": "RCN-8",
+      "at": "2026-10-08T12:15:47.392Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 316,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "51",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-thule-sleek",
+      "sent": "0091021037090",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:15:58.718Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 323,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "50",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-thule-sleek",
+      "sent": "00091021037090",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:16:10.073Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 352,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "49",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "eu-nutella-400",
+      "sent": "03017620422003",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:16:21.420Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 346,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "48",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-coca-cola-330",
+      "sent": "05449000000996",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:16:32.756Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 333,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "47",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "2 Packs Of 24 X 330ml Coke Cans",
+          "brand": "",
+          "category": ["Media > DVDs & Videos"],
+          "image": true,
+          "model": "",
+          "ean": "5449000000996",
+          "upc": "",
+          "offers": 1
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-kraft-mac-cheese",
+      "sent": "0021000658831",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:16:44.119Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 360,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "46",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Kraft Original Mac and Cheese Dinner - 7.25oz",
+          "brand": "Kraft",
+          "category": ["Food, Beverages & Tobacco > Food Items > Pasta & Noodles"],
+          "image": true,
+          "model": "10000052",
+          "ean": "0021000658831",
+          "upc": "021000658831",
+          "offers": 9
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-kraft-mac-cheese",
+      "sent": "00021000658831",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:16:55.513Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 385,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "45",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Kraft Original Mac and Cheese Dinner - 7.25oz",
+          "brand": "Kraft",
+          "category": ["Food, Beverages & Tobacco > Food Items > Pasta & Noodles"],
+          "image": true,
+          "model": "10000052",
+          "ean": "0021000658831",
+          "upc": "021000658831",
+          "offers": 9
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-hampton-bay-halwin",
+      "sent": "0840059614922",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:17:06.884Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 367,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "44",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Hampton Bay Halwin 52in Matte Black LED Indoor Outdoor Ceiling Fan with Remote Control",
+          "brand": "unknown",
+          "category": [],
+          "image": true,
+          "model": "AK396H-MBK",
+          "ean": "0840059614922",
+          "upc": "840059614922",
+          "offers": 2
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-hampton-bay-halwin",
+      "sent": "00840059614922",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:17:18.262Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 375,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "43",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Hampton Bay Halwin 52in Matte Black LED Indoor Outdoor Ceiling Fan with Remote Control",
+          "brand": "unknown",
+          "category": [],
+          "image": true,
+          "model": "AK396H-MBK",
+          "ean": "0840059614922",
+          "upc": "840059614922",
+          "offers": 2
+        }
+      ]
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-boon-nursh",
+      "sent": "0669028116546",
+      "representations": ["gtin13"],
+      "restricted": null,
+      "at": "2026-10-08T12:17:29.729Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 465,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "42",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "us-boon-nursh",
+      "sent": "00669028116546",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:17:41.040Z",
+      "outcome": "not_found",
+      "status": 200,
+      "latencyMs": 308,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "41",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 0,
+      "items": []
+    },
+    {
+      "provider": "upcitemdb",
+      "caseId": "be-lima-rice-cakes",
+      "sent": "05411788002493",
+      "representations": ["canonicalGtin14"],
+      "restricted": null,
+      "at": "2026-10-08T12:17:52.376Z",
+      "outcome": "found",
+      "status": 200,
+      "latencyMs": 334,
+      "rateLimit": {
+        "x-ratelimit-limit": "100",
+        "x-ratelimit-remaining": "40",
+        "x-ratelimit-reset": "1791546794"
+      },
+      "total": 1,
+      "items": [
+        {
+          "name": "Lima - Rice Cakes With Salt | 100g",
+          "brand": "LIMA",
+          "category": ["Health & Beauty > Health Care"],
+          "image": false,
+          "model": "",
+          "ean": "5411788002493",
+          "upc": "",
+          "offers": 0
+        }
+      ]
+    }
+  ]
+}
