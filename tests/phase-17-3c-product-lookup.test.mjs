@@ -59,14 +59,13 @@ const offBody = (code, product) => ({
   result: { id: 'product_found' },
   product,
 });
-const jsonResponse = (status, body, url) => {
-  const response = new Response(typeof body === 'string' ? body : JSON.stringify(body), {
+const jsonResponse = (status, body) =>
+  new Response(typeof body === 'string' ? body : JSON.stringify(body), {
     status,
     headers: { 'content-type': 'application/json' },
   });
-  if (url) Object.defineProperty(response, 'url', { value: url });
-  return response;
-};
+const redirectTo = (location, status = 302) =>
+  new Response(null, { status, headers: location ? { location } : {} });
 
 /** Fake OFF: records every request, answers with the queued responses (or a factory). */
 function fakeFetch(...answers) {
@@ -75,10 +74,7 @@ function fakeFetch(...answers) {
     calls.push({ url, init });
     const answer = answers.length > 1 ? answers.shift() : answers[0];
     if (answer instanceof Error) throw answer;
-    if (typeof answer === 'function') return answer(url, init);
-    const copy = answer.clone();
-    if (answer.url) Object.defineProperty(copy, 'url', { value: answer.url });
-    return copy;
+    return typeof answer === 'function' ? answer(url, init) : answer.clone();
   };
   return { fetch, calls };
 }
@@ -140,6 +136,7 @@ test('A: eligible GTIN + OFF found => name and brand suggested, attributed, only
     `https://world.openfoodfacts.org/api/v3/product/${NUTELLA}?product_type=all&fields=code,product_name,product_name_en,product_name_fr,brands`,
   );
   assert.equal(calls[0].init.method, 'GET');
+  assert.equal(calls[0].init.redirect, 'manual');
   assert.equal(calls[0].init.body, undefined);
   assert.deepEqual(Object.keys(calls[0].init.headers).sort(), ['Accept', 'User-Agent']);
   assert.equal(calls[0].init.headers['User-Agent'], TEST_USER_AGENT);
@@ -153,12 +150,18 @@ test('A: eligible GTIN + OFF found => name and brand suggested, attributed, only
 });
 
 test('A: product_type=all redirect to a sister database is attributed to that database', async () => {
-  const beauty = jsonResponse(
-    200,
-    offBody('3700509700124', { product_name: 'Shampooing', brands: 'Activilong' }),
-    'https://world.openbeautyfacts.org/api/v3/product/3700509700124?product_type=all',
+  const sister = 'https://world.openbeautyfacts.org/api/v3/product/3700509700124?product_type=all';
+  const { fetch, calls } = fakeFetch(
+    redirectTo(sister),
+    jsonResponse(
+      200,
+      offBody('3700509700124', { product_name: 'Shampooing', brands: 'Activilong' }),
+    ),
   );
-  const outcome = await offProvider(fakeFetch(beauty).fetch)('3700509700124', '03700509700124');
+  const outcome = await offProvider(fetch)('3700509700124', '03700509700124');
+  assert.equal(calls.length, 2);
+  assert.equal(calls[1].url, sister);
+  assert.equal(calls[1].init.redirect, 'manual');
   assert.equal(outcome.status, 'found');
   assert.equal(outcome.attribution.database, 'openbeautyfacts');
   assert.equal(outcome.attribution.sourceName, 'Open Beauty Facts');
@@ -227,10 +230,7 @@ test('C: every OFF failure is `unavailable`, never cached, never thrown, never b
     [jsonResponse(200, '<html>not json</html>'), 'invalid_response'],
     [jsonResponse(200, { code: NUTELLA, result: { id: 'product_found' } }), 'invalid_response'],
     [jsonResponse(200, offBody('5400141472714', { product_name: 'Other' })), 'invalid_response'],
-    [
-      jsonResponse(200, offBody(NUTELLA, { product_name: 'Nutella' }), 'https://evil.test/x'),
-      'invalid_response',
-    ],
+    [redirectTo('https://evil.test/x'), 'invalid_response'],
   ];
   for (const [answer, reason] of failures) {
     const cache = spyCache();
@@ -270,6 +270,33 @@ test('C: every OFF failure is `unavailable`, never cached, never thrown, never b
   assert.equal(applyLookupSuggestion(form, new Set(), unavailable).values, form);
   assert.match(productLookupNotice(unavailable, form).text, /unavailable/u);
   assert.equal(validateProductForm(form).input?.productName, 'Spread');
+});
+
+test('C: redirects are followed only over HTTPS to OFF family hosts, at most 3 hops', async () => {
+  const off = 'https://world.openfoodfacts.org/api/v3/product/1';
+  const refused = [
+    'https://evil.test/x',
+    'http://world.openbeautyfacts.org/x',
+    'https://world.openbeautyfacts.org:8443/x',
+    'https://world.openbeautyfacts.org.evil.test/x',
+    'https://169.254.169.254/latest/meta-data',
+    'file:///etc/passwd',
+    null,
+  ];
+  for (const location of refused) {
+    const { fetch, calls } = fakeFetch(redirectTo(location), nutellaFound);
+    const outcome = await offProvider(fetch)(NUTELLA, NUTELLA_KEY);
+    assert.deepEqual(outcome, { status: 'unavailable', reason: 'invalid_response' }, location);
+    assert.equal(calls.length, 1, String(location));
+  }
+
+  const loop = fakeFetch(redirectTo(off));
+  assert.equal((await offProvider(loop.fetch)(NUTELLA, NUTELLA_KEY)).reason, 'invalid_response');
+  assert.equal(loop.calls.length, 4);
+  assert.equal(
+    loop.calls.every(({ url }) => url.startsWith('https://world.openfoodfacts.org/')),
+    true,
+  );
 });
 
 test('C: one attempt, no retry; 429 or 3 failures open the circuit for 5 minutes', async () => {

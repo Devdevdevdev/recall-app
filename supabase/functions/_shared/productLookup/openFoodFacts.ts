@@ -1,6 +1,11 @@
 import { canonicalGtin14 } from '../matching/gtin.ts';
 
-import { cleanSuggestedBrand, cleanSuggestedName, offAttribution } from './quality.ts';
+import {
+  cleanSuggestedBrand,
+  cleanSuggestedName,
+  offAttribution,
+  offDatabaseForHost,
+} from './quality.ts';
 import type { ProductLookupProvider, ProductLookupProviderOutcome } from './types.ts';
 
 /**
@@ -15,6 +20,8 @@ export const OFF_TIMEOUT_MS = 1_500;
 /** Phase 17.3b section 10: after a 429 or repeated failures, OFF is not called for 5 minutes. */
 export const OFF_CIRCUIT_OPEN_MS = 5 * 60 * 1000;
 export const OFF_CIRCUIT_FAILURE_THRESHOLD = 3;
+/** `product_type=all` redirects at most once in practice; a few hops are tolerated, no more. */
+export const OFF_MAX_REDIRECTS = 3;
 
 export const RECALL_USER_AGENT_NAME = 'Recall';
 export const RECALL_USER_AGENT_VERSION = '1.0.0';
@@ -49,10 +56,42 @@ export type OffProviderOptions = {
   now?: () => number;
 };
 
-/** Interprets one OFF v3 response. Pure: no I/O, no clock. */
+const REDIRECT_STATUSES = new Set([301, 302, 303, 307, 308]);
+
+/**
+ * Fetches with redirects followed by hand: a hop is requested only when it is HTTPS to one of the
+ * four Open Food Facts family hosts, so no other host is ever contacted (no SSRF, no generic
+ * proxy, the User-Agent contact never leaves the OFF family). Null when a hop is refused.
+ */
+async function fetchWithinOffFamily(
+  fetch: FetchLike,
+  url: string,
+  init: RequestInit,
+): Promise<{ response: Response; url: string } | null> {
+  let current = url;
+  for (let hop = 0; ; hop += 1) {
+    const response = await fetch(current, { ...init, redirect: 'manual' });
+    if (!REDIRECT_STATUSES.has(response.status)) return { response, url: current };
+    await response.body?.cancel();
+    const location = response.headers.get('location');
+    if (!location || hop >= OFF_MAX_REDIRECTS) return null;
+    let next: URL;
+    try {
+      next = new URL(location, current);
+    } catch {
+      return null;
+    }
+    if (next.protocol !== 'https:' || next.port !== '' || !offDatabaseForHost(next.host)) {
+      return null;
+    }
+    current = next.href;
+  }
+}
+
+/** Interprets one OFF v3 response fetched from `finalUrl`. Pure: no I/O, no clock. */
 export async function interpretOffResponse(
   response: Response,
-  requestedUrl: string,
+  finalUrl: string,
   key: string,
 ): Promise<ProductLookupProviderOutcome> {
   if (response.status === 429) return { status: 'unavailable', reason: 'rate_limited' };
@@ -60,7 +99,7 @@ export async function interpretOffResponse(
   // `product_type=all` may redirect to a sister database; only the OFF family is accepted.
   let host: string;
   try {
-    host = new URL(response.url || requestedUrl).host;
+    host = new URL(finalUrl).host;
   } catch {
     return { status: 'unavailable', reason: 'invalid_response' };
   }
@@ -120,13 +159,14 @@ export function createOpenFoodFactsProvider(options: OffProviderOptions): Produc
     const url = offProductUrl(providerGtin);
     let outcome: ProductLookupProviderOutcome;
     try {
-      const response = await options.fetch(url, {
+      const fetched = await fetchWithinOffFamily(options.fetch, url, {
         method: 'GET',
-        redirect: 'follow',
         headers: { Accept: 'application/json', 'User-Agent': options.userAgent },
         signal: AbortSignal.timeout(timeoutMs),
       });
-      outcome = await interpretOffResponse(response, url, key);
+      outcome = fetched
+        ? await interpretOffResponse(fetched.response, fetched.url, key)
+        : { status: 'unavailable', reason: 'invalid_response' };
     } catch (error) {
       const name = error instanceof Error ? error.name : '';
       outcome = {

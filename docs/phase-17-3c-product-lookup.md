@@ -80,17 +80,17 @@ l'Edge comme « fournisseur », côté Edge avec un cache mémoire et l'adapter 
 
 ## 3. Fournisseur et API
 
-| Élément        | Valeur                                                                                                              |
-| -------------- | ------------------------------------------------------------------------------------------------------------------- |
-| Fournisseur    | Open Food Facts famille (OFF, Open Beauty Facts, Open Pet Food Facts, Open Products Facts)                          |
-| API            | v3 — `GET https://world.openfoodfacts.org/api/v3/product/{gtin}`                                                    |
-| `product_type` | `all` (peut rediriger vers la base sœur ; seuls les 4 hôtes `world.open*facts.org` sont acceptés après redirection) |
-| `fields`       | `code,product_name,product_name_en,product_name_fr,brands`                                                          |
-| Auth           | aucune (lecture) ; pas de cookie, pas de clé                                                                        |
-| Timeout        | 1 500 ms côté Edge ; 5 000 ms côté app                                                                              |
-| Retry          | aucun ; 1 tentative par lookup                                                                                      |
-| Disjoncteur    | 429 ⇒ OFF non appelé pendant 5 min ; 3 échecs consécutifs ⇒ idem                                                    |
-| Fallback       | saisie manuelle uniquement ; aucun autre fournisseur                                                                |
+| Élément        | Valeur                                                                                                                                                                                                                 |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fournisseur    | Open Food Facts famille (OFF, Open Beauty Facts, Open Pet Food Facts, Open Products Facts)                                                                                                                             |
+| API            | v3 — `GET https://world.openfoodfacts.org/api/v3/product/{gtin}`                                                                                                                                                       |
+| `product_type` | `all` (peut rediriger vers la base sœur ; redirections suivies à la main, au plus 3, uniquement en HTTPS vers les 4 hôtes `world.open*facts.org` — tout autre hôte n'est jamais contacté ; durci en 17.3d-1, voir §16) |
+| `fields`       | `code,product_name,product_name_en,product_name_fr,brands`                                                                                                                                                             |
+| Auth           | aucune (lecture) ; pas de cookie, pas de clé                                                                                                                                                                           |
+| Timeout        | 1 500 ms côté Edge ; 5 000 ms côté app                                                                                                                                                                                 |
+| Retry          | aucun ; 1 tentative par lookup                                                                                                                                                                                         |
+| Disjoncteur    | 429 ⇒ OFF non appelé pendant 5 min ; 3 échecs consécutifs ⇒ idem                                                                                                                                                       |
+| Fallback       | saisie manuelle uniquement ; aucun autre fournisseur                                                                                                                                                                   |
 
 ## 4. Éligibilité et RCN
 
@@ -336,3 +336,13 @@ limitation de débit par utilisateur (compteurs) ; politique RCN-12/13.
 - Représentations 12/13/14 chiffres équivalentes à un RCN-8 non classées RCN (§4).
 - Vérité terrain physique `5400141472714` / `27044193` toujours en attente (17.3b).
 - Fonctionnalité inactive en production jusqu'au GO de déploiement Edge.
+
+## 16. Correctif 17.3d-1 (avant déploiement)
+
+Revue de sécurité de `identify-product` avant son premier déploiement : avec `redirect: 'follow'`,
+une redirection d'OFF vers un hôte hors famille aurait été **requêtée** (User-Agent de contact
+compris) avant d'être rejetée à l'interprétation. Correctif : `redirect: 'manual'` ; une étape
+n'est suivie que si elle est en HTTPS, sans port explicite, vers l'un des 4 hôtes OFF famille, au
+plus 3 étapes ; sinon `unavailable` / `invalid_response` sans autre requête. Architecture,
+statuts, cache et règle RCN-8 inchangés. Tests : hôte tiers, rétrogradation HTTP, port, suffixe
+de domaine piégé, adresse de métadonnées, `file:`, `Location` absent, boucle de redirections.
