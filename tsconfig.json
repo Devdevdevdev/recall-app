@@ -34,6 +34,8 @@
     "supabase/functions/_shared/push/store.ts",
     "supabase/functions/check-owned-product/**",
     "supabase/functions/process-owned-product-checks/**",
+    "supabase/functions/identify-product/**",
+    "tests/phase-17-3c-identify-product.test.ts",
     "supabase/functions/_shared/productCheck/server.ts",
     "supabase/functions/_shared/productCheck/supabaseStore.ts"
   ]

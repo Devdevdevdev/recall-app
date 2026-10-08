@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import {
+  Linking,
   Pressable,
   StyleSheet,
   Text,
@@ -15,6 +16,12 @@ import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import { CountrySelector } from './CountrySelector';
 import { PurchaseDateField, ScanDateField } from './PurchaseDateField';
 import {
+  applyLookupSuggestion,
+  productLookupNotice,
+  type ProductLookupNotice,
+  type ProductLookupState,
+} from './productLookupPrefill';
+import {
   emptyProductFormValues,
   mergeOptionalDefaultCountry,
   scannedGtinNote,
@@ -27,6 +34,8 @@ type ProductFormProps = {
   initialValues?: ProductFormValues;
   isSubmitting: boolean;
   onSubmit: (input: OwnedProductInput) => Promise<void>;
+  /** Name/brand suggestion for a scanned GTIN (Phase 17.3c); never overrides user input. */
+  productLookup?: ProductLookupState;
   /** The scan this product came from, used only to explain a transformed GTIN. */
   scannedBarcode?: ScannedBarcode | null;
   submitLabel: string;
@@ -102,10 +111,36 @@ function FormField({
   );
 }
 
+function LookupNotice({ notice }: { notice: ProductLookupNotice }) {
+  if (notice.kind === 'info') {
+    return (
+      <Text accessibilityLiveRegion="polite" style={styles.hint}>
+        {notice.text}
+      </Text>
+    );
+  }
+  const { attribution } = notice;
+  return (
+    <Text accessibilityLiveRegion="polite" style={styles.hint}>
+      Suggested from{' '}
+      <Text
+        accessibilityRole="link"
+        onPress={() => void Linking.openURL(attribution.sourceUrl).catch(() => undefined)}
+        style={styles.link}>
+        {attribution.sourceName}
+      </Text>{' '}
+      (ODbL). Community data: check it matches your product.
+    </Text>
+  );
+}
+
+const idleLookup: ProductLookupState = { status: 'idle' };
+
 export function ProductForm({
   initialValues,
   isSubmitting,
   onSubmit,
+  productLookup = idleLookup,
   scannedBarcode = null,
   submitLabel,
 }: ProductFormProps) {
@@ -135,6 +170,8 @@ export function ProductForm({
   );
   const countryWasEdited = useRef(false);
   const submissionInFlight = useRef(false);
+  const editedFields = useRef(new Set<keyof ProductFormValues>());
+  const [appliedLookup, setAppliedLookup] = useState<ProductLookupState>(idleLookup);
 
   const incomingDefaultCountry = initialValues?.purchaseCountryCode ?? '';
   if (incomingDefaultCountry !== appliedDefaultCountry) {
@@ -144,7 +181,17 @@ export function ProductForm({
     );
   }
 
+  if (productLookup !== appliedLookup) {
+    setAppliedLookup(productLookup);
+    // Updater form: decided against the latest values, so a keystroke still queued wins.
+    setValues(
+      (current) => applyLookupSuggestion(current, editedFields.current, productLookup).values,
+    );
+  }
+  const lookupNotice = productLookupNotice(productLookup, values);
+
   function updateValue(field: keyof ProductFormValues, value: string) {
+    editedFields.current.add(field);
     setValues((current) => ({ ...current, [field]: value }));
     setErrors((current) => ({ ...current, [field]: undefined }));
   }
@@ -172,6 +219,7 @@ export function ProductForm({
   return (
     <View style={styles.form}>
       <FormSection description="The familiar details you use to recognize it." title="Product">
+        {lookupNotice ? <LookupNotice notice={lookupNotice} /> : null}
         <FormField
           error={errors.productName}
           label="Product name *"
@@ -428,6 +476,7 @@ const styles = StyleSheet.create({
     fontSize: typography.size.caption,
     lineHeight: typography.lineHeight.caption,
   },
+  link: { color: colors.brand.primary, textDecorationLine: 'underline' },
   error: {
     color: colors.semantic.danger,
     fontSize: typography.size.caption,

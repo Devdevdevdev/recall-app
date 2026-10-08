@@ -38,6 +38,11 @@ verify_jwt = false
 [functions.process-owned-product-checks]
 verify_jwt = false
 
+# Phase 17.3c user endpoint (not deployed in 17.3c). The handler verifies the user's access token
+# with the auth server; the body carries one GTIN and nothing else. Name/brand suggestion only.
+[functions.identify-product]
+verify_jwt = false
+
 [api]
 enabled = true
 # Port to use for the API URL.

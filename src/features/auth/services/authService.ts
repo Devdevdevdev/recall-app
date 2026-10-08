@@ -1,3 +1,4 @@
+import { clearProductLookupCache } from '@/src/services/productLookup';
 import { requireSupabaseClient } from '@/src/services/supabase';
 
 import type { AuthRequestResult } from '../types/auth';
@@ -63,5 +64,6 @@ export async function signOutCurrentUser(): Promise<AuthRequestResult> {
     return { status: 'error', message: 'Unable to sign out. Please try again.' };
   }
 
+  clearProductLookupCache();
   return { status: 'success' };
 }

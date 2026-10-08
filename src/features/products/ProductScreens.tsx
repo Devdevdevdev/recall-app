@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { router, useFocusEffect, type Href } from 'expo-router';
 import { Alert, Pressable, StyleSheet, Text, View } from 'react-native';
 
@@ -10,6 +10,10 @@ import {
 } from '@/src/data';
 import { colors, radius, spacing, typography } from '@/src/design/tokens';
 import { getCountryName, type OwnedProduct, type OwnedProductInput } from '@/src/domain';
+import { lookupProductSuggestion } from '@/src/services/productLookup';
+
+import { productLookupEligibility } from '../../../supabase/functions/_shared/productLookup/eligibility.ts';
+import type { ProductLookupResult } from '../../../supabase/functions/_shared/productLookup/types.ts';
 
 import { ProductForm } from './ProductForm';
 import {
@@ -21,8 +25,43 @@ import {
   type ProductCreationParams,
   type ProductCreationPrefill,
 } from './productFormUtils';
+import type { ProductLookupState } from './productLookupPrefill';
 import { hasMatchingAttributeChange } from './productMonitoring';
 import { formatPurchaseDate, formatScanDate } from './purchaseDate';
+
+/**
+ * Phase 17.3c: name/brand suggestion for a scanned GTIN. Non-blocking: the form is usable at
+ * once, and any failure is shown as "unavailable". An RCN-8 or invalid GTIN is decided locally,
+ * without any request or cache write.
+ */
+function useProductLookup(matchingGtin: string | null): ProductLookupState {
+  const [answer, setAnswer] = useState<{ gtin: string; result: ProductLookupResult } | null>(null);
+  const eligibility = useMemo(
+    () => (matchingGtin ? productLookupEligibility(matchingGtin) : null),
+    [matchingGtin],
+  );
+  const eligible = eligibility?.eligible === true;
+
+  useEffect(() => {
+    if (!matchingGtin || !eligible) return;
+    let active = true;
+    void lookupProductSuggestion(matchingGtin)
+      .catch((): ProductLookupResult => ({ status: 'unavailable', reason: 'network' }))
+      .then((result) => {
+        if (active) setAnswer({ gtin: matchingGtin, result });
+      });
+    return () => {
+      active = false;
+    };
+  }, [eligible, matchingGtin]);
+
+  // Stable identity per state: ProductForm merges a suggestion once per new lookup state.
+  return useMemo((): ProductLookupState => {
+    if (!matchingGtin || !eligibility) return { status: 'idle' };
+    if (!eligibility.eligible) return { status: 'not_eligible', reason: eligibility.reason };
+    return answer?.gtin === matchingGtin ? answer.result : { status: 'loading' };
+  }, [answer, eligibility, matchingGtin]);
+}
 
 /** Never blocks or fails the save; the server keeps the durable job and retries it. */
 function requestCheckInBackground(productId: string) {
@@ -161,6 +200,7 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
 
   const identificationMethod = prefill.identificationMethod;
   const scannedBarcode = prefill.scannedBarcode;
+  const productLookup = useProductLookup(scannedBarcode?.matchingGtin ?? null);
 
   const createProduct = useCallback(
     async (input: OwnedProductInput) => {
@@ -207,6 +247,7 @@ export function NewProductScreen({ creationParams = {} }: NewProductScreenProps)
         initialValues={prefill.values}
         isSubmitting={isSaving}
         onSubmit={createProduct}
+        productLookup={productLookup}
         scannedBarcode={scannedBarcode}
         submitLabel="Save product"
       />
