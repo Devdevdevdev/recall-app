@@ -1,0 +1,266 @@
+{
+  "phase": "17.3a",
+  "title": "Scan identity foundation",
+  "status": "CLOSED",
+  "closedAt": "2026-10-08",
+  "delivered": [
+    "scanner symbology preserved (barcode_symbology)",
+    "barcode value delivered to JavaScript preserved (barcode_raw_value)",
+    "EAN-8 and UPC-E distinguished; 8 digits alone are never UPC-E",
+    "UPC-E expanded to UPC-A only with explicit upc_e symbology",
+    "matching GTIN stored in owned_products.gtin (UPC-E stored as its UPC-A)",
+    "canonical GTIN-14 derivable, not stored",
+    "database invariant: provenance always describes the current gtin",
+    "historical products and the pre-17.3a app remain compatible"
+  ],
+  "notDelivered": [
+    "automatic product name or brand identification (next phase: Product Lookup)"
+  ],
+  "commits": {
+    "runtime": {
+      "sha": "b440a2ff9f5d6274b4ada7f4e682dac6279ef498",
+      "title": "Add scan identity provenance and UPC-E support"
+    },
+    "releasePrep": {
+      "sha": "7754a6802e0ca41dc62b45e326aa2a627083004e",
+      "title": "Prepare Phase 17.3a production installation"
+    }
+  },
+  "migration": {
+    "file": "supabase/migrations/20261005090000_phase_17_3a_scan_identity_provenance.sql",
+    "version": "20261005090000",
+    "contentSha256": "419e69eb8d57dae72efab2fb9a8ed312c34a9b9ddb96b1929dcc37ae38b7474e",
+    "appliedAt": "2026-10-06T04:35:29Z/2026-10-06T04:35:32Z",
+    "dryRunMigrations": ["20261005090000_phase_17_3a_scan_identity_provenance.sql"],
+    "additiveObjects": [
+      "owned_products.barcode_raw_value (text, nullable, no default)",
+      "owned_products.barcode_symbology (text, nullable, no default)",
+      "owned_products_barcode_provenance_pair_check",
+      "owned_products_barcode_provenance_check",
+      "owned_products_barcode_provenance_gtin_check",
+      "private.expand_upce_to_upca(text)",
+      "private.clear_stale_owned_product_barcode_provenance()",
+      "trigger owned_products_clear_stale_barcode_provenance",
+      "minimal grants/revokes (expand_upce_to_upca: authenticated, service_role)"
+    ],
+    "backfill": false,
+    "migrationCountAfter": 37,
+    "migrationHistoryMd5After": "b12b91149bd21a05aa8f23e18bc96fab",
+    "historyFormula": "md5(string_agg(version||name, '' order by version)) over supabase_migrations.schema_migrations",
+    "sqlObjects": {
+      "expandUpceToUpcaDefinitionMd5": "32d4b20877ffbed9e4fe8ac6a4dee985",
+      "provenanceConstraintsDefinitionMd5": "c0e4fa54d6fef1192a7fb40e56bf60ad",
+      "clearTriggerDefinitionMd5": "ee7f943bb862cfb3033248a3dbbd5590",
+      "clearTriggerFunctionDefinitionMd5": "629fb9329289bbfa5d1150ee391d0616"
+    },
+    "gatedRollbacks": {
+      "windowA": {
+        "file": "supabase/gated-migrations/20261005090100_phase_17_3a_rollback.sql",
+        "sha256": "2d151ee3643d218f22a7bfbda5894464f41ded342ef235b4e77ae4d16fc7b1f6",
+        "executed": false
+      },
+      "windowB": {
+        "file": "supabase/gated-migrations/20261005090200_phase_17_3a_post_rollout_relax.sql",
+        "sha256": "6fcb261ea1a19d931ebacbf30cc75c52ffe190680021bb6a27261fc3975786ab",
+        "executed": false
+      }
+    }
+  },
+  "remoteVerify": {
+    "suite": "releases/phase-17-3a/phase-17-3a-scan-provenance.remote.sql",
+    "suiteSha256": "eda8ef063337b36f7b324ff6d64b2b203d7b8cc40245be6ea0ba1fe6a9351ba3",
+    "generator": "releases/phase-17-3a/build-remote-suite.py",
+    "generatorSha256": "3f7acb57a876f0a47434356e9bd4bbfbd267b219eb7f330ca0377fb1a07b3a05",
+    "executedBy": "operator (npm run test:remote-pgtap)",
+    "result": {
+      "psqlExit": 0,
+      "plan": 82,
+      "ok": 82,
+      "notOk": 0,
+      "extensionCreated": true,
+      "rolledBack": true,
+      "passed": true,
+      "pgtapInstalledBefore": 0,
+      "pgtapInstalledAfter": 0,
+      "idleInTransactionAfter": 0,
+      "guardsUnchanged": true,
+      "migrationHistoryUnchanged": true,
+      "failures": []
+    },
+    "residue": "NONE",
+    "oldClientProductionCompatibility": "PASS",
+    "newClientProductionCompatibility": "PASS"
+  },
+  "edge": {
+    "deploySet": [],
+    "functionsUnchanged": 10
+  },
+  "builds": {
+    "rejected": {
+      "easBuildId": "67f3eea3-9cba-429e-a245-9101517cc6c4",
+      "easStatus": "SUCCESS",
+      "acceptance": "REJECTED",
+      "apkSha256": "5604af6230b20b02e9a940d9a92e93f08209134ccd81dd9b9f61502d2c55caa5",
+      "cause": "EAS preview client variables EXPO_PUBLIC_SUPABASE_URL and EXPO_PUBLIC_SUPABASE_PUBLISHABLE_KEY were stored with literal angle brackets around the values",
+      "runtimeSymptom": "Supabase configuration needed — EXPO_PUBLIC_SUPABASE_URL must be a valid URL.",
+      "rule": "never a valid 17.3a build"
+    },
+    "easEnvironmentFix": {
+      "environment": "preview",
+      "scope": "project",
+      "source": ".env.local (two variables only, values never displayed)",
+      "urlExactEquality": true,
+      "keyExactEquality": true,
+      "urlSyntaxValid": true,
+      "urlHttps": true,
+      "urlAngleBrackets": false,
+      "keyAngleBrackets": false
+    },
+    "accepted": {
+      "easBuildId": "7720b0a8-03e0-44a2-be78-8aab14610d2b",
+      "easStatus": "FINISHED/SUCCESS",
+      "createdAt": "2026-10-06T18:34:59Z",
+      "completedAt": "2026-10-06T21:44:45Z",
+      "profile": "preview",
+      "distribution": "INTERNAL",
+      "artifactType": "APK",
+      "package": "com.silversys.recall",
+      "versionName": "1.0.0",
+      "versionCode": 1,
+      "expoSdk": "57.0.0",
+      "sourceCommit": "7754a6802e0ca41dc62b45e326aa2a627083004e",
+      "apkSha256": "6f40930b2084f4f4c5d366d3f9496d3b8b924215a0e0f779054848fa8896ecbf",
+      "apkSizeBytes": 175253064,
+      "certificateSha256": "2de01276ac9598a81bac89d778f06c5570df45f932d1b038ee81aa467bef7059",
+      "debuggable": false,
+      "embeddedBundleSha256": "1ea7311f5295bb78749d95358f223373e2fd478ccf8973b25e49217109b08db1",
+      "supabaseClientConfigEmbeddedExactEquality": "PASS",
+      "supabaseConfigProofMethod": "Hermes v98 string-table entries compared by SHA-256 and length to .env.local; validated by a negative control on the rejected APK",
+      "diagnosticAbsent": "PASS"
+    }
+  },
+  "deviceAcceptance": {
+    "date": "2026-10-08",
+    "device": "Samsung SM-S938B",
+    "android": "17",
+    "sdk": 37,
+    "note": "The device ran Android 16 during the 2026-10-05/06 observations and was updated before the final regression; the final regression is an Android 17 proof.",
+    "installedApkSha256": "6f40930b2084f4f4c5d366d3f9496d3b8b924215a0e0f779054848fa8896ecbf",
+    "exactArtifactMatch": true,
+    "replacementInstall": "adb install -r: PASS",
+    "uninstallRequired": false,
+    "standaloneWithoutMetro": "PASS",
+    "supabaseRuntimeConfiguration": "PASS",
+    "authentication": "PASS",
+    "historicalProductsRead": "PASS",
+    "crashes": 0,
+    "physicalEan13": {
+      "test": "PHYSICAL PRODUCT TEST",
+      "gtin": "5400141472714",
+      "type": "ean13",
+      "matchingGtin": "5400141472714",
+      "canonicalGtin14": "05400141472714",
+      "transformation": null,
+      "productForm": "PASS",
+      "saved": false,
+      "separateObservation": "7622202826269 was no longer available. In an earlier scan of that product, the scanner reported code128; the app correctly refused it as a GTIN. Possible explanation documented: a second barcode on the packaging."
+    },
+    "physicalEan8": {
+      "test": "PHYSICAL PRODUCT TEST",
+      "gtin": "27044193",
+      "type": "ean8",
+      "matchingGtin": "27044193",
+      "canonicalGtin14": "00000027044193",
+      "upcEExpansion": false,
+      "productForm": "PASS",
+      "saved": false
+    },
+    "generatedUpcE": {
+      "test": "GENERATED BARCODE TEST (not a physical product)",
+      "raw": "04252614",
+      "symbology": "upc_e",
+      "matchingGtin": "042100005264",
+      "canonicalGtin14": "00042100005264",
+      "transformation": "upc_e_to_upc_a",
+      "formUi": "PASS",
+      "persistence": "PASS"
+    },
+    "persistenceTest": {
+      "temporaryProducts": 1,
+      "name": "17.3a DEVICE REGRESSION - GENERATED UPC-E",
+      "afterCreate": { "gtin": "042100005264", "barcode_raw_value": "04252614", "barcode_symbology": "upc_e" },
+      "afterEquivalentEdit": { "gtin": "00042100005264", "barcode_raw_value": "04252614", "barcode_symbology": "upc_e" },
+      "provenancePreserved": true,
+      "automaticProductChecks": {
+        "revisions": 2,
+        "triggers": ["create", "gtin edit"],
+        "status": "complete",
+        "manualWorkerInvocation": false,
+        "incorrectMatch": 0,
+        "incorrectEvaluation": 0,
+        "incorrectEligibility": 0,
+        "incorrectAlert": 0,
+        "incorrectPush": 0,
+        "note": "Real regression of the 17.7a check path on a 17.3a product; not a positive-recall proof."
+      },
+      "cleanup": "deleted via the app; no manual SQL",
+      "afterCleanup": {
+        "owned_products": 2,
+        "checks": 2,
+        "events": 8,
+        "testProduct": 0,
+        "nonNullProvenance": 0,
+        "testMatches": 0,
+        "testEvaluations": 0,
+        "testEligibility": 0,
+        "testSnapshots": 0,
+        "testAlerts": 0,
+        "testPush": 0
+      },
+      "persistentResidue": "NONE"
+    },
+    "notPhysicallyTested": ["UPC-A", "UPC-E on product packaging"]
+  },
+  "nonRegression": {
+    "canonicalGtin14Md5": "1f360d45c59400d5a49ee82636ff680c",
+    "getRecallCandidatesMd5": "695243ea58ac9b8b7cd61cfe9830555e",
+    "getOwnedProductRecallCandidatesMd5": "985de76d0dee90834b720c55d46d7e2e",
+    "indexFingerprint": "cad8a801608bc2cd71dbda1f35e9fdf6",
+    "indexFingerprintFormula": "md5(string_agg(indexdef, ',' order by indexname)) over pg_indexes where schemaname in ('public','private')",
+    "indexFingerprintNote": "the 17.3-S value 232db256... was recorded without a reproducible formula and is not used",
+    "f4": { "triggers": 5, "eligibilityFunctionMd5": "b6a31c8dd6b5e631b0ec2a1038483353", "status": "intact" },
+    "flags": { "product_check_enabled": true, "max_product_check_candidates": 25 },
+    "cron": { "jobname": "recall-automation-every-6h", "schedule": "17 */6 * * *", "active": true }
+  },
+  "finalProductionState": {
+    "checkedAt": "2026-10-08T11:41Z",
+    "migrations": 37,
+    "owned_products": 2,
+    "historicalProductsFingerprint": "dde9db73555929ca6b6e937362f55cc2",
+    "nonNullProvenance": 0,
+    "recall_matches": 0,
+    "alerts": 0,
+    "testResidue": 0
+  },
+  "knownNonBlockingObservations": [
+    {
+      "id": "health-canada-502",
+      "summary": "Natural run 2026-10-06 18:17 UTC: partial_success, source_partial_failure; Health Canada HTTP 502, CPSC success; 0 candidates, 0 AI escalations, 0 alerts, 0 push. Resolved: the next 6 runs through 2026-10-08 06:17 UTC succeeded.",
+      "classification": "external source incident, not a 17.3a defect"
+    },
+    {
+      "id": "home-transient-summary-warning",
+      "summary": "On first launch after authentication, Home briefly showed 'Monitoring status unavailable' and 'Some summary data could not be refreshed'. Refresh immediately restored monitoring, 2 sources and coverage. No crash; Products, Scan and Detail unaffected.",
+      "classification": "NON-BLOCKING FOLLOW-UP (not fixed in 17.3a)"
+    }
+  ],
+  "ios": {
+    "bundle": "compiled/exported successfully",
+    "physicalAcceptance": "NONE",
+    "d2": "UNCONFIRMED — NO PHYSICAL IOS DEVICE AVAILABLE"
+  },
+  "coverageClaim": "Recall currently monitors official product-safety recall data from the U.S. Consumer Product Safety Commission and Health Canada.",
+  "coverageClaimChanged": false,
+  "closeoutProductionChanges": "NONE",
+  "nextRecommendedPhase": "PRODUCT LOOKUP — GTIN → NAME + BRAND"
+}

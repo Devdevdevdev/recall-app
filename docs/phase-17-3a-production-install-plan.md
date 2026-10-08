@@ -3,9 +3,15 @@
 Commit candidat : `b440a2ff9f5d6274b4ada7f4e682dac6279ef498` (« Add scan identity provenance and
 UPC-E support »), égal à `origin/main`, arbre propre.
 
-Statut : **audit production en lecture seule, staging local et plan uniquement.** Aucune écriture
-production, aucune migration distante, aucun deploy Edge, aucune build distribuée, aucun flag,
-aucun cron, aucun secret.
+Statut : **EXÉCUTÉ — phase CLOSED (2026-10-08).** Ce plan a été suivi :
+
+- migration installée le 2026-10-06 ;
+- remote verify 82/82 ;
+- build `67f3eea3` rejetée, puis build `7720b0a8` acceptée ;
+- régression appareil sur Android 17.
+
+Le résultat est dans `docs/phase-17-3a-production-verification.md`. Le texte ci-dessous est le plan
+tel que préparé avant l'installation.
 
 **Règle d'exécution :** chaque écriture production exige un « GO » explicite et séparé, précédé
 d'un préflight en lecture seule et suivi de ses vérifications en lecture seule. Point obligatoire :

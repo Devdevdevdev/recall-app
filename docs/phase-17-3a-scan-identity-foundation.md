@@ -1,19 +1,24 @@
 # Phase 17.3a — Scan identity foundation
 
-Statut : **implémentation LOCALE**. Aucune production, aucune migration distante, aucun deploy Edge,
-aucun appel à un fournisseur de catalogue.
+Statut : **CLOSED (2026-10-08)** — migration installée en production, remote verify 82/82,
+build Android preview acceptée et régression appareil Android 17 réussie. Preuves finales :
+`docs/phase-17-3a-production-verification.md` et `releases/phase-17-3a/phase-17-3a-closeout.json`.
+Aucun appel à un fournisseur de catalogue (Product Lookup = phase suivante).
 
-| Point                   | Statut                                                                             |
-| ----------------------- | ---------------------------------------------------------------------------------- |
-| Baseline                | `main` = `origin/main` = `985ab7df6230d09de2c5e0f0ad8b998122cd75a3`                |
-| 17.3-S                  | CLOSED, inchangée (`gtin.ts`, migration `20261004090000`, tests)                   |
-| D1 — UPC-E réel rejeté  | **corrigé côté app** (câblage scanner UPC-E)                                       |
-| D2 — représentation iOS | **UNCONFIRMED — NO PHYSICAL IOS DEVICE AVAILABLE**                                 |
-| Acceptance Android      | EAN-13 et EAN-8 physiques, UPC-E **généré** : conformes (§12)                      |
-| UPC-A                   | **NOT PHYSICALLY TESTED**                                                          |
-| UPC-E                   | **NOT PHYSICALLY TESTED ON PRODUCT PACKAGING** — **GENERATED BARCODE TEST PASSED** |
-| Migration 17.3a         | locale : `20261005090000_phase_17_3a_scan_identity_provenance.sql`                 |
-| Production ready        | **NON**                                                                            |
+Les sections ci-dessous décrivent la conception et l'acceptance locale ; elles restent l'historique
+de la phase.
+
+| Point                   | Statut                                                                                                                         |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Baseline                | `main` = `origin/main` = `985ab7df6230d09de2c5e0f0ad8b998122cd75a3`                                                            |
+| 17.3-S                  | CLOSED, inchangée (`gtin.ts`, migration `20261004090000`, tests)                                                               |
+| D1 — UPC-E réel rejeté  | **corrigé côté app** (câblage scanner UPC-E)                                                                                   |
+| D2 — représentation iOS | **UNCONFIRMED — NO PHYSICAL IOS DEVICE AVAILABLE**                                                                             |
+| Acceptance Android      | EAN-13 et EAN-8 physiques, UPC-E **généré** : conformes (§12, Android 16) ; finale sur Android 17 (vérification production §7) |
+| UPC-A                   | **NOT PHYSICALLY TESTED**                                                                                                      |
+| UPC-E                   | **NOT PHYSICALLY TESTED ON PRODUCT PACKAGING** — **GENERATED BARCODE TEST PASSED**                                             |
+| Migration 17.3a         | `20261005090000_phase_17_3a_scan_identity_provenance.sql`, **installée en production** le 2026-10-06                           |
+| Statut de la phase      | **CLOSED**                                                                                                                     |
 
 ## 1. Flux scan avant 17.3a (audit)
 
@@ -278,6 +283,10 @@ et a le même GTIN-14 que les autres formes. La robustesse vient de raw + symbol
 déterministe, pas d'un zéro ajouté ou retiré.
 
 ## 12. Acceptance Android (2026-10-05)
+
+> Acceptance locale du 2026-10-05, sous Android 16 et via un client de développement. L'acceptance
+> finale, sur l'APK preview accepté et sous Android 17, figure dans
+> `docs/phase-17-3a-production-verification.md` §7.
 
 ### Méthode
 
